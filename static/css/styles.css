@@ -1,3 +1,53 @@
+
+/* Buttons */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin: var(--section-spacing) 0;
+}
+
+.button,
+.info-toggle {
+  padding: 0.8rem 1.2rem;
+  border: none;
+  background-color: var(--primary-color);
+  color: white;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  font-size: 0.9em;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.button:hover,
+.info-toggle:hover {
+  background-color: var(--secondary-color);
+  transform: translateY(-1px);
+}
+
+.info-toggle {
+  justify-content: center;
+  background-color: var(--background-medium);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+}
+
+.info-toggle:hover {
+  background-color: var(--border-color);
+}
+
+.info-toggle .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.info-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
+/* Rest of the CSS content remains exactly the same */
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #34495e;
@@ -8,7 +58,7 @@
   --border-color: #ddd;
   --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
-  --section-spacing: 2rem;
+  --section-spacing: 1rem;
   --content-width: 75rem;
   --sidebar-width: 15%;
 }
@@ -220,6 +270,7 @@ header h1 {
   font-size: clamp(1.2rem, 2vw, 1.8rem);
   margin: 0 0 1rem;
   line-height: 1.2;
+  text-align: center;
 }
 
 .recipe-card h2 {
@@ -236,8 +287,6 @@ header h1 {
 }
 
 .recipe-header {
-  text-align: center;
-  margin-bottom: var(--section-spacing);
   padding-bottom: var(--section-spacing);
   border-bottom: 1px solid var(--border-color);
 }
@@ -262,20 +311,20 @@ header h1 {
   opacity: 0.9;
 }
 
-.recipe-info {
-  background: var(--background-light);
-  padding: 1.5rem;
-  margin: var(--section-spacing) 0;
-  box-shadow: var(--shadow);
+.recipe-meta-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  justify-content: center;
 }
 
-.recipe-meta {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+.meta-section {
+  display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
-  align-items: center;
-  margin: 1rem 0;
-  padding: 0.5rem;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
 }
 
 .recipe-card .recipe-meta {
@@ -401,6 +450,23 @@ header h1 {
   transform: translateY(-1px);
 }
 
+/* Info Toggle Button */
+.info-toggle {
+  margin: 0 auto;
+}
+
+.info-toggle:hover {
+  background-color: var(--border-color);
+}
+
+.info-toggle .toggle-icon {
+  transition: transform 0.3s ease;
+}
+
+.info-toggle[aria-expanded="true"] .toggle-icon {
+  transform: rotate(180deg);
+}
+
 /* Category Navigation */
 .category-nav {
   padding: 1.2rem;
@@ -420,6 +486,7 @@ header h1 {
 
 .category-nav.show {
   display: block;
+  margin-bottom: 0.5rem;
 }
 
 .category-nav::-webkit-scrollbar {
@@ -449,6 +516,10 @@ header h1 {
 
 .back-button:hover {
   color: var(--accent-color);
+}
+
+.recipe-footer .meta-item:last-child {
+  margin-bottom: 0;
 }
 
 .back-button.hidden {
@@ -501,7 +572,7 @@ header h1 {
   z-index: 1001;
   border-radius: 0.25rem;
   box-shadow: var(--shadow);
-  transition: var(--transition);
+  flex: 0 1 auto;
 }
 
 .category-dropdown:hover {
