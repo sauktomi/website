@@ -1,6 +1,16 @@
 {{ define "sidebar" }}
     <div class="recipe-ingredients">
         <h3>Ainesosat</h3>
+        {{ with .Params.skaalaus }}
+        <div class="scaling-control">
+            <select id="recipe-scale" onchange="scaleRecipe(this.value)" aria-label="Reseptin skaalaus">
+                <option value="1">1x (Alkuperäinen)</option>
+                {{ range . }}
+                    <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
+                {{ end }}
+            </select>
+        </div>
+        {{ end }}
         {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
         {{ if $ingredients }}
             {{ index $ingredients 0 | markdownify }}
@@ -8,6 +18,28 @@
             <p>Ainesosia ei löytynyt.</p>
         {{ end }}
     </div>
+
+    <script>
+    function scaleRecipe(scale) {
+        const ingredients = document.querySelectorAll('.ingredients-list li');
+        ingredients.forEach(ingredient => {
+            const originalText = ingredient.getAttribute('data-original') || ingredient.textContent;
+            if (!ingredient.getAttribute('data-original')) {
+                ingredient.setAttribute('data-original', originalText);
+            }
+            
+            const match = originalText.match(/^([\d.,]+)(\s*[a-zA-ZäöåÄÖÅ]+\s*)(.*)/);
+            if (match) {
+                const [_, amount, unit, rest] = match;
+                const scaledAmount = (parseFloat(amount.replace(',', '.')) * parseFloat(scale))
+                    .toFixed(1)
+                    .replace(/\.0$/, '')
+                    .replace('.', ',');
+                ingredient.textContent = `${scaledAmount}${unit}${rest}`;
+            }
+        });
+    }
+    </script>
 {{ end }}
 
 {{ define "main" }}

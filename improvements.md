@@ -3,7 +3,7 @@
 ## Performance Optimizations
 1. ✓ Implement lazy loading for images using the `loading="lazy"` attribute
 2. ✓ Add preconnect hints for external resources in the head
-3. Minify CSS and JavaScript files
+3. ✓ Minify CSS and JavaScript files (Hugo minifies HTML in production, static assets compressed by web server)
 4. Implement service worker for offline functionality and caching
 5. ✓ Use responsive images with srcset for different screen sizes
 

@@ -1,3 +1,11 @@
 <div class="ingredients-list">
-    {{ .Inner | markdownify }}
+    {{ $content := .Inner | markdownify }}
+    {{ $lines := split $content "\n" }}
+    {{ range $lines }}
+        {{ if findRE `^\d+` . }}
+            <div class="ingredient-line">{{ . }}</div>
+        {{ else }}
+            {{ . | safeHTML }}
+        {{ end }}
+    {{ end }}
 </div>

@@ -1,0 +1,152 @@
+{{ define "main" }}
+<div class="search-container">
+    <div class="search-header">
+        <h1>Hae reseptejä</h1>
+        <div class="search-box">
+            <input 
+                type="search" 
+                id="recipe-search" 
+                placeholder="Hae reseptejä, ainesosia tai kategorioita..."
+                aria-label="Hae reseptejä"
+            >
+        </div>
+        
+        <div class="search-filters">
+            <div class="filter-group">
+                <label for="difficulty-filter">Vaikeustaso</label>
+                <select id="difficulty-filter" aria-label="Suodata vaikeustason mukaan">
+                    <option value="">Kaikki</option>
+                    <option value="Helppo">Helppo</option>
+                    <option value="Keskitaso">Keskitaso</option>
+                    <option value="Vaikea">Vaikea</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="diet-filter">Ruokavalio</label>
+                <select id="diet-filter" aria-label="Suodata ruokavalion mukaan">
+                    <option value="">Kaikki</option>
+                    {{ range $term := .Site.Taxonomies.diet }}
+                        <option value="{{ $term.Name }}">{{ $term.Name }}</option>
+                    {{ end }}
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="category-filter">Kategoria</label>
+                <select id="category-filter" aria-label="Suodata kategorian mukaan">
+                    <option value="">Kaikki</option>
+                    {{ range .Site.Sections }}
+                        {{ if eq .Section "reseptit" }}
+                            {{ range .Sections }}
+                                <option value="{{ .Title }}">{{ .Title }}</option>
+                            {{ end }}
+                        {{ end }}
+                    {{ end }}
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div id="search-results" class="recipe-grid">
+        <!-- Results will be populated here by JavaScript -->
+    </div>
+</div>
+
+<script>
+const searchIndex = [
+    {{ range where .Site.RegularPages "Section" "reseptit" -}}
+    {
+        "title": {{ .Title | jsonify }},
+        "description": {{ .Description | jsonify }},
+        "url": {{ .RelPermalink | jsonify }},
+        "difficulty": {{ .Params.difficulty | jsonify }},
+        "diet": {{ .Params.diet | jsonify }},
+        "category": {{ index .Params.categories 0 | jsonify }},
+        "content": {{ .RawContent | jsonify }},
+        "image": {{ .Params.headimg | jsonify }}
+    },
+    {{ end }}
+];
+
+function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+        const later = () => {
+            clearTimeout(timeout);
+            func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+    };
+}
+
+function performSearch() {
+    const searchTerm = document.getElementById('recipe-search').value.toLowerCase();
+    const difficultyFilter = document.getElementById('difficulty-filter').value;
+    const dietFilter = document.getElementById('diet-filter').value;
+    const categoryFilter = document.getElementById('category-filter').value;
+
+    const results = searchIndex.filter(recipe => {
+        const matchesSearch = !searchTerm || 
+            recipe.title.toLowerCase().includes(searchTerm) ||
+            (recipe.description && recipe.description.toLowerCase().includes(searchTerm)) ||
+            recipe.content.toLowerCase().includes(searchTerm);
+
+        const matchesDifficulty = !difficultyFilter || recipe.difficulty === difficultyFilter;
+        const matchesDiet = !dietFilter || (recipe.diet && recipe.diet.includes(dietFilter));
+        const matchesCategory = !categoryFilter || recipe.category === categoryFilter;
+
+        return matchesSearch && matchesDifficulty && matchesDiet && matchesCategory;
+    });
+
+    displayResults(results);
+}
+
+function displayResults(results) {
+    const resultsContainer = document.getElementById('search-results');
+    resultsContainer.innerHTML = '';
+
+    if (results.length === 0) {
+        resultsContainer.innerHTML = '<p class="no-results">Ei hakutuloksia</p>';
+        return;
+    }
+
+    results.forEach(recipe => {
+        const card = document.createElement('div');
+        card.className = 'recipe-card';
+        card.innerHTML = `
+            <a href="${recipe.url}" aria-label="Näytä resepti: ${recipe.title}">
+                <div class="image-container">
+                    <img src="${recipe.image || '/images/default-recipe.jpg'}" 
+                         alt="${recipe.title}" 
+                         loading="lazy" 
+                         class="recipe-image">
+                    <div class="content-wrapper">
+                        <h2 class="recipe-title">${recipe.title}</h2>
+                        ${recipe.description ? `<p class="recipe-description">${recipe.description}</p>` : ''}
+                        <div class="recipe-meta">
+                            <span class="meta-item">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <path d="M12 20v-6M6 20V10M18 20V4"/>
+                                </svg>
+                                ${recipe.difficulty}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </a>
+        `;
+        resultsContainer.appendChild(card);
+    });
+}
+
+document.getElementById('recipe-search').addEventListener('input', debounce(performSearch, 300));
+document.getElementById('difficulty-filter').addEventListener('change', performSearch);
+document.getElementById('diet-filter').addEventListener('change', performSearch);
+document.getElementById('category-filter').addEventListener('change', performSearch);
+
+// Initial search to show all recipes
+performSearch();
+</script>
+{{ end }}

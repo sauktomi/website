@@ -74,4 +74,20 @@ imaging:
     - "webp"
     - "jpg"
 
+minify:
+  minifyOutput: true
+  tdewolff:
+    html:
+      keepWhitespace: false
+    css:
+      keepCSS2: false
+    js:
+      keepVarNames: false
+    json:
+      keepNumbers: false
+    svg:
+      keepComments: false
+    xml:
+      keepWhitespace: false
+
 enableEmoji: true

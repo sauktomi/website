@@ -80,13 +80,14 @@
     {{ partial "recipe-schema.html" . }}
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Siirry sisältöön</a>
     <div class="container">
         <aside class="sidebar">
             {{ partial "header.html" . }}
             {{ partial "nav.html" . }}
             {{ block "sidebar" . }}{{ end }}
         </aside>
-        <main class="content">
+        <main class="content" id="main-content">
             {{ block "main" . }}{{ end }}
 
             {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
