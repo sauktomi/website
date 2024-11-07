@@ -93,7 +93,6 @@ header h1 {
   max-width: var(--content-width);
   margin: 0 auto;
   gap: 1rem;
-  padding: 0 1rem;
   position: relative;
 }
 
@@ -104,17 +103,14 @@ header h1 {
   border: 1px solid var(--border-color);
   overflow-y: auto;
   position: sticky;
-  top: 1rem;
-  height: calc(100vh - 2rem);
+  top: 0;
+  height: 100vh;
   scrollbar-width: none;
   word-wrap: break-word;
   z-index: 1000;
   box-shadow: var(--shadow);
 }
 
-.sidebar::-webkit-scrollbar {
-  display: none;
-}
 
 .sidebar ul,
 .sidebar ol {
@@ -301,10 +297,15 @@ header h1 {
   font-size: 1.1em;
   color: var(--secondary-color);
   margin: var(--section-spacing) auto;
-  max-width: 80ch;
   line-height: 1.6;
+  text-align: center;
+  margin:1rem 0 0.5rem;
 }
 
+p {
+  margin:0.8rem 0 0.5rem;
+
+}
 .recipe-card .recipe-description {
   font-size: 0.9em;
   margin: 0.5rem 0;
@@ -314,17 +315,16 @@ header h1 {
 .recipe-meta-grid {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 0.6rem;
   justify-content: center;
 }
 
 .meta-section {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
+  column-gap: 1rem;
+  width:100%;
   justify-content: center;
-  margin: 0;
-  padding: 0;
 }
 
 .recipe-card .recipe-meta {
@@ -618,10 +618,8 @@ header h1 {
 @media (max-width: 75rem) { /* 1200px */
   .container {
     grid-template-columns: minmax(15rem, 20%) 1fr;
-    max-width: 100vw;
-    padding: 0.5rem;
+    max-width: 100%;
     box-sizing: border-box;
-    overflow-x: hidden;
   }
   
   .category-nav {
@@ -630,7 +628,9 @@ header h1 {
     width: min(20rem, 80vw);
     display: none;
   }
-
+  .meta-section {
+    gap:0;
+  }
   .category-nav.show {
     display: block;
   }
@@ -673,21 +673,25 @@ header h1 {
 @media (max-width: 48rem) { /* 768px */
   :root {
     --section-spacing: 1.5rem;
+    line-height:6px;
   }
 
   .container {
     grid-template-columns: 1fr;
-    padding: 0.5rem;
     width: 100%;
     box-sizing: border-box;
   }
 
   .sidebar {
-    position: static;
-    height: auto;
+    scrollbar-width: thin;
+    height: 30vh;
     margin-bottom: 1rem;
     width: auto;
     box-sizing: border-box;
+  }
+
+  .sidebar li{
+    padding: 0;
   }
 
   .recipe-meta {
@@ -716,7 +720,6 @@ header h1 {
     margin: 0;
     box-sizing: border-box;
   }
-
 
   .category-nav {
     width: calc(100% - 2rem);
@@ -751,9 +754,4 @@ header h1 {
   .recipe-card h2 {
     font-size: 1.2em;
   }
-}
-
-/* Add box-sizing to root level */
-*, *::before, *::after {
-  box-sizing: border-box;
 }

@@ -33,7 +33,9 @@
         display: none !important;
     }
 
-
+.sidebar{
+    position:static;
+}
 
     /* Recipe notes */
     .recipe-notes {
