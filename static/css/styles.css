@@ -1,55 +1,59 @@
-/* Buttons */
-.button-container {
+.divider-container {
+  position: relative;
+  width: 100%;
+  height: 2rem;
   display: flex;
-  gap: 1rem;
-  justify-content: center;
-  margin: var(--section-spacing) 0;
-}
-
-.button,
-.info-toggle {
-  padding: 0.8rem 1.2rem;
-  border: none;
-  background-color: var(--primary-color);
-  color: white;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  font-size: 0.9em;
-  transition: var(--transition);
-  display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  justify-content: center;
+  margin: 0.4rem 0 0;
 }
 
-.button:hover,
-.info-toggle:hover {
-  background-color: var(--secondary-color);
-  transform: translateY(-1px);
+.meta-divider {
+  position: absolute;
+  width: 100%;
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin: 0;
+  z-index: 1;
 }
 
 .info-toggle {
-  justify-content: center;
-  background-color: var(--background-medium);
-  color: var(--text-color);
+  position: absolute;
+  background-color: white;
   border: 1px solid var(--border-color);
-  padding: 0.5rem;
-  width: 2.5rem;
-  height: 2.5rem;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .info-toggle:hover {
-  background-color: var(--border-color);
+  background-color: var(--background-medium);
 }
 
 .info-toggle .toggle-icon {
   transition: transform 0.3s ease;
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 .info-toggle[aria-expanded="true"] .toggle-icon {
   transform: rotate(180deg);
 }
 
-/* Rest of the CSS content remains exactly the same */
+.additional-info {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
+}
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #34495e;
@@ -61,8 +65,8 @@
   --shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --section-spacing: 1rem;
-  --content-width: 75rem;
-  --sidebar-width: 15%;
+  --content-width: 100rem;
+  --sidebar-width: 20%;
 }
 
 /* Base styles */
@@ -94,13 +98,14 @@ header h1 {
   min-height: 100vh;
   max-width: var(--content-width);
   margin: 0 auto;
-  gap: 1rem;
   position: relative;
 }
-
+.recipe-instructions h2{
+  margin:0.8rem 0 0;
+}
 /* Sidebar styles */
 .sidebar {
-  padding: 1.2rem;
+  padding: 0.8rem;
   background-color: var(--background-medium);
   border: 1px solid var(--border-color);
   overflow-y: auto;
@@ -222,6 +227,13 @@ header h1 {
   overflow: hidden;
 }
 
+.additional-info.hidden {
+  max-height: 0;
+  opacity: 0;
+  margin: 0;
+  padding: 0;
+  pointer-events: none;
+}
 .recipe-card picture,
 .recipe-card img,
 .recipe-image {
@@ -284,11 +296,6 @@ header h1 {
   color: var(--text-color);
 }
 
-.recipe-header {
-  padding-bottom: var(--section-spacing);
-  border-bottom: 1px solid var(--border-color);
-}
-
 .recipe-image-container {
   margin: var(--section-spacing) 0;
   aspect-ratio: 16/9;
@@ -317,7 +324,6 @@ p {
 .recipe-meta-grid {
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
   justify-content: center;
 }
 
@@ -450,23 +456,6 @@ p {
 .button:hover {
   background-color: var(--secondary-color);
   transform: translateY(-1px);
-}
-
-/* Info Toggle Button */
-.info-toggle {
-  margin: 0 auto;
-}
-
-.info-toggle:hover {
-  background-color: var(--border-color);
-}
-
-.info-toggle .toggle-icon {
-  transition: transform 0.3s ease;
-}
-
-.info-toggle[aria-expanded="true"] .toggle-icon {
-  transform: rotate(180deg);
 }
 
 /* Category Navigation */
@@ -612,7 +601,6 @@ p {
 .hidden {
   visibility: hidden;
   opacity: 0;
-  position: absolute;
   pointer-events: none;
 }
 
@@ -630,9 +618,7 @@ p {
     width: min(20rem, 80vw);
     display: none;
   }
-  .meta-section {
-    gap:0;
-  }
+
   .category-nav.show {
     display: block;
   }
@@ -671,7 +657,11 @@ p {
     object-fit: contain;
   }
 }
-
+@media (max-width: 59rem) { /* 944px */
+  .meta-section {
+    gap:0;
+  }
+}
 @media (max-width: 48rem) { /* 768px */
   :root {
     --section-spacing: 1.5rem;
