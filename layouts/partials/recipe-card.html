@@ -2,9 +2,67 @@
 {{ $recipe := .recipe | default . }}
 <div class="{{ delimit $classes " " }}">
     <a href="{{ $recipe.Permalink }}" aria-label="Näytä resepti: {{ $recipe.Title }}">
-        <div class="image-container" style="background-image: url('{{ $recipe.Params.headimg }}');">
+        <div class="image-container">
+            {{ $defaultImg := "/images/default-recipe.jpg" }}
+            {{ $imgSrc := $recipe.Params.headimg | default $defaultImg }}
+            {{ with resources.Get $imgSrc }}
+                {{ $image := . }}
+                {{ $small := $image.Resize "400x" }}
+                {{ $medium := $image.Resize "800x" }}
+                {{ $large := $image.Resize "1200x" }}
+                {{ $smallWebp := $small.Process "webp" }}
+                {{ $mediumWebp := $medium.Process "webp" }}
+                {{ $largeWebp := $large.Process "webp" }}
+                <picture>
+                    <source
+                        type="image/webp"
+                        srcset="{{ $smallWebp.RelPermalink }} 400w,
+                                {{ $mediumWebp.RelPermalink }} 800w,
+                                {{ $largeWebp.RelPermalink }} 1200w"
+                        sizes="(max-width: 400px) 400px,
+                               (max-width: 800px) 800px,
+                               1200px">
+                    <source
+                        srcset="{{ $small.RelPermalink }} 400w,
+                                {{ $medium.RelPermalink }} 800w,
+                                {{ $large.RelPermalink }} 1200w"
+                        sizes="(max-width: 400px) 400px,
+                               (max-width: 800px) 800px,
+                               1200px">
+                    <img 
+                        src="{{ $medium.RelPermalink }}"
+                        alt="{{ $recipe.Title }}"
+                        loading="lazy"
+                        class="recipe-image"
+                        width="{{ $medium.Width }}"
+                        height="{{ $medium.Height }}">
+                </picture>
+            {{ else }}
+                <img 
+                    src="{{ $imgSrc }}"
+                    alt="{{ $recipe.Title }}"
+                    loading="lazy"
+                    class="recipe-image">
+            {{ end }}
             <div class="content-wrapper">
                 <h2 class="recipe-title">{{ $recipe.Title }}</h2>
+                {{ with $recipe.Params.description }}
+                    <p class="recipe-description">{{ . }}</p>
+                {{ end }}
+                <div class="recipe-meta">
+                    {{ with $recipe.Params.prepTime }}
+                        <span class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                            {{ . }}
+                        </span>
+                    {{ end }}
+                    {{ with $recipe.Params.difficulty }}
+                        <span class="meta-item">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"/></svg>
+                            {{ . }}
+                        </span>
+                    {{ end }}
+                </div>
             </div>
         </div>
     </a>

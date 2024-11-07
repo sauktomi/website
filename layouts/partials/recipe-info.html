@@ -1,82 +1,95 @@
 <div class="recipe-info">
-    <div class="recipe-meta essential-info">
-        <span class="meta-item">
-            <span class="icon" title="Tuotto">🍰</span>
-            {{ .Params.maara }} {{ index .Params.categories 0 | default "Kategoria" }}
-            ({{ .Params.impsize }}, {{ .Params.servings }} annosta)
-        </span>
-        <span class="meta-item">
-            <span class="icon" title="Valmistusaika">🕓</span>
-            {{ .Params.valmistusaika }}
-        </span>
-        <span class="meta-item">
-            <span class="icon" title="Vaikeustaso">🏋️</span>
-            {{ .Params.difficulty }}
-        </span>
-        <span class="meta-item">
-            <span class="icon" title="Allergeenit">🍴</span>
-            {{ delimit .Params.diet ", " }}
-        </span>
-    </div>
-
-    <div class="additional-info-toggle">
-        <button onclick="toggleAdditionalInfo()">▼</button>
-    </div>
-
-    <div class="recipe-meta additional-info" style="display: none;">
-        <span class="meta-item">
-            <span class="icon" title="Tekijä">👥</span>
-            {{ .Params.author | default "Ei tiedossa" }}
-        </span>
-
-        <span class="meta-item">
-            {{ range $index, $element := .Params.storage }}
-                {{ if $index }}&nbsp;{{ end }} <!-- Using &nbsp; for non-breaking space -->
-
-                {{ $icon := "" }}
-                {{ $title := "" }}
-                {{ $datetime := "" }}
-
-                {{ $number := (slice $element 0 1) }} <!-- Extract the numeric part -->
-                {{ $unit := (slice $element 1 2) }}   <!-- Extract the unit part -->
-
-                <!-- Assign icons based on index -->
-                {{ if eq $index 0 }}
-                    {{ $icon = "🌡️" }}
-                    {{ $title = "Huoneenlämpö" }}
-                    {{ $datetime = printf "P%sD" $number }} <!-- Correctly format as ISO -->
-                {{ else if eq $index 1 }}
-                    {{ $icon = "🧊" }}
-                    {{ $title = "Jääkaappi" }}
-                    {{ $datetime = printf "P%sW" $number }} <!-- Correctly format as ISO -->
-                {{ else if eq $index 2 }}
-                    {{ $icon = "❄️" }}
-                    {{ $title = "Pakastin" }}
-                    {{ $datetime = printf "P%sM" $number }} <!-- Correctly format as ISO -->
-                {{ else if eq $index 3 }}
-                    {{ $icon = "🗓️" }} <!-- Choose an appropriate icon for years -->
-                    {{ $title = "Vuosivarasto" }}
-                    {{ $datetime = printf "P%sY" $number }} <!-- Correctly format as ISO -->
-                {{ end }}
-
-                <span class="icon" title="{{ $title }}">{{ $icon }}</span>
-                <time datetime="{{ $datetime }}">{{ $element }}</time>
+    <div class="recipe-meta-grid">
+        <!-- Essential Info Section -->
+        <div class="meta-section essential-info">
+            {{ with .Params.maara }}
+            <div class="meta-item" title="Tuotto">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+                <span>{{ . }} {{ index $.Params.categories 0 | default "Kategoria" }}</span>
+            </div>
             {{ end }}
-        </span>
 
-        <span class="meta-item">
-            <span class="icon" title="Välineet">🫕</span>
-            {{ delimit .Params.appliances ", " }}
-        </span>
+            {{ with .Params.valmistusaika }}
+            <div class="meta-item" title="Valmistusaika">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                <span>{{ . }}</span>
+            </div>
+            {{ end }}
 
-        <span class="meta-item">
-            <span class="icon" title="Menetelmä">👨‍🍳</span>
-            {{ delimit .Params.method ", " }}
-        </span>
+            {{ with .Params.difficulty }}
+            <div class="meta-item" title="Vaikeustaso">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20v-6M6 20V10M18 20V4"></path></svg>
+                <span>{{ . }}</span>
+            </div>
+            {{ end }}
 
-        <span class="meta-item">
-            <span class="icon" title="Skaalaus">📈</span>
-            {{ delimit .Params.skaalaus " – " }}
-        </span>
+            {{ with .Params.diet }}
+            <div class="meta-item" title="Allergeenit">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13h10l2 3H5l2-3z"></path><path d="M21 10V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v2"></path><path d="M12 12v9"></path></svg>
+                <span>{{ delimit . ", " }}</span>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- Additional Info Toggle -->
+        <button class="info-toggle" onclick="toggleAdditionalInfo()" aria-expanded="false" aria-controls="additional-info">
+            <span class="toggle-text">Näytä lisätiedot</span>
+            <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        </button>
+
+        <!-- Additional Info Section -->
+        <div id="additional-info" class="meta-section additional-info" hidden>
+            {{ with .Params.author }}
+            <div class="meta-item" title="Tekijä">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <span>{{ . }}</span>
+            </div>
+            {{ end }}
+
+            {{ with .Params.storage }}
+            <div class="meta-item storage-info" title="Säilyvyys">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v3"></path><path d="M21 16v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-3"></path><line x1="4" y1="12" x2="20" y2="12"></line></svg>
+                <span>{{ delimit . " | " }}</span>
+            </div>
+            {{ end }}
+
+            {{ with .Params.appliances }}
+            <div class="meta-item" title="Välineet">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 2 2 4 4 4h12c2 0 4-2 4-4V2"></path><line x1="7" y1="2" x2="7" y2="9"></line><line x1="17" y1="2" x2="17" y2="9"></line><path d="M12 19v3"></path><path d="M8 22h8"></path></svg>
+                <span>{{ delimit . ", " }}</span>
+            </div>
+            {{ end }}
+
+            {{ with .Params.method }}
+            <div class="meta-item" title="Menetelmä">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19h16"></path><path d="M4 15h16"></path><path d="M4 11h16"></path><path d="M4 7h16"></path></svg>
+                <span>{{ delimit . ", " }}</span>
+            </div>
+            {{ end }}
+
+            {{ with .Params.skaalaus }}
+            <div class="meta-item" title="Skaalaus">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"></line><polyline points="19 12 12 19 5 12"></polyline></svg>
+                <span>{{ delimit . " – " }}</span>
+            </div>
+            {{ end }}
+        </div>
     </div>
 </div>
+
+<script>
+function toggleAdditionalInfo() {
+    const additionalInfo = document.getElementById('additional-info');
+    const button = document.querySelector('.info-toggle');
+    const isHidden = additionalInfo.hidden;
+    
+    additionalInfo.hidden = !isHidden;
+    button.setAttribute('aria-expanded', !isHidden);
+    
+    const toggleText = button.querySelector('.toggle-text');
+    toggleText.textContent = isHidden ? 'Piilota lisätiedot' : 'Näytä lisätiedot';
+    
+    const toggleIcon = button.querySelector('.toggle-icon');
+    toggleIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0)';
+}
+</script>

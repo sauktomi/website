@@ -1,70 +1,114 @@
 {{ define "sidebar" }}
-    <h3>Ainesosat</h3>
-    {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
-    {{ if $ingredients }}
-        {{ index $ingredients 0 | markdownify }}
-    {{ else }}
-        <p>Ainesosia ei löytynyt.</p>
-    {{ end }}
+    <div class="recipe-ingredients">
+        <h3>Ainesosat</h3>
+        {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+        {{ if $ingredients }}
+            <div class="ingredients-list">
+                {{ index $ingredients 0 | markdownify }}
+            </div>
+        {{ else }}
+            <p>Ainesosia ei löytynyt.</p>
+        {{ end }}
+    </div>
 {{ end }}
-
 
 {{ define "main" }}
 <article class="recipe">
-    <div class="recipe-header">
-        <!-- Image Container -->
-    {{ partial "recipe-card.html" (dict "recipe" . "classes" (slice "recipe-card")) }}
-
-   </div>
-
-        <!-- Description -->
-                    <div class="description">
-                        {{ with .Params.description }}
-                            {{ truncate 100 . }}
-                        {{ end }}
-                    </div>
-
-        <!-- Recipe Info -->
-	{{ partial "recipe-info.html" . }}
-
-    <!-- Instructions Section -->
-    <div class="instructions">
-        <h3>Ohjeet</h3>
-        {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
-        {{ if $instructions }}
-            {{ index $instructions 0 | markdownify }}
-        {{ else }}
-            <p>Ohjeita ei ole saatavilla.</p>
+    <header class="recipe-header">
+        <h1 class="recipe-title">{{ .Title }}</h1>
+        
+        {{ with .Params.headimg }}
+            <div class="recipe-image-container">
+                {{ $image := resources.Get . }}
+                {{ if $image }}
+                    {{ $small := $image.Resize "400x" }}
+                    {{ $medium := $image.Resize "800x" }}
+                    {{ $large := $image.Resize "1200x" }}
+                    {{ $smallWebp := $small.Process "webp" }}
+                    {{ $mediumWebp := $medium.Process "webp" }}
+                    {{ $largeWebp := $large.Process "webp" }}
+                    <picture>
+                        <source
+                            type="image/webp"
+                            srcset="{{ $smallWebp.RelPermalink }} 400w,
+                                    {{ $mediumWebp.RelPermalink }} 800w,
+                                    {{ $largeWebp.RelPermalink }} 1200w"
+                            sizes="(max-width: 400px) 400px,
+                                   (max-width: 800px) 800px,
+                                   1200px">
+                        <source
+                            srcset="{{ $small.RelPermalink }} 400w,
+                                    {{ $medium.RelPermalink }} 800w,
+                                    {{ $large.RelPermalink }} 1200w"
+                            sizes="(max-width: 400px) 400px,
+                                   (max-width: 800px) 800px,
+                                   1200px">
+                        <img 
+                            src="{{ $medium.RelPermalink }}"
+                            alt="{{ $.Title }}"
+                            loading="lazy"
+                            class="recipe-image"
+                            width="{{ $medium.Width }}"
+                            height="{{ $medium.Height }}">
+                    </picture>
+                {{ else }}
+                    <img 
+                        src="{{ . }}"
+                        alt="{{ $.Title }}"
+                        loading="lazy"
+                        class="recipe-image">
+                {{ end }}
+            </div>
         {{ end }}
-    </div>
 
-    <!-- Notes Section -->
-    <div class="notes">
-        <h3>Muistiinpanot</h3>
+        {{ with .Params.description }}
+            <div class="recipe-description">
+                <p>{{ . }}</p>
+            </div>
+        {{ end }}
+
+        {{ partial "recipe-info.html" . }}
+    </header>
+
+    <div class="recipe-content">
+        <section class="recipe-instructions">
+            <h2>Ohjeet</h2>
+            {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
+            {{ if $instructions }}
+                <div class="instructions-list">
+                    {{ index $instructions 0 | markdownify }}
+                </div>
+            {{ else }}
+                <p>Ohjeita ei ole saatavilla.</p>
+            {{ end }}
+        </section>
+
         {{ $notes := findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
         {{ if $notes }}
-            {{ index $notes 0 | markdownify }}
-        {{ else }}
-            <p>Ei muistiinpanoja.</p>
+            <section class="recipe-notes">
+                <h2>Muistiinpanot</h2>
+                <div class="notes-content">
+                    {{ index $notes 0 | markdownify }}
+                </div>
+            </section>
         {{ end }}
     </div>
 
+    <footer class="recipe-footer">
+        <div class="recipe-meta">
+            {{ with .Date }}
+                <div class="meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                    <span>{{ .Format "02.01.2006" }}</span>
+                </div>
+            {{ end }}
+            {{ with .Params.tags }}
+                <div class="meta-item">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path><line x1="7" y1="7" x2="7.01" y2="7"></line></svg>
+                    <span>{{ delimit . ", " }}</span>
+                </div>
+            {{ end }}
+        </div>
+    </footer>
 </article>
-
-<script>
-function toggleAdditionalInfo() {
-    var additionalInfo = document.querySelector('.additional-info');
-    var toggleButton = document.querySelector('.additional-info-toggle button');
-    if (additionalInfo.style.display === 'none') {
-        additionalInfo.style.display = 'grid';
-        toggleButton.innerHTML = '▲';
-        toggleButton.setAttribute('aria-label', 'Piilota lisätiedot');
-    } else {
-        additionalInfo.style.display = 'none';
-        toggleButton.innerHTML = '▼';
-        toggleButton.setAttribute('aria-label', 'Näytä lisätiedot');
-    }
-}
-</script>
-
 {{ end }}

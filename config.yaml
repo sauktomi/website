@@ -27,7 +27,6 @@ menu:
       url: "/tags/"
       weight: 2
 
-
 outputs:
   home: ["HTML", "RSS"]
   page: ["HTML", "PDF", "Print"]
@@ -65,5 +64,14 @@ privacy:
 imaging:
   quality: 85
   resampleFilter: "Lanczos"
+  anchor: "Smart"
+  bgColor: "#ffffff"
+  resizeOptions:
+    - "600x400"
+    - "800x600"
+    - "1200x800"
+  formats:
+    - "webp"
+    - "jpg"
 
 enableEmoji: true
