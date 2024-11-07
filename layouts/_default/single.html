@@ -3,9 +3,7 @@
         <h3>Ainesosat</h3>
         {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
         {{ if $ingredients }}
-            <div class="ingredients-list">
-                {{ index $ingredients 0 | markdownify }}
-            </div>
+            {{ index $ingredients 0 | markdownify }}
         {{ else }}
             <p>Ainesosia ei löytynyt.</p>
         {{ end }}
@@ -75,9 +73,7 @@
             <h2>Ohjeet</h2>
             {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
             {{ if $instructions }}
-                <div class="instructions-list">
-                    {{ index $instructions 0 | markdownify }}
-                </div>
+                {{ index $instructions 0 | markdownify }}
             {{ else }}
                 <p>Ohjeita ei ole saatavilla.</p>
             {{ end }}
