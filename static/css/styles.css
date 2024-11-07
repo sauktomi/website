@@ -11,7 +11,7 @@ header h1 {
 
 .container {
   display: grid;
-  grid-template-columns: 220px 1fr;
+  grid-template-columns: 220px 1fr 220px;
   min-height: 100vh;
   max-width: 1200px;
   margin: 0 auto;
@@ -188,9 +188,9 @@ header h1 {
 }
 
 .aside > ul > li > ul > li > a::before {
-    content: "\25CB"; /* Downward arrow */
-    padding-right: 14px; /* Space between text and arrow */
-    color: #6c757d; /* Color of the arrow */
+    content: "\25CB";
+    padding-right: 14px;
+    color: #6c757d;
 }
 
 /* Taxonomy terms pages */
@@ -337,16 +337,9 @@ figure {
   margin: 0;
 }
 
-/* Right nav */
-.container {
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
+/* Category Navigation */
 .category-nav {
+  display: none;
   padding: 0.8rem;
   background-color: #f0f0f0;
   border-left: 1px solid #ddd;
@@ -359,75 +352,85 @@ figure {
   z-index: 1000;
 }
 
+.category-nav.show {
+  display: block;
+}
+
 .category-nav::-webkit-scrollbar {
   display: none;
 }
 
-.category-nav ul {
+.category-list,
+.subcategory-list {
   list-style: none;
   padding-left: 0;
   margin: 0;
 }
 
-.category-nav li {
+.category-item {
   margin-bottom: 0.3rem;
 }
 
-.category-nav a {
+.category-header {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.category-header:hover {
+  background-color: #e0e0e0;
+}
+
+.category-parent {
+  color: #666;
+  font-size: 0.9em;
+  margin-right: 0.3rem;
+}
+
+.category-name {
   color: #000;
   font-family: serif;
   text-decoration: none;
 }
 
-.category-dropdown {
+.expand-icon {
+  margin-left: auto;
+  font-size: 0.8em;
+  color: #666;
+  transition: transform 0.2s ease;
+}
+
+.hidden {
   display: none;
 }
-/* Right sidebar (category nav) */
 
-.container {
-  display: grid;
-  grid-template-columns: 220px 1fr 220px;
-  min-height: 100vh;
-  max-width: 1200px;
-  margin: 0 auto;
+.subcategory-list {
+  padding-left: 1rem;
+  margin-top: 0.3rem;
 }
 
-.category-nav {
-  padding: 0.8rem;
+.category-dropdown {
+  display: block;
+  position: fixed;
+  right: 10px;
+  top: 10px;
+  z-index: 1001;
   background-color: #f0f0f0;
-  border-left: 1px solid #ddd;
-  overflow-y: auto;
-  position: sticky;
-  top: 0;
-  height: 100vh;
-  scrollbar-width: none;
-  word-wrap: break-word;
-  z-index: 1000;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.category-nav::-webkit-scrollbar {
-  display: none;
+.category-dropdown:hover {
+  background-color: #e0e0e0;
 }
 
-.category-nav ul {
-  list-style: none;
-  padding-left: 0;
-  margin: 0;
-}
-
-.category-nav li {
-  margin-bottom: 0.3rem;
-}
-
-.category-nav a {
-  color: #000;
-  font-family: serif;
-  text-decoration: none;
-}
-
-.category-dropdown {
-  display: none;
-}
+/* Rest of the existing CSS remains unchanged */
 
 /* Responsive adjustments */
 @media (max-width: 1200px) {
@@ -446,18 +449,6 @@ figure {
     position: fixed;
     right: -220px;
     transition: right 0.3s ease-in-out;
-  }
-
-  .category-dropdown {
-    display: block;
-    position: fixed;
-    right: 10px;
-    top: 10px;
-    z-index: 1001;
-    background-color: #f0f0f0;
-    padding: 5px 10px;
-    border: 1px solid #ddd;
-    cursor: pointer;
   }
 
   .category-nav.show {
@@ -627,6 +618,7 @@ figure {
   .recipe-card {
     min-height: 100px;
   }
+
   .category-nav {
     height: auto;
     max-height: 30vh;

@@ -1,4 +1,4 @@
-baseURL: "https://example.org/"
+baseURL: "http://localhost:38317/"
 languageCode: "fi-FI"
 defaultContentLanguage: "fi"
 title: "TMS"
