@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
+    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end}}{{end}}">
+    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
+    <link rel="stylesheet" href="{{ "css/print.css" | relURL }}" media="print">
+    <link rel="icon" href="{{ "favicon.ico" | relURL }}" type="image/x-icon">
+    <script src="{{ "js/main.js" | relURL }}" defer></script>
+    <script src="{{ "js/category-nav.js" | relURL }}"></script>
+</head>
+<body>
+    <div class="container">
+<aside class="sidebar">
+
+{{ partial "header.html" . }}
+{{ partial "nav.html" . }}
+{{ block "sidebar" . }}{{ end }}
+</aside>
+        <main class="content">
+            {{ block "main" . }}{{ end }}
+
+            {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
+                {{ partial "action-buttons.html" . }}
+            {{ end }}
+        </main>
+        {{ partial "category-nav.html" . }}
+    </div>
+</body>
+</html>

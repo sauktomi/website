@@ -1,0 +1,41 @@
+{{ if .Sections }}
+<nav class="category-nav" id="categoryNav">
+  <h2>Kategoriat</h2>
+  <ul>
+    {{ $currentPage := . }}
+    {{ range .Sections }}
+      <li>
+        <a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.RelPermalink .RelPermalink }}active{{ end }}">
+          {{ .Title }}
+        </a>
+        {{ if .Sections }}
+          <ul>
+            {{ range .Sections }}
+              <li>
+                <a href="{{ .RelPermalink }}" class="{{ if eq $currentPage.RelPermalink .RelPermalink }}active{{ end }}">
+                  {{ .Title }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</nav>
+{{ end }}
+
+<div class="category-dropdown" id="categoryDropdown">Kategoriat ▼</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var categoryDropdown = document.getElementById('categoryDropdown');
+  var categoryNav = document.getElementById('categoryNav');
+
+  if (categoryDropdown && categoryNav) {
+    categoryDropdown.addEventListener('click', function() {
+      categoryNav.classList.toggle('show');
+    });
+  }
+});
+</script>

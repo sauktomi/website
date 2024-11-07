@@ -1,0 +1,48 @@
+<nav class="aside">
+    <ul>
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.main }}
+            <li>
+                <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ else if $currentPage.HasMenuCurrent "main" . }}active{{ end }}">
+                    {{ .Name }}
+                </a>
+
+                {{ if eq .Name "Reseptit" }}
+                    {{ if and (eq $currentPage.Section "reseptit") (not $currentPage.IsNode) }}
+                        <ul> <!-- Start a single <ul> for ancestors -->
+                            {{ $currentSection := $currentPage.CurrentSection }}
+                            {{ range $index, $ancestor := $currentSection.Ancestors.Reverse }}
+                                {{ if and (ne $ancestor.Title "Reseptit") (ne $ancestor.Title "TMS") }}
+                                    <li>
+                                        <a href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a>
+                                    </li>
+                                {{ end }}
+                            {{ end }}
+
+                            <!-- Add current section if it's not "Reseptit" -->
+                            {{ if ne $currentSection.Title "Reseptit" }}
+                                <li>
+                                    <a href="{{ $currentSection.RelPermalink }}" class="active">{{ $currentSection.Title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul> <!-- End of the single <ul> -->
+                    {{ end }}
+                {{ else if eq .Name "Tagit" }}
+                    <!-- Add similar logic for "tagit" section if needed -->
+                {{ else }}
+                    {{ if .HasChildren }}
+                        <ul>
+                            {{ range .Children }}
+                                <li>
+                                    <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
+                                        {{ .Name }}
+                                    </a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ end }}
+            </li>
+        {{ end }}
+    </ul>
+</nav>

@@ -1,0 +1,9 @@
+<div class="ingredients">
+    {{ with $.Page.Params.headimg }}
+        <img src="{{ . }}" alt="{{ $.Page.Title }}" class="recipe-image" loading="lazy">
+    {{ end }}
+    {{ with $.Page.Params.description }}
+        <p class="description">{{ . }}</p>
+    {{ end }}
+    {{ .Inner | markdownify }}
+</div>

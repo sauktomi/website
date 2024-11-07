@@ -1,0 +1,11 @@
+{{ $classes := .classes | default (slice "recipe-card") }}
+{{ $recipe := .recipe | default . }}
+<div class="{{ delimit $classes " " }}">
+    <a href="{{ $recipe.Permalink }}" aria-label="Näytä resepti: {{ $recipe.Title }}">
+        <div class="image-container" style="background-image: url('{{ $recipe.Params.headimg }}');">
+            <div class="content-wrapper">
+                <h2 class="recipe-title">{{ $recipe.Title }}</h2>
+            </div>
+        </div>
+    </a>
+</div>

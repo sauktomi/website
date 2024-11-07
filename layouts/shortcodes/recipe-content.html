@@ -1,0 +1,16 @@
+{{ $content := .Inner }}
+{{ $ingredientsSplit := split $content "{{< right >}}" }}
+{{ $ingredients := index $ingredientsSplit 0 }}
+{{ $instructionsSplit := split (index $ingredientsSplit 1) "{{</ right >}}" }}
+{{ $instructions := index $instructionsSplit 0 }}
+
+<div class="recipe-content">
+    <aside class="sidebar ingredients">
+        <h2>Ingredients</h2>
+        {{ $ingredients | markdownify }}
+    </aside>
+    <main class="content instructions">
+        <h2>Instructions</h2>
+        {{ $instructions | markdownify }}
+    </main>
+</div>

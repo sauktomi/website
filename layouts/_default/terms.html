@@ -1,0 +1,26 @@
+{{ define "main" }}
+    <h2>{{ .Title }}</h2>
+    {{ if .Data.Terms.Alphabetical }}
+        <ul class="terms-list" aria-label="List of {{ .Title }}">
+            {{ $lastLetter := "" }}
+            {{ range .Data.Terms.Alphabetical }}
+                {{ $firstLetter := substr .Page.Title 0 1 | upper }}
+                {{ if ne $firstLetter $lastLetter }}
+                    {{ if ne $lastLetter "" }}
+                        </ul>
+                    {{ end }}
+                    <h3 class="term-group-title">{{ $firstLetter }}</h3>
+                    <ul class="term-group">
+                {{ end }}
+                <li class="term-item">
+                    <a href="{{ .Page.Permalink }}" class="term-link">{{ .Page.Title }}</a>
+                    <span class="term-count">({{ .Count }})</span>
+                </li>
+                {{ $lastLetter = $firstLetter }}
+            {{ end }}
+            </ul>
+        </ul>
+    {{ else }}
+        <p>No {{ .Title | lower }} found.</p>
+    {{ end }}
+{{ end }}

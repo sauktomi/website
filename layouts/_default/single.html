@@ -1,0 +1,70 @@
+{{ define "sidebar" }}
+    <h3>Ainesosat</h3>
+    {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+    {{ if $ingredients }}
+        {{ index $ingredients 0 | markdownify }}
+    {{ else }}
+        <p>Ainesosia ei löytynyt.</p>
+    {{ end }}
+{{ end }}
+
+
+{{ define "main" }}
+<article class="recipe">
+    <div class="recipe-header">
+        <!-- Image Container -->
+    {{ partial "recipe-card.html" (dict "recipe" . "classes" (slice "recipe-card")) }}
+
+   </div>
+
+        <!-- Description -->
+                    <div class="description">
+                        {{ with .Params.description }}
+                            {{ truncate 100 . }}
+                        {{ end }}
+                    </div>
+
+        <!-- Recipe Info -->
+	{{ partial "recipe-info.html" . }}
+
+    <!-- Instructions Section -->
+    <div class="instructions">
+        <h3>Ohjeet</h3>
+        {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
+        {{ if $instructions }}
+            {{ index $instructions 0 | markdownify }}
+        {{ else }}
+            <p>Ohjeita ei ole saatavilla.</p>
+        {{ end }}
+    </div>
+
+    <!-- Notes Section -->
+    <div class="notes">
+        <h3>Muistiinpanot</h3>
+        {{ $notes := findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
+        {{ if $notes }}
+            {{ index $notes 0 | markdownify }}
+        {{ else }}
+            <p>Ei muistiinpanoja.</p>
+        {{ end }}
+    </div>
+
+</article>
+
+<script>
+function toggleAdditionalInfo() {
+    var additionalInfo = document.querySelector('.additional-info');
+    var toggleButton = document.querySelector('.additional-info-toggle button');
+    if (additionalInfo.style.display === 'none') {
+        additionalInfo.style.display = 'grid';
+        toggleButton.innerHTML = '▲';
+        toggleButton.setAttribute('aria-label', 'Piilota lisätiedot');
+    } else {
+        additionalInfo.style.display = 'none';
+        toggleButton.innerHTML = '▼';
+        toggleButton.setAttribute('aria-label', 'Näytä lisätiedot');
+    }
+}
+</script>
+
+{{ end }}

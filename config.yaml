@@ -1,0 +1,69 @@
+baseURL: "https://example.org/"
+languageCode: "fi-FI"
+defaultContentLanguage: "fi"
+title: "TMS"
+
+contentDir: "content"
+
+permalinks:
+  recipes: "/:section/:slug/"
+  categories: "/recipes/:slug/"
+
+taxonomies:
+  tag: tags
+  difficulty: difficulties
+  appliance: appliances
+  method: methods
+  diet: diets
+
+menu:
+  main:
+    - identifier: "recipes"
+      name: "Reseptit"
+      url: "/reseptit/"
+      weight: 1
+    - identifier: "tags"
+      name: "Tagit"
+      url: "/tags/"
+      weight: 2
+
+
+outputs:
+  home: ["HTML", "RSS"]
+  page: ["HTML", "PDF", "Print"]
+  section: ["HTML", "RSS"]
+  taxonomy: ["HTML", "RSS"]
+  term: ["HTML", "RSS"]
+
+outputFormats:
+  Print:
+    mediaType: "text/html"
+    baseName: "print"
+    isHTML: true
+    permalinkable: true
+
+params:
+  description: "Oman maun reseptejä"
+  author: "Tomi Saukkonen"
+  logo: "/images/logo.png"
+  dateFormat: "2. January 2006"
+
+privacy:
+  disqus:
+    disable: true
+  googleAnalytics:
+    disable: true
+  instagram:
+    disable: true
+  twitter:
+    disable: true
+  vimeo:
+    disable: true
+  youtube:
+    disable: true
+
+imaging:
+  quality: 85
+  resampleFilter: "Lanczos"
+
+enableEmoji: true

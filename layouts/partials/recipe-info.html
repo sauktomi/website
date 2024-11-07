@@ -1,0 +1,82 @@
+<div class="recipe-info">
+    <div class="recipe-meta essential-info">
+        <span class="meta-item">
+            <span class="icon" title="Tuotto">🍰</span>
+            {{ .Params.maara }} {{ index .Params.categories 0 | default "Kategoria" }}
+            ({{ .Params.impsize }}, {{ .Params.servings }} annosta)
+        </span>
+        <span class="meta-item">
+            <span class="icon" title="Valmistusaika">🕓</span>
+            {{ .Params.valmistusaika }}
+        </span>
+        <span class="meta-item">
+            <span class="icon" title="Vaikeustaso">🏋️</span>
+            {{ .Params.difficulty }}
+        </span>
+        <span class="meta-item">
+            <span class="icon" title="Allergeenit">🍴</span>
+            {{ delimit .Params.diet ", " }}
+        </span>
+    </div>
+
+    <div class="additional-info-toggle">
+        <button onclick="toggleAdditionalInfo()">▼</button>
+    </div>
+
+    <div class="recipe-meta additional-info" style="display: none;">
+        <span class="meta-item">
+            <span class="icon" title="Tekijä">👥</span>
+            {{ .Params.author | default "Ei tiedossa" }}
+        </span>
+
+        <span class="meta-item">
+            {{ range $index, $element := .Params.storage }}
+                {{ if $index }}&nbsp;{{ end }} <!-- Using &nbsp; for non-breaking space -->
+
+                {{ $icon := "" }}
+                {{ $title := "" }}
+                {{ $datetime := "" }}
+
+                {{ $number := (slice $element 0 1) }} <!-- Extract the numeric part -->
+                {{ $unit := (slice $element 1 2) }}   <!-- Extract the unit part -->
+
+                <!-- Assign icons based on index -->
+                {{ if eq $index 0 }}
+                    {{ $icon = "🌡️" }}
+                    {{ $title = "Huoneenlämpö" }}
+                    {{ $datetime = printf "P%sD" $number }} <!-- Correctly format as ISO -->
+                {{ else if eq $index 1 }}
+                    {{ $icon = "🧊" }}
+                    {{ $title = "Jääkaappi" }}
+                    {{ $datetime = printf "P%sW" $number }} <!-- Correctly format as ISO -->
+                {{ else if eq $index 2 }}
+                    {{ $icon = "❄️" }}
+                    {{ $title = "Pakastin" }}
+                    {{ $datetime = printf "P%sM" $number }} <!-- Correctly format as ISO -->
+                {{ else if eq $index 3 }}
+                    {{ $icon = "🗓️" }} <!-- Choose an appropriate icon for years -->
+                    {{ $title = "Vuosivarasto" }}
+                    {{ $datetime = printf "P%sY" $number }} <!-- Correctly format as ISO -->
+                {{ end }}
+
+                <span class="icon" title="{{ $title }}">{{ $icon }}</span>
+                <time datetime="{{ $datetime }}">{{ $element }}</time>
+            {{ end }}
+        </span>
+
+        <span class="meta-item">
+            <span class="icon" title="Välineet">🫕</span>
+            {{ delimit .Params.appliances ", " }}
+        </span>
+
+        <span class="meta-item">
+            <span class="icon" title="Menetelmä">👨‍🍳</span>
+            {{ delimit .Params.method ", " }}
+        </span>
+
+        <span class="meta-item">
+            <span class="icon" title="Skaalaus">📈</span>
+            {{ delimit .Params.skaalaus " – " }}
+        </span>
+    </div>
+</div>
