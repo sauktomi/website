@@ -717,6 +717,7 @@ header h1 {
     box-sizing: border-box;
   }
 
+
   .category-nav {
     width: calc(100% - 2rem);
     right: 1rem;
