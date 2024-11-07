@@ -13,7 +13,7 @@
 
     body {
         font-family: Arial, sans-serif;
-        font-size: 12pt;
+        font-size: 11pt;
         line-height: 1.4;
         color: #000;
         background: #fff;
@@ -33,33 +33,141 @@
         display: none !important;
     }
 
-.sidebar{
-    position:static;
-}
+    /* Main recipe layout */
+    .recipe-container {
+        display: grid !important;
+        grid-template-areas:
+            "header"
+            "meta"
+            "ingredients"
+            "instructions"
+            "notes"
+            "footer";
+        gap: 20pt;
+        max-width: 100% !important;
+    }
+
+    /* Recipe header */
+    .recipe-header {
+        grid-area: header;
+        margin-bottom: 15pt;
+    }
+
+    .recipe-title {
+        font-size: 18pt;
+        font-weight: bold;
+        margin-bottom: 8pt;
+    }
+
+    /* Recipe meta information */
+    .recipe-meta {
+        grid-area: meta;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10pt;
+        margin-bottom: 15pt;
+        padding: 8pt 0;
+        border-top: 1pt solid #000 !important;
+        border-bottom: 1pt solid #000 !important;
+    }
+
+    .meta-item {
+        display: flex;
+        align-items: center;
+        gap: 5pt;
+        font-size: 10pt;
+    }
+
+    /* Recipe image */
+    .recipe-image {
+        max-width: 200pt;
+        height: auto;
+        margin-bottom: 15pt;
+    }
+
+    /* Ingredients section */
+    .recipe-ingredients {
+        grid-area: ingredients;
+        break-inside: avoid;
+        margin-bottom: 15pt;
+    }
+
+    .recipe-ingredients h2 {
+        font-size: 14pt;
+        margin-bottom: 8pt;
+    }
+
+    .recipe-ingredients ul {
+        list-style-type: none;
+        padding-left: 0;
+    }
+
+    .recipe-ingredients li {
+        font-size: 11pt;
+        margin-bottom: 4pt;
+        page-break-inside: avoid;
+    }
+
+    /* Instructions section */
+    .instructions {
+        grid-area: instructions;
+        break-inside: avoid;
+    }
+
+    .instructions h2 {
+        font-size: 14pt;
+        margin-bottom: 8pt;
+    }
+
+    .instructions ol {
+        padding-left: 20pt;
+    }
+
+    .instructions li {
+        font-size: 11pt;
+        margin-bottom: 6pt;
+        page-break-inside: avoid;
+    }
 
     /* Recipe notes */
     .recipe-notes {
-        grid-area: notes !important;
-        margin: 0;
+        grid-area: notes;
+        margin: 15pt 0;
         padding: 10pt 0;
-        border-top: 1pt solid #000;
+        border-top: 1pt solid #000 !important;
+        break-inside: avoid;
+    }
+
+    .recipe-notes h3 {
+        font-size: 12pt;
+        margin-bottom: 6pt;
     }
 
     /* Recipe footer */
     .recipe-footer {
-        grid-area: footer !important;
-        margin: 0;
+        grid-area: footer;
+        margin-top: 15pt;
         padding-top: 10pt;
-        border-top: 1pt solid #000;
+        border-top: 1pt solid #000 !important;
+        font-size: 9pt;
+        color: #666 !important;
+    }
+
+    /* QR Code for digital version */
+    .recipe-footer:after {
+        content: "Digitaalinen versio: " attr(data-url);
+        display: block;
+        margin-top: 8pt;
+        font-size: 8pt;
     }
 
     /* Page breaks */
-    .recipe-notes {
-        page-break-inside: avoid;
-    }
-
     h2, h3, h4 {
         page-break-after: avoid;
+    }
+
+    img, ul, ol {
+        page-break-inside: avoid;
     }
 
     /* Links */
@@ -71,11 +179,13 @@
         content: none;
     }
 
-    /* Responsive print adjustments */
+    /* Page settings */
     @page {
         margin: 1.5cm;
+        size: A4;
     }
 
+    /* Responsive print adjustments */
     @media print and (max-width: 500pt) {
         .recipe-meta {
             grid-template-columns: repeat(2, 1fr) !important;

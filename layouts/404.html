@@ -1,0 +1,148 @@
+{{ define "main" }}
+<div class="error-page">
+    <h1>404 - Sivua ei löytynyt</h1>
+    
+    <div class="error-message">
+        <p>Valitettavasti etsimääsi sivua ei löytynyt. Tämä voi johtua seuraavista syistä:</p>
+        <ul>
+            <li>Sivu on poistettu tai siirretty</li>
+            <li>URL-osoite on kirjoitettu väärin</li>
+            <li>Linkki, jota seurasit, on vanhentunut</li>
+        </ul>
+    </div>
+
+    <div class="suggestion-box">
+        <h2>Suositut kategoriat</h2>
+        <div class="category-grid">
+            {{ range first 6 (where .Site.Pages "Section" "reseptit") }}
+                {{ if .IsSection }}
+                <a href="{{ .RelPermalink }}" class="category-link">
+                    <span class="category-name">{{ .Title }}</span>
+                    <span class="recipe-count">{{ len .Pages }} reseptiä</span>
+                </a>
+                {{ end }}
+            {{ end }}
+        </div>
+    </div>
+
+    <div class="action-box">
+        <p>Voit myös:</p>
+        <ul>
+            <li><a href="/" class="home-link">Palata etusivulle</a></li>
+            <li><a href="/reseptit/" class="recipes-link">Selata kaikkia reseptejä</a></li>
+        </ul>
+    </div>
+</div>
+
+<style>
+.error-page {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.error-page h1 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 2rem;
+}
+
+.error-message {
+    background: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-align: left;
+}
+
+.error-message ul {
+    list-style-type: disc;
+    margin-left: 1.5rem;
+    margin-top: 1rem;
+}
+
+.suggestion-box {
+    margin: 2rem 0;
+}
+
+.suggestion-box h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.category-link {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: all 0.3s ease;
+}
+
+.category-link:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.category-name {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.recipe-count {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.action-box {
+    margin-top: 2rem;
+    padding: 1rem;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.action-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.action-box li {
+    margin: 0.5rem 0;
+}
+
+.action-box a {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    color: #007bff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.action-box a:hover {
+    background-color: #f0f0f0;
+}
+
+@media (max-width: 600px) {
+    .error-page {
+        padding: 1rem;
+    }
+
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+{{ end }}

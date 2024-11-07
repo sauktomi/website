@@ -1,0 +1,86 @@
+{{ if eq .Section "reseptit" }}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org/",
+    "@type": "Recipe",
+    "name": {{ .Title | jsonify }},
+    "image": [
+        {{ with .Params.headimg }}
+            {{ $image := resources.Get . }}
+            {{ if $image }}
+                {{ $small := $image.Resize "400x" }}
+                {{ $medium := $image.Resize "800x" }}
+                {{ $large := $image.Resize "1200x" }}
+                {{ $small.Permalink | jsonify }},
+                {{ $medium.Permalink | jsonify }},
+                {{ $large.Permalink | jsonify }}
+            {{ else }}
+                {{ . | absURL | jsonify }}
+            {{ end }}
+        {{ end }}
+    ],
+    "author": {
+        "@type": "Person",
+        "name": {{ .Site.Params.author | default .Site.Title | jsonify }}
+    },
+    "datePublished": {{ .Date.Format "2006-01-02" | jsonify }},
+    "description": {{ with .Description }}{{ . | jsonify }}{{ else }}{{ .Summary | jsonify }}{{ end }},
+    {{ with .Params.prepTime }}"prepTime": {{ printf "PT%s" . | upper | jsonify }},{{ end }}
+    {{ with .Params.cookTime }}"cookTime": {{ printf "PT%s" . | upper | jsonify }},{{ end }}
+    {{ with .Params.totalTime }}"totalTime": {{ printf "PT%s" . | upper | jsonify }},{{ end }}
+    {{ with .Params.category }}"recipeCategory": {{ . | jsonify }},{{ end }}
+    {{ with .Params.cuisine }}"recipeCuisine": {{ . | jsonify }},{{ end }}
+    {{ with .Params.keywords }}"keywords": {{ . | jsonify }},{{ end }}
+    {{ with .Params.yield }}"recipeYield": {{ . | jsonify }},{{ end }}
+    "recipeIngredient": [
+        {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+        {{ if $ingredients }}
+            {{ $ingredientList := index $ingredients 0 | replaceRE `{{< ingredients >}}` "" | replaceRE `{{</ ingredients >}}` "" | replaceRE `[\r\n]+` "\n" | strings.TrimSpace }}
+            {{ $lines := split $ingredientList "\n" }}
+            {{ $cleanLines := slice }}
+            {{ range $lines }}
+                {{ $line := . | replaceRE `^[-*] ` "" | strings.TrimSpace }}
+                {{ if $line }}
+                    {{ $cleanLines = $cleanLines | append $line }}
+                {{ end }}
+            {{ end }}
+            {{ range $index, $line := $cleanLines }}
+                {{ if $index }},{{ end }}
+                {{ $line | jsonify }}
+            {{ end }}
+        {{ end }}
+    ],
+    "recipeInstructions": [
+        {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
+        {{ if $instructions }}
+            {{ $instructionList := index $instructions 0 | replaceRE `{{< instructions >}}` "" | replaceRE `{{</ instructions >}}` "" | replaceRE `[\r\n]+` "\n" | strings.TrimSpace }}
+            {{ $lines := split $instructionList "\n" }}
+            {{ $cleanLines := slice }}
+            {{ range $lines }}
+                {{ $line := . | replaceRE `^[0-9]+\. ` "" | strings.TrimSpace }}
+                {{ if $line }}
+                    {{ $cleanLines = $cleanLines | append $line }}
+                {{ end }}
+            {{ end }}
+            {{ range $index, $line := $cleanLines }}
+                {{ if $index }},{{ end }}
+                {
+                    "@type": "HowToStep",
+                    "text": {{ $line | jsonify }}
+                }
+            {{ end }}
+        {{ end }}
+    ],
+    {{ with .Params.nutrition }}
+    "nutrition": {
+        "@type": "NutritionInformation",
+        {{ $last := sub (len .) 1 }}
+        {{ range $index, $element := . }}
+        "{{ $index }}": {{ $element | jsonify }}{{ if ne $index $last }},{{ end }}
+        {{ end }}
+    },
+    {{ end }}
+    "url": {{ .Permalink | jsonify }}
+}
+</script>
+{{ end }}

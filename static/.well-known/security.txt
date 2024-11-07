@@ -1,0 +1,13 @@
+# Security Policy for Baking Website
+Contact: mailto:tomis+sec@mailbox.org
+Expires: 2024-12-31T23:59:59.000Z
+Preferred-Languages: fi, en
+Canonical: https://example.com/.well-known/security.txt
+Policy: https://example.com/security-policy
+
+# Please report security issues responsibly
+# We aim to respond to security reports within X days
+# and address critical vulnerabilities as soon as possible.
+
+# OpenPGP key:
+Encryption: https://example.com/pgp-key.txt

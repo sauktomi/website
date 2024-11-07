@@ -1,54 +1,168 @@
-{{ if .Site.Sections }}
-<button class="category-dropdown" id="categoryDropdown">
+{{ $currentSection := .Site.GetPage "section" "reseptit" }}
+{{ if $currentSection }}
+<button 
+    class="category-dropdown" 
+    id="categoryDropdown"
+    aria-expanded="false"
+    aria-controls="categoryNav"
+    aria-label="Avaa kategorianavigaatio">
   <span>Kategoriat</span>
-  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+  <svg 
+    xmlns="http://www.w3.org/2000/svg" 
+    width="16" 
+    height="16" 
+    viewBox="0 0 24 24" 
+    fill="none" 
+    stroke="currentColor" 
+    stroke-width="2" 
+    stroke-linecap="round" 
+    stroke-linejoin="round"
+    aria-hidden="true">
+    <polyline points="6 9 12 15 18 9"></polyline>
+  </svg>
 </button>
 
-<nav class="category-nav" id="categoryNav">
+<nav 
+    class="category-nav" 
+    id="categoryNav" 
+    aria-label="Reseptikategoriat"
+    role="navigation">
   <div class="category-nav-header">
-    <button class="back-button hidden" id="categoryBackBtn">
-      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+    <button 
+        class="back-button hidden" 
+        id="categoryBackBtn"
+        aria-label="Palaa edelliseen kategoriaan">
+      <svg 
+        xmlns="http://www.w3.org/2000/svg" 
+        width="16" 
+        height="16" 
+        viewBox="0 0 24 24" 
+        fill="none" 
+        stroke="currentColor" 
+        stroke-width="2" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        aria-hidden="true">
+        <polyline points="15 18 9 12 15 6"></polyline>
+      </svg>
       <span>Takaisin</span>
     </button>
-    <div class="breadcrumb-trail" id="breadcrumbTrail"></div>
+    <div 
+        class="breadcrumb-trail" 
+        id="breadcrumbTrail"
+        role="navigation" 
+        aria-label="Kategoriapolku"></div>
   </div>
   
-  <div class="category-container" id="categoryContainer">
-    <ul class="category-list" data-level="root">
-      {{ range .Site.Sections }}
-        {{ if .Sections }}
-          <li class="category-item" data-path="{{ .RelPermalink }}" data-title="{{ .Title }}">
-            <div class="category-header">
-              <span class="category-name">{{ .Title }}</span>
-              <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-            </div>
-            <ul class="category-list hidden" data-level="{{ .Title }}">
-              {{ range .Sections }}
-                <li class="category-item" data-path="{{ .RelPermalink }}" data-title="{{ .Title }}">
+  <div 
+      class="category-container" 
+      id="categoryContainer"
+      role="menu">
+    <ul 
+        class="category-list" 
+        data-level="root"
+        role="menubar">
+      {{ range $currentSection.Sections }}
+        {{ $isCurrent := eq $.RelPermalink .RelPermalink }}
+        <li 
+            class="category-item" 
+            data-path="{{ .RelPermalink }}" 
+            data-title="{{ .Title }}"
+            role="menuitem">
+          <div class="category-header">
+            <a 
+                href="{{ .RelPermalink }}" 
+                class="category-name"
+                {{ if $isCurrent }}aria-current="page"{{ end }}
+                role="menuitem">
+              {{ .Title }}
+            </a>
+            {{ if .Sections }}
+            <svg 
+                class="nav-icon" 
+                xmlns="http://www.w3.org/2000/svg" 
+                width="16" 
+                height="16" 
+                viewBox="0 0 24 24" 
+                fill="none" 
+                stroke="currentColor" 
+                stroke-width="2" 
+                stroke-linecap="round" 
+                stroke-linejoin="round"
+                aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            {{ end }}
+          </div>
+          {{ if .Sections }}
+          <ul 
+              class="category-list hidden" 
+              data-level="{{ .Title }}"
+              role="menu"
+              aria-label="{{ .Title }} alakategoriat">
+            {{ range .Sections }}
+              {{ $isCurrent := eq $.RelPermalink .RelPermalink }}
+              <li 
+                  class="category-item" 
+                  data-path="{{ .RelPermalink }}" 
+                  data-title="{{ .Title }}"
+                  role="menuitem">
+                <div class="category-header">
+                  <a 
+                      href="{{ .RelPermalink }}" 
+                      class="category-name"
+                      {{ if $isCurrent }}aria-current="page"{{ end }}
+                      role="menuitem">
+                    {{ .Title }}
+                  </a>
                   {{ if .Sections }}
-                    <div class="category-header">
-                      <span class="category-name">{{ .Title }}</span>
-                      <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
-                    </div>
-                    <ul class="category-list hidden" data-level="{{ .Title }}">
-                      {{ range .Sections }}
-                        <li class="category-item" data-path="{{ .RelPermalink }}" data-title="{{ .Title }}">
-                          <a href="{{ .RelPermalink }}" class="category-header">
-                            <span class="category-name">{{ .Title }}</span>
-                          </a>
-                        </li>
-                      {{ end }}
-                    </ul>
-                  {{ else }}
-                    <a href="{{ .RelPermalink }}" class="category-header">
-                      <span class="category-name">{{ .Title }}</span>
-                    </a>
+                  <svg 
+                      class="nav-icon" 
+                      xmlns="http://www.w3.org/2000/svg" 
+                      width="16" 
+                      height="16" 
+                      viewBox="0 0 24 24" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      stroke-width="2" 
+                      stroke-linecap="round" 
+                      stroke-linejoin="round"
+                      aria-hidden="true">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                  </svg>
                   {{ end }}
-                </li>
-              {{ end }}
-            </ul>
-          </li>
-        {{ end }}
+                </div>
+                {{ if .Sections }}
+                <ul 
+                    class="category-list hidden" 
+                    data-level="{{ .Title }}"
+                    role="menu"
+                    aria-label="{{ .Title }} alakategoriat">
+                  {{ range .Sections }}
+                    {{ $isCurrent := eq $.RelPermalink .RelPermalink }}
+                    <li 
+                        class="category-item" 
+                        data-path="{{ .RelPermalink }}" 
+                        data-title="{{ .Title }}"
+                        role="menuitem">
+                      <div class="category-header">
+                        <a 
+                            href="{{ .RelPermalink }}" 
+                            class="category-name"
+                            {{ if $isCurrent }}aria-current="page"{{ end }}
+                            role="menuitem">
+                          {{ .Title }}
+                        </a>
+                      </div>
+                    </li>
+                  {{ end }}
+                </ul>
+                {{ end }}
+              </li>
+            {{ end }}
+          </ul>
+          {{ end }}
+        </li>
       {{ end }}
     </ul>
   </div>
