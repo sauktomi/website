@@ -4,14 +4,11 @@
   <ul class="category-list">
     {{ range .Site.Sections }}
       {{ if .Sections }}
-      <li class="category-item" data-path="{{ .RelPermalink }}">
-        <div class="category-header">
-          <span class="category-name">{{ .Title }}</span>
-          {{ if .Sections }}
+        <li class="category-item" data-path="{{ .RelPermalink }}">
+          <div class="category-header">
+            <span class="category-name">{{ .Title }}</span>
             <span class="expand-icon">▼</span>
-          {{ end }}
-        </div>
-        {{ if .Sections }}
+          </div>
           <ul class="subcategory-list hidden">
             {{ range .Sections }}
               <li class="category-item" data-path="{{ .RelPermalink }}">
@@ -37,12 +34,12 @@
               </li>
             {{ end }}
           </ul>
-        {{ end }}
-      </li>
+        </li>
       {{ end }}
     {{ end }}
   </ul>
 </nav>
+{{ end }}
 
 {{ if .Site.Sections }}
 <div class="category-dropdown" id="categoryDropdown">Kategoriat ▼</div>
