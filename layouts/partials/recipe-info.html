@@ -33,7 +33,6 @@
 
         <!-- Additional Info Toggle -->
         <button class="info-toggle" onclick="toggleAdditionalInfo()" aria-expanded="false" aria-controls="additional-info">
-            <span class="toggle-text">Näytä lisätiedot</span>
             <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
         </button>
 
@@ -110,9 +109,6 @@ function toggleAdditionalInfo() {
     
     additionalInfo.classList.toggle('hidden');
     button.setAttribute('aria-expanded', isHidden);
-    
-    const toggleText = button.querySelector('.toggle-text');
-    toggleText.textContent = isHidden ? 'Piilota lisätiedot' : 'Näytä lisätiedot';
     
     const toggleIcon = button.querySelector('.toggle-icon');
     toggleIcon.style.transform = isHidden ? 'rotate(180deg)' : 'rotate(0)';
