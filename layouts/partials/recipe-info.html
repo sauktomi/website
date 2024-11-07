@@ -38,7 +38,7 @@
         </button>
 
         <!-- Additional Info Section -->
-        <div id="additional-info" class="meta-section additional-info" hidden>
+        <div id="additional-info" class="meta-section additional-info hidden">
             {{ with .Params.author }}
             <div class="meta-item" title="Tekijä">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
@@ -81,10 +81,10 @@
 function toggleAdditionalInfo() {
     const additionalInfo = document.getElementById('additional-info');
     const button = document.querySelector('.info-toggle');
-    const isHidden = additionalInfo.hidden;
+    const isHidden = additionalInfo.classList.contains('hidden');
     
-    additionalInfo.hidden = !isHidden;
-    button.setAttribute('aria-expanded', !isHidden);
+    additionalInfo.classList.toggle('hidden');
+    button.setAttribute('aria-expanded', isHidden);
     
     const toggleText = button.querySelector('.toggle-text');
     toggleText.textContent = isHidden ? 'Piilota lisätiedot' : 'Näytä lisätiedot';
