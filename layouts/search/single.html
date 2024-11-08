@@ -3,14 +3,14 @@
     <div class="search-header">
         <h1>Hae reseptejä</h1>
         <div class="search-box">
-            <input 
-                type="search" 
-                id="recipe-search" 
+            <input
+                type="search"
+                id="recipe-search"
                 placeholder="Hae reseptejä, ainesosia tai kategorioita..."
                 aria-label="Hae reseptejä"
             >
         </div>
-        
+
         <div class="search-filters">
             <div class="filter-group">
                 <label for="difficulty-filter">Vaikeustaso</label>
@@ -88,7 +88,7 @@ function performSearch() {
     const categoryFilter = document.getElementById('category-filter').value;
 
     const results = searchIndex.filter(recipe => {
-        const matchesSearch = !searchTerm || 
+        const matchesSearch = !searchTerm ||
             recipe.title.toLowerCase().includes(searchTerm) ||
             (recipe.description && recipe.description.toLowerCase().includes(searchTerm)) ||
             recipe.content.toLowerCase().includes(searchTerm);
@@ -118,9 +118,9 @@ function displayResults(results) {
         card.innerHTML = `
             <a href="${recipe.url}" aria-label="Näytä resepti: ${recipe.title}">
                 <div class="image-container">
-                    <img src="${recipe.image || '/images/default-recipe.jpg'}" 
-                         alt="${recipe.title}" 
-                         loading="lazy" 
+                    <img src="${recipe.image || '/images/default-recipe.jpg'}"
+                         alt="${recipe.title}"
+                         loading="lazy"
                          class="recipe-image">
                     <div class="content-wrapper">
                         <h2 class="recipe-title">${recipe.title}</h2>
