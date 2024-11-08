@@ -86,13 +86,12 @@
             {{ partial "header.html" . }}
             {{ partial "nav.html" . }}
             {{ block "sidebar" . }}{{ end }}
-        </aside>
-        <main class="content" id="main-content">
-            {{ block "main" . }}{{ end }}
-
             {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
                 {{ partial "action-buttons.html" . }}
             {{ end }}
+        </aside>
+        <main class="content" id="main-content">
+            {{ block "main" . }}{{ end }}
         </main>
         {{ partial "category-nav.html" . }}
     </div>
