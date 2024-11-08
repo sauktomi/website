@@ -1,0 +1,9 @@
+{{ $notes := findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
+{{ if $notes }}
+    <section class="recipe-notes">
+        <h2>Muistiinpanot</h2>
+        <div class="notes-content">
+            {{ index $notes 0 | markdownify }}
+        </div>
+    </section>
+{{ end }}
