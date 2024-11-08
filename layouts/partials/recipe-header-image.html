@@ -1,0 +1,43 @@
+{{ with .Params.headimg }}
+    <div class="recipe-image-container">
+        {{ $image := resources.Get . }}
+        {{ if $image }}
+            {{ $small := $image.Resize "400x" }}
+            {{ $medium := $image.Resize "800x" }}
+            {{ $large := $image.Resize "1200x" }}
+            {{ $smallWebp := $small.Process "webp" }}
+            {{ $mediumWebp := $medium.Process "webp" }}
+            {{ $largeWebp := $large.Process "webp" }}
+            <picture>
+                <source
+                    type="image/webp"
+                    srcset="{{ $smallWebp.RelPermalink }} 400w,
+                            {{ $mediumWebp.RelPermalink }} 800w,
+                            {{ $largeWebp.RelPermalink }} 1200w"
+                    sizes="(max-width: 400px) 400px,
+                           (max-width: 800px) 800px,
+                           1200px">
+                <source
+                    srcset="{{ $small.RelPermalink }} 400w,
+                            {{ $medium.RelPermalink }} 800w,
+                            {{ $large.RelPermalink }} 1200w"
+                    sizes="(max-width: 400px) 400px,
+                           (max-width: 800px) 800px,
+                           1200px">
+                <img 
+                    src="{{ $medium.RelPermalink }}"
+                    alt="{{ $.Title }}"
+                    loading="lazy"
+                    class="recipe-image"
+                    width="{{ $medium.Width }}"
+                    height="{{ $medium.Height }}">
+            </picture>
+        {{ else }}
+            <img 
+                src="{{ . }}"
+                alt="{{ $.Title }}"
+                loading="lazy"
+                class="recipe-image">
+        {{ end }}
+    </div>
+{{ end }}

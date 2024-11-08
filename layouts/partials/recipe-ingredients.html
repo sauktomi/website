@@ -1,0 +1,19 @@
+<div class="recipe-ingredients">
+    <h3>Ainesosat</h3>
+    {{ with .Params.skaalaus }}
+    <div class="scaling-control">
+        <select id="recipe-scale" onchange="scaleRecipe(this.value)" aria-label="Reseptin skaalaus">
+            <option value="1">1x (Alkuperäinen)</option>
+            {{ range . }}
+                <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
+            {{ end }}
+        </select>
+    </div>
+    {{ end }}
+    {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+    {{ if $ingredients }}
+        {{ index $ingredients 0 | markdownify }}
+    {{ else }}
+        <p>Ainesosia ei löytynyt.</p>
+    {{ end }}
+</div>

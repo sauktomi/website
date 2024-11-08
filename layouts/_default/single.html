@@ -1,45 +1,6 @@
 {{ define "sidebar" }}
-    <div class="recipe-ingredients">
-        <h3>Ainesosat</h3>
-        {{ with .Params.skaalaus }}
-        <div class="scaling-control">
-            <select id="recipe-scale" onchange="scaleRecipe(this.value)" aria-label="Reseptin skaalaus">
-                <option value="1">1x (Alkuperäinen)</option>
-                {{ range . }}
-                    <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
-                {{ end }}
-            </select>
-        </div>
-        {{ end }}
-        {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
-        {{ if $ingredients }}
-            {{ index $ingredients 0 | markdownify }}
-        {{ else }}
-            <p>Ainesosia ei löytynyt.</p>
-        {{ end }}
-    </div>
-
-    <script>
-    function scaleRecipe(scale) {
-        const ingredients = document.querySelectorAll('.ingredients-list li');
-        ingredients.forEach(ingredient => {
-            const originalText = ingredient.getAttribute('data-original') || ingredient.textContent;
-            if (!ingredient.getAttribute('data-original')) {
-                ingredient.setAttribute('data-original', originalText);
-            }
-            
-            const match = originalText.match(/^([\d.,]+)(\s*[a-zA-ZäöåÄÖÅ]+\s*)(.*)/);
-            if (match) {
-                const [_, amount, unit, rest] = match;
-                const scaledAmount = (parseFloat(amount.replace(',', '.')) * parseFloat(scale))
-                    .toFixed(1)
-                    .replace(/\.0$/, '')
-                    .replace('.', ',');
-                ingredient.textContent = `${scaledAmount}${unit}${rest}`;
-            }
-        });
-    }
-    </script>
+    {{ partial "recipe-ingredients.html" . }}
+    <script src="/js/recipe-scaling.js"></script>
 {{ end }}
 
 {{ define "main" }}
@@ -47,49 +8,7 @@
     <header class="recipe-header">
         <h1 class="recipe-title">{{ .Title }}</h1>
         
-        {{ with .Params.headimg }}
-            <div class="recipe-image-container">
-                {{ $image := resources.Get . }}
-                {{ if $image }}
-                    {{ $small := $image.Resize "400x" }}
-                    {{ $medium := $image.Resize "800x" }}
-                    {{ $large := $image.Resize "1200x" }}
-                    {{ $smallWebp := $small.Process "webp" }}
-                    {{ $mediumWebp := $medium.Process "webp" }}
-                    {{ $largeWebp := $large.Process "webp" }}
-                    <picture>
-                        <source
-                            type="image/webp"
-                            srcset="{{ $smallWebp.RelPermalink }} 400w,
-                                    {{ $mediumWebp.RelPermalink }} 800w,
-                                    {{ $largeWebp.RelPermalink }} 1200w"
-                            sizes="(max-width: 400px) 400px,
-                                   (max-width: 800px) 800px,
-                                   1200px">
-                        <source
-                            srcset="{{ $small.RelPermalink }} 400w,
-                                    {{ $medium.RelPermalink }} 800w,
-                                    {{ $large.RelPermalink }} 1200w"
-                            sizes="(max-width: 400px) 400px,
-                                   (max-width: 800px) 800px,
-                                   1200px">
-                        <img 
-                            src="{{ $medium.RelPermalink }}"
-                            alt="{{ $.Title }}"
-                            loading="lazy"
-                            class="recipe-image"
-                            width="{{ $medium.Width }}"
-                            height="{{ $medium.Height }}">
-                    </picture>
-                {{ else }}
-                    <img 
-                        src="{{ . }}"
-                        alt="{{ $.Title }}"
-                        loading="lazy"
-                        class="recipe-image">
-                {{ end }}
-            </div>
-        {{ end }}
+        {{ partial "recipe-header-image.html" . }}
 
         {{ with .Params.description }}
             <div class="recipe-description">
@@ -100,26 +19,6 @@
         {{ partial "recipe-info.html" . }}
     </header>
 
-    <div class="recipe-content">
-        <section class="recipe-instructions">
-            <h2>Ohjeet</h2>
-            {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
-            {{ if $instructions }}
-                {{ index $instructions 0 | markdownify }}
-            {{ else }}
-                <p>Ohjeita ei ole saatavilla.</p>
-            {{ end }}
-        </section>
-
-        {{ $notes := findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
-        {{ if $notes }}
-            <section class="recipe-notes">
-                <h2>Muistiinpanot</h2>
-                <div class="notes-content">
-                    {{ index $notes 0 | markdownify }}
-                </div>
-            </section>
-        {{ end }}
-    </div>
+    {{ partial "recipe-content.html" . }}
 </article>
 {{ end }}

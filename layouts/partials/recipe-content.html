@@ -1,0 +1,21 @@
+<div class="recipe-content">
+    <section class="recipe-instructions">
+        <h2>Ohjeet</h2>
+        {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
+        {{ if $instructions }}
+            {{ index $instructions 0 | markdownify }}
+        {{ else }}
+            <p>Ohjeita ei ole saatavilla.</p>
+        {{ end }}
+    </section>
+
+    {{ $notes := findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
+    {{ if $notes }}
+        <section class="recipe-notes">
+            <h2>Muistiinpanot</h2>
+            <div class="notes-content">
+                {{ index $notes 0 | markdownify }}
+            </div>
+        </section>
+    {{ end }}
+</div>
