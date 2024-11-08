@@ -84,6 +84,8 @@ p {
   overflow-y: auto;
   scrollbar-width: none;
   word-wrap: break-word;
+  display:flex;
+  flex-direction: column;
 }
 
 .sidebar ul,
