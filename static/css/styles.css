@@ -757,17 +757,6 @@ a.category-name:hover {
       grid-template-columns: 1fr;
   }
 
-  .button-container {
-      position: fixed;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      flex-direction: row;
-      background-color: var(--background-medium);
-      padding: 0.8rem;
-      z-index: 1000;
-  }
-
   .category-nav {
       width: calc(100% - 2rem);
       right: 1rem;
