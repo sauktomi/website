@@ -1,3 +1,5 @@
+@import 'buttons.css';
+
 :root {
   --primary-color: #2c3e50;
   --secondary-color: #34495e;
@@ -33,35 +35,6 @@
   top: 0;
   outline: 0.25rem solid var(--primary-color);
   outline-offset: 0.25rem;
-}
-
-/* Recipe scaling */
-.scaling-control {
-  margin: 0.5rem 0 1rem;
-}
-
-#recipe-scale {
-  width: 100%;
-  appearance: none;
-  -webkit-appearance: none;
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: 0.25rem;
-  padding: 0.5rem;
-  font-size: 0.9em;
-  color: var(--text-color);
-  cursor: pointer;
-  transition: var(--transition);
-}
-
-#recipe-scale:hover {
-  border-color: var(--accent-color);
-}
-
-#recipe-scale:focus {
-  outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
 }
 
 /* Base styles */
@@ -412,33 +385,6 @@ p {
   color: var(--secondary-color);
 }
 
-/* Buttons */
-.button-container {
-    display: flex;
-    gap: 0.5rem;
-    margin: 1rem 0;
-    flex-wrap: wrap;
-}
-
-.button {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.6rem 1rem;
-    font-size: 0.85em;
-    color: #444;
-    background-color: #e0e0e0;
-    border: 1px solid #ccc;
-    border-radius: 0.25rem;
-    cursor: pointer;
-    transition: var(--transition);
-}
-
-.button:hover {
-    background-color: #d4d4d4;
-    border-color: #bbb;
-}
-
 /* Category Navigation */
 .category-nav {
   position: fixed;
@@ -621,36 +567,6 @@ a.category-name:hover {
   z-index: 1;
 }
 
-.info-toggle {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  background-color: white;
-  border: 1px solid var(--border-color);
-  border-radius: 50%;
-  cursor: pointer;
-  z-index: 2;
-  transition: var(--transition);
-}
-
-.info-toggle:hover {
-  background-color: var(--background-medium);
-}
-
-.info-toggle .toggle-icon {
-  width: 1.2rem;
-  height: 1.2rem;
-  transition: transform 0.3s ease;
-}
-
-.info-toggle[aria-expanded="true"] .toggle-icon {
-  transform: rotate(180deg);
-}
-
 .additional-info {
   max-height: 1000px;
   opacity: 1;
@@ -783,4 +699,3 @@ a.category-name:hover {
       font-size: 1.2em;
   }
 }
-

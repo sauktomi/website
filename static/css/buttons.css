@@ -1,0 +1,83 @@
+/* Common button styles */
+.button-container {
+    display: flex;
+    gap: 0.5rem;
+    margin: 1rem 0;
+    flex-wrap: wrap;
+}
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    font-size: 0.85em;
+    color: var(--text-color);
+    background-color: var(--background-medium);
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.button:hover {
+    background-color: var(--background-light);
+}
+
+/* Recipe scaling */
+.scaling-control {
+    margin: 0.5rem 0 1rem;
+}
+
+#recipe-scale {
+    width: 100%;
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--background-light);
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    font-size: 0.9em;
+    color: var(--text-color);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+#recipe-scale:hover {
+    background-color: white;
+}
+
+#recipe-scale:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2);
+}
+
+/* Info toggle */
+.info-toggle {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+.info-toggle:hover {
+    background-color: var(--background-medium);
+}
+
+.info-toggle .toggle-icon {
+    width: 1.2rem;
+    height: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.info-toggle[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+}
