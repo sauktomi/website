@@ -6,9 +6,9 @@
 {{ define "main" }}
 <article class="recipe">
     <header class="recipe-header">
-        <h1 class="recipe-title">{{ .Title }}</h1>
         
         {{ partial "recipe-header-image.html" . }}
+        <h1 class="recipe-title">{{ .Title }}</h1>
 
         {{ with .Params.description }}
             <div class="recipe-description">

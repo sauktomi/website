@@ -1,7 +1,7 @@
 {{ define "main" }}
     <h2>{{ .Title }}</h2>
     {{ if .Pages }}
-        <div class="recipe-grid">
+        <div class="picture-grid">
             {{ $previousTall := false }}
             {{ $totalPages := len .Pages }}
             {{ range $index, $recipe := .Pages }}

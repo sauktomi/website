@@ -48,7 +48,7 @@
         </div>
     </div>
 
-    <div id="search-results" class="recipe-grid">
+    <div id="search-results" class="picture-grid">
         <!-- Results will be populated here by JavaScript -->
     </div>
 </div>
@@ -114,7 +114,7 @@ function displayResults(results) {
 
     results.forEach(recipe => {
         const card = document.createElement('div');
-        card.className = 'recipe-card';
+        card.className = 'picture-card';
         card.innerHTML = `
             <a href="${recipe.url}" aria-label="Näytä resepti: ${recipe.title}">
                 <div class="image-container">

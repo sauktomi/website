@@ -1,3 +1,10 @@
+---
+title: "Kehityssuunnitelma"
+description: "Sivuston kehityssuunnitelma ja parannukset"
+date: 2024-01-01
+draft: false
+---
+
 # Website Improvements
 
 ## Performance Optimizations

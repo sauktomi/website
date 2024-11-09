@@ -1,37 +1,12 @@
 {{ define "main" }}
     <h1>Tervetuloa {{ .Site.Title }}</h1>
     <h2>Uusimmat reseptit</h2>
-    <div class="recipe-grid">
+    <div class="picture-grid">
         {{ $recipes := where .Site.RegularPages "Section" "reseptit" }}
-        {{ $totalRecipes := len $recipes }}
-        {{ $previousTall := false }}
-        {{ range $index, $recipe := $recipes }}
-            {{ $classes := slice "recipe-card" }}
-            {{ $isPinned := $recipe.Params.featured }}
-            {{ $isLast := eq $index (sub $totalRecipes 1) }}
-
-            {{ if $isPinned }}
-                {{ $classes = $classes | append "pinned" }}
-            {{ else }}
-                {{ $random := index (shuffle (seq 1 100)) 0 }}
-                {{ if and (le $random 20) (not $previousTall) }}
-                    {{ $classes = $classes | append "tall" }}
-                    {{ $previousTall = true }}
-                {{ else }}
-                    {{ if and (gt $random 20) (le $random 40) }}
-                        {{ $classes = $classes | append "wide" }}
-                    {{ end }}
-                    {{ $previousTall = false }}
-                {{ end }}
-            {{ end }}
-
-            {{ if $isLast }}
-                {{ $classes = $classes | append "last-item" }}
-            {{ end }}
-
+        {{ range $recipes }}
             {{ partial "recipe-card.html" (dict
-                "classes" $classes
-                "recipe" $recipe
+                "classes" (slice "picture-card")
+                "recipe" .
             ) }}
         {{ else }}
             <p>Valitettavasti reseptejä ei ole saatavilla tällä hetkellä.</p>
