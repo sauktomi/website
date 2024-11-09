@@ -1,6 +1,7 @@
 ---
 title: "Ranskalainen suklaakakku"
 date: "2024-10-19"
+lastmod:
 draft: false
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Intensiivisen suklainen ja täyteläinen, sis. kukkaisia ja kahvisia vivahteita."

@@ -1,6 +1,7 @@
 ---
 title: "Perus kääretorttu"
 date: "2024-10-20"
+lastmod:
 author: "none"
 draft: false
 headimg: "/images/CalculatorSearch.jpeg"

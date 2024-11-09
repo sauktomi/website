@@ -1,9 +1,10 @@
 {{ define "main" }}
     <h1>Tervetuloa {{ .Site.Title }}</h1>
+
     <h2>Uusimmat reseptit</h2>
     <div class="picture-grid">
         {{ $recipes := where .Site.RegularPages "Section" "reseptit" }}
-        {{ range $recipes }}
+        {{ range first 6 $recipes.ByDate.Reverse }}
             {{ partial "recipe-card.html" (dict
                 "classes" (slice "picture-card")
                 "recipe" .
@@ -11,5 +12,44 @@
         {{ else }}
             <p>Valitettavasti reseptejä ei ole saatavilla tällä hetkellä.</p>
         {{ end }}
+    </div>
+
+    {{ $modifiedRecipes := where (where .Site.RegularPages "Section" "reseptit") "Params.lastmod" "ne" nil }}
+    {{ if $modifiedRecipes }}
+    <h2>Viimeksi muokatut reseptit</h2>
+    <div class="picture-grid">
+        {{ range first 3 $modifiedRecipes.ByLastmod.Reverse }}
+            {{ partial "recipe-card.html" (dict
+                "classes" (slice "picture-card")
+                "recipe" .
+            ) }}
+        {{ end }}
+    </div>
+    {{ end }}
+
+    <div class="home-features">
+        <div class="categories-section">
+            <h2>Kategoriat</h2>
+            <div class="category-grid">
+                {{ range .Site.Sections }}
+                    {{ if eq .Section "reseptit" }}
+                        {{ range .Sections }}
+                            <a href="{{ .RelPermalink }}" class="category-card">
+                                <h3>{{ .Title }}</h3>
+                                <p>{{ len .Pages }} reseptiä</p>
+                            </a>
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+
+        <div class="quick-links">
+            <h2>Pikalinkit</h2>
+            <ul>
+                <li><a href="/reseptit">Kaikki reseptit</a></li>
+                <li><a href="/tietokanta">Tietokanta</a></li>
+            </ul>
+        </div>
     </div>
 {{ end }}

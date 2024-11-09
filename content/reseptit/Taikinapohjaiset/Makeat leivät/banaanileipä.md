@@ -1,71 +1,97 @@
 ---
-Title: "Banaani-mustikkaleipä"
+title: "Banaani-mustikkaleipä"
 date: "2024-10-20"
+lastmod: "2024-11-09"
 author: "[Bruno Albouze](https://brunoalbouze.com/blueberry-banana-bread/)"
 draft: false
 headimg: "/images/CalculatorSearch.jpeg"
-description: "Herkullinen ja mehevä banaani-mustikkakakku, jossa on täydellinen tasapaino makeutta ja happamuutta"
-categories: ["Kuivakakku"]
+description: "Herkullinen ja mehevä banaanimustikkaleipä, josta löytyy tasapainollinen määrä makeutta ja happamuutta. Sopii kahvipöytään tai välipalaksi."
+categories: ["Makea leipä"]
 tags:
 - banaani
 - mustikka
-- leivonta
-- jälkiruoka
-difficulty: Keskitaso
+- mehevä
+- kahvipöytä
+difficulty: "Keskitaso"
 valmistusaika: "01:30"
 maara: 1
 servings: 8
-impsize: "20x20 cm leipävuoka"
+impsize: "20x10 cm leipävuoka"
 storage:
-- 1-2pv
-- 3-4vk
-- 2-3kk
+- "2pv"
+- "4vk"
+- "3kk"
 appliances:
 - Uuni
 - Yleiskone
 - Leipävuoka
+- Siivilä
 method:
+- Vaahdotus
 - Sekoitus
 - Paisto
 diet:
 - Maito
 - Kananmuna
-- Gluteeni
+- Vehnä
 skaalaus:
-- "1x 23cm vuoka"
-- "2x 2.7L vuoka"
+- "1x 23cm vuoka (10 annosta)"
+- "2x 2.7L vuoka (16 annosta)"
 ---
 
 {{< ingredients >}}
 #### Taikina
-- 250 g banaani
-- 10 g limemehu
-- 260 g vehnäjauho
-- 10 g leivinjauhe
-- 2 g ruokasooda
-- 140 g voi
-- 120 g sokeri
-- 2 g suola
-- 2 kpl kananmuna
-- 250 g mustikka (pakaste)
-- 1 rkl vehnäjauho (10g)
+- 250 g Banaani
+- 10 ml Limemehu
+- 250 g Mustikka (pakaste)
+- 10 g Vehnäjauho (mustikkojen pyörittelyyn)
+- 260 g Vehnäjauho
+- 10 ml Leivinjauhe
+- 2.5 ml Ruokasooda
+- 140 g Voi
+- 120 g Sokeri
+- 2 g Suola
+- 2 kpl Kananmuna
 
-#### Kuori
-- 100 g banaani
+
+
+
+#### Koristelu
+- 100 g Banaani (viipaleina)
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni 160°C:seen.
-2. Soseuta banaanit limemehun kanssa; laita sivuun.
-3. Seulo vehnäjauho, leivinjauhe ja sooda yhteen.
-4. Vaahdota voi, sokeri ja suola yleiskoneessa.
--\_
-6. Lisää kananmunat yksitellen vaahtoon, sekoittaen hyvin jokaisen lisäyksen jälkeen.
-7. Sekoita vehnäjauho, leivinjauhe ja ruokasooda keskenään.
-8. Lisää jauhoseos ja banaani-limeseos vuorotellen taikinaan, sekoittaen kevyesti.
-9. Lisää mustikat varovasti taikinaan.
-10. Kaada taikina voideltuun ja jauhotettuun kakkuvuokaan.
-11. Asettele banaaniviipaleet kakun päälle.
-12. Paista uunissa noin 50 minuuttia tai kunnes kakku on kypsä.
-13. Anna kakun jäähtyä ennen tarjoilua.
+1. Esilämmitä uuni 160°C (*tasalämpö*). Voitele ja jauhota leipävuoka.
+
+2. **Esivalmistelut:**
+   - Soseuta banaanit limemehun kanssa tasaiseksi
+   - Pyörittele pakastemustikat 10 g vehnäjauhossa
+   - Seulo vehnäjauho, leivinjauhe ja sooda yhteen
+
+3. **Taikinan valmistus:**
+   - Vaahdota voi, sokeri ja suola yleiskoneessa kuohkeaksi, n. 5 min
+   - Lisää kananmunat yksitellen vaahtoon, sekoita hyvin jokaisen lisäyksen jälkeen
+   - Lisää jauhoseos ja banaanisose vuorotellen taikinaan kolmessa erässä, sekoita kevyesti
+   - *Huom: Älä sekoita liikaa!*
+
+4. Kääntele jauhotut mustikat varovasti taikinaan.
+
+5. Kaada taikina vuokaan. Asettele banaaniviipaleet kauniisti leivän päälle.
+
+6. Paista uunin keskitasolla n. 50-55 min, tai kunnes leipä on kypsä ja tikku tulee puhtaana ulos.
+
+7. Anna jäähtyä vuoassa 10 min, kumoa sitten ritilälle jäähtymään kokonaan.
 {{</ instructions >}}
+
+{{< notes >}}
+### Vinkkejä:
+- Käytä hyvin kypsiä banaaneja taikinaan
+- Pakastemustikkojen pyörittely jauhoissa estää niiden vajoamista pohjaan
+- Jos pinta tummuu liikaa paiston aikana, peitä foliolla
+- Tarkista kypsyys puutikulla leivän keskeltä
+
+### Versioita:
+- **Pähkinä**: Lisää 75 g paahdettuja, rouhittuja saksanpähkinöitä
+- **Suklaa**: Korvaa puolet mustikoista suklaarouheella
+- **Kaneli**: Lisää 5 ml kanelia jauhoseokseen
+{{</ notes >}}

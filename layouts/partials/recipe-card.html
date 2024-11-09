@@ -1,4 +1,4 @@
-{{ $classes := .classes | default (slice "recipe-card") }}
+{{ $classes := .classes | default (slice "picture-card") }}
 {{ $recipe := .recipe | default . }}
 <div class="{{ delimit $classes " " }}">
     <a href="{{ $recipe.Permalink }}" aria-label="Näytä resepti: {{ $recipe.Title }}">
@@ -29,7 +29,7 @@
                         sizes="(max-width: 400px) 400px,
                                (max-width: 800px) 800px,
                                1200px">
-                    <img 
+                    <img
                         src="{{ $medium.RelPermalink }}"
                         alt="{{ $recipe.Title }}"
                         loading="lazy"
@@ -38,7 +38,7 @@
                         height="{{ $medium.Height }}">
                 </picture>
             {{ else }}
-                <img 
+                <img
                     src="{{ $imgSrc }}"
                     alt="{{ $recipe.Title }}"
                     loading="lazy"
