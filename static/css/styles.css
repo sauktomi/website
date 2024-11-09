@@ -225,7 +225,7 @@ nav.aside a.active {
 /* Picture Grid */
 .picture-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 200px), 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 2rem 1rem;
   margin: 2rem auto;
   max-width: var(--content-width);
@@ -246,7 +246,7 @@ nav.aside a.active {
 }
 
 .picture-card .image-container {
-  aspect-ratio: 1;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
 }
 
@@ -743,7 +743,7 @@ a.category-name:hover {
 
   .picture-grid {
       margin: 1rem 0;
-      grid-template-columns: repeat(4, 1fr);
+      grid-template-columns: repeat(3, 1fr);
   }
 
   .recipe-image {
@@ -800,7 +800,7 @@ a.category-name:hover {
   }
 
   .picture-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
   }
 }
 
@@ -822,10 +822,14 @@ a.category-name:hover {
   }
   
   .picture-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 24rem) {
+  .picture-grid {
     grid-template-columns: 1fr;
   }
 }
-
 
 /* Section Navigation in Sidebar */
 .section-nav {
