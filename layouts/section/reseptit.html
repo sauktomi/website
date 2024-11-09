@@ -4,17 +4,18 @@
     {{ .Content }}
 
     <h2>{{ if ne .RelPermalink "/reseptit/" }}Reseptit tässä kategoriassa{{ else }}Kaikki reseptit{{ end }}</h2>
-    <ul>
-      {{ template "list-pages" . }}
-    </ul>
-
+    <div class="recipe-list">
+        {{ template "list-pages" . }}
+    </div>
 {{ end }}
 
 {{ define "list-pages" }}
-  {{ range .RegularPages }}
-    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-  {{ end }}
-  {{ range .Sections }}
-    {{ template "list-pages" . }}
-  {{ end }}
+    {{ range .RegularPages }}
+        <div class="recipe-item">
+            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </div>
+    {{ end }}
+    {{ range .Sections }}
+        {{ template "list-pages" . }}
+    {{ end }}
 {{ end }}

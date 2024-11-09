@@ -7,30 +7,74 @@
                     {{ .Name }}
                 </a>
 
-                {{ if eq .Name "Reseptit" }}
-                    {{ if and (eq $currentPage.Section "reseptit") (not $currentPage.IsNode) }}
-                        <ul> <!-- Start a single <ul> for ancestors -->
+                {{ if eq .Name "Tagit" }}
+                    {{ if or (eq $currentPage.Type "taxonomy") (eq $currentPage.Type "term") }}
+                        <ul>
+                            {{ if eq $currentPage.RelPermalink "/tags/" }}
+                                <!-- On the main tags page -->
+                                {{ range $name, $taxonomy := $currentPage.Site.Taxonomies.tags }}
+                                    <li>
+                                        <a href="/tags/{{ $name }}/">{{ $name }}</a>
+                                    </li>
+                                {{ end }}
+                            {{ else }}
+                                <!-- On a specific tag page -->
+                                <li>
+                                    <a href="/tags/">Kaikki tagit</a>
+                                </li>
+                                <li>
+                                    <a href="{{ $currentPage.RelPermalink }}" class="active">{{ $currentPage.Title }}</a>
+                                </li>
+                            {{ end }}
+                        </ul>
+                    {{ end }}
+                {{ else }}
+                    {{ if and $currentPage.IsNode (eq $currentPage.Section (lower .Name)) }}
+                        <ul>
+                            <!-- For section pages -->
+                            {{ $currentPath := printf "/%s/" $currentPage.Section }}
+                            {{ $path := split (strings.TrimPrefix (printf "/%s/" $currentPage.Section) $currentPage.RelPermalink) "/" }}
+                            {{ range $index, $element := $path }}
+                                {{ if ne $element "" }}
+                                    {{ $currentPath = printf "%s%s/" $currentPath $element }}
+                                    {{ with $.Site.GetPage $currentPath }}
+                                        <li>
+                                            <a href="{{ .RelPermalink }}" {{ if eq . $currentPage }}class="active"{{ end }}>{{ .Title }}</a>
+                                        </li>
+                                    {{ end }}
+                                {{ end }}
+                            {{ end }}
+                            
+                            <!-- Show child sections of current section -->
+                            {{ if $currentPage.Sections }}
+                                <ul>
+                                    {{ range $currentPage.Sections }}
+                                        <li>
+                                            <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                        </li>
+                                    {{ end }}
+                                </ul>
+                            {{ end }}
+                        </ul>
+                    {{ else if and $currentPage.IsPage (eq $currentPage.Section (lower .Name)) }}
+                        <ul>
+                            <!-- For single pages -->
                             {{ $currentSection := $currentPage.CurrentSection }}
                             {{ range $index, $ancestor := $currentSection.Ancestors.Reverse }}
-                                {{ if and (ne $ancestor.Title "Reseptit") (ne $ancestor.Title "TMS") }}
+                                {{ if ne $ancestor.Title .Name }}
                                     <li>
                                         <a href="{{ $ancestor.RelPermalink }}">{{ $ancestor.Title }}</a>
                                     </li>
                                 {{ end }}
                             {{ end }}
 
-                            <!-- Add current section if it's not "Reseptit" -->
-                            {{ if ne $currentSection.Title "Reseptit" }}
+                            {{ if ne $currentSection.Title .Name }}
                                 <li>
                                     <a href="{{ $currentSection.RelPermalink }}" class="active">{{ $currentSection.Title }}</a>
                                 </li>
                             {{ end }}
-                        </ul> <!-- End of the single <ul> -->
-                    {{ end }}
-                {{ else if eq .Name "Tagit" }}
-                    <!-- Add similar logic for "tagit" section if needed -->
-                {{ else }}
-                    {{ if .HasChildren }}
+                        </ul>
+                    {{ else if .HasChildren }}
                         <ul>
                             {{ range .Children }}
                                 <li>

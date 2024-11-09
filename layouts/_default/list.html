@@ -2,36 +2,11 @@
     <h2>{{ .Title }}</h2>
     {{ if .Pages }}
         <div class="picture-grid">
-            {{ $previousTall := false }}
-            {{ $totalPages := len .Pages }}
-            {{ range $index, $recipe := .Pages }}
-                {{ $classes := slice "recipe-card" }}
-                {{ $isPinned := $recipe.Params.featured }}
-                {{ $isLast := eq $index (sub $totalPages 1) }}
-
-                {{ if $isPinned }}
-                    {{ $classes = $classes | append "pinned" }}
-                {{ else }}
-                    {{ $random := index (shuffle (seq 1 100)) 0 }}
-                    {{ if and (le $random 20) (not $previousTall) }}
-                        {{ $classes = $classes | append "tall" }}
-                        {{ $previousTall = true }}
-                    {{ else }}
-                        {{ $previousTall = false }}
-                    {{ end }}
-                {{ end }}
-
-                {{ if $isLast }}
-                    {{ $classes = $classes | append "last-item" }}
-                {{ end }}
-
-                {{ partial "recipe-card.html" (dict
-                    "classes" $classes
-                    "recipe" $recipe
-                ) }}
+            {{ range .Pages }}
+                {{ partial "recipe-card.html" (dict "recipe" .) }}
             {{ end }}
         </div>
     {{ else }}
-        <p>Valitettavasti reseptejä ei ole saatavilla tällä hetkellä.</p>
+        <p>Valitettavasti sisältöä ei ole saatavilla tällä hetkellä.</p>
     {{ end }}
 {{ end }}
