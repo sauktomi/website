@@ -8,44 +8,80 @@ draft: false
 
 ## Rakenne
 
-### Vakio-osiot
-1. Esivalmistelut: Lämpötilat, vuokien valmistelu
-2. Päävaiheet: Numeroidut selkeät askeleet
-3. Viimeistely: Jäähdytys, koristelu, säilytys
+### Vaiheistus
+- Numeroi päävaiheet
+- Aloita jokainen vaihe verbillä
+- Etene kronologisessa järjestyksessä
+- Yhdistä toisiinsa liittyvät toiminnot
+- Jaa monimutkainen vaihe tarvittaessa
 
-### Aikamuodot
-Käytä käskymuotoa: "Vaahdota", "Sekoita", "Lisää"
+### Mittayksiköt ohjeissa
+- ÄLÄ käytä tarkkoja mittoja ohjeissa (esim. "lisää 100 g jauhoja")
+- Käytä sen sijaan suhteellisia määriä:
+  - "puolet", "kolmasosa", "neljäsosa" jne.
+  - "2/3", "1/3" jne.
+  - "loput" kun käytetään jäljellä oleva määrä
+
+### Kriittiset tiedot
+Mainitse aina:
+- Lämpötilat muodossa "X°C (lämmitystapa)"
+  - Esim. "200°C (tasalämpö)"
+  - Esim. "180°C (kiertoilma)"
+- Valmistusastioiden esivalmistelu
+- Ainesosien lämpötilavaatimukset
+- Kypsennysajat ja -merkit
+- Jäähdytys- ja säilytysvaatimukset
+
+### Tarkkuustasot
+Määrittele tarkasti:
+- Lämpötilat:
+  - Tasalämpö: peruslämpötila
+  - Kiertoilma: -15-25°C tasalämmöstä
+  - Alalämpö: +10°C tasalämmöstä
+- Valmistustavat (keskilämpö, matalalämpö)
+- Kriittiset ajat (min., max.)
+- Tekstuurit ja rakenteet
+- Erityistekniikat
+
+## Muotoilu
 
 ### Lämpötilat
-- Merkitse uunin lämpötila ja tyyppi: 175°C (*tasalämpö*)
-- Kiertoilma: -15-20°C tasalämmöstä
-- Alalämpö: +10°C tasalämmöstä
+Merkitse aina:
+- Lämpötila ja lämmitystapa sulkeissa
+- Esim. "180°C (kiertoilma)"
+- Älä käytä kursiivia lämmitystavalle
+
+### Ajat
+Ilmoita:
+- Kriittiset minimiajat
+- Tarvittavat vaihteluvälit
+- Kypsyysmerkit
+- Jäähdytysajat
+
+### Rinnakkaiset toiminnot
+Osoita selkeästi:
+- Samanaikaiset valmistelut
+- Odotusaikojen hyödyntäminen
+- Toimintojen ajoitus
+- Valmistelujärjestys
+
+### Korostukset
+Käytä harkiten:
+- *Kursiivi*: tekniset huomiot
+- (!): kriittiset varoitukset
+- **Lihavointi**: tärkeät vaiheet
+- Sulkeet: tarkentavat tiedot
 
 ## Kirjoitustyyli
 
 ### Ytimekkyys
-Kirjoita tiiviisti mutta selkeästi. Esimerkki:
-```markdown
-1. Vaahdota voi ja sokeri kuohkeaksi. Lisää munat yksitellen vatkaten.
-```
-vs. liian pitkä:
-```markdown
-1. Ota voi ja sokeri kulhoon. Vaahdota ne keskenään kuohkeaksi massaksi. 
-   Kun seos on valmis, lisää kananmunat yksi kerrallaan ja vatkaa jokaisen 
-   munan jälkeen kunnes se on sekoittunut.
-```
+- Käytä täsmällisiä verbejä
+- Keskity olennaiseen
+- Vältä turhaa toistoa
+- Oleta perusosaaminen
 
-### Korostukset
-- *Kursiivi*: Tärkeät tekniset huomiot
-- **Lihavointi**: Osioiden nimet, kriittiset vaiheet
-- (!): Erityisen tärkeät varoitukset
-
-### Ajoitus
-- Arviot: "n. 5 min"
-- Vaihteluvälit: "5-7 min"
-- Kypsyysmerkit ensisijaisina: "kunnes kullanruskea"
-
-## Rinnakkaiset toiminnot
-Käytä "sillä aikaa" tai "samalla" osoittamaan rinnakkaisia vaiheita:
-```markdown
-Vatkaa munat ja sokeri. Sulata sillä aikaa voi ja anna jäähtyä.
+### Tarkkuus
+- Mainitse kriittiset yksityiskohdat
+- Kerro poikkeavat tekniikat
+- Korosta tärkeitä huomioita
+- Selitä erikoistekniikat

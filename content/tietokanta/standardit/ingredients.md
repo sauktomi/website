@@ -9,50 +9,69 @@ draft: false
 ## Muotoilu
 
 ### Perusmuoto
-- Määrä ja yksikkö erotettuna välilyönnillä
+Jokainen ainesosa tulee kirjata seuraavasti:
+- Määrä ja yksikkö erotettuna **yhdellä** välilyönnillä
 - Ainesosan nimi isolla alkukirjaimella
 - Muoto: "[määrä] [yksikkö] [Ainesosa]"
 - Kappalemäärät: "[määrä] kpl [Ainesosa]"
 
 ### Yksiköt
+Käytä vain standardisoituja yksiköitä:
 - Paino: g, kg
 - Tilavuus: ml, dl, l
 - Lämpötila: °C
-- Pyöristys:
-  - Alle 100g: 5g tarkkuus
-  - 100-500g: 10g tarkkuus
-  - Yli 500g: 25g tarkkuus
-  - Nesteet: 5ml tarkkuus
+- Kappalemäärä: kpl
+
+TÄRKEÄÄ: Älä koskaan muunna painoyksiköitä tilavuusyksiköiksi tai päinvastoin, sillä tuotteiden tiheys vaihtelee. Käytä alkuperäistä mittayksikköä.
+
+### Yksikkömuunnokset
+Muunna vain saman tyypin yksiköiden välillä:
+- Tilavuusmitat: muunna millilitroiksi (ml)
+- Painomitat: muunna grammoiksi (g)
+- Epämääräiset määrät tarkoiksi mitoiksi
+- Pakkausmitat: käytä alkuperäistä mittayksikköä (g tai ml)
+
+### Pyöristys
+Pyöristä määrät seuraaviin tarkkuuksiin:
+- Alle 100 g: 5 g tarkkuus
+- 100-500 g: 10 g tarkkuus
+- Yli 500 g: 25 g tarkkuus
+- Nesteet: 5 ml tarkkuus
 
 ## Ryhmittely
 
-### Vakio-otsikot
-- Taikina/Pohja: Päätaikina tai pohja
-- Täyte: Täytteet ja sisukset
-- Kuorrute: Päällysteet ja koristeet
-- Koristelu: Viimeistely
+### Ainesosien ryhmittely
+Jaa ainesosat loogisiin ryhmiin:
+- Nimeä ryhmät käyttötarkoituksen mukaan
+- Järjestä ainesosat valmistusjärjestykseen
+- Pidä samaan vaiheeseen kuuluvat ainekset yhdessä
+- Erota selkeästi eri valmistusvaiheet
 
-### Ainesosien järjestys
-Esimerkki kakkutaikinan ainesosien järjestyksestä:
-```yaml
-#### Taikina
-- 250 g Voi (huoneenlämpöinen)
-- 200 g Sokeri
-- 4 kpl Kananmuna
-- 250 g Vehnäjauho
-- 10 ml Leivinjauhe
-- 2 ml Suola
-- 5 ml Vaniljasokeri
-```
-
-Järjestys perustuu:
-- Voi/rasva ensin (vaahdotettava aines)
-- Sokeri toisena (vaahdotettava aines)
-- Kananmunat kolmantena (sitova aines)
-- Jauhot ja kuivat aineet yhdessä
-- Mausteet lopuksi
+### Ryhmien järjestys
+Listaa ryhmät valmistusjärjestyksessä:
+- Aloita pohjasta tai taikinasta
+- Jatka täytteisiin ja väliosiin
+- Päätä kuorrutuksiin ja koristeisiin
+- Erota selvästi pääosat ja lisäosat
 
 ## Lisätiedot
-- Suluissa tarkentavat tiedot (esim. "huoneenlämpöinen", "pakaste")
-- Vaihtoehtoiset aineet kauttaviivalla (Voi/Margariini)
-- Lämpötilat tarvittaessa (esim. "37°C")
+
+### Sallitut lisämerkinnät
+Merkitse sulkeisiin vain:
+- Ainesosan lämpötila
+- Valmistustila tai -aste
+- Vaihtoehtoiset aineet kauttaviivalla
+- Kriittiset ominaisuudet
+
+### Kielletyt merkinnät
+- Valmistusohjeet
+- Huutomerkit tai korostukset
+- Kommentit tai selitykset
+- Ylimääräiset sulkumerkinnät
+- Painon ja tilavuuden väliset muunnokset
+
+### Järjestyksen periaatteet
+- Noudata valmistusjärjestystä
+- Ryhmittele loogiset kokonaisuudet
+- Huomioi reseptin erityispiirteet
+- Varmista yhteensopivuus ohjeiden kanssa

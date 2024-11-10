@@ -9,54 +9,62 @@ draft: false
 ## Perusyksiköt
 
 ### Paino
-- Grammat (g): Ensisijainen painoyksikkö
-- Kilogrammat (kg): Yli 1000g määrille
-- Pyöristys:
-  - < 100g: 5g tarkkuus
-  - 100-500g: 10g tarkkuus
-  - > 500g: 25g tarkkuus
+Käytä grammoja (g) ensisijaisena painoyksikkönä:
+- Alle 1000g: merkitse grammoina
+- Yli 1000g: merkitse kilogrammoina (kg)
+
+Pyöristä painot seuraavasti:
+- Alle 100g: 5g tarkkuus
+- 100-500g: 10g tarkkuus
+- Yli 500g: 25g tarkkuus
 
 ### Tilavuus
-- Millilitra (ml): Ensisijainen tilavuusyksikkö
-- Desilitra (dl): Vain jos vakiintunut käyttö
-- Litra (l): Yli 1000ml määrille
-- Pyöristys: 5ml tarkkuus
+Käytä millilitroja (ml) ensisijaisena tilavuusyksikkönä:
+- Alle 1000ml: merkitse millilitroina
+- Yli 1000ml: merkitse litroina (l)
+- Desilitrat (dl): käytä vain vakiintuneissa yhteyksissä
+
+Pyöristä tilavuudet 5ml tarkkuuteen.
 
 ### Lämpötila
-- Celsiusasteet (°C)
-- Uunityypit:
-  - *tasalämpö*: Peruslämpötila
-  - *kiertoilma*: -15-20°C tasalämmöstä
-  - *alalämpö*: +10°C tasalämmöstä
+Merkitse celsiusasteina (°C):
+- Tasalämpö: peruslämpötila
+- Kiertoilma: -15-25°C tasalämmöstä
+- Alalämpö: +10°C tasalämmöstä
 
-## Vakioidut muunnokset
+## Mittausperiaatteet
 
-### Tilavuus → Paino
-- 1 dl vehnäjauho = 65g
-- 1 dl sokeri = 85g
-- 1 dl fariinisokeri = 80g
-- 1 dl perunajauho = 70g
-- 1 dl kaurahiutale = 40g
-- 1 dl mantelijauhe = 60g
-- 1 dl kookoshiutale = 30g
+### Yksikkömuunnokset
+Muunna aina standardiyksiköihin:
+- Tilavuusmitat millilitroiksi
+- Painomitat grammoiksi
+- Vanhat mitat nykyisiin
+- Epämääräiset määrät tarkoiksi
 
-### Vanhat yksiköt → Metriset
-- 1 rkl = 15 ml
-- 1 tl = 5 ml
-- 1 dl = 100 ml
-- 1 kuppi = 2.4 dl = 240 ml
+### Mittaustarkkuus
+Määrittele tarkkuusvaatimus:
+- Kriittiset aineet: tarkka mittaus
+- Joustavat aineet: sallittu vaihtelu
+- Mausteet: tarkkuus tarpeen mukaan
+- Koristeet: joustavuus sallittu
 
-## Mittaustarkkuus
+### Mittaustapa
+Valitse sopivin mittaustapa:
+- Paino: tarkin mittaustapa
+- Tilavuus: nestemäisille
+- Kappalemäärä: selkeille yksiköille
+- Standardimitat: vakiintuneille määrille
 
-### Kriittiset aineet
-Tarkka mittaus vaaditaan:
-- Jauhot
-- Leivinjauhe/sooda
-- Suola
-- Mausteet
+### Merkintätavat
+Käytä selkeitä merkintöjä:
+- Yksikkö aina luvun jälkeen
+- Välilyönti luvun ja yksikön välissä
+- Desimaalit pisteellä
+- Mittasuhteet selkeästi
 
-### Joustavat aineet
-Suurpiirteisempi mittaus sallittu:
-- Täytteet
-- Koristeet
-- Lisämausteet
+### Mittausohjeistus
+Määrittele tarvittaessa:
+- Mittaustapa ja -väline
+- Aineen käsittely ennen mittausta
+- Kriittiset huomiot
+- Sallitut vaihteluvälit

@@ -6,19 +6,69 @@ lastmod: "2024-11-10"
 draft: false
 ---
 
-Reseptistandardit määrittelevät yhtenäisen tavan kirjoittaa ja muotoilla reseptejä. Standardit on jaettu seuraaviin osiin:
+## Standardien tarkoitus
 
-1. [Metadata](metadata) - Reseptin perustiedot ja metatiedot
-2. [Ainesosat](ingredients) - Ainesosien listaus ja muotoilu
-3. [Ohjeet](instructions) - Valmistusohjeiden kirjoitus
-4. [Välineet](equipment) - Työvälineet ja laitteet
-5. [Kategoriat](categories) - Reseptikategoriat ja rakenne
-6. [Mittayksiköt](measurements) - Mittayksiköt ja standardit
-
-Nämä standardit varmistavat, että:
-- Reseptit ovat helppolukuisia ja selkeitä
+Reseptistandardit määrittelevät yhtenäisen tavan kirjoittaa ja muotoilla reseptejä. Standardien tavoitteena on varmistaa, että:
+- Reseptit ovat helposti toistettavissa
+- Ohjeet ovat yksiselitteisiä
 - Mittayksiköt ovat yhdenmukaisia
-- Ohjeet ovat täsmällisiä ja toistettavia
-- Reseptit ovat helposti löydettävissä ja kategorisoitavissa
+- Reseptit ovat helposti löydettävissä
+- Sisältö on johdonmukaisesti järjestetty
 
-Noudata näitä standardeja kaikkien reseptien kirjoittamisessa ja muokkaamisessa.
+## Standardien rakenne
+
+### [Metadata](metadata)
+- Reseptin perustietojen määrittely
+- Kategorioiden ja tagien käyttö
+- Teknisten tietojen merkintä
+- Reseptin ominaisuuksien kuvaus
+
+### [Ainesosat](ingredients)
+- Ainesosien listausperiaatteet
+- Mittayksiköiden käyttö
+- Ryhmittely ja järjestys
+- Lisätietojen merkintä
+
+### [Ohjeet](instructions)
+- Valmistusvaiheiden kirjoitus
+- Kriittisten tietojen merkintä
+- Rakenne ja muotoilu
+- Tarkkuustason määrittely
+
+### [Välineet](equipment)
+- Tarvittavien välineiden määrittely
+- Kriittisten välineiden merkintä
+- Vuokien ja astioiden määrittely
+- Valmistelutoimenpiteet
+
+### [Kategoriat](categories)
+- Reseptien luokitteluperiaatteet
+- Hakemistorakenteen hallinta
+- Nimeämiskäytännöt
+- Indeksitiedostojen rakenne
+
+### [Mittayksiköt](measurements)
+- Standardiyksiköiden käyttö
+- Mittaustarkkuuden määrittely
+- Muunnosten periaatteet
+- Mittausohjeiden merkintä
+
+## Standardien käyttö
+
+### Periaatteet
+- Noudata standardeja johdonmukaisesti
+- Keskity selkeyteen ja toistettavuuteen
+- Huomioi käyttäjän näkökulma
+- Varmista tietojen täsmällisyys
+
+### Soveltaminen
+- Käytä standardeja uusien reseptien luonnissa
+- Päivitä vanhat reseptit standardien mukaisiksi
+- Huomioi erityistapaukset ja poikkeukset
+- Ylläpidä yhtenäistä laatutasoa
+
+### Kehittäminen
+- Standardeja päivitetään tarpeen mukaan
+- Muutokset dokumentoidaan selkeästi
+- Käyttäjäpalaute huomioidaan
+- Yhtenäisyys säilytetään muutoksissa
