@@ -2,7 +2,7 @@
 title: "Suklaajuustokakku (lvt)"
 date: "2024-10-20"
 lastmod:
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Klassinen, kermainen juustokakku."
 categories: ["Kakku"]

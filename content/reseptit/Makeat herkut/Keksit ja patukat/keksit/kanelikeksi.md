@@ -3,7 +3,7 @@ title: "Kanelikeksi"
 date: "2024-11-06"
 lastmod: "2024-11-10"
 author: "Kahvila Aleksis"
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Rapeat ja aromikkaat kanelikeksit. Täydellinen kumppani kahville tai teelle."
 categories: ["Pikkuleipä"]

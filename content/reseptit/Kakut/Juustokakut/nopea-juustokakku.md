@@ -3,7 +3,7 @@ title: "Nopea juustokakku"
 date: "2024-10-04"
 lastmod:
 author: none
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen juustokakku raikkaalla hedelmäisellä twistillä"
 categories: ["Juustokakku"]

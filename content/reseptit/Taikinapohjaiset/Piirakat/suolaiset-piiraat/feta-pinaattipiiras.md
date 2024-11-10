@@ -3,7 +3,7 @@ title: "Feta-pinaattipiiras"
 date: "2024-11-06"
 lastmod:
 author: "???"
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Ruokaisa piiras kirpeän makeilla kirsikkatomaateilla. Sopii lounaaksi tai illanistujaisiin."
 categories: ["Piirakka"]

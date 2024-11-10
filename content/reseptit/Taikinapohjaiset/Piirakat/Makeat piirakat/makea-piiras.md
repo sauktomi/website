@@ -3,7 +3,7 @@ title: "Makea piirakka"
 date: "2024-10-24"
 lastmod:
 author: none
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Monipuolinen makea piirakka kermaisella täytteellä ja valinnaisilla maku-/hedelmävariaatioilla"
 categories: ["Piirakat ja tortut"]

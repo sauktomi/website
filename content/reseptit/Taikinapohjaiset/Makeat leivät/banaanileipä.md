@@ -3,7 +3,7 @@ title: "Banaani-mustikkaleipä"
 date: "2024-10-20"
 lastmod: "2024-11-09"
 author: "[Bruno Albouze](https://brunoalbouze.com/blueberry-banana-bread/)"
-draft: false
+draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen ja mehevä banaanimustikkaleipä, josta löytyy tasapainollinen määrä makeutta ja happamuutta. Sopii kahvipöytään tai välipalaksi."
 categories: ["Makea leipä"]
