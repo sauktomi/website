@@ -15,8 +15,10 @@ draft: false
 - **draft**: Julkaisutila (false = julkaistu, true = luonnos)
 - **description**: Ytimekäs kuvaus reseptistä ja sen käyttötarkoituksesta
 - **headimg**: Reseptin pääkuvan polku, oletuksena "/images/CalculatorSearch.jpeg"
-- **categories**: Reseptin kategoria määräytyy tiedoston sijainnin perusteella hakemistorakenteessa
-- **author**: Tekijän nimi ja linkki muodossa "[Nimi](linkki)" tai "???" jos tuntematon
+- **categories**: Reseptin kategoriat määräytyy kaksiosaisesti:
+  - Ensisijainen: määräytyy tiedoston sijainnin perusteella hakemistorakenteessa
+  - Toissijainen: valitaan Käyttötarkoitus-kategorioista (katso ## Käyttötarkoitus)
+- **author**: Tekijän nimi tai "???" jos tuntematon
 
 ### Reseptitiedot
 - **difficulty**: Vaikeusaste (Helppo, Keskitaso, Haastava, Vaikea, Erittäin vaikea)
@@ -75,60 +77,58 @@ Valitse yksi tai useampi:
 - Karvas
 - Umami
 
-### Tarjoilutapa (aina)
+### Tarjoilutapa
 #### Lämpötila
 - Kuuma
 - Lämmin
-- Huoneenlämpöinen
+- Huoneenlämpö
 - Viileä
 - Kylmä
 
 #### Valmistusmenetelmä
 - Keitetty
-- Paistettu (pannu)
-- Paistettu (uuni)
+- Paistettu
 - Grillattu
 - Höyrytetty
 - Raaka
 
-### Käyttötarkoitus (aina)
-#### Ateriatyyppi
-##### Aamiainen
+## Käyttötarkoitus
+### Aamiainen
 - Nopea aamiainen
 - Brunssi
 - Viikonlopun aamiainen
 
-##### Lounas
+### Lounas
 - Arkipäivän lounas
 - Lounaslaatikko (eväät)
 - Viikonlopun lounas
 
-##### Päivällinen
+### Päivällinen
 - Arkipäivän päivällinen
 - Juhlapäivällinen
 - Romanttinen illallinen
 - Perheillallinen
 
-##### Välipala
+### Välipala
 - Aamupäivän välipala
 - Iltapäivän välipala
 - Illan välipala
 - Terveellinen välipala
 
-##### Jälkiruoka
+### Jälkiruoka
 - Arkipäivän jälkiruoka
 - Juhlava jälkiruoka
 - Kesäjälkiruoka
 - Talvijälkiruoka
 
-##### Juhla
+### Juhla
 - Syntymäpäivät
 - Häät
 - Valmistujaiset
 - Kesäjuhlat
 - Pikkujoulut
 
-##### Kahvipöytä
+### Kahvipöytä
 - Arkipäivän kahvihetki
 - Juhlava kahvipöytä
 - Lastenkutsut
