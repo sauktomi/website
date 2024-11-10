@@ -6,7 +6,7 @@ lastmod: "2024-11-10"
 draft: false
 ---
 
-Tervetuloa reseptejen pariin! Täältä löydät monipuolisen kokoelman testattuja ja muunneltuja reseptejä omaan makuun:
+Tervetuloa reseptejen pariin! Täältä löydät monipuolisen kokoelman testattuja ja oman maun reseptejä:
 
 - **Kakut**: Juustokakut, kahvikakut, kermakakut ja sokerikakut
 - **Makeat herkut**: Keksit, patukat ja pikkuleivät
