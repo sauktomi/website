@@ -1,26 +1,28 @@
 ---
 title: "Kanelikeksi"
 date: "2024-11-06"
-lastmod: "2024-11-10"
+lastmod: "2024-11-11"
 author: "Kahvila Aleksis"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Rapeat ja aromikkaat kanelikeksit. Täydellinen kumppani kahville tai teelle."
-categories: ["Pikkuleipä"]
+categories: ["Pikkuleipä", "Kahvipöytä"]
 tags:
 - kaneli
+- rapea
 - murea
+- makea
 - kahvipöytä
-- juhla
+- juhlava kahvipöytä
 difficulty: "Helppo"
 valmistusaika: "00:45"
 maara: 1
 servings: 28
 impsize: "2 leivinpeltiä"
 storage:
-- "5pv"
-- "2vk"
-- "2kk"
+- 5pv
+- 2vk
+- 2kk
 appliances:
 - Yleiskone
 - Uuni
@@ -29,16 +31,16 @@ appliances:
 - Sekoituskulho
 method:
 - Vaahdotus
-- Sekoitus
-- Pursotus
-- Paisto
+- Taittaminen
+- Pursottaminen
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
-- Vehnä
+- Gluteeni
 skaalaus:
-- "1.5x 42 kpl"
-- "2x 56 kpl"
+- 1.5x 42 kpl
+- 2.0x 56 kpl
 ---
 
 {{< ingredients >}}

@@ -1,19 +1,24 @@
 ---
 title: "Kahvikakku"
 date: "2024-10-20"
-lastmod:
+lastmod: "2024-11-11"
+author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
-description: ""
-categories: ["Kuivakakku"]
+description: "Perinteinen kahvikakku, joka taipuu moneen makuun. Kostea ja pehmeä rakenne siirapin ansiosta."
+categories: ["Kahvikakut", "Kahvipöytä"]
 tags:
 - kahvi
+- pehmeä
+- kostea
+- makea
 - siirappi
+- arkipäivän kahvihetki
 difficulty: Helppo
 valmistusaika: "01:30"
-maara: 2
-servings: 16 (per)
-impsize: "2.4L"
+maara: 1
+servings: 16
+impsize: "2.4L kahvikakkuvuoka"
 storage:
 - 5pv
 - 7pv
@@ -22,31 +27,31 @@ appliances:
 - Kahvikakkuvuoka
 - Yleiskone
 method:
-- Uuni
-- Sekoitus
+- Vaahdotus
+- Taittaminen
 - Paistaminen
 diet:
 - Kananmuna
 - Maito
 - Gluteeni
 skaalaus:
-- "0.5x 1 kakku (16 annosta)"
-- "1.5x 3 kakkua (48 annosta)???..."
+- 0.5x 1 kpl 10x20 leipävuoka (8 annosta)
+- 2.0x 2 kpl vuokaa (32 annosta)
 ---
 {{< ingredients >}}
 #### Taikina
-- 780g Vehnäjauho
-- 850g Sokeri
-- 20ml Vaniljasokeri
-- 20ml Leivinjauhe
-- 10ml Ruokasooda
-- 5ml Suola
-- 400g Voi
-- 8 Kananmuna
-- 500ml Piimä
+- 390g Vehnäjauho
+- 425g Sokeri
+- 10ml Vaniljasokeri
+- 10ml Leivinjauhe
+- 5ml Ruokasooda
+- 2.5ml Suola
+- 200g Voi
+- 4 Kananmuna
+- 250ml Piimä
 #### Siirappi (esimerkki)
-- 150g Sokeri
-- 100ml Vesi
+- 75g Sokeri
+- 50ml Vesi
 {{</ ingredients >}}
 {{< instructions >}}
 1. **Valitse versio kääntösivulta ja huomioi reseptin muutokset.**
@@ -58,10 +63,9 @@ skaalaus:
 6. Kakkujen tullessa uunista, odota 10-15 min, ja voitele kakkujen pohjat siirapilla – kumoa – ja voitele ulkopuoletkin. Jäähdytä.
 {{</ instructions >}}
 
-
 {{< notes >}}
 #### Versioita [YHTEEN KAKKUUN]: (Listaa omasi!)
-- **Mauste**: +2 tl kaneli, inkivääri, kardemumma, ja neilikka. Hauduta samankaltainen satsi mausteita siirapissa keskilämmöllä ~5 min, ja anna istua pois lämmöstä niin kauan kun on aikaa (10-15 min).
+- **Mauste**: +1 tl kaneli, inkivääri, kardemumma, ja neilikka. Hauduta samankaltainen satsi mausteita siirapissa keskilämmöllä ~5 min, ja anna istua pois lämmöstä niin kauan kun on aikaa (10-15 min).
 - **Tiikeri**: -50 g v.jauho, tee vaihe 2 loppuun – ja jaa 2/3 taikinasta sivuun. Sekoita 60 g siivilöityä kaakaojauhetta loppu-1/3 taikinaan (lisää maitoa tarvittaessa rkl kerrallaan). Ei siirappia. Suklaakreemi kuorrute jos kiinnostaa.
 - **Pirteä kalle**: +2 lime kuori taikinaan (+1 tl kaneli); limemehu siirappiin (~75 ml), +2 tl inkivääri, & hauduta siirappi 5 min – suodata. Kaada sulatettua valkosuklaata päälle ennen esillepanoa.
 - **Sitruuna**: +2 sitruuna kuori, +50g unikonsiemen, -25g sokeri ja vehnäjauho taikinaan. Sitruunaglaasi kuorrute.

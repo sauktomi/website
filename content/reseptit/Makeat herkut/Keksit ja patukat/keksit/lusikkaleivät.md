@@ -2,25 +2,28 @@
 title: "Lusikkaleivät"
 date: "2024-11-06"
 lastmod: "2024-11-10"
-author: "Villa Ullas ?"
+author: "Villa Ullas, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Perinteiset hillotäytteiset lusikkaleivät. Kahvipöydän klassikko, jotka sulavat suuhun."
-categories: ["Pikkuleipä"]
+categories: ["Pikkuleipä", "Kahvipöytä"]
 tags:
+- vadelma
 - murea
+- pehmeä
+- makea
 - hillo
-- kahvipöytä
 - perinteinen
+- juhlava kahvipöytä
 difficulty: "Helppo"
 valmistusaika: "01:00"
 maara: 20
 servings: 10
 impsize: "2 leivinpeltiä"
 storage:
-- "5pv"
-- "2vk"
-- "2kk"
+- 5pv
+- 2vk
+- 2kk
 appliances:
 - Yleiskone
 - Uuni
@@ -28,31 +31,30 @@ appliances:
 - Sekoituskulho
 - Lusikka
 method:
-- Sekoitus
-- Muotoilu
-- Paisto
-- Täyttö
+- Vaahdotus
+- Pursottaminen
+- Paistaminen
 diet:
-- Vehnä
-- Vege
+- Gluteeni
+- Kasvis
 skaalaus:
-- "1.5x 15 kpl"
-- "2x 20 kpl"
+- 1.5x 15 kpl
+- 2.0x 20 kpl
 ---
 
 {{< ingredients >}}
 #### Taikina
-- 200 g Margariini
-- 125 g Sokeri
-- 5 ml Vaniljasokeri
-- 260 g Vehnäjauho
-- 5 ml Ruokasooda
+- 200g Margariini
+- 125g Sokeri
+- 5ml Vaniljasokeri
+- 260g Vehnäjauho
+- 5ml Ruokasooda
 
 #### Täyte
-- 100 g Vadelmahillo (tai muu mieleinen hillo)
+- 100g Vadelmahillo (tai muu mieleinen hillo)
 
 #### Koristelu
-- 50 g Sokeri
+- 50g Sokeri
 {{</ ingredients >}}
 
 {{< instructions >}}
@@ -67,7 +69,7 @@ skaalaus:
    - Sekoita sulatettuun margariiniin sokerit
    - Jäähdytä seos heti vesihauteessa, kunnes se alkaa samentua (ei saa kiinteytyä)
    - Lisää jauhoseos vähitellen ja sekoita käsin tasaiseksi taikinaksi
-   - *Huom: Jos taikina on liian löysää, lisää jauhoja 30 ml kerrallaan*
+   - *Huom: Jos taikina on liian löysää, lisää jauhoja 30ml kerrallaan*
 
 4. **Muotoilu ja paisto:**
    - Painele taikinaa ruokalusikkaan niin, että muoto pysyy
@@ -90,8 +92,8 @@ skaalaus:
 - Älä täytä keksejä liian kuumina, jotta hillo ei sula
 
 ### Versioita:
-- **Suklaa**: Lisää 50 g kaakaojauhetta taikinaan ja täytä suklaalevitteellä
+- **Suklaa**: Lisää 50g kaakaojauhetta taikinaan ja täytä suklaalevitteellä
 - **Sitruuna**: Lisää yhden sitruunan kuori taikinaan ja täytä sitruunakreemillä
 - **Kinuski**: Täytä kinuskikreemillä ja pyöritä fariinisokerissa (?)
-- **Manteli**: Lisää 5 ml manteliesanssia taikinaan ja ripottele manteleita päälle
+- **Manteli**: Lisää 5ml manteliesanssia taikinaan ja ripottele manteleita päälle
 {{</ notes >}}

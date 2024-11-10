@@ -1,98 +1,110 @@
 ---
 title: "Moussekakku"
 date: "2024-10-20"
-lastmod:
+lastmod: "2024-11-11"
+author: "Villa Ullas, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
-description: ""
-categories: ["Kakku"]
+description: "Kevyt muunneltava moussekakku, joka taipuu moneen makuun."
+categories: ["Kermakakut", "Jälkiruoka"]
 tags:
-- mousse
-- marjat
-- hedelmät
+- kerma
+- kermainen
+- pehmeä
+- makea
+- raikas
+- juhlava jälkiruoka
 difficulty: Keskivaikea
 valmistusaika: "03:00"
-maara: 2
-servings: 10 (per)
-impsize: "23 cm"
+maara: 1
+servings: 10
+impsize: "23 cm irtopohjavuoka"
 storage:
-- 2pv?
-- 5pv?
-- 1kk?
+- 2pv
+- 5pv
+- 1kk
 appliances:
 - Irtopohjavuoka
 - Kattiloita
+- Sähkövatkain
 method:
-- Soseuttaminen
-- Keitittäminen
 - Vaahdotus
-- Jäähdytys
-- Pakastus
+- Hauduttaminen
+- Paistaminen
 diet:
 - Maito
 - Gluteeni
+- Haram
 skaalaus:
-- "0.5x 18cm"
-- "1.5x 28cm?"
+- 0.5x 1 kpl 18cm vuoka (5 annosta)
+- 1.5x 1 kpl 28cm vuoka (15 annosta)
 ---
 {{< ingredients >}}
-
 #### Pohja
-- 500g Digestiivi keksi
-- 400g Kinuskikastike
-- 0,5tl Suola
+- 250g Digestiivi keksi
+- 200g Kinuskikastike
+- 0.25ml Suola
 
 #### Täyte
-- 12 Liivatelehti (30g)
-- ~700g Marja/hedelmäsose
-- 8dl Vispikerma
+- 6 kpl Liivatelehti (15g)
+- 350g Marja/hedelmäsose
+- 4dl Vispikerma
 
 #### Kiille
-- 3 Liivatelehti (6g)
-- 250g Marja/hedelmäsose
+- 2 kpl Liivatelehti (3g)
+- 125g Marja/hedelmäsose
 
 ### Esivalmistelut
 
 #### Kinuskikastike
-- 250g Fariinisokeri
-- 2dl Kuohukerma
+- 125g Fariinisokeri
+- 100ml Kuohukerma
 
 #### Sose
-- 850g Marja/Hedelmä
-- 300g Tomusokeri
-
+- 425g Marja/Hedelmä
+- 150g Tomusokeri
 {{</ ingredients >}}
+
 {{< instructions >}}
 **Valitse versio kääntösivulta ja huomioi reseptin muutokset.**
 #### Esivalmistelut
 Valmista kinuskikastike: keitä sokeri ja kerma kattilassa keskilämmöllä ~15 min (kun tuoksuu) – sillä aikaa valmistele kakkuvuoat; murskaa keksit; ja soseuta, että siivilöi marjat tai hedelmät tomusokerin kanssa.
+
 1. **Pohja:** Sekoita kinuskikastike ja suola keksimuruihin; painele vuokiin ja jäähdytä.
-**Välivaihe:** Ota soseesta 250g sivuun (kiillettä varten). Laita täytteen ja kiilteen liivatteet likoamaan eri astioihin.
-2. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne ~700g soseeseen, ja kääntele kermavaahto varovasti seokseen. Kaada seos vuokiin, pohjien päälle. Jäähdytä hyytyneeksi (pakastin ~30 min, jääkaappi ~2t).
-3. **Kiille:** Sulata kiilteen liivatteet ja sekoita ne varattuun 250g soseeseen. Kaada seos moussen päälle, lusikkaa käyttäen. Jäähdytä 30 min, tarjoile tai pakasta.
+
+**Välivaihe:** Ota soseesta 125g sivuun (kiillettä varten). Laita täytteen ja kiilteen liivatteet likoamaan eri astioihin.
+
+2. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne ~350g soseeseen, ja kääntele kermavaahto varovasti seokseen. Kaada seos vuokiin, pohjien päälle. Jäähdytä hyytyneeksi (pakastin ~30 min, jääkaappi ~2t).
+
+3. **Kiille:** Sulata kiilteen liivatteet ja sekoita ne varattuun 125g soseeseen. Kaada seos moussen päälle, lusikkaa käyttäen. Jäähdytä 30 min, tarjoile tai pakasta.
 {{</ instructions >}}
 
 {{< notes >}}
 Versioita: (kehitä ja listaa omasi)
-[ ] Marja –  Käytä 850g marjoja (esim. puolukka, mustikka, vadelma), -50g sokeri jos hapan marja
+[ ] Marja –  Käytä 425g marjoja (esim. puolukka, mustikka, vadelma), -25g sokeri jos hapan marja
+
 [ ] Suklaa
-Valmistelut [sose]: -200g marja/hedelmä, -50g tomusokeri
-Pohja: -100g digestiivi keksi, +75g kaakaojauhe
-Täyte: +200g tumma suklaa sula
-Kiille: Ganache (+200g tumma suklaa, +2 dl kuuma kerma)
+Valmistelut [sose]: -100g marja/hedelmä, -25g tomusokeri
+Pohja: -50g digestiivi keksi, +35g kaakaojauhe
+Täyte: +100g tumma suklaa sula
+Kiille: Ganache (+100g tumma suklaa, +100ml kuuma kerma)
+
 [ ] Sitruuna-vadelma
-Valmistelut [sose]: -850g marja/hedelmä, +600g vadelma, +100g sitruunamehu, -50g tomusokeri
-Pohja: +2 sitruuna kuori
-Täyte: +1 tl sitruunaöljy
+Valmistelut [sose]: -425g marja/hedelmä, +300g vadelma, +50ml sitruunamehu, -25g tomusokeri
+Pohja: +1 sitruuna kuori
+Täyte: +0.5ml sitruunaöljy
+
 [ ] Kahvi-karamelli
-Valmistelut: +3 rkl pikakahvijauhe [kun (pohjan) kinuski on jäähtynyt], -250g marja/hedelmä [sose], -25g tomusokeri [sose]
-Täyte: +1 tl vaniljauute
-Kiille: Karamellikastike (+150g sokeri, +100 ml kerma)
+Valmistelut: +15ml pikakahvijauhe [kun (pohjan) kinuski on jäähtynyt], -125g marja/hedelmä [sose], -15g tomusokeri [sose]
+Täyte: +2.5ml vaniljauute
+Kiille: Karamellikastike (+75g sokeri, +50ml kerma)
+
 [ ] Pistaasi-kirsikka
-Valmistelut [sose]: -850g marja/hedelmä, +850g kirsikka, -100g tomusokeri
-Pohja: -100g digestiivi keksi, +100g murskattu pistaasipähkinä
-Täyte: +1/2 tl manteliesanssi
+Valmistelut [sose]: -425g marja/hedelmä, +425g kirsikka, -50g tomusokeri
+Pohja: -50g digestiivi keksi, +50g murskattu pistaasipähkinä
+Täyte: +1.25ml manteliesanssi
+
 [ ] Trooppinen
-Valmistelut [sose]: -850g marja/hedelmä, +400g mango, +300g passionhedelmä, +150g ananas, -100g tomusokeri
-Täyte: +1 tl limen raaste
+Valmistelut [sose]: -425g marja/hedelmä, +200g mango, +150g passionhedelmä, +75g ananas, -50g tomusokeri
+Täyte: +2.5ml limen raaste
 {{</ notes >}}

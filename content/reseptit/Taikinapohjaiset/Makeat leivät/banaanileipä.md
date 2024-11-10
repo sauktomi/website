@@ -6,21 +6,24 @@ author: "[Bruno Albouze](https://brunoalbouze.com/blueberry-banana-bread/)"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen ja mehevä banaanimustikkaleipä, josta löytyy tasapainollinen määrä makeutta ja happamuutta. Sopii kahvipöytään tai välipalaksi."
-categories: ["Makea leipä"]
+categories: ["Makeat leivät", "Välipala"]
 tags:
 - banaani
-- mustikka
 - mehevä
-- kahvipöytä
+- pehmeä
+- makea
+- hapan
+- mustikka
+- terveellinen välipala
 difficulty: "Keskitaso"
 valmistusaika: "01:30"
 maara: 1
 servings: 8
 impsize: "20x10 cm leipävuoka"
 storage:
-- "2pv"
-- "4vk"
-- "3kk"
+- 2pv
+- 4vk
+- 3kk
 appliances:
 - Uuni
 - Yleiskone
@@ -28,15 +31,14 @@ appliances:
 - Siivilä
 method:
 - Vaahdotus
-- Sekoitus
-- Paisto
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
-- Vehnä
+- Gluteeni
 skaalaus:
-- "1x 23cm vuoka (10 annosta)"
-- "2x 2.7L vuoka (16 annosta)"
+- 1.0x 1 kpl 23cm vuoka (10 annosta)
+- 2.0x 1 kpl 2.7L vuoka (16 annosta)
 ---
 
 {{< ingredients >}}
@@ -52,9 +54,6 @@ skaalaus:
 - 120 g Sokeri
 - 2 g Suola
 - 2 kpl Kananmuna
-
-
-
 
 #### Koristelu
 - 100 g Banaani (viipaleina)

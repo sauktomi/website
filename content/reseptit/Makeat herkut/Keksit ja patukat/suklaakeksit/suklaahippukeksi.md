@@ -2,25 +2,27 @@
 title: "Suklaahippukeksi"
 date: "2024-11-06"
 lastmod: "2024-11-10"
-author: "???"
+author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Täydelliset suklaakeksit rapeilla reunoilla ja pehmeällä keskustalla. Sopii kahvipöytään tai herkutteluhetkiin."
-categories: ["Suklaakeksi"]
+categories: ["Suklaakeksi", "Kahvipöytä"]
 tags:
 - suklaa
+- rapea
 - murea
+- makea
 - kahvipöytä
-- herkku
+- arkipäivän kahvihetki
 difficulty: "Helppo"
 valmistusaika: "00:45"
 maara: 1
 servings: 18
 impsize: "2 leivinpeltiä"
 storage:
-- "5pv"
-- "2vk"
-- "2kk"
+- 5pv
+- 2vk
+- 2kk
 appliances:
 - Yleiskone
 - Uuni
@@ -29,31 +31,30 @@ appliances:
 - Jääkaappi
 method:
 - Vaahdotus
-- Sekoitus
-- Paisto
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
-- Vehnä
+- Gluteeni
 skaalaus:
-- "1.5x 27 kpl"
-- "2x 36 kpl"
+- 1.5x 27 kpl
+- 2.0x 36 kpl
 ---
 
 {{< ingredients >}}
 #### Keksitaikina
-- 175 g Voi
-- 125 g Sokeri
-- 100 g Fariinisokeri
-- 10 ml Vaniljasokeri
+- 175g Voi
+- 125g Sokeri
+- 100g Fariinisokeri
+- 10ml Vaniljasokeri
 - 1 kpl Kananmuna
-- 275 g Vehnäjauho
-- 5 ml Ruokasooda
-- 1 ml Suola
+- 275g Vehnäjauho
+- 5ml Ruokasooda
+- 1ml Suola
 
 #### Suklaa
-- 125 g Tummasuklaa (rouhittuna)
-- 100 g Tummasuklaa (koristeluun)
+- 125g Tummasuklaa (54%)
+- 100g Tummasuklaa (54%)
 {{</ ingredients >}}
 
 {{< instructions >}}
@@ -72,10 +73,10 @@ skaalaus:
    - Lisää kuivat aineet vähitellen taikinaan alhaisella nopeudella
    - *Huom: Sekoita vain kunnes ainekset ovat juuri sekoittuneet - älä ylisekoita!*
 
-4. Lisää 125 g suklaahippuja taikinaan käsin sekoittaen.
+4. Lisää 125g suklaahippuja taikinaan käsin sekoittaen.
 
-5. Muotoile n. 50 g kokoisia palloja ja asettele leivinpaperille n. 5 cm välein.
-   - Painele loput suklaahiput (50 g) keksien päälle
+5. Muotoile n. 50g kokoisia palloja ja asettele leivinpaperille n. 5 cm välein.
+   - Painele loput suklaahiput (100g) keksien päälle
    - Litistä pallot sopivan paksuisiksi
 
 6. **Kypsennys:**
@@ -94,11 +95,11 @@ skaalaus:
 - Paistamisen jälkeen keksit kovettuvat jäähtyessään 
 
 ### Versioita:
-- **Valkosuklaa-sitrus**: Korvaa tummasuklaa valkosuklaalla, lisää 15 ml sitruunankuorta ja 2 ml laventelia
-- **Rosmariini**: Lisää 2 ml rosmariinijauhetta taikinaan
+- **Valkosuklaa-sitrus**: Korvaa tummasuklaa valkosuklaalla, lisää 15ml sitruunankuorta ja 2ml laventelia
+- **Rosmariini**: Lisää 2ml rosmariinijauhetta taikinaan
 - **Karpalo**: Korvaa puolet suklaasta kuivatuilla karpalolla
-- **Pehmeä**: Korvaa ruokasooda, 1.25 ml ruokasoodalla ja 3.75 ml leivinjauheella
-- **Rapea**: Vähennä fariinisokeria 25 g ja lisää tavallista sokeria 25 g
-- **Pureskeltava**: Sulata voi, lisää 25 g fariinisokeria, vähennä tavallista sokeria 25 g, ja lisää 75 g kaurahiutaleita taikinaan
+- **Pehmeä**: Korvaa ruokasooda, 1.25ml ruokasoodalla ja 3.75ml leivinjauheella
+- **Rapea**: Vähennä fariinisokeria 25g ja lisää tavallista sokeria 25g
+- **Pureskeltava**: Sulata voi, lisää 25g fariinisokeria, vähennä tavallista sokeria 25g, ja lisää 75g kaurahiutaleita taikinaan
 - **Syvyys**: Ruskista voi, lisää kananmunan keltuainen, ja korvaa 40g sokerista tummalla siirapilla 1:1.
 {{</ notes >}}

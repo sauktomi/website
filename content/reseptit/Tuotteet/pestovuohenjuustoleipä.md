@@ -1,53 +1,55 @@
 ---
 title: "Vuohenjuusto-pestopaahtoleipä"
 date: "2024-10-25"
-lastmod:
-author: "none"
+lastmod: "2024-11-11"
+author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen ja rapea paahtoleipä pestolla, vuohenjuustolla ja pihvitomaatilla"
-categories: ["Tuotteet"]
+categories: ["Tuotteet", "Välipala"]
 tags:
-- paahtoleipä
-- pesto
 - vuohenjuusto
-- tomaatti
-- välipala
+- rapea
+- suolainen
+- umami
+- pesto
+- terveellinen välipala
 difficulty: Helppo
 valmistusaika: "00:45"
 maara: 8
 servings: 8
-impsize: "leivinpelti"
+impsize: "1 leivinpelti"
 storage:
-- "1pv"
+- "-"
+- 2 pv
 appliances:
 - Uuni
+- Leivinpelti
 method:
-- Paisto
-- Kokoaminen
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
 - Gluteeni
 skaalaus:
-- "0.5x 4kpl"
-- "2x 16kpl"
+- 0.5x 4 kpl
+- 2.0x 16 kpl
 ---
 
 {{< ingredients >}}
 #### Pohjaan
 - 8 kpl Paahtoleipä
-- 50 g Pesto (genovese)
+- 50g Pesto (genovese)
 
 #### Juustoseos
-- 320 g Juustoraaste
+- 320g Juustoraaste
 - 2 kpl Kananmuna
 
 #### Täyte
 - 2 kpl Pihvitomaatti
-- 500 g Vuohenjuusto
-- 1 tl Sitruunapippuri (rouhe)
-- 1 tl Oregano (kuiva)
+- 500g Vuohenjuusto
+- 5ml Sitruunapippuri (rouhe)
+- 5ml Oregano (kuiva)
 {{</ ingredients >}}
 
 {{< instructions >}}
@@ -65,11 +67,19 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
+### Vinkkejä:
+- Viipaloi tomaatit tasaisiksi siivuiksi
+- Leikkaa vuohenjuusto tasaisiksi viipaleiksi
+- Tarjoile heti paiston jälkeen
 
-#### Laskelmima
-* 4x :160 g raaste ja 1 muna.
-* 6x: 240 g raaste ja 1 muna.
-* 8x: 320 g raaste ja 2 munaa.
-* Yhdestä pihvitomaatista 4 siivua
-* 1 kg v. juustopötköstä 16 siivua (puolita pötkö 4 kertaa)
+### Ainesosien määrät eri kokoisiin annoksiin:
+- 4 annosta: 160g juustoraastetta ja 1 kananmuna
+- 6 annosta: 240g juustoraastetta ja 1 kananmuna
+- 8 annosta: 320g juustoraastetta ja 2 kananmunaa
+
+### Versioita:
+- **Basilika**: Lisää tuoretta basilikaa oreganon sijaan
+- **Balsamico**: Viimeistele balsamicosiirapilla
+- **Rucola**: Lisää rucolaa paiston jälkeen
+- **Paprika**: Lisää grillattua paprikaa tomaatin sijaan
 {{</ notes >}}

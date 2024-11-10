@@ -1,18 +1,19 @@
 ---
 title: "Makea piirakka"
 date: "2024-10-24"
-lastmod:
-author: none
+lastmod: "2024-11-11"
+author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Monipuolinen makea piirakka kermaisella täytteellä ja valinnaisilla maku-/hedelmävariaatioilla"
-categories: ["Piirakat ja tortut"]
+categories: ["Makeat piirakat", "Jälkiruoka"]
 tags:
-- jälkiruoka
-- tuorejuusto
 - kerma
+- kermainen
+- pehmeä
 - makea
-- helppo
+- tuorejuusto
+- juhlava jälkiruoka
 difficulty: Helppo
 valmistusaika: "00:40"
 maara: 1
@@ -20,50 +21,60 @@ servings: 10
 impsize: "23 cm irtopohjavuoka"
 storage:
 - 5pv
-- ?
+- 7pv
 - 3kk
 appliances:
 - Uuni
-- Vatkain
+- Sähkövatkain
 - Irtopohjavuoka
 method:
-- Sekoitus
-- Paisto kiertoilma
+- Vaahdotus
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
-- Vehnä
+- Gluteeni
 skaalaus:
-- "1x 18 cm"
-- "1.5x 26 cm"
-- "2x 28 cm"
+- 0.67x 1 kpl 18cm vuoka (6 annosta)
+- 1.5x 1 kpl 28cm vuoka (15 annosta)
 ---
 
 {{< ingredients >}}
 #### Pohja
-- 1 Valmispiirakkapohja
+- 1 kpl Valmispiirakkapohja
 
 #### Täyte
-- 250 g Tuorejuusto
-- 150 g Ranskankerma
-- 100 g Sokeri
-- 1 rkl Vaniljasokeri
+- 250g Tuorejuusto
+- 150g Ranskankerma
+- 100g Sokeri
+- 15ml Vaniljasokeri
 - 2 kpl Kananmuna
 {{</ ingredients >}}
 
 {{< instructions >}}
 1. Esipaista valmispohja 200°C noin 12 min.
-2. Vatkaa täytteen aineet keskenään listatussa järjestyksessä. Sekoita munat yksitellen viimeisenä joukkoon.
-3. Kaada täyte esipaistetun piirakkapohjan päälle. Paista 200°C 30-35 min, kunnes piirakka on kiinteää, mutta edelleen hieman hyytelömäistä.
-4. Anna viilentyä huoneenlämmössä. Jäähdytä jääkaapissa ennen tarjoilua.
 
-### Variaatiot
-1. Kaneliomena: Lisää täytteeseen 200 g omenakuutioita ja 1 tl kanelia.
-2. Persikka-inkivääri: Lisää täytteeseen 120 g persikkakuutioita ja 1 tl inkivääriä.
-3. Karamelliomena: Lisää täytteeseen 300 g omenakuutioita ja 3 rkl karamellikastiketta.
-4. Marjat: Lisää pohjalle 200 g mustikoita tai vadelmia. Jos käytät puolukkaa tai herukkaa, lisää sokeria 50 g.
-5. Trooppinen: Laita 200 g mustikoita pohjan päälle. Lisää täytteeseen 40 g mangososetta, 10 g vadelmapyreetä, 10 g passionhedelmäpyreetä, 30 g sulatettua valkosuklaata, 1 tl limemehua ja raastettua limekuorta.
-6. Banaani-suklaa: Lisää täytteeseen 240 g banaanimuusia ja 100 g sulatettua suklaata.
-7. Suklaa-kahvi: Lisää täytteeseen 1 dl tuoretta kahvia ja 100 g sulatettua tummaa suklaata.
-8. Maustettu päärynä: Lisää täytteeseen 320 g päärynäkuutioita ja 1 tl kanelia.
+2. Vatkaa täytteen aineet keskenään listatussa järjestyksessä. Sekoita munat yksitellen viimeisenä joukkoon.
+
+3. Kaada täyte esipaistetun piirakkapohjan päälle. Paista 200°C 30-35 min, kunnes piirakka on kiinteää, mutta edelleen hieman hyytelömäistä.
+
+4. Anna viilentyä huoneenlämmössä. Jäähdytä jääkaapissa ennen tarjoilua.
 {{</ instructions >}}
+
+{{< notes >}}
+### Vinkkejä:
+- Käytä huoneenlämpöisiä aineksia
+- Varmista että pohja on jäähtynyt ennen täytteen lisäämistä
+- Älä paista piirakkaa liian tummaksi
+- Anna jäähtyä kunnolla ennen tarjoilua
+
+### Versioita:
+- **Kaneliomena**: Lisää täytteeseen 200g omenakuutioita ja 5ml kanelia
+- **Persikka-inkivääri**: Lisää täytteeseen 120g persikkakuutioita ja 5ml inkivääriä
+- **Karamelliomena**: Lisää täytteeseen 300g omenakuutioita ja 45ml karamellikastiketta
+- **Marjat**: Lisää pohjalle 200g mustikoita tai vadelmia. Jos käytät puolukkaa tai herukkaa, lisää sokeria 50g
+- **Trooppinen**: Laita 200g mustikoita pohjan päälle. Lisää täytteeseen 40g mangososetta, 10g vadelmapyreetä, 10g passionhedelmäpyreetä, 30g sulatettua valkosuklaata, 5ml limemehua ja raastettua limekuorta
+- **Banaani-suklaa**: Lisää täytteeseen 240g banaanimuusia ja 100g sulatettua suklaata
+- **Suklaa-kahvi**: Lisää täytteeseen 1 dl tuoretta kahvia ja 100g sulatettua tummaa suklaata
+- **Maustettu päärynä**: Lisää täytteeseen 320g päärynäkuutioita ja 5ml kanelia
+{{</ notes >}}

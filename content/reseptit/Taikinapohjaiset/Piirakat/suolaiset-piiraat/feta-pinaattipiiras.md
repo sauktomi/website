@@ -1,39 +1,41 @@
 ---
 title: "Feta-pinaattipiiras"
 date: "2024-11-06"
-lastmod:
-author: "???"
+lastmod: "2024-11-11"
+author: "Kahvila Aleksis, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Ruokaisa piiras kirpeän makeilla kirsikkatomaateilla. Sopii lounaaksi tai illanistujaisiin."
-categories: ["Piirakka"]
+categories: ["Suolaiset piiraat", "Lounas"]
 tags:
 - fetajuusto
-- pinaatti
-- ranskankerma
+- murea
+- pehmeä
+- suolainen
+- umami
+- arkipäivän lounas
 difficulty: Helppo
 valmistusaika: "00:40"
 maara: 1
 servings: 8
 impsize: "23 cm piirakkavuoka"
 storage:
-- "2pv"
-- "5pv"
-- "1kk"
+- 2pv
+- 5pv
+- 1kk
 appliances:
 - Uuni
 - Siivilä
 - Sekoituskulho
 method:
-- Sekoitus
-- Paisto
+- Paistaminen
 diet:
 - Maito
 - Kananmuna
-- Vehnä
+- Gluteeni
 skaalaus:
-- "1x 1 piirakka (8 annosta)"
-- "2x 2 piirakkaa (16 annosta)"
+- 1.0x 1 kpl 23cm vuoka (8 annosta)
+- 2.0x 2 kpl 23cm vuokaa (16 annosta)
 ---
 
 {{< ingredients >}}
