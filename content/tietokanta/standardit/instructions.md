@@ -14,6 +14,18 @@ draft: false
 - Etene kronologisessa järjestyksessä
 - Yhdistä toisiinsa liittyvät toiminnot
 - Jaa monimutkainen vaihe tarvittaessa
+- Järjestä vaiheet tehokkaan ajankäytön mukaan:
+  1. Esivalmistelut (lämmitys, vuoat)
+  2. Odotusaikaa vaativat valmistelut
+  3. Päävaiheet
+  4. Viimeistely
+
+### Tehokas ajankäyttö
+- Tunnista ja mainitse rinnakkaiset työvaiheet
+- Hyödynnä odotusajat muihin valmisteluihin
+- Minimoi turha odottelu
+- Kerro mitä voi tehdä jäähtymis- tai odotusaikoina
+- Yhdistä samaan aikaan tehtävät toimet yhteen vaiheeseen
 
 ### Mittayksiköt ohjeissa
 - ÄLÄ käytä tarkkoja mittoja ohjeissa (esim. "lisää 100 g jauhoja")
@@ -31,6 +43,7 @@ Mainitse aina:
 - Ainesosien lämpötilavaatimukset
 - Kypsennysajat ja -merkit
 - Jäähdytys- ja säilytysvaatimukset
+- Riippuvuudet eri vaiheiden välillä
 
 ### Tarkkuustasot
 Määrittele tarkasti:
@@ -42,6 +55,7 @@ Määrittele tarkasti:
 - Kriittiset ajat (min., max.)
 - Tekstuurit ja rakenteet
 - Erityistekniikat
+- Konkreettiset onnistumisen merkit
 
 ## Muotoilu
 
@@ -57,6 +71,7 @@ Ilmoita:
 - Tarvittavat vaihteluvälit
 - Kypsyysmerkit
 - Jäähdytysajat
+- Kokonaisaika ja aktiivinen työaika
 
 ### Rinnakkaiset toiminnot
 Osoita selkeästi:
@@ -64,6 +79,7 @@ Osoita selkeästi:
 - Odotusaikojen hyödyntäminen
 - Toimintojen ajoitus
 - Valmistelujärjestys
+- Riippuvuudet eri vaiheiden välillä
 
 ### Korostukset
 Käytä harkiten:
@@ -75,13 +91,29 @@ Käytä harkiten:
 ## Kirjoitustyyli
 
 ### Ytimekkyys
+- Yhdistä toisiinsa liittyvät toiminnot yhteen virkkeeseen
+- Mainitse vain oleelliset yksityiskohdat
 - Käytä täsmällisiä verbejä
-- Keskity olennaiseen
 - Vältä turhaa toistoa
-- Oleta perusosaaminen
+
+### Järjestys
+- Etene loogisesti: valmistelu → päävaiheet → viimeistely
+- Hyödynnä odotusajat muihin toimiin
+- Kerro riippuvuudet selkeästi
+- Numeroi päävaiheet
 
 ### Tarkkuus
-- Mainitse kriittiset yksityiskohdat
-- Kerro poikkeavat tekniikat
-- Korosta tärkeitä huomioita
-- Selitä erikoistekniikat
+- Lämpötilat: "X°C (lämmitystapa)"
+- Kriittiset ajat ja onnistumisen merkit
+- Tärkeät huomiot kursiivilla
+- Valinnaiset vaiheet erikseen
+
+``` Esimerkki hyvästä ohjeesta
+1. Yhdistä murskatut keksit, sekä sulatettu voi, ja paina valmiiseen irtopohjavuokaan. Jäähdytä.
+
+2. Liuota kaikki liivatteet erillään. Pehmennä ja vatkaa tuorejuusto sekä sokerit tasaiseksi; samalla erikseen vaahdota kerma pehmeäksi/löysäksi vaahdoksi.
+
+3. Sulata täytteen liivatteet, sekoita soseeseen, ja yhdistä täyteseokseen. Kääntele kermavaahto mukaan ja kaada vuokaan. Pakasta ~30 min (vain kunnes pinta hyytyy) tai jääkaapita vähintään 2 t.
+
+5. Sulata sokeri veteen – sitten liivatteet – ja lisää hedelmäsose ja sitruunamehu. Kaada kakun päälle lusikan avulla.
+```
