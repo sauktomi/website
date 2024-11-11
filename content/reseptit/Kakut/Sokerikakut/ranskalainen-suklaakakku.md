@@ -1,37 +1,43 @@
 ---
 title: "Ranskalainen suklaakakku"
 date: "2024-10-19"
-lastmod:
+lastmod: "2024-11-11"
+author: "Villa Ullas, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Intensiivisen suklainen ja täyteläinen, sis. kukkaisia ja kahvisia vivahteita."
-categories: ["Kakku"]
+categories: ["Sokerikakut", "Jälkiruoka"]
 tags:
 - suklaa
+- murea
+- kermainen
+- makea
 - kahvi
 - ranskalainen
+- juhlava jälkiruoka
 difficulty: Keskitaso
 valmistusaika: "02:00"
 maara: 1
 servings: 10
-impsize: "23 cm"
+impsize: "23 cm irtopohjavuoka"
 storage:
-- 3pv?
-- 1vk?
-- 2kk?
+- 3pv
+- 1vk
+- 2kk
 appliances:
 - Irtopohjavuoka
+- Sähkövatkain
 method:
 - Vaahdotus
-- Uuni
+- Paistaminen
 diet:
 - Kananmuna
 - Maito
 - Gluteeni
 skaalaus:
-- "0.5x 18cm"
-- "1.5x 28cm?"
-- "2.0x 33x22cm?"
+- 0.5x 1 kpl 18cm vuoka (5 annosta)
+- 1.5x 1 kpl 28cm vuoka (15 annosta)
+- 2.0x 1 kpl 33x22cm vuoka (20 annosta)
 ---
 
 {{< ingredients >}}
@@ -58,9 +64,7 @@ Esilämmitä uuni **tasalämpö** 180°C; vuoraa irtopohjavuoka ja voitele sen r
 4. Leikkaa paloiksi, sitten laita esille tai jäähdytä ja pakasta.
 {{</ instructions >}}
 
-
 {{< notes >}}
-
 - Älä jäähdytä heti valmistuksen jälkeen, jottei kuorrute kärsisi.
 - Reunat: Valuta kuorrute kakun reunojen yli ottamalla vuoan reunat pois ja jälkeen tarvittaessa voitelemalla reunat kuorrutteella, tai tee vain tasainen kerros pitämällä vuoka paikallaan.
 {{</ notes >}}

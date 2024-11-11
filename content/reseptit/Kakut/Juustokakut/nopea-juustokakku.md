@@ -1,17 +1,19 @@
 ---
 title: "Nopea juustokakku"
 date: "2024-10-04"
-lastmod:
-author: none
+lastmod: "2024-11-11"
+author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen juustokakku raikkaalla hedelmäisellä twistillä"
-categories: ["Juustokakku"]
+categories: ["Juustokakut", "Jälkiruoka"]
 tags:
-- juustokakku
+- tuorejuusto
+- kermainen
+- sileä
+- makea
 - jälkiruoka
-- leivonta
-- hedelmäinen
+- juhlava jälkiruoka
 difficulty: Keskitaso
 valmistusaika: "00:45"
 maara: 1
@@ -22,18 +24,19 @@ storage:
 - 3-4vk
 - 2-3kk
 appliances:
-- Uuni
-- Yleiskone
 - Irtopohjavuoka
+- Yleiskone
+- Uuni
 method:
-- Sekoitus
-- Paisto
+- Vatkaus
+- Paistaminen
 diet:
 - Maito
 - Gluteeni
+- Haram
 skaalaus:
-- 0.67x 20cm
-- 2x 28cm
+- 0.67x 20cm vuoka (6 annosta)
+- 2x 1 kpl 28cm vuoka (15 annosta)
 ---
 
 {{< ingredients >}}

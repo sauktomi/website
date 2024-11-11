@@ -43,17 +43,17 @@ skaalaus:
 
 {{< ingredients >}}
 #### Keksitaikina
-- 175g Voi
-- 125g Sokeri
-- 100g Fariinisokeri
+- 150g Voi
+- 150g Sokeri
+- 75g Fariinisokeri
 - 10ml Vaniljasokeri
 - 1 kpl Kananmuna
-- 275g Vehnäjauho
+- 250g Vehnäjauho
 - 5ml Ruokasooda
 - 1ml Suola
 
 #### Suklaa
-- 125g Tummasuklaa (54%)
+- 100g Tummasuklaa (54%)
 - 100g Tummasuklaa (54%)
 {{</ ingredients >}}
 
@@ -92,7 +92,7 @@ skaalaus:
 - Syvemmän maun saat antamalla taikinan levätä jääkaapissa 24-72h ennen paistamista
 - Taikina säilyy pakastimessa jopa 3kk
 - Keksien paksuus vaikuttaa lopputulokseen: ohuemmat ovat rapeampia, paksummat pehmeämpiä
-- Paistamisen jälkeen keksit kovettuvat jäähtyessään 
+- Paistamisen jälkeen keksit kovettuvat jäähtyessään
 
 ### Versioita:
 - **Valkosuklaa-sitrus**: Korvaa tummasuklaa valkosuklaalla, lisää 15ml sitruunankuorta ja 2ml laventelia
