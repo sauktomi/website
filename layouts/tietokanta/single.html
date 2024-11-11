@@ -1,0 +1,23 @@
+{{ define "main" }}
+<article class="recipe">
+    <header class="recipe-header">
+        {{ with .Params.headimg }}
+            <div class="recipe-image-container">
+                {{ partial "responsive-image.html" (dict "context" $ "path" . "class" "recipe-image") }}
+            </div>
+        {{ end }}
+        
+        <h1 class="recipe-title">{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+            <div class="recipe-description">
+                <p>{{ . }}</p>
+            </div>
+        {{ end }}
+    </header>
+
+    <div class="recipe-content">
+        {{ .Content }}
+    </div>
+</article>
+{{ end }}
