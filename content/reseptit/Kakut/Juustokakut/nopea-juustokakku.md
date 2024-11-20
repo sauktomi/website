@@ -32,7 +32,7 @@ method:
 - Paistaminen
 diet:
 - Maito
-- Gluteeni
+- Vehnä
 - Haram
 skaalaus:
 - 0.67x 20cm vuoka (6 annosta)
@@ -41,23 +41,23 @@ skaalaus:
 
 {{< ingredients >}}
 #### Pohja
-- 250g digestive keksi
-- 100g voi
+- 250 g Digestive keksi
+- 100 g Voi
 
 #### Täyte
-- 5kpl liivatelehti
-- 500g tuorejuusto
-- 85g sokeri
-- 1rkl vaniljasokeri
-- 4dl vispikerma
-- 400g hedelmäsose
+- 5 kpl Liivatelehti
+- 500 g Tuorejuusto
+- 85 g Sokeri
+- 1 rkl Vaniljasokeri
+- 4 dl Vispikerma
+- 400 g Hedelmäsose
 
 #### Kiille
-- 2kpl liivatelehti
-- 25g sokeri
-- 50g vesi
-- 50g hedelmäsose
-- 5ml sitruunamehu
+- 2 kpl Liivatelehti
+- 25 g Sokeri
+- 50 g Vesi
+- 50 g Hedelmäsose
+- 5 ml Sitruunamehu
 {{</ ingredients >}}
 
 {{< instructions >}}

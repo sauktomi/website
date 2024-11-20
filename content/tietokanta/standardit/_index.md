@@ -1,8 +1,9 @@
 ---
 title: "Reseptistandardit"
-description: "Reseptien kirjoitus- ja muotoiluohjeet"
 date: "2024-11-09"
 lastmod: "2024-11-10"
+headimg: "/images/CalculatorSearch.jpeg"
+description: "Reseptien kirjoitus- ja muotoiluohjeet"
 draft: false
 ---
 

@@ -1,7 +1,9 @@
 ---
 title: "Kehityssuunnitelma"
+date: "2024-11-08"
+lastmod: "2024-11-08"
+headimg: "/images/CalculatorSearch.jpeg"
 description: "Sivuston kehityssuunnitelma ja parannukset"
-date: 2024-01-01
 draft: false
 ---
 

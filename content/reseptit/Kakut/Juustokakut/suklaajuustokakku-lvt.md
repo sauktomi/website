@@ -36,6 +36,7 @@ skaalaus:
 - 1.5x 1 kpl 28cm vuoka (15 annosta)
 - 2.0x 1 kpl 33x22cm vuoka (20 annosta)
 ---
+
 {{< ingredients >}}
 #### Pohja
 - 175g Kaurakeksi
@@ -46,6 +47,7 @@ skaalaus:
 - 200g Tuorejuusto
 - 200g Suklaa (54%)
 - 4dl Vispikerma
+
 #### Koriste
 - 50g Suklaa (70%)
 {{</ ingredients >}}

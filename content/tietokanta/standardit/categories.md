@@ -1,8 +1,9 @@
 ---
 title: "Kategoriat"
-description: "Reseptikategorioiden ja hakemistorakenteen standardit"
 date: "2024-11-09"
 lastmod: "2024-11-10"
+headimg: "/images/CalculatorSearch.jpeg"
+description: "Reseptikategorioiden ja hakemistorakenteen standardit"
 draft: false
 ---
 

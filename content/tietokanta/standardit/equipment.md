@@ -1,8 +1,9 @@
 ---
 title: "Välineet"
-description: "Työvälineiden ja laitteiden standardit"
 date: "2024-11-09"
 lastmod: "2024-11-10"
+headimg: "/images/CalculatorSearch.jpeg"
+description: "Työvälineiden ja laitteiden standardit"
 draft: false
 ---
 
