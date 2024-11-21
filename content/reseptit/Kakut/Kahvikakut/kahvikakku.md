@@ -6,68 +6,100 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Perinteinen kahvikakku, joka taipuu moneen makuun. Kostea ja pehmeä rakenne siirapin ansiosta."
-categories: ["Kahvikakut", "Kahvipöytä"]
+categories: ["Kakut", "Kahvikakut"]
 tags:
 - kahvi
 - pehmeä
 - kostea
 - makea
-- siirappi
 - arkipäivän kahvihetki
-difficulty: Helppo
+difficulty: "Helppo"
 valmistusaika: "01:30"
 maara: 1
 servings: 16
 impsize: "2.4L kahvikakkuvuoka"
 storage:
-- 5pv
-- 7pv
-- 2kk
+- "5pv"
+- "14pv"
+- "2kk"
 appliances:
-- Kahvikakkuvuoka
-- Yleiskone
+- "Uuni"
+- "Kahvikakkuvuoka"
+- "Yleiskone"
 method:
-- Vaahdotus
-- Taittaminen
-- Paistaminen
+- "Vaahdotus"
+- "Taittaminen"
+- "Paistaminen"
 diet:
-- Kananmuna
-- Maito
-- Gluteeni
+- "Kananmuna"
+- "Maito"
+- "Vehnä"
 skaalaus:
-- 0.5x 1 kpl 10x20 leipävuoka (8 annosta)
-- 2.0x 2 kpl vuokaa (32 annosta)
+- "0.5x 1 kpl 10x20cm leipävuoka (8 annosta)"
+- "2x 2 kpl 2.4L vuokaa (32 annosta)"
 ---
+
 {{< ingredients >}}
 #### Taikina
-- 390g Vehnäjauho
-- 425g Sokeri
-- 10ml Vaniljasokeri
-- 10ml Leivinjauhe
-- 5ml Ruokasooda
-- 2.5ml Suola
-- 200g Voi
-- 4 Kananmuna
-- 250ml Piimä
-#### Siirappi (esimerkki)
-- 75g Sokeri
-- 50ml Vesi
+- 390 g Vehnäjauho
+- 425 g Sokeri
+- 10 ml Vaniljasokeri
+- 10 ml Leivinjauhe
+- 5 ml Ruokasooda
+- 2.5 ml Suola
+- 200 g Voi (huoneenlämpöinen)
+- 4 kpl Kananmuna (huoneenlämpöinen)
+- 250 ml Piimä (huoneenlämpöinen)
+
+#### Siirappi
+- 75 g Sokeri
+- 50 g Vesi
 {{</ ingredients >}}
+
 {{< instructions >}}
-1. **Valitse versio kääntösivulta ja huomioi reseptin muutokset.**
-2. Esilämmitä uuni 175°C; valmistele kakkuvuoat. Pehmennä voi.
-3. Sekoita kuivat aineet alhaisella nopeudella yleiskoneessa, ja lisää pehmeä voi sekaan kunnes seos on muruisaa.
-4. Sekoita kosteat aineet yhteen eri kulhossa ja lisää ne kuiviin aineksiin kolmessa erässä.
-5. Paista 50-60 min; tee sillä aikaa siirappi ja jäähdytä se.
-	* **Siirappi:** Sulata sokeri nesteeseen. (Hauduta mausteet, jäähdytä ja lisää sitrusmehu tai makusiirappi. huom. kääntösivu.)
-6. Kakkujen tullessa uunista, odota 10-15 min, ja voitele kakkujen pohjat siirapilla – kumoa – ja voitele ulkopuoletkin. Jäähdytä.
+1. Esilämmitä uuni 175°C (*tasalämpö*). Voitele ja jauhota kakkuvuoka huolellisesti.
+
+2. **Kuivat aineet:** Sekoita vehnäjauho, sokeri, vaniljasokeri, leivinjauhe, ruokasooda ja suola yleiskoneessa alhaisella nopeudella.
+
+3. Lisää pehmeä voi kuivien aineiden sekaan ja sekoita, kunnes seos on murumaista. (*älä sekoita liikaa*)
+
+4. **Kosteat aineet:** Sekoita kananmunat ja piimä erillisessä kulhossa. Lisää seos kuiviin aineksiin parissa erässä, nuolien reunat ja pohjat erien välissä, ja sekoittaen lisäyksien jälkeen taikinan tasaiseksi.
+
+5. Kaada taikina vuokaan ja paista 50-60 min (*tikulla testaten*). Valmista siirappi paistamisen aikana.
+
+6. **Siirappi:** Sulata sokeri veteen. (Jos käytät mausteita, hauduta ne kattilassa siirapin kanssa 5 min ja siivilöi.) Anna jäähtyä.
+
+7. Kun kakku on valmis, anna sen jäähtyä vuoassa 10-15 min. Voitele kakun pohja siirapilla, kumoa ja voitele myös päällys ja sivut. Anna jäähtyä täysin.
 {{</ instructions >}}
 
 {{< notes >}}
-#### Versioita [YHTEEN KAKKUUN]: (Listaa omasi!)
-- **Mauste**: +1 tl kaneli, inkivääri, kardemumma, ja neilikka. Hauduta samankaltainen satsi mausteita siirapissa keskilämmöllä ~5 min, ja anna istua pois lämmöstä niin kauan kun on aikaa (10-15 min).
-- **Tiikeri**: -50 g v.jauho, tee vaihe 2 loppuun – ja jaa 2/3 taikinasta sivuun. Sekoita 60 g siivilöityä kaakaojauhetta loppu-1/3 taikinaan (lisää maitoa tarvittaessa rkl kerrallaan). Ei siirappia. Suklaakreemi kuorrute jos kiinnostaa.
-- **Pirteä kalle**: +2 lime kuori taikinaan (+1 tl kaneli); limemehu siirappiin (~75 ml), +2 tl inkivääri, & hauduta siirappi 5 min – suodata. Kaada sulatettua valkosuklaata päälle ennen esillepanoa.
-- **Sitruuna**: +2 sitruuna kuori, +50g unikonsiemen, -25g sokeri ja vehnäjauho taikinaan. Sitruunaglaasi kuorrute.
-- **VEGE**: korvaa voi rypsiöljyllä (tai leivontamargariinilla) 1:1, kananmunat painonsa määrällä hedelmäsose (300g) ja vesi (100g)-seoksella, piimä vedellä 1:1.
+### Vinkkejä:
+- Varmista että kaikki aineet ovat huoneenlämpöisiä tasaisen sekoittumisen varmistamiseksi
+- Kakku on kypsä kun tikku tulee puhtaana ulos
+- Siirappi tekee kakusta kostean ja säilyvän
+
+### Versioita:
+- **Mauste**: 
+  - Taikina: 5 ml kaneli, inkivääri, kardemumma, ja  2.5 ml neilikka
+  - Siirappi: Puolita samat mausteet ja hauduta siirapissa 5 min, anna maustua 10-15 min, siivilöi
+
+- **Tiikeri**: 
+  - Vähennä vehnäjauhoa 50 g
+  - Jaa 2/3 taikinasta sivuun
+  - Sekoita 60 g kaakaojauhetta loppu 1/3 taikinaan
+
+- **Lime-inkivääri**: 
+  - Lisää taikinaan: 2 limen kuori, 5 ml kanelijauhe
+  - Siirappi: 25 ml limemehu, 10 ml inkiväärijauhe; hauduta 5 min ja siivilöi
+  - Koristele sulatetulla valkosuklaalla
+
+- **Sitruuna-unikko**: 
+  - Lisää taikinaan: 2 (?) sitruunan kuori, 50 g unikonsiemen
+  - Vähennä sokeria ja vehnäjauhoa 25 g
+  - Viimeistele sitruunakuorrutteella
+
+- **Vegaaninen**: 
+  - Korvaa voi rypsiöljyllä tai margariinilla 1:1
+  - Korvaa kananmunat (50g per): 150g hedelmäsose + 50g vesi
+  - Korvaa piimä vedellä 1:1
 {{</ notes >}}

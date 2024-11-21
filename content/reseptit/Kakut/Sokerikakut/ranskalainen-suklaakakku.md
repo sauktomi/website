@@ -6,65 +6,96 @@ author: "Villa Ullas, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Intensiivisen suklainen ja täyteläinen, sis. kukkaisia ja kahvisia vivahteita."
-categories: ["Sokerikakut", "Jälkiruoka"]
+categories: ["Kakut", "Sokerikakut"]
 tags:
 - suklaa
 - murea
-- kermainen
 - makea
-- kahvi
-- ranskalainen
 - juhlava jälkiruoka
-difficulty: Keskitaso
+difficulty: "Keskitaso"
 valmistusaika: "02:00"
 maara: 1
 servings: 10
-impsize: "23 cm irtopohjavuoka"
+impsize: "23cm irtopohjavuoka"
 storage:
-- 3pv
-- 1vk
-- 2kk
+- "3pv"
+- "1vk"
+- "2kk"
 appliances:
-- Irtopohjavuoka
-- Sähkövatkain
+- "Uuni"
+- "Irtopohjavuoka"
+- "Yleiskone"
 method:
-- Vaahdotus
-- Paistaminen
+- "Vaahdotus"
+- "Paistaminen"
 diet:
-- Kananmuna
-- Maito
-- Gluteeni
+- "Kananmuna"
+- "Maito"
+- "Vehnä"
 skaalaus:
-- 0.5x 1 kpl 18cm vuoka (5 annosta)
-- 1.5x 1 kpl 28cm vuoka (15 annosta)
-- 2.0x 1 kpl 33x22cm vuoka (20 annosta)
+- "0.5x 1 kpl 18cm vuoka (5 annosta)"
+- "1.5x 1 kpl 28cm vuoka (15 annosta)"
+- "2x 1 kpl 33x22cm vuoka (20 annosta)"
 ---
 
 {{< ingredients >}}
 #### Taikina
-- 5 Kananmuna
-- 200g Sokeri
-- 225g Voi
-- 200g Suklaa (54%)
-- 30ml Kahvi
-- 80g Vehnäjauho
-- 30g Kaakaojauhe
+- 5 kpl Kananmuna (huoneenlämpöinen)
+- 200 g Sokeri
+- 225 g Voi (huoneenlämpöinen)
+- 200 g Tumma suklaa (54% kaakao)
+- 30 ml Vahva kahvi (kuuma)
+- 80 g Vehnäjauho
+- 30 g Kaakaojauhe
+
 #### Kuorrute
-- 200g Voi
-- 100g Suklaa (70%)
-- 50g Hunaja
+- 200 g Voi (huoneenlämpöinen)
+- 100 g Tumma suklaa (70% kaakao)
+- 50 g Hunaja
 {{</ ingredients >}}
 
 {{< instructions >}}
-#### Esivalmistelut
-Esilämmitä uuni **tasalämpö** 180°C; vuoraa irtopohjavuoka ja voitele sen reunat. Kuohkeuta munat ja sokeri (~5 min). Sulata voi ja suklaa mikrossa 30s jaksoissa sekoittaen jokaisen välissä – ja lisää kahvi. Siivilöi kuivat aineet eri kulhoon.
-1. Sekoita matalalla nopeudella suklaasula muna-sokerivaahtoon. Lisää kuivat aineet kolmessa erässä seokseen – ja vahvista nuolijalla sekoituksen onnistuminen. Kaada taikina vuokaan ja tasoita pinta.
-2. Paista 35-40 min, kunnes tikku ~5 cm reunasta tulee ilman muruja ulos. Jäähdytä käsiteltäväksi.
-3. **Kuorrute:** Sulata voi ja suklaa, lisää hunaja. (HUOM. **Reunat**, katso kääntösivu) Kaada seos kakun päälle. Peitä kakku jottei sitä töhritä ja anna jähmettyä huoneenlämmössä 1-2 t.
-4. Leikkaa paloiksi, sitten laita esille tai jäähdytä ja pakasta.
+1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla ja voitele reunat huolellisesti.
+
+2. **Taikina:** Vaahdota kananmunat ja sokeri 5 min, kunnes vaahto on vaaleaa ja kuohkeaa.
+
+3. Sulata voi ja suklaa mikrossa 30 s jaksoissa sekoittaen jokaisen välissä. Lisää kuuma kahvi suklaa-voisulaan.
+
+4. Siivilöi vehnäjauho ja kaakaojauhe erilliseen kulhoon.
+
+5. Sekoita suklaaseos matalalla nopeudella munavaahtoon. Lisää kuivat aineet kolmessa erässä kevyesti sekoittaen. Nuole kulho erien välissä, varmistaen että seoksesta tulee tasainen.
+
+6. Kaada taikina vuokaan ja tasoita pinta. Paista 35-40 min, kunnes tikku tulee puhtaana ulos 5 cm reunasta (*keskiosan pitäisi vielä olla hieman pehmeää*). Jäähdytä täysin.
+
+7. **Kuorrute:** Sulata voi ja suklaa, lisää hunaja, ja sekoita tasaiseksi. Jäähdytä kunnes tihenee.
+
+8. Kaada kuorrute kakun päälle ja jäähdytä huoneenlämmössä noin 1 t.
+
+9. Leikkaa paloiksi ja tarjoile; tai jäähdytä ja pakasta.
 {{</ instructions >}}
 
 {{< notes >}}
-- Älä jäähdytä heti valmistuksen jälkeen, jottei kuorrute kärsisi.
-- Reunat: Valuta kuorrute kakun reunojen yli ottamalla vuoan reunat pois ja jälkeen tarvittaessa voitelemalla reunat kuorrutteella, tai tee vain tasainen kerros pitämällä vuoka paikallaan.
+### Vinkkejä:
+- Varmista että kananmunat ovat huoneenlämpöisiä tasaisen vaahdon saamiseksi
+- Sulata suklaa ja voi varovasti, älä ylikuumenna
+- Anna kakun jäähtyä huoneenlämpöiseksi ennen kuorrutusta
+- Älä jäähdytä kuorrutettua kakkua jääkaapissa, jottei kuorrute menetä kiiltoaan
+
+### Versioita:
+- **Kahvinen**: 
+  - Lisää taikinaan 15 ml pikakahvijauhetta
+  - Korvaa kuorrutteen hunaja kahvisiirapin ja hunajan seoksella (25 g kumpaakin)
+
+- **Appelsiini**: 
+  - Lisää taikinaan 2 appelsiinin kuoriraaste
+  - Korvaa kahvi appelsiiniliköörillä
+  - Lisää kuorrutteeseen 5 ml appelsiiniöljyä
+
+- **Minttu**: 
+  - Lisää taikinaan 2.5 ml minttuesanssia
+  - Koristele mintunlehdillä
+
+- **Pähkinä**: 
+  - Lisää taikinaan 100 g rouhittuja hasselpähkinöitä
+  - Koristele paahdetuilla pähkinöillä
 {{</ notes >}}

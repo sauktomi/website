@@ -6,100 +6,113 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Täydelliset suklaakeksit rapeilla reunoilla ja pehmeällä keskustalla. Sopii kahvipöytään tai herkutteluhetkiin."
-categories: ["Suklaakeksi", "Kahvipöytä"]
+categories: ["Makeat herkut", "Keksit ja patukat"]
 tags:
 - suklaa
 - rapea
-- murea
 - makea
 - kahvipöytä
-- arkipäivän kahvihetki
 difficulty: "Helppo"
 valmistusaika: "00:45"
-maara: 1
+maara: 18
 servings: 18
-impsize: "2 leivinpeltiä"
+impsize: "2x leivinpelti"
 storage:
-- 5pv
-- 2vk
-- 2kk
+- "5pv"
+- "2vk"
+- "2kk"
 appliances:
-- Yleiskone
-- Uuni
-- Leivinpelti
-- Sekoituskulho
-- Jääkaappi
+- "Uuni"
+- "Yleiskone"
+- "Leivinpelti"
 method:
-- Vaahdotus
-- Paistaminen
+- "Vaahdotus"
+- "Paistaminen"
 diet:
-- Maito
-- Kananmuna
-- Gluteeni
+- "Maito"
+- "Kananmuna"
+- "Vehnä"
 skaalaus:
-- 1.5x 27 kpl
-- 2.0x 36 kpl
+- "1.5x 27 kpl (3 peltiä)"
+- "2x 36 kpl (4 peltiä)"
 ---
 
 {{< ingredients >}}
-#### Keksitaikina
-- 150g Voi
-- 150g Sokeri
-- 75g Fariinisokeri
-- 10ml Vaniljasokeri
-- 1 kpl Kananmuna
-- 250g Vehnäjauho
-- 5ml Ruokasooda
-- 1ml Suola
+#### Taikina
+- 150 g Voi (huoneenlämpöinen)
+- 150 g Sokeri
+- 75 g Fariinisokeri
+- 10 ml Vaniljasokeri
+- 1 kpl Kananmuna (huoneenlämpöinen)
+- 225 g Vehnäjauho
+- 5 ml Ruokasooda
+- 1 ml Suola
 
 #### Suklaa
-- 100g Tummasuklaa (54%)
-- 100g Tummasuklaa (54%)
+- 175 g Tumma suklaa (54% kaakao, karkeaksi rouhittu)
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. **Esivalmistelut:**
-   - Ota voi ja kananmuna huoneenlämpöön
-   - Rouhi suklaa karkeaksi
-   - Vuoraa leivinpellit leivinpaperilla
+1. Esilämmitä uuni 150°C (*kiertoilma*) tai 180°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
 
-2. **Taikinan valmistus:**
-   - Vaahdota pehmeä voi ja sokerit vaaleaksi ja kuohkeaksi keskinopeudella, n. 4 min
-   - Lisää kananmuna ja vatkaa alhaisella nopeudella tasaiseksi
-   - *Huom: Kaavi kulhon seinät puhtaaksi*
+2. Rouhi suklaa karkeaksi.
 
-3. **Kuivat aineet:**
-   - Sekoita erillisessä kulhossa vehnäjauho, ruokasooda ja suola
-   - Lisää kuivat aineet vähitellen taikinaan alhaisella nopeudella
-   - *Huom: Sekoita vain kunnes ainekset ovat juuri sekoittuneet - älä ylisekoita!*
+3. **Taikina:** Vaahdota pehmeä voi ja sokerit vaaleaksi ja kuohkeaksi keskinopeudella 4 min. Lisää kananmuna ja vatkaa alhaisella nopeudella tasaiseksi. *Kaavi kulhon seinät puhtaaksi.*
 
-4. Lisää 125g suklaahippuja taikinaan käsin sekoittaen.
+4. Sekoita kuivat aineet erillisessä kulhossa. Lisää ne vähitellen taikinaan alhaisella nopeudella. *Sekoita vain kunnes ainekset ovat juuri sekoittuneet.*
 
-5. Muotoile n. 50g kokoisia palloja ja asettele leivinpaperille n. 5 cm välein.
-   - Painele loput suklaahiput (100g) keksien päälle
-   - Litistä pallot sopivan paksuisiksi
+5. Lisää suklaarouhe taikinaan käsin sekoittaen.
 
-6. **Kypsennys:**
-   - Esilämmitä uuni 150°C (*kiertoilma*) tai 180°C (*tasalämpö*)
-   - Paista 10-12 min, kunnes reunat ovat kullanruskeita
-   - *Huom: Keskusta saa jäädä hieman pehmeäksi, keksit kypsyvät vielä jäähtyessään*
+6. Muotoile noin 48 g kokoisia palloja ja asettele leivinpaperille 5 cm välein. Litistä pallot sopivan paksuisiksi.
 
-7. Anna jäähtyä pellillä 5 min, siirrä sitten ritilälle jäähtymään kokonaan.
+7. Paista 9-12 min, kunnes reunat ovat kullanruskeita. *Keskusta saa jäädä hieman pehmeäksi.*
+
+8. Anna jäähtyä pellillä 5 min, siirrä sitten ritilälle jäähtymään kokonaan.
 {{</ instructions >}}
 
 {{< notes >}}
 ### Vinkkejä:
-- Syvemmän maun saat antamalla taikinan levätä jääkaapissa 24-72h ennen paistamista
-- Taikina säilyy pakastimessa jopa 3kk
+- Syvemmän maun saat antamalla taikinan levätä jääkaapissa 24-72 t ennen paistamista
 - Keksien paksuus vaikuttaa lopputulokseen: ohuemmat ovat rapeampia, paksummat pehmeämpiä
-- Paistamisen jälkeen keksit kovettuvat jäähtyessään
 
 ### Versioita:
-- **Valkosuklaa-sitrus**: Korvaa tummasuklaa valkosuklaalla, lisää 15ml sitruunankuorta ja 2ml laventelia
-- **Rosmariini**: Lisää 2ml rosmariinijauhetta taikinaan
-- **Karpalo**: Korvaa puolet suklaasta kuivatuilla karpalolla
-- **Pehmeä**: Korvaa ruokasooda, 1.25ml ruokasoodalla ja 3.75ml leivinjauheella
-- **Rapea**: Vähennä fariinisokeria 25g ja lisää tavallista sokeria 25g
-- **Pureskeltava**: Sulata voi, lisää 25g fariinisokeria, vähennä tavallista sokeria 25g, ja lisää 75g kaurahiutaleita taikinaan
-- **Syvyys**: Ruskista voi, lisää kananmunan keltuainen, ja korvaa 40g sokerista tummalla siirapilla 1:1.
+- **Valkosuklaa-sitrus**: 
+  - Korvaa tumma suklaa valkosuklaalla
+  - Lisää 15 ml sitruunankuorta
+  - Mausta 2 ml laventelilla
+
+- **Rosmariini**: 
+  - Lisää taikinaan 2 ml rosmariinijauhetta
+  - Koristele tuoreella rosmariinilla
+
+- **Karpalo**: 
+  - Korvaa puolet suklaasta (100 g) kuivatuilla karpalolla
+  - Ripottele pinnalle karkeaa merisuolaa
+
+- **Pehmeä**: 
+  - Korvaa ruokasooda 1.25 ml ruokasoodalla ja 3.75 ml leivinjauheella
+  - Lisää 15 ml maitoa taikinaan
+  - Vähennä paistoaikaa, kunnes vaaleankultaiset reunat
+  - Kun keksit ovat valmiita, nosta ne nopeammin kuumalta pelliltä ritilälle kuin normaalisti.
+
+- **Rapea**: 
+  - Vähennä fariinisokeria 25 g
+  - Lisää tavallista sokeria 25 g
+  - Nosta paistolämpötilaa 190°C
+  - Älä jäähdytä taikinaa
+
+- **Pureskeltava**: 
+  - Sulata ja ruskista voi
+  - Lisää 25 g fariinisokeria
+  - Vähennä tavallista sokeria 25 g
+  - Lisää 75 g kaurahiutaleita taikinaan
+  - Anna taikinan levätä jääkaapissa 24-72 t
+
+- **Syvyys**: 
+  - Ruskista voi
+  - Käytä vain kananmunan keltuainen
+  - Korvaa 40 g sokerista tummalla siirapilla
+  - Lisää 1 ml espresso-, tai kahvijauhetta taikinaan
+  - Ripaus sormisuolaa keksejen päälle ennen paistamista
+  - Anna taikinan levätä jääkaapissa 24-72 t
 {{</ notes >}}

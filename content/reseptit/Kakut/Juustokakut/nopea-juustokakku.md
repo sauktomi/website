@@ -6,50 +6,48 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Herkullinen juustokakku raikkaalla hedelmäisellä twistillä"
-categories: ["Juustokakut", "Jälkiruoka"]
+categories: ["Kakut", "Juustokakut"]
 tags:
 - tuorejuusto
 - kermainen
-- sileä
 - makea
-- jälkiruoka
 - juhlava jälkiruoka
-difficulty: Keskitaso
+difficulty: "Keskitaso"
 valmistusaika: "00:45"
 maara: 1
 servings: 10
-impsize: "~23 cm irtopohjavuoka"
+impsize: "23cm irtopohjavuoka"
 storage:
-- 1-2pv
-- 3-4vk
-- 2-3kk
+- "2pv"
+- "5pv"
+- "3kk"
 appliances:
-- Irtopohjavuoka
-- Yleiskone
-- Uuni
+- "Irtopohjavuoka"
+- "Yleiskone"
+- "Palettilasta"
 method:
-- Vatkaus
-- Paistaminen
+- "Vaahdotus"
+- "Kokoaminen"
 diet:
-- Maito
-- Vehnä
-- Haram
+- "Maito"
+- "Vehnä"
+- "Haram"
 skaalaus:
-- 0.67x 20cm vuoka (6 annosta)
-- 2x 1 kpl 28cm vuoka (15 annosta)
+- "0.67x 1 kpl 20cm vuoka (6 annosta)"
+- "2x 1 kpl 28cm vuoka (15 annosta)"
 ---
 
 {{< ingredients >}}
 #### Pohja
-- 250 g Digestive keksi
-- 100 g Voi
+- 250 g Digestiivikeksi
+- 100 g Voi (sulatettu)
 
 #### Täyte
 - 5 kpl Liivatelehti
-- 500 g Tuorejuusto
+- 500 g Tuorejuusto (huoneenlämpöinen)
 - 85 g Sokeri
-- 1 rkl Vaniljasokeri
-- 4 dl Vispikerma
+- 15 ml Vaniljasokeri
+- 400 ml Vispikerma
 - 400 g Hedelmäsose
 
 #### Kiille
@@ -63,9 +61,19 @@ skaalaus:
 {{< instructions >}}
 1. Yhdistä murskatut keksit, sekä sulatettu voi, ja paina valmiiseen irtopohjavuokaan. Jäähdytä.
 
-2. Liuota kaikki liivatteet erillään. Pehmennä ja vatkaa tuorejuusto sekä sokerit tasaiseksi; samalla erikseen vaahdota kerma pehmeäksi/löysäksi vaahdoksi.
+2. Liuota kaikki liivatteet erillään. Pehmennä ja vatkaa tuorejuusto sekä sokerit tasaiseksi; samalla erikseen vaahdota kerma löysäksi vaahdoksi.
 
-3. Sulata täytteen liivatteet, sekoita soseeseen, ja yhdistä täyteseokseen. Kääntele kermavaahto mukaan ja kaada vuokaan. Pakasta ~30 min (vain kunnes pinta hyytyy) tai jääkaapita vähintään 2 t.
+3. Sulata **täytteen** liivatteet, sekoita soseeseen, ja yhdistä täyteseokseen. Kääntele kermavaahto varovasti mukaan ja kaada vuokaan. *Pakasta 30 min (vain kunnes pinta hyytyy)* tai jääkaapita vähintään 2 t; tee sillä aikaa kiille valmiiksi.
 
-5. Sulata sokeri veteen – sitten liivatteet – ja lisää hedelmäsose ja sitruunamehu. Kaada kakun päälle lusikan avulla.
+5. **Kiille**: Sulata sokeri veteen – sitten liivatteet – ja sekoita hedelmäsose ja sitruunamehu mukaan. Kaada kakun päälle lusikan avulla.
 {{</ instructions >}}
+
+{{< notes >}}
+### Vinkkejä:
+- Varmista että tuorejuusto on huoneenlämpöistä tasaisen sekoittumisen varmistamiseksi
+- Vaahdota kerma vain pehmeäksi vaahdoksi, älä liian kovaksi
+- Kaada kiille vasta kun täyte on hyytynyt, jos haluat erilliset kerrokset
+
+### Versioita:
+- **Suklaa**: Lisää täytteeseen 100 g sulatettua tummaa suklaata ja vähennä sokerin määrää 25 g
+{{</ notes >}}

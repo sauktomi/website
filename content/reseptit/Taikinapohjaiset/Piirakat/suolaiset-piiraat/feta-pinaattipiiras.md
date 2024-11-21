@@ -6,70 +6,92 @@ author: "Kahvila Aleksis, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Ruokaisa piiras kirpeän makeilla kirsikkatomaateilla. Sopii lounaaksi tai illanistujaisiin."
-categories: ["Suolaiset piiraat", "Lounas"]
+categories: ["Taikinapohjaiset", "Suolaiset piiraat"]
 tags:
 - fetajuusto
-- murea
-- pehmeä
+- pinaatti
 - suolainen
-- umami
-- arkipäivän lounas
-difficulty: Helppo
+- lounas
+difficulty: "Helppo"
 valmistusaika: "00:40"
 maara: 1
 servings: 8
-impsize: "23 cm piirakkavuoka"
+impsize: "23cm piirakkavuoka"
 storage:
-- 2pv
-- 5pv
-- 1kk
+- "2pv"
+- "5pv"
+- "1kk"
 appliances:
-- Uuni
-- Siivilä
-- Sekoituskulho
+- "Uuni"
+- "Piirakkavuoka"
+- "Siivilä"
 method:
-- Paistaminen
+- "Paistaminen"
 diet:
-- Maito
-- Kananmuna
-- Gluteeni
+- "Maito"
+- "Kananmuna"
+- "Vehnä"
 skaalaus:
-- 1.0x 1 kpl 23cm vuoka (8 annosta)
-- 2.0x 2 kpl 23cm vuokaa (16 annosta)
+- "1x 1 kpl 23cm vuoka (8 annosta)"
+- "2x 2 kpl 23cm vuokaa (16 annosta)"
 ---
 
 {{< ingredients >}}
 #### Pohja
-- 1 kpl Valmis ruis-piirakkapohja
+- 1 kpl Valmis ruis-piirakkapohja (pakaste)
 
 #### Täyte
-- 250 g Pinaatti (pakaste)
-- 300 g Ranskankerma
+- 250 g Pinaatti (pakaste, sulatettu ja valutettu)
+- 300 g Ranskankerma (huoneenlämpöinen)
+- 2 kpl Kananmuna (huoneenlämpöinen)
 - 2 ml Suola
 - 3 ml Mustapippuri
 - 3 ml Valkosipulijauhe
-- 2 kpl Kananmuna
 - 150 g Fetajuusto
 - 75 g Kirsikkatomaatti
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni 200°C (*tasalämpö*).
-2. Sulata pinaatti ja valuta ylimääräinen neste huolellisesti pois siivilän läpi.
-3. Esipaista piirakan pohjat 200°C (*tasalämpö*), n. 10 min.
-4. Sekoita kaikki täytteen ainekset **paitsi feta ja kirsikkatomaatit** kulhossa tasaiseksi massaksi.
-5. Murustele 2/3 fetajuustosta tasaisesti piirakkavuokien pohjille. Kaada täyte päälle.
-6. Murustele loppu fetajuusto piiraiden päälle. Halkaise kirsikkatomaatit ja koristele piirakat niillä.
-7. Paista piiraat uunin keskitasolla, n. 35-40 min, kunnes ne ovat kiinteytyneet ja selvästi kullanruskeat, mutta yhä kevyesti hytiseviä keskeltä.
+1. Esilämmitä uuni 200°C (*tasalämpö*). Vuoraa piirakkavuoka leivinpaperilla.
+
+2. **Esivalmistelut:** Sulata pinaatti ja valuta ylimääräinen neste huolellisesti pois siivilän läpi. *Purista pinaatti mahdollisimman kuivaksi.*
+
+3. **Pohja:** Esipaista piirakkapohja 10 min. Anna jäähtyä hieman.
+
+4. **Täyte:** Sekoita valutettu pinaatti, ranskankerma, kananmunat ja mausteet tasaiseksi massaksi.
+
+5. Murustele 2/3 fetajuustosta tasaisesti esipaistetun pohjan päälle. Kaada täyteseos päälle.
+
+6. Murustele loppu fetajuusto täytteen päälle. Halkaise kirsikkatomaatit ja asettele ne kauniisti piiraan pinnalle.
+
+7. Paista uunin keskitasolla 35-40 min, kunnes piirakka on kiinteytynyt ja kullanruskea. *Keskiosan tulee olla vielä hieman hytisevä.*
+
+8. Anna jäähtyä 15-20 min ennen tarjoilua, jotta täyte asettuu.
 {{</ instructions >}}
 
 {{< notes >}}
 ### Vinkkejä:
-- Varmista, että pinaatti on valutettu todella hyvin, muuten piirakasta tulee vetinen.
-- Piirakan voi valmistaa myös murotaikinasta tehdyllä pohjalla.
-- *Tärkeää:* Anna piiraan jäähtyä hieman ennen tarjoilua, jotta täyte asettuu.
+- Valuta pinaatti todella huolellisesti, muuten piirakasta tulee vetinen
+- Piirakan voi valmistaa myös murotaikinasta tehdyllä pohjalla
 
 ### Versioita:
-- **Vuohenjuusto**: Korvaa feta vuohenjuustolla, lisää 15 ml hunajaa täytteeseen
-- **Kasvis**: Lisää 150 g paahdettua paprikaa täytteeseen
+- **Vuohenjuusto**: 
+  - Korvaa feta vuohenjuustolla
+  - Lisää täytteeseen 15 ml hunajaa
+  - Koristele paahdetetuilla pinjansiemenillä
+
+- **Kasvis**: 
+  - Lisää täytteeseen 150 g paahdettua paprikaa
+  - Korvaa valkosipulijauhe 2 kpl murskatulla valkosipulinkynellä
+  - Mausta tuoreella basilikalla
+
+- **Tomaatti-basilika**: 
+  - Lisää täytteeseen 200 g aurinkokuivattuja tomaatteja
+  - Mausta runsaalla tuoreella basilikalla
+  - Koristele kirsikkatomaattien sijaan tuoreilla basilikanlehdillä
+
+- **Sieni**: 
+  - Korvaa pinaatti 250 g paistetuilla herkkusienillä
+  - Lisää täytteeseen 2 ml timjamia
+  - Mausta 2 ml muskottipähkinällä
 {{</ notes >}}

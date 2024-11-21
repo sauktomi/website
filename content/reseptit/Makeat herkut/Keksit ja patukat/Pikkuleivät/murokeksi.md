@@ -6,78 +6,85 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Murenat voikeksit kastettuna suussa sulavaan tummaan suklaaseen"
-categories: ["Pikkuleipä", "Kahvipöytä"]
+categories: ["Makeat herkut", "Keksit ja patukat"]
 tags:
 - voi
 - murea
-- rapea
 - makea
 - suklaa
-- juhlava kahvipöytä
-difficulty: Helppo
+- kahvipöytä
+difficulty: "Helppo"
 valmistusaika: "01:20"
 maara: 16
 servings: 16
-impsize: "1 leivinpelti"
+impsize: "1x leivinpelti"
 storage:
-- 5pv
-- 10pv
-- 2kk
+- "5pv"
+- "10pv"
+- "2kk"
 appliances:
-- Yleiskone
-- Uuni
-- Leivinpelti
+- "Uuni"
+- "Yleiskone"
+- "Leivinpelti"
 method:
-- Vaahdotus
-- Paistaminen
+- "Vaahdotus"
+- "Paistaminen"
 diet:
-- Maito
-- Gluteeni
+- "Maito"
+- "Vehnä"
 skaalaus:
-- 1.5x 24 kpl
-- 2.0x 32 kpl
+- "1.5x 24 kpl (2 peltiä)"
+- "2x 32 kpl (2 peltiä)"
 ---
 
 {{< ingredients >}}
 #### Keksitaikina
-- 230g Voi
-- 100g Sokeri
-- 10ml Vaniljasokeri
-- 250g Vehnäjauho
+- 230 g Voi (huoneenlämpöinen)
+- 100 g Sokeri
+- 10 ml Vaniljasokeri
+- 1 ml Suola
+- 250 g Vehnäjauho
 
 #### Kuorrute
-- 200g Tummasuklaa (72%)
+- 200 g Tumma suklaa (72% kaakao)
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Vaahdota pehmeä voi, sokerit ja suola kuohkeaksi seokseksi yleiskoneella.
+1. Vaahdota pehmeä voi, sokerit ja suola kuohkeaksi seokseksi yleiskoneella keskinopeudella 3-4 min.
 
-2. Sekoita joukkoon vehnäjauhot, kunnes muodostuu tasainen taikina.
+2. Lisää vehnäjauhot ja sekoita matalalla nopeudella, kunnes muodostuu tasainen taikina. *Älä ylisekoita.*
 
-3. Muotoile taikina suorakulmioksi, kääri kelmuun ja anna levätä jääkaapissa 1 tunti.
+3. Muotoile taikina suorakulmioksi (noin 20x10 cm), kääri kelmuun ja anna levätä jääkaapissa 1 t.
 
-4. Kuumenna uuni 180°C ja vuoraa leivinpelti leivinpaperilla.
+4. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa leivinpelti leivinpaperilla.
 
-5. Leikkaa jäähtynyt taikina 1.3cm paksuisiksi kekseiksi.
+5. Leikkaa jäähtynyt taikina 1.3 cm paksuisiksi kekseiksi. *Leikkaa terävällä veitsellä suoraan alaspäin.*
 
-6. Paista keksejä kunnes ne ovat kevyesti kullanruskeita, noin 10 minuuttia.
+6. Paista 10-12 min, kunnes keksit ovat kevyesti kullanruskeita reunoilta. Anna jäähtyä ritilällä täysin.
 
-7. Anna keksien jäähtyä täysin ritilällä.
+7. Sulata suklaa vesihauteessa tai mikrossa 30 s jaksoissa sekoittaen välissä. Anna jäähtyä kädenlämpöiseksi.
 
-8. Kasta jäähtyneet keksit sulatettuun suklaaseen.
-
-9. Anna suklaan jähmettyä ennen tarjoilua tai säilytystä.
+8. Kasta puolet jäähtyneestä keksistä sulatettuun suklaaseen. Anna suklaan jähmettyä huoneenlämmössä ennen tarjoilua.
 {{</ instructions >}}
 
 {{< notes >}}
 ### Vinkkejä:
-- Käytä huoneenlämpöistä voita
 - Varmista että keksit ovat täysin jäähtyneet ennen suklaaseen kastamista
-- Käytä laadukasta tummaa suklaata kuorrutteeseen
 
 ### Versioita:
-- **Manteli**: Lisää 50g mantelirouhetta taikinaan
-- **Valkosuklaa**: Kasta keksit valkosuklaaseen
-- **Suola**: Ripottele merisuolaa suklaan päälle ennen jähmettymistä
-- **Appelsiini**: Lisää appelsiininkuorta taikinaan ja appelsiiniöljyä suklaaseen
+- **Manteli**: 
+  - Lisää taikinaan 50 g mantelirouhetta
+  - Ripottele mantelilastuja suklaan päälle
+
+- **Valkosuklaa**: 
+  - Kasta keksit valkosuklaaseen (200 g)
+  - Koristele tumman suklaan raidoilla
+
+- **Suolainen**: 
+  - Kasta tummasuklaaseen
+  - Ripottele merisuolahiutaleita suklaan päälle ennen jähmettymistä
+
+- **Appelsiini**: 
+  - Lisää taikinaan 1 appelsiinin kuoriraaste
+  - Lisää suklaaseen 5 ml appelsiiniöljyä
 {{</ notes >}}

@@ -6,102 +6,110 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Pehmeä kääretorttu marjahillolla ja täytelläsellä kermavaahdolla"
-categories: ["Sokerikakut", "Jälkiruoka"]
+categories: ["Kakut", "Sokerikakut"]
 tags:
 - vadelma
 - pehmeä
-- kostea
 - makea
-- kerma
 - juhlava jälkiruoka
-difficulty: Keskitaso
+difficulty: "Keskitaso"
 valmistusaika: "00:45"
 maara: 1
 servings: 8
-impsize: "30x20 cm leivinpelti"
+impsize: "30x20cm leivinpelti"
 storage:
-- 1-2pv
-- 3-4vk
-- 2-3kk
+- "2pv"
+- "4vk"
+- "3kk"
 appliances:
-- Uuni
-- Yleiskone
-- Leivinpelti
+- "Uuni"
+- "Yleiskone"
+- "Leivinpelti"
 method:
-- Vaahdotus
-- Kääriminen
-- Paistaminen
+- "Vaahdotus"
+- "Kääriminen"
+- "Paistaminen"
 diet:
-- Maito
-- Kananmuna
-- Gluteeni
+- "Maito"
+- "Kananmuna"
+- "Vehnä"
 skaalaus:
-- 0.67x 1 kpl 25x15cm pelti (5 annosta)
-- 1.5x 1 kpl 40x30cm pelti (12 annosta)
-- 2.0x 1 kpl 45x33cm pelti (16 annosta)
+- "0.67x 1 kpl 25x15cm pelti (5 annosta)"
+- "1.5x 1 kpl 40x30cm pelti (12 annosta)"
+- "2x 1 kpl 45x33cm pelti (16 annosta)"
 ---
 
 {{< ingredients >}}
 #### Taikina
-- 5 kpl Kananmuna
-- 170g Sokeri
-- 5ml Vaniljasokeri
-- 100g Vehnäjauho
-- 70g Perunatärkkelys
-- 6.25ml Leivinjauhe
-- 1ml Suola
-- 30ml Maito
-- 15ml Rypsiöljy
+- 5 kpl Kananmuna (huoneenlämpöinen)
+- 170 g Sokeri
+- 5 ml Vaniljasokeri
+- 100 g Vehnäjauho
+- 70 g Perunatärkkelys
+- 6.25 ml Leivinjauhe
+- 1 ml Suola
+- 30 ml Maito (huoneenlämpöinen)
+- 15 ml Rypsiöljy
 
 #### Siirappi
-- 60g Vesi
-- 30g Sokeri
-- 5ml Vaniljasokeri
-- 30ml Siirappi (monin)
+- 60 g Vesi
+- 30 g Sokeri
+- 5 ml Vaniljasokeri
+- 30 ml Makusiirappi (Monin)
 
 #### Täyte
-- 200g Vadelmahillo
-- 2 dl Kuohukerma
-- 15ml Tomusokeri
-- 10ml Vaniljasokeri
-- 100g Tuorejuusto
+- 150 g Vadelmahillo
+- 200 ml Kuohukerma
+- 15 ml Tomusokeri
+- 10 ml Vaniljasokeri
+- 75 g Tuorejuusto (huoneenlämpöinen)
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni 175°C, *tasalämpö* (!).
+1. Esilämmitä uuni 175°C (*tasalämpö*). Vuoraa leivinpelti leivinpaperilla.
 
-2. Vatkaa kananmunat ja sokerit kuohkeaksi vaahdoksi yleiskoneella, 5-7 min korkeimmalla vaihteella.
+2. **Taikina:** Vatkaa kananmunat ja sokerit kuohkeaksi vaahdoksi yleiskoneella korkeimmalla nopeudella 5-7 min.
 
-3. Sekoita kuivat aineet keskenään ja lisää ne varovasti siivilän läpi vaahtoon, kevyesti sekoittaen. Samoin sekoita maito ja öljy mukaan.
+3. Sekoita kuivat aineet keskenään ja lisää ne siivilän läpi vaahtoon kevyesti sekoittaen. Lisää maito ja öljy varovasti sekoittaen.
 
-4. Kaada taikina vuoratulle leivinpellille – levitä tasaiseksi – ja paista n. 13 min, tai kunnes pinta on kullanruskea.
+4. Kaada taikina vuoratulle pellille ja levitä tasaiseksi. Paista 13 min tai kunnes pinta on kullanruskea.
 
-5. Valmista siirappi keittämällä vesi, sokeri ja siirappi kattilassa, kunnes sokeri on liuennut. Anna jäähtyä.
+5. **Siirappi:** Liuota sokerit veteen, anna jäähtyä, ja lisää makusiirappi.
 
-6. Kumoa paistettu kääretorttu sokeritulle leivinpaperille ja poista paistopaperi varovasti lyhyeltä puolelta.
+6. Kumoa paistettu torttu sokeritulle leivinpaperille ja poista paistopaperi varovasti lyhyeltä sivulta. *Älä anna jäähtyä liikaa.*
 
-7. Sivele jäähtynyt siirappi huolellisesti torttupohjan päälle. Kääri ja jäähdytä rulla jääkaapissa. (Jottei täyte sula ja jotta rullamuoto säilyisi.)
+7. Sivele jäähtynyt siirappi huolellisesti torttupohjan päälle. Kääri rullalle ja jäähdytä jääkaapissa. *Jäähdytys auttaa rullamuodon säilymisessä.*
 
-8. Vatkaa kuohukerma, tomusokeri ja vaniljasokeri kuohkeaksi vaahdoksi. Samalla pehmennä tuorejuusto. Yhdistä nämä kevyesti sekoittaen.
+8. **Täyte:** Vatkaa kuohukerma ja sokerit kuohkeaksi vaahdoksi. Pehmennä tuorejuusto erikseen ja yhdistä kermavaahtoon kevyesti sekoittaen.
 
-9. Levitä vadelmahillo tasaisesti torttupohjan päälle, sitten samoin kermavaahto.
+9. Avaa jäähtynyt rulla varovasti. Levitä vadelmahillo tasaisesti pohjan päälle, sitten kermavaahto.
 
-10. Kääri torttu tiukasti rullalle leivinpaperin avulla. (kelmuta rulla vielä muovilla ja vetäydytä jääkaapissa vähintään tunnin ajan, niin varmistat muodon)
+10. Kääri torttu tiukasti rullalle leivinpaperin avulla. *Kääri rulla vielä kelmulla ja anna vetäytyä jääkaapissa vähintään 1 t muodon varmistamiseksi.*
 
 11. Leikkaa kääretorttu viipaleiksi ja tarjoile.
 {{</ instructions >}}
 
 {{< notes >}}
 ### Vinkkejä:
-- Varmista että kananmunat ovat huoneenlämpöisiä
-- Vaahdota munat ja sokeri todella huolellisesti
-- Älä sekoita kuivia aineita liikaa, jotta ilmavuus säilyy
-- Kääri torttu heti paiston jälkeen, kun se on vielä lämmin
-- Anna täytteen jäähtyä kunnolla ennen tarjoilua
+- Vaahdota munat ja sokeri todella huolellisesti, vaahdon tulee olla vaaleaa ja kuohkeaa
+- Sekoita kuivat aineet varovasti, jotta taikina säilyy ilmavana
+- Kääri torttu heti paiston jälkeen sen ollessa vielä lämmin
+- Anna täytteen jähmettyä kunnolla ennen tarjoilua
 
 ### Versioita:
-- **Suklaa**: Korvaa 25g vehnäjauhoa kaakaojauholla, täytä suklaaganachella
-- **Sitruuna**: Lisää sitruunankuorta taikinaan, täytä sitruunakreemillä
-- **Mansikka**: Käytä mansikkahilloa ja lisää tuoreita mansikoita
-- **Kahvi**: Lisää 15ml pikakahvijauhetta taikinaan, täytä mokkakreemillä
+- **Suklaa**: 
+  - Korvaa 25 g vehnäjauhoa kaakaojauholla
+  - Täytä suklaaganachella (100 g tumma suklaa + 100 ml kuuma kerma)
+
+- **Sitruuna**: 
+  - Lisää 2 sitruunan kuoriraaste taikinaan
+  - Täytä sitruunakreemillä (esim. 150 g mascarpone + 50 ml sitruunamehu + 50 g tomusokeri)
+
+- **Mansikka**: 
+  - Korvaa vadelmahillo mansikkahillolla
+  - Lisää 200 g tuoreita mansikoita viipaloituna
+
+- **Kahvi**: 
+  - Lisää 15 ml pikakahvijauhetta taikinaan
+  - Täytä mokkakreemillä (200 ml kerma + 15 ml pikakahvijauhe + 30 g tomusokeri)
 {{</ notes >}}

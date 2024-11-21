@@ -6,105 +6,112 @@ author: "Villa Ullas, m. TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Kevyt muunneltava moussekakku, joka taipuu moneen makuun."
-categories: ["Kermakakut", "Jälkiruoka"]
+categories: ["Kakut", "Kermakakut"]
 tags:
 - kerma
 - kermainen
-- pehmeä
 - makea
-- raikas
 - juhlava jälkiruoka
-difficulty: Keskivaikea
+difficulty: "Keskitaso"
 valmistusaika: "03:00"
 maara: 1
 servings: 10
-impsize: "23 cm irtopohjavuoka"
+impsize: "23cm irtopohjavuoka"
 storage:
-- 2pv
-- 5pv
-- 1kk
+- "2pv"
+- "5pv"
+- "1kk"
 appliances:
-- Irtopohjavuoka
-- Kattiloita
-- Sähkövatkain
+- "Irtopohjavuoka"
+- "Kattilat"
+- "Sähkövatkain"
 method:
-- Vaahdotus
-- Hauduttaminen
-- Paistaminen
+- "Vaahdotus"
+- "Hauduttaminen"
 diet:
-- Maito
-- Gluteeni
-- Haram
+- "Maito"
+- "Vehnä"
+- "Haram"
 skaalaus:
-- 0.5x 1 kpl 18cm vuoka (5 annosta)
-- 1.5x 1 kpl 28cm vuoka (15 annosta)
+- "0.5x 1 kpl 18cm vuoka (5 annosta)"
+- "1.5x 1 kpl 28cm vuoka (15 annosta)"
 ---
+
 {{< ingredients >}}
+#### Kinuskikastike
+- 125 g Fariinisokeri
+- 100 ml Kuohukerma
+- 0.25 ml Suola
+
+#### Marjapyree
+- 425 g Marja/Hedelmä
+- 150 g Tomusokeri
+
 #### Pohja
-- 250g Digestiivi keksi
-- 200g Kinuskikastike
-- 0.25ml Suola
+- 250 g Digestiivikeksi
+- 200 g Kinuskikastike
 
 #### Täyte
-- 6 kpl Liivatelehti (15g)
-- 350g Marja/hedelmäsose
-- 4dl Vispikerma
+- 6 kpl Liivatelehti (15 g)
+- 350 g Marjapyree
+- 400 ml Vispikerma
 
 #### Kiille
-- 2 kpl Liivatelehti (3g)
-- 125g Marja/hedelmäsose
-
-### Esivalmistelut
-
-#### Kinuskikastike
-- 125g Fariinisokeri
-- 100ml Kuohukerma
-
-#### Sose
-- 425g Marja/Hedelmä
-- 150g Tomusokeri
+- 2 kpl Liivatelehti (3 g)
+- 125 g Marjapyree
 {{</ ingredients >}}
 
 {{< instructions >}}
-**Valitse versio kääntösivulta ja huomioi reseptin muutokset.**
-#### Esivalmistelut
-Valmista kinuskikastike: keitä sokeri ja kerma kattilassa keskilämmöllä ~15 min (kun tuoksuu) – sillä aikaa valmistele kakkuvuoat; murskaa keksit; ja soseuta, että siivilöi marjat tai hedelmät tomusokerin kanssa.
+1. **Kinuskikastike:** Keitä fariinisokeri ja kerma kattilassa keskilämmöllä 15 min, kunnes tuoksuu karamelliselta. Anna jäähtyä. (*lisää suola heti alussa tai kun kastike on jäähtynyt*)
 
-1. **Pohja:** Sekoita kinuskikastike ja suola keksimuruihin; painele vuokiin ja jäähdytä.
+2. **Marjapyree:** Soseuta marjat/hedelmät tomusokerin kanssa ja siivilöi. Ota 125 g pyreesta sivuun kiillettä varten.
 
-**Välivaihe:** Ota soseesta 125g sivuun (kiillettä varten). Laita täytteen ja kiilteen liivatteet likoamaan eri astioihin.
+3. **Pohja:** Murskaa keksit hienoksi. Sekoita jäähtynyt kinuskikastike keksimuruihin. Painele seos vuoan pohjalle ja jäähdytä.
 
-2. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne ~350g soseeseen, ja kääntele kermavaahto varovasti seokseen. Kaada seos vuokiin, pohjien päälle. Jäähdytä hyytyneeksi (pakastin ~30 min, jääkaappi ~2t).
-
-3. **Kiille:** Sulata kiilteen liivatteet ja sekoita ne varattuun 125g soseeseen. Kaada seos moussen päälle, lusikkaa käyttäen. Jäähdytä 30 min, tarjoile tai pakasta.
+4. Liuota kaikki liivatteet erillään.
+5. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne 3/4 pyreeseen, ja kääntele kermavaahto varovasti seokseen. 
+6. Kaada seos pohjan päälle ja jäähdytä kunnes hyytynyt (pakastin 30 min tai jääkaappi 2 t). Sillä aikaa tee Kiille.
+7. **Kiille:** Sulata kiilteen liivatteet, sekoita ne 1/4 pyreeseen, ja kaada moussen päälle lusikan avulla. Jäähdytä 30 min ennen tarjoilua tai pakastamista.
 {{</ instructions >}}
 
 {{< notes >}}
-Versioita: (kehitä ja listaa omasi)
-[ ] Marja –  Käytä 425g marjoja (esim. puolukka, mustikka, vadelma), -25g sokeri jos hapan marja
+### Vinkkejä:
+- Varmista että kinuskikastike on jäähtynyt ennen käyttöä
+- Siivilöi marjasose huolellisesti siemenien poistamiseksi
+- Vaahdota kerma vain pehmeäksi vaahdoksi, älä liian kovaksi
+- Anna jokaisen kerroksen hyytyä kunnolla ennen seuraavaa
 
-[ ] Suklaa
-Valmistelut [sose]: -100g marja/hedelmä, -25g tomusokeri
-Pohja: -50g digestiivi keksi, +35g kaakaojauhe
-Täyte: +100g tumma suklaa sula
-Kiille: Ganache (+100g tumma suklaa, +100ml kuuma kerma)
+### Versioita:
+- **Marja**: 
+  - Käytä 425 g marjoja (puolukka/mustikka/vadelma)
+  - Vähennä sokeria 25 g jos käytät happamia marjoja
 
-[ ] Sitruuna-vadelma
-Valmistelut [sose]: -425g marja/hedelmä, +300g vadelma, +50ml sitruunamehu, -25g tomusokeri
-Pohja: +1 sitruuna kuori
-Täyte: +0.5ml sitruunaöljy
+- **Suklaa**:
+  - Vähennä marjoja 100 g ja tomusokeria 25 g
+  - Vähennä pohjan keksejä 50 g, lisää 30 ml kaakaojauhetta
+  - Lisää täytteeseen 100 g sulatettua tummaa suklaata
+  - Korvaa kiille ganachella (100 g tumma suklaa + 100 ml kuuma kerma)
 
-[ ] Kahvi-karamelli
-Valmistelut: +15ml pikakahvijauhe [kun (pohjan) kinuski on jäähtynyt], -125g marja/hedelmä [sose], -15g tomusokeri [sose]
-Täyte: +2.5ml vaniljauute
-Kiille: Karamellikastike (+75g sokeri, +50ml kerma)
+- **Sitruuna-vadelma**:
+  - Korvaa marjat: 300 g vadelma + 50 ml sitruunamehu
+  - Vähennä tomusokeria 25 g
+  - Lisää pohjaan 1 sitruunan kuoriraaste
+  - Lisää täytteeseen 0.5 ml sitruunaöljyä
 
-[ ] Pistaasi-kirsikka
-Valmistelut [sose]: -425g marja/hedelmä, +425g kirsikka, -50g tomusokeri
-Pohja: -50g digestiivi keksi, +50g murskattu pistaasipähkinä
-Täyte: +1.25ml manteliesanssi
+- **Kahvi-karamelli**:
+  - Lisää jäähtyneeseen kinuskiin 15 ml pikakahvijauhetta
+  - Vähennä marjasoseesta 125 g ja tomusokeria 15 g
+  - Lisää täytteeseen 2.5 ml vaniljauutetta
+  - Korvaa kiille karamellikastikkeella (75 g sokeri + 50 ml kerma)
 
-[ ] Trooppinen
-Valmistelut [sose]: -425g marja/hedelmä, +200g mango, +150g passionhedelmä, +75g ananas, -50g tomusokeri
-Täyte: +2.5ml limen raaste
+- **Pistaasi-kirsikka**:
+  - Korvaa marjat 425 g kirsikalla
+  - Vähennä tomusokeria 50 g
+  - Korvaa 50 g keksejä murskatuilla pistaasipähkinöillä
+  - Lisää täytteeseen 1.25 ml manteliesanssia
+
+- **Trooppinen**:
+  - Korvaa marjat: 200 g mango + 150 g passionhedelmä + 75 g ananas
+  - Vähennä tomusokeria 50 g
+  - Lisää täytteeseen 2.5 ml limen raastetta
 {{</ notes >}}

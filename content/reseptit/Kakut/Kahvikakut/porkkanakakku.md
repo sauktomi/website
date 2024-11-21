@@ -6,80 +6,81 @@ author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
 description: "Mehevä ja lämminhenkinen porkkanakakku. Pehmeä ja raikas tuorejuustokuorrute täydentää kakun makeutta."
-categories: ["Kahvikakut", "Kahvipöytä"]
+categories: ["Kakut", "Kahvikakut"]
 tags:
 - porkkana
 - mehevä
 - pehmeä
 - makea
-- maustekakku
 - arkipäivän kahvihetki
-difficulty: Keskivaikea
+difficulty: "Keskitaso"
 valmistusaika: "01:15"
 maara: 1
 servings: 10
-impsize: "23 cm irtopohjavuoka"
+impsize: "23cm irtopohjavuoka"
 storage:
-- 2pv
-- 5pv
-- 2kk
+- "2pv"
+- "5pv"
+- "2kk"
 appliances:
-- Irtopohjavuoka
-- Yleiskone
+- "Uuni"
+- "Irtopohjavuoka"
+- "Yleiskone"
 method:
-- Vaahdotus
-- Taittaminen
-- Paistaminen
+- "Vaahdotus"
+- "Taittaminen"
+- "Paistaminen"
 diet:
-- Kananmuna
-- Maito
-- Gluteeni
+- "Kananmuna"
+- "Maito"
+- "Vehnä"
 skaalaus:
-- 1.5x 1 kpl 28cm vuoka (15 annosta)
-- 2.0x 1 kpl 33x22cm vuoka (20 annosta)
+- "1.5x 1 kpl 28cm vuoka (15 annosta)"
+- "2x 1 kpl 33x22cm vuoka (20 annosta)"
 ---
+
 {{< ingredients >}}
 #### Taikina
-- 350g Porkkana
-- 200g Vehnäjauho
-- 10ml Kanelijauhe
-- 5ml Ruokasooda
-- 5ml Leivinjauhe
-- 250g Sokeri
-- 3 kpl Kananmuna
-- 150ml Rypsiöljy
+- 350 g Porkkana (hienoksi raastettu)
+- 200 g Vehnäjauho
+- 10 ml Kanelijauhe
+- 5 ml Ruokasooda
+- 5 ml Leivinjauhe
+- 250 g Sokeri
+- 3 kpl Kananmuna (huoneenlämpöinen)
+- 150 ml Rypsiöljy
 
 #### Kuorrute
-- 50g Voi
-- 180g Tuorejuusto
-- 150g Tomusokeri
-- 10ml Vaniljasokeri
+- 50 g Voi (huoneenlämpöinen)
+- 180 g Tuorejuusto (huoneenlämpöinen)
+- 150 g Tomusokeri
+- 10 ml Vaniljasokeri
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni **tasalämpö** 180°C; vuoraa irtopohjavuoka, voitele ja korppujauhota sen reunat. Raasta porkkanat hienoksi.
+1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla, voitele ja korppujauhota reunat. Raasta porkkanat hienoksi raasteeksi.
 
-2. Sekoita taikinan jauhot, kaneli, sooda, ja leivinjauhe yhteen kulhoon. Mittaa kuorrutteen voi ja tuorejuusto toiseen kulhoon, ja jätä huoneenlämpöön pehmeämään.
+2. **Kuivat aineet:** Sekoita vehnäjauhot, kanelijauhe, ruokasooda ja leivinjauhe kulhossa. Mittaa kuorrutteen voi ja tuorejuusto toiseen kulhoon pehmenemään huoneenlämpöön.
 
-3. **Taikina:** Kuohkeuta munat ja sokeri keski-nopealla, ~5 min. Lisää öljy – jatkuvasti matalalla sekoittaen – ohuena nauhana kuohkeaan seokseen, ~2 min. Kääntele jauhoseos täysin sekaan, sen jälkeen porkkanat mukaan ja sekoita tasaiseksi.
+3. **Taikina:** Vaahdota kananmunat ja sokeri yleiskoneessa keskinopeudella 5 min, kunnes kuohkeaa. Lisää öljy ohuena nauhana jatkuvasti sekoittaen matalalla nopeudella 2 min. Kääntele jauhoseos varovasti sekaan, lisää porkkanat ja sekoita tasaiseksi.
 
-4. Kaada taikina vuokaan ja paista 35-40 min. Jäähdytä.
+4. Kaada taikina vuokaan ja paista 35-40 min (*tikulla testaten*). Anna jäähtyä täysin.
 
-5. **Kuorrute:** Vatkaa voi ja tuorejuusto tasaiseksi (keskinopea, ~3 min). Sekoita sokerit joukkoon, kunnes sileää ja kuohkeaa (matala, ~2 min).
+5. **Kuorrute:** Vatkaa pehmeä voi ja tuorejuusto tasaiseksi keskinopeudella 3 min. Lisää sokerit ja vatkaa matalalla nopeudella 2 min, kunnes sileää ja kuohkeaa.
 
-6. Kun kakku on täysin jäähtynyt, levitä kuorrute sen päälle. Jäähdytä hieman (30 min), sitten tarjoile tai pakasta.
+6. Levitä kuorrute jäähtyneen kakun päälle. Jäähdytä 30 min ennen tarjoilua tai pakastamista.
 {{</ instructions >}}
 
 {{< notes >}}
 ### Vinkkejä:
-- Käytä tuoreita, suuria, meheviä porkkanoita
-- Raasta porkkanat hienoksi raasteeksi
-- Varmista että kuorrutteen ainekset ovat huoneenlämpöisiä
+- Käytä tuoreita, suuria ja meheviä porkkanoita
+- Raasta porkkanat mahdollisimman hienoksi raasteeksi
+- Varmista että kuorrutteen ainekset ovat huoneenlämpöisiä tasaisen sekoittumisen varmistamiseksi
 - Anna kakun jäähtyä täysin ennen kuorrutusta
 
 ### Versioita:
-- **Maustekakku**: Lisää 5ml inkivääriä ja muskottipähkinää
-- **Pähkinäinen**: Lisää 100g rouhittuja saksanpähkinöitä
-- **Appelsiini**: Lisää appelsiininkuorta taikinaan ja mehua kuorrutteeseen
-- **Rusinat**: Lisää 100g rusinoita taikinaan
+- **Maustekakku**: Lisää taikinaan 5 ml inkiväärijauhetta ja 2.5 ml muskottipähkinää
+- **Pähkinäinen**:  Lisää taikinaan 100 g rouhittuja saksanpähkinöitä
+- **Appelsiini**: Lisää taikinaan 2 appelsiinin kuoriraaste; kuorrutteeseen 30 ml appelsiinimehua
+- **Rusinat**: Lisää taikinaan 100 g rusinoita (liotettu ja kuivattu)
 {{</ notes >}}
