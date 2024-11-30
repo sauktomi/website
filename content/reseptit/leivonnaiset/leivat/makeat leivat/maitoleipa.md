@@ -51,7 +51,7 @@ skaalaus:
 - 230 g Maito (huoneenlämpöinen)
 - 1 kpl Kananmunankeltuainen (huoneenlämpöinen)
 - 6 g Pikahiiva
-- 8 g Suola
+- 10 g Suola
 - 10 g Maitojauhe
 - 50 g Sokeri
 - 500 g Vehnäjauho

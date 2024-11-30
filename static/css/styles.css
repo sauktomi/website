@@ -78,9 +78,8 @@ p {
 
 /* Sidebar */
 .sidebar {
-  padding: 0.8rem;
+  padding: 0 0.8rem;
   background-color: var(--background-medium);
-  border: 1px solid var(--border-color);
   position: sticky;
   top: 0;
   height: 100vh;
@@ -132,13 +131,12 @@ p {
   transition: var(--transition);
 }
 
-.sidebar a {
+.sidebar .aside a, .sidebar header a {
   display: block;
   padding: 0.5rem 0.8rem;
   color: var(--secondary-color);
   text-decoration: none;
-  background-color: transparent;
-  border: 1px solid transparent;
+  border-bottom: 1px solid transparent;
   transition: var(--transition);
 }
 
@@ -162,13 +160,15 @@ nav.aside ul {
   margin: 0;
   background-color: var(--background-light);
   border: 1px solid var(--border-color);
-  border-radius: 0.5rem;
   overflow: hidden;
 }
 
 nav.aside ul > li > ul {
   border: 1px solid var(--secondary-color);
-  border-radius: 0;
+}
+
+nav.aside ul > li > ul a.parent-link{
+  border-bottom: 1px solid var(--primary-color) !important;
 }
 
 nav.aside li {
@@ -210,7 +210,7 @@ nav.aside a.active {
   padding: 1.2rem;
   width: 100%;
   background-color: white;
-  border: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   box-shadow: var(--shadow);
   overflow-y: auto;
 }
@@ -820,7 +820,7 @@ a.category-name:hover {
   .picture-card h2 {
       font-size: 1.2em;
   }
-  
+
   .picture-grid {
     grid-template-columns: repeat(2, 1fr);
   }

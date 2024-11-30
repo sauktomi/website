@@ -74,15 +74,11 @@ skaalaus:
 ### Versioita:
 - **Marja**: Lisää 125 g marjoja (vadelma/mansikka/mustikka) pohjan päälle tai soseena täytteeseen
 - **Suklaa**: Korvaa pohjan keksit 175 g suklaakekseillä. Lisää täytteeseen 100 g sulatettua tummaa suklaata ja vähennä sokerin määrää 25 g
-- **Kinuski**: 
-  1. Valmista kinuski keittämällä 250 g fariinisokeria ja 200 ml kermaa keskilämmöllä, sekoittaen kunnes sokeri sulaa
-  2. Anna seoksen poreilla 5-7 min sekoittamatta
-  3. Sekoita 15 ml tapiokaa pieneen määrään kylmää vettä
-  4. Ota kattila pois lämmöltä ja lisää 15 ml voita samalla vispilöiden
-  5. Lisää tapiokaseos ohuena nauhana jatkuvasti vispilöiden
+- **Kinuski**: 250g [kinuskikastiketta](/reseptit/leivonnaiset/taytteet/kinuskikastike/), versio kuorrute.
 - **Sitruuna**: Lisää täytteeseen 15 ml sitruunamehua ja yhden sitruunan kuori
-- **Räjähtänyt**: 
+- **Räjähtänyt**:
   1. Kun kakku on valmis, nosta uunin lämpötila 200°C (*tasalämpö*)
   2. Sekoita 250 g ranskankerma, 15 ml sokeri ja 5 ml vaniljasokeri
   3. Levitä seos kakun päälle ja paista vielä 5 min
+- **Hedelmä**: Esim. Levitä [hedelmätäytettä](/reseptit/leivonnaiset/taytteet/hedelmahyytelotayte/) jäähtyneen kakun päälle, ja koristele hedelmillä
 {{</ notes >}}

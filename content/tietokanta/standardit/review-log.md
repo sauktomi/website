@@ -1,10 +1,14 @@
 ---
 title: "Review Log"
-date: "2024-11-12"
-lastmod: "2024-11-12"
+date: "2024-11-21"
+lastmod: "2024-11-21"
 author: "TMS"
 draft: false
+headimg: "/images/CalculatorSearch.jpeg"
 description: "Log of recipe reviews and standardization updates"
+categories: ["Ohjeet", "Standardit"]
+tags:
+- hugo
 ---
 
 # Recipe Review Log

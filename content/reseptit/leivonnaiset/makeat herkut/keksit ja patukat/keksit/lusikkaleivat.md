@@ -44,7 +44,7 @@ skaalaus:
 - 200 g Margariini
 - 125 g Sokeri
 - 5 ml Vaniljasokeri
-- 260 g Vehnäjauho
+- 275 g Vehnäjauho
 - 5 ml Ruokasooda
 
 #### Täyte
@@ -78,20 +78,20 @@ skaalaus:
 - Säilytä ilmatiiviissä rasiassa, jotta keksit pysyvät mureina
 
 ### Versioita:
-- **Suklaa**: 
+- **Suklaa**:
   - Lisää taikinaan 50 g kaakaojauhetta
   - Täytä suklaalevitteellä
   - Pyöritä kaakaojauhe-sokeriseoksessa
 
-- **Sitruuna**: 
+- **Sitruuna**:
   - Lisää taikinaan 1 sitruunan kuoriraaste
   - Täytä sitruunakreemillä (150 g mascarpone + 50 ml sitruunamehu + 50 g tomusokeri)
 
-- **Kinuski**: 
-  - Täytä kinuskikreemillä
+- **Kinuski**:
+  - Täytä kinuskikreemillä (150 g mascarpone + 100 g [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
   - Pyöritä fariinisokerissa
 
-- **Manteli**: 
+- **Manteli**:
   - Lisää taikinaan 5 ml manteliesanssia
   - Ripottele pinnalle mantelilastuja ennen paistamista
   - Täytä mantelikreemillä

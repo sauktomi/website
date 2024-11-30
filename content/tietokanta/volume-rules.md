@@ -1,6 +1,13 @@
 ---
 title: "Taikinamäärän säännöt"
+date: "2024-11-10"
+lastmod: "2024-11-12"
+author: "TMS"
+draft: false
 headimg: "/images/CalculatorSearch.jpeg"
+categories: ["Ohjeet", "Standardit"]
+tags:
+- hugo
 ---
 
 # Taikinamäärän säännöt vuokaleivonnassa

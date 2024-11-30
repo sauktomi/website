@@ -38,18 +38,13 @@ skaalaus:
 ---
 
 {{< ingredients >}}
-#### Kinuskikastike
-- 125 g Fariinisokeri
-- 100 ml Kuohukerma
-- 0.25 ml Suola
-
 #### Marjapyree
 - 425 g Marja/Hedelmä
 - 150 g Tomusokeri
 
 #### Pohja
 - 250 g Digestiivikeksi
-- 200 g Kinuskikastike
+- 125 g [Kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
 
 #### Täyte
 - 6 kpl Liivatelehti (15 g)
@@ -62,16 +57,12 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. **Kinuskikastike:** Keitä fariinisokeri ja kerma kattilassa keskilämmöllä 15 min, kunnes tuoksuu karamelliselta. Anna jäähtyä. (*lisää suola heti alussa tai kun kastike on jäähtynyt*)
-
-2. **Marjapyree:** Soseuta marjat/hedelmät tomusokerin kanssa ja siivilöi. Ota 125 g pyreesta sivuun kiillettä varten.
-
-3. **Pohja:** Murskaa keksit hienoksi. Sekoita jäähtynyt kinuskikastike keksimuruihin. Painele seos vuoan pohjalle ja jäähdytä.
-
-4. Liuota kaikki liivatteet erillään.
-5. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne 3/4 pyreeseen, ja kääntele kermavaahto varovasti seokseen. 
-6. Kaada seos pohjan päälle ja jäähdytä kunnes hyytynyt (pakastin 30 min tai jääkaappi 2 t). Sillä aikaa tee Kiille.
-7. **Kiille:** Sulata kiilteen liivatteet, sekoita ne 1/4 pyreeseen, ja kaada moussen päälle lusikan avulla. Jäähdytä 30 min ennen tarjoilua tai pakastamista.
+1. **Marjapyree:** Soseuta marjat/hedelmät tomusokerin kanssa ja siivilöi. Ota 125 g pyreesta sivuun kiillettä varten.
+2. **Pohja:** Murskaa keksit hienoksi. Sekoita [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/) keksimuruihin. Painele seos vuoan pohjalle ja jäähdytä.
+3. Liuota kaikki liivatteet erillään.
+4. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne 3/4 pyreeseen, ja kääntele kermavaahto varovasti seokseen.
+5. Kaada seos pohjan päälle ja jäähdytä kunnes hyytynyt (pakastin 30 min tai jääkaappi 2 t). Sillä aikaa tee Kiille.
+6. **Kiille:** Sulata kiilteen liivatteet, sekoita ne 1/4 pyreeseen, ja kaada moussen päälle lusikan avulla. Jäähdytä 30 min ennen tarjoilua tai pakastamista.
 {{</ instructions >}}
 
 {{< notes >}}
@@ -82,7 +73,7 @@ skaalaus:
 - Anna jokaisen kerroksen hyytyä kunnolla ennen seuraavaa
 
 ### Versioita:
-- **Marja**: 
+- **Marja**:
   - Käytä 425 g marjoja (puolukka/mustikka/vadelma)
   - Vähennä sokeria 25 g jos käytät happamia marjoja
 
@@ -98,11 +89,11 @@ skaalaus:
   - Lisää pohjaan 1 sitruunan kuoriraaste
   - Lisää täytteeseen 0.5 ml sitruunaöljyä
 
-- **Kahvi-karamelli**:
-  - Lisää jäähtyneeseen kinuskiin 15 ml pikakahvijauhetta
+- **Kahvi-kinuski**:
+  - Lisää kinuskiin 15 ml pikakahvijauhetta
   - Vähennä marjasoseesta 125 g ja tomusokeria 15 g
   - Lisää täytteeseen 2.5 ml vaniljauutetta
-  - Korvaa kiille karamellikastikkeella (75 g sokeri + 50 ml kerma)
+  - Korvaa kiille ~75 g [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/) kuorrute versiolla
 
 - **Pistaasi-kirsikka**:
   - Korvaa marjat 425 g kirsikalla

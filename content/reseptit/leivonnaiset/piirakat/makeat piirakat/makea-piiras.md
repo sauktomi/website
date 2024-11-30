@@ -70,24 +70,24 @@ skaalaus:
 - Älä paista piirakkaa liian tummaksi
 
 ### Versioita:
-- **Kaneliomena**: 
+- **Kaneliomena**:
   - Lisää täytteeseen 200 g omenakuutioita
   - Mausta 5 ml kanelilla
   - Ripottele pinnalle kanelisokeria
 
-- **Persikka-inkivääri**: 
+- **Persikka-inkivääri**:
   - Lisää täytteeseen 120 g persikkakuutioita
   - Mausta 5 ml inkiväärijauheella
 
-- **Karamelliomena**: 
+- **Karamelliomena**:
   - Lisää täytteeseen 300 g omenakuutioita
-  - Valuta päälle 45 ml karamellikastiketta
+  - Valuta päälle 45 g [kinuskikastiketta](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
 
-- **Marjat**: 
+- **Marjat**:
   - Lisää pohjalle 200 g mustikoita tai vadelmia
   - Jos käytät happamia marjoja, lisää sokeria 50 g
 
-- **Trooppinen**: 
+- **Trooppinen**:
   - Lisää pohjalle 200 g mustikoita
   - Sekoita täytteeseen:
     * 40 g mangososetta
@@ -96,15 +96,15 @@ skaalaus:
     * 30 g sulatettua valkosuklaata
     * 5 ml limemehua ja raastettua limekuorta
 
-- **Banaani-suklaa**: 
+- **Banaani-suklaa**:
   - Lisää täytteeseen 240 g banaanimuusia
   - Sekoita joukkoon 100 g sulatettua tummaa suklaata
 
-- **Suklaa-kahvi**: 
+- **Suklaa-kahvi**:
   - Lisää täytteeseen 100 ml vahvaa kahvia
   - Sekoita joukkoon 100 g sulatettua tummaa suklaata
 
-- **Maustettu päärynä**: 
+- **Maustettu päärynä**:
   - Lisää täytteeseen 320 g päärynäkuutioita
   - Mausta 5 ml kanelilla
 {{</ notes >}}

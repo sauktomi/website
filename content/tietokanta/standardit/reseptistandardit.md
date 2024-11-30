@@ -8,9 +8,6 @@ headimg: "/images/CalculatorSearch.jpeg"
 description: "Kattavat ohjeet reseptien kirjoittamiseen ja muotoiluun Hugo-sivustolle"
 categories: ["Ohjeet", "Standardit"]
 tags:
-- resepti
-- standardi
-- muotoilu
 - hugo
 ---
 
@@ -92,7 +89,7 @@ method:                                   # Valmistusmenetelmät käyttöjärjes
 ### 2.5 Erityisruokavaliot ja skaalaus
 
 ```yaml
-diet:                                    
+diet:
   - "Maito"                               # Allergeenit
   - "Vehnä"                               # Allergeenit
   - "Haram"                               # Jos ei sisällä alkoholia tai ole siasta peräisin
@@ -108,7 +105,7 @@ skaalaus:                                 # Muoto: "[kerroin]x [määrä (kpl)] 
 ### 2.6 Tagit
 
 ```yaml
-tags:                                    
+tags:
   - "peruna"                              # Pääraaka-aine (pakollinen)
   - "rapea"                               # Rakenne (pakollinen)
   - "makea"                               # Maku (pakollinen)
@@ -143,7 +140,7 @@ Jokainen ainesosa tulee kirjata seuraavasti:
 Käytä vain standardisoituja yksiköitä: g, kg, ml, dl, l, °C, kpl. Älä koskaan muunna painoyksiköitä tilavuusyksiköiksi tai päinvastoin.
 
 ### 4.3 Yksikkömuunnokset
-- Huom: Muunna vain saman tyypin yksiköiden välillä. 
+- Huom: Muunna vain saman tyypin yksiköiden välillä.
 - Tilavuusmitat muunnetaan millilitroiksi, painomitat grammoiksi. Käytä pakkausmittojen alkuperäistä mittayksikköä.
 
 ### 4.4 Pyöristys
@@ -235,10 +232,10 @@ Ilmoita lämpötilat muodossa "X°C (lämmitystapa)", mainitse kriittiset ajat j
 ### 6.1 Perusyksiköt
 
 #### 6.1.1 Paino
-- gramma (g); alle 1000g grammoina, yli 1000g kilogrammoina (kg). 
+- gramma (g); alle 1000g grammoina, yli 1000g kilogrammoina (kg).
 
 #### 6.1.2 Tilavuus
-- millilitra (ml); alle 1000ml millilitroina, yli 1000ml litroina (l). 
+- millilitra (ml); alle 1000ml millilitroina, yli 1000ml litroina (l).
 - Desilitrat (dl) vain vakiintuneissa yhteyksissä.
 
 #### 6.1.3 Lämpötila
@@ -302,7 +299,7 @@ Jaa ainesosat loogisiin ryhmiin, noudattaen valmistusjärjestystä:
 ## 7. Välineet
 
 ### 7.1 Listausjärjestys
-Listaa tärkeysjärjestyksessä: 
+Listaa tärkeysjärjestyksessä:
 1. Kriittiset välineet
    - Välineet joita ei voi korvata muilla
    - Välineet jotka vaikuttavat oleellisesti lopputulokseen
