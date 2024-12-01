@@ -1,9 +1,0 @@
-<section class="recipe-instructions">
-    <h2>Ohjeet</h2>
-    {{ $instructions := findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
-    {{ if $instructions }}
-        {{ index $instructions 0 | markdownify }}
-    {{ else }}
-        <p>Ohjeita ei ole saatavilla.</p>
-    {{ end }}
-</section>

@@ -1,0 +1,17 @@
+{{ $currentPage := . }}
+
+<nav class="breadcrumbs" aria-label="breadcrumb">
+    <ol>
+        <li>
+            <a href="/">Etusivu</a>
+        </li>
+        {{ range .Ancestors.Reverse }}
+            <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </li>
+        {{ end }}
+        <li aria-current="page">
+            {{ .Title }}
+        </li>
+    </ol>
+</nav>

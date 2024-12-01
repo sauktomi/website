@@ -1,86 +1,11 @@
 <!DOCTYPE html>
 <html lang="{{ .Site.LanguageCode }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    
-    <!-- Security headers -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN">
-    <meta name="referrer" content="strict-origin-when-cross-origin">
-    
-    <!-- Primary Meta Tags -->
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
-    <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end}}{{end}}">
-    <meta name="author" content="{{ .Site.Params.author | default "Baking" }}">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
-    <meta property="og:url" content="{{ .Permalink }}">
-    <meta property="og:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta property="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end}}{{end}}">
-    {{ with .Params.headimg }}
-    <meta property="og:image" content="{{ . | absURL }}">
-    {{ end }}
-    <meta property="og:site_name" content="{{ .Site.Title }}">
-    <meta property="og:locale" content="{{ .Site.LanguageCode }}">
-    
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="{{ .Permalink }}">
-    <meta name="twitter:title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
-    <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end}}{{end}}">
-    {{ with .Params.headimg }}
-    <meta name="twitter:image" content="{{ . | absURL }}">
-    {{ end }}
-    
-    <!-- Recipe specific meta tags -->
-    {{ if and .IsPage (eq .Section "reseptit") }}
-    <meta property="og:type" content="recipe">
-    {{ with .Params.prepTime }}<meta property="recipe:prep_time" content="{{ . }}">{{ end }}
-    {{ with .Params.cookTime }}<meta property="recipe:cook_time" content="{{ . }}">{{ end }}
-    {{ with .Params.totalTime }}<meta property="recipe:total_time" content="{{ . }}">{{ end }}
-    {{ with .Params.category }}<meta property="recipe:category" content="{{ . }}">{{ end }}
-    {{ end }}
-    
-    <!-- Preconnect to required origins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
-    <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL }}">
-    <link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL }}">
-    <link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL }}">
-    
-    <!-- Stylesheets -->
-    <link rel="stylesheet" href="{{ "css/styles.css" | relURL }}">
-    <link rel="stylesheet" href="{{ "css/print.css" | relURL }}" media="print">
-    
-    <!-- Scripts -->
-    <script src="{{ "js/main.js" | relURL }}" defer></script>
-    <script src="{{ "js/category-nav.js" | relURL }}" defer></script>
-    
-    <!-- Additional meta tags -->
-    <link rel="canonical" href="{{ .Permalink }}">
-    {{ if .IsTranslated }}
-        {{ range .Translations }}
-        <link rel="alternate" hreflang="{{ .Language.Lang }}" href="{{ .Permalink }}">
-        {{ end }}
-    {{ end }}
-    
-    <!-- RSS Feed -->
-    {{ range .AlternativeOutputFormats -}}
-        {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
-    {{ end -}}
-
-    <!-- Structured Data -->
-    {{ partial "recipe-schema.html" . }}
+    {{ partial "head.html" . }}
 </head>
 <body>
     <a href="#main-content" class="skip-link">Siirry sisältöön</a>
+    {{ partial "top-nav.html" . }}
     <div class="container">
         <aside class="sidebar">
             {{ partial "header.html" . }}
@@ -93,7 +18,6 @@
         <main class="content" id="main-content">
             {{ block "main" . }}{{ end }}
         </main>
-        {{ partial "category-nav.html" . }}
     </div>
 </body>
 </html>

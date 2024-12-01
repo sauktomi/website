@@ -1,14 +1,53 @@
 {{ define "main" }}
-    <h1>{{ .Title }}</h1>
+    <header class="section-header">
+        <h1>{{ .Title }}</h1>
 
-    {{ .Content }}
+        {{ $path := .RelPermalink }}
+        {{ if and (hasPrefix $path "/reseptit/leivonnaiset/") (ne $path "/reseptit/leivonnaiset/") (.Params.headimg) }}
+            {{ partial "recipe-header-image.html" . }}
+        {{ end }}
+    </header>
 
-    <h2>{{ if ne .RelPermalink "/reseptit/" }}Reseptit tässä kategoriassa{{ else }}Kaikki reseptit{{ end }}</h2>
-    
-    <div class="picture-grid">
-        {{ template "list-pages-grid" . }}
-    </div>
+    <section class="section-content">
+        {{ .Content }}
+    </section>
 
+    <section class="section-recipes">
+        <h2>{{ if ne .RelPermalink "/reseptit/" }}Reseptit tässä kategoriassa{{ else }}Kaikki reseptit{{ end }}</h2>
+        
+        <div class="picture-grid">
+            {{ if eq .RelPermalink "/reseptit/" }}
+                {{ range .Sections }}
+                    {{ range .Sections }}
+                        <div class="picture-card">
+                            <a href="{{ .RelPermalink }}" class="card-link" aria-label="Näytä kategoria: {{ .Title }}">
+                                <div class="image-container">
+                                    {{ $defaultImg := "/images/default-recipe.jpg" }}
+                                    {{ $imgSrc := .Params.headimg | default $defaultImg }}
+                                    <img
+                                        src="{{ $imgSrc }}"
+                                        alt="{{ .Title }}"
+                                        loading="lazy"
+                                        class="recipe-image">
+                                </div>
+                                <div class="card-content">
+                                    <h2>{{ .Title }}</h2>
+                                    <div class="recipe-meta">
+                                        <span class="meta-item">
+                                            {{ $count := len .Pages }}
+                                            {{ $count }} {{ if eq $count 1 }}resepti{{ else }}reseptiä{{ end }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {{ end }}
+                {{ end }}
+            {{ else }}
+                {{ template "list-pages-grid" . }}
+            {{ end }}
+        </div>
+    </section>
 {{ end }}
 
 {{ define "list-pages-grid" }}

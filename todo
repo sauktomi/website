@@ -1,3 +1,5 @@
 ??maybe done Seperate the instructions list into appropriate lists, (instructions, variations, notes).
 
 Make the nav aside function as javascript popup
+
+Implement params "prepTime", "cookTime", and "totalTime" to every content/reseptit file – other than _index.md files.

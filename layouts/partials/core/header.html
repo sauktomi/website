@@ -1,0 +1,15 @@
+{{ $content := . }}
+
+<header class="site-header">
+    <div class="header-content">
+        <div class="site-branding">
+            <a href="/" class="site-title">{{ .Site.Title }}</a>
+            {{ with .Site.Params.description }}
+            <p class="site-description">{{ . }}</p>
+            {{ end }}
+        </div>
+
+        <!-- Main Navigation -->
+        {{ partial "core/nav.html" . }}
+    </div>
+</header>

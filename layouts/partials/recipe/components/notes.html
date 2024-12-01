@@ -1,0 +1,14 @@
+{{ $content := . }}
+
+<section class="recipe-notes">
+    <h2>Muistiinpanot</h2>
+
+    {{ $shortcode := "(?s){{< notes >}}(.*?){{</ notes >}}" }}
+    {{ $matches := findRE $shortcode .RawContent }}
+    
+    {{ if $matches }}
+        <div class="notes-content">
+            {{ index $matches 0 | markdownify }}
+        </div>
+    {{ end }}
+</section>

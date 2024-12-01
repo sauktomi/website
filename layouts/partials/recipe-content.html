@@ -1,4 +1,4 @@
-<div class="recipe-content">
-    {{ partial "recipe-instructions.html" . }}
-    {{ partial "recipe-notes.html" . }}
-</div>
+<section class="recipe-content">
+    {{ partial "recipe-components.html" (dict "component" "instructions" "content" .) }}
+    {{ partial "recipe-components.html" (dict "component" "notes" "content" .) }}
+</section>

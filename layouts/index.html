@@ -1,55 +1,87 @@
 {{ define "main" }}
-    <h1>Tervetuloa {{ .Site.Title }}</h1>
-
-    <h2>Uusimmat reseptit</h2>
-    <div class="picture-grid">
-        {{ $recipes := where .Site.RegularPages "Section" "reseptit" }}
-        {{ range first 6 $recipes.ByDate.Reverse }}
-            {{ partial "recipe-card.html" (dict
-                "classes" (slice "picture-card")
-                "recipe" .
-            ) }}
-        {{ else }}
-            <p>Valitettavasti reseptejä ei ole saatavilla tällä hetkellä.</p>
-        {{ end }}
-    </div>
-
-    {{ $modifiedRecipes := where (where .Site.RegularPages "Section" "reseptit") "Params.lastmod" "ne" nil }}
-    {{ if $modifiedRecipes }}
-    <h2>Viimeksi muokatut reseptit</h2>
-    <div class="picture-grid">
-        {{ range first 3 $modifiedRecipes.ByLastmod.Reverse }}
-            {{ partial "recipe-card.html" (dict
-                "classes" (slice "picture-card")
-                "recipe" .
-            ) }}
-        {{ end }}
-    </div>
-    {{ end }}
-
-    <div class="home-features">
-        <div class="categories-section">
-            <h2>Kategoriat</h2>
-            <div class="category-grid">
-                {{ range .Site.Sections }}
-                    {{ if eq .Section "reseptit" }}
-                        {{ range .Sections }}
-                            <a href="{{ .RelPermalink }}" class="category-card">
-                                <h3>{{ .Title }}</h3>
-                                <p>{{ len .Pages }} reseptiä</p>
-                            </a>
-                        {{ end }}
-                    {{ end }}
-                {{ end }}
+    <header class="section-header">
+        <h1>Tervetuloa {{ .Site.Title }}</h1>
+    </header>
+    
+    <section class="section-search">
+        <div class="search-container">
+            <div class="search-box">
+                <input
+                    type="search"
+                    id="recipe-search"
+                    placeholder="Etsi reseptejä..."
+                    aria-label="Haku"
+                >
             </div>
         </div>
+    </section>
 
-        <div class="quick-links">
-            <h2>Pikalinkit</h2>
-            <ul>
-                <li><a href="/reseptit">Kaikki reseptit</a></li>
-                <li><a href="/tietokanta">Tietokanta</a></li>
-            </ul>
+    <section class="section-featured">
+        <h2>Korostetut reseptit</h2>
+        <div class="picture-grid">
+            {{ $recipes := where .Site.RegularPages "Section" "reseptit" }}
+            {{ range first 3 (where $recipes "Params.featured" true) }}
+                {{ partial "recipe-card.html" (dict
+                    "classes" (slice "picture-card")
+                    "recipe" .
+                ) }}
+            {{ end }}
         </div>
-    </div>
+    </section>
+
+    <section class="section-recipes">
+        <h2>Uusimmat reseptit</h2>
+        <div class="picture-grid">
+            {{ range first 6 $recipes.ByDate.Reverse }}
+                {{ partial "recipe-card.html" (dict
+                    "classes" (slice "picture-card")
+                    "recipe" .
+                ) }}
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="section-categories">
+        <h2>Suosituimmat kategoriat</h2>
+        <div class="picture-grid">
+            {{ range .Site.Sections }}
+                {{ if eq .Section "reseptit" }}
+                    {{ range first 6 .Sections }}
+                        <a href="{{ .RelPermalink }}" class="picture-card">
+                            <div class="card-content">
+                                <h3>{{ .Title }}</h3>
+                                <div class="meta-item">
+                                    <span>{{ len .Pages }} reseptiä</span>
+                                </div>
+                            </div>
+                        </a>
+                    {{ end }}
+                {{ end }}
+            {{ end }}
+        </div>
+    </section>
+
+    <section class="section-knowledge">
+        <h2>Ruuanlaiton tietopankki</h2>
+        <div class="picture-grid">
+            <a href="/tietokanta/esitaikinat" class="picture-card">
+                <div class="card-content">
+                    <h3>Esitaikinat</h3>
+                    <p>Opas erilaisten esitaikinoiden valmistukseen</p>
+                </div>
+            </a>
+            <a href="/tietokanta/volume-rules" class="picture-card">
+                <div class="card-content">
+                    <h3>Mittasuhteet</h3>
+                    <p>Tärkeimmät mittasuhteet leivonnassa</p>
+                </div>
+            </a>
+            <a href="/tietokanta/standardit/reseptistandardit" class="picture-card">
+                <div class="card-content">
+                    <h3>Reseptistandardit</h3>
+                    <p>Perusohjeet ja standardit</p>
+                </div>
+            </a>
+        </div>
+    </section>
 {{ end }}

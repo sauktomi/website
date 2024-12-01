@@ -1,4 +1,6 @@
-<div class="meta-section essential-info">
+{{ $content := . }}
+
+<div class="meta-section">
     {{ with .Params.maara }}
     <div class="meta-item" title="Tuotto">
         {{ partial "recipe-meta-icons.html" (dict "icon" "yield") }}

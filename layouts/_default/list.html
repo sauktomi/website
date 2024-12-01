@@ -1,12 +1,22 @@
 {{ define "main" }}
-    <h2>{{ .Title }}</h2>
+    <header>
+        <h2>{{ .Title }}</h2>
+        {{ with .Description }}
+            <p>{{ . }}</p>
+        {{ end }}
+    </header>
+
     {{ if .Pages }}
-        <div class="picture-grid">
-            {{ range .Pages }}
-                {{ partial "recipe-card.html" (dict "recipe" .) }}
-            {{ end }}
-        </div>
+        <section>
+            <div class="picture-grid">
+                {{ range .Pages }}
+                    {{ partial "recipe-card.html" (dict "recipe" .) }}
+                {{ end }}
+            </div>
+        </section>
     {{ else }}
-        <p>Valitettavasti sisältöä ei ole saatavilla tällä hetkellä.</p>
+        <section>
+            <p>Valitettavasti sisältöä ei ole saatavilla tällä hetkellä.</p>
+        </section>
     {{ end }}
 {{ end }}

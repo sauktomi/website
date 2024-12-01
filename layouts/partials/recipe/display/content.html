@@ -1,0 +1,20 @@
+{{ $content := . }}
+
+<article class="recipe">
+    <!-- Recipe Header with Image and Meta -->
+    {{ partial "recipe/display/header.html" . }}
+
+    <!-- Main Recipe Content -->
+    <div class="recipe-body">
+        <!-- Ingredients Section -->
+        <aside class="recipe-sidebar">
+            {{ partial "recipe/components/ingredients.html" . }}
+        </aside>
+
+        <!-- Instructions and Notes -->
+        <section class="recipe-content">
+            {{ partial "recipe/components/instructions.html" . }}
+            {{ partial "recipe/components/notes.html" . }}
+        </section>
+    </div>
+</article>

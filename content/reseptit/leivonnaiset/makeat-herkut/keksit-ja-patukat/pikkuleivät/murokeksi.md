@@ -5,7 +5,7 @@ lastmod: "2024-11-11"
 author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
-description: "Murenat voikeksit kastettuna suussa sulavaan tummaan suklaaseen"
+description: "Mureat voikeksit kastettuna suussa sulavaan tummaan suklaaseen"
 categories: ["Makeat herkut", "Keksit ja patukat"]
 tags:
 - voi

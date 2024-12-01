@@ -1,0 +1,29 @@
+{{ $content := . }}
+
+<div class="meta-section">
+    {{ with .Date }}
+    <div class="meta-item" title="Päivämäärä">
+        {{ partial "recipe-meta-icons.html" (dict "icon" "date") }}
+        <span>{{ .Format "02.01.2006" }}</span>
+    </div>
+    {{ end }}
+
+    {{ with .Params.author }}
+    <div class="meta-item" title="Tekijä">
+        {{ partial "recipe-meta-icons.html" (dict "icon" "author") }}
+        <span>{{ . }}</span>
+    </div>
+    {{ end }}
+
+    {{ with .Params.tags }}
+    <div class="meta-item" title="Tagit">
+        {{ partial "recipe-meta-icons.html" (dict "icon" "tags") }}
+        <span>
+            {{ range $index, $tag := . }}
+                {{- if $index }}, {{ end -}}
+                <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>
+            {{- end }}
+        </span>
+    </div>
+    {{ end }}
+</div>

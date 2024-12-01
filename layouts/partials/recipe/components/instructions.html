@@ -1,0 +1,16 @@
+{{ $content := . }}
+
+<section class="recipe-instructions">
+    <h2>Ohjeet</h2>
+
+    {{ $shortcode := "(?s){{< instructions >}}(.*?){{</ instructions >}}" }}
+    {{ $matches := findRE $shortcode .RawContent }}
+    
+    {{ if $matches }}
+        <div class="instructions-content">
+            {{ index $matches 0 | markdownify }}
+        </div>
+    {{ else }}
+        <p class="instructions-empty">Ohjeita ei ole saatavilla.</p>
+    {{ end }}
+</section>

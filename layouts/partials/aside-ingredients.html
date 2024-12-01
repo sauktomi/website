@@ -1,4 +1,4 @@
-<div class="recipe-ingredients">
+<section class="recipe-ingredients">
     <h3>Ainesosat</h3>
     {{ with .Params.skaalaus }}
     <div class="scaling-control">
@@ -14,6 +14,6 @@
     {{ if $ingredients }}
         {{ index $ingredients 0 | markdownify }}
     {{ else }}
-        <p>Ainesosia ei löytynyt.</p>
+        <p class="ingredients-empty">Ainesosia ei löytynyt.</p>
     {{ end }}
-</div>
+</section>

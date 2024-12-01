@@ -1,0 +1,37 @@
+{{ $content := . }}
+
+<article class="recipe-card">
+    <a href="{{ .RelPermalink }}" class="recipe-card-link">
+        {{ if .Params.images }}
+            <div class="recipe-card-image">
+                {{ $image := index .Params.images 0 }}
+                {{ $alt := .Title }}
+                <img src="{{ $image }}" alt="{{ $alt }}" loading="lazy">
+            </div>
+        {{ end }}
+
+        <div class="recipe-card-content">
+            <h2 class="recipe-card-title">{{ .Title }}</h2>
+            
+            <div class="recipe-card-meta">
+                {{ with .Params.valmistusaika }}
+                <span class="meta-time" title="Valmistusaika">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+                    {{ . }}
+                </span>
+                {{ end }}
+
+                {{ with .Params.difficulty }}
+                <span class="meta-difficulty" title="Vaikeustaso">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
+                    {{ . }}
+                </span>
+                {{ end }}
+            </div>
+
+            {{ with .Description }}
+            <p class="recipe-card-description">{{ . }}</p>
+            {{ end }}
+        </div>
+    </a>
+</article>

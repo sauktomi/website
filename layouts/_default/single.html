@@ -1,24 +1,23 @@
 {{ define "sidebar" }}
-    {{ partial "recipe-ingredients.html" . }}
+    {{ partial "aside-ingredients.html" . }}
     <script src="/js/recipe-scaling.js"></script>
 {{ end }}
 
 {{ define "main" }}
-<article class="recipe">
-    <header class="recipe-header">
-        
-        {{ partial "recipe-header-image.html" . }}
-        <h1 class="recipe-title">{{ .Title }}</h1>
+    <article>
+        <header>
+            {{ partial "recipe-header-image.html" . }}
+            <h1>{{ .Title }}</h1>
 
-        {{ with .Params.description }}
-            <div class="recipe-description">
-                <p>{{ . }}</p>
-            </div>
-        {{ end }}
+            {{ with .Params.description }}
+                <div class="recipe-description">
+                    <p>{{ . }}</p>
+                </div>
+            {{ end }}
 
-        {{ partial "recipe-info.html" . }}
-    </header>
+            {{ partial "recipe-meta.html" . }}
+        </header>
 
-    {{ partial "recipe-content.html" . }}
-</article>
+        {{ partial "recipe-content.html" . }}
+    </article>
 {{ end }}
