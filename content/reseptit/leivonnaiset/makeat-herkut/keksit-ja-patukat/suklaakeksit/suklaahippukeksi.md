@@ -1,7 +1,7 @@
 ---
 title: "Suklaahippukeksi"
 date: "2024-11-06"
-lastmod: "2024-11-10"
+lastmod: "2024-12-02"
 author: "TMS"
 draft: true
 headimg: "/images/CalculatorSearch.jpeg"
@@ -14,8 +14,8 @@ tags:
 - kahvipöytä
 difficulty: "Helppo"
 valmistusaika: "00:45"
-maara: 18
-servings: 18
+maara: 24
+servings: 24
 impsize: "2x leivinpelti"
 storage:
 - "5pv"
@@ -33,37 +33,35 @@ diet:
 - "Kananmuna"
 - "Vehnä"
 skaalaus:
-- "1.5x 27 kpl (3 peltiä)"
-- "2x 36 kpl (4 peltiä)"
+- "1.5x 36 kpl (3 peltiä)"
+- "2x 48 kpl (4 peltiä)"
 ---
 
 {{< ingredients >}}
 #### Taikina
 - 150 g Voi (huoneenlämpöinen)
-- 150 g Sokeri
-- 75 g Fariinisokeri
+- 160 g Sokeri
+- 70 g Fariinisokeri
 - 10 ml Vaniljasokeri
+- 2 ml Ruokasooda
+- 2.5 ml Suola
 - 1 kpl Kananmuna (huoneenlämpöinen)
-- 225 g Vehnäjauho
-- 5 ml Ruokasooda
-- 1 ml Suola
-
-#### Suklaa
-- 175 g Tumma suklaa (54% kaakao, karkeaksi rouhittu)
+- 200 g Vehnäjauho
+- 170 g Tumma suklaa (54% kaakao)
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni 150°C (*kiertoilma*) tai 180°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
+1. Esilämmitä uuni 190°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
 
 2. Rouhi suklaa karkeaksi.
 
-3. **Taikina:** Vaahdota pehmeä voi ja sokerit vaaleaksi ja kuohkeaksi keskinopeudella 4 min. Lisää kananmuna ja vatkaa alhaisella nopeudella tasaiseksi. *Kaavi kulhon seinät puhtaaksi.*
+3. **Taikina:** Vaahdota pehmeä voi, sokerit, sooda, ja suola vaaleaksi ja kuohkeaksi keskinopeudella 4 min. Lisää kananmuna ja vatkaa alhaisella nopeudella tasaiseksi. *Kaavi kulhon seinät puhtaaksi.*
 
-4. Sekoita kuivat aineet erillisessä kulhossa. Lisää ne vähitellen taikinaan alhaisella nopeudella. *Sekoita vain kunnes ainekset ovat juuri sekoittuneet.*
+4. Sekoita vehnäjauho vähitellen taikinaan alhaisella nopeudella. *Sekoita vain kunnes ainekset ovat juuri sekoittuneet.*
 
 5. Lisää suklaarouhe taikinaan käsin sekoittaen.
 
-6. Muotoile noin 48 g kokoisia palloja ja asettele leivinpaperille 5 cm välein. Litistä pallot sopivan paksuisiksi.
+6. Muotoile tasaisia #30 palloja ja asettele leivinpaperille 5 cm välein. Litistä pallot sopivan paksuisiksi.
 
 7. Paista 9-12 min, kunnes reunat ovat kullanruskeita. *Keskusta saa jäädä hieman pehmeäksi.*
 
