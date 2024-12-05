@@ -8,7 +8,7 @@
     {{ partial "top-nav.html" . }}
     <div class="container">
         <aside class="sidebar">
-            {{ partial "header.html" . }}
+            <header><h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1></header>            
             {{ partial "nav.html" . }}
             {{ block "sidebar" . }}{{ end }}
             {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
