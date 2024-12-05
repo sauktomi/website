@@ -1,93 +1,138 @@
 {{ define "main" }}
+    <!-- 
+        ✨ Enchanted Recipe Search Portal
+        
+        Core Design Principles:
+        - Dynamic filter generation
+        - Efficient DOM structure
+        - Semantic HTML patterns
+        - Accessible interactions
+        
+        @version 4.0.0
+    -->
     <header class="section-header">
         <h1>Hae reseptejä</h1>
     </header>
 
-    <section class="section-search">
+    <section class="section-search" aria-label="Hakutoiminnot">
+        <!-- 🔍 Search Input Enchantment -->
         <div class="search-box">
             <input
                 type="search"
                 id="recipe-search"
-                placeholder="Hae reseptejä, ainesosia tai kategorioita... (Alt + /)"
+                placeholder="Hae reseptejä, ainesosia tai kategorioita..."
                 aria-label="Hae reseptejä"
+                autocomplete="off"
+                spellcheck="false"
                 autofocus
             >
         </div>
 
-        <div class="search-filters">
+        <!-- 🎭 Dynamic Filter System -->
+        <div class="search-filters" role="group" aria-label="Hakusuodattimet">
+            <!-- 📊 Difficulty Filter Portal -->
             <div class="filter-group">
-                <button class="filter-dropdown-btn" aria-expanded="false" aria-controls="difficulty-dropdown">
+                <button class="filter-dropdown-btn" 
+                        aria-expanded="false" 
+                        aria-controls="difficulty-dropdown">
                     Vaikeustaso
-                    <span class="dropdown-arrow">▼</span>
+                    <span class="dropdown-arrow" aria-hidden="true">▼</span>
                 </button>
                 <div id="difficulty-dropdown" class="filter-dropdown-content" hidden>
                     {{ $difficulties := slice }}
                     {{ range where .Site.RegularPages "Section" "reseptit" }}
-                        {{ if .Params.difficulty }}
-                            {{ $difficulties = $difficulties | append .Params.difficulty }}
+                        {{ with .Params.difficulty }}
+                            {{ $difficulties = $difficulties | append . }}
                         {{ end }}
                     {{ end }}
                     {{ range $difficulty := uniq $difficulties }}
                     <div class="filter-option">
-                        <input type="checkbox" id="difficulty-{{ lower $difficulty }}" value="{{ $difficulty }}">
-                        <label for="difficulty-{{ lower $difficulty }}">{{ $difficulty }}</label>
+                        <input 
+                            type="checkbox"
+                            class="filter-option"
+                            id="difficulty-{{ . }}"
+                            value="{{ . }}"
+                            data-filter-type="difficulty"
+                        >
+                        <label for="difficulty-{{ . }}">{{ . }}</label>
                     </div>
                     {{ end }}
                 </div>
             </div>
 
+            <!-- 🥗 Dietary Restrictions Portal -->
             <div class="filter-group">
-                <button class="filter-dropdown-btn" aria-expanded="false" aria-controls="diet-dropdown">
+                <button class="filter-dropdown-btn" 
+                        aria-expanded="false" 
+                        aria-controls="dietary-dropdown">
                     Ruokavalio
-                    <span class="dropdown-arrow">▼</span>
+                    <span class="dropdown-arrow" aria-hidden="true">▼</span>
                 </button>
-                <div id="diet-dropdown" class="filter-dropdown-content" hidden>
-                    {{ $diets := slice }}
+                <div id="dietary-dropdown" class="filter-dropdown-content" hidden>
+                    {{ $dietary := slice }}
                     {{ range where .Site.RegularPages "Section" "reseptit" }}
-                        {{ range .Params.diet }}
-                            {{ $diets = $diets | append . }}
+                        {{ with .Params.dietary }}
+                            {{ if .gluten_free }}{{ $dietary = $dietary | append "gluteeniton" }}{{ end }}
+                            {{ if .dairy_free }}{{ $dietary = $dietary | append "maidoton" }}{{ end }}
+                            {{ if .nut_free }}{{ $dietary = $dietary | append "pähkinätön" }}{{ end }}
+                            {{ if .fish_free }}{{ $dietary = $dietary | append "kalaton" }}{{ end }}
+                            {{ if .vegan }}{{ $dietary = $dietary | append "vegaaninen" }}{{ end }}
+                            {{ if .low_sugar }}{{ $dietary = $dietary | append "vähäsokerinen" }}{{ end }}
+                            {{ if .high_protein }}{{ $dietary = $dietary | append "proteiinipitoinen" }}{{ end }}
+                            {{ if .high_fiber }}{{ $dietary = $dietary | append "runsaskuituinen" }}{{ end }}
                         {{ end }}
                     {{ end }}
-                    {{ range $diet := uniq $diets }}
+                    {{ range $diet := uniq $dietary }}
                     <div class="filter-option">
-                        <input type="checkbox" id="diet-{{ lower $diet }}" value="{{ $diet }}">
-                        <label for="diet-{{ lower $diet }}">{{ $diet }}</label>
+                        <input 
+                            type="checkbox"
+                            class="filter-option"
+                            id="dietary-{{ . }}"
+                            value="{{ . }}"
+                            data-filter-type="dietary"
+                        >
+                        <label for="dietary-{{ . }}">{{ . }}</label>
                     </div>
                     {{ end }}
                 </div>
             </div>
 
+            <!-- ⏲️ Time Category Portal -->
             <div class="filter-group">
-                <button class="filter-dropdown-btn" aria-expanded="false" aria-controls="category-dropdown">
-                    Kategoria
-                    <span class="dropdown-arrow">▼</span>
+                <button class="filter-dropdown-btn" 
+                        aria-expanded="false" 
+                        aria-controls="time-dropdown">
+                    Valmistusaika
+                    <span class="dropdown-arrow" aria-hidden="true">▼</span>
                 </button>
-                <div id="category-dropdown" class="filter-dropdown-content" hidden>
-                    {{ range .Site.Sections }}
-                        {{ if eq .Section "reseptit" }}
-                            {{ range .Sections }}
-                                {{ range .Sections }}
-                                <div class="filter-option">
-                                    <input type="checkbox" id="category-{{ .Title }}" value="{{ .Title }}">
-                                    <label for="category-{{ .Title }}">{{ .Title }}</label>
-                                </div>
-                                {{ end }}
-                            {{ end }}
-                        {{ end }}
+                <div id="time-dropdown" class="filter-dropdown-content" hidden>
+                    {{ $timeCategories := slice "Nopea" "Keskinopea" "Hidas" "Erittäin hidas" }}
+                    {{ range $timeCategory := $timeCategories }}
+                    <div class="filter-option">
+                        <input 
+                            type="checkbox"
+                            class="filter-option"
+                            id="time-{{ . }}"
+                            value="{{ . }}"
+                            data-filter-type="timeCategory"
+                        >
+                        <label for="time-{{ . }}">{{ . }}</label>
+                    </div>
                     {{ end }}
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section-results">
+    <!-- 🖼️ Results Display Portal -->
+    <section class="section-results" aria-live="polite">
         <div id="search-results" class="picture-grid">
             {{ range where .Site.RegularPages "Section" "reseptit" }}
                 {{ partial "recipe-card.html" (dict "recipe" . "classes" (slice "picture-card")) }}
             {{ end }}
+        </div>
+    </section>
 
-<script src="/js/fuse.js"></script>
-<script>
-window.searchIndex = {{ partial "search-index.html" . | safeJS }};
-</script>
+    <!-- 🔮 Enchanted Dependencies -->
+    <script defer src="/js/search.js"></script>
 {{ end }}

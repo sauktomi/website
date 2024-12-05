@@ -1,44 +1,87 @@
 ---
+# Essential Recipe Information
 title: "Suklaakastetut murokeksit"
+description: "Mureat voikeksit kastettuna suussa sulavaan tummaan suklaaseen"
+servings: 16
+yield: "16 kpl"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "1H"
+cook_time: "20M"
+total_time: "1H 20M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: "1x leivinpelti"
+  - type: "Yleiskone"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "7 päivää"
+  fridge: "-"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Makeat herkut"
+  - "Keksit ja patukat"
+tags: 
+  - "voi"
+  - "murea"
+  - "makea"
+  - "suklaa"
+  - "kahvipöytä"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "murokeksit"
+  - "suklaakeksit"
+  - "voikeksit"
+  - "kahvileipä"
+  - "leivonta"
+
+# Metadata and Attribution
 date: "2024-10-22"
 lastmod: "2024-11-11"
-author: "TMS"
+author: 
+  name: "TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Mureat voikeksit kastettuna suussa sulavaan tummaan suklaaseen"
-categories: ["Makeat herkut", "Keksit ja patukat"]
-tags:
-- voi
-- murea
-- makea
-- suklaa
-- kahvipöytä
-difficulty: "Helppo"
-valmistusaika: "01:20"
-maara: 16
-servings: 16
-impsize: "1x leivinpelti"
-storage:
-- "5pv"
-- "10pv"
-- "2kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Leivinpelti"
-method:
-- "Vaahdotus"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Vehnä"
-skaalaus:
-- "1.5x 24 kpl (2 peltiä)"
-- "2x 32 kpl (2 peltiä)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Makeat herkut"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Keksitaikina
+
 - 230 g Voi (huoneenlämpöinen)
 - 100 g Sokeri
 - 10 ml Vaniljasokeri
@@ -46,10 +89,12 @@ skaalaus:
 - 250 g Vehnäjauho
 
 #### Kuorrute
+
 - 200 g Tumma suklaa (72% kaakao)
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Vaahdota pehmeä voi, sokerit ja suola kuohkeaksi seokseksi yleiskoneella keskinopeudella 3-4 min.
 
 2. Lisää vehnäjauhot ja sekoita matalalla nopeudella, kunnes muodostuu tasainen taikina. *Älä ylisekoita.*
@@ -68,23 +113,26 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Varmista että keksit ovat täysin jäähtyneet ennen suklaaseen kastamista
 
-### Versioita:
-- **Manteli**: 
+### Versioita
+
+- **Manteli**:
   - Lisää taikinaan 50 g mantelirouhetta
   - Ripottele mantelilastuja suklaan päälle
 
-- **Valkosuklaa**: 
+- **Valkosuklaa**:
   - Kasta keksit valkosuklaaseen (200 g)
   - Koristele tumman suklaan raidoilla
 
-- **Suolainen**: 
+- **Suolainen**:
   - Kasta tummasuklaaseen
   - Ripottele merisuolahiutaleita suklaan päälle ennen jähmettymistä
 
-- **Appelsiini**: 
+- **Appelsiini**:
   - Lisää taikinaan 1 appelsiinin kuoriraaste
   - Lisää suklaaseen 5 ml appelsiiniöljyä
 {{</ notes >}}

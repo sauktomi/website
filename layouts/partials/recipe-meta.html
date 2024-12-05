@@ -1,99 +1,89 @@
-<div class="recipe-meta">
-    <div class="recipe-meta-grid">
-        <!-- Core Recipe Info -->
-        <div class="meta-section">
-            {{ with .Params.maara }}
-            <div class="meta-item" title="Tuotto">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "yield") }}
-                <span>{{ . }} {{ index $.Params.categories 0 | default "Kategoria" }}</span>
-            </div>
-            {{ end }}
+<div class="recipe-meta-grid">
 
-            {{ with .Params.valmistusaika }}
-            <div class="meta-item" title="Valmistusaika">
+    <div class="meta-section">
+
+        {{ with .Params.difficulty }}
+        <div class="meta-item" title="Vaikeustaso">
+            {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
+            <span>{{ . }}</span>
+        </div>
+        {{ end }}
+        
+        {{ with .Params.total_time }}
+            {{ $hours := 0 }}
+            {{ $minutes := 0 }}
+            {{ if findRE "H" . }}
+                {{ $hours = index (findRE "\\d+" . 1) 0 | int }}
+            {{ end }}
+            {{ if findRE "M" . }}
+                {{ $minutes = index (findRE "\\d+M" . 1) 0 | replaceRE "M$" "" | int }}
+            {{ end }}
+            <div class="meta-item" title="Kokonaisaika">
                 {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+                <span>{{ printf "%02d:%02d" $hours $minutes }}</span>
+            </div>
+        {{ end }}
+    
+        {{ with .Params.dietary }}
+        <div class="meta-item" title="Ruokavalio">
+            {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
+            <span>
+                {{- $symbols := slice -}}
+                {{- if .gluten_free }}{{ $symbols = $symbols | append "G" }}{{ end -}}
+                {{- if .dairy_free }}{{ $symbols = $symbols | append "M" }}{{ end -}}
+                {{- if .nut_free }}{{ $symbols = $symbols | append "P" }}{{ end -}}
+                {{- if .fish_free }}{{ $symbols = $symbols | append "K" }}{{ end -}}
+                {{- if .vegan }}{{ $symbols = $symbols | append "VE" }}{{ end -}}
+                {{- range $i, $symbol := $symbols -}}
+                    {{- if $i }}, {{ end -}}
+                    {{- $symbol -}}
+                {{- end -}}
+            </span>
+        </div>
+        {{ end }}
+    
+    </div>
+
+    <div id="additional-info" class="additional-info hidden">
+        <div class="meta-section">
+            {{ with .Params.cookingMethod }}
+            <div class="meta-item" title="Menetelmä">
+                {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
                 <span>{{ . }}</span>
             </div>
             {{ end }}
 
-            {{ with .Params.difficulty }}
-            <div class="meta-item" title="Vaikeustaso">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
-                <span>{{ . }}</span>
-            </div>
-            {{ end }}
-
-            {{ with .Params.diet }}
-            <div class="meta-item" title="Allergeenit">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
-                <span>{{ delimit . ", " }}</span>
+            {{ with .Params.equipment }}
+            <div class="meta-item" title="Välineet">
+                {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
+                <span>
+                    {{- range $i, $e := . -}}
+                        {{- if $i }}, {{ end -}}
+                        {{- $e.type -}}
+                        {{- with $e.size }} ({{ . }}){{ end -}}
+                    {{- end -}}
+                </span>
             </div>
             {{ end }}
         </div>
 
-        <div class="divider-container">
-            <hr class="meta-divider" />
-            <button class="info-toggle" onclick="toggleAdditionalInfo()" aria-expanded="false" aria-controls="additional-info">
-                <svg class="toggle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
-            </button>
-        </div>
-
-        <!-- Additional Info (initially hidden) -->
-        <div id="additional-info" class="additional-info hidden">
-            <!-- Method Info -->
-            <div class="meta-section">
-                {{ with .Params.appliances }}
-                <div class="meta-item" title="Välineet">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
-                    <span>{{ delimit . ", " }}</span>
-                </div>
-                {{ end }}
-
-                {{ with .Params.method }}
-                <div class="meta-item" title="Menetelmä">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
-                    <span>{{ delimit . ", " }}</span>
-                </div>
-                {{ end }}
-
-                {{ with .Params.storage }}
-                <div class="meta-item storage-info" title="Säilyvyys">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "storage") }}
-                    <span>{{ delimit . " | " }}</span>
-                </div>
-                {{ end }}
+        <div class="meta-section">
+            {{ with .Params.tags }}
+            <div class="meta-item" title="Tagit">
+                {{ partial "recipe-meta-icons.html" (dict "icon" "tags") }}
+                <span>
+                    {{- range $index, $tag := . -}}
+                        {{- if $index }}, {{ end -}}
+                        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">{{ $tag }}</a>
+                    {{- end -}}
+                </span>
             </div>
-
-            <!-- Recipe Details -->
-            <div class="meta-section">
-                {{ with .Date }}
-                <div class="meta-item" title="Päivämäärä">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "date") }}
-                    <span>{{ .Format "02.01.2006" }}</span>
-                </div>
-                {{ end }}
-
-                {{ with .Params.author }}
-                <div class="meta-item" title="Tekijä">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "author") }}
-                    <span>{{ . }}</span>
-                </div>
-                {{ end }}
-
-                {{ with .Params.tags }}
-                <div class="meta-item" title="Tagit">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "tags") }}
-                    <span>
-                        {{ range $index, $tag := . }}
-                            {{- if $index }}, {{ end -}}
-                            <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}">{{ $tag }}</a>
-                        {{- end }}
-                    </span>
-                </div>
-                {{ end }}
-            </div>
+            {{ end }}
         </div>
     </div>
-</div>
 
-<script src="/js/recipe-info.js"></script>
+    <div class="divider-container" role="button" tabindex="0" aria-expanded="false" aria-controls="additional-info">
+        <hr class="meta-divider" />
+    </div>
+
+</div>

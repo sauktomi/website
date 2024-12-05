@@ -1,0 +1,34 @@
+{{- $searchIndex := slice -}}
+{{- range where .Site.RegularPages "Section" "reseptit" -}}
+    {{- $dietTags := slice -}}
+    {{- with .Params.dietary -}}
+        {{- if .gluten_free }}{{ $dietTags = $dietTags | append "gluteeniton" }}{{ end -}}
+        {{- if .dairy_free }}{{ $dietTags = $dietTags | append "maidoton" }}{{ end -}}
+        {{- if .nut_free }}{{ $dietTags = $dietTags | append "pähkinätön" }}{{ end -}}
+        {{- if .fish_free }}{{ $dietTags = $dietTags | append "kalaton" }}{{ end -}}
+        {{- if .vegan }}{{ $dietTags = $dietTags | append "vegaaninen" }}{{ end -}}
+        {{- if .low_sugar }}{{ $dietTags = $dietTags | append "vähäsokerinen" }}{{ end -}}
+        {{- if .high_protein }}{{ $dietTags = $dietTags | append "proteiinipitoinen" }}{{ end -}}
+        {{- if .high_fiber }}{{ $dietTags = $dietTags | append "runsaskuituinen" }}{{ end -}}
+    {{- end -}}
+
+    {{- $page := dict 
+        "title" .Title
+        "permalink" .RelPermalink
+        "difficulty" .Params.difficulty
+        "categories" (.Params.categories | default slice)
+        "tags" (.Params.tags | default slice)
+        "featured_image" .Params.featured_image
+        "total_time" .Params.total_time
+        "recipeCategory" .Params.schema.recipeCategory
+        "dietary" $dietTags
+        "searchText" (printf "%s %s %s %s" 
+            .Title 
+            (delimit (.Params.categories | default slice) " ")
+            (delimit (.Params.tags | default slice) " ")
+            (delimit $dietTags " ")
+        )
+    -}}
+    {{- $searchIndex = $searchIndex | append $page -}}
+{{- end -}}
+{{- $searchIndex | jsonify -}}

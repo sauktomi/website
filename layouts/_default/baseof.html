@@ -12,7 +12,7 @@
             {{ partial "nav.html" . }}
             {{ block "sidebar" . }}{{ end }}
             {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
-                {{ partial "action-buttons.html" . }}
+                {{ partial "recipe-info-bar.html" . }}
             {{ end }}
         </aside>
         <main class="content" id="main-content">

@@ -29,7 +29,7 @@ menu:
 
 outputs:
   home: ["HTML", "RSS"]
-  page: ["HTML", "PDF", "Print"]
+  page: ["HTML", "PDF", "Print", "SearchIndex"]
   section: ["HTML", "RSS"]
   taxonomy: ["HTML", "RSS"]
   term: ["HTML", "RSS"]
@@ -40,6 +40,15 @@ outputFormats:
     baseName: "print"
     isHTML: true
     permalinkable: true
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
+
+mediaTypes:
+  application/json:
+    suffixes: ['json']    
 
 params:
   description: "Oman maun reseptejä"

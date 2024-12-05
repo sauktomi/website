@@ -3,7 +3,7 @@
         <h1>{{ .Title }}</h1>
 
         {{ $path := .RelPermalink }}
-        {{ if and (hasPrefix $path "/reseptit/leivonnaiset/") (ne $path "/reseptit/leivonnaiset/") (.Params.headimg) }}
+        {{ if and (hasPrefix $path "/reseptit/leivonnaiset/") (ne $path "/reseptit/leivonnaiset/") (.Params.featured_image) }}
             {{ partial "recipe-header-image.html" . }}
         {{ end }}
     </header>
@@ -23,7 +23,7 @@
                             <a href="{{ .RelPermalink }}" class="card-link" aria-label="Näytä kategoria: {{ .Title }}">
                                 <div class="image-container">
                                     {{ $defaultImg := "/images/default-recipe.jpg" }}
-                                    {{ $imgSrc := .Params.headimg | default $defaultImg }}
+                                    {{ $imgSrc := .Params.featured_image | default $defaultImg }}
                                     <img
                                         src="{{ $imgSrc }}"
                                         alt="{{ .Title }}"

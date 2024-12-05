@@ -1,44 +1,84 @@
 ---
+# Essential Recipe Information
 title: '{{ replace .File.ContentBaseName "-" " " | title }}'
+description: "Enter a description here"
+servings: 16
+yield: "1x leivinpelti"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "45M"
+cook_time: "35M"
+total_time: "1H20M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+  - type: "Yleiskone"
+  - type: "Leivinpelti"
+cookingMethod: "Paistaminen"
+
+# Storage Instructions
+storage:
+  room_temp: "5 päivää"
+  fridge: "10 päivää"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Makeat herkut"
+  - "Keksit ja patukat"
+tags: 
+  - "voi"
+  - "murea"
+  - "makea"
+  - "suklaa"
+  - "kahvipöytä"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.5, 1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "leivonta"
+  - "makea"
+  - "jälkiruoka"
+
+# Metadata and Attribution
 date: '{{ now.Format "2006-01-02" }}'
 lastmod: '{{ now.Format "2006-01-02" }}'
-author: ""
+author: 
+  name: ""
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Enter a description here"
-categories: ["Makeat herkut", "Keksit ja patukat"]
-tags:
-- voi
-- murea
-- makea
-- suklaa
-- kahvipöytä
-difficulty: "Helppo"
-valmistusaika: "01:20"
-maara: 16
-servings: 16
-impsize: "1x leivinpelti"
-storage:
-- "5pv"
-- "10pv"
-- "2kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Leivinpelti"
-method:
-- "Vaahdotus"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Vehnä"
-skaalaus:
-- "1.5x"
-- "2x "
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Jälkiruoka"
+  cookingMethod: "Paistaminen"
 ---
 
 {{< ingredients >}}
-#### 123
+#### Ainekset
+
 - 
 {{</ ingredients >}}
 
@@ -51,6 +91,6 @@ skaalaus:
 - 
 
 ### Versioita:
-- **tt**: 
+- **Versio 1**: 
   - 
 {{</ notes >}}

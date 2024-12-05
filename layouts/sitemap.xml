@@ -23,9 +23,9 @@
                 />
       {{- end }}
     {{- end }}
-    {{- if and (eq .Section "reseptit") .Params.headimg }}
+    {{- if and (eq .Section "reseptit") .Params.featured_image }}
     <image:image>
-      <image:loc>{{ .Params.headimg | absURL }}</image:loc>
+      <image:loc>{{ .Params.featured_image | absURL }}</image:loc>
       <image:title>{{ .Title }}</image:title>
       {{- with .Description }}
       <image:caption>{{ . }}</image:caption>

@@ -2,14 +2,13 @@
 title: "Kehityssuunnitelma"
 date: "2024-11-08"
 lastmod: "2024-11-08"
-headimg: "/images/CalculatorSearch.jpeg"
+featured_image: "/images/CalculatorSearch.jpeg"
 description: "Sivuston kehityssuunnitelma ja parannukset"
 draft: false
 ---
 
-# Website Improvements
-
 ## Performance Optimizations
+
 1. ✓ Implement lazy loading for images using the `loading="lazy"` attribute
 2. ✓ Add preconnect hints for external resources in the head
 3. ✓ Minify CSS and JavaScript files (Hugo minifies HTML in production, static assets compressed by web server)
@@ -17,6 +16,7 @@ draft: false
 5. ✓ Use responsive images with srcset for different screen sizes
 
 ## Accessibility Improvements
+
 1. ✓ Add ARIA labels to all interactive elements
 2. ✓ Improve keyboard navigation in the category navigation
 3. ✓ Ensure proper heading hierarchy (h1, h2, h3)
@@ -25,6 +25,7 @@ draft: false
 6. ✓ Add alt text guidelines for recipe images
 
 ## User Experience Enhancements
+
 1. ✓ Add print-specific styles for recipe pages
 2. ✓ Implement recipe scaling functionality
 3. ⚡ Add search functionality with filters (In Progress)
@@ -37,6 +38,7 @@ draft: false
 7. Add ingredient quantity unit converter
 
 ## Technical Improvements
+
 1. ✓ Add structured data (Schema.org) for recipes
 2. ✓ Implement proper meta tags for social sharing
 3. ✓ Add sitemap.xml generation
@@ -46,6 +48,7 @@ draft: false
 7. Add automatic image optimization pipeline
 
 ## Code Quality
+
 1. Implement error handling in JavaScript
 2. Add proper TypeScript types
 3. Implement proper logging system
@@ -54,6 +57,7 @@ draft: false
 6. Add code linting and formatting rules
 
 ## Mobile Improvements
+
 1. Optimize touch targets for mobile devices
 2. Improve mobile navigation UX
 3. ✓ Add proper viewport meta tags
@@ -61,6 +65,7 @@ draft: false
 5. Add pull-to-refresh functionality
 
 ## Content Management
+
 1. Add recipe version control
 2. Implement content validation
 3. Add recipe submission guidelines
@@ -68,6 +73,7 @@ draft: false
 5. Implement content review workflow
 
 ## Analytics and Monitoring
+
 1. Add privacy-focused analytics
 2. Implement error tracking
 3. Add performance monitoring
@@ -75,6 +81,7 @@ draft: false
 5. Implement A/B testing capability
 
 ## SEO Improvements
+
 1. ✓ Add proper canonical URLs
 2. ✓ Implement breadcrumbs schema
 3. ✓ Add proper meta descriptions
@@ -83,6 +90,7 @@ draft: false
 6. Implement proper internal linking strategy
 
 ## Security Enhancements
+
 1. ✓ Implement Content Security Policy
 2. ✓ Add proper CORS headers
 3. Implement rate limiting
@@ -91,6 +99,7 @@ draft: false
 6. ✓ Add XSS protection headers
 
 ## Future Features
+
 1. Add recipe rating system
 2. Implement recipe comments
 3. Add recipe sharing functionality

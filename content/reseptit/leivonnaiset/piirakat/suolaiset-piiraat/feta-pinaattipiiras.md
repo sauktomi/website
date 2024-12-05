@@ -1,46 +1,91 @@
 ---
+# Essential Recipe Information
 title: "Feta-pinaattipiiras"
+description: "Ruokaisa piiras kirpeän makeilla kirsikkatomaateilla. Sopii lounaaksi tai illanistujaisiin."
+servings: 8
+yield: "1 piirakka"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "15M"
+cook_time: "25M"
+total_time: "40M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+  - type: "Vuoka"
+    size: "23cm piirakkavuoka"
+  - type: "Siivilä"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivää"
+  fridge: "5 päivää"
+  freezer: "1 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Taikinapohjaiset"
+  - "Suolaiset piiraat"
+tags: 
+  - "fetajuusto"
+  - "pinaatti"
+  - "suolainen"
+  - "lounas"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: true
+  high_protein: true
+  high_fiber: true
+
+# Recipe Scaling
+scaling_factors: [1, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "feta-pinaattipiiras"
+  - "suolainen piirakka"
+  - "kreikkalainen piirakka"
+  - "kasvisruoka"
+  - "lounas"
+
+# Metadata and Attribution
 date: "2024-11-06"
 lastmod: "2024-11-11"
-author: "Kahvila Aleksis, m. TMS"
+author: 
+  name: "Kahvila Aleksis, m. TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Ruokaisa piiras kirpeän makeilla kirsikkatomaateilla. Sopii lounaaksi tai illanistujaisiin."
-categories: ["Taikinapohjaiset", "Suolaiset piiraat"]
-tags:
-- fetajuusto
-- pinaatti
-- suolainen
-- lounas
-difficulty: "Helppo"
-valmistusaika: "00:40"
-maara: 1
-servings: 8
-impsize: "23cm piirakkavuoka"
-storage:
-- "2pv"
-- "5pv"
-- "1kk"
-appliances:
-- "Uuni"
-- "Piirakkavuoka"
-- "Siivilä"
-method:
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "1x 1 kpl 23cm vuoka (8 annosta)"
-- "2x 2 kpl 23cm vuokaa (16 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Suolaiset piiraat"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Pohja
+
 - 1 kpl Valmis ruis-piirakkapohja (pakaste)
 
 #### Täyte
+
 - 250 g Pinaatti (pakaste, sulatettu ja valutettu)
 - 300 g Ranskankerma (huoneenlämpöinen)
 - 2 kpl Kananmuna (huoneenlämpöinen)
@@ -52,6 +97,7 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 200°C (*tasalämpö*). Vuoraa piirakkavuoka leivinpaperilla.
 
 2. **Esivalmistelut:** Sulata pinaatti ja valuta ylimääräinen neste huolellisesti pois siivilän läpi. *Purista pinaatti mahdollisimman kuivaksi.*
@@ -70,27 +116,30 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Valuta pinaatti todella huolellisesti, muuten piirakasta tulee vetinen
 - Piirakan voi valmistaa myös murotaikinasta tehdyllä pohjalla
 
-### Versioita:
-- **Vuohenjuusto**: 
+### Versioita
+
+- **Vuohenjuusto**:
   - Korvaa feta vuohenjuustolla
   - Lisää täytteeseen 15 ml hunajaa
   - Koristele paahdetetuilla pinjansiemenillä
 
-- **Kasvis**: 
+- **Kasvis**:
   - Lisää täytteeseen 150 g paahdettua paprikaa
   - Korvaa valkosipulijauhe 2 kpl murskatulla valkosipulinkynellä
   - Mausta tuoreella basilikalla
 
-- **Tomaatti-basilika**: 
+- **Tomaatti-basilika**:
   - Lisää täytteeseen 200 g aurinkokuivattuja tomaatteja
   - Mausta runsaalla tuoreella basilikalla
   - Koristele kirsikkatomaattien sijaan tuoreilla basilikanlehdillä
 
-- **Sieni**: 
+- **Sieni**:
   - Korvaa pinaatti 250 g paistetuilla herkkusienillä
   - Lisää täytteeseen 2 ml timjamia
   - Mausta 2 ml muskottipähkinällä

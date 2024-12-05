@@ -1,45 +1,89 @@
 ---
+# Essential Recipe Information
 title: "Ranskalainen suklaakakku"
+description: "Intensiivisen suklainen ja täyteläinen, sis. kukkaisia ja kahvisia vivahteita."
+servings: 10
+yield: "1 kpl 23cm kakku"
+difficulty: "Keskitaso"
+
+# Time Requirements
+prep_time: "1H"
+cook_time: "1H"
+total_time: "2H"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: ""
+  - type: "Vuoka"
+    size: "23cm irtopohjavuoka"
+  - type: "Yleiskone"
+    size: ""
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivä"
+  fridge: "4 päivää"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Kakut"
+  - "Sokerikakut"
+tags: 
+  - "suklaa"
+  - "murea"
+  - "makea"
+  - "juhlava jälkiruoka"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.5, 1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "suklaakakku"
+  - "ranskalainen"
+  - "leivonnaiset"
+  - "jälkiruoka"
+  - "juhlakakku"
+
+# Metadata and Attribution
 date: "2024-10-19"
 lastmod: "2024-11-11"
-author: "Villa Ullas, m. TMS"
+author: 
+  name: "Villa Ullas, m. TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Intensiivisen suklainen ja täyteläinen, sis. kukkaisia ja kahvisia vivahteita."
-categories: ["Kakut", "Sokerikakut"]
-tags:
-- suklaa
-- murea
-- makea
-- juhlava jälkiruoka
-difficulty: "Keskitaso"
-valmistusaika: "02:00"
-maara: 1
-servings: 10
-impsize: "23cm irtopohjavuoka"
-storage:
-- "3pv"
-- "1vk"
-- "2kk"
-appliances:
-- "Uuni"
-- "Irtopohjavuoka"
-- "Yleiskone"
-method:
-- "Vaahdotus"
-- "Paistaminen"
-diet:
-- "Kananmuna"
-- "Maito"
-- "Vehnä"
-skaalaus:
-- "0.5x 1 kpl 18cm vuoka (5 annosta)"
-- "1.5x 1 kpl 28cm vuoka (15 annosta)"
-- "2x 1 kpl 33x22cm vuoka (20 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Jälkiruoka"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Taikina
+
 - 5 kpl Kananmuna (huoneenlämpöinen)
 - 200 g Sokeri
 - 225 g Voi (huoneenlämpöinen)
@@ -49,12 +93,14 @@ skaalaus:
 - 30 g Kaakaojauhe
 
 #### Kuorrute
+
 - 200 g Voi (huoneenlämpöinen)
 - 100 g Tumma suklaa (70% kaakao)
 - 50 g Hunaja
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla ja voitele reunat huolellisesti.
 
 2. **Taikina:** Vaahdota kananmunat ja sokeri 5 min, kunnes vaahto on vaaleaa ja kuohkeaa.
@@ -75,27 +121,30 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Varmista että kananmunat ovat huoneenlämpöisiä tasaisen vaahdon saamiseksi
 - Sulata suklaa ja voi varovasti, älä ylikuumenna
 - Anna kakun jäähtyä huoneenlämpöiseksi ennen kuorrutusta
 - Älä jäähdytä kuorrutettua kakkua jääkaapissa, jottei kuorrute menetä kiiltoaan
 
-### Versioita:
-- **Kahvinen**: 
+### Versioita
+
+- **Kahvinen**:
   - Lisää taikinaan 15 ml pikakahvijauhetta
   - Korvaa kuorrutteen hunaja kahvisiirapin ja hunajan seoksella (25 g kumpaakin)
 
-- **Appelsiini**: 
+- **Appelsiini**:
   - Lisää taikinaan 2 appelsiinin kuoriraaste
   - Korvaa kahvi appelsiiniliköörillä
   - Lisää kuorrutteeseen 5 ml appelsiiniöljyä
 
-- **Minttu**: 
+- **Minttu**:
   - Lisää taikinaan 2.5 ml minttuesanssia
   - Koristele mintunlehdillä
 
-- **Pähkinä**: 
+- **Pähkinä**:
   - Lisää taikinaan 100 g rouhittuja hasselpähkinöitä
   - Koristele paahdetuilla pähkinöillä
 {{</ notes >}}

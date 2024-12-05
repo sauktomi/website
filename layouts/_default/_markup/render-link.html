@@ -1,0 +1,5 @@
+{{ $destination := .Destination }}
+{{ if not (strings.HasSuffix $destination "/") }}
+    {{ $destination = printf "%s/" $destination }}
+{{ end }}
+<a href="{{ $destination }}" {{ with .Title }} title="{{ . }}"{{ end }} {{ if strings.HasPrefix .Destination "http" }} target="_blank"{{ end }}>{{ .Text }}</a>

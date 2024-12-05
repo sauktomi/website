@@ -1,0 +1,1012 @@
+{{ define "admin-content" }}
+
+<div class="recipe-creator">
+  <div class="recipe-container">
+    <h1 class="recipe-title">Recipe Creator</h1>
+
+    <!-- Basic Information -->
+    <div class="form-section">
+      <div class="form-group">
+        <label>Title*</label>
+        <input type="text" id="recipe-title" name="title" required>
+      </div>
+      <div class="form-group">
+        <label>Author</label>
+        <input type="text" id="recipe-author" name="author" value="TMS">
+      </div>
+    </div>
+
+    <!-- Ingredients -->
+    <div class="form-section">
+      <h2>Ingredients</h2>
+      <button class="add-button" onclick="addIngredientSection()">
+        <span class="plus-icon">+</span> Add Ingredient Section
+      </button>
+      <div id="ingredient-sections"></div>
+
+    </div>
+
+    <!-- Instructions -->
+    <div class="form-section">
+      <h2>Instructions</h2>
+      <div id="instructions-container"></div>
+      <button class="add-button" onclick="addInstruction()">
+        <span class="plus-icon">+</span> Add Instruction
+      </button>
+    </div>
+
+    <!-- Notes -->
+    <div class="form-section">
+      <h2>Notes</h2>
+
+      <!-- Tips (Vinkit) -->
+      <div class="subsection">
+        <h3>Tips (Vinkit)</h3>
+        <div id="tips-container"></div>
+        <button class="add-button" onclick="addTip()">
+          <span class="plus-icon">+</span> Add Tip
+        </button>
+      </div>
+
+      <!-- Versions (Versiot) -->
+      <div class="subsection">
+        <h3>Versions (Versiot)</h3>
+        <div id="versions-container"></div>
+        <button class="add-button" onclick="addVersion()">
+          <span class="plus-icon">+</span> Add Version
+        </button>
+      </div>
+    </div>
+
+    <!-- Generate Button -->
+    <button class="generate-button" onclick="copyToClipboard()">
+      <span class="copy-icon">📋</span> Markdown
+    </button>
+  </div>
+</div>
+
+<style>
+
+h1{
+  text-align:center;
+}
+
+.recipe-creator {
+  max-width: 30rem;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+.recipe-container {
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+}
+
+.recipe-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.form-section h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.subsection h3 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 1rem 0;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  margin-bottom: 0.25rem;
+}
+
+input, textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  height:2rem;
+}
+
+.ingredient-section {
+  margin-bottom: 1.5rem;
+  padding: 1rem 1rem 0 1rem;
+  border: 1px solid #eee;
+  border-radius: 0.5rem;
+}
+
+.ingredient-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.ingredient-section-header input {
+  width: 300px;
+  margin-bottom: 0;
+}
+
+.ingredient-row, .instruction-row, .tip-row, .version-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  align-items: start;
+}
+
+.ingredient-row input[name="item"] {
+  flex: 2;
+}
+
+.ingredient-row input[name="amount"],
+.ingredient-row input[name="unit"] {
+  width: 4rem;
+}
+
+.ingredient-row input[name="notes"] {
+  width:4rem;
+}
+
+.instruction-row textarea {
+  flex: 1;
+}
+
+.instruction-row input {
+  width: 8rem;
+}
+
+.version-row input[name="name"] {
+  width: 8rem;
+}
+
+.version-row textarea {
+  flex: 1;
+}
+
+.remove-button {
+  padding: 0.5rem;
+  color: #dc2626;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: #991b1b;
+}
+
+.add-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #2563eb;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0;
+}
+
+.add-button:hover {
+  color: #1d4ed8;
+}
+
+.generate-button {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  margin:1rem auto 0;
+  border-top:1px solid #000;
+}
+
+.generate-button:hover {
+  background-color: #1d4ed8;
+}
+
+.plus-icon, .minus-icon, .copy-icon {
+  font-size: 1.25rem;
+  line-height: 1;
+}
+</style>
+
+<script>
+// Initialize recipe state with required structure and default values
+let recipe = {
+    title: '',
+    author: 'TMS',
+    // Hidden fields with default values
+    date: new Date().toISOString().split('T')[0],
+    lastmod: new Date().toISOString().split('T')[0],
+    draft: true,
+    featured_image: '/images/CalculatorSearch.jpeg',
+    description: '',
+    categories: [],
+    tags: '[]',
+    difficulty: '',
+    valmistusaika: '',
+    maara: '',
+    servings: '',
+    impsize: '',
+    storage: '[]',
+    appliances: '',
+    method: '',
+    skaalaus: '',
+    // Visible fields that need user input
+    ingredients: {},
+    instructions: [],
+    notes: {
+        vinkit: [],
+        versiot: {}
+    }
+};
+
+// Functions for state management and persistence
+function saveRecipeState() {
+    localStorage.setItem('recipeState', JSON.stringify(recipe));
+    localStorage.setItem('lastSaved', new Date().toISOString());
+}
+
+function loadRecipeState() {
+    const savedState = localStorage.getItem('recipeState');
+    if (savedState) {
+        recipe = JSON.parse(savedState);
+
+        // Repopulate the form with saved data
+        document.getElementById('recipe-title').value = recipe.title || '';
+        document.getElementById('recipe-author').value = recipe.author || 'TMS';
+
+        // Recreate all sections with saved data
+        recreateIngredientSections();
+        recreateInstructions();
+        recreateTips();
+        recreateVersions();
+    } else {
+        // If no saved state, create default sections
+        createDefaultIngredientSection();
+        createDefaultInstruction();
+        createDefaultTip();
+        createDefaultVersion();
+    }
+}
+
+// Add refresh protection
+window.addEventListener('beforeunload', (e) => {
+    if (Object.keys(recipe.ingredients).length > 0 || recipe.instructions.length > 0) {
+        e.preventDefault();
+        e.returnValue = '';
+    }
+});
+
+// Set up initial form state when page loads
+document.addEventListener('DOMContentLoaded', () => {
+    // Set up basic form handlers with auto-save
+    document.getElementById('recipe-title').addEventListener('change', (e) => {
+        handleBasicChange(e);
+        saveRecipeState();
+    });
+
+    document.getElementById('recipe-author').addEventListener('change', (e) => {
+        handleBasicChange(e);
+        saveRecipeState();
+    });
+
+    // Add reset button to clear saved state
+    const resetButton = document.createElement('button');
+    resetButton.className = 'add-button';
+    resetButton.style.marginTop = '1rem';
+    resetButton.innerHTML = '🔄 Reset Form';
+    resetButton.onclick = () => {
+        if (confirm('Are you sure you want to reset the form? All unsaved changes will be lost.')) {
+            localStorage.removeItem('recipeState');
+            localStorage.removeItem('lastSaved');
+            location.reload();
+        }
+    };
+    document.querySelector('.recipe-container').appendChild(resetButton);
+
+    // Load saved state or create default sections
+    loadRecipeState();
+});
+
+// Handle changes to basic recipe information
+function handleBasicChange(e) {
+    recipe[e.target.name] = e.target.value;
+    saveRecipeState();
+}
+
+// Create a standard remove button for all sections
+function createRemoveButton() {
+    const button = document.createElement('button');
+    button.className = 'remove-button';
+    button.innerHTML = '−';
+    return button;
+}
+
+// Function to recreate ingredient sections from saved state
+function recreateIngredientSections() {
+    const container = document.getElementById('ingredient-sections');
+    container.innerHTML = ''; // Clear existing sections
+
+    Object.entries(recipe.ingredients).forEach(([sectionName, ingredients]) => {
+        const sectionDiv = document.createElement('div');
+        sectionDiv.className = 'ingredient-section';
+
+        // Create section header
+        const header = document.createElement('div');
+        header.className = 'ingredient-section-header';
+
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.value = sectionName;
+        nameInput.placeholder = 'Section Name (e.g., pohja, tayte)';
+        nameInput.dataset.sectionName = sectionName;
+
+        nameInput.addEventListener('change', (e) => {
+            const oldName = nameInput.dataset.sectionName;
+            const newName = e.target.value;
+            if (oldName && recipe.ingredients[oldName]) {
+                recipe.ingredients[newName] = recipe.ingredients[oldName];
+                delete recipe.ingredients[oldName];
+            }
+            nameInput.dataset.sectionName = newName;
+            saveRecipeState();
+        });
+
+        const removeButton = createRemoveButton();
+        removeButton.onclick = () => {
+            delete recipe.ingredients[nameInput.dataset.sectionName];
+            container.removeChild(sectionDiv);
+            saveRecipeState();
+        };
+
+        header.appendChild(nameInput);
+        header.appendChild(removeButton);
+
+        // Create ingredients container
+        const ingredientsContainer = document.createElement('div');
+        ingredientsContainer.className = 'ingredients-container';
+
+        // Recreate each ingredient
+        ingredients.forEach((ingredient, index) => {
+            const row = recreateIngredientRow(ingredient, ingredientsContainer, sectionName, index);
+            ingredientsContainer.appendChild(row);
+        });
+
+        // Add ingredient button
+        const addButton = document.createElement('button');
+        addButton.className = 'add-button';
+        addButton.innerHTML = '<span class="plus-icon">+</span> Add Ingredient';
+        addButton.onclick = () => addIngredientToSection(ingredientsContainer, sectionName);
+
+        sectionDiv.appendChild(header);
+        sectionDiv.appendChild(ingredientsContainer);
+        sectionDiv.appendChild(addButton);
+
+        container.appendChild(sectionDiv);
+    });
+}
+
+// Function to recreate ingredient row
+function recreateIngredientRow(ingredient, container, sectionName, index) {
+    const row = document.createElement('div');
+    row.className = 'ingredient-row';
+
+    const fields = [
+        { name: 'item', placeholder: 'Item' },
+        { name: 'amount', placeholder: 'Amount' },
+        { name: 'unit', placeholder: 'Unit' },
+        { name: 'notes', placeholder: 'Notes' }
+    ];
+
+    fields.forEach(field => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = field.name;
+        input.placeholder = field.placeholder;
+        input.value = ingredient[field.name] || '';
+        input.addEventListener('change', (e) => {
+            recipe.ingredients[sectionName][index][field.name] = e.target.value;
+            saveRecipeState();
+        });
+        row.appendChild(input);
+    });
+
+    const removeButton = createRemoveButton();
+    removeButton.onclick = () => {
+        recipe.ingredients[sectionName].splice(index, 1);
+        container.removeChild(row);
+        saveRecipeState();
+    };
+    row.appendChild(removeButton);
+
+    return row;
+}
+
+// Function to create a default ingredient section
+function createDefaultIngredientSection() {
+    const container = document.getElementById('ingredient-sections');
+    const sectionDiv = document.createElement('div');
+    sectionDiv.className = 'ingredient-section';
+
+    const header = document.createElement('div');
+    header.className = 'ingredient-section-header';
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.value = ''; // Pre-fill the section name
+    nameInput.placeholder = 'Section Name (e.g., pohja, tayte)';
+    nameInput.dataset.sectionName = 'Default Section';
+    recipe.ingredients['Default Section'] = [];
+
+    nameInput.addEventListener('change', (e) => {
+        const oldName = nameInput.dataset.sectionName;
+        const newName = e.target.value;
+        if (oldName && recipe.ingredients[oldName]) {
+            recipe.ingredients[newName] = recipe.ingredients[oldName];
+            delete recipe.ingredients[oldName];
+        } else {
+            recipe.ingredients[newName] = [];
+        }
+        nameInput.dataset.sectionName = newName;
+        saveRecipeState();
+    });
+
+    header.appendChild(nameInput);
+
+    const ingredientsContainer = document.createElement('div');
+    ingredientsContainer.className = 'ingredients-container';
+
+    // Create the Add Ingredient button for this section
+    const addIngredientButton = document.createElement('button');
+    addIngredientButton.className = 'add-button';
+    addIngredientButton.innerHTML = '<span class="plus-icon">+</span> Add Ingredient';
+    addIngredientButton.onclick = () => addIngredientToSection(ingredientsContainer, nameInput.dataset.sectionName);
+
+    sectionDiv.appendChild(header);
+    sectionDiv.appendChild(ingredientsContainer);
+    sectionDiv.appendChild(addIngredientButton);
+
+    // Add one default ingredient row
+    addIngredientToSection(ingredientsContainer, 'Default Section');
+
+    container.appendChild(sectionDiv);
+}
+
+// Add a new ingredient section
+function addIngredientSection() {
+    const container = document.getElementById('ingredient-sections');
+    const sectionDiv = document.createElement('div');
+    sectionDiv.className = 'ingredient-section';
+
+    const header = document.createElement('div');
+    header.className = 'ingredient-section-header';
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.placeholder = 'Section Name (e.g., pohja, tayte)';
+    nameInput.addEventListener('change', (e) => {
+        const oldName = nameInput.dataset.sectionName;
+        const newName = e.target.value;
+        if (oldName && recipe.ingredients[oldName]) {
+            recipe.ingredients[newName] = recipe.ingredients[oldName];
+            delete recipe.ingredients[oldName];
+        } else {
+            recipe.ingredients[newName] = [];
+        }
+        nameInput.dataset.sectionName = newName;
+        saveRecipeState();
+    });
+
+    const removeButton = createRemoveButton();
+    removeButton.onclick = () => {
+        delete recipe.ingredients[nameInput.dataset.sectionName];
+        container.removeChild(sectionDiv);
+        saveRecipeState();
+    };
+
+    header.appendChild(nameInput);
+    header.appendChild(removeButton);
+
+    const ingredientsContainer = document.createElement('div');
+    ingredientsContainer.className = 'ingredients-container';
+
+    const addIngredientButton = document.createElement('button');
+    addIngredientButton.className = 'add-button';
+    addIngredientButton.innerHTML = '<span class="plus-icon">+</span> Add Ingredient';
+    addIngredientButton.onclick = () => addIngredientToSection(ingredientsContainer, nameInput.dataset.sectionName);
+
+    sectionDiv.appendChild(header);
+    sectionDiv.appendChild(ingredientsContainer);
+    sectionDiv.appendChild(addIngredientButton);
+
+    container.appendChild(sectionDiv);
+    saveRecipeState();
+}
+
+// Add an ingredient to a specific section
+function addIngredientToSection(container, sectionName) {
+    if (!recipe.ingredients[sectionName]) {
+        recipe.ingredients[sectionName] = [];
+    }
+
+    const index = recipe.ingredients[sectionName].length;
+    const row = document.createElement('div');
+    row.className = 'ingredient-row';
+
+    const fields = [
+        { name: 'item', placeholder: 'Item' },
+        { name: 'amount', placeholder: 'Amount' },
+        { name: 'unit', placeholder: 'Unit' },
+        { name: 'notes', placeholder: 'Notes' }
+    ];
+
+    const ingredient = {};
+
+    fields.forEach(field => {
+        const input = document.createElement('input');
+        input.type = 'text';
+        input.name = field.name;
+        input.placeholder = field.placeholder;
+        input.addEventListener('change', (e) => {
+            ingredient[field.name] = e.target.value;
+            recipe.ingredients[sectionName][index] = ingredient;
+            saveRecipeState();
+        });
+        row.appendChild(input);
+    });
+
+    const removeButton = createRemoveButton();
+    removeButton.onclick = () => {
+        recipe.ingredients[sectionName].splice(index, 1);
+        container.removeChild(row);
+        saveRecipeState();
+    };
+    row.appendChild(removeButton);
+
+    container.appendChild(row);
+    recipe.ingredients[sectionName][index] = ingredient;
+    saveRecipeState();
+}
+
+// Function to recreate instructions from saved state
+function recreateInstructions() {
+    const container = document.getElementById('instructions-container');
+    container.innerHTML = ''; // Clear existing instructions
+
+    recipe.instructions.forEach((instruction, index) => {
+        const row = document.createElement('div');
+        row.className = 'instruction-row';
+
+        // Create and populate step textarea
+        const step = document.createElement('textarea');
+        step.placeholder = 'Step';
+        step.value = instruction.step || '';
+        step.addEventListener('change', (e) => {
+            recipe.instructions[index].step = e.target.value;
+            saveRecipeState();
+        });
+
+        // Create and populate timing input
+        const timing = document.createElement('input');
+        timing.type = 'text';
+        timing.placeholder = 'Timing';
+        timing.value = instruction.timing || '';
+        timing.addEventListener('change', (e) => {
+            recipe.instructions[index].timing = e.target.value;
+            saveRecipeState();
+        });
+
+        // Create and populate temperature input
+        const temperature = document.createElement('input');
+        temperature.type = 'text';
+        temperature.placeholder = 'Temperature';
+        temperature.value = instruction.temperature || '';
+        temperature.addEventListener('change', (e) => {
+            recipe.instructions[index].temperature = e.target.value;
+            saveRecipeState();
+        });
+
+        const removeButton = createRemoveButton();
+        removeButton.onclick = () => {
+            recipe.instructions.splice(index, 1);
+            container.removeChild(row);
+            saveRecipeState();
+        };
+
+        row.appendChild(step);
+        row.appendChild(timing);
+        row.appendChild(temperature);
+        row.appendChild(removeButton);
+
+        container.appendChild(row);
+    });
+}
+
+// Add a new instruction step
+function addInstruction() {
+    const container = document.getElementById('instructions-container');
+    const index = recipe.instructions.length;
+
+    const row = document.createElement('div');
+    row.className = 'instruction-row';
+
+    const instruction = {};
+
+    // Create text area for the step
+    const step = document.createElement('textarea');
+    step.placeholder = 'Step';
+    step.addEventListener('change', (e) => {
+        instruction.step = e.target.value;
+        recipe.instructions[index] = instruction;
+        saveRecipeState();
+    });
+
+    // Create input for timing
+    const timing = document.createElement('input');
+    timing.type = 'text';
+    timing.placeholder = 'Timing';
+    timing.addEventListener('change', (e) => {
+            instruction.timing = e.target.value;
+            recipe.instructions[index] = instruction;
+            saveRecipeState();
+        });
+
+        // Create input for temperature
+        const temperature = document.createElement('input');
+        temperature.type = 'text';
+        temperature.placeholder = 'Temperature';
+        temperature.addEventListener('change', (e) => {
+            instruction.temperature = e.target.value;
+            recipe.instructions[index] = instruction;
+            saveRecipeState();
+        });
+
+        const removeButton = createRemoveButton();
+        removeButton.onclick = () => {
+            recipe.instructions.splice(index, 1);
+            container.removeChild(row);
+            saveRecipeState();
+        };
+
+        row.appendChild(step);
+        row.appendChild(timing);
+        row.appendChild(temperature);
+        row.appendChild(removeButton);
+
+        container.appendChild(row);
+        recipe.instructions.push(instruction);
+        saveRecipeState();
+    }
+
+// Function to recreate tips from saved state
+function recreateTips() {
+    const container = document.getElementById('tips-container');
+    container.innerHTML = ''; // Clear existing tips
+
+    recipe.notes.vinkit.forEach((tip, index) => {
+        const row = document.createElement('div');
+        row.className = 'tip-row';
+
+        const textarea = document.createElement('textarea');
+        textarea.placeholder = 'Tip';
+        textarea.value = tip || '';
+        textarea.addEventListener('change', (e) => {
+            recipe.notes.vinkit[index] = e.target.value;
+            saveRecipeState();
+        });
+
+        const removeButton = createRemoveButton();
+        removeButton.onclick = () => {
+            recipe.notes.vinkit.splice(index, 1);
+            container.removeChild(row);
+            saveRecipeState();
+        };
+
+        row.appendChild(textarea);
+        row.appendChild(removeButton);
+
+        container.appendChild(row);
+    });
+}
+
+// Add a new tip to the vinkit section
+function addTip() {
+    const container = document.getElementById('tips-container');
+    const index = recipe.notes.vinkit.length;
+
+    const row = document.createElement('div');
+    row.className = 'tip-row';
+
+    const textarea = document.createElement('textarea');
+    textarea.placeholder = 'Tip';
+    textarea.addEventListener('change', (e) => {
+        recipe.notes.vinkit[index] = e.target.value;
+        saveRecipeState();
+    });
+
+    const removeButton = createRemoveButton();
+    removeButton.onclick = () => {
+        recipe.notes.vinkit.splice(index, 1);
+        container.removeChild(row);
+        saveRecipeState();
+    };
+
+    row.appendChild(textarea);
+    row.appendChild(removeButton);
+
+    container.appendChild(row);
+    recipe.notes.vinkit.push('');
+    saveRecipeState();
+}
+
+// Function to recreate versions from saved state
+function recreateVersions() {
+    const container = document.getElementById('versions-container');
+    container.innerHTML = ''; // Clear existing versions
+
+    Object.entries(recipe.notes.versiot).forEach(([versionName, version]) => {
+        const row = document.createElement('div');
+        row.className = 'version-row';
+
+        const nameInput = document.createElement('input');
+        nameInput.type = 'text';
+        nameInput.name = 'name';
+        nameInput.placeholder = 'Version Name';
+        nameInput.value = versionName;
+
+        const descriptionTextarea = document.createElement('textarea');
+        descriptionTextarea.placeholder = 'Version Description';
+        descriptionTextarea.value = version.description || '';
+
+        nameInput.addEventListener('change', (e) => {
+            const oldName = versionName;
+            const newName = e.target.value;
+            if (oldName !== newName) {
+                recipe.notes.versiot[newName] = recipe.notes.versiot[oldName];
+                delete recipe.notes.versiot[oldName];
+                saveRecipeState();
+            }
+        });
+
+        descriptionTextarea.addEventListener('change', (e) => {
+            recipe.notes.versiot[nameInput.value] = {
+                description: e.target.value
+            };
+            saveRecipeState();
+        });
+
+        const removeButton = createRemoveButton();
+        removeButton.onclick = () => {
+            delete recipe.notes.versiot[versionName];
+            container.removeChild(row);
+            saveRecipeState();
+        };
+
+        row.appendChild(nameInput);
+        row.appendChild(descriptionTextarea);
+        row.appendChild(removeButton);
+
+        container.appendChild(row);
+    });
+}
+
+// Add a new version to the versiot section
+function addVersion() {
+    const container = document.getElementById('versions-container');
+
+    const row = document.createElement('div');
+    row.className = 'version-row';
+
+    const nameInput = document.createElement('input');
+    nameInput.type = 'text';
+    nameInput.name = 'name';
+    nameInput.placeholder = 'Version Name';
+
+    const descriptionTextarea = document.createElement('textarea');
+    descriptionTextarea.placeholder = 'Version Description';
+
+    nameInput.addEventListener('change', (e) => {
+        const versionName = e.target.value;
+        if (!recipe.notes.versiot[versionName]) {
+            recipe.notes.versiot[versionName] = { description: '' };
+        }
+        descriptionTextarea.value = recipe.notes.versiot[versionName].description;
+        saveRecipeState();
+    });
+
+    descriptionTextarea.addEventListener('change', (e) => {
+        const versionName = nameInput.value;
+        if (versionName) {
+            recipe.notes.versiot[versionName] = {
+                description: e.target.value
+            };
+            saveRecipeState();
+        }
+    });
+
+    const removeButton = createRemoveButton();
+    removeButton.onclick = () => {
+        const versionName = nameInput.value;
+        if (versionName) {
+            delete recipe.notes.versiot[versionName];
+        }
+        container.removeChild(row);
+        saveRecipeState();
+    };
+
+    row.appendChild(nameInput);
+    row.appendChild(descriptionTextarea);
+    row.appendChild(removeButton);
+
+    container.appendChild(row);
+    saveRecipeState();
+}
+
+// Format value for YAML output
+function formatValue(value) {
+    if (value === '' || value === null || value === undefined) {
+        return '';
+    }
+    if (typeof value === 'string') {
+        // Quote strings, escaping any existing quotes
+        return `"${value.replace(/"/g, '\\"')}"`;
+    }
+    return value;
+}
+
+// Convert ingredient section to YAML format
+function ingredientSectionToYaml(ingredients, indent = 1) {
+    const spaces = '  '.repeat(indent);
+    let yaml = '';
+
+    Object.entries(ingredients).forEach(([section, items]) => {
+        if (items.length > 0) {
+            yaml += `${spaces}${section}:\n`;
+            items.forEach(item => {
+                if (Object.keys(item).length > 0) {
+                    yaml += `${spaces}  - item: ${formatValue(item.item)}\n`;
+                    if (item.amount) yaml += `${spaces}    amount: ${formatValue(item.amount)}\n`;
+                    if (item.unit) yaml += `${spaces}    unit: ${formatValue(item.unit)}\n`;
+                    if (item.notes) yaml += `${spaces}    notes: ${formatValue(item.notes)}\n`;
+                }
+            });
+        }
+    });
+
+    return yaml;
+}
+
+// Convert instructions to YAML format
+function instructionsToYaml(instructions, indent = 1) {
+    const spaces = '  '.repeat(indent);
+    let yaml = '';
+
+    instructions.forEach(instruction => {
+        yaml += `${spaces}- step: ${formatValue(instruction.step)}\n`;
+        if (instruction.timing) {
+            yaml += `${spaces}  timing: ${formatValue(instruction.timing)}\n`;
+        }
+        if (instruction.temperature) {
+            yaml += `${spaces}  temperature: ${formatValue(instruction.temperature)}\n`;
+        }
+    });
+
+    return yaml;
+}
+
+// Convert notes to YAML format
+function notesToYaml(notes, indent = 1) {
+    const spaces = '  '.repeat(indent);
+    let yaml = '';
+
+    // Add vinkit (tips)
+    yaml += `${spaces}vinkit:\n`;
+    if (notes.vinkit.length > 0) {
+        notes.vinkit.forEach(tip => {
+            yaml += `${spaces}  - ${formatValue(tip)}\n`;
+        });
+    }
+
+    // Add versiot (versions)
+    yaml += `${spaces}versiot:\n`;
+    if (Object.keys(notes.versiot).length > 0) {
+        Object.entries(notes.versiot).forEach(([name, version]) => {
+            yaml += `${spaces}  ${name}:\n`;
+            yaml += `${spaces}    description: ${formatValue(version.description)}\n`;
+        });
+    }
+
+    return yaml;
+}
+
+// Generate complete markdown content
+function generateMarkdown() {
+    let output = '---\n';
+
+    // Add basic fields
+    output += `title: ${formatValue(recipe.title)}\n`;
+    output += `date: ${formatValue(recipe.date)}\n`;
+    output += `lastmod: ${formatValue(recipe.lastmod)}\n`;
+    output += `author: ${formatValue(recipe.author)}\n`;
+    output += `draft: ${recipe.draft}\n`;
+    output += `featured_image: ${formatValue(recipe.featured_image)}\n`;
+    output += `description: ${formatValue(recipe.description)}\n`;
+
+    // Add empty or default arrays/strings for optional fields
+    output += `categories: ${recipe.categories.length ? JSON.stringify(recipe.categories) : '[]'}\n`;
+    output += `tags: ${recipe.tags.length ? JSON.stringify(recipe.tags) : '[]'}\n`;
+    output += `difficulty: ${formatValue(recipe.difficulty)}\n`;
+    output += `valmistusaika: ${formatValue(recipe.valmistusaika)}\n`;
+    output += `maara: ${formatValue(recipe.maara)}\n`;
+    output += `servings: ${formatValue(recipe.servings)}\n`;
+    output += `impsize: ${formatValue(recipe.impsize)}\n`;
+    output += `storage: ${formatValue(recipe.storage)}\n`;
+    output += `appliances: ${formatValue(recipe.appliances)}\n`;
+    output += `method: ${formatValue(recipe.method)}\n`;
+    output += `skaalaus: ${formatValue(recipe.skaalaus)}\n`;
+
+    // Add ingredients
+    output += 'ingredients:\n';
+    output += ingredientSectionToYaml(recipe.ingredients);
+
+    // Add instructions
+    output += 'instructions:\n';
+    output += instructionsToYaml(recipe.instructions);
+
+    // Add notes
+    output += 'notes:\n';
+    output += notesToYaml(recipe.notes);
+
+    output += '---';
+    return output;
+}
+
+// Handle the copy to clipboard functionality
+async function copyToClipboard() {
+    if (!recipe.title.trim()) {
+        alert('Please enter a recipe title before generating markdown.');
+        return;
+    }
+
+    if (Object.keys(recipe.ingredients).length === 0) {
+        alert('Please add at least one ingredient section.');
+        return;
+    }
+
+    if (recipe.instructions.length === 0) {
+        alert('Please add at least one instruction step.');
+        return;
+    }
+
+    const markdown = generateMarkdown();
+
+    try {
+        await navigator.clipboard.writeText(markdown);
+        alert('Recipe markdown has been copied to clipboard! You can now paste it into your Hugo markdown file.');
+        console.log('Generated Markdown:', markdown);
+    } catch (err) {
+        console.error('Copy failed:', err);
+        alert('Failed to copy to clipboard. Your browser might not support automatic copying. The markdown has been logged to the console (press F12 to view).');
+    }
+}
+
+</script>
+
+{{ end }}

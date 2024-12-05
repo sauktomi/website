@@ -1,64 +1,113 @@
 ---
+# Essential Recipe Information
 title: "Moussekakku"
+description: "Kevyt muunneltava moussekakku, joka taipuu moneen makuun."
+servings: 10
+yield: "1 kpl 23cm kakku"
+difficulty: "Keskitaso"
+
+# Time Requirements
+prep_time: "30M"
+cook_time: "2H30M"
+total_time: "3H"
+
+# Method and Equipment
+equipment:
+  - type: "Vuoka"
+    size: "23cm irtopohjavuoka"
+  - type: "Kattila"
+    size: ""
+  - type: "Sähkövatkain"
+    size: ""
+cookingMethod: "Kokoaminen"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivä"
+  fridge: "5 päivää"
+  freezer: "1 kuukausi"
+
+# Recipe Classification
+categories: 
+  - "Kakut"
+  - "Kermakakut"
+tags: 
+  - "kerma"
+  - "kermainen"
+  - "makea"
+  - "juhlava jälkiruoka"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.5, 1, 1.5]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "moussekakku"
+  - "mousse cake"
+  - "leivonnaiset"
+  - "jälkiruoka"
+  - "juhlakakku"
+
+# Metadata and Attribution
 date: "2024-10-20"
 lastmod: "2024-11-11"
-author: "Villa Ullas, m. TMS"
+author: 
+  name: "Villa Ullas, m. TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Kevyt muunneltava moussekakku, joka taipuu moneen makuun."
-categories: ["Kakut", "Kermakakut"]
-tags:
-- kerma
-- kermainen
-- makea
-- juhlava jälkiruoka
-difficulty: "Keskitaso"
-valmistusaika: "03:00"
-maara: 1
-servings: 10
-impsize: "23cm irtopohjavuoka"
-storage:
-- "2pv"
-- "5pv"
-- "1kk"
-appliances:
-- "Irtopohjavuoka"
-- "Kattilat"
-- "Sähkövatkain"
-method:
-- "Vaahdotus"
-- "Hauduttaminen"
-diet:
-- "Maito"
-- "Vehnä"
-- "Haram"
-skaalaus:
-- "0.5x 1 kpl 18cm vuoka (5 annosta)"
-- "1.5x 1 kpl 28cm vuoka (15 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Jälkiruoka"
+  cookingMethod: "Kokoaminen"
 ---
 
 {{< ingredients >}}
+
 #### Marjapyree
+
 - 425 g Marja/Hedelmä
 - 150 g Tomusokeri
 
 #### Pohja
+
 - 250 g Digestiivikeksi
-- 125 g [Kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
+- 125 g [Kinuskikastike]({{< ref "helppo-kinuskikastike" >}})
 
 #### Täyte
+
 - 6 kpl Liivatelehti (15 g)
 - 350 g Marjapyree
 - 400 ml Vispikerma
 
 #### Kiille
+
 - 2 kpl Liivatelehti (3 g)
 - 125 g Marjapyree
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. **Marjapyree:** Soseuta marjat/hedelmät tomusokerin kanssa ja siivilöi. Ota 125 g pyreesta sivuun kiillettä varten.
-2. **Pohja:** Murskaa keksit hienoksi. Sekoita [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/) keksimuruihin. Painele seos vuoan pohjalle ja jäähdytä.
+2. **Pohja:** Murskaa keksit hienoksi. Sekoita [kinuskikastike]({{< ref "helppo-kinuskikastike" >}}) keksimuruihin. Painele seos vuoan pohjalle ja jäähdytä.
 3. Liuota kaikki liivatteet erillään.
 4. **Täyte:** Vaahdota vispikerma pehmeäksi vaahdoksi. Sulata täytteen liivatteet, sekoita ne 3/4 pyreeseen, ja kääntele kermavaahto varovasti seokseen.
 5. Kaada seos pohjan päälle ja jäähdytä kunnes hyytynyt (pakastin 30 min tai jääkaappi 2 t). Sillä aikaa tee Kiille.
@@ -66,13 +115,16 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Varmista että kinuskikastike on jäähtynyt ennen käyttöä
 - Siivilöi marjasose huolellisesti siemenien poistamiseksi
 - Vaahdota kerma vain pehmeäksi vaahdoksi, älä liian kovaksi
 - Anna jokaisen kerroksen hyytyä kunnolla ennen seuraavaa
 
-### Versioita:
+### Versioita
+
 - **Marja**:
   - Käytä 425 g marjoja (puolukka/mustikka/vadelma)
   - Vähennä sokeria 25 g jos käytät happamia marjoja
@@ -93,7 +145,7 @@ skaalaus:
   - Lisää kinuskiin 15 ml pikakahvijauhetta
   - Vähennä marjasoseesta 125 g ja tomusokeria 15 g
   - Lisää täytteeseen 2.5 ml vaniljauutetta
-  - Korvaa kiille ~75 g [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/) kuorrute versiolla
+  - Korvaa kiille ~75 g [kinuskikastike]({{< ref "helppo-kinuskikastike" >}}) kuorrute versiolla
 
 - **Pistaasi-kirsikka**:
   - Korvaa marjat 425 g kirsikalla

@@ -1,48 +1,91 @@
 ---
+# Essential Recipe Information
 title: "Makea piirakka"
+description: "Monipuolinen makea piirakka kermaisella täytteellä ja valinnaisilla maku-/hedelmävariaatioilla"
+servings: 10
+yield: "1 piirakka"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "20M"
+cook_time: "40M"
+total_time: "1H"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+  - type: "Vuoka"
+    size: "24cm piirakkavuoka"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivä"
+  fridge: "4 päivää"
+  freezer: "3 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Taikinapohjaiset"
+  - "Makeat piirakat"
+tags: 
+  - "tuorejuusto"
+  - "ranskankerma"
+  - "kermainen"
+  - "makea"
+  - "juhlava jälkiruoka"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.67, 1, 1.5]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "makea piirakka"
+  - "juustokakkupiirakka"
+  - "jälkiruoka"
+  - "juhlaleivonnainen"
+  - "kahvipöydän tarjottava"
+
+# Metadata and Attribution
 date: "2024-10-24"
 lastmod: "2024-11-11"
-author: "TMS"
+author: 
+  name: "TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Monipuolinen makea piirakka kermaisella täytteellä ja valinnaisilla maku-/hedelmävariaatioilla"
-categories: ["Taikinapohjaiset", "Makeat piirakat"]
-tags:
-- tuorejuusto
-- ranskankerma
-- kermainen
-- makea
-- juhlava jälkiruoka
-difficulty: "Helppo"
-valmistusaika: "01:00"
-maara: 1
-servings: 10
-impsize: "23cm piirakkavuoka"
-storage:
-- "5pv"
-- "7pv"
-- "3kk"
-appliances:
-- "Uuni"
-- "Piirakkavuoka"
-- "Irtopohjavuoka"
-method:
-- "Vaahdotus"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "0.67x 1 kpl 18cm vuoka (6 annosta)"
-- "1.5x 1 kpl 28cm vuoka (15 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Makeat piirakat"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Pohja
+
 - 1 kpl Valmispiirakkapohja (pakaste)
 
 #### Täyte
+
 - 250 g Tuorejuusto (huoneenlämpöinen)
 - 150 g Ranskankerma (huoneenlämpöinen)
 - 100 g Sokeri
@@ -51,6 +94,7 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa piirakkavuoka leivinpaperilla.
 
 2. **Pohja:** Esipaista valmispohja 14 min. Anna jäähtyä hieman.
@@ -65,11 +109,14 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Anna pohjan jäähtyä ennen täytteen lisäämistä
 - Älä paista piirakkaa liian tummaksi
 
-### Versioita:
+### Versioita
+
 - **Kaneliomena**:
   - Lisää täytteeseen 200 g omenakuutioita
   - Mausta 5 ml kanelilla
@@ -81,7 +128,7 @@ skaalaus:
 
 - **Karamelliomena**:
   - Lisää täytteeseen 300 g omenakuutioita
-  - Valuta päälle 45 g [kinuskikastiketta](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
+  - Valuta päälle 45 g [kinuskikastiketta]({{< ref "helppo-kinuskikastike" >}})
 
 - **Marjat**:
   - Lisää pohjalle 200 g mustikoita tai vadelmia
@@ -90,11 +137,11 @@ skaalaus:
 - **Trooppinen**:
   - Lisää pohjalle 200 g mustikoita
   - Sekoita täytteeseen:
-    * 40 g mangososetta
-    * 10 g vadelmapyreetä
-    * 10 g passionhedelmäpyreetä
-    * 30 g sulatettua valkosuklaata
-    * 5 ml limemehua ja raastettua limekuorta
+    - 40 g mangososetta
+    - 10 g vadelmapyreetä
+    - 10 g passionhedelmäpyreetä
+    - 30 g sulatettua valkosuklaata
+    - 5 ml limemehua ja raastettua limekuorta
 
 - **Banaani-suklaa**:
   - Lisää täytteeseen 240 g banaanimuusia

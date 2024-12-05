@@ -1,19 +1,57 @@
 <section class="recipe-ingredients">
-    <h3>Ainesosat</h3>
-    {{ with .Params.skaalaus }}
-    <div class="scaling-control">
-        <select id="recipe-scale" onchange="scaleRecipe(this.value)" aria-label="Reseptin skaalaus">
-            <option value="1">1x (Alkuperäinen)</option>
-            {{ range . }}
-                <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
-            {{ end }}
-        </select>
-    </div>
-    {{ end }}
-    {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
-    {{ if $ingredients }}
-        {{ index $ingredients 0 | markdownify }}
+    <h3>{{ i18n "ingredients" }}</h3>
+    
+    {{/* Parse ingredients shortcode content */}}
+    {{ with findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+        {{ index . 0 | markdownify }}
     {{ else }}
-        <p class="ingredients-empty">Ainesosia ei löytynyt.</p>
+        <p class="ingredients-empty">{{ i18n "ingredients_not_found" }}</p>
+    {{ end }}
+
+    {{/* Recipe scaling controls */}}
+    {{ with .Params.scaling_factors }}
+        {{ $servings := $.Params.servings }}
+        {{ $yield := $.Params.yield }}
+        {{ $defaultScale := $.Params.default_scale }}
+        {{ $yieldNumber := index (findRE "\\d+" $yield 1) 0 }}
+        {{ $yieldUnit := replaceRE "^\\d+\\s*" "" $yield }}
+        
+        <div class="scaling-control">
+            <div class="control-container">
+                <div class="active-yield">
+                    <span id="current-yield">{{ $servings }} {{ $yield }}</span>
+                </div>
+
+                <div class="scaling-presets">
+                    {{ range . }}
+                        <button 
+                            onclick="scaleRecipe('{{ . }}')" 
+                            class="scale-btn{{ if eq (string .) (string $defaultScale) }} active{{ end }}" 
+                            data-scale="{{ . }}"
+                            data-original-servings="{{ $servings }}"
+                            data-original-yield="{{ $yieldNumber }}"
+                            data-yield-unit="{{ $yieldUnit }}">
+                            {{ . }}x
+                        </button>
+                    {{ end }}
+                </div>
+
+                <div class="scale-btn input-btn">
+                    <input 
+                        type="number" 
+                        id="custom-yield" 
+                        min="0.1"
+                        step="0.1"
+                        value="{{ $defaultScale }}"
+                        data-original-servings="{{ $servings }}"
+                        data-original-yield="{{ $yieldNumber }}"
+                        data-yield-unit="{{ $yieldUnit }}"
+                        onfocus="this.parentElement.classList.add('active')"
+                        oninput="scaleRecipe(this.value, true)"
+                        aria-label="{{ i18n "scale_input_label" }}"
+                    >
+                </div>
+            </div>
+        </div>
     {{ end }}
 </section>

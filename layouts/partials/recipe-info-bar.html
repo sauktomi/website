@@ -1,0 +1,21 @@
+<div class="recipe-info-bar">
+    <div class="meta-section">
+        {{ with .Params.storage }}
+        <div class="meta-item storage-info" title="Säilyvyys">
+            {{ partial "recipe-meta-icons.html" (dict "icon" "storage") }}
+            <span>
+                {{- with .room_temp }}{{ . | replaceRE "päivä|päivää" "pv" | replaceRE "viikko|viikkoa" "vk" | replaceRE "kuukausi|kuukautta" "kk" | replaceRE "vuosi|vuotta" "v" }}{{ end -}}
+                {{- with .fridge }}{{ if $.Params.storage.room_temp }} | {{ end }}{{ . | replaceRE "päivä|päivää" "pv" | replaceRE "viikko|viikkoa" "vk" | replaceRE "kuukausi|kuukautta" "kk" | replaceRE "vuosi|vuotta" "v" }}{{ end -}}
+                {{- with .freezer }}{{ if or $.Params.storage.room_temp $.Params.storage.fridge }} | {{ end }}{{ . | replaceRE "päivä|päivää" "pv" | replaceRE "viikko|viikkoa" "vk" | replaceRE "kuukausi|kuukautta" "kk" | replaceRE "vuosi|vuotta" "v" }}{{ end -}}
+            </span>
+        </div>
+        {{ end }}
+
+        {{ with .Date }}
+        <div class="meta-item cre-date" title="Päivämäärä">
+            {{ partial "recipe-meta-icons.html" (dict "icon" "date") }}
+            <time>{{ .Format "02.01.2006" }}</time>
+        </div>
+        {{ end }}    
+    </div>
+</div>

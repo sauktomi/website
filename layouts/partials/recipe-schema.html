@@ -5,7 +5,7 @@
     "@type": "Recipe",
     "name": {{ .Title | jsonify }},
     "image": [
-        {{ with .Params.headimg }}
+        {{ with .Params.featured_image }}
             {{ $image := resources.Get . }}
             {{ if $image }}
                 {{ $small := $image.Resize "400x" }}

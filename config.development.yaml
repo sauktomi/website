@@ -1,0 +1,14 @@
+outputs:
+  - HTML
+  - JSON
+
+outputFormats:
+  SearchIndex:
+    mediaType: application/json
+    baseName: search-index
+    isPlainText: true
+    notAlternative: true
+
+mediaTypes:
+  application/json:
+    suffixes: ['json']

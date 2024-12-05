@@ -1,46 +1,88 @@
 ---
+# Essential Recipe Information
 title: "Lusikkaleivät"
+description: "Perinteiset hillotäytteiset lusikkaleivät. Kahvipöydän klassikko, jotka sulavat suuhun."
+servings: 20
+yield: "40 kpl"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "45M"
+cook_time: "15M"
+total_time: "1H"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: "2x leivinpelti"
+  - type: "Yleiskone"
+  - type: "Lusikka"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 viikko"
+  fridge: "-"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Makeat herkut"
+  - "Keksit ja patukat"
+tags: 
+  - "vadelma"
+  - "murea"
+  - "makea"
+  - "perinteinen"
+  - "kahvipöytä"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: true
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: true
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "lusikkaleivät"
+  - "perinteinen leivonta"
+  - "kahvileipä"
+  - "hillotäyte"
+  - "joululeivonta"
+
+# Metadata and Attribution
 date: "2024-11-06"
 lastmod: "2024-11-10"
-author: "Villa Ullas, m. TMS"
+author: 
+  name: "Villa Ullas, m. TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Perinteiset hillotäytteiset lusikkaleivät. Kahvipöydän klassikko, jotka sulavat suuhun."
-categories: ["Makeat herkut", "Keksit ja patukat"]
-tags:
-- vadelma
-- murea
-- makea
-- perinteinen
-- kahvipöytä
-difficulty: "Helppo"
-valmistusaika: "01:00"
-maara: 20
-servings: 10
-impsize: "2x leivinpelti"
-storage:
-- "5pv"
-- "2vk"
-- "2kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Leivinpelti"
-- "Lusikka"
-method:
-- "Vaahdotus"
-- "Muotoilu"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Vehnä"
-skaalaus:
-- "1.5x 30 kpl (3 peltiä)"
-- "2x 40 kpl (4 peltiä)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Makeat herkut"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Taikina
+
 - 200 g Margariini
 - 125 g Sokeri
 - 5 ml Vaniljasokeri
@@ -48,13 +90,16 @@ skaalaus:
 - 5 ml Ruokasooda
 
 #### Täyte
+
 - 100 g Vadelmahillo
 
 #### Koristelu
+
 - 50 g Sokeri
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 150°C (*kiertoilma*) tai 175°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
 
 2. Sulata margariini mikrossa täysin nestemäiseksi. Sekoita sokerit sulatettuun margariiniin.
@@ -71,13 +116,16 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Jäähdytä margariini-sokeriseos nopeasti vesihauteessa
 - Taikina ei saa olla liian lämmin muotoiltaessa
 - Älä täytä keksejä liian kuumina, jotta hillo ei sula
 - Säilytä ilmatiiviissä rasiassa, jotta keksit pysyvät mureina
 
-### Versioita:
+### Versioita
+
 - **Suklaa**:
   - Lisää taikinaan 50 g kaakaojauhetta
   - Täytä suklaalevitteellä
@@ -88,7 +136,7 @@ skaalaus:
   - Täytä sitruunakreemillä (150 g mascarpone + 50 ml sitruunamehu + 50 g tomusokeri)
 
 - **Kinuski**:
-  - Täytä kinuskikreemillä (150 g mascarpone + 100 g [kinuskikastike](/reseptit/leivonnaiset/taytteet/kinuskikastike/)
+  - Täytä kinuskikreemillä (150 g mascarpone + 100 g [kinuskikastike]({{< ref "helppo-kinuskikastike" >}})
   - Pyöritä fariinisokerissa
 
 - **Manteli**:

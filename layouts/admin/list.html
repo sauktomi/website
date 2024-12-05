@@ -1,0 +1,8 @@
+{{ define "admin-content" }}
+    <h1>Admin Pages</h1>
+    <ul>
+        {{ range .Pages }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+        {{ end }}
+    </ul>
+{{ end }}

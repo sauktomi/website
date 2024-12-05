@@ -1,0 +1,9 @@
+DirectoryPath: "public"
+IgnoreURLs:
+  - "livereload.js"
+  - "fonts.googleapis.com"
+  - "fonts.gstatic.com"
+  - "favicon/apple-touch-icon.png"
+  - "favicon/favicon-32x32.png"
+  - "favicon/favicon-16x16.png"
+  - "js/category-nav.js"

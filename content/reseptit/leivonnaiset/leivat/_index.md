@@ -1,4 +1,4 @@
 ---
 title: "Leivät"
-headimg: "/images/CalculatorSearch.jpeg"
+featured_image: "/images/CalculatorSearch.jpeg"
 ---

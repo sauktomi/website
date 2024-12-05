@@ -4,7 +4,7 @@ date: "2024-11-21"
 lastmod: "2024-11-21"
 author: "TMS"
 draft: false
-headimg: "/images/CalculatorSearch.jpeg"
+featured_image: "/images/CalculatorSearch.jpeg"
 description: "Tekoälyn tiivistys neljästä yleisestä esitaikinatyypistä."
 categories: ["Ohjeet"]
 tags:
@@ -28,8 +28,8 @@ Sponge on nopea esitaikina, joka voidaan tehdä vedellä tai maidolla, yleensä 
 Pâte fermentée on ainoa esitaikina, joka sisältää suolaa. Se tehdään ottamalla pala täysin sekoitettua taikinaa. Se fermentoituu noin 6 tuntia, parantaa makua ja leivän rakennetta. Sitä käytetään yleensä 20-30% kokonaistaikinan painosta, mutta määrä voi vaihdella 15-40% välillä.
 
 Lähteet:
-: [1] https://www.youtube.com/watch?v=ElJFy8ACwEA
-: [2] https://www.chainbaker.com/preferments/
-: [3] https://www.reddit.com/r/Breadit/comments/117uio/biga_vs_poolish_vs_sponge_vs_starter_vs_preferment/
-: [4] https://breadbythehour.com/beginning-baking-definitions-levain-poolish-biga-sponge-and-pate-fermentee/
-: [5] https://www.youtube.com/watch?v=MDThMkbrA1Uhe
+: [1] <https://www.youtube.com/watch?v=ElJFy8ACwEA>
+: [2] <https://www.chainbaker.com/preferments/>
+: [3] <https://www.reddit.com/r/Breadit/comments/117uio/biga_vs_poolish_vs_sponge_vs_starter_vs_preferment/>
+: [4] <https://breadbythehour.com/beginning-baking-definitions-levain-poolish-biga-sponge-and-pate-fermentee/>
+: [5] <https://www.youtube.com/watch?v=MDThMkbrA1Uhe>

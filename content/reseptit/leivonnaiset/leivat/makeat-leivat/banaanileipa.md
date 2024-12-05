@@ -1,45 +1,90 @@
 ---
+# Essential Recipe Information
 title: "Banaani-mustikkaleipä"
+description: "Herkullinen ja mehevä banaanimustikkaleipä, josta löytyy tasapainollinen määrä makeutta ja happamuutta. Sopii kahvipöytään tai välipalaksi."
+servings: 8
+yield: "1 kpl 20x10cm leipä"
+difficulty: "Keskitaso"
+
+# Time Requirements
+prep_time: "30M"
+cook_time: "1H"
+total_time: "1H30M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: ""
+  - type: "Yleiskone"
+    size: ""
+  - type: "Vuoka"
+    size: "20x10cm leipävuoka"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "2 päivää"
+  fridge: "5 päivää"
+  freezer: "3 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Taikinapohjaiset"
+  - "Makeat leivät"
+tags: 
+  - "banaani"
+  - "mehevä"
+  - "makea"
+  - "mustikka"
+  - "välipala"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: true
+
+# Recipe Scaling
+scaling_factors: [1, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "banaanileipä"
+  - "mustikka"
+  - "leivonnaiset"
+  - "välipala"
+  - "kahvileipä"
+
+# Metadata and Attribution
 date: "2024-10-20"
 lastmod: "2024-11-09"
-author: "[Bruno Albouze](https://brunoalbouze.com/blueberry-banana-bread/)"
+author: 
+  name: "Bruno Albouze"
+  url: "https://brunoalbouze.com/blueberry-banana-bread/"
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Herkullinen ja mehevä banaanimustikkaleipä, josta löytyy tasapainollinen määrä makeutta ja happamuutta. Sopii kahvipöytään tai välipalaksi."
-categories: ["Taikinapohjaiset", "Makeat leivät"]
-tags:
-- banaani
-- mehevä
-- makea
-- mustikka
-- välipala
-difficulty: "Keskitaso"
-valmistusaika: "01:30"
-maara: 1
-servings: 8
-impsize: "20x10cm leipävuoka"
-storage:
-- "2pv"
-- "4vk"
-- "3kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Leipävuoka"
-method:
-- "Vaahdotus"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "1x 1 kpl 23cm vuoka (10 annosta)"
-- "2x 1 kpl 2.7L vuoka (16 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Leivonnaiset"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Taikina
+
 - 250 g Banaani (kypsä, soseutettu)
 - 10 ml Limemehu
 - 250 g Mustikka (pakaste)
@@ -53,17 +98,19 @@ skaalaus:
 - 2.5 ml Ruokasooda
 
 #### Koristelu
+
 - 100 g Banaani (ohuina viipaleina)
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 160°C (*tasalämpö*). Voitele ja jauhota leipävuoka.
 
 2. Soseuta banaanit limemehun kanssa tasaiseksi. Pyörittele mustikat vehnäjauhossa.
 
 3. **Taikina:** Vaahdota voi, sokeri ja suola yleiskoneella kuohkeaksi 5 min. Lisää kananmunat yksitellen vaahtoon, sekoittaen hyvin jokaisen lisäyksen jälkeen.
 
-4. Seulo vehnäjauho, leivinjauhe ja ruokasooda yhteen erilliseen kulhoon. 
+4. Seulo vehnäjauho, leivinjauhe ja ruokasooda yhteen erilliseen kulhoon.
 
 5. Lisää jauhoseos ja banaanisose vuorotellen taikinaan kolmessa erässä, sekoita kevyesti. *Älä sekoita liikaa.* Varmista nuolijalla sekoituksen onnistuminen.
 
@@ -75,25 +122,28 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Käytä hyvin kypsiä banaaneja taikinaan parhaan maun saamiseksi
 - Pakastemustikkojen pyörittely jauhoissa estää niiden vajoamista pohjaan
 - Tarkista kypsyys puutikulla leivän keskeltä
 
-### Versioita:
-- **Pähkinä**: 
+### Versioita
+
+- **Pähkinä**:
   - Lisää taikinaan 75 g paahdettuja, rouhittuja saksanpähkinöitä
   - Ripottele pinnalle pähkinärouhetta
 
-- **Suklaa**: 
+- **Suklaa**:
   - Korvaa puolet mustikoista (125 g) suklaarouheella
   - Lisää taikinaan 10 g kaakaojauhetta
 
-- **Kaneli**: 
+- **Kaneli**:
   - Lisää jauhoseokseen 5 ml kanelia
   - Sekoita koristeluun kaneli-sokeria banaaniviipaleiden päälle
 
-- **Vanilja**: 
+- **Vanilja**:
   - Lisää taikinaan 5 ml vaniljauutetta
   - Korvaa tavallinen sokeri vaniljasokerin ja sokerin seoksella
 {{</ notes >}}

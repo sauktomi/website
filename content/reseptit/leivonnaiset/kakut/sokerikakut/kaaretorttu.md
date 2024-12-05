@@ -1,46 +1,89 @@
 ---
+# Essential Recipe Information
 title: "Perus kääretorttu"
+description: "Pehmeä kääretorttu marjahillolla ja täytelläsellä kermavaahdolla"
+servings: 8
+yield: "1 kpl 40x30cm kääretorttu"
+difficulty: "Keskitaso"
+
+# Time Requirements
+prep_time: "1H"
+cook_time: "15M"
+total_time: "1H15M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: ""
+  - type: "Yleiskone"
+    size: ""
+  - type: "Pelti"
+    size: "40x30cm leivinpelti"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivä"
+  fridge: "3 päivää"
+  freezer: "3 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Kakut"
+  - "Sokerikakut"
+tags: 
+  - "vadelma"
+  - "pehmeä"
+  - "makea"
+  - "juhlava jälkiruoka"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.67, 0.8, 1, 1.5]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "kääretorttu"
+  - "swiss roll"
+  - "leivonnaiset"
+  - "jälkiruoka"
+  - "kahvipöytä"
+
+# Metadata and Attribution
 date: "2024-10-20"
 lastmod: "2024-11-11"
-author: "TMS"
+author: 
+  name: "TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Pehmeä kääretorttu marjahillolla ja täytelläsellä kermavaahdolla"
-categories: ["Kakut", "Sokerikakut"]
-tags:
-- vadelma
-- pehmeä
-- makea
-- juhlava jälkiruoka
-difficulty: "Keskitaso"
-valmistusaika: "00:45"
-maara: 1
-servings: 8
-impsize: "40x30cm leivinpelti"
-storage:
-- "2pv"
-- "4vk"
-- "3kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Leivinpelti"
-method:
-- "Vaahdotus"
-- "Kääriminen"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "0.67x 1 kpl 30x20cm pelti (6 annosta)"
-- "0.8x 1 kpl 30x20cm pelti paksu (6 annosta)"
-- "1.5x 1 kpl 45x33cm pelti (10 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Jälkiruoka"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Taikina
+
 - 5 kpl Kananmuna (huoneenlämpöinen)
 - 15 ml Maito (huoneenlämpöinen)
 - 150 g Sokeri
@@ -54,12 +97,14 @@ skaalaus:
 - 15 ml Rypsiöljy
 
 #### Siirappi
+
 - 60 g Vesi
 - 30 g Sokeri
 - 5 ml Vaniljasokeri
 - 30 ml Makusiirappi (Monin)
 
 #### Täyte
+
 - 100 g Vadelmahillo
 - 200 ml Vispikerma
 - 15 ml Tomusokeri
@@ -68,6 +113,7 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 175°C (*tasalämpö*). Vuoraa leivinpelti leivinpaperilla.
 
 2. **Taikina:** Vatkaa kananmunat, maito, sokeri, siirappi, viinikivi ja suola kuohkeaksi vaahdoksi yleiskoneella korkeimmalla nopeudella 5-7 min.
@@ -92,14 +138,17 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Vaahdota munat ja sokeri todella huolellisesti, vaahdon tulee olla vaaleaa ja kuohkeaa
 - Sekoita kuivat aineet varovasti, jotta taikina säilyy ilmavana
 - Kääri torttu heti paiston jälkeen sen ollessa vielä lämmin
 - Anna täytteen jähmettyä kunnolla ennen tarjoilua
 - Pellin taputtaminen/pamauttaminen rikkoo suuret ilmakuplat taikinassa
 
-### Versioita:
+### Versioita
+
 - **Suklaa**:
   - Korvaa 25 g vehnäjauhoa kaakaojauholla
   - Täytä suklaaganachella (100 g tumma suklaa + 100 ml kuuma kerma)

@@ -1,51 +1,94 @@
 ---
+# Essential Recipe Information
 title: "Vuohenjuusto-pestopaahtoleipä"
+description: "Herkullinen ja rapea paahtoleipä pestolla, vuohenjuustolla ja pihvitomaatilla"
+servings: 8
+yield: "8 kpl"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "25M"
+cook_time: "15M"
+total_time: "40M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+  - type: "Leivinpelti"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "-"
+  fridge: "2 päivää"
+  freezer: "-"
+
+# Recipe Classification
+categories: 
+  - "Tuotteet"
+  - "Välipalat"
+tags: 
+  - "vuohenjuusto"
+  - "pesto"
+  - "suolainen"
+  - "välipala"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: false
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: true
+  high_protein: true
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [0.5, 1, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "paahtoleipä"
+  - "vuohenjuusto"
+  - "pesto"
+  - "välipala"
+  - "uuniruoka"
+
+# Metadata and Attribution
 date: "2024-10-25"
 lastmod: "2024-11-11"
-author: "TMS"
+author: 
+  name: "TMS"
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Herkullinen ja rapea paahtoleipä pestolla, vuohenjuustolla ja pihvitomaatilla"
-categories: ["Tuotteet", "Välipalat"]
-tags:
-- vuohenjuusto
-- pesto
-- suolainen
-- välipala
-difficulty: "Helppo"
-valmistusaika: "00:45"
-maara: 8
-servings: 8
-impsize: "1x leivinpelti"
-storage:
-- "1pv"
-- "3pv"
-- "-"
-appliances:
-- "Uuni"
-- "Leivinpelti"
-method:
-- "Kokoaminen"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "0.5x 4 kpl (1 pelti)"
-- "2x 16 kpl (2 peltiä)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Välipalat"
+  cookingMethod: "Paistaminen"
 ---
 
 {{< ingredients >}}
+
 #### Pohja
+
 - 8 kpl Paahtoleipä
 - 50 g Pesto genovese
 
 #### Juustoseos
+
 - 320 g Juustoraaste (emmental tai gouda)
 - 2 kpl Kananmuna (huoneenlämpöinen)
 
 #### Täyte
+
 - 2 kpl Pihvitomaatti (ohuiksi viipaleiksi)
 - 500 g Vuohenjuusto (viipaleina)
 - 5 ml Sitruunapippuri (rouhe)
@@ -53,7 +96,8 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
-1. Esilämmitä uuni 220°C (*pohja-kiertoilma*). Vuoraa leivinpelti leivinpaperilla. 
+
+1. Esilämmitä uuni 220°C (*pohja-kiertoilma*). Vuoraa leivinpelti leivinpaperilla.
 
 2. **Esivalmistelut:** Sekoita juustoraaste ja kananmunat tasaiseksi seokseksi; Viipaloi tomaatit ohuiksi, tasaisiksi siivuiksi, 5 kpl per tomaatti; Leikkaa vuohenjuusto tasaisiksi viipaleiksi, 62,5g per pala.
 
@@ -65,16 +109,20 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Viipaloi tomaatit ja vuohenjuusto tasaisiksi, jotta ne kypsyvät tasaisesti
 - Tarjoile heti paiston jälkeen, kun juusto on vielä pehmeää
 
-### Ainesosien määrät eri kokoisiin annoksiin:
+### Ainesosien määrät eri kokoisiin annoksiin
+
 - 4 annosta: 160 g juustoraastetta ja 1 kananmuna
 - 6 annosta: 240 g juustoraastetta ja 1 kananmuna
 - 8 annosta: 320 g juustoraastetta ja 2 kananmunaa
 
-### Versioita:
+### Versioita
+
 - **Basilika**: Korvaa kuivattu oregano tuoreella basilikalla
 - **Balsamico**: Viimeistele balsamicosiirapilla; Lisää paahdettuja pinjansiemeniä
 - **Rucola**: Lisää rucolaa paiston jälkeen; Viimeistele oliiviöljyllä

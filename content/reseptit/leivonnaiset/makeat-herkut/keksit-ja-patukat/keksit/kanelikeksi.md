@@ -1,46 +1,91 @@
 ---
+# Essential Recipe Information
 title: "Kanelikeksi"
+description: "Rapeat ja aromikkaat kanelikeksit. Täydellinen kumppani kahville tai teelle."
+servings: 28
+yield: "28 kpl keksiä (2 pellillistä)"
+difficulty: "Helppo"
+
+# Time Requirements
+prep_time: "30M"
+cook_time: "15M"
+total_time: "45M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: ""
+  - type: "Yleiskone"
+    size: ""
+  - type: "Pursotinpussi"
+    size: ""
+  - type: "Leivinpelti"
+    size: "2 kpl"
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "5 päivää"
+  fridge: "-"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Makeat herkut"
+  - "Keksit ja patukat"
+tags: 
+  - "kaneli"
+  - "rapea"
+  - "makea"
+  - "kahvipöytä"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: false
+
+# Recipe Scaling
+scaling_factors: [1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "kanelikeksi"
+  - "leivonnaiset"
+  - "keksit"
+  - "kahvileipä"
+  - "välipala"
+
+# Metadata and Attribution
 date: "2024-11-06"
 lastmod: "2024-11-11"
-author: "Kahvila Aleksis"
+author: 
+  name: "Kahvila Aleksis"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Rapeat ja aromikkaat kanelikeksit. Täydellinen kumppani kahville tai teelle."
-categories: ["Makeat herkut", "Keksit ja patukat"]
-tags:
-- kaneli
-- rapea
-- makea
-- kahvipöytä
-difficulty: "Helppo"
-valmistusaika: "00:45"
-maara: 1
-servings: 28
-impsize: "2x leivinpelti"
-storage:
-- "5pv"
-- "2vk"
-- "2kk"
-appliances:
-- "Uuni"
-- "Yleiskone"
-- "Pursotinpussi"
-- "Leivinpelti"
-method:
-- "Vaahdotus"
-- "Pursottaminen"
-- "Paistaminen"
-diet:
-- "Maito"
-- "Kananmuna"
-- "Vehnä"
-skaalaus:
-- "1.5x 42 kpl (3 peltiä)"
-- "2x 56 kpl (4 peltiä)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Leivonnaiset"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Keksitaikina
+
 - 200 g Voi (huoneenlämpöinen)
 - 170 g Sokeri
 - 10 ml Vaniljasokeri
@@ -50,11 +95,13 @@ skaalaus:
 - 5 ml Kanelijauhe
 
 #### Koristelu
+
 - 50 g Sokeri
 - 5 ml Kanelijauhe
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 160°C (*kiertoilma*) tai 200°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
 
 2. **Taikina:** Vaahdota pehmeä voi ja sokerit kuohkeaksi vaahdoksi yleiskoneella 5 min. Lisää kananmunat yksitellen hyvin vatkaten.
@@ -71,26 +118,29 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Varmista että voi on juuri sopivan pehmeää, ei sulaa
 - Sekoita taikina varovasti, jotta kekseistä tulee mureita
 - Keksit kovettuvat jäähtyessään, joten älä paista liian tummiksi
 - Säilytä ilmatiiviissä rasiassa, jotta keksit pysyvät rapeina
 
-### Versioita:
-- **Suklaa**: 
+### Versioita
+
+- **Suklaa**:
   - Lisää taikinaan 100 g sulatettua tummaa suklaata
   - Koristele sulatetulla suklaalla
 
-- **Pähkinä**: 
+- **Pähkinä**:
   - Lisää taikinaan 75 g rouhittuja hasselpähkinöitä
   - Ripottele pähkinärouhetta pinnalle ennen paistamista
 
-- **Kardemumma**: 
+- **Kardemumma**:
   - Korvaa kaneli 1:1 kardemummalla
   - Käytä myös koristelussa kardemummaa kanelin sijaan
 
-- **Appelsiini**: 
+- **Appelsiini**:
   - Lisää taikinaan 1 appelsiinin kuoriraaste
   - Korvaa kaneli 1:1 kardemummalla
   - Koristele appelsiininkuoriraasteella

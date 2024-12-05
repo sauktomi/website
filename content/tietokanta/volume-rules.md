@@ -1,18 +1,16 @@
 ---
-title: "Taikinamäärän säännöt"
+title: "Taikinamäärän sääntöjä"
 date: "2024-11-10"
 lastmod: "2024-11-12"
 author: "TMS"
 draft: false
-headimg: "/images/CalculatorSearch.jpeg"
+featured_image: "/images/CalculatorSearch.jpeg"
 categories: ["Ohjeet", "Standardit"]
 tags:
 - hugo
 ---
 
-# Taikinamäärän säännöt vuokaleivonnassa
-
-Seuraavat säännöt auttavat määrittämään oikean taikinamäärän vuoan tilavuuden mukaan:
+Seuraavat säännöt auttavat määrittämään oikean taikinamäärän **vuoan** tilavuuden mukaan:
 
 - 245 g taikinaa per litra tilavuutta kannellisessa paistossa, kun halutaan normaali huokoisuus
 - 260 g taikinaa per litra tilavuutta kannettomassa paistossa

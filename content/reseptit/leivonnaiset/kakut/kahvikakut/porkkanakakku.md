@@ -1,46 +1,90 @@
 ---
+# Essential Recipe Information
 title: "Porkkanakakku"
+description: "Mehevä ja lämminhenkinen porkkanakakku. Pehmeä ja raikas tuorejuustokuorrute täydentää kakun makeutta."
+servings: 10
+yield: "1 kpl 23cm kakku"
+difficulty: "Keskitaso"
+
+# Time Requirements
+prep_time: "30M"
+cook_time: "45M"
+total_time: "1H15M"
+
+# Method and Equipment
+equipment:
+  - type: "Uuni"
+    size: ""
+  - type: "Vuoka"
+    size: "23cm irtopohjavuoka"
+  - type: "Yleiskone"
+    size: ""
+cookingMethod: "Uuni"
+
+# Storage Instructions
+storage:
+  room_temp: "1 päivä"
+  fridge: "5 päivää"
+  freezer: "2 kuukautta"
+
+# Recipe Classification
+categories: 
+  - "Kakut"
+  - "Kahvikakut"
+tags: 
+  - "porkkana"
+  - "mehevä"
+  - "pehmeä"
+  - "makea"
+  - "arkipäivän kahvihetki"
+
+# Dietary Specifications
+dietary:
+  # Common Allergens
+  gluten_free: false
+  dairy_free: false
+  nut_free: true
+  fish_free: true
+
+  # Diet Types
+  vegan: false
+  
+  # Health Considerations
+  low_sugar: false
+  high_protein: false
+  high_fiber: true
+
+# Recipe Scaling
+scaling_factors: [1, 1.5, 2]
+default_scale: 1
+
+# SEO and Display
+featured_image: "/images/CalculatorSearch.jpeg"
+keywords: 
+  - "porkkanakakku"
+  - "carrot cake"
+  - "leivonnaiset"
+  - "jälkiruoka"
+  - "kahvihetki"
+
+# Metadata and Attribution
 date: "2024-10-20"
 lastmod: "2024-11-11"
-author: "TMS"
+author: 
+  name: "TMS"
+  url: ""
 draft: true
-headimg: "/images/CalculatorSearch.jpeg"
-description: "Mehevä ja lämminhenkinen porkkanakakku. Pehmeä ja raikas tuorejuustokuorrute täydentää kakun makeutta."
-categories: ["Kakut", "Kahvikakut"]
-tags:
-- porkkana
-- mehevä
-- pehmeä
-- makea
-- arkipäivän kahvihetki
-difficulty: "Keskitaso"
-valmistusaika: "01:15"
-maara: 1
-servings: 10
-impsize: "23cm irtopohjavuoka"
-storage:
-- "2pv"
-- "5pv"
-- "2kk"
-appliances:
-- "Uuni"
-- "Irtopohjavuoka"
-- "Yleiskone"
-method:
-- "Vaahdotus"
-- "Taittaminen"
-- "Paistaminen"
-diet:
-- "Kananmuna"
-- "Maito"
-- "Vehnä"
-skaalaus:
-- "1.5x 1 kpl 28cm vuoka (15 annosta)"
-- "2x 1 kpl 33x22cm vuoka (20 annosta)"
+
+# Schema.org Recipe Metadata
+schema:
+  recipeCategory: "Jälkiruoka"
+  cookingMethod: "Uuni"
 ---
 
 {{< ingredients >}}
+
 #### Taikina
+
 - 350 g Porkkana (hienoksi raastettu)
 - 200 g Vehnäjauho
 - 10 ml Kanelijauhe
@@ -51,6 +95,7 @@ skaalaus:
 - 150 ml Rypsiöljy
 
 #### Kuorrute
+
 - 50 g Voi (huoneenlämpöinen)
 - 180 g Tuorejuusto (huoneenlämpöinen)
 - 150 g Tomusokeri
@@ -58,6 +103,7 @@ skaalaus:
 {{</ ingredients >}}
 
 {{< instructions >}}
+
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla, voitele ja korppujauhota reunat. Raasta porkkanat hienoksi raasteeksi.
 
 2. **Kuivat aineet:** Sekoita vehnäjauhot, kanelijauhe, ruokasooda ja leivinjauhe kulhossa. Mittaa kuorrutteen voi ja tuorejuusto toiseen kulhoon pehmenemään huoneenlämpöön.
@@ -72,13 +118,16 @@ skaalaus:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+
+### Vinkkejä
+
 - Käytä tuoreita, suuria ja meheviä porkkanoita
 - Raasta porkkanat mahdollisimman hienoksi raasteeksi
 - Varmista että kuorrutteen ainekset ovat huoneenlämpöisiä tasaisen sekoittumisen varmistamiseksi
 - Anna kakun jäähtyä täysin ennen kuorrutusta
 
-### Versioita:
+### Versioita
+
 - **Maustekakku**: Lisää taikinaan 5 ml inkiväärijauhetta ja 2.5 ml muskottipähkinää
 - **Pähkinäinen**:  Lisää taikinaan 100 g rouhittuja saksanpähkinöitä
 - **Appelsiini**: Lisää taikinaan 2 appelsiinin kuoriraaste; kuorrutteeseen 30 ml appelsiinimehua
