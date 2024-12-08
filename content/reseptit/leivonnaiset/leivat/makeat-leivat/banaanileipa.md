@@ -73,7 +73,7 @@ lastmod: "2024-11-09"
 author: 
   name: "Bruno Albouze"
   url: "https://brunoalbouze.com/blueberry-banana-bread/"
-draft: true
+draft: false
 
 # Schema.org Recipe Metadata
 schema:

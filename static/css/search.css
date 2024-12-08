@@ -112,9 +112,6 @@
 }
 
 @media (max-width: 24rem) {
-    .filter-group select {
-    }
-
     .search-filters {
         flex-direction: column;
         margin-right: 5%;
