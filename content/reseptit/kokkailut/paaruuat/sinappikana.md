@@ -68,7 +68,7 @@ lastmod: "2024-12-02"
 author: 
   name: "Modified from thecafesucrefarine.com"
   url: "https://thecafesucrefarine.com/french-mustard-chicken-breasts-poulet-a-la-moutarde-francaise/#wprm-recipe-container-64859"
-draft: true
+draft: false
 
 # Schema.org Recipe Metadata
 schema:

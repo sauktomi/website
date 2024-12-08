@@ -31,7 +31,11 @@ class RecipeState {
         if (cached) {
             this.recipes = JSON.parse(cached);
         } else {
-            const response = await fetch('/search-index.json');
+            // Get base URL from meta tag or default to '/'
+            const baseURL = document.querySelector('base')?.getAttribute('href') || '/';
+            const searchIndexPath = new URL('search-index.json', baseURL).pathname;
+            
+            const response = await fetch(searchIndexPath);
             if (!response.ok) throw new Error('Failed to fetch recipe index');
             this.recipes = await response.json();
             localStorage.setItem('recipe-index', JSON.stringify(this.recipes));
@@ -279,10 +283,14 @@ class RecipeUI {
         
         const timeDisplay = this.formatTimeDisplay(recipe.total_time);
         
+        // Get base URL from meta tag or default to '/'
+        const baseURL = document.querySelector('base')?.getAttribute('href') || '/';
+        const defaultImage = new URL('images/default-recipe.jpg', baseURL).pathname;
+        
         card.innerHTML = `
             <a href="${recipe.permalink}" aria-label="Näytä resepti: ${recipe.title}">
                 <div class="image-container">
-                    <img src="${recipe.featured_image || '/images/default-recipe.jpg'}" 
+                    <img src="${recipe.featured_image || defaultImage}" 
                          alt="${recipe.title}" 
                          loading="lazy"
                          class="recipe-image">
