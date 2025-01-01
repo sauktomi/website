@@ -1,11 +1,60 @@
+/*$ */
 <div class="ingredients-list">
     {{ $content := .Inner | markdownify }}
     {{ $lines := split $content "\n" }}
+    {{ $inList := false }}
+    {{ $firstListOpen := false }}
+    
     {{ range $lines }}
-        {{ if findRE `^\d+` . }}
-            <div class="ingredient-line">{{ . }}</div>
-        {{ else }}
-            {{ . | safeHTML }}
+        {{ if hasPrefix . "#### " }}
+            {{ if $inList }}
+                </ul>
+            {{ end }}
+            <h4 class="ingredient-section">{{ replace . "#### " "" }}</h4>
+            <ul class="ingredient-group">
+            {{ $inList = true }}
+            {{ $firstListOpen = true }}
+        {{ else if ne (trim . " -") "" }}
+            {{ if not $firstListOpen }}
+                <ul class="ingredient-group">
+                {{ $firstListOpen = true }}
+            {{ end }}
+            <li class="ingredient-line">
+                {{/* Parse the ingredient line into components */}}
+                {{ $amountMatch := findRE `^(\d+(?:\.\d+)?(?:\s*[-–]\s*\d+(?:\.\d+)?)?)` . }}
+                {{ $restAfterAmount := "" }}
+                {{ $amount := "" }}
+                
+                {{ if $amountMatch }}
+                    {{ $amount = index $amountMatch 0 }}
+                    {{ $restAfterAmount = replace . $amount "" }}
+                {{ else }}
+                    {{ $restAfterAmount = . }}
+                {{ end }}
+
+                {{/* Look for unit after the amount */}}
+                {{ $unitMatch := findRE `^\s*([a-zA-ZäöåÄÖÅ]+)` $restAfterAmount }}
+                {{ $unit := "" }}
+                {{ $ingredient := $restAfterAmount }}
+
+                {{ if $unitMatch }}
+                    {{ $unit = index $unitMatch 0 }}
+                    {{ $ingredient = replace $restAfterAmount $unit "" }}
+                {{ end }}
+
+                {{/* Output the structured ingredient */}}
+                {{ with $amount }}
+                    <span class="ingredient-amount" data-value="{{ . }}">{{ . }}</span>
+                {{ end }}
+                {{ with $unit }}
+                    <span class="ingredient-unit" data-unit="{{ strings.TrimSpace . }}">{{ . }}</span>
+                {{ end }}
+                <span class="ingredient-name">{{ strings.TrimSpace $ingredient }}</span>
+            </li>
         {{ end }}
+    {{ end }}
+    
+    {{ if $inList }}
+        </ul>
     {{ end }}
 </div>

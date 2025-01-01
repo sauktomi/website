@@ -3,37 +3,41 @@
 
 <section class="recipe-{{ $component }}">
     {{- if eq $component "notes" -}}
-        <details>
-            <summary><h2>Muistiinpanot</h2></summary>
+        <details class="recipe-notes">
+                <h3>Muistiinpanot</h3>
+            
             {{ $shortcode := printf "(?s){{< %s >}}(.*?){{</ %s >}}" $component $component }}
             {{ $matches := findRE $shortcode .content.RawContent }}
             {{ if $matches }}
-                {{ $rawContent := index $matches 0 }}
-                <!-- First extract just the content between the shortcode tags -->
-                {{ $innerContent := replaceRE (printf "{{< ?%s >}}|{{</ ?%s >}}" $component $component) "" $rawContent }}
-                <!-- Process the content through the page's rendering pipeline -->
-                {{ with .content }}
-                    {{ $innerContent | .RenderString }}
-                {{ end }}
+                <div>
+                    {{ $rawContent := index $matches 0 }}
+                    {{ $innerContent := replaceRE (printf "{{< ?%s >}}|{{</ ?%s >}}" $component $component) "" $rawContent }}
+                    {{ with .content }}
+                        {{ $innerContent | .RenderString }}
+                    {{ end }}
+                </div>
             {{ end }}
         </details>
+    
     {{- else if eq $component "description" -}}
         {{ if or .content.Params.description .content.Params.author }}
-            <p>
+            <div class="recipe-description">
                 {{ with .content.Params.description }}
-                    {{ . }}
+                    <p class="text-secondary">{{ . }}</p>
                 {{ end }}
+                
                 {{ with .content.Params.author }}
-                    <span title="Tekijä" class="author">
+                    <span class="text-secondary">
                         {{- if .url -}}
-                            <a href="{{ .url }}">{{ .name }}</a>
+                            <a href="{{ .url }}" class="text-accent hover:underline">{{ .name }}</a>
                         {{- else -}}
                             {{ .name }}
                         {{- end -}}
                     </span>
                 {{ end }}
-            </p>
+            </div>
         {{ end }}
+    
     {{- else -}}
         <h2>
             {{- if eq $component "ingredients" -}}
@@ -45,14 +49,16 @@
 
         {{ if eq $component "ingredients" }}
             {{ with .content.Params.skaalaus }}
-            <div class="scaling-control">
-                <select id="recipe-scale" onchange="scaleRecipe(this.value)" aria-label="Reseptin skaalaus">
-                    <option value="1">1x (Alkuperäinen)</option>
-                    {{ range . }}
-                        <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
-                    {{ end }}
-                </select>
-            </div>
+                <div>
+                    <select id="recipe-scale" 
+                            onchange="scaleRecipe(this.value)" 
+                            aria-label="Reseptin skaalaus">
+                        <option value="1">1× (Alkuperäinen)</option>
+                        {{ range . }}
+                            <option value="{{ index (split . "x") 0 }}">{{ . }}</option>
+                        {{ end }}
+                    </select>
+                </div>
             {{ end }}
         {{ end }}
 
@@ -60,7 +66,7 @@
         {{ $matches := findRE $shortcode .content.RawContent }}
         
         {{ if $matches }}
-            <div class="{{ $component }}-content">
+            <div>
                 {{ $rawContent := index $matches 0 }}
                 {{ $innerContent := replaceRE (printf "{{< ?%s >}}|{{</ ?%s >}}" $component $component) "" $rawContent }}
                 {{ with .content }}
@@ -68,7 +74,7 @@
                 {{ end }}
             </div>
         {{ else }}
-            <p class="{{ $component }}-empty">
+            <p class="text-secondary">
                 {{- if eq $component "ingredients" -}}
                     Ainesosia ei löytynyt.
                 {{- else if eq $component "instructions" -}}

@@ -1,4 +1,4 @@
 ---
 title: "Pääruuat"
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 ---

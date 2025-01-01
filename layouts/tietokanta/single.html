@@ -4,14 +4,15 @@
             {{ partial "recipe-header-image.html" . }}
             <h1>{{ .Title }}</h1>
         </header>
-        <section class="prose-content">
+        
         {{ with .Params.description }}
             <section class="content-description">
-                <p>{{ . }}</p>
+                <p class="text-secondary">{{ . }}</p>
             </section>
         {{ end }}
 
-        {{ .Content }}
-    </section>
-</article>
+        <section>
+            {{ .Content }}
+        </section>
+    </article>
 {{ end }}

@@ -26,10 +26,10 @@ storage:
   freezer: "1 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Taikinapohjaiset"
   - "Suolaiset piiraat"
-tags: 
+tagit: 
   - "fetajuusto"
   - "pinaatti"
   - "suolainen"
@@ -56,7 +56,7 @@ scaling_factors: [1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "feta-pinaattipiiras"
   - "suolainen piirakka"
@@ -117,12 +117,12 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Valuta pinaatti todella huolellisesti, muuten piirakasta tulee vetinen
 - Piirakan voi valmistaa myös murotaikinasta tehdyllä pohjalla
 
-### Versioita
+#### Versioita
 
 - **Vuohenjuusto**:
   - Korvaa feta vuohenjuustolla

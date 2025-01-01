@@ -28,10 +28,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Kahvikakut"
-tags: 
+tagit: 
   - "kahvi"
   - "pehmeä"
   - "kostea"
@@ -59,7 +59,7 @@ scaling_factors: [0.5, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "kahvikakku"
   - "leivonnaiset"
@@ -120,13 +120,13 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että kaikki aineet ovat huoneenlämpöisiä tasaisen sekoittumisen varmistamiseksi
 - Kakku on kypsä kun tikku tulee puhtaana ulos
 - Siirappi tekee kakusta kostean ja säilyvän
 
-### Versioita
+#### Versioita
 
 - **Mauste**:
   - Taikina: 5 ml kaneli, inkivääri, kardemumma, ja  2.5 ml neilikka

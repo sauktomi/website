@@ -30,10 +30,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Makeat herkut"
   - "Keksit ja patukat"
-tags: 
+tagit: 
   - "kaneli"
   - "rapea"
   - "makea"
@@ -60,7 +60,7 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "kanelikeksi"
   - "leivonnaiset"
@@ -119,14 +119,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että voi on juuri sopivan pehmeää, ei sulaa
 - Sekoita taikina varovasti, jotta kekseistä tulee mureita
 - Keksit kovettuvat jäähtyessään, joten älä paista liian tummiksi
 - Säilytä ilmatiiviissä rasiassa, jotta keksit pysyvät rapeina
 
-### Versioita
+#### Versioita
 
 - **Suklaa**:
   - Lisää taikinaan 100 g sulatettua tummaa suklaata

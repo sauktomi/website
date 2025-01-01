@@ -25,10 +25,10 @@ storage:
   freezer: "3 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Taikinapohjaiset"
   - "Makeat piirakat"
-tags: 
+tagit: 
   - "tuorejuusto"
   - "ranskankerma"
   - "kermainen"
@@ -56,7 +56,7 @@ scaling_factors: [0.67, 1, 1.5]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "makea piirakka"
   - "juustokakkupiirakka"
@@ -110,12 +110,12 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Anna pohjan jäähtyä ennen täytteen lisäämistä
 - Älä paista piirakkaa liian tummaksi
 
-### Versioita
+#### Versioita
 
 - **Kaneliomena**:
   - Lisää täytteeseen 200 g omenakuutioita

@@ -1,4 +1,4 @@
 ---
 title: "Täytteet"
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 ---

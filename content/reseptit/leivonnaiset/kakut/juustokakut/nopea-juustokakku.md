@@ -28,10 +28,10 @@ storage:
   freezer: "3 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Juustokakut"
-tags: 
+tagit: 
   - "tuorejuusto"
   - "kermainen"
   - "makea"
@@ -58,7 +58,7 @@ scaling_factors: [0.67, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "juustokakku"
   - "cheesecake"
@@ -118,13 +118,13 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että tuorejuusto on huoneenlämpöistä tasaisen sekoittumisen varmistamiseksi
 - Vaahdota kerma vain pehmeäksi vaahdoksi, älä liian kovaksi
 - Kaada kiille vasta kun täyte on hyytynyt, jos haluat erilliset kerrokset
 
-### Versioita
+#### Versioita
 
 - **Suklaa**: Lisää täytteeseen 100 g sulatettua tummaa suklaata ja vähennä sokerin määrää 25 g
 {{</ notes >}}

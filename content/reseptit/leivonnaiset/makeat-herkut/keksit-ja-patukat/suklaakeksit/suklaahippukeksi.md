@@ -25,10 +25,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+tagit:
   - "Makeat herkut"
   - "Keksit ja patukat"
-tags: 
+tagit:
   - "suklaa"
   - "rapea"
   - "makea"
@@ -44,7 +44,7 @@ dietary:
 
   # Diet Types
   vegan: false
-  
+
   # Health Considerations
   low_sugar: false
   high_protein: false
@@ -55,8 +55,8 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
-keywords: 
+featured_image: "images/CalculatorSearch.jpeg"
+keywords:
   - "suklaahippukeksit"
   - "suklaakeksit"
   - "cookies"
@@ -66,7 +66,7 @@ keywords:
 # Metadata and Attribution
 date: "2024-11-06"
 lastmod: "2024-12-02"
-author: 
+author:
   name: "TMS"
   url: ""
 draft: false
@@ -85,7 +85,7 @@ schema:
 - 160 g Sokeri
 - 70 g Fariinisokeri
 - 10 ml Vaniljasokeri
-- 2 ml Ruokasooda
+- 1.25 ml Ruokasooda
 - 2.5 ml Suola
 - 1 kpl Kananmuna (huoneenlämpöinen)
 - 200 g Vehnäjauho
@@ -104,7 +104,7 @@ schema:
 
 5. Lisää suklaarouhe taikinaan käsin sekoittaen.
 
-6. Muotoile tasaisia #30 palloja ja asettele leivinpaperille 5 cm välein. Litistä pallot sopivan paksuisiksi.
+6. Muotoile tasaisia #30 palloja ja asettele leivinpaperille 5 cm välein.
 
 7. Paista 9-12 min, kunnes reunat ovat kullanruskeita. *Keskusta saa jäädä hieman pehmeäksi.*
 
@@ -113,12 +113,12 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
-- Syvemmän maun saat antamalla taikinan levätä jääkaapissa 24-72 t ennen paistamista
-- Keksien paksuus vaikuttaa lopputulokseen: ohuemmat ovat rapeampia, paksummat pehmeämpiä
+- Syvemmän maun ja tiheämmät keksit saat antamalla taikinan levätä jääkaapissa 24-72 t ennen paistamista
+- Taikinapalloja ei tarvitse litistää jos et jäähdytä taikinaa
 
-### Versioita
+#### Versioita
 
 - **Valkosuklaa-sitrus**:
   - Korvaa tumma suklaa valkosuklaalla
@@ -132,6 +132,11 @@ schema:
 - **Karpalo**:
   - Korvaa puolet suklaasta (100 g) kuivatuilla karpalolla
   - Ripottele pinnalle karkeaa merisuolaa
+
+- **Tumma**
+  - Ruskista voi: kun se alkaa ruskistua, laske lämpöä alhaiselle, ja lisää 15 ml maitojauhetta. *Sekoita jatkuvasti, varsinkin kun lisäät maitojauheen.*
+  - Lisää 1 rkl vettä korvaamaan voin nesteen haihdutus
+  - Vatkaa kuumaan voihin sokerit kunnes seos ei enää kiillä. Sitten mukaan sooda, suola, ja kananmuna.
 
 - **Pehmeä**:
   - Korvaa ruokasooda 1.25 ml ruokasoodalla ja 3.75 ml leivinjauheella

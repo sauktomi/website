@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <header>
+    <header class="list-header">
         <h2>{{ .Title }}</h2>
         {{ with .Description }}
             <p>{{ . }}</p>
@@ -7,15 +7,18 @@
     </header>
 
     {{ if .Pages }}
-        <section>
+        <section class="list-content grid-container">
             <div class="picture-grid">
-                {{ range .Pages }}
-                    {{ partial "recipe-card.html" (dict "recipe" .) }}
+                {{ range $index, $recipe := .Pages }}
+                    {{ partial "recipe-card.html" (dict 
+                        "recipe" $recipe 
+                        "isFirst" (eq $index 0)
+                    ) }}
                 {{ end }}
             </div>
         </section>
     {{ else }}
-        <section>
+        <section class="empty-content">
             <p>Valitettavasti sisältöä ei ole saatavilla tällä hetkellä.</p>
         </section>
     {{ end }}

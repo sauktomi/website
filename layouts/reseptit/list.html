@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <header class="section-header">
+    <header>
         <h1>{{ .Title }}</h1>
 
         {{ $path := .RelPermalink }}
@@ -8,32 +8,34 @@
         {{ end }}
     </header>
 
-    <section class="section-content">
+    <section class="description">
         {{ .Content }}
     </section>
 
-    <section class="section-recipes">
-        <h2>{{ if ne .RelPermalink "/reseptit/" }}Reseptit tässä kategoriassa{{ else }}Kaikki reseptit{{ end }}</h2>
-        
+    <section class="grid-container">
+        <h2>
+            {{ if ne .RelPermalink "/reseptit/" }}
+                Reseptit tässä kategoriassa
+            {{ else }}
+                Kaikki reseptit
+            {{ end }}
+        </h2>
+
         <div class="picture-grid">
             {{ if eq .RelPermalink "/reseptit/" }}
                 {{ range .Sections }}
                     {{ range .Sections }}
                         <div class="picture-card">
-                            <a href="{{ .RelPermalink }}" class="card-link" aria-label="Näytä kategoria: {{ .Title }}">
+                            <a href="{{ .RelPermalink }}" 
+                               class="card-link"
+                               aria-label="Näytä kategoria: {{ .Title }}">
                                 <div class="image-container">
-                                    {{ $defaultImg := "/images/default-recipe.jpg" }}
-                                    {{ $imgSrc := .Params.featured_image | default $defaultImg }}
-                                    <img
-                                        src="{{ $imgSrc }}"
-                                        alt="{{ .Title }}"
-                                        loading="lazy"
-                                        class="recipe-image">
+                                    {{ partial "responsive-image.html" (dict "context" . "type" "thumbnail" "class" "recipe-image") }}
                                 </div>
                                 <div class="card-content">
                                     <h2>{{ .Title }}</h2>
                                     <div class="recipe-meta">
-                                        <span class="meta-item">
+                                        <span class="text-secondary">
                                             {{ $count := len .Pages }}
                                             {{ $count }} {{ if eq $count 1 }}resepti{{ else }}reseptiä{{ end }}
                                         </span>

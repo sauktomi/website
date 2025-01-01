@@ -26,10 +26,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Juustokakut"
-tags: 
+tagit: 
   - "suklaa"
   - "kermainen"
   - "makea"
@@ -57,7 +57,7 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "juustokakku"
   - "suklaa"
@@ -113,14 +113,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Käytä laadukasta suklaata parhaan maun saamiseksi
 - Varmista että tuorejuusto on huoneenlämpöistä tasaisen sekoittumisen varmistamiseksi
 - Vaahdota kerma juuri sopivan kiinteäksi, älä liian kovaksi (vaikeuttaa sekoittamista tasaiseksi)
 - Anna kakun jäähtyä kunnolla ennen tarjoilua
 
-### Versioita
+#### Versioita
 
 - **Sitruuna**: Lisää sitruunankuori täytteeseen ja 30 ml sitruunamehua
 - **Minttu**: Lisää 5 ml minttuesanssia täytteeseen

@@ -1,23 +1,16 @@
 {{ define "main" }}
-    <header class="section-header">
-        <h1>Tervetuloa {{ .Site.Title }}</h1>
+    <header class="home-header">
+        <h1 class="home-title">Tervetuloa</h1>
     </header>
-    
-    <section class="section-search">
-        <div class="search-container">
-            <div class="search-box">
-                <input
-                    type="search"
-                    id="recipe-search"
-                    placeholder="Etsi reseptejä..."
-                    aria-label="Haku"
-                >
-            </div>
+
+    <section class="home-search">
+        <div class="search-box">
+            <input type="search" id="recipe-search" class="search-input" placeholder="Etsi reseptejä..." aria-label="Haku">
         </div>
     </section>
 
-    <section class="section-featured">
-        <h2>Korostetut reseptit</h2>
+    <section class="home-section grid-container">
+        <h2 class="section-title">Korostetut reseptit</h2>
         <div class="picture-grid">
             {{ $recipes := where .Site.RegularPages "Section" "reseptit" }}
             {{ range first 3 (where $recipes "Params.featured" true) }}
@@ -29,8 +22,8 @@
         </div>
     </section>
 
-    <section class="section-recipes">
-        <h2>Uusimmat reseptit</h2>
+    <section class="home-section grid-container">
+        <h2 class="section-title">Uusimmat reseptit</h2>
         <div class="picture-grid">
             {{ range first 6 $recipes.ByDate.Reverse }}
                 {{ partial "recipe-card.html" (dict
@@ -41,16 +34,16 @@
         </div>
     </section>
 
-    <section class="section-categories">
-        <h2>Suosituimmat kategoriat</h2>
+    <section class="home-section grid-container">
+        <h2 class="section-title">Suosituimmat kategoriat</h2>
         <div class="picture-grid">
             {{ range .Site.Sections }}
                 {{ if eq .Section "reseptit" }}
                     {{ range first 6 .Sections }}
                         <a href="{{ .RelPermalink }}" class="picture-card">
                             <div class="card-content">
-                                <h3>{{ .Title }}</h3>
-                                <div class="meta-item">
+                                <h3 class="card-title">{{ .Title }}</h3>
+                                <div class="card-meta">
                                     <span>{{ len .Pages }} reseptiä</span>
                                 </div>
                             </div>
@@ -61,25 +54,25 @@
         </div>
     </section>
 
-    <section class="section-knowledge">
-        <h2>Ruuanlaiton tietopankki</h2>
+    <section class="home-section grid-container">
+        <h2 class="section-title">Ruuanlaiton tietopankki</h2>
         <div class="picture-grid">
             <a href="/tietokanta/esitaikinat/" class="picture-card">
                 <div class="card-content">
-                    <h3>Esitaikinat</h3>
-                    <p>Opas erilaisten esitaikinoiden valmistukseen</p>
+                    <h3 class="card-title">Esitaikinat</h3>
+                    <p class="card-description">Opas erilaisten esitaikinoiden valmistukseen</p>
                 </div>
             </a>
             <a href="/tietokanta/volume-rules/" class="picture-card">
                 <div class="card-content">
-                    <h3>Mittasuhteet</h3>
-                    <p>Tärkeimmät mittasuhteet leivonnassa</p>
+                    <h3 class="card-title">Mittasuhteet</h3>
+                    <p class="card-description">Tärkeimmät mittasuhteet leivonnassa</p>
                 </div>
             </a>
             <a href="/tietokanta/standardit/reseptistandardit/" class="picture-card">
                 <div class="card-content">
-                    <h3>Reseptistandardit</h3>
-                    <p>Perusohjeet ja standardit</p>
+                    <h3 class="card-title">Reseptistandardit</h3>
+                    <p class="card-description">Perusohjeet ja standardit</p>
                 </div>
             </a>
         </div>

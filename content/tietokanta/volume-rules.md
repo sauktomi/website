@@ -4,9 +4,9 @@ date: "2024-11-10"
 lastmod: "2024-11-12"
 author: "TMS"
 draft: false
-featured_image: "/images/CalculatorSearch.jpeg"
-categories: ["Ohjeet", "Standardit"]
-tags:
+featured_image: "images/CalculatorSearch.jpeg"
+kategoriat: ["Ohjeet", "Standardit"]
+tagit:
 - hugo
 ---
 

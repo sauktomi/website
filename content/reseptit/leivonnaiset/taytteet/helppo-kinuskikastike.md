@@ -25,10 +25,10 @@ storage:
   freezer: "1 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Täytteet"
   - "Kastikkeet"
-tags: 
+tagit: 
   - "kastike"
   - "kinuski"
   - "makea"
@@ -56,7 +56,7 @@ scaling_factors: [0.5, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "kinuskikastike"
   - "kinuski"
@@ -96,11 +96,11 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Fariinisokerin voi hyvin korvata normaalilla sokerilla 1:1, mutta nykyisellä prosessilla siitä tulee hieman vaaleampi.
 
-### Versioita
+#### Versioita
 
 - **Kuorrute**: Vispaa ohuena nauhana seos 15 ml tapiocatärkkelystä ja 15 ml kylmää vettä kuumaan kastikkeeseen voin lisäämisen jälkeen. *Voi olla että tapioca tarvitsee minuutin pari matalalla lämmöllä aktivoituaakseen.*
 {{</ notes >}}

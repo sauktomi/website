@@ -26,10 +26,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Makeat herkut"
   - "Keksit ja patukat"
-tags: 
+tagit: 
   - "vadelma"
   - "murea"
   - "makea"
@@ -57,7 +57,7 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "lusikkaleivät"
   - "perinteinen leivonta"
@@ -117,14 +117,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Jäähdytä margariini-sokeriseos nopeasti vesihauteessa
 - Taikina ei saa olla liian lämmin muotoiltaessa
 - Älä täytä keksejä liian kuumina, jotta hillo ei sula
 - Säilytä ilmatiiviissä rasiassa, jotta keksit pysyvät mureina
 
-### Versioita
+#### Versioita
 
 - **Suklaa**:
   - Lisää taikinaan 50 g kaakaojauhetta

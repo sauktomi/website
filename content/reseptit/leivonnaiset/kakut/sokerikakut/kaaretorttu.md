@@ -28,10 +28,10 @@ storage:
   freezer: "3 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Sokerikakut"
-tags: 
+tagit: 
   - "vadelma"
   - "pehmeä"
   - "makea"
@@ -58,7 +58,7 @@ scaling_factors: [0.67, 0.8, 1, 1.5]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "kääretorttu"
   - "swiss roll"
@@ -139,7 +139,7 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Vaahdota munat ja sokeri todella huolellisesti, vaahdon tulee olla vaaleaa ja kuohkeaa
 - Sekoita kuivat aineet varovasti, jotta taikina säilyy ilmavana
@@ -147,7 +147,7 @@ schema:
 - Anna täytteen jähmettyä kunnolla ennen tarjoilua
 - Pellin taputtaminen/pamauttaminen rikkoo suuret ilmakuplat taikinassa
 
-### Versioita
+#### Versioita
 
 - **Suklaa**:
   - Korvaa 25 g vehnäjauhoa kaakaojauholla

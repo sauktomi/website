@@ -1,0 +1,14 @@
+<nav class="breadcrumbs" aria-label="Breadcrumb navigation">
+    <ol class="breadcrumb-list">
+      {{/* Get the page's ancestors, excluding home */}}
+      {{ $ancestorPages := after 2 .Ancestors.Reverse }}
+      
+      {{/* Display each ancestor as a breadcrumb link */}}
+      {{ range $ancestorPages }}
+        <li class="breadcrumb-item">
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+        </li>
+      {{ end }}
+
+    </ol>
+  </nav>

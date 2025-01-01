@@ -6,8 +6,8 @@ Sitemap: {{ "sitemap.xml" | absURL }}
 
 # Common crawl optimizations
 Disallow: /search
-Disallow: /tags
-Disallow: /categories
+Disallow: /tagit
+Disallow: /kategoriat
 Disallow: /404.html
 
 # Media and assets

@@ -1,0 +1,65 @@
+{{ define "ingredients-section" }}
+<section class="recipe-ingredients">
+    <div class="ingredients-content">
+        {{ $ingredients := findRE `(?s){{< ingredients >}}(.*?){{</ ingredients >}}` .RawContent }}
+        {{ if $ingredients }}
+            {{ $content := index $ingredients 0 | replaceRE `{{< ingredients >}}|{{</ ingredients >}}` "" | strings.TrimSpace }}
+            {{ $lines := split $content "\n" }}
+            {{ template "ingredients-list" $lines }}
+        {{ else }}
+            <p class="ingredients-empty">{{ i18n "ingredients_not_found" }}</p>
+        {{ end }}
+    </div>
+</section>
+{{ end }}
+
+{{ define "ingredients-list" }}
+    {{ $inList := false }}
+    {{ range . }}
+        {{ if hasPrefix . "#### " }}
+            {{ if $inList }}</ul>{{ end }}
+            <h4 id="{{ anchorize (replace . "#### " "") }}">
+                {{ replace . "#### " "" }}
+            </h4>
+            <ul class="ingredients-list">
+            {{ $inList = true }}
+        {{ else }}
+            {{ $ingredient := trim . " -" }}
+            {{ if $ingredient }}
+                {{ if not $inList }}
+                    <ul class="ingredients-list">
+                    {{ $inList = true }}
+                {{ end }}
+                {{ template "ingredient-item" $ingredient }}
+            {{ end }}
+        {{ end }}
+    {{ end }}
+    {{ if $inList }}</ul>{{ end }}
+{{ end }}
+
+{{ define "ingredient-item" }}
+    <li class="ingredient">
+        {{ $amountMatch := findRE `^(\d+(?:\.\d+)?(?:\s*[-–]\s*\d+(?:\.\d+)?)?)` . }}
+        {{ if $amountMatch }}
+            {{ $amount := index $amountMatch 0 }}
+            {{ $rest := replace . $amount "" }}
+            
+            {{ $unitMatch := findRE `^\s*([a-zA-ZäöåÄÖÅ]+)` $rest }}
+            {{ $unit := "" }}
+            {{ $name := $rest }}
+            
+            {{ if $unitMatch }}
+                {{ $unit = index $unitMatch 0 }}
+                {{ $name = replace $rest $unit "" }}
+            {{ end }}
+            
+            <span class="ingredient-amount" data-value="{{ $amount }}">{{ $amount }}</span>
+            {{ with $unit }}
+                <span class="ingredient-unit" data-unit="{{ strings.TrimSpace . }}">{{ . }}</span>
+            {{ end }}
+            <span class="ingredient-name">{{ strings.TrimSpace $name }}</span>
+        {{ else }}
+            <span class="ingredient-name">{{ strings.TrimSpace . }}</span>
+        {{ end }}
+    </li>
+{{ end }}

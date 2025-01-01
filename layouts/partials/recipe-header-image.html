@@ -1,5 +1,11 @@
 {{ with .Params.featured_image }}
     <div class="recipe-image-container">
-        {{ partial "responsive-image.html" (dict "context" $ "path" . "class" "recipe-image") }}
+        {{ partial "responsive-image.html" (dict 
+            "path" . 
+            "context" $
+            "type" "hero"
+            "loading" "eager" 
+            "class" "recipe-image"
+        ) }}
     </div>
 {{ end }}

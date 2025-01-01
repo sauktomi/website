@@ -237,8 +237,8 @@ let recipe = {
     draft: true,
     featured_image: '/images/CalculatorSearch.jpeg',
     description: '',
-    categories: [],
-    tags: '[]',
+    kategoriat: [],
+    tagit: '[]',
     difficulty: '',
     valmistusaika: '',
     maara: '',
@@ -950,8 +950,8 @@ function generateMarkdown() {
     output += `description: ${formatValue(recipe.description)}\n`;
 
     // Add empty or default arrays/strings for optional fields
-    output += `categories: ${recipe.categories.length ? JSON.stringify(recipe.categories) : '[]'}\n`;
-    output += `tags: ${recipe.tags.length ? JSON.stringify(recipe.tags) : '[]'}\n`;
+    output += `kategoriat: ${recipe.kategoriat.length ? JSON.stringify(recipe.kategoriat) : '[]'}\n`;
+    output += `tagit: ${recipe.tagit.length ? JSON.stringify(recipe.tagit) : '[]'}\n`;
     output += `difficulty: ${formatValue(recipe.difficulty)}\n`;
     output += `valmistusaika: ${formatValue(recipe.valmistusaika)}\n`;
     output += `maara: ${formatValue(recipe.maara)}\n`;

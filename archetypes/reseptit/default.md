@@ -25,10 +25,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Makeat herkut"
   - "Keksit ja patukat"
-tags: 
+tagit: 
   - "voi"
   - "murea"
   - "makea"
@@ -87,10 +87,10 @@ schema:
 {{</ instructions >}}
 
 {{< notes >}}
-### Vinkkejä:
+#### Vinkkejä:
 - 
 
-### Versioita:
+#### Versioita:
 - **Versio 1**: 
   - 
 {{</ notes >}}

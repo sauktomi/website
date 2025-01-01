@@ -24,10 +24,10 @@ storage:
   freezer: "-"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Täytteet"
   - "Kastikkeet"
-tags: 
+tagit: 
   - "makea"
   - "sitruuna"
   - "kermainen"
@@ -53,7 +53,7 @@ scaling_factors: [0.5, 1, 1.5]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "sitruunakreemi"
   - "täyte"
@@ -76,17 +76,17 @@ schema:
 
 {{< ingredients >}}
 
-- 200 g Sokeri
-- 2 kpl Kananmuna
-- 2 kpl Kananmunankeltuainen
-- 175 ml Sitruunamehu
-- 1 kpl Sitruunakuoriraaste
-- 80 g Voi (suolaton)
+- 80 g voi (suolaton)
+- 200 g sokeri
+- 175 ml sitruunamehu
+- 1 kpl sitruunakuoriraaste
+- 2 kpl kananmuna
+- 2 kpl keltuainen
 {{</ ingredients >}}
 
 {{< instructions >}}
 
-1. Yhdistä sokeri ja kananmunat mikronkestävässä kulhossa. Lisää ja sekoita loput ainekset mukaan.
-2. Mikrota korkealla 45 s jaksoissa *sekoittaen jokaisen jälkeen*, yrittäen sulattaa voi mahdollisimman nopeasti, kunnes seos tihenee selkeästi (~80°C).
+1. Sulata voi. Lisää loput ainekset ja sekoita tasaiseksi.
+2. Mikrota korkealla 45 s jaksoissa *sekoittaen jokaisen jälkeen*, kunnes seos tihenee selkeästi (~80°C).
 3. Siivilöi jos näet kananmunakokkelia seoksessa.
 {{</ instructions >}}

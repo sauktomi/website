@@ -1,11 +1,21 @@
+baseURL: "http://localhost:1313/"
+
 outputs:
-  - HTML
-  - JSON
+  home: ["HTML", "RSS"]
+  page: ["HTML", "SearchIndex"]
+  section: ["HTML", "RSS", "SearchIndex"]
+  taxonomy: ["HTML", "RSS"]
+  term: ["HTML", "RSS"]
+  search: ["HTML", "SearchIndex"]
+
+taxonomies:
+  kategoriat: "kategoriat"
+  tagit: "tagit"
 
 outputFormats:
   SearchIndex:
     mediaType: application/json
-    baseName: search-index
+    baseName: search-index-slim
     isPlainText: true
     notAlternative: true
 

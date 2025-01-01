@@ -1,38 +1,40 @@
 baseURL: "https://tompsa.com/"
 languageCode: "fi-FI"
 defaultContentLanguage: "fi"
-title: "TMS"
+title: "Tomin ruokanurkka"
 
 contentDir: "content"
 
 permalinks:
-  recipes: "/:section/:slug/"
-  categories: "/recipes/:slug/"
+  reseptit: "/:section/:slug/"
+  kategoriat: "/reseptit/:slug/"
 
 taxonomies:
-  tag: tags
   difficulty: difficulties
   appliance: appliances
   method: methods
   diet: diets
+  kategoria: "kategoriat"
+  tagi: "tagit"
 
 menu:
   main:
-    - identifier: "recipes"
+    - identifier: "reseptit"
       name: "Reseptit"
       url: "/reseptit/"
       weight: 1
-    - identifier: "tags"
+    - identifier: "tagit"
       name: "Tagit"
-      url: "/tags/"
+      url: "/tagit/"
       weight: 2
 
 outputs:
   home: ["HTML", "RSS"]
   page: ["HTML", "PDF", "Print", "SearchIndex"]
-  section: ["HTML", "RSS"]
+  section: ["HTML", "RSS", "SearchIndex"]
   taxonomy: ["HTML", "RSS"]
   term: ["HTML", "RSS"]
+  search: ["HTML", "SearchIndex"]
 
 outputFormats:
   Print:
@@ -42,7 +44,7 @@ outputFormats:
     permalinkable: true
   SearchIndex:
     mediaType: application/json
-    baseName: search-index
+    baseName: search-index-slim
     isPlainText: true
     notAlternative: true
 

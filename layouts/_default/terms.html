@@ -1,26 +1,31 @@
 {{ define "main" }}
-    <h2>{{ .Title }}</h2>
-    {{ if .Data.Terms.Alphabetical }}
-        <ul class="terms-list" aria-label="List of {{ .Title }}">
-            {{ $lastLetter := "" }}
-            {{ range .Data.Terms.Alphabetical }}
-                {{ $firstLetter := substr .Page.Title 0 1 | upper }}
-                {{ if ne $firstLetter $lastLetter }}
-                    {{ if ne $lastLetter "" }}
-                        </ul>
+    <div>
+        <h2>{{ .Title }}</h2>
+        
+        {{ if .Data.Terms.Alphabetical }}
+            <div aria-label="List of {{ .Title }}">
+                {{ $lastLetter := "" }}
+                {{ range .Data.Terms.Alphabetical }}
+                    {{ $firstLetter := substr .Page.Title 0 1 | upper }}
+                    {{ if ne $firstLetter $lastLetter }}
+                        {{ if ne $lastLetter "" }}
+                            </ul>
+                        {{ end }}
+                        <h3>{{ $firstLetter }}</h3>
+                        <ul class="list-none">
                     {{ end }}
-                    <h3 class="term-group-title">{{ $firstLetter }}</h3>
-                    <ul class="term-group">
+                    <li>
+                        <a href="{{ .Page.Permalink }}" class="text-primary hover:text-accent">
+                            {{ .Page.Title }}
+                        </a>
+                        <span class="text-secondary">({{ .Count }})</span>
+                    </li>
+                    {{ $lastLetter = $firstLetter }}
                 {{ end }}
-                <li class="term-item">
-                    <a href="{{ .Page.Permalink }}" class="term-link">{{ .Page.Title }}</a>
-                    <span class="term-count">({{ .Count }})</span>
-                </li>
-                {{ $lastLetter = $firstLetter }}
-            {{ end }}
-            </ul>
-        </ul>
-    {{ else }}
-        <p>No {{ .Title | lower }} found.</p>
-    {{ end }}
+                </ul>
+            </div>
+        {{ else }}
+            <p class="text-secondary">No {{ .Title | lower }} found.</p>
+        {{ end }}
+    </div>
 {{ end }}

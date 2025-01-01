@@ -25,10 +25,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Makeat herkut"
   - "Keksit ja patukat"
-tags: 
+tagit: 
   - "voi"
   - "murea"
   - "makea"
@@ -56,7 +56,7 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "murokeksit"
   - "suklaakeksit"
@@ -114,11 +114,11 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että keksit ovat täysin jäähtyneet ennen suklaaseen kastamista
 
-### Versioita
+#### Versioita
 
 - **Manteli**:
   - Lisää taikinaan 50 g mantelirouhetta

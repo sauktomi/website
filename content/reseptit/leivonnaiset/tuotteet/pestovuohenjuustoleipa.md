@@ -24,10 +24,10 @@ storage:
   freezer: "-"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Tuotteet"
   - "Välipalat"
-tags: 
+tagit: 
   - "vuohenjuusto"
   - "pesto"
   - "suolainen"
@@ -54,7 +54,7 @@ scaling_factors: [0.5, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "paahtoleipä"
   - "vuohenjuusto"
@@ -110,7 +110,7 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Viipaloi tomaatit ja vuohenjuusto tasaisiksi, jotta ne kypsyvät tasaisesti
 - Tarjoile heti paiston jälkeen, kun juusto on vielä pehmeää
@@ -121,7 +121,7 @@ schema:
 - 6 annosta: 240 g juustoraastetta ja 1 kananmuna
 - 8 annosta: 320 g juustoraastetta ja 2 kananmunaa
 
-### Versioita
+#### Versioita
 
 - **Basilika**: Korvaa kuivattu oregano tuoreella basilikalla
 - **Balsamico**: Viimeistele balsamicosiirapilla; Lisää paahdettuja pinjansiemeniä

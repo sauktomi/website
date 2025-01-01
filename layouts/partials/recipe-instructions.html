@@ -1,0 +1,11 @@
+<section class="instructions-content">
+    <h2 class="instructions-title">Ohjeet</h2>
+    
+    {{ with findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
+        <div>
+                {{ index . 0 | markdownify }}
+        </div>
+    {{ else }}
+        <p class="instructions-empty">Ohjeita ei löytynyt.</p>
+    {{ end }}
+</section>

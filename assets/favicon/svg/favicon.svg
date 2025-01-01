@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Black Background -->
+  <rect width="512" height="512" fill="#000000"/>
+  
+  <!-- Text -->
+  <text x="220" y="320" 
+        font-family="Georgia, serif"
+        font-size="280"
+        font-weight="700"
+        text-anchor="middle"
+        fill="#FFFFFF"
+        style="font-style: italic">
+    TMS
+  </text>
+</svg>

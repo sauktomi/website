@@ -28,10 +28,10 @@ storage:
   freezer: "3 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Taikinapohjaiset"
   - "Makeat leivät"
-tags: 
+tagit: 
   - "banaani"
   - "mehevä"
   - "makea"
@@ -59,7 +59,7 @@ scaling_factors: [1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "banaanileipä"
   - "mustikka"
@@ -123,13 +123,13 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Käytä hyvin kypsiä banaaneja taikinaan parhaan maun saamiseksi
 - Pakastemustikkojen pyörittely jauhoissa estää niiden vajoamista pohjaan
 - Tarkista kypsyys puutikulla leivän keskeltä
 
-### Versioita
+#### Versioita
 
 - **Pähkinä**:
   - Lisää taikinaan 75 g paahdettuja, rouhittuja saksanpähkinöitä

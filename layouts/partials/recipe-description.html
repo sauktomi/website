@@ -1,0 +1,13 @@
+{{ with .Params.description }}
+ <p class="recipe-description-text">
+   {{ . }}{{ with $.Params.author }} ~ 
+     <span class="recipe-author">
+       {{- if .url -}}
+         <a href="{{ .url }}">{{ .name }}</a>
+       {{- else -}}
+         {{ .name }}
+       {{- end -}}
+     </span>
+   {{ end }}
+ </p>
+{{ end }}

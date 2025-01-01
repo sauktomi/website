@@ -1,0 +1,52 @@
+{{ define "main" }}
+    <article class="recipe">
+        {{ partial "breadcrumbs.html" . }}
+        <div class="recipe-grid">
+            <header class="recipe-header">
+                <h1 class="recipe-title">{{ .Title }}</h1>
+
+                <div class="recipe-description">
+                    {{ partial "recipe-description.html" . }}
+                </div>
+                <div class="recipe-meta meta-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="additional-info">
+                    {{ partial "recipe-meta.html" . }}
+                </div>
+                {{ partial "recipe-scaling.html" (dict "Params" .Params "view" "default") }}
+
+                <button class="sticky-toggle" aria-label="Toggle sticky sidebar">Toggle Sticky</button>
+            </header>
+            <div class="recipe-media">
+                <div>{{ partial "recipe-header-image.html" . }}</div>
+
+                {{ with .Params.tagit }}
+                <div class="recipe-tags">
+                    <ul class="tags-list">
+                        {{- range $index, $tag := . -}}
+                            <li><a href="{{ "/tagit/" | relLangURL }}{{ $tag | urlize }}/" class="meta-tag">{{ title $tag }}</a></li>
+                        {{- end -}}
+                    </ul>
+                </div>
+                {{ end }}
+
+                <div class="thumbnail-container">
+                    <div class="recipe-thumbnail"></div>
+                    <div class="recipe-thumbnail"></div>
+                    <div class="recipe-thumbnail"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recipe-body">
+            <div class="recipe-content-wrapper">
+                <aside class="recipe-sidebar" data-sticky>
+                    <h2 class="ingredients-title">Ainekset</h2>
+                    {{ template "ingredients-section" . }}
+                </aside>
+                <main class="recipe-main">
+                    {{ partial "recipe-instructions.html" . }}
+                    {{ partial "recipe-notes.html" . }}
+                </main>
+            </div>
+        </div>
+    </article>
+{{ end }}

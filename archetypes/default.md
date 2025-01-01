@@ -8,6 +8,6 @@ author:
 draft: true
 featured_image: "/images/CalculatorSearch.jpeg"
 description: "Enter a description here"
-categories: [""]
+kategoriat: [""]
 keywords: []
 ---

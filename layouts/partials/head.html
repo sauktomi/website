@@ -1,16 +1,14 @@
 <meta charset="UTF-8">
 <base href="{{ .Site.BaseURL }}">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<!-- Security headers -->
-<meta name="referrer" content="strict-origin-when-cross-origin">
+<!-- Security headers set in server-->
 
 <!-- Primary Meta Tags -->
 <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
 <meta name="title" content="{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} - {{ .Site.Title }}{{ end }}">
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{end}}{{end}}">
-<meta name="author" content="{{ .Site.Params.author | default "Baking" }}">
+<meta name="author" content="{{ .Site.Params.author | default "un-set" }}">
 
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content="{{ if .IsPage }}article{{ else }}website{{ end }}">
@@ -42,20 +40,42 @@
 {{ end }}
 
 <!-- Favicons -->
-<link rel="apple-touch-icon" sizes="180x180" href="{{ "favicon/apple-touch-icon.png" | relURL }}">
-<link rel="icon" type="image/png" sizes="32x32" href="{{ "favicon/favicon-32x32.png" | relURL }}">
-<link rel="icon" type="image/png" sizes="16x16" href="{{ "favicon/favicon-16x16.png" | relURL }}">
-<link rel="manifest" href="{{ "favicon/site.webmanifest" | relURL }}">
+{{ $version := now.Unix }}
+{{ $favicon16 := resources.Get "favicon/favicon-16x16.png" }}
+{{ $favicon32 := resources.Get "favicon/favicon-32x32.png" }}
+{{ $appleTouch := resources.Get "favicon/apple-touch-icon.png" }}
+{{ $android192 := resources.Get "favicon/android-chrome-192x192.png" }}
+{{ $android512 := resources.Get "favicon/android-chrome-512x512.png" }}
+{{ $webManifest := resources.Get "favicon/site.webmanifest" | resources.ExecuteAsTemplate "site.webmanifest" . }}
+
+<link rel="icon" type="image/png" sizes="32x32" href="{{ $favicon32.RelPermalink }}?v={{ $version }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ $favicon16.RelPermalink }}?v={{ $version }}">
+<link rel="apple-touch-icon" sizes="180x180" href="{{ $appleTouch.RelPermalink }}?v={{ $version }}">
+<link rel="manifest" href="{{ $webManifest.RelPermalink }}?v={{ $version }}">
 
 <!-- Stylesheets -->
-<link rel="stylesheet" href="{{ "css/styles01.css" | relURL }}">
-{{ if .IsPage }}
-<link rel="stylesheet" href="{{ "css/print.css" | relURL }}" media="print">
+{{ $mainCSS := resources.Get "css/main.css" }}
+{{ $baseCSS := resources.Get "css/base.css" }}
+{{ $mediaCSS := resources.Get "css/media.css" }}
+{{ $navigationCSS := resources.Get "css/navigation.css" }}
+{{ $searchCSS := resources.Get "css/search.css" }}
+{{ $singleCSS := resources.Get "css/single.css" }}
+{{ $utilitiesCSS := resources.Get "css/utilities.css" }}
 
-<!-- Scripts & JSON -->
-<script src="{{ "js/recipe-utils.js" | relURL }}" defer></script>
+<!-- Concatenate, Minify, and Fingerprint -->
+{{ $css := slice $mainCSS $baseCSS $mediaCSS $navigationCSS $searchCSS $singleCSS $utilitiesCSS | resources.Concat "css/bundle.css" | minify }}
+<link rel="stylesheet" href="{{ $css.RelPermalink }}?v={{ $version }}">
+
+<!-- Scripts -->
+{{ $menu := resources.Get "js/menu.js" | js.Build }}
+{{ $search := resources.Get "js/search.js" | js.Build }}
+{{ $js := slice $menu $search | resources.Concat "js/main.js" | minify }}
+<script src="{{ $js.RelPermalink }}?v={{ $version }}" defer></script>
+
+{{ if and (.IsPage) (eq .Section "reseptit") }}
+ {{ $recipeUtils := resources.Get "js/recipe-utils.js" | minify }}
+ <script src="{{ $recipeUtils.RelPermalink }}?v={{ $version }}" defer></script>
 {{ end }}
-<script src="{{ "js/search.js" | relURL }}" defer></script>
 
 <!-- Additional meta tags -->
 <link rel="canonical" href="{{ .Permalink }}">

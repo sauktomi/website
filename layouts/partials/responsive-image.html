@@ -1,53 +1,84 @@
-{{ $image := resources.Get .path }}
+{{ $defaultImage := "/images/default-recipe.jpg" }}
+{{ $featuredImage := .context.Params.featured_image | default $defaultImage }}
+{{ $image := resources.Get $featuredImage }}
 {{ $context := .context }}
+{{ $type := default "hero" .type }}
+{{ $loading := default "lazy" .loading }}
 {{ $class := .class }}
 
 {{ if $image }}
-    {{/* Process image variants */}}
-    {{ $variants := dict 
-        "small" ($image.Resize "400x")
-        "medium" ($image.Resize "800x")
-        "large" ($image.Resize "1200x")
-    }}
-    
-    {{/* Process WebP variants */}}
-    {{ $webpVariants := dict }}
-    {{ range $key, $variant := $variants }}
-        {{ $webpVariants = merge $webpVariants (dict $key ($variant.Process "webp")) }}
-    {{ end }}
+    {{ if eq $type "thumbnail" }}
+        {{ $thumbnail := $image.Resize "400x400 q80 Lanczos" }}
+        {{ $webpThumbnail := $thumbnail.Process "webp q90" }}
 
-    <picture>
-        {{/* WebP source */}}
-        <source
-            type="image/webp"
-            srcset="{{ $webpVariants.small.RelPermalink }} 400w,
-                    {{ $webpVariants.medium.RelPermalink }} 800w,
-                    {{ $webpVariants.large.RelPermalink }} 1200w"
-            sizes="(max-width: 400px) 400px,
-                   (max-width: 800px) 800px,
-                   1200px">
+        <picture>
+            <source
+                type="image/webp"
+                srcset="{{ $webpThumbnail.RelPermalink }}"
+                width="400"
+                height="400">
+            
+            <img
+                src="{{ $thumbnail.RelPermalink }}"
+                alt="{{ $context.Title }}"
+                loading="{{ $loading }}"
+                width="400"
+                height="400"
+                decoding="async"
+                class="thumbnail-image {{ with $class }}{{ . }}{{ end }}">
+        </picture>
+
+    {{ else if eq $type "medium" }}
+        {{ $mediumImage := $image.Resize "800x q75" }}
+        {{ $webpMedium := $mediumImage.Process "webp q80" }}
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="{{ $webpMedium.RelPermalink }}"
+                width="{{ $mediumImage.Width }}"
+                height="{{ $mediumImage.Height }}">
+            
+            <img
+                src="{{ $mediumImage.RelPermalink }}"
+                alt="{{ $context.Title }}"
+                loading="{{ $loading }}"
+                width="{{ $mediumImage.Width }}"
+                height="{{ $mediumImage.Height }}"
+                decoding="async"
+                class="medium-image {{ with $class }}{{ . }}{{ end }}">
+        </picture>
+
+    {{ else if eq $type "hero" }}
+        {{ $originalImage := $image.Resize "2560x q90 Lanczos" }}
+        {{ $heroImage := $image.Resize "1920x q75 Lanczos" }}
+        {{ $mediumImage := $image.Resize "1280x q75 Lanczos" }}
         
-        {{/* Original format source */}}
-        <source
-            srcset="{{ $variants.small.RelPermalink }} 400w,
-                    {{ $variants.medium.RelPermalink }} 800w,
-                    {{ $variants.large.RelPermalink }} 1200w"
-            sizes="(max-width: 400px) 400px,
-                   (max-width: 800px) 800px,
-                   1200px">
-        
-        <img 
-            src="{{ $variants.medium.RelPermalink }}"
-            alt="{{ $context.Title }}"
-            loading="lazy"
-            width="{{ $variants.medium.Width }}"
-            height="{{ $variants.medium.Height }}"
-            {{ with $class }}class="{{ . }}"{{ end }}>
-    </picture>
-{{ else }}
-    <img 
-        src="{{ .path }}"
-        alt="{{ $context.Title }}"
-        loading="lazy"
-        {{ with $class }}class="{{ . }}"{{ end }}>
+        {{ $webpOriginal := $originalImage.Process "webp q90" }}
+        {{ $webpHero := $heroImage.Process "webp q80" }}
+        {{ $webpMedium := $mediumImage.Process "webp q75" }}
+
+        <picture>
+            <source
+                type="image/webp"
+                srcset="{{ $webpMedium.RelPermalink }} 1280w,
+                        {{ $webpHero.RelPermalink }} 1920w,
+                        {{ $webpOriginal.RelPermalink }} 2560w"
+                sizes="(max-width: 1280px) 1280px,
+                       (max-width: 1920px) 1920px,
+                       2560px">
+            
+            <img
+                src="{{ $heroImage.RelPermalink }}"
+                srcset="{{ $mediumImage.RelPermalink }} 1280w,
+                        {{ $heroImage.RelPermalink }} 1920w,
+                        {{ $originalImage.RelPermalink }} 2560w"
+                alt="{{ $context.Title }}"
+                loading="{{ $loading }}"
+                width="{{ $heroImage.Width }}"
+                height="{{ $heroImage.Height }}"
+                decoding="async"
+                class="hero-image {{ with $class }}{{ . }}{{ end }}">
+        </picture>
+    {{ end }}
 {{ end }}

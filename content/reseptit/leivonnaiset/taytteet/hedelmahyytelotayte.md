@@ -25,10 +25,10 @@ storage:
   freezer: "1 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Täytteet"
   - "Kastikkeet"
-tags: 
+tagit: 
   - "kastike"
   - "glaasi"
   - "täyte"
@@ -56,7 +56,7 @@ scaling_factors: [0.5, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "hyytelötäyte"
   - "hedelmäkastike"

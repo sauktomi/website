@@ -1,0 +1,37 @@
+{{- $searchIndex := slice -}}
+{{- range where .Site.RegularPages "Section" "reseptit" -}}
+    {{- $dietTagit := slice -}}
+    {{- with .Params.dietary -}}
+        {{- if .gluten_free }}{{ $dietTagit = $dietTagit | append "gluteeniton" }}{{ end -}}
+        {{- if .dairy_free }}{{ $dietTagit = $dietTagit | append "maidoton" }}{{ end -}}
+        {{- if .nut_free }}{{ $dietTagit = $dietTagit | append "pähkinätön" }}{{ end -}}
+        {{- if .fish_free }}{{ $dietTagit = $dietTagit | append "kalaton" }}{{ end -}}
+        {{- if .vegan }}{{ $dietTagit = $dietTagit | append "vegaaninen" }}{{ end -}}
+        {{- if .low_sugar }}{{ $dietTagit = $dietTagit | append "vähäsokerinen" }}{{ end -}}
+        {{- if .high_protein }}{{ $dietTagit = $dietTagit | append "proteiinipitoinen" }}{{ end -}}
+        {{- if .high_fiber }}{{ $dietTagit = $dietTagit | append "runsaskuituinen" }}{{ end -}}
+    {{- end -}}
+
+    {{- $searchTerms := slice 
+        .Title
+        (delimit (.Params.kategoriat | default slice) " ")
+        (delimit (.Params.tagit | default slice) " ")
+        .Params.cookingMethod
+        (delimit $dietTagit " ")
+    -}}
+
+    {{- $page := dict
+        "title" .Title
+        "permalink" .RelPermalink
+        "difficulty" .Params.difficulty
+        "total_time" .Params.total_time
+        "kategoriat" (.Params.kategoriat | default slice)
+        "tagit" (.Params.tagit | default slice)
+        "featured_image" .Params.featured_image
+        "dietary" $dietTagit
+        "searchText" (lower (delimit $searchTerms " "))
+    -}}
+
+    {{- $searchIndex = $searchIndex | append $page -}}
+{{- end -}}
+{{- $searchIndex | jsonify -}}

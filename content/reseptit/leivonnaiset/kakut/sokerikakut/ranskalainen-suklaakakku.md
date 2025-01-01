@@ -28,10 +28,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Sokerikakut"
-tags: 
+tagit: 
   - "suklaa"
   - "murea"
   - "makea"
@@ -58,7 +58,7 @@ scaling_factors: [0.5, 1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "suklaakakku"
   - "ranskalainen"
@@ -122,14 +122,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että kananmunat ovat huoneenlämpöisiä tasaisen vaahdon saamiseksi
 - Sulata suklaa ja voi varovasti, älä ylikuumenna
 - Anna kakun jäähtyä huoneenlämpöiseksi ennen kuorrutusta
 - Älä jäähdytä kuorrutettua kakkua jääkaapissa, jottei kuorrute menetä kiiltoaan
 
-### Versioita
+#### Versioita
 
 - **Kahvinen**:
   - Lisää taikinaan 15 ml pikakahvijauhetta

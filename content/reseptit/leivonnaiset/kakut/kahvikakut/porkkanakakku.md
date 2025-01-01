@@ -28,10 +28,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Kahvikakut"
-tags: 
+tagit: 
   - "porkkana"
   - "mehevä"
   - "pehmeä"
@@ -59,7 +59,7 @@ scaling_factors: [1, 1.5, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "porkkanakakku"
   - "carrot cake"
@@ -119,14 +119,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Käytä tuoreita, suuria ja meheviä porkkanoita
 - Raasta porkkanat mahdollisimman hienoksi raasteeksi
 - Varmista että kuorrutteen ainekset ovat huoneenlämpöisiä tasaisen sekoittumisen varmistamiseksi
 - Anna kakun jäähtyä täysin ennen kuorrutusta
 
-### Versioita
+#### Versioita
 
 - **Maustekakku**: Lisää taikinaan 5 ml inkiväärijauhetta ja 2.5 ml muskottipähkinää
 - **Pähkinäinen**:  Lisää taikinaan 100 g rouhittuja saksanpähkinöitä

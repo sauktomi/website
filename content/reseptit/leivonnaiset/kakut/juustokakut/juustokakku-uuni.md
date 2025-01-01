@@ -30,10 +30,10 @@ storage:
   freezer: "2 kuukautta"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Juustokakut"
-tags: 
+tagit: 
   - "tuorejuusto"
   - "kermainen"
   - "makea"
@@ -60,7 +60,7 @@ scaling_factors: [0.67, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "juustokakku"
   - "cheesecake"
@@ -114,12 +114,12 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Kaikki aineet huoneenlämpöisinä takaavat tasaisemman lopputuloksen
 - Jos kakun pinta tummuu liikaa, peitä foliolla
 
-### Versioita
+#### Versioita
 
 - **Marja**: Lisää 125 g marjoja (vadelma/mansikka/mustikka) pohjan päälle tai soseena täytteeseen
 - **Suklaa**: Korvaa pohjan keksit 175 g suklaakekseillä. Lisää täytteeseen 100 g sulatettua tummaa suklaata ja vähennä sokerin määrää 25 g

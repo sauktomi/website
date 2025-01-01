@@ -1,12 +1,155 @@
-<nav class="top-nav">
-    <ul>
-        {{ $currentPage := . }}
-        {{ range .Site.Menus.main }}
-            <li>
-                <a href="{{ .URL }}" class="{{ if $currentPage.IsMenuCurrent "main" . }}active{{ end }}">
-                    {{ .Name }}
-                </a>
-            </li>
-        {{ end }}
-    </ul>
+<nav class="top-nav container">
+    <!-- Main Navigation Container -->
+    <div class="nav-container">
+
+    <!-- Dark mode button -->
+    <button class="theme-toggle btn" aria-label="Toggle dark mode">
+        <svg class="theme-toggle-light" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+        </svg>
+        <svg class="theme-toggle-dark hidden" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+        </svg>
+    </button> 
+           
+        <!-- Logo -->
+        <a href="/" class="nav-logo">TMS</a>
+
+        <!-- Desktop Navigation -->
+        <div class="desktop-nav">
+            <ul class="main-menu">
+                {{ $currentPage := . }}
+                {{ range .Site.Sections }}
+                    <li class="nav-item" data-menu="{{ .Title }}">
+                        <a href="{{ .RelPermalink }}" class="nav-link {{ if eq $currentPage.Section .Section }}active{{ end }}">
+                            {{ .Title }}
+                        </a>
+                        <!-- Store dropdown content for desktop -->
+                        <div class="menu-data" hidden>
+                            <div class="mega-grid">
+                                <div class="mega-sections">
+                                    {{ range .Sections }}
+                                        <div class="category-group">
+                                            <h3 class="category-title">{{ .Title }}</h3>
+                                            {{ if .Sections }}
+                                                <ul class="category-list">
+                                                    {{ range .Sections }}
+                                                        <li>
+                                                            <a href="{{ .RelPermalink }}" class="category-link">{{ .Title }}</a>
+                                                        </li>
+                                                    {{ end }}
+                                                </ul>
+                                            {{ end }}
+                                        </div>
+                                    {{ end }}
+                                </div>
+                                <div class="mega-feature">
+                                    <!-- Featured content area -->
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                {{ end }}
+            </ul>
+        </div>
+
+
+        
+        <!-- Navigation Icons -->
+        <div class="nav-icons">
+            <div class="search-container" role="search">
+                <label for="site-search" class="visually-hidden">Hae sivustolta</label>
+                <button class="search-toggle btn" aria-label="Toggle Search" aria-expanded="false">
+                    <span class="search-icon">
+                        <svg viewBox="0 0 24 24" width="24" height="24">
+                            <path fill="currentColor" d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 5 1.5-1.5-5-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                        </svg>
+                     </span>
+                </button>
+
+                <div class="search-overlay">
+                    <div class="search-content">
+                        <div class="search-input-wrapper">
+                            <input type="search" 
+                                   id="site-search"
+                                   class="search-input"
+                                   placeholder="Etsi reseptejä, makuja, allergeenejä..."
+                                   autocomplete="off">
+                            
+                            <button class="search-close btn" aria-label="Close search">
+                                <svg width="24" height="24" viewBox="0 0 24 24">
+                                    <path fill="currentColor" d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        
+                        <!-- Search results container -->
+                        <div class="search-results"></div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Menu button -->
+            <button class="menu-toggle btn mobile-only" aria-label="Toggle Menu">
+                <svg class="menu-icon" width="24" height="24">
+                    <use href="/images/icons.svg#icon-menu"/>
+                </svg>
+                <svg class="close-icon" width="24" height="24">
+                    <use href="/images/icons.svg#icon-close"/>
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="navigation" aria-label="Mobile navigation">
+        <!-- Main Menu View -->
+        <div class="mobile-view main-view">
+            <div class="mobile-sections">
+                {{ range .Site.Sections }}
+                    <div class="menu-section">
+                        <a href="{{ .RelPermalink }}" class="section-trigger" data-section="{{ .Title }}">
+                            <span class="section-text">{{ .Title }}</span>
+                            <span class="section-icon" aria-hidden="true">
+                            <svg width="24" height="24">
+                                <use href="/images/icons.svg#icon-chevron-right"/>
+                            </svg>
+                            </span>
+                        </a>
+                    </div>
+                {{ end }}
+                <div class="mobile-footer">
+                    <a href="/yhteystiedot" class="footer-link"></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submenu View -->
+        <div class="mobile-view submenu-view">
+            <button class="back-button">
+                <svg width="24" height="24">
+                    <use href="/images/icons.svg#icon-chevron-left"/>
+                </svg>
+                Palaa
+            </button>
+            <div class="submenu-content">
+                <!-- Will be populated by JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Mega Dropdown for Desktop -->
+    <div class="mega-dropdown">
+        <div class="mega-content">
+            <!-- Content populated by JavaScript -->
+        </div>
+    </div>
 </nav>

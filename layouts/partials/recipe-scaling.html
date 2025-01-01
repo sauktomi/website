@@ -1,0 +1,149 @@
+{{ $view := .view | default "default" }}
+{{ if eq .view "default" }}
+{{ $round := 1 }}
+{{ $isMassOrVolume := false }}
+{{ $numericValue := "" }}
+{{ $unit := "" }}
+{{ with .Params.yield }}
+   {{ if findRE "^[0-9.]+" . }}
+       {{ $numericValue = replaceRE "^([0-9.]+).*" "$1" . }}
+       {{ $remainingText := replace . $numericValue "" }}
+       {{ $matches := findRE "^\\s*(g|kg|ml|l)\\b" (lower $remainingText) }}
+       {{ if and $matches (gt (len $matches) 0) }}
+           {{ $isMassOrVolume = true }}
+           {{ $unit = index $matches 0 }}
+           {{ $unit = strings.TrimSpace $unit }}
+       {{ end }}
+   {{ end }}
+{{ end }}
+
+{{ $optionsCount := 0 }}
+{{ if and .Params.yield $isMassOrVolume }}
+    {{ $optionsCount = add $optionsCount 1 }}
+{{ end }}
+{{ if .Params.servings }}
+    {{ $optionsCount = add $optionsCount 1 }}
+{{ end }}
+{{ $hasMultipleUnits := gt $optionsCount 1 }}
+
+<div class="scaling-control">
+   <input type="checkbox" id="scaling-toggle" class="scaling-toggle-input" aria-controls="scaling-dropdown">
+   <label for="scaling-toggle" class="scaling-toggle">
+       <span class="current-amount" id="current-yield">
+           {{ if and .Params.yield $isMassOrVolume }}
+               {{ .Params.yield }} 
+               {{ with .Params.servings }}({{ . }} annosta){{ end }}
+           {{ else }}
+               {{ with .Params.servings }}{{ . }} annosta{{ end }}
+           {{ end }}
+       </span>
+   </label>
+
+   <div class="scaling-dropdown" id="scaling-dropdown">
+
+    
+       <div class="scaling-slider">
+           {{ $scales := slice }}
+           {{ if .Params.scaling_factors }}
+               {{ $scales = sort .Params.scaling_factors }}
+           {{ else }}
+               {{ $scales = slice 0.5 1.0 1.5 2.0 }}
+           {{ end }}
+           
+           <input type="range" 
+                  class="scale-range" 
+                  min="{{ index $scales 0 }}"
+                  max="{{ index (last 1 $scales) 0 }}"
+                  step="0.01"
+                  value="{{ .Params.default_scale | default 1.0 }}"
+                  list="scale-points"
+                  aria-label="Scale recipe">
+           <datalist id="scale-points">
+               {{ range $scales }}
+                   <option value="{{ . }}"></option>
+               {{ end }}
+           </datalist>
+           <div class="scale-points">
+               {{ range $scales }}
+                   <span class="scale-point{{ if eq . 1.0 }} active{{ end }}" data-scale="{{ . }}"></span>
+               {{ end }}
+           </div>
+           <div class="scale-markers">
+            {{ range $scales }}
+                <span class="scale-marker{{ if eq . 1.0 }} active{{ end }}" data-scale="{{ . }}">
+                    {{ . }}
+                </span>
+            {{ end }}
+            </div>
+        
+       </div>
+       
+       <div class="scaling-divider"></div>
+       
+       <div class="custom-amount">
+           <label for="custom-amount-input" class="visually-hidden">Syötä haluttu määrä</label>
+           <div class="custom-amount-wrapper">
+               <input type="number"
+                   id="custom-amount-input"
+                   class="custom-amount-input"
+                   min="1"
+                   step="any"
+                   {{ if and .Params.yield $isMassOrVolume }}
+                       value="{{ $numericValue }}"
+                       data-original-value="{{ $numericValue }}"
+                       data-original-yield="{{ $numericValue }}"
+                       data-original-servings="{{ .Params.servings }}"
+                       data-type="mass"
+                       data-unit="{{ $unit }}"
+                       data-rest-of-yield="{{ replace .Params.yield $numericValue "" }}"
+                   {{ else }}
+                       value="{{ .Params.servings }}"
+                       data-original-value="{{ .Params.servings }}"
+                       data-type="servings"
+                   {{ end }}>
+
+               {{ if $hasMultipleUnits }}
+                   <div class="unit-toggle">
+                       <input type="checkbox" id="unit-toggle" class="unit-toggle-input">
+                       <label for="unit-toggle" class="unit-toggle-btn" aria-haspopup="listbox">
+                           <span class="current-unit">
+                               {{ if and .Params.yield $isMassOrVolume }}
+                                   {{ if $unit }}{{ $unit }}{{ else }}kpl{{ end }}
+                               {{ else }}
+                                   annosta
+                               {{ end }}
+                           </span>
+                           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                               <path d="M6 9l6 6 6-6"/>
+                           </svg>
+                       </label>
+                       <ul class="unit-options" role="listbox">
+                           {{ if and .Params.yield $isMassOrVolume }}
+                               <li role="option" data-value="yield" data-unit="{{ if $unit }}{{ $unit }}{{ else }}kpl{{ end }}">
+                                   {{ if $unit }}{{ $unit }}{{ else }}kpl{{ end }}
+                               </li>
+                           {{ end }}
+                           {{ if .Params.servings }}
+                               <li role="option" data-value="servings" data-unit="annosta">annosta</li>
+                           {{ end }}
+                       </ul>
+                   </div>
+               {{ else }}
+                   <div class="unit-toggle">
+                       <input type="checkbox" id="unit-toggle" class="unit-toggle-input">
+                       <label for="unit-toggle" class="unit-toggle-btn">
+                           <span class="current-unit">
+                               {{ if and .Params.yield $isMassOrVolume }}
+                                   {{ if $unit }}{{ $unit }}{{ else }}kpl{{ end }}
+                               {{ else }}
+                                   annosta
+                               {{ end }}
+                           </span>
+                       </label>
+                   </div>
+               {{ end }}
+           </div>
+       </div>
+   </div>
+</div>
+{{ end }}

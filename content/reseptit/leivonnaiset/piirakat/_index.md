@@ -1,4 +1,4 @@
 ---
 title: "Piirakat"
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 ---

@@ -1,14 +1,17 @@
 <div class="recipe-meta-grid">
-
     <div class="meta-section">
-
         {{ with .Params.difficulty }}
         <div class="meta-item" title="Vaikeustaso">
-            {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
-            <span>{{ . }}</span>
+            <div class="meta-item-content">
+                {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
+                <div class="meta-item-stack">
+                    <span class="meta-label">Vaikeustaso</span>
+                    <span class="meta-value">{{ . }}</span>
+                </div>
+            </div>
         </div>
         {{ end }}
-        
+
         {{ with .Params.total_time }}
             {{ $hours := 0 }}
             {{ $minutes := 0 }}
@@ -19,71 +22,78 @@
                 {{ $minutes = index (findRE "\\d+M" . 1) 0 | replaceRE "M$" "" | int }}
             {{ end }}
             <div class="meta-item" title="Kokonaisaika">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
-                <span>{{ printf "%02d:%02d" $hours $minutes }}</span>
+                <div class="meta-item-content">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+                    <div class="meta-item-stack">
+                        <span class="meta-label">Kokonaisaika</span>
+                        <span class="meta-value">{{ printf "%02d:%02d" $hours $minutes }}</span>
+                    </div>
+                </div>
             </div>
         {{ end }}
-    
+
         {{ with .Params.dietary }}
         <div class="meta-item" title="Ruokavalio">
-            {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
-            <span>
-                {{- $symbols := slice -}}
-                {{- if .gluten_free }}{{ $symbols = $symbols | append "G" }}{{ end -}}
-                {{- if .dairy_free }}{{ $symbols = $symbols | append "M" }}{{ end -}}
-                {{- if .nut_free }}{{ $symbols = $symbols | append "P" }}{{ end -}}
-                {{- if .fish_free }}{{ $symbols = $symbols | append "K" }}{{ end -}}
-                {{- if .vegan }}{{ $symbols = $symbols | append "VE" }}{{ end -}}
-                {{- range $i, $symbol := $symbols -}}
-                    {{- if $i }}, {{ end -}}
-                    {{- $symbol -}}
-                {{- end -}}
-            </span>
+            <div class="meta-item-content">
+                {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
+                <div class="meta-item-stack">
+                    <span class="meta-label">Ruokavalio</span>
+                    <span class="meta-value">
+                    {{- $symbols := slice -}}
+                    {{- if .gluten_free }}{{ $symbols = $symbols | append "G" }}{{ end -}}
+                    {{- if .dairy_free }}{{ $symbols = $symbols | append "M" }}{{ end -}}
+                    {{- if .nut_free }}{{ $symbols = $symbols | append "P" }}{{ end -}}
+                    {{- if .fish_free }}{{ $symbols = $symbols | append "K" }}{{ end -}}
+                    {{- if .vegan }}{{ $symbols = $symbols | append "VE" }}{{ end -}}
+                    {{- range $i, $symbol := $symbols -}}
+                        {{- if $i }}, {{ end -}}
+                        {{- $symbol -}}
+                    {{- end -}}
+                    </span>
+                </div>
+            </div>
         </div>
         {{ end }}
-    
     </div>
 
-    <div id="additional-info" class="additional-info hidden">
+    <div id="additional-info" class="recipe-meta-grid">
         <div class="meta-section">
             {{ with .Params.cookingMethod }}
             <div class="meta-item" title="Menetelmä">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
-                <span>{{ . }}</span>
+                <div class="meta-item-content">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
+                    <div class="meta-item-stack">
+                        <span class="meta-label">Menetelmä</span>
+                        <span class="meta-value">{{ . }}</span>
+                    </div>
+                </div>    
             </div>
             {{ end }}
 
             {{ with .Params.equipment }}
             <div class="meta-item" title="Välineet">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
-                <span>
-                    {{- range $i, $e := . -}}
-                        {{- if $i }}, {{ end -}}
-                        {{- $e.type -}}
-                        {{- with $e.size }} ({{ . }}){{ end -}}
-                    {{- end -}}
-                </span>
+                <div class="meta-item-content">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
+                    <div class="meta-item-stack">
+                        <span class="meta-label">Välineet</span>
+                        <span class="meta-value">
+                            {{- range $i, $e := . -}}
+                                {{- if $i }}, {{ end -}}
+                                {{- $e.type -}}
+                                {{- with $e.size }} ({{ . }}){{ end -}}
+                            {{- end -}}
+                        </span>
+                    </div>
+                </div>
             </div>
             {{ end }}
         </div>
 
-        <div class="meta-section">
-            {{ with .Params.tags }}
-            <div class="meta-item" title="Tagit">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "tags") }}
-                <span>
-                    {{- range $index, $tag := . -}}
-                        {{- if $index }}, {{ end -}}
-                        <a href="{{ "/tags/" | relLangURL }}{{ $tag | urlize }}/">{{ $tag }}</a>
-                    {{- end -}}
-                </span>
-            </div>
-            {{ end }}
+        <div class="meta-section"          
+            role="button" 
+            tabindex="0" 
+            aria-expanded="false" 
+            aria-controls="additional-info">
         </div>
     </div>
-
-    <div class="divider-container" role="button" tabindex="0" aria-expanded="false" aria-controls="additional-info">
-        <hr class="meta-divider" />
-    </div>
-
 </div>

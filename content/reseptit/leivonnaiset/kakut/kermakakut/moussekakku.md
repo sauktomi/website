@@ -28,10 +28,10 @@ storage:
   freezer: "1 kuukausi"
 
 # Recipe Classification
-categories: 
+kategoriat: 
   - "Kakut"
   - "Kermakakut"
-tags: 
+tagit: 
   - "kerma"
   - "kermainen"
   - "makea"
@@ -58,7 +58,7 @@ scaling_factors: [0.5, 1, 1.5]
 default_scale: 1
 
 # SEO and Display
-featured_image: "/images/CalculatorSearch.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "moussekakku"
   - "mousse cake"
@@ -116,14 +116,14 @@ schema:
 
 {{< notes >}}
 
-### Vinkkejä
+#### Vinkkejä
 
 - Varmista että kinuskikastike on jäähtynyt ennen käyttöä
 - Siivilöi marjasose huolellisesti siemenien poistamiseksi
 - Vaahdota kerma vain pehmeäksi vaahdoksi, älä liian kovaksi
 - Anna jokaisen kerroksen hyytyä kunnolla ennen seuraavaa
 
-### Versioita
+#### Versioita
 
 - **Marja**:
   - Käytä 425 g marjoja (puolukka/mustikka/vadelma)

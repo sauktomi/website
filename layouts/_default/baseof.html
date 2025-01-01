@@ -3,18 +3,15 @@
 <head>
     {{ partial "head.html" . }}
 </head>
-<body>
-    <a href="#main-content" class="skip-link">Siirry sisältöön</a>
+<body id="{{ if .IsNode}}node{{ else if not .IsNode }}page{{ end }}">
+    <!-- Skip link with our new utility classes -->
+    <a href="#main-content" class="hidden">
+        Siirry sisältöön
+    </a>
+
     {{ partial "top-nav.html" . }}
-    <div class="container">
-        <aside class="sidebar">
-            <header><h1><a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a></h1></header>            
-            {{ partial "nav.html" . }}
-            {{ block "sidebar" . }}{{ end }}
-            {{ if and (not .IsHome) (not .IsSection) (not .IsNode) }}
-                {{ partial "recipe-info-bar.html" . }}
-            {{ end }}
-        </aside>
+    
+    <div class="container max-w-[75rem]">
         <main class="content" id="main-content">
             {{ block "main" . }}{{ end }}
         </main>
