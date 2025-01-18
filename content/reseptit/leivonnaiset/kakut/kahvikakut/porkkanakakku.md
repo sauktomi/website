@@ -105,15 +105,10 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla, voitele ja korppujauhota reunat. Raasta porkkanat hienoksi raasteeksi.
-
 2. **Kuivat aineet:** Sekoita vehnäjauhot, kanelijauhe, ruokasooda ja leivinjauhe kulhossa. Mittaa kuorrutteen voi ja tuorejuusto toiseen kulhoon pehmenemään huoneenlämpöön.
-
 3. **Taikina:** Vaahdota kananmunat ja sokeri yleiskoneessa keskinopeudella 5 min, kunnes kuohkeaa. Lisää öljy ohuena nauhana jatkuvasti sekoittaen matalalla nopeudella 2 min. Kääntele jauhoseos varovasti sekaan, lisää porkkanat ja sekoita tasaiseksi.
-
 4. Kaada taikina vuokaan ja paista 35-40 min (*tikulla testaten*). Anna jäähtyä täysin.
-
 5. **Kuorrute:** Vatkaa pehmeä voi ja tuorejuusto tasaiseksi keskinopeudella 3 min. Lisää sokerit ja vatkaa matalalla nopeudella 2 min, kunnes sileää ja kuohkeaa.
-
 6. Levitä kuorrute jäähtyneen kakun päälle. Jäähdytä 30 min ennen tarjoilua tai pakastamista.
 {{</ instructions >}}
 

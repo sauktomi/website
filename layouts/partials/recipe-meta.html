@@ -3,7 +3,9 @@
         {{ with .Params.difficulty }}
         <div class="meta-item" title="Vaikeustaso">
             <div class="meta-item-content">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
+                <div class="meta-item-icon">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "difficulty") }}
+                </div>
                 <div class="meta-item-stack">
                     <span class="meta-label">Vaikeustaso</span>
                     <span class="meta-value">{{ . }}</span>
@@ -23,7 +25,9 @@
             {{ end }}
             <div class="meta-item" title="Kokonaisaika">
                 <div class="meta-item-content">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+                    <div class="meta-item-icon">
+                        {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+                    </div>
                     <div class="meta-item-stack">
                         <span class="meta-label">Kokonaisaika</span>
                         <span class="meta-value">{{ printf "%02d:%02d" $hours $minutes }}</span>
@@ -31,69 +35,40 @@
                 </div>
             </div>
         {{ end }}
+    </div>
 
-        {{ with .Params.dietary }}
-        <div class="meta-item" title="Ruokavalio">
+    <div id="additional-info" class="meta-section">
+        {{ with .Params.cookingMethod }}
+        <div class="meta-item" title="Menetelmä">
             <div class="meta-item-content">
-                {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
+                <div class="meta-item-icon">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
+                </div>
                 <div class="meta-item-stack">
-                    <span class="meta-label">Ruokavalio</span>
+                    <span class="meta-label">Menetelmä</span>
+                    <span class="meta-value">{{ . }}</span>
+                </div>
+            </div>
+        </div>
+        {{ end }}
+        {{ with .Params.equipment }}
+        <div class="meta-item" title="Välineet">
+            <div class="meta-item-content">
+                <div class="meta-item-icon">
+                    {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
+                </div>
+                <div class="meta-item-stack">
+                    <span class="meta-label">Välineet</span>
                     <span class="meta-value">
-                    {{- $symbols := slice -}}
-                    {{- if .gluten_free }}{{ $symbols = $symbols | append "G" }}{{ end -}}
-                    {{- if .dairy_free }}{{ $symbols = $symbols | append "M" }}{{ end -}}
-                    {{- if .nut_free }}{{ $symbols = $symbols | append "P" }}{{ end -}}
-                    {{- if .fish_free }}{{ $symbols = $symbols | append "K" }}{{ end -}}
-                    {{- if .vegan }}{{ $symbols = $symbols | append "VE" }}{{ end -}}
-                    {{- range $i, $symbol := $symbols -}}
-                        {{- if $i }}, {{ end -}}
-                        {{- $symbol -}}
-                    {{- end -}}
+                        {{- range $i, $e := . -}}
+                            {{- if $i }}, {{ end -}}
+                            {{- $e.type -}}
+                            {{- with $e.size }} ({{ . }}){{ end -}}
+                        {{- end -}}
                     </span>
                 </div>
             </div>
         </div>
         {{ end }}
-    </div>
-
-    <div id="additional-info" class="recipe-meta-grid">
-        <div class="meta-section">
-            {{ with .Params.cookingMethod }}
-            <div class="meta-item" title="Menetelmä">
-                <div class="meta-item-content">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "method") }}
-                    <div class="meta-item-stack">
-                        <span class="meta-label">Menetelmä</span>
-                        <span class="meta-value">{{ . }}</span>
-                    </div>
-                </div>    
-            </div>
-            {{ end }}
-
-            {{ with .Params.equipment }}
-            <div class="meta-item" title="Välineet">
-                <div class="meta-item-content">
-                    {{ partial "recipe-meta-icons.html" (dict "icon" "appliances") }}
-                    <div class="meta-item-stack">
-                        <span class="meta-label">Välineet</span>
-                        <span class="meta-value">
-                            {{- range $i, $e := . -}}
-                                {{- if $i }}, {{ end -}}
-                                {{- $e.type -}}
-                                {{- with $e.size }} ({{ . }}){{ end -}}
-                            {{- end -}}
-                        </span>
-                    </div>
-                </div>
-            </div>
-            {{ end }}
-        </div>
-
-        <div class="meta-section"          
-            role="button" 
-            tabindex="0" 
-            aria-expanded="false" 
-            aria-controls="additional-info">
-        </div>
     </div>
 </div>

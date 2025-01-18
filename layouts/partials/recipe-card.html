@@ -1,49 +1,96 @@
-{{ $classes := .classes | default (slice "picture-card") }}
-{{ $recipe := .recipe | default . }}
-{{ $isFirst := .isFirst | default false }}
+<!-- Usage of recipe-card partial:
+"Title" - Page title
+"Permalink" - Page URL
+"Params" - Page parameters
+"classes" - Array of CSS classes (e.g. (slice "picture-card"))
+"show" - Array of components to display: "image", "title", "description", "meta" -->
 
-<div class="{{ delimit $classes " " }} card shadow-sm transition-transform">
-    <a href="{{ $recipe.Permalink }}" class="block" aria-label="Näytä resepti: {{ $recipe.Title }}">
-        <div>
-            <div class="image-container">
-                {{ $defaultImg := "images/default-recipe.jpg" }}
-                {{ $imgSrc := $recipe.Params.featured_image | default $defaultImg }}
-                
-                {{ partial "responsive-image.html" (dict
-                    "path" $imgSrc
-                    "context" $recipe
-                    "type" "thumbnail"
-                    "class" "recipe-image"
-                ) }}
-            </div>
 
-            <div class="card-content">
-                <h2 class="line-clamp-title">{{ $recipe.Title }}</h2>
-                {{ if $isFirst }}
-                    {{ with $recipe.Params.description }}
-                        <p class="line-clamp-desc">{{ . }}</p>
-                    {{ end }}
-                {{ end }}
-                <div class="recipe-meta">
-                    {{ with $recipe.Params.total_time }}
-                        {{ $hours := 0 }}
-                        {{ $minutes := 0 }}
-                        {{ if findRE "H" . }}
-                            {{ $hours = index (findRE "\\d+" . 1) 0 | int }}
-                        {{ end }}
-                        {{ if findRE "M" . }}
-                            {{ $minutes = index (findRE "\\d+M" . 1) 0 | replaceRE "M$" "" | int }}
-                        {{ end }}
-                        <div class="meta-item" title="Kokonaisaika">
-                            {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
-                            <span class="text-secondary">{{ printf "%02d:%02d" $hours $minutes }}</span>
-                        </div>
-                    {{ end }}
-                    {{ with $recipe.Params.schema.recipeCategory }}
-                        <span class="meta-item text-secondary" title="Reseptikategoria">{{ . }}</span>
-                    {{ end }}
-                </div>
-            </div>
+{{ define "recipe-description" }}
+    {{ with .Params.description }}
+        {{ $truncated := . | truncate 85 }}
+        {{ if ne $truncated . }}
+            {{ $lastPeriod := index (last 1 (findRE "[^.]*\\." $truncated)) 0 }}
+            {{ if $lastPeriod }}
+                {{ $lastPeriod }}
+            {{ else }}
+                {{ $truncated }}
+            {{ end }}
+        {{ else }}
+            {{ . }}
+        {{ end }}
+    {{ else }}
+        Tomi, missä kuvaus?
+    {{ end }}
+{{ end }}
+
+{{ define "recipe-meta" }}
+    {{ with .Params.total_time }}
+        {{ $hours := 0 }}
+        {{ $minutes := 0 }}
+        {{ if findRE "H" . }}
+            {{ $hours = index (findRE "\\d+" . 1) 0 | int }}
+        {{ end }}
+        {{ if findRE "M" . }}
+            {{ $minutes = index (findRE "\\d+M" . 1) 0 | replaceRE "M$" "" | int }}
+        {{ end }}
+        <div class="meta-item" title="Kokonaisaika">
+            {{ partial "recipe-meta-icons.html" (dict "icon" "time") }}
+            <span class="text-secondary">{{ printf "%02d:%02d" $hours $minutes }}</span>
         </div>
+    {{ end }}
+    {{ with .Params.schema.recipeCategory }}
+        <span class="meta-item text-secondary" title="Reseptikategoria">{{ . }}</span>
+    {{ end }}
+{{ end }}
+
+{{ define "recipe-image" }}
+    {{ $defaultImg := "images/default-recipe.jpg" }}
+    {{ $imgSrc := .Params.featured_image | default $defaultImg }}
+    {{ partial "responsive-image.html" (dict
+        "path" $imgSrc
+        "context" .
+        "type" "thumbnail"
+        "class" "recipe-image"
+        "loading" .loading
+        "fetchpriority" .fetchpriority
+    ) }}
+{{ end }}
+
+{{ $data := . }}
+{{ $nopicture := .nopicture | default false }}
+{{ $show := .show | default (slice "full") }}
+{{ $classes := .classes | default (slice "picture-card") }}
+
+{{ if and (not $nopicture) (eq (mod ($data.index | default 0) 9) 3) }}{{ $classes = $classes | append "card-expanded" }}{{ end }}
+{{ if and (not $nopicture) (eq (mod ($data.index | default 0) 11) 4) }}{{ $classes = $classes | append "card-wide" }}{{ end }}
+
+<div class="{{ delimit $classes " " }}">
+    <a href="{{ .Permalink }}" class="block" aria-label="Näytä resepti: {{ .Title }}">
+        {{ if in $show "image" }}
+            <div class="image-container">
+                {{ template "recipe-image" . }}
+            </div>
+        {{ end }}
+        
+        {{ if or (in $show "title") (in $show "description") (in $show "meta") }}
+            <div class="card-content">
+                {{ if in $show "title" }}
+                    <h2>{{ .Title }}</h2>
+                {{ end }}
+                
+                {{ if in $show "description" }}
+                    <p class="card-description">
+                        {{ template "recipe-description" . }}
+                    </p>
+                {{ end }}
+                
+                {{ if in $show "meta" }}
+                    <div class="card-meta">
+                        {{ template "recipe-meta" . }}
+                    </div>
+                {{ end }}
+            </div>
+        {{ end }}
     </a>
 </div>

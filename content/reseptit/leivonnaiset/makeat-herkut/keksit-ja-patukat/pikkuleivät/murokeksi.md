@@ -29,10 +29,10 @@ kategoriat:
   - "Makeat herkut"
   - "Keksit ja patukat"
 tagit: 
-  - "voi"
+  - "voikeksi"
   - "murea"
   - "makea"
-  - "suklaa"
+  - "suklainen"
   - "kahvipöytä"
 
 # Dietary Specifications
@@ -96,19 +96,12 @@ schema:
 {{< instructions >}}
 
 1. Vaahdota pehmeä voi, sokerit ja suola kuohkeaksi seokseksi yleiskoneella keskinopeudella 3-4 min.
-
 2. Lisää vehnäjauhot ja sekoita matalalla nopeudella, kunnes muodostuu tasainen taikina. *Älä ylisekoita.*
-
 3. Muotoile taikina suorakulmioksi (noin 20x10 cm), kääri kelmuun ja anna levätä jääkaapissa 1 t.
-
 4. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa leivinpelti leivinpaperilla.
-
 5. Leikkaa jäähtynyt taikina 1.3 cm paksuisiksi kekseiksi. *Leikkaa terävällä veitsellä suoraan alaspäin.*
-
 6. Paista 10-12 min, kunnes keksit ovat kevyesti kullanruskeita reunoilta. Anna jäähtyä ritilällä täysin.
-
 7. Sulata suklaa vesihauteessa tai mikrossa 30 s jaksoissa sekoittaen välissä. Anna jäähtyä kädenlämpöiseksi.
-
 8. Kasta puolet jäähtyneestä keksistä sulatettuun suklaaseen. Anna suklaan jähmettyä huoneenlämmössä ennen tarjoilua.
 {{</ instructions >}}
 

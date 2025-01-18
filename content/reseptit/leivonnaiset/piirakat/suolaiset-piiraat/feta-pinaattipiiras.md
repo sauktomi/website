@@ -99,19 +99,12 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 200°C (*tasalämpö*). Vuoraa piirakkavuoka leivinpaperilla.
-
 2. **Esivalmistelut:** Sulata pinaatti ja valuta ylimääräinen neste huolellisesti pois siivilän läpi. *Purista pinaatti mahdollisimman kuivaksi.*
-
 3. **Pohja:** Esipaista piirakkapohja 10 min. Anna jäähtyä hieman.
-
 4. **Täyte:** Sekoita valutettu pinaatti, ranskankerma, kananmunat ja mausteet tasaiseksi massaksi.
-
 5. Murustele 2/3 fetajuustosta tasaisesti esipaistetun pohjan päälle. Kaada täyteseos päälle.
-
 6. Murustele loppu fetajuusto täytteen päälle. Halkaise kirsikkatomaatit ja asettele ne kauniisti piiraan pinnalle.
-
 7. Paista uunin keskitasolla 35-40 min, kunnes piirakka on kiinteytynyt ja kullanruskea. *Keskiosan tulee olla vielä hieman hytisevä.*
-
 8. Anna jäähtyä 15-20 min ennen tarjoilua, jotta täyte asettuu.
 {{</ instructions >}}
 

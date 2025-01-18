@@ -103,17 +103,11 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 160°C (*kiertoilma*) tai 200°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
-
 2. **Taikina:** Vaahdota pehmeä voi ja sokerit kuohkeaksi vaahdoksi yleiskoneella 5 min. Lisää kananmunat yksitellen hyvin vatkaten.
-
 3. Sekoita kuivat aineet erillisessä kulhossa; ja koristelua varten sokeri ja kaneli keskenään.
-
 4. Sekoita kuivat aineet taikinaan hitaimmalla nopeudella. *Älä ylisekoita, vain kunnes ainekset ovat juuri sekoittuneet.*
-
 5. Siirrä taikina pursotinpussiin. Pursota noin 3 cm kokoisia nokareita leivinpaperille. *Jätä keksien väliin reilusti tilaa, sillä ne leviävät (3x) paistettaessa.*
-
 6. Ripottele nokareiden päälle kanelisokeria.
-
 7. Paista 12-15 min, kunnes keksit ovat kevyesti kullanruskeita reunoilta. Anna jäähtyä pellillä 5 min ennen siirtoa ritilälle.
 {{</ instructions >}}
 

@@ -1,7 +1,7 @@
 ---
 # Essential Recipe Information
 title: "Suklaahippukeksi"
-description: "Täydelliset suklaakeksit rapeilla reunoilla ja pehmeällä keskustalla. Sopii kahvipöytään tai herkutteluhetkiin."
+description: "Erityisen täyteläiset suklaakeksit rapeilla reunoilla ja pehmeällä keskustalla."
 servings: 24
 yield: "24 kpl"
 difficulty: "Helppo"
@@ -29,8 +29,9 @@ tagit:
   - "Makeat herkut"
   - "Keksit ja patukat"
 tagit:
-  - "suklaa"
+  - "suklainen"
   - "rapea"
+  - "täyteläinen"
   - "makea"
   - "kahvipöytä"
 
@@ -81,86 +82,65 @@ schema:
 
 #### Taikina
 
-- 150 g Voi (huoneenlämpöinen)
+- 120 g Voi
+- 2 rkl Maitojauhe
 - 160 g Sokeri
 - 70 g Fariinisokeri
-- 10 ml Vaniljasokeri
-- 1.25 ml Ruokasooda
-- 2.5 ml Suola
-- 1 kpl Kananmuna (huoneenlämpöinen)
+- 2 tl Vaniljasokeri
+- 2 rkl Vesi
+- 0.5 tl Suola
+- 0.25 tl Ruokasooda
+- 1 kpl Kananmuna
 - 200 g Vehnäjauho
 - 170 g Tumma suklaa (54% kaakao)
 {{</ ingredients >}}
 
 {{< instructions >}}
 
-1. Esilämmitä uuni 190°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
-
-2. Rouhi suklaa karkeaksi.
-
-3. **Taikina:** Vaahdota pehmeä voi, sokerit, sooda, ja suola vaaleaksi ja kuohkeaksi keskinopeudella 4 min. Lisää kananmuna ja vatkaa alhaisella nopeudella tasaiseksi. *Kaavi kulhon seinät puhtaaksi.*
-
-4. Sekoita vehnäjauho vähitellen taikinaan alhaisella nopeudella. *Sekoita vain kunnes ainekset ovat juuri sekoittuneet.*
-
-5. Lisää suklaarouhe taikinaan käsin sekoittaen.
-
-6. Muotoile tasaisia #30 palloja ja asettele leivinpaperille 5 cm välein.
-
-7. Paista 9-12 min, kunnes reunat ovat kullanruskeita. *Keskusta saa jäädä hieman pehmeäksi.*
-
-8. Anna jäähtyä pellillä 5 min, siirrä sitten ritilälle jäähtymään kokonaan.
+1. Esilämmitä uuni 175°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
+2. Rouhi suklaa karkeaksi (pieni kuutio).
+3. Ruskista voi keskikorkealla - kun voin kiinteät rakeet alkaa ruskistua, heti laske lämpöä alhaiselle ja lisää maitojauhe koko ajan sekoittaen kunnes seos on mahdollisimman ruskeaa – tällöin kaavi seos rakeineen työkulhoon ja lisää sokerit, sekoittaen tasaiseksi.
+4. Lisää seokseen vesi, suola ja sooda, ja vatkaa seosta sähkövatkaimen keski-korkealla nopeudella 3-4 minuuttia.
+5. Lisää kananmuna ja vatkaa seos keskinopeudella tasaiseksi, 1 min.
+6. Sekoita vehnäjauho taikinaan alhaisella nopeudella kunnes ainekset ovat juuri ja juuri sekoittuneet. Lisää suklaarouhe tasaisesti taikinaan.
+7. Jos taikina on jo kiinteää, muotoile tasaisia #30 palloja ja asettele leivinpaperille 5 cm välein. Muuten anna taikinan olla huoneenlämmössä 5-10 min.
+8. Paista 9-13 (10-11) min, kunnes reunat ovat kullanruskeita. *Keskusta saa jäädä hieman pehmeäksi.*
+9. Anna jähmettyä pellillä 5 min, jonka jälkeen siirrä ne ritilälle jäähtymään kokonaan.
 {{</ instructions >}}
 
 {{< notes >}}
 
 #### Vinkkejä
 
-- Syvemmän maun ja tiheämmät keksit saat antamalla taikinan levätä jääkaapissa 24-72 t ennen paistamista
-- Taikinapalloja ei tarvitse litistää jos et jäähdytä taikinaa
+- Taikinapalloja ei tarvitse litistää
 
 #### Versioita
 
-- **Valkosuklaa-sitrus**:
+- **Valkosuklaa-sitrus**: (%)
   - Korvaa tumma suklaa valkosuklaalla
-  - Lisää 15 ml sitruunankuorta
+  - Lisää 1 sitruunan raastettu kuori
   - Mausta 2 ml laventelilla
 
-- **Rosmariini**:
+- **Rosmariini**: (?)
   - Lisää taikinaan 2 ml rosmariinijauhetta
   - Koristele tuoreella rosmariinilla
 
-- **Karpalo**:
-  - Korvaa puolet suklaasta (100 g) kuivatuilla karpalolla
+- **Karpalo**: (?)
+  - Korvaa puolet suklaasta kuivatuilla karpalolla
   - Ripottele pinnalle karkeaa merisuolaa
 
-- **Tumma**
-  - Ruskista voi: kun se alkaa ruskistua, laske lämpöä alhaiselle, ja lisää 15 ml maitojauhetta. *Sekoita jatkuvasti, varsinkin kun lisäät maitojauheen.*
-  - Lisää 1 rkl vettä korvaamaan voin nesteen haihdutus
-  - Vatkaa kuumaan voihin sokerit kunnes seos ei enää kiillä. Sitten mukaan sooda, suola, ja kananmuna.
-
-- **Pehmeä**:
-  - Korvaa ruokasooda 1.25 ml ruokasoodalla ja 3.75 ml leivinjauheella
-  - Lisää 15 ml maitoa taikinaan
-  - Vähennä paistoaikaa, kunnes vaaleankultaiset reunat
-  - Kun keksit ovat valmiita, nosta ne nopeammin kuumalta pelliltä ritilälle kuin normaalisti.
-
-- **Rapea**:
-  - Vähennä fariinisokeria 25 g
-  - Lisää tavallista sokeria 25 g
+- **Rapea**: (?)
+  - Vähennä fariinisokeria ja lisää taloussokerin määrää
   - Nosta paistolämpötilaa 190°C
-  - Älä jäähdytä taikinaa
 
-- **Pureskeltava**:
-  - Sulata ja ruskista voi
-  - Lisää 25 g fariinisokeria
-  - Vähennä tavallista sokeria 25 g
-  - Lisää 75 g kaurahiutaleita taikinaan
+- **Pureskeltava**: (?)
+  - Lisää fariinisokeria ja vähennä taloussokerin määrää
+  - Lisää taikinaan kaurahiutaleita 1/3 jauhoista
   - Anna taikinan levätä jääkaapissa 24-72 t
 
-- **Syvyys**:
-  - Ruskista voi
+- **Syvyys**: (?)
   - Käytä vain kananmunan keltuainen
-  - Korvaa 40 g sokerista tummalla siirapilla
+  - Korvaa 40 g sokerista 2 rkl tummalla siirapilla
   - Lisää 1 ml espresso-, tai kahvijauhetta taikinaan
   - Ripaus sormisuolaa keksejen päälle ennen paistamista
   - Anna taikinan levätä jääkaapissa 24-72 t

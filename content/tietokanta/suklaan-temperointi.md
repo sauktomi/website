@@ -4,7 +4,6 @@ date: "2024-12-05"
 lastmod: "2024-12-05"
 author: "TMS"
 draft: false
-featured_image: "images/CalculatorSearch.jpeg"
 description: ""
 kategoriat: [""]
 tagit:

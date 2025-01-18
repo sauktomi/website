@@ -1,6 +1,5 @@
+<h2 class="instructions-title">Ohjeet</h2>
 <section class="instructions-content">
-    <h2 class="instructions-title">Ohjeet</h2>
-    
     {{ with findRE `(?s){{< instructions >}}(.*?){{</ instructions >}}` .RawContent }}
         <div>
                 {{ index . 0 | markdownify }}

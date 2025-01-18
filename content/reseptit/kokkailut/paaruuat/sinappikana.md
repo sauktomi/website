@@ -113,37 +113,40 @@ schema:
 
 {{< instructions >}}
 
-1. Kuivaa fileet käsipaperilla, sekoita kuorrutteen kaikki ainekset kulhoon, ja pyörittele kanat seoksessa.
+1. Sekoita kuorrutteen kaikki ainekset kulhoon, kuivaa fileet käsipaperilla, (tasoita epätasaiset fileet) ja pyörittele kanat seoksessa.
 2. Lämmitä keski-korkealämpöisessä paistinpannussa 1 rkl oliiviöljyä ja voita, ja ruskista fileet 4-6 min per puoli kunnes kultaisenruskea (75°C sisäinen). Siirrä kypsät kanat sivuun peitettyyn astiaan.
-3. Leikkaa salotit ja erikseen valkosipulinkynnet. Valmistele yrttikimppu.
-4. Laske lämpöä keski-matalaan, paista salotteja noin 2 min kunnes pehmenee, lisää valkosipulimurska ja paista noin 30 s kunnes tuoksuu.
-5. Heti lisää viini ja kaavi pannun pohja puhtaaksi. Keitä kunnes neste on lähes haihtunut ja pannu on melkein kuiva, 4-5 min.
-6. Lisää kasvisliemi, kerma, ja yrttikimppu. Anna kiehua hiljalleen, kunnes neste tihenee noin 12-16 min.
+3. Hienonna salotit ja erikseen valkosipulinkynnet. Valmistele yrttikimppu.
+4. Laske lämpöä keski-matalaan, paista salotteja n. 2 min kunnes pehmenee, lisää valkosipulimurska ja paista n. 30 s kunnes tuoksuu.
+5. Lisää viini ja kaavi pannun pohja puhtaaksi. Keitä kunnes neste on lähes haihtunut ja pannu on melkein kuiva, 4-5 min.
+6. Lisää kasvisliemi, kerma ja yrttikimppu. Anna kiehua hiljalleen, kunnes neste tihenee n. 12-16 min.
 7. Poista yrttikimppu. Ota pannu pois liedeltä ja vispilöi sinaappi ja kylmä voi sekaan kunnes kastike kiiltää. Maista ja säädä mausteita.
-8. Palauta kanat nesteiden kanssa pannulle – pois lämmöltä – ja peitä ne kastikkeella. Peitä pannu ja anna kanan olla jäännöslämmössä pari min.
-9. Koristele kaikki kanat kevyesti murskatulla rosepippurilla; lautasella kanan päälle yrttejä, ja viereen kokojyväsinappia.
+8. Peitä kanat kastikkeella, ja anna niiden levätä siellä pari min ennen tarjoilua.
+9. Koristele kaikki kanat kevyesti murskatulla rosepippurilla; lautasella kanan päälle yrtit ja viereen kokojyväsinappia.
 {{</ instructions >}}
 
 {{< notes >}}
 
 #### Vinkkejä
 
-- Kanaa ei tarvitse nostaa sivuun jos pannuun mahtuu salotit - tällöin lisää ne ajoissa, ennen kuin kana on kypsää.
+- Kanaa ei tarvitse nostaa sivuun jos pannuun mahtuu salotit - tällöin lisää salotit heti ensimmäisen kanankäännön jälkeen, ja jatka ohjeen mukaan.
 - Sido yrttikimppu yhteen keittölangalla.
 - Kanaa ei tarvitse kuorruttaa jos ei halua, siirtele tällöin mausteita maun mukaan kastikkeeseen.
 - Korvaa viini (omena)mehulla + 2 tl valkoviinietikka
-- Jos käytät epätasaisia kanan leikkeitä, tasoita ne lihanuijalla ennen kaikkea.
-- Jos teet monta annosta, tee kastike kattilassa kun kanat paistuu (paista sipulit, lisää kasvisliemi, kuohukerma, ja yrttikimppu).
+- Jos käytät epätasaisia kanan leikkeitä, tasoita ne lihanuijalla ennen kaikkea. (!)
+- Varsinkin jos teet monta annosta, tee kastike ja kanat erikseen. Kastike kattilassa kun kanat paistuu (paista sipulit, lisää kasvisliemi, kuohukerma, ja yrttikimppu).
 
 #### Versioita
 
-- **Mehevä kana**:
-  - Suolaliemi: 1 L Kylmä vesi, 50 g Suola, 30 g Sokeri, 2 kpl Timjamioksa, 1 kpl Laakerilehti, 5 kpl Mustapippuri
-  - Sekoita kaikki suolaliemen ainekset, lisää kana, ja anna olla jääkaapissa 2-4 tuntia.
-  - Tämän jälkeen kuivaa kanat huolellisesti, ja vähennä kuorrutteesta kaikki suola.
-- **Yrttikimppuversioita**:
-  - **Keväinen**: Korvaa rosmariini kirvelinoksilla 3 kpl ja lisää sitruunamelissanoksia 2 kpl
-  - **Kesäinen**: Korvaa rosmariini basilikalla* 4 kpl ja lisää sitruunankuorisuikale (3 cm). *Lisää basilika vasta viimeisen 5 min aikana.*
-  - **Syyinen**: Lisää salviaa 1 kpl ja katajanmarja (kevyesti murskattu) 3 kpl
-  - **Talvinen**: Alkuperäinen versio
+##### Mehevä kana
+
+- Suolaliemi: 1 L Kylmä vesi, 50 g Suola, 30 g Sokeri, 2 kpl Timjamioksa, 1 kpl Laakerilehti, 5 kpl Mustapippuri
+- Sekoita kaikki suolaliemen ainekset, lisää kana, ja anna olla jääkaapissa 2-4 tuntia.
+- Tämän jälkeen kuivaa kanat huolellisesti, ja vähennä kuorrutteesta kaikki suola.
+
+##### Yrttikimppuversioita
+
+- **Keväinen**: Korvaa rosmariini kirvelinoksilla 3 kpl ja lisää sitruunamelissanoksia 2 kpl
+- **Kesäinen**: Korvaa rosmariini basilikalla* 4 kpl ja lisää sitruunankuorisuikale (3 cm). *Lisää basilika vasta viimeisen 5 min aikana.*
+- **Syyinen**: Lisää salviaa 1 kpl ja katajanmarja (kevyesti murskattu) 3 kpl
+- **Talvinen**: Alkuperäinen versio
 {{</ notes >}}

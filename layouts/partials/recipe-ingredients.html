@@ -17,7 +17,8 @@
     {{ $inList := false }}
     {{ range . }}
         {{ if hasPrefix . "#### " }}
-            {{ if $inList }}</ul>{{ end }}
+            {{ if $inList }}</ul></div>{{ end }}
+            <div class="ingredients-block">
             <h4 id="{{ anchorize (replace . "#### " "") }}">
                 {{ replace . "#### " "" }}
             </h4>
@@ -27,6 +28,7 @@
             {{ $ingredient := trim . " -" }}
             {{ if $ingredient }}
                 {{ if not $inList }}
+                    <div class="ingredients-block">
                     <ul class="ingredients-list">
                     {{ $inList = true }}
                 {{ end }}
@@ -34,7 +36,7 @@
             {{ end }}
         {{ end }}
     {{ end }}
-    {{ if $inList }}</ul>{{ end }}
+    {{ if $inList }}</ul></div>{{ end }}
 {{ end }}
 
 {{ define "ingredient-item" }}

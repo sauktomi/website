@@ -1,25 +1,23 @@
 {{ define "main" }}
-    <header class="list-header">
-        <h2>{{ .Title }}</h2>
-        {{ with .Description }}
-            <p>{{ . }}</p>
-        {{ end }}
-    </header>
+    <section class="section">
+        <header>
+            <h1 class="section-title">{{ .Title }}</h1>
+            {{ with .Description }}
+                <section class="description">
+                    <p>{{ . }}</p>
+                </section>
+            {{ end }}
+        </header>
 
-    {{ if .Pages }}
-        <section class="list-content grid-container">
-            <div class="picture-grid">
-                {{ range $index, $recipe := .Pages }}
-                    {{ partial "recipe-card.html" (dict 
-                        "recipe" $recipe 
-                        "isFirst" (eq $index 0)
-                    ) }}
-                {{ end }}
-            </div>
-        </section>
-    {{ else }}
-        <section class="empty-content">
-            <p>Valitettavasti sisältöä ei ole saatavilla tällä hetkellä.</p>
-        </section>
-    {{ end }}
+        <div class="section-content">
+            {{ range $index, $page := .Pages }}
+                <a href="{{ $page.Permalink }}" class="section-content-link" aria-label="Näytä resepti: {{ $page.Title }}">
+                    <h3 class="section-content-title">{{ $page.Title }}</h3>
+                    {{ if $page.Description }} 
+                        <div class="section-meta">{{ $page.Description }}</div>
+                    {{ end }}
+                </a>
+            {{ end }}
+        </div>
+    </section>
 {{ end }}

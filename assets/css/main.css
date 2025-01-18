@@ -13,8 +13,8 @@
     
     /* Text Colors - Opacity-based hierarchy */
     --text-primary: hsl(0 0% 0%);      /* Pure black */
-    --text-secondary: hsla(0 0% 0% / 0.80);
-    --text-tertiary: hsla(0 0% 0% / 0.3);
+    --text-secondary: hsla(0 0% 0% / 0.8);
+    --text-tertiary: hsla(0 0% 0% / 0.7);
     --text-inverse: hsl(0 0% 100%);      /* Pure white */
     
     /* Interactive Elements */
@@ -70,8 +70,8 @@
   /* Line Heights 
   -------------------------- */
   --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75; 
+  --line-height-normal: 1.4;
+  --line-height-relaxed: 1.65; 
   --line-height-loose: 2;
   
   /* Spacing Scale - Based on 4px grid
@@ -242,7 +242,7 @@
     border: 1px solid var(--border-strong);
 }
 
-:root[data-theme="dark"] .search-results {
-    background-color: var(--surface-raised);
-    border: 1px solid var(--border-strong);
+:root[data-theme="light"] .theme-toggle-light,
+:root[data-theme="dark"] .theme-toggle-dark {
+  display: none;
 }

@@ -115,25 +115,15 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 175°C (*tasalämpö*). Vuoraa leivinpelti leivinpaperilla.
-
 2. **Taikina:** Vatkaa kananmunat, maito, sokeri, siirappi, viinikivi ja suola kuohkeaksi vaahdoksi yleiskoneella korkeimmalla nopeudella 5-7 min.
-
 3. Siivilöi ja sekoita kuivat aineet keskenään ja lisää ne kolmessa erässä vaahtoon kevyesti sekoittaen. Ota osa taikinasta toiseen kulhoon ja sekoita öljy sen kanssa. Kääntele tämä seos takaisin taikinaan.
-
 4. Kaada taikina vuoratulle pellille ja levitä tasaiseksi. Taputa peltiä pari kertaa pöytään ja paista 13 min tai kunnes pinta on kullanruskea ja tikkutesti onnistuu.
-
 5. **Siirappi:** Liuota sokerit veteen, anna jäähtyä, ja lisää makusiirappi.
-
 6. Kumoa paistettu torttu sokeritulle leivinpaperille ja poista paistopaperi varovasti lyhyeltä sivulta.
-
 7. Sivele jäähtynyt siirappi huolellisesti torttupohjan päälle. Kääri rullaksi ja jäähdytä jääkaapissa vähintään kädenlämpöiseksi.
-
 8. **Täyte:** Vatkaa kuohukerma ja sokerit kuohkeaksi vaahdoksi. Pehmennä tuorejuusto erikseen ja yhdistä kermavaahtoon kevyesti sekoittaen.
-
 9. Avaa jäähtynyt rulla varovasti. Levitä hillo tasaisesti pohjan päälle, sitten kermavaahto.
-
 10. Kääri torttu tiukasti rullalle leivinpaperin avulla. *Kääri rulla vielä kelmulla ja anna vetäytyä jääkaapissa vähintään 1 t muodon varmistamiseksi.*
-
 11. Leikkaa kääretorttu viipaleiksi ja tarjoile.
 {{</ instructions >}}
 

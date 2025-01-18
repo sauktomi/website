@@ -1,48 +1,38 @@
 {{ define "main" }}
-    <header>
-        <h1>{{ .Title }}</h1>
-
-        {{ $path := .RelPermalink }}
-        {{ if and (hasPrefix $path "/reseptit/leivonnaiset/") (ne $path "/reseptit/leivonnaiset/") (.Params.featured_image) }}
-            {{ partial "recipe-header-image.html" . }}
+    {{ $path := .RelPermalink }}
+    {{ $sections := .Sections }}
+    {{ if or (ne .RelPermalink "/reseptit/") (gt (len $sections) 0) }}
+    <section class="section">
+        <header>
+            <h1 id="{{ .Title | lower }}" class="section-title">
+                {{ .Title }}
+            </h1>
+        {{ with .Content }}
+            <section class="description">
+                {{ . }}
+            </section>
         {{ end }}
-    </header>
+        </header>
 
-    <section class="description">
-        {{ .Content }}
-    </section>
-
-    <section class="grid-container">
-        <h2>
-            {{ if ne .RelPermalink "/reseptit/" }}
-                Reseptit tässä kategoriassa
-            {{ else }}
-                Kaikki reseptit
-            {{ end }}
-        </h2>
-
-        <div class="picture-grid">
+        <div class="section-content">
             {{ if eq .RelPermalink "/reseptit/" }}
-                {{ range .Sections }}
-                    {{ range .Sections }}
-                        <div class="picture-card">
-                            <a href="{{ .RelPermalink }}" 
-                               class="card-link"
-                               aria-label="Näytä kategoria: {{ .Title }}">
-                                <div class="image-container">
-                                    {{ partial "responsive-image.html" (dict "context" . "type" "thumbnail" "class" "recipe-image") }}
-                                </div>
-                                <div class="card-content">
-                                    <h2>{{ .Title }}</h2>
-                                    <div class="recipe-meta">
-                                        <span class="text-secondary">
-                                            {{ $count := len .Pages }}
-                                            {{ $count }} {{ if eq $count 1 }}resepti{{ else }}reseptiä{{ end }}
-                                        </span>
-                                    </div>
+                {{ range $sections }}
+                    {{ $subSections := .Sections }}
+                    {{ if gt (len $subSections) 0 }}
+                        {{ range $subSections }}
+                            {{ $totalCount := len .RegularPages }}
+                            {{ range .Sections }}
+                                {{ $totalCount = add $totalCount (len .RegularPages) }}
+                            {{ end }}
+                            {{ if gt $totalCount 0 }}
+                            <a href="{{ .RelPermalink }}" class="section-content-link">
+                                <h3 class="section-content-title">{{ .Title | }}</h3>
+                                <div class="section-meta">
+                                    {{ $totalCount }} {{ if eq $totalCount 1 }}resepti{{ else }}reseptiä{{ end }}
                                 </div>
                             </a>
-                        </div>
+                            {{ end }}
+                        {{ end }}
                     {{ end }}
                 {{ end }}
             {{ else }}
@@ -50,12 +40,20 @@
             {{ end }}
         </div>
     </section>
+    {{ end }}
 {{ end }}
 
 {{ define "list-pages-grid" }}
-    {{ range .RegularPages }}
-        {{ partial "recipe-card.html" (dict "recipe" . "classes" (slice "picture-card")) }}
-    {{ end }}
+{{ range $index, $page := .RegularPages }}
+   {{ partial "recipe-card.html" (dict 
+       "Title" $page.Title
+       "Permalink" $page.Permalink
+       "Params" $page.Params
+       "index" $index
+       "nopicture" true
+       "show" (slice "image" "title")
+   ) }}
+{{ end }}
     {{ range .Sections }}
         {{ template "list-pages-grid" . }}
     {{ end }}

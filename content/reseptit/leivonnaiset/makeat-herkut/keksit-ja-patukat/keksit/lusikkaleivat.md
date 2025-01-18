@@ -101,17 +101,11 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 150°C (*kiertoilma*) tai 175°C (*tasalämpö*). Vuoraa leivinpellit leivinpaperilla.
-
 2. Sulata margariini mikrossa täysin nestemäiseksi. Sekoita sokerit sulatettuun margariiniin.
-
 3. Jäähdytä seos vesihauteessa, kunnes se alkaa samentua. *Seos ei saa kiinteytyä.*
-
 4. Sekoita vehnäjauho ja ruokasooda erillisessä kulhossa. Lisää jauhoseos vähitellen jäähtyneeseen margariiniseokseen ja sekoita käsin tasaiseksi taikinaksi. *Jos taikina on liian löysää, lisää jauhoja ruokalusikallinen kerrallaan.*
-
 5. Painele taikinaa ruokalusikkaan niin, että muoto pysyy. Koputtele lusikkaleivät varovasti leivinpaperille. *Jätä keksien väliin tilaa leviämiselle.*
-
 6. Paista 13-16 min, kunnes keksit ovat kevyesti kullanruskeita. Anna jäähtyä käsiteltäviksi noin 5 min.
-
 7. Käännä puolet kekseistä nurinpäin. Lusikoi tasaiselle puolelle hilloa, paina toinen puolikas kanneksi. Pyöritä vielä lämmin lusikkaleipä sokerissa.
 {{</ instructions >}}
 

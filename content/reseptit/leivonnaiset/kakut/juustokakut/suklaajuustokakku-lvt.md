@@ -30,7 +30,7 @@ kategoriat:
   - "Kakut"
   - "Juustokakut"
 tagit: 
-  - "suklaa"
+  - "suklainen"
   - "kermainen"
   - "makea"
   - "tuorejuusto"
@@ -60,9 +60,8 @@ default_scale: 1
 featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
   - "juustokakku"
-  - "suklaa"
+  - "suklainen"
   - "cheesecake"
-  - "leivonnaiset"
   - "jälkiruoka"
 
 # Metadata and Attribution
@@ -101,13 +100,9 @@ schema:
 {{< instructions >}}
 
 1. **Pohja:** Murskaa keksit hienoksi ja sulata margariini. Vuoraa irtopohjavuoan pohja leivinpaperilla ja reunat kelmulla. Sekoita pohjan ainekset yhteen ja painele vuoan pohjalle.
-
 2. **Täyte:** Vatkaa tuorejuusto tasaiseksi keskinopeudella 3 min. Sulata suklaa ja jäähdytä kädenlämpöiseksi. Vatkaa vispikerma erikseen pehmeiksi huipuiksi.
-
 3. Sekoita jäähtynyt suklaa tuorejuustoon matalalla nopeudella. Kääntele kermavaahto varovasti sekaan. Kaada täyte pohjan päälle ja tasoita pinta.
-
 4. Pakasta kakku 1 t, kunnes pinta on kiinteähkö. Sulata koristesuklaata ja anna jäähtyä kädenlämpöiseksi. Irrota kakku vuoasta ja kelmusta. Koristele suklaaraidoilla. Jäähdytä jääkaapissa vähintään 2 t.
-
 5. Tarjoile heti tai pakasta.
 {{</ instructions >}}
 

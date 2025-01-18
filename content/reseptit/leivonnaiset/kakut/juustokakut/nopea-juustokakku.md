@@ -108,11 +108,8 @@ schema:
 {{< instructions >}}
 
 1. Yhdistä murskatut keksit, sekä sulatettu voi, ja paina valmiiseen irtopohjavuokaan. Jäähdytä.
-
 2. Liuota kaikki liivatteet erillään. Pehmennä ja vatkaa tuorejuusto sekä sokerit tasaiseksi; samalla erikseen vaahdota kerma löysäksi vaahdoksi.
-
 3. Sulata **täytteen** liivatteet, sekoita soseeseen, ja yhdistä täyteseokseen. Kääntele kermavaahto varovasti mukaan ja kaada vuokaan. *Pakasta 30 min (vain kunnes pinta hyytyy)* tai jääkaapita vähintään 2 t; tee sillä aikaa kiille valmiiksi.
-
 4. **Kiille**: Sulata sokeri veteen – sitten liivatteet – ja sekoita hedelmäsose ja sitruunamehu mukaan. Kaada kakun päälle lusikan avulla.
 {{</ instructions >}}
 

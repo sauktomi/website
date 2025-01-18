@@ -1,5 +1,5 @@
 {{ define "main" }}
-    <article>
+    <article id="article">
         <header>
             {{ partial "recipe-header-image.html" . }}
             <h1>{{ .Title }}</h1>
@@ -11,7 +11,7 @@
             </section>
         {{ end }}
 
-        <section>
+        <section class="main-text">
             {{ .Content }}
         </section>
     </article>

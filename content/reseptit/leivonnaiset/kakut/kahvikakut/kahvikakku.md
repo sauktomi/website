@@ -104,17 +104,11 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 175°C (*tasalämpö*). Voitele ja jauhota kakkuvuoka huolellisesti.
-
 2. **Kuivat aineet:** Sekoita vehnäjauho, sokeri, vaniljasokeri, leivinjauhe, ruokasooda ja suola yleiskoneessa alhaisella nopeudella.
-
 3. Lisää pehmeä voi kuivien aineiden sekaan ja sekoita, kunnes seos on murumaista. (*älä sekoita liikaa*)
-
-4. **Kosteat aineet:** Sekoita kananmunat ja piimä erillisessä kulhossa. Lisää seos kuiviin aineksiin parissa erässä, nuolien reunat ja pohjat erien välissä, ja sekoittaen lisäyksien jälkeen taikinan tasaiseksi.
-
+4. **Kosteat aineet:** Sekoita kananmunat ja piimä erillisessä kulhossa. Lisää seos kuiviin aineksiin parissa erässä, nuolien reunat sekä pohjan erien välissä, ja sekoita taikina tasaiseksi.
 5. Kaada taikina vuokaan ja paista 50-60 min (*tikulla testaten*). Valmista siirappi paistamisen aikana.
-
 6. **Siirappi:** Sulata sokeri veteen. (Jos käytät mausteita, hauduta ne kattilassa siirapin kanssa 5 min ja siivilöi.) Anna jäähtyä.
-
 7. Kun kakku on valmis, anna sen jäähtyä vuoassa 10-15 min. Voitele kakun pohja siirapilla, kumoa ja voitele myös päällys ja sivut. Anna jäähtyä täysin.
 {{</ instructions >}}
 

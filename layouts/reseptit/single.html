@@ -3,21 +3,40 @@
         {{ partial "breadcrumbs.html" . }}
         <div class="recipe-grid">
             <header class="recipe-header">
+                {{ with $.Params.dietary }}
+                <div id="ruokavalio" class="meta-item" title="Ruokavalio">
+                    <div class="meta-item-content">
+                        {{ partial "recipe-meta-icons.html" (dict "icon" "diet") }}
+                        <div class="meta-item-list">
+                            {{- if .gluten_free -}}
+                            <span id="allergy-gluten" class="meta-value">G</span>
+                            {{- end -}}
+                            {{- if .dairy_free -}}
+                            <span id="allergy-dairy" class="meta-value">M</span>
+                            {{- end -}}
+                            {{- if .nut_free -}}
+                            <span id="allergy-nut" class="meta-value">P</span>
+                            {{- end -}}
+                            {{- if .fish_free -}}
+                            <span id="allergy-fish" class="meta-value">K</span>
+                            {{- end -}}
+                            {{- if .vegan -}}
+                            <span id="allergy-vegan" class="meta-value">VE</span>
+                            {{- end -}}
+                        </div>
+                    </div>
+                </div>
+                {{ end }}
                 <h1 class="recipe-title">{{ .Title }}</h1>
-
                 <div class="recipe-description">
                     {{ partial "recipe-description.html" . }}
                 </div>
                 <div class="recipe-meta meta-toggle" role="button" tabindex="0" aria-expanded="false" aria-controls="additional-info">
                     {{ partial "recipe-meta.html" . }}
                 </div>
-                {{ partial "recipe-scaling.html" (dict "Params" .Params "view" "default") }}
-
-                <button class="sticky-toggle" aria-label="Toggle sticky sidebar">Toggle Sticky</button>
             </header>
             <div class="recipe-media">
-                <div>{{ partial "recipe-header-image.html" . }}</div>
-
+                {{ partial "recipe-header-image.html" . }}
                 {{ with .Params.tagit }}
                 <div class="recipe-tags">
                     <ul class="tags-list">
@@ -27,7 +46,6 @@
                     </ul>
                 </div>
                 {{ end }}
-
                 <div class="thumbnail-container">
                     <div class="recipe-thumbnail"></div>
                     <div class="recipe-thumbnail"></div>
@@ -39,13 +57,28 @@
         <div class="recipe-body">
             <div class="recipe-content-wrapper">
                 <aside class="recipe-sidebar" data-sticky>
-                    <h2 class="ingredients-title">Ainekset</h2>
+                    <div class="ingredients-header">
+                        <button class="sticky-toggle" aria-label="Pin to screen">
+                            <svg class="pin-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 17v5"/>
+                              <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/>
+                            </svg>
+                            <svg class="pin-off-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                              <path d="M12 17v5"/>
+                              <path d="M15 9.34V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H7.89"/>
+                              <path d="m2 2 20 20"/>
+                              <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/>
+                            </svg>
+                        </button> 
+                        <h2 class="ingredients-title">Ainekset</h2>                  
+                    </div>
+                    {{ partial "recipe-scaling.html" (dict "Params" .Params "view" "default") }}
                     {{ template "ingredients-section" . }}
                 </aside>
-                <main class="recipe-main">
+                <article class="recipe-main">
                     {{ partial "recipe-instructions.html" . }}
                     {{ partial "recipe-notes.html" . }}
-                </main>
+                </article>
             </div>
         </div>
     </article>

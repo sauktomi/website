@@ -104,15 +104,10 @@ schema:
 {{< instructions >}}
 
 1. **Yudane:** Kiehauta vesi ja sekoita se heti vehnäjauhoon tasaiseksi.
-
 2. **Taikina:** Yhdistä yleiskoneen kulhoon kädenlämpöinen vesi ja maito, keltuainen, hiiva, maitojauhe, sokeri, suola ja hunaja. Lisää myös (jäähtynyt) yudane ja sekoita tasaiseksi.
-
 3. Lisää jauhot ja sekoita löysäksi taikinaksi, jonka jälkeen vaivaa 5 min keski-alhaisella nopeudella, kunnes taikina on sileähkö ja venyvä.
-
 4. Lisää huoneenlämpöinen voi. Vaivaa 8-15 min keski-alhaisella nopeudella, kunnes taikina on sileä ja kimmoisa – *ikkunatestin pitäisi onnistua*.
-
 5. Voitele leipävuoat huolellisesti. Jaa taikina kahteen ~520 g palaan. Muotoile pötköiksi ja aseta vuokiin. Anna kohota peitettyinä ~40 min, tai kunnes taikina on noussut *lähes vuoan rimaan*.
-
 6. Esilämmitä uuni 175°C (*tasalämpö*). Laita vuokien kannet päälle ja paista 35 min. Jäähdytä ritilällä täysin ennen leikkaamista.
 {{</ instructions >}}
 

@@ -1,12 +1,6 @@
+<h3 class="notes-title">Muistiinpanot</h3>
 <section class="recipe-notes">
     {{ with findRE `(?s){{< notes >}}(.*?){{</ notes >}}` .RawContent }}
-        <details class="notes-container">
-            <summary>
-                <h3 class="notes-title">
-                    Muistiinpanot
-                </h3>
-            </summary>
-            
             <div class="notes-content">
                 {{ $rawContent := index . 0 }}
                 {{ $innerContent := replaceRE "{{< ?notes >}}|{{</ ?notes >}}" "" $rawContent }}

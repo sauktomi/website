@@ -96,15 +96,10 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa piirakkavuoka leivinpaperilla.
-
 2. **Pohja:** Esipaista valmispohja 14 min. Anna jäähtyä hieman.
-
 3. **Täyte:** Vatkaa tuorejuusto ja ranskankerma tasaiseksi. Lisää sokerit ja sekoita hyvin.
-
 4. Lisää kananmunat yksitellen, sekoittaen hyvin jokaisen lisäyksen jälkeen.
-
 5. Kaada täyte esipaistetun pohjan päälle. Paista 35-40 min, kunnes täyte on kiinteää mutta vielä hieman hyytelömäistä keskeltä.
-
 6. Anna jäähtyä huoneenlämmössä 30 min, sitten jääkaapissa vähintään 2 t ennen tarjoilua.
 {{</ instructions >}}
 

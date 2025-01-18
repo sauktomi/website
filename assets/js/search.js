@@ -1,124 +1,129 @@
 class RecipeSearchManager {
   constructor() {
     this.cache = new Map();
+    this.selectors = {
+      searchOverlay: '.search-overlay',
+      siteSearchInput: '#site-search',
+      searchResults: '.search-results',
+      searchToggle: '.search-toggle',
+      searchClose: '.search-close'
+    };
+    this.recipes = [];
+    this.elements = {};
     this.initElements();
     this.initEventListeners();
+    this.loadRecipes(); // Preload search index on page load
   }
 
   initElements() {
-    this.elements = {
-      searchInput: document.querySelector('#recipe-search'),
-      siteSearchInput: document.querySelector('#site-search'),
-      searchOverlay: document.querySelector('.search-overlay'),
-      searchToggle: document.querySelector('.search-toggle'),
-      searchClose: document.querySelector('.search-close'),
-      overlayResults: document.querySelector('.search-overlay .search-results')
-    };
-
-    if (this.elements.searchInput) {
-      this.elements.searchResults = this.createResultsContainer();
-      this.elements.searchInput.parentNode.appendChild(this.elements.searchResults);
-    }
-  }
-
-  createResultsContainer() {
-    return Object.assign(document.createElement('div'), {
-      className: 'search-results',
-      id: 'recipe-search-results',
-      role: 'listbox',
-      'aria-label': 'Search results'
+    Object.entries(this.selectors).forEach(([key, selector]) => {
+      this.elements[key] = document.querySelector(selector);
     });
+
+    const { siteSearchInput, searchResults, searchToggle, searchClose } = this.elements;
+
+    if (siteSearchInput && searchResults) {
+      siteSearchInput.setAttribute('role', 'searchbox');
+      siteSearchInput.setAttribute('aria-controls', 'search-results');
+      siteSearchInput.setAttribute('aria-expanded', 'false');
+      searchResults.setAttribute('role', 'listbox');
+      searchResults.id = 'search-results';
+    }
+
+    searchToggle?.setAttribute('aria-label', 'Open search');
+    searchClose?.setAttribute('aria-label', 'Close search');
   }
 
   initEventListeners() {
-    const setupSearch = (input, results) => {
-      if (!input) return;
-      
-      input.setAttribute('role', 'searchbox');
-      input.setAttribute('aria-expanded', 'false');
-      input.setAttribute('aria-controls', results.id);
-      
+    const { siteSearchInput, searchOverlay, searchToggle, searchClose } = this.elements;
+
+    if (siteSearchInput) {
       const handler = this.debounce(async () => {
-        const query = input.value.trim();
+        const query = siteSearchInput.value.trim();
         if (query.length < 2) {
-          this.clearResults(results);
+          this.clearResults();
           return;
         }
-        
-        await this.performSearch(query, results);
-        input.setAttribute('aria-expanded', results.children.length > 0);
+        await this.performSearch(query);
       }, 250);
 
-      input.addEventListener('input', handler);
-      input.addEventListener('focus', () => this.loadRecipes());
+      siteSearchInput.addEventListener('input', handler);
+      siteSearchInput.addEventListener('focus', () => {
+        if (searchOverlay) {
+          searchOverlay.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    }
+
+    // Mobile toggle
+    const toggleSearch = (show) => {
+      const { searchOverlay, siteSearchInput } = this.elements;
+      if (!searchOverlay) return;
+    
+      if (show) {
+        searchOverlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+        this.lastActiveElement = document.activeElement;
+        setTimeout(() => siteSearchInput?.focus(), 150);
+      } else {
+        searchOverlay.classList.remove('active');
+        document.body.style.overflow = '';
+        this.clearResults();
+        siteSearchInput && (siteSearchInput.value = '');
+        this.lastActiveElement?.focus();
+      }
     };
 
-    setupSearch(this.elements.searchInput, this.elements.searchResults);
-    setupSearch(this.elements.siteSearchInput, this.elements.overlayResults);
-    this.setupOverlaySearch();
+    searchToggle?.addEventListener('click', () => toggleSearch(true));
+    searchClose?.addEventListener('click', () => toggleSearch(false));
+
+    // Click outside to close
+    document.addEventListener('mousedown', e => {
+      const { searchOverlay, searchClose } = this.elements;
+      if (searchOverlay?.classList.contains('active') && 
+          !e.target.closest('#site-search') && 
+          !e.target.closest('.search-toggle') &&
+          !e.target.closest('.search-results')) {
+        searchClose?.click();
+      }
+    });
+
     this.setupKeyboardNavigation();
   }
 
-  setupOverlaySearch() {
-    const { searchOverlay, searchToggle, searchClose, siteSearchInput, overlayResults } = this.elements;
-    if (!searchOverlay) return;
-
-    const toggleSearch = (show) => {
-      searchOverlay.classList.toggle('active', show);
-      searchToggle.setAttribute('aria-expanded', show);
-      document.body.style.overflow = show ? 'hidden' : '';
-      if (show) {
-        this.loadRecipes();
-      } else {
-        this.clearResults(overlayResults);
-      }
-    };
-
-    searchToggle?.addEventListener('click', () => {
-      toggleSearch(true);
-      setTimeout(() => siteSearchInput?.focus(), 150);
-    });
-    searchClose?.addEventListener('click', () => toggleSearch(false));
-    searchOverlay?.addEventListener('click', e => {
-      if (e.target === searchOverlay) toggleSearch(false);
-    });
-
-    window.addEventListener('keydown', e => {
-      if (e.key === 'Escape' && searchOverlay.classList.contains('active')) {
-        toggleSearch(false);
-      }
-      if (e.key === '/' && !searchOverlay.classList.contains('active')) {
-        e.preventDefault();
-        toggleSearch(true);
-        siteSearchInput?.focus();
-      }
-    });
-  }
-
   setupKeyboardNavigation() {
-    window.addEventListener('keydown', e => {
-      const results = this.getActiveResults();
-      if (!results) return;
+    const { searchResults, searchClose, searchToggle } = this.elements;
 
-      const current = results.querySelector('.search-result.active');
+    window.addEventListener('keydown', e => {
+      if (!searchResults) return;
+
+      const current = searchResults.querySelector('.search-result.active');
       
       switch (e.key) {
         case 'ArrowDown':
         case 'ArrowUp':
           e.preventDefault();
           const next = e.key === 'ArrowDown'
-            ? (current?.nextElementSibling || results.firstElementChild)
-            : (current?.previousElementSibling || results.lastElementChild);
+            ? (current?.nextElementSibling || searchResults.firstElementChild)
+            : (current?.previousElementSibling || searchResults.lastElementChild);
           
           current?.classList.remove('active');
           next?.classList.add('active');
           break;
           
         case 'Enter':
-          const link = current?.querySelector('a');
-          if (link) {
+          current?.querySelector('a')?.click();
+          break;
+
+        case 'Escape':
+          window.innerWidth <= 768 && searchClose?.click();
+          break;
+          
+        case '/':
+          if (window.innerWidth <= 768 && !searchResults.children.length) {
             e.preventDefault();
-            link.click();
+            searchToggle?.click();
           }
           break;
       }
@@ -126,61 +131,57 @@ class RecipeSearchManager {
   }
 
   async loadRecipes() {
-    if (this.recipes) return;
-    
     try {
       const response = await fetch('/search-index-slim.json');
       if (!response.ok) throw new Error('Failed to load recipes');
       
       this.recipes = await response.json();
-      // Pre-process recipes for faster search
-      this.recipes.forEach(recipe => {
-        recipe.searchText = [
+      this.recipes = this.recipes.map(recipe => ({
+        ...recipe,
+        searchText: [
           recipe.title,
           ...(recipe.kategoriat || []),
           ...(recipe.ingredients || [])
-        ].join(' ').toLowerCase();
-      });
+        ].join(' ').toLowerCase()
+      }));
     } catch (error) {
       console.error('Failed to load recipes:', error);
-      this.recipes = [];
     }
   }
 
-  async performSearch(query, container) {
+  async performSearch(query) {
     const cacheKey = query.toLowerCase();
     if (this.cache.has(cacheKey)) {
-      this.renderResults(this.cache.get(cacheKey), container);
+      this.renderResults(this.cache.get(cacheKey));
       return;
     }
 
-    if (!this.recipes) await this.loadRecipes();
-    
     const terms = query.toLowerCase().split(/\s+/);
     const results = this.recipes
-      .reduce((matches, recipe) => {
-        const score = terms.reduce((total, term) => {
-          if (!recipe.searchText.includes(term)) return total;
-          return total + (
-            recipe.title.toLowerCase() === term ? 10 :
-            recipe.title.toLowerCase().includes(term) ? 5 :
-            recipe.kategoriat?.some(cat => cat.toLowerCase().includes(term)) ? 3 : 1
-          );
-        }, 0);
-        
-        if (score > 0) matches.push({ recipe, score });
-        return matches;
-      }, [])
+      .map(recipe => ({
+        recipe,
+        score: terms.reduce((total, term) => 
+          total + (recipe.searchText.includes(term) ? 
+            (recipe.title.toLowerCase().includes(term) ? 2 : 1) : 0), 0)
+      }))
+      .filter(({ score }) => score > 0) 
       .sort((a, b) => b.score - a.score)
-      .slice(0, container === this.elements.overlayResults ? 20 : 5);
+      .slice(0, 20);
 
     this.cache.set(cacheKey, results);
-    this.renderResults(results, container);
+    this.renderResults(results);
   }
 
-  renderResults(results, container) {
-    container.innerHTML = results.length ? results.map(({ recipe }) => `
-      <div class="search-result" role="option">
+  renderResults(results) {
+    const { searchResults, siteSearchInput } = this.elements;
+    if (!searchResults) return;
+    
+    const fragment = new DocumentFragment();
+    results.forEach(({ recipe }) => {
+      const resultEl = document.createElement('div');
+      resultEl.className = 'search-result';
+      resultEl.setAttribute('role', 'option');
+      resultEl.innerHTML = `
         <a href="${recipe.permalink}">
           <div class="result-title">${recipe.title}</div>
           ${recipe.difficulty || recipe.total_time ? `
@@ -190,10 +191,14 @@ class RecipeSearchManager {
             </div>
           ` : ''}
         </a>
-      </div>
-    `).join('') : '<div class="no-results">Ei hakutuloksia</div>';
-
-    container.firstElementChild?.classList.add('active');
+      `;
+      fragment.appendChild(resultEl);
+    });
+    
+    searchResults.innerHTML = results.length ? '' : '<div class="no-results">Ei hakutuloksia</div>';
+    searchResults.appendChild(fragment);
+    searchResults.firstElementChild?.classList.add('active');
+    siteSearchInput?.setAttribute('aria-expanded', results.length > 0);
   }
 
   getTimeCategory(timeString) {
@@ -207,8 +212,11 @@ class RecipeSearchManager {
            minutes <= 120 ? 'Hidas' : 'Erittäin hidas';
   }
 
-  clearResults(container) {
-    container.innerHTML = '';
+  clearResults() {
+    const { searchResults, siteSearchInput } = this.elements;
+
+    searchResults && (searchResults.innerHTML = '');
+    siteSearchInput?.setAttribute('aria-expanded', 'false');
   }
 
   debounce(fn, delay) {
@@ -218,46 +226,10 @@ class RecipeSearchManager {
       timeout = setTimeout(() => fn(...args), delay);
     };
   }
-
-  getActiveResults() {
-    return this.elements.searchOverlay?.classList.contains('active')
-      ? this.elements.overlayResults
-      : this.elements.searchResults;
-  }
-}
-
-class ThemeManager {
-  constructor() {
-    this.elements = {
-      root: document.documentElement,
-      toggle: document.querySelector('.theme-toggle'),
-      lightIcon: document.querySelector('.theme-toggle-light'),
-      darkIcon: document.querySelector('.theme-toggle-dark')
-    };
-    
-    const theme = localStorage.getItem('theme') || 'light';
-    this.setTheme(theme);
-    
-    this.elements.toggle?.addEventListener('click', () => 
-      this.setTheme(this.elements.root.getAttribute('data-theme') === 'light' ? 'dark' : 'light')
-    );
-  }
-
-  setTheme(theme) {
-    this.elements.root.setAttribute('data-theme', theme);
-    localStorage.setItem('theme', theme);
-    this.elements.lightIcon?.classList.toggle('hidden', theme === 'dark');
-    this.elements.darkIcon?.classList.toggle('hidden', theme === 'light');
-  }
 }
 
 if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', init);
+  document.addEventListener('DOMContentLoaded', () => new RecipeSearchManager());
 } else {
-  init();
-}
-
-function init() {
   new RecipeSearchManager();
-  new ThemeManager();
 }

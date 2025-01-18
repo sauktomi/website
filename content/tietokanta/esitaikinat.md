@@ -4,7 +4,6 @@ date: "2024-11-21"
 lastmod: "2024-11-21"
 author: "TMS"
 draft: false
-featured_image: "images/CalculatorSearch.jpeg"
 description: "Tekoälyn tiivistys neljästä yleisestä esitaikinatyypistä."
 kategoriat: ["Ohjeet"]
 tagit:

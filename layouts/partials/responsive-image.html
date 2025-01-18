@@ -4,6 +4,7 @@
 {{ $context := .context }}
 {{ $type := default "hero" .type }}
 {{ $loading := default "lazy" .loading }}
+{{ $fetchpriority := default "auto" .fetchpriority }}
 {{ $class := .class }}
 
 {{ if $image }}
@@ -22,6 +23,7 @@
                 src="{{ $thumbnail.RelPermalink }}"
                 alt="{{ $context.Title }}"
                 loading="{{ $loading }}"
+                fetchpriority="{{ $fetchpriority }}"
                 width="400"
                 height="400"
                 decoding="async"
@@ -43,6 +45,7 @@
                 src="{{ $mediumImage.RelPermalink }}"
                 alt="{{ $context.Title }}"
                 loading="{{ $loading }}"
+                fetchpriority="{{ $fetchpriority }}"
                 width="{{ $mediumImage.Width }}"
                 height="{{ $mediumImage.Height }}"
                 decoding="async"
@@ -75,6 +78,7 @@
                         {{ $originalImage.RelPermalink }} 2560w"
                 alt="{{ $context.Title }}"
                 loading="{{ $loading }}"
+                fetchpriority="high"
                 width="{{ $heroImage.Width }}"
                 height="{{ $heroImage.Height }}"
                 decoding="async"

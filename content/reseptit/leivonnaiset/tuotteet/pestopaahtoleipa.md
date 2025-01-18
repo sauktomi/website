@@ -1,6 +1,6 @@
 ---
 # Essential Recipe Information
-title: "Vuohenjuusto-pestopaahtoleipä"
+title: "Juustoinen pestopaahtoleipä"
 description: "Herkullinen ja rapea paahtoleipä pestolla, vuohenjuustolla ja pihvitomaatilla"
 servings: 8
 yield: "8 kpl"
@@ -98,13 +98,9 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 220°C (*pohja-kiertoilma*). Vuoraa leivinpelti leivinpaperilla.
-
 2. **Esivalmistelut:** Sekoita juustoraaste ja kananmunat tasaiseksi seokseksi; Viipaloi tomaatit ohuiksi, tasaisiksi siivuiksi, 5 kpl per tomaatti; Leikkaa vuohenjuusto tasaisiksi viipaleiksi, 62,5g per pala.
-
 3. **Kokoaminen:** Voitele leipäsiivut **huolellisesti** pestolla ja levitä juustoseos niiden päälle. Seuraavaksi asettele tomaatti-, ja vuohenjuustoviipaleet leipien päälle kirjoitusjärjestyksessä, ja ripoittele sitruunapippuria jokaisen leivän päälle.
-
 4. Paista uunin ala-kolmannesosassa 10-12 min, kunnes juusto on sulanut ja reunat ovat kullanruskeita.
-
 5. Ripottele runsaasti oreganoa leipien päälle heti uunista oton jälkeen. Tarjoile välittömästi.
 {{</ instructions >}}
 

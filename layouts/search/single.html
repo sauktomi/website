@@ -1,27 +1,16 @@
 {{ define "main" }}
-    <!-- 
-        ✨ Enchanted Recipe Search Portal
-        
-        Core Design Principles:
-        - Dynamic filter generation
-        - Efficient DOM structure
-        - Semantic HTML patterns
-        - Accessible interactions
-        
-        @version 4.0.0
-    -->
     <header class="section-header">
         <h1>Hae reseptejä</h1>
     </header>
 
     <section class="section-search" aria-label="Hakutoiminnot">
         <div class="search-container">
-            <!-- 🔍 Search Input Enchantment -->
+            <!-- Search Input -->
                 <div class="search-box">
-                    <input type="search" id="recipe-search" class="search-input" placeholder="Etsi reseptejä..." aria-label="Haku">
+                    <input type="search" id="recipe-search" class="search-input" placeholder="Etsi reseptejä" aria-label="Haku">
                 </div>
 
-            <!-- 🎭 Dynamic Filter System -->
+            <!-- Dynamic Filter System -->
             <div class="search-filters" role="group" aria-label="Hakusuodattimet">
                 <!-- 📊 Difficulty Filter Portal -->
                 <div class="filter-group">
@@ -118,11 +107,17 @@
         </div>
     </section>
 
-    <!-- 🖼️ Results Display Portal -->
+    <!-- Search results -->
     <section class="section-results grid-container" aria-live="polite">
         <div id="search-results" class="picture-grid">
             {{ range where .Site.RegularPages "Section" "reseptit" }}
-                {{ partial "recipe-card.html" (dict "recipe" . "classes" (slice "picture-card")) }}
+                {{ partial "recipe-card.html" (dict 
+                    "Title" .Title
+                    "Permalink" .Permalink
+                    "Params" .Params
+                    "classes" (slice "picture-card")
+                    "show" (slice "image" "title")
+                ) }}
             {{ end }}
         </div>
     </section>

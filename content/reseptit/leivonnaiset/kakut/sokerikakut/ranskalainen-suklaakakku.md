@@ -32,7 +32,7 @@ kategoriat:
   - "Kakut"
   - "Sokerikakut"
 tagit: 
-  - "suklaa"
+  - "suklainen"
   - "murea"
   - "makea"
   - "juhlava jälkiruoka"
@@ -102,21 +102,13 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 180°C (*tasalämpö*). Vuoraa irtopohjavuoan pohja leivinpaperilla ja voitele reunat huolellisesti.
-
 2. **Taikina:** Vaahdota kananmunat ja sokeri 5 min, kunnes vaahto on vaaleaa ja kuohkeaa.
-
 3. Sulata voi ja suklaa mikrossa 30 s jaksoissa sekoittaen jokaisen välissä. Lisää kuuma kahvi suklaa-voisulaan.
-
 4. Siivilöi vehnäjauho ja kaakaojauhe erilliseen kulhoon.
-
 5. Sekoita suklaaseos matalalla nopeudella munavaahtoon. Lisää kuivat aineet kolmessa erässä kevyesti sekoittaen. Nuole kulho erien välissä, varmistaen että seoksesta tulee tasainen.
-
 6. Kaada taikina vuokaan ja tasoita pinta. Paista 35-40 min, kunnes tikku tulee puhtaana ulos 5 cm reunasta (*keskiosan pitäisi vielä olla hieman pehmeää*). Jäähdytä täysin.
-
 7. **Kuorrute:** Sulata voi ja suklaa, lisää hunaja, ja sekoita tasaiseksi. Jäähdytä kunnes tihenee.
-
 8. Kaada kuorrute kakun päälle ja jäähdytä huoneenlämmössä noin 1 t.
-
 9. Leikkaa paloiksi ja tarjoile; tai jäähdytä ja pakasta.
 {{</ instructions >}}
 

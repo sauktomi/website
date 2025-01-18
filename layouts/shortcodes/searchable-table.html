@@ -1,0 +1,11 @@
+<div class="searchable-table-container">
+    <div class="table-controls">
+      <div class="search-wrapper">
+        <input type="text" class="table-search" placeholder="Etsi...">
+      </div>
+      <select class="table-filter">
+        <option value="all">Kaikki kategoriat</option>
+      </select>
+    </div>
+    {{ .Inner | markdownify }}
+  </div>

@@ -1,4 +1,3 @@
 ---
-title: "Makeat Herkut"
-featured_image: "images/CalculatorSearch.jpeg"
+title: "Makeat herkut"
 ---

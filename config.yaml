@@ -30,7 +30,7 @@ menu:
 
 outputs:
   home: ["HTML", "RSS"]
-  page: ["HTML", "PDF", "Print", "SearchIndex"]
+  page: ["HTML", "Print", "SearchIndex"]
   section: ["HTML", "RSS", "SearchIndex"]
   taxonomy: ["HTML", "RSS"]
   term: ["HTML", "RSS"]
@@ -50,10 +50,10 @@ outputFormats:
 
 mediaTypes:
   application/json:
-    suffixes: ['json']    
+    suffixes: ['json']
 
 params:
-  description: "Oman maun reseptejä"
+  description: "Oman maun kevyitä, suolaisia sekä hellän makeita reseptejä."
   author: "Tomi Saukkonen"
   logo: "/images/logo.png"
   dateFormat: "2. January 2006"

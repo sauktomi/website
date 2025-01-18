@@ -105,19 +105,12 @@ schema:
 {{< instructions >}}
 
 1. Esilämmitä uuni 160°C (*tasalämpö*). Voitele ja jauhota leipävuoka.
-
 2. Soseuta banaanit limemehun kanssa tasaiseksi. Pyörittele mustikat vehnäjauhossa.
-
 3. **Taikina:** Vaahdota voi, sokeri ja suola yleiskoneella kuohkeaksi 5 min. Lisää kananmunat yksitellen vaahtoon, sekoittaen hyvin jokaisen lisäyksen jälkeen.
-
 4. Seulo vehnäjauho, leivinjauhe ja ruokasooda yhteen erilliseen kulhoon.
-
 5. Lisää jauhoseos ja banaanisose vuorotellen taikinaan kolmessa erässä, sekoita kevyesti. *Älä sekoita liikaa.* Varmista nuolijalla sekoituksen onnistuminen.
-
 6. Kääntele jauhotut mustikat varovasti taikinaan. Kaada taikina vuokaan ja asettele banaaniviipaleet kauniisti leivän päälle.
-
 7. Paista uunin keskitasolla 50-55 min, kunnes leipä on kypsä ja tikku tulee puhtaana ulos. *Jos pinta tummuu liikaa, peitä foliolla.*
-
 8. Anna jäähtyä vuoassa 10 min, kumoa sitten ritilälle jäähtymään kokonaan.
 {{</ instructions >}}
 
