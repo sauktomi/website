@@ -55,7 +55,7 @@ scaling_factors: [0.66, 1, 1.66]
 default_scale: 1
 
 # SEO and Display
-featured_image: "images/CalculatorSearch.jpeg"
+featured_image: "images/kermakana.jpeg"
 keywords:
   - "kana"
   - "arkiruoka"
