@@ -103,7 +103,7 @@ schema:
 
 {{< instructions >}}
 
-1. **Yudane:** Kiehauta vesi ja sekoita se heti vehnäjauhoon tasaiseksi.
+1. **Yudane:** Kiehauta vesi ja sekoita se heti vehnäjauhoon tasaiseksi. Anna jäähtyä huoneenlämpöiseksi.
 2. **Taikina:** Yhdistä yleiskoneen kulhoon kädenlämpöinen vesi ja maito, keltuainen, hiiva, maitojauhe, sokeri, suola ja hunaja. Lisää myös (jäähtynyt) yudane ja sekoita tasaiseksi.
 3. Lisää jauhot ja sekoita löysäksi taikinaksi, jonka jälkeen vaivaa 5 min keski-alhaisella nopeudella, kunnes taikina on sileähkö ja venyvä.
 4. Lisää huoneenlämpöinen voi. Vaivaa 8-15 min keski-alhaisella nopeudella, kunnes taikina on sileä ja kimmoisa – *ikkunatestin pitäisi onnistua*.
