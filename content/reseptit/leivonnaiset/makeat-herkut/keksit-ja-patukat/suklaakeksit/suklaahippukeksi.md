@@ -82,7 +82,7 @@ schema:
 
 #### Taikina
 
-- 120 g Voi
+- 140 g Voi
 - 2 rkl Maitojauhe
 - 160 g Sokeri
 - 70 g Fariinisokeri
