@@ -26,7 +26,7 @@ kategoriat:
   - "Täytteet"
   - "Kuorrutteet"
 tagit: 
-  - "makea"
+  - "kevyenmakea"
   - "vanilja"
   - "kermainen"
 
@@ -76,7 +76,7 @@ schema:
 
 - 150g mascarpone (huoneenlämpöinen)
 - 50g kreikkalainen jogurtti
-- 30ml tavallinen sokeri
+- 30ml sokeri
 - 10ml vaniljasokeri
 - 5ml vanilliinisokeri
 - 0.625ml suola (valinnainen)
@@ -86,6 +86,6 @@ schema:
 {{< instructions >}}
 
 1. Sekoita huoneenlämpöinen mascarpone ja jogurtti.
-2. Lisää sokerit ja suola (jos käytät).
+2. Lisää sokerit (ja suola). 
 3. Vispaa kerma joukkoon vähitellen kunnes saat haluamasi koostumuksen.
 {{</ instructions >}}

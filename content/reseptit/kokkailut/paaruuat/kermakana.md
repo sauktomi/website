@@ -1,7 +1,7 @@
 ---
 # Essential Recipe Information
 title: "Kermakanapannu"
-description: "Yksinkertaisesti tehdyt mehevät kanakuutiot miedossa kermakastikkeessa"
+description: "Yksinkertaiset mehevät kanakuutiot miedossa kermakastikkeessa"
 servings: 4
 yield: "4 annosta"
 difficulty: "Helppo"
