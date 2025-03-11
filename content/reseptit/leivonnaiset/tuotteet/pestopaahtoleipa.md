@@ -1,52 +1,52 @@
 ---
 # Essential Recipe Information
-title: "Vaahdokas makea lassi"
-description: "Kevyen vaahdokas, raikkaan ilmava lassi, jossa on mieto mintun maku. 
-servings: 2
-yield: "500 ml"
+title: "Juustoinen pestopaahtoleipä"
+description: "Herkullinen ja rapea paahtoleipä pestolla, vuohenjuustolla ja pihvitomaatilla"
+servings: 8
+yield: "8 kpl"
 difficulty: "Helppo"
 
 # Time Requirements
-prep_time: "10M"
-cook_time: "3M"
-total_time: "13M"
+prep_time: "25M"
+cook_time: "15M"
+total_time: "40M"
 
 # Method and Equipment
 equipment:
-  - type: "Tehosekoitin"
-  - type: "Siivilä" (valinnainen)
-cookingMethod: "Sekoittaminen"
+  - type: "Uuni"
+  - type: "Leivinpelti"
+cookingMethod: "Uuni"
 
 # Storage Instructions
 storage:
   room_temp: "-"
-  fridge: "1 päivä"
+  fridge: "2 päivää"
   freezer: "-"
-
+  
 # Recipe Classification
 kategoriat: 
-  - "Juomat"
-  - "Jälkiruoat"
+  - "Tuotteet"
+  - "Välipalat"
 tagit: 
-  - "lassi"
-  - "minttu"
-  - "vaahdokas juoma"
-  - "kevyt" 
+  - "vuohenjuusto"
+  - "pesto"
+  - "suolainen"
+  - "välipala"
 
 # Dietary Specifications
 dietary:
   # Common Allergens
-  gluten_free: true
+  gluten_free: false
   dairy_free: false
-  nut_free: true
+  nut_free: false
   fish_free: true
 
   # Diet Types
   vegan: false
-  
+
   # Health Considerations
   low_sugar: true
-  high_protein: false
+  high_protein: true
   high_fiber: false
 
 # Recipe Scaling
@@ -54,48 +54,54 @@ scaling_factors: [0.5, 1, 2]
 default_scale: 1
 
 # SEO and Display
-featured_image: "images/minttu-lassi.jpeg"
+featured_image: "images/CalculatorSearch.jpeg"
 keywords: 
-  - "lassi"
-  - "minttu"
-  - "juoma"
-  - "jälkiruoka"
-  - "kevyt juoma"
-  - "raikas juoma"
-  - "kesä juoma" 
+  - "paahtoleipä"
+  - "vuohenjuusto"
+  - "pesto"
+  - "välipala"
+  - "uuniruoka"
 
-# Metadata and Attribution
-date: "2025-02-11"
-lastmod: "2025-02-11"
+  # Metadata and Attribution
+date: "2024-10-25"
+lastmod: "2024-11-11"
 author: 
   name: "TMS"
-draft: true
+draft: false
 
 # Schema.org Recipe Metadata
 schema:
-  recipeCategory: "Juomat"
-  cookingMethod: "Sekoittaminen"
+  recipeCategory: "Välipalat"
+  cookingMethod: "Paistaminen"
 ---
 
 {{< ingredients >}}
 
-- 1 rkl hunaja
-- 4-6 mintunlehti (tuore) (+ yksi per annos koristeluun)
-- 1/4 tl kardemummaa
-- 500 ml piimää (kylmä)
-- 1 rkl sokeri
-- 1/8 tl ksantaanikumia (0,05 % nestemäärästä)
-- Ripaus sahramia (valinnainen)
+#### Pohja
 
+- 8 kpl Paahtoleipä
+- 50 g Pesto genovese
+
+#### Juustoseos
+
+- 320 g Juustoraaste (emmental tai gouda)
+- 2 kpl Kananmuna (huoneenlämpöinen)
+
+#### Täyte
+
+- 2 kpl Pihvitomaatti (ohuiksi viipaleiksi)
+- 500 g Vuohenjuusto (viipaleina)
+- 5 ml Sitruunapippuri (rouhe)
+- 5 ml Oregano (kuivattu)
 {{</ ingredients >}}
 
 {{< instructions >}}
 
-1. **Valmistele ainesosat:** Jos hunaja on paksua, lämmitä sitä kevyesti ennen lisäämistä. Pese ja valmistele mintunlehdet.
-2. **Sekoita tehosekoittimeen:** Piimä, hunaja, kardemumma ja mintunlehdet. Sekoita keskinopeudella, kunnes mintunlehdet ovat hajonneet. (Siivilöi jos haluat varmistaa sileyden.)
-3. **Lisää Ksantaani-Sokeriseos:** Sekoita ksantaanikumi sokerin kanssa ja ripottele sekaan blenderin ollessa käynnissä.
-4. **Vaahdota:** Nosta nopeus korkealle ja sekoita 2–3 minuuttia. (Pulsaa ajoittain välttääksesi ylikuumenemisen.)
-5. **Kaada ja Koristele:** Kaada juoma laseihin ja koristele jokainen lasi yhdellä tuoreella mintunlehdellä.
+1. Esilämmitä uuni 220°C (*pohja-kiertoilma*). Vuoraa leivinpelti leivinpaperilla.
+2. **Esivalmistelut:** Sekoita juustoraaste ja kananmunat tasaiseksi seokseksi; Viipaloi tomaatit ohuiksi, tasaisiksi siivuiksi, 5 kpl per tomaatti; Leikkaa vuohenjuusto tasaisiksi viipaleiksi, 62,5g per pala.
+3. **Kokoaminen:** Voitele leipäsiivut **huolellisesti** pestolla ja levitä juustoseos niiden päälle. Seuraavaksi asettele tomaatti-, ja vuohenjuustoviipaleet leipien päälle kirjoitusjärjestyksessä, ja ripoittele sitruunapippuria jokaisen leivän päälle.
+4. Paista uunin ala-kolmannesosassa 10-12 min, kunnes juusto on sulanut ja reunat ovat kullanruskeita.
+5. Ripottele runsaasti oreganoa leipien päälle heti uunista oton jälkeen. Tarjoile välittömästi.
 
 {{</ instructions >}}
 
@@ -103,7 +109,19 @@ schema:
 
 #### Vinkkejä
 
-- Vaahdokkaampi juoma: lisää ksantaania 0.1 prosentiin. 
-- Vähennä vaahdokkuutta: vähennä ksantaania jopa ~0,03 prosentiin. 
+- Viipaloi tomaatit ja vuohenjuusto tasaisiksi, jotta ne kypsyvät tasaisesti
+- Tarjoile heti paiston jälkeen, kun juusto on vielä pehmeää
 
+### Ainesosien määrät eri kokoisiin annoksiin
+
+- 4 annosta: 160 g juustoraastetta ja 1 kananmuna
+- 6 annosta: 240 g juustoraastetta ja 1 kananmuna
+- 8 annosta: 320 g juustoraastetta ja 2 kananmunaa
+
+#### Versioita
+
+- **Basilika**: Korvaa kuivattu oregano tuoreella basilikalla
+- **Balsamico**: Viimeistele balsamicosiirapilla; Lisää paahdettuja pinjansiemeniä
+- **Rucola**: Lisää rucolaa paiston jälkeen; Viimeistele oliiviöljyllä
+- **Paprika**: Korvaa tomaatit grillatulla paprikalla; Mausta paprikajauhella
 {{</ notes >}}
