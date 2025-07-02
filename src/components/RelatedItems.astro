@@ -1,0 +1,75 @@
+---
+/*
+* RelatedItems component
+* Displays related items within the same category
+* Usage:
+* <RelatedItems 
+*   currentItem="Vehnäjauho" 
+*   category="Jauhot" 
+*   items={[{title: "Täysjyvävehnäjauho", slug: "jauhot#täysjyvävehnäjauho"}, ...]} 
+*   displayCount={3} 
+* />
+*/
+
+interface RelatedItem {
+  title: string;
+  slug: string;
+  description?: string;
+}
+
+interface Props {
+  currentItem: string;
+  category: string;
+  items: RelatedItem[];
+  displayCount?: number;
+  showImages?: boolean;
+}
+
+const { 
+  currentItem, 
+  category, 
+  items, 
+  displayCount = 3, 
+  showImages = false 
+} = Astro.props;
+
+// Filter out the current item and limit the number of items to display
+const filteredItems = items
+  .filter(item => item.title !== currentItem)
+  .slice(0, displayCount);
+---
+
+{filteredItems.length > 0 && (
+  <div class="related-items mt-6 p-4 border border-gray-200 rounded-lg bg-gray-50">
+    <h3 class="text-lg font-medium mb-3">Muita {category} kategorian kohteita</h3>
+    
+    <div class="related-items-container grid gap-3">
+      {filteredItems.map(item => (
+        <a href={`/hakemisto#${item.slug}`} class="related-item flex items-start p-2 hover:bg-gray-50 rounded transition-colors">
+          {showImages && (
+            <div class="related-item-image w-16 h-16 mr-3 bg-gray-200 rounded overflow-hidden flex-shrink-0">
+              <div class="w-full h-full flex items-center justify-center text-gray-400">
+                <span class="text-xs">Kuva</span>
+              </div>
+            </div>
+          )}
+          
+          <div class="related-item-content">
+            <h4 class="font-medium text-blue-600 hover:underline">{item.title}</h4>
+            {item.description && (
+              <p class="text-sm text-gray-600 line-clamp-2">{item.description}</p>
+            )}
+          </div>
+        </a>
+      ))}
+    </div>
+    
+    {items.length > displayCount && (
+      <div class="mt-3 text-right">
+        <a href={`/hakemisto?filter=${category.toLowerCase()}`} class="text-sm text-blue-600 hover:underline">
+          Näytä kaikki {items.length} kohdetta
+        </a>
+      </div>
+    )}
+  </div>
+)} 

@@ -1,0 +1,470 @@
+---
+// src/pages/reseptit/[...slug].astro
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShareButton from '../../components/ShareButton.astro';
+import { enhanceRecipeData, createRecipeNumberRegistry, setRecipeNumberRegistry, getRecipeByNumber, type EnhancedRecipeData } from '../../utils/ruoanlaitto-data.ts';
+
+export async function getStaticPaths() {
+  const reseptit = await getCollection('Reseptit');
+  
+  // Create and set the recipe number registry for global access (needed for UI display)
+  const numberRegistry = createRecipeNumberRegistry(reseptit);
+  setRecipeNumberRegistry(numberRegistry);
+  
+  // Process all recipes with enhanced data at build time
+  const enhancedRecipes = await Promise.all(
+    reseptit.map(async (entry) => {
+      const enhancedData = await enhanceRecipeData(entry);
+      return {
+        entry,
+        enhancedData,
+      };
+    })
+  );
+  
+  const paths: Array<{ params: { slug: string }; props: { enhancedData: EnhancedRecipeData } }> = [];
+  
+  enhancedRecipes.forEach(({ entry, enhancedData }) => {
+    // Extract base slug without category
+    const baseSlug = entry.slug.includes('/') ? entry.slug.split('/').pop() || entry.slug : entry.slug;
+    
+    // Only add the canonical slug-based route
+    // Number-based URLs will be handled by middleware redirects
+    paths.push({
+      params: { slug: baseSlug },
+      props: { enhancedData },
+    });
+  });
+  
+  return paths;
+}
+
+const { enhancedData }: { enhancedData: EnhancedRecipeData } = Astro.props;
+
+// All data is now pre-processed and ready to use
+const {
+  title,
+  tags,
+  cuisine,
+  category,
+  annokset,
+  säilyvyys,
+  luotu,
+  muokattu,
+  nutrient_profile,
+  season,
+  occasion,
+  techniques,
+  dietary,
+  cost_level,
+  flavor_profile,
+  equipment,
+  mise_en_place,
+  image,
+  description,
+  processedTime,
+  formattedTime,
+  difficulty,
+  author,
+  extractedHeadings,
+  groupedHeadings,
+  instructionSections,
+  hasTocHeadings,
+  tocId,
+  metadataProps,
+  Content
+} = enhancedData;
+
+// For now, always enable ingredient popup for recipe pages
+// TODO: Could be optimized to detect ingredient links at build time
+const hasIngredientLinks = true;
+
+// Define mobile buttons for recipe pages
+const mobileButtons = [
+  {
+    id: "kitchen-timer",
+    ariaLabel: "Keittiöajastin",
+    title: "Keittiöajastin",
+    svgContent: `<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>`,
+  },
+  {
+    id: "step-progress",
+    ariaLabel: "Reseptin edistyminen",
+    title: "Reseptin edistyminen", 
+    svgContent: `<span id="progress-fraction-mobile" class="text-xs font-bold">0/0</span>`,
+  }
+];
+---
+
+<BaseLayout title={title} tocHeadings={groupedHeadings} needsIngredientPopup={hasIngredientLinks} needsWikiLinks={true} mobileButtons={mobileButtons}>
+  <!-- Add canonical URL for SEO -->
+  <link slot="head" rel="canonical" href={enhancedData.canonicalUrl} />
+
+  <div class="main-grid">
+    <div class="content-grid">      
+      <!-- Sidebar -->
+      <aside id="recipe-sidebar" class="content-sidebar hidden lg:block">
+        <div class="sticky top-4 recipe-sidebar">
+          <div class="sidebar-card sidebar-navigation">
+            <h4 class="sidebar-card-header">Pikasiirtymä</h4>
+            <div class="sidebar-card-content">
+              <ul>
+                {groupedHeadings.map((heading) => (
+                  <li>
+                    <a href={`#${heading.id}`}>
+                      {heading.text}
+                    </a>
+                    {/* Add specific links after "valmistus" heading */}
+                    {heading.text.toLowerCase().includes('valmistus') && (
+                      <ul class="ml-4 mt-2 space-y-1">
+                        <li>
+                          <a href="#ainekset" class="text-sm text-gray-600 hover:text-blue-600">
+                            → Ainekset
+                          </a>
+                        </li>
+                        <li>
+                          <a href="#ohje" class="text-sm text-gray-600 hover:text-blue-600">
+                            → Ohje
+                          </a>
+                        </li>
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+          
+          <!-- Desktop progress display in sidebar -->
+          {instructionSections.length > 0 && (
+            <div id="sidebar-progress" class="sidebar-card">
+              <h4 class="sidebar-card-header">
+                <span id="sidebar-progress-label">Valmistusosiot</span>
+              </h4>
+              <div class="sidebar-card-content">
+                <div id="sidebar-progress-list" class="max-h-60 overflow-y-auto space-y-2">
+                  {instructionSections.map((section, index) => (
+                    <a 
+                      href={`#${section.id}`} 
+                      class="section-progress-item flex items-center gap-3 p-2 rounded-lg transition-colors duration-200 no-underline border-none"
+                      data-section-index={index}
+                    >
+                      <div class="section-progress-indicator w-5 h-5 rounded-full flex items-center justify-center text-xs font-bold bg-gray-300 text-gray-600">
+                        {index + 1}
+                      </div>
+                      <span class="section-progress-title text-sm text-gray-700">{section.text}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {instructionSections.length === 0 && (
+            <div id="sidebar-progress" class="sidebar-card hidden">
+              <h4 class="sidebar-card-header">
+                <span id="sidebar-progress-label">Askeleet</span>
+              </h4>
+              <div class="sidebar-card-content">
+                <div id="sidebar-progress-list" class="max-h-60 overflow-y-auto space-y-2">
+                  <!-- Step progress will be populated here for recipes without sections -->
+                </div>
+              </div>
+            </div>
+          )}
+          
+          {mise_en_place && mise_en_place.length > 0 && (
+            <div id="mise-en-place" class="sidebar-card">
+              <h4 class="sidebar-card-header">Mise en place</h4>
+              <div id="mise-content" class="sidebar-card-content">
+                <p>Valmistele ainekset ja välineet.</p>
+              </div>
+            </div>
+          )}
+          
+          <!-- Enhanced desktop timer interface -->
+          <div class="hidden lg:block sidebar-card">
+            <h4 class="sidebar-card-header">Keittiöajastin</h4>
+            
+            <div class="sidebar-card-content">
+              <!-- Timer display/input -->
+              <div class="flex items-center justify-center gap-1 mb-4">
+                <input id="timer-minutes-input-desktop" type="number" min="0" max="999" value="5" class="w-12 text-2xl font-mono font-bold text-center bg-transparent border-none rounded text-[var(--color-accent)] focus:outline-none focus:bg-[var(--color-background)] focus:border-[var(--color-accent)]">
+                <span class="text-2xl font-mono font-bold text-[var(--color-accent)]">:</span>
+                <input id="timer-seconds-input-desktop" type="number" min="0" max="59" value="00" class="w-12 text-2xl font-mono font-bold text-center bg-transparent border-none rounded text-[var(--color-accent)] focus:outline-none focus:bg-[var(--color-background)] focus:border-[var(--color-accent)]">
+              </div>
+              
+              <!-- Timer controls -->
+              <div class="flex gap-2 justify-center items-center">
+                <button id="start-timer-desktop" class="flex-1 bg-gray-50 border border-gray-200 text-gray-900 rounded py-2 px-3 hover:bg-gray-100 flex items-center justify-center transition-colors text-xs" title="Käynnistä ajastin">
+                  <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z"/>
+                  </svg>
+                  Käynnistä
+                </button>
+                <button id="pause-timer-desktop" class="flex-1 bg-gray-50 border border-gray-200 text-gray-900 rounded py-2 px-3 hover:bg-gray-100 flex items-center justify-center transition-colors text-xs" title="Pysäytä ajastin" style="display: none;">
+                  <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+                  </svg>
+                  Pysäytä
+                </button>
+                <button id="reset-timer-desktop" class="w-10 h-10 bg-gray-50 border border-gray-200 text-gray-900 rounded hover:bg-gray-100 flex items-center justify-center transition-colors text-xs" title="Nollaa ajastin" style="display: none;">
+                  <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Main content area -->
+      <div id="recipe-main" class="content-main">
+        <!-- Enhanced recipe header -->
+        <header class="recipe-header">
+          {enhancedData.formattedRecipeNumber && (
+            <div class="recipe-number">
+              #{enhancedData.formattedRecipeNumber}
+            </div>
+          )}
+          <h1 class="recipe-title">
+            {title}
+          </h1>
+          
+          <!-- Essential info with better spacing -->
+          <div class="recipe-essentials">
+            <div class="recipe-meta-info flex flex-wrap items-center gap-3 lg:gap-6 text-sm">
+              {processedTime && (
+                <div class="recipe-meta-item">
+                  <svg xmlns="http://www.w3.org/2000/svg" class="recipe-meta-icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  <span>
+                    {formattedTime?.totalTime || 'Ei määritelty'}
+                  </span>
+                </div>
+              )}
+              
+              {difficulty && (
+                <div class="recipe-meta-item">
+                  <span class={`font-medium ${difficulty.color}`}>{difficulty.text}</span>
+                </div>
+              )}
+              
+              {annokset && (
+                <div class="recipe-meta-item">
+                  <span>{annokset}</span>
+                </div>
+              )}
+            </div>
+            <div class="recipe-meta-actions">
+              <button onclick="window.print()" class="p-2 text-gray-600 hover:text-gray-900 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Tulosta resepti">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+              </button>
+              <ShareButton />
+            </div>
+          </div>
+          
+          <!-- Dietary information -->
+          {dietary && (Array.isArray(dietary) ? dietary.length > 0 : (dietary.type && dietary.type.length > 0)) && (
+            <div class="mt-6 md:mt-4 flex flex-wrap gap-2">
+              {Array.isArray(dietary) 
+                ? dietary.map((diet: string) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                      {diet}
+                    </span>
+                  ))
+                : dietary.type && dietary.type.map((diet: string) => (
+                    <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 border border-green-200">
+                      {diet}
+                    </span>
+                  ))
+              }
+            </div>
+          )}
+
+          <!-- Recipe description -->
+          {description && (
+            <div class="recipe-description mt-6">
+              <p class="lead">
+                {Array.isArray(description) 
+                ? description[0] 
+                : description
+                }
+              </p>
+            </div>
+          )}
+
+          <!-- Hero image with improved aspect ratio -->
+          {image && (
+            <figure class="mt-8 overflow-hidden rounded-xl bg-gray-100 shadow-lg">
+              <img 
+                src={image} 
+                alt={enhancedData.metadataProps?.imageAlt || enhancedData.metadataProps?.imageCaption || title} 
+                class="w-full h-full object-cover"
+              />
+              {enhancedData.metadataProps?.imageCaption && (
+                <figcaption class="text-sm text-gray-600 text-center px-4 pb-3">
+                  {enhancedData.metadataProps.imageCaption}
+                </figcaption>
+              )}
+            </figure>
+          )}
+        </header>
+        
+        <!-- Recipe content with enhanced typography -->
+        <div class="recipe-body">
+          <Content />
+        </div>
+        
+      </div>
+    </div>
+    
+      <!-- Contact section -->
+      <section class="py-12 lg:py-16 mt-30 -mb-20">
+        <div class="text-center">
+          <h2 class="text-3xl lg:text-4xl font-light text-gray-900 tracking-tight leading-tight mb-7">
+            Kysyttävää? Palautetta?
+          </h2>
+
+          <a href="mailto:null" class="inline-flex items-center justify-center px-8 py-4 bg-gray-900 text-white font-medium rounded-xl hover:bg-gray-800 transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg focus-enhanced text-lg touch-manipulation">
+            Ota yhteyttä
+          </a>
+          <p class="text-sm mt-8 text-gray-600 leading-relaxed mb-0 max-w-2xl mx-auto">
+            Kuvaile aiheesi selkeästi ja yksinkertaisesti, jotta varmasti saat vastauksen.
+          </p>
+        </div>
+      </section>
+
+  </div>
+
+
+  
+  <!-- Kitchen timer popup -->
+  <div id="timer-modal" class="fixed inset-0 z-50 hidden pointer-events-none">
+    <!-- Blur backdrop -->
+    <div class="absolute inset-0 backdrop-blur-sm pointer-events-auto" style="backdrop-filter: blur(2px);"></div>
+    
+    <!-- Timer popup -->
+          <div class="bg-gray-50 rounded-lg p-6 w-80 shadow-2xl border border-gray-200 pointer-events-auto absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 transition-all duration-200 scale-95 opacity-0 timer-popup relative h-fit">
+      <div class="flex items-center justify-between mb-5">
+        <h3 class="font-semibold mb-0">Keittiöajastin</h3>
+                  <button id="close-timer" class="text-gray-400 hover:text-gray-600">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+      
+      <div class="text-center">
+        <div class="flex items-center justify-center gap-3 mb-5">
+          <!-- Integrated timer display/input -->
+          <div class="flex items-center gap-2">
+            <input id="timer-minutes-input" type="number" min="0" max="999" value="5" class="w-28 text-5xl font-mono font-bold text-center bg-transparent border-none text-[var(--color-accent)] focus:outline-none focus:bg-[var(--color-accent-light)] focus:rounded">
+            <span class="text-5xl font-mono font-bold text-[var(--color-accent)]">:</span>
+            <input id="timer-seconds-input" type="number" min="0" max="59" value="00" class="w-20 text-5xl font-mono font-bold text-center bg-transparent border-none text-[var(--color-accent)] focus:outline-none focus:bg-[var(--color-accent-light)] focus:rounded">
+          </div>
+        </div>
+        
+        <div class="flex gap-2 justify-center items-center">
+          <button id="start-timer" class="w-full h-10 bg-gray-50 border border-gray-200 text-gray-900 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors" title="Käynnistä ajastin">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+          <button id="pause-timer" class="w-full h-10 bg-gray-50 border border-gray-200 text-gray-900 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors" title="Pysäytä ajastin">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+            </svg>
+          </button>
+          <button id="reset-timer" class="w-24 h-10 bg-gray-50 border border-gray-200 text-gray-900 rounded-full hover:bg-gray-100 flex items-center justify-center transition-colors" title="Nollaa ajastin">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style>
+  
+  /* Recipe number styling */
+  .recipe-number {
+    position: absolute;
+    top: -3rem;
+    left: 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-text-muted, #6b7280);
+    opacity: 0.8;
+    background: var(--color-background-muted, rgba(255, 255, 255, 0.9));
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.375rem;
+    border: 1px solid var(--color-border-light, #e5e7eb);
+  }
+  
+  /* Ensure recipe header has relative positioning for absolute child */
+  .recipe-header {
+    position: relative;
+  }
+  
+  /* Timer link styling */
+  .timer-link {
+    color: #f97316;
+    text-decoration: underline;
+    text-decoration-style: dotted;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out;
+  }
+  
+  .timer-link:hover {
+    color: #ea580c;
+    background-color: #fff7ed;
+    padding: 0 0.25rem;
+    border-radius: 0.25rem;
+  }
+  
+  /* Dark mode support for timer links */
+  html[data-theme="dark"] .timer-link {
+    color: #fb923c !important;
+  }
+  
+  html[data-theme="dark"] .timer-link:hover {
+    color: #fdba74 !important;
+    background-color: rgba(154, 52, 18, 0.2) !important;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) .timer-link {
+      color: #fb923c;
+    }
+    
+    :root:not([data-theme]) .timer-link:hover {
+      color: #fdba74;
+      background-color: rgba(154, 52, 18, 0.2);
+    }
+  }
+  
+  /* Timer button active states for site-left-sidebar */
+  .site-left-sidebar #kitchen-timer.timer-active {
+    background: rgb(249, 115, 22);
+    color: white;
+    font-weight: 500;
+  }
+</style>
+
+<!-- Modular recipe functionality -->
+<script src="/scripts/recipe-timer.js" is:inline></script>
+<script src="/scripts/info-mode-manager.js" is:inline></script>
+
+<!-- Include recipe interactions script -->
+<script src="/scripts/recipe-interactions.js" is:inline defer></script>
+

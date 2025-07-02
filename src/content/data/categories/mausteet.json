@@ -1,0 +1,1126 @@
+{
+  "category": {
+    "id": "mausteet",
+    "name": "Mausteet",
+    "subtitle": "Kattava opas mausteista, yrteistä ja maustesekoituksista",
+    "description": "Mausteet ja yrtit tuovat ruokiin syvyyttä, aromia ja persoonallisuutta. Oikeiden mausteiden tunteminen on avain onnistuneeseen maustamiseen.",
+    "propertyOrder": [
+      "Voimakkuus",
+      "Käyttökohteet",
+      "Säilyvyys"
+    ],
+    "imageUrl": "/images/ingredients/mausteet.jpg",
+    "tags": [
+      "maustaminen",
+      "aromit",
+      "yrtit"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "basilika",
+      "name": "Basilika",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskitaso, haihtuva kuumennettaessa",
+        "Käyttökohteet": "Italia, tomaattiruoat, salaatit",
+        "Säilyvyys": "Tuoreena 3-5 päivää, kuivattuna 6-12 kk"
+      },
+      "description": "Aromaattinen yrtti, joka tuo makean, anismaisen maun italialaisiin ja aasialaisiin ruokiin. Sopii erityisesti tomaattien, pastan ja peston kanssa.",
+      "production": "Basilika kukoistaa lämpimässä, aurinkoisessa ympäristössä ja on erittäin herkkä kylmyydelle. Kaupallisessa viljelyssä sitä kasvatetaan kasvihuoneissa ympäri vuoden, mutta parhaimmillaan se on kesäisin ulkona kasvatettuna. Lehdet tulisi poimia säännöllisesti ennen kukinnan alkua, jotta kasvi tuottaa jatkuvasti uusia, aromikkaita lehtiä. Basilikan eteeriset öljyt ovat voimakkaimmillaan aamupäivällä, minkä vuoksi ammattiviljelijät keräävät sadon usein aikaisin.",
+      "variants": [
+        {
+          "name": "Genovalainen basilika",
+          "description": "Klassinen, makea italialainen basilika (pesto, tomaattiruoat)"
+        },
+        {
+          "name": "Thai-basilika",
+          "description": "Anismainen, sitruunainen (thairuoat, curryt)"
+        },
+        {
+          "name": "Sitruunabasilika",
+          "description": "Voimakas sitruunan aromi (kalaruoat, salaatit)"
+        }
+      ],
+      "tips": [
+        "Lisää basilika ruokaan vasta juuri ennen tarjoilua parhaan aromin säilyttämiseksi",
+        "Revi lehdet käsin veitsellä leikkaamisen sijaan",
+        "Tuore basilika sopii paremmin kylmiin ruokiin, kuivattu kypsennettyihin"
+      ],
+      "sourcing": "Valitse mieluiten tuore basilika, jossa lehdet ovat kirkkaan vihreät, ehjät ja nuutumattomat. Hyvälaatuinen basilika tuoksuu voimakkaalle ja raikkaalle myös kosketettaessa. Voit kasvattaa basilikaa itse ikkunalaudalla ympäri vuoden. Kuivatun basilikan laatu heikkenee ajan myötä, joten valitse tuorein mahdollinen ja säilytä ilmatiiviissä astiassa valolta suojattuna.",
+      "season": {
+        "availability": "Tuoreena kesä-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Heinä-elokuu (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Oregano",
+          "id": "oregano",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi maku, kestää paremmin kuumennusta"
+        },
+        {
+          "name": "Minttu",
+          "id": "minttu",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Raikkaampi, sopii erityisesti itämaisiin ruokiin"
+        },
+        {
+          "name": "Persilja",
+          "id": "persilja",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Neutraalimpi, kestävämpi, monikäyttöisempi"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Aromaattinen, makea, hieman anismainen, sitrusmainen",
+        "texture": "Pehmeä, hieman nahkamainen lehti",
+        "taste": "Raikas, pippurinen, makea, anismainen, hieman sitrusmainen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "yrtti",
+        "välimeren keittiö",
+        "italia",
+        "thaikeittiö",
+        "pesto",
+        "tomaattiruoat"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 3
+      }
+    },
+    {
+      "id": "oregano",
+      "name": "Oregano",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Vahva, säilyy hyvin kuumennettaessa",
+        "Käyttökohteet": "Välimeren ruoat, pizzat, tomaattiruoat, liha",
+        "Säilyvyys": "Tuoreena 5-7 päivää, kuivattuna 1-2 vuotta"
+      },
+      "description": "Voimakas välimerenyrtti, joka määrittelee pizzojen ja tomaattikastikkeiden maun. Kestää hyvin kuumennusta ja sopii erityisesti liharuokiin.",
+      "production": "Oreganoa kasvatetaan pääasiassa Välimeren alueella, missä kuiva ja aurinkoinen ilmasto tuottaa vahvimmat aromit. Kasvi kuuluu minttukasvien heimoon ja sen lehdet kerätään juuri ennen kukinnan alkua, kun eteeristen öljyjen pitoisuus on korkeimmillaan. Kreikkalaista oreganoa pidetään maailman parhaana laatuna sen intensiivisen maun vuoksi. Kuivaus tapahtuu perinteisesti varjossa ilmavassa paikassa, mikä säilyttää värin ja aromin paremmin kuin koneellinen kuivaus.",
+      "variants": [
+        {
+          "name": "Kreikkalainen oregano",
+          "description": "Voimakkain maku, pidetään usein parhaana laatuna"
+        },
+        {
+          "name": "Italialainen oregano",
+          "description": "Hieman miedompi ja makeampi kuin kreikkalainen"
+        },
+        {
+          "name": "Meksikolainen oregano",
+          "description": "Sitrusmaisempi, kuuluu eri kasviperheeseen"
+        }
+      ],
+      "tips": [
+        "Kuivattu oregano on usein voimakkaampi kuin tuore, käytä sitä vähemmän",
+        "Lisää oregano aikaisessa vaiheessa ruoanlaittoa, jotta aromi ehtii kehittyä",
+        "Murskaa kuivatut oreganon lehdet sormien välissä juuri ennen käyttöä aromin vapauttamiseksi"
+      ],
+      "sourcing": "Valitse mieluiten kokonaisia kuivattuja lehtiä jauheen sijaan, sillä niissä säilyy enemmän aromia. Tuore oregano on parhaimmillaan juuri poimittuna. Kreikkalainen oregano (Origanum vulgare hirtum) on yleensä voimakkaimman makuinen. Laadukas kuivattu oregano on vihreää, ei ruskeaa, ja sen tulisi tuoksua voimakkaasti hierottaessa.",
+      "season": {
+        "availability": "Tuoreena kesä-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Heinä-elokuu (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Basilika",
+          "id": "basilika",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Pehmeämpi maku, sopii erityisesti tuoreena käytettäväksi"
+        },
+        {
+          "name": "Meirami",
+          "id": "meirami",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Miedompi, makeampi maku, oreganon sukulainen"
+        },
+        {
+          "name": "Timjami",
+          "id": "timjami",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi, sopii erityisesti liharuokiin"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Voimakas, aromaattinen, maamainen, hieman mäntyinen",
+        "texture": "Pienilehtinen, kuivattuna hauras",
+        "taste": "Lämmin, hieman karvas, maamainen, voimakas"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "välimeren keittiö",
+        "pizza",
+        "tomaattiruoat",
+        "yrtti",
+        "liharuoat"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 3,
+        "umami": 5
+      }
+    },
+    {
+      "id": "minttu",
+      "name": "Minttu",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivahva, vähenee kuumennettaessa",
+        "Käyttökohteet": "Jälkiruoat, juomat, itämaiset ruoat, lammas",
+        "Säilyvyys": "Tuoreena 7-10 päivää, kuivattuna 6-12 kk"
+      },
+      "description": "Raikas, viileä yrtti, joka tuo mentolimaisen aromin juomiin, jälkiruokiin ja Lähi-idän ruokiin. Erityisen suosittu teenä ja lammasruokien kanssa.",
+      "production": "Minttu on yksi helpoimmin kasvavista yrteistä ja leviää nopeasti juurakkonsa avulla. Se viihtii kosteassa maassa ja osittaisessa varjossa, tehden siitä täydellisen kotikasvattajille. Kaupallisessa tuotannossa minttu on monivuotinen kasvi, jota voidaan korjata useita kertoja kasvukauden aikana. Mentolin määrä lehdissä vaihtelee lajin mukaan - piparminttu sisältää eniten mentolia, kun taas viherminttu on miedompi ja sopii paremmin ruoanlaittoon. Minttu kannattaa korjata aamulla, kun kastike on haihtunut mutta lämpötila ei ole vielä noussut korkeaksi.",
+      "variants": [
+        {
+          "name": "Piparminttu",
+          "description": "Voimakkain mintun maku, käytetään usein jälkiruoissa ja juomissa"
+        },
+        {
+          "name": "Viherminttu",
+          "description": "Miedompi, makeampi, yleisin ruoanlaittoon käytetty laji"
+        },
+        {
+          "name": "Marokon minttu",
+          "description": "Erityisen aromaattinen, käytetään minttu-teessä"
+        }
+      ],
+      "tips": [
+        "Lisää minttu vasta ruoanlaiton loppuvaiheessa, jotta raikas aromi säilyy",
+        "Murskaa mintun lehdet kevyesti ennen käyttöä aromin vapauttamiseksi",
+        "Yhdistä minttu sitruunan kanssa raikkauden korostamiseksi"
+      ],
+      "sourcing": "Valitse tuore minttu, jossa on kirkkaan vihreät, ehjät lehdet ilman tummia laikkuja. Hyvälaatuinen minttu tuoksuu voimakkaasti jo ilman lehden hieromista. Minttu on helppo kasvattaa itse ikkunalaudalla tai parvekkeella, mikä takaa jatkuvan tuoreen saannin. Kuivattu minttu menettää paljon aromistaan, joten tuore on selvästi parempi vaihtoehto.",
+      "season": {
+        "availability": "Tuoreena kevät-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Kesä (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Basilika",
+          "id": "basilika",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Erilainen maku, mutta toimii myös raikkaana elementtinä"
+        },
+        {
+          "name": "Korianteri",
+          "id": "korianteri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Sopii erityisesti itämaisiin ruokiin mintun sijasta"
+        },
+        {
+          "name": "Sitruunamelissa",
+          "id": "sitruunamelissa",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Minttumainen mutta sitruunainen, sopii juomiin ja jälkiruokiin"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Raikas, viileä, mentolimainen",
+        "texture": "Pehmeät, hieman karvaiset lehdet",
+        "taste": "Viileä, raikas, hieman makea, mentolimainen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "raikas",
+        "jälkiruoat",
+        "juomat",
+        "lähi-itä",
+        "intialainen"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 1
+      }
+    },
+    {
+      "id": "persilja",
+      "name": "Persilja",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivahva, osittain säilyy kuumennettaessa",
+        "Käyttökohteet": "Keitot, kastikkeet, marinadit, koristeluun",
+        "Säilyvyys": "Tuoreena 1-2 viikkoa, kuivattuna 6-12 kk"
+      },
+      "description": "Monikäyttöinen perusyrtti, joka korostaa muiden ainesten makuja. Sopii sekä ruoanlaittoon että koristeluun - maailman käytetyin yrtti.",
+      "production": "Persilja on kaksivuotinen kasvi, mutta kaupallisesti sitä viljellään yhden vuoden ajan optimaalisen lehtikullan saamiseksi. Se kasvaa hyvin viileässä säässä ja kestää jopa lievää pakkasta, mikä mahdollistaa viljelyn pitkälle syksyyn. Persilja tarvitsee tasaisen kosteuden ja ravinteikkaan maan tuottaakseen runsaita, aromikkaita lehtiä. Kähäräpersilja kehitettiin alun perin Englannissa 1600-luvulla, kun taas silopersilja on alkuperäisempi muoto. Molemmissa on hieman erilainen aromikompositio - kähäräpersilja on usein voimakkaamman makuinen ja siksi suositumpi ruoanlaittoon.",
+      "variants": [
+        {
+          "name": "Silopersilja",
+          "description": "Litteät lehdet, mieto maku, käytetään usein koristeluun"
+        },
+        {
+          "name": "Kähäräpersilja",
+          "description": "Kippuraiset lehdet, voimakkaampi maku, soveltuu paremmin ruoanlaittoon"
+        },
+        {
+          "name": "Juuripersilja",
+          "description": "Kasvatetaan juuren vuoksi, lehtiä voidaan myös käyttää"
+        }
+      ],
+      "tips": [
+        "Lisää suurin osa persiljasta ruoanlaiton loppuvaiheessa maun säilyttämiseksi",
+        "Säilytä tuore persilja jääkaapissa kostealla paperilla käärittynä tai vedessä kuin kukkakimppu",
+        "Persiljaa voi myös pakastaa hienonnettuna jääpalamuoteissa öljyn kanssa"
+      ],
+      "sourcing": "Valitse tuore persilja, jossa on kirkkaan tai tummanvihreät, kiinteät lehdet ilman keltaisuutta tai nuutuneisuutta. Hyvälaatuinen persilja tuoksuu voimakkaasti puhtaalle ja raikkaalle. Kähäräpersilja on yleensä aromaattisempaa kuin silopersilja, mutta molemmat soveltuvat useimpiin käyttötarkoituksiin. Persilja on helppo kasvattaa itse parvekkeella tai ikkunalaudalla.",
+      "season": {
+        "availability": "Tuoreena ympäri vuoden, parhaimmillaan kevät-syksy",
+        "bestSeason": "Kesä-alkusyksy (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Korianteri",
+          "id": "korianteri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi maku, mutta samankaltainen käyttö"
+        },
+        {
+          "name": "Ruohosipuli",
+          "id": "ruohosipuli",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Miedompi, sipulimainen maku, toimii myös viimeistelyyn"
+        },
+        {
+          "name": "Basilika",
+          "id": "basilika",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Erilaiset aromit, mutta samankaltainen käyttötarkoitus"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Raikas, vihreä, hieman pippurinen",
+        "texture": "Ohut, pehmeä lehti",
+        "taste": "Raikas, vihreä, hieman pippurinen, lievästi kitkerä"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "yleisyrtti",
+        "koristelu",
+        "kastikkeet",
+        "välimeren keittiö",
+        "monikäyttöinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 3,
+        "umami": 2
+      }
+    },
+    {
+      "id": "leivinjauhe",
+      "name": "Leivinjauhe",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Ei makua, kemiallinen vaikutus",
+        "Käyttökohteet": "Leivonta, nopeat leivonnaiset",
+        "Säilyvyys": "6-12 kuukautta"
+      },
+      "description": "Kemiallinen nostatusaine, joka saa leivonnaiset kohoamaan tuottamalla hiilidioksidia. Välttämätön muffinseille, pannukakuille ja pikaleivonnaisille.",
+      "production": "Leivinjauhe on huolellisesti tasapainotettu sekoitus natriumbikarbonaattia (ruokasoodaa) ja yhtä tai useampaa happoa, kuten kalsiumfosfaattia tai natriumaluminiumfosfaattia. Kaksoisvaikutteinen leivinjauhe, joka on yleisin tyyppi, reagoi kahdesti: ensin kosteudesta ja sitten lämmöstä. Tämä tarkoittaa, että taikinan voi antaa seistä hetken ennen kypsennystä menettämättä nostovoimaa. Valmistusprosessi vaatii erityistä huolellisuutta kosteuden välttämisessä, sillä ennenaikainen aktivoituminen tekisi tuotteesta tehottoman. Laadukas leivinjauhe sisältää myös tärkkelystä, joka imee kosteutta ja estää reaktion alkamista.",
+      "variants": [
+        {
+          "name": "Kaksoisvaikutteinen leivinjauhe",
+          "description": "Toimii sekä kosteudesta että lämmöstä, yleisin tyyppi"
+        },
+        {
+          "name": "Yksinkertainen leivinjauhe",
+          "description": "Reagoi vain kosteuteen, käytettävä nopeasti"
+        }
+      ],
+      "tips": [
+        "Tarkista viimeinen käyttöpäivä - menettää tehonsa ajan myötä",
+        "Testaa teho: sekoita lusikallinen kuumaan veteen",
+        "Älä sekoita liikaa taikinaa leivinjauhe-lisäyksen jälkeen",
+        "Säilytä kuivassa, tiiviisti suljettuna"
+      ],
+      "sourcing": "Osta pieniä pakkauksia kerrallaan tuoreuden varmistamiseksi. Tarkista valmistuspäivämäärä ja valitse tuorein mahdollinen.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Ruokasooda + happo",
+          "id": "ruokasooda",
+          "forDiet": [
+            "itse tehty"
+          ],
+          "notes": "1 tl leivinjauhe = 1/4 tl ruokasoodaa + 1/2 tl viinihapokkaa"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Hajuton",
+        "texture": "Hieno valkoinen jauhe",
+        "taste": "Ei makua (oikein käytettynä)"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "leivonta",
+        "nostatus",
+        "kemiallinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 0,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "suola",
+      "name": "Suola",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Vahva, perusmaku",
+        "Käyttökohteet": "Maustaminen, säilöntä, leivonta",
+        "Säilyvyys": "Käytännössä ikuinen kuivana säilytettynä"
+      },
+      "description": "Välttämätön perusmaku, joka korostaa muiden ainesten makuja ja tekee ruoasta maukkaampaa. Käytetään maustamiseen, säilöntään ja leivontaan.",
+      "production": "Suolaa saadaan kahdella päämenetelmällä: merivedestä haihduttamalla tai louhimalla muinaisista merenpohjista muodostuneista suolakerroksista. Merisuolan tuotanto alkaa meriveden keräämisellä mataliin altaisiin, joissa aurinko ja tuuli haihduttavat veden jättäen jäljelle suolakiteet. Kaivosuola puolestaan louhitaan maanalaisista kaivoksista, missä miljoonia vuosia sitten kuivuneet meret ovat jättäneet massiivisia suolarekoksia. Merisuola sisältää luonnostaan hivenaineita kuten magnesiumia ja kalsiumia, kun taas puhdistettu pöytäsuola on lähes 100% natriumkloridia ja sisältää usein lisättyjä aineita kuten jodiumia tai kilpirauhastautien ehkäisyyn.",
+      "variants": [
+        {
+          "name": "Pöytäsuola",
+          "description": "Hienojakoinen, yleiskäyttöön"
+        },
+        {
+          "name": "Merisuola",
+          "description": "Karkea, mineraalipitoinen, viimeistelyyn"
+        },
+        {
+          "name": "Fleur de sel",
+          "description": "Hieno merisuola, viimeistelyyn ja koristeluun"
+        },
+        {
+          "name": "Himalajan suola",
+          "description": "Vaaleanpunainen, mieto mineraalinen maku"
+        }
+      ],
+      "tips": [
+        "Lisää suola vähitellen ja maista välillä",
+        "Käytä karkeaa suolaa viimeistelyyn ja hienoa ruoanlaittoon",
+        "Suolaa liha etukäteen kosteuden poistamiseksi",
+        "Säilytä kuivassa paikassa kokkareentumisen estämiseksi"
+      ],
+      "sourcing": "Valitse käyttötarkoituksen mukaan: hienojakoinen pöytäsuola yleiskäyttöön, karkea merisuola viimeistelyyn. Luonnonsuolat sisältävät enemmän hivenaineita kuin puhdistettu suola.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Soijakastike",
+          "id": "soijakastike",
+          "forDiet": [
+            "vähänatriuminen"
+          ],
+          "notes": "Tuo suolaisuutta ja umamia, mutta muuttaa makua"
+        },
+        {
+          "name": "Kelp-jauhe",
+          "id": "kelp-jauhe",
+          "forDiet": [
+            "vähänatriuminen"
+          ],
+          "notes": "Luonnollinen suolaisuus ja umami"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Hajuton tai hieman mineraalinen",
+        "texture": "Kiteinen, liukenee",
+        "taste": "Puhdas suolaisuus"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "mineraali"
+      ],
+      "tags": [
+        "perusmaku",
+        "säilöntä",
+        "maustaminen",
+        "mineraali"
+      ],
+      "flavorProfile": {
+        "sweetness": 0,
+        "saltiness": 10,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "ruokasooda",
+      "name": "Ruokasooda",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Kemiallinen vaikutus, ei makua",
+        "Käyttökohteet": "Leivonta, nostatus, puhdistus",
+        "Säilyvyys": "2-3 vuotta kuivana säilytettynä"
+      },
+      "description": "Kemiallinen nostatusaine, joka tarvitsee happoa toimiakseen. Sopii leivonnaisiin, joissa on piimää, sitruunaa tai etikkaa.",
+      "production": "Ruokasooda eli natriumbikarbonaatti valmistetaan teollisesti Solvay-prosessilla, jossa natriumkloridi (ruokasuola) reagoi ammoniakin ja hiilidioksidin kanssa tuottaen natriumbikarbonaattia. Luonnossa ruokasoodaa esiintyy mineraalina nimeltä nahkolitu, jota on louhittu tuhansia vuosia. Egyptiläiset käyttivät sitä muumioinnissa ja antiikin Rooma leivonnassa. Nykyaikainen ruokasoodan käyttö leivonnassa alkoi 1800-luvulla, kun sen kemialliset ominaisuudet ymmärrettiin paremmin. Ruokasooda on emäksinen yhdiste, joka neutraloi happoja ja tuottaa samalla hiilidioksidia, mikä saa taikinan kohoamaan. Tämän vuoksi sitä käytetään usein resepteissä, joissa on luonnollisesti happamia ainesosia.",
+      "variants": [
+        {
+          "name": "Elintarvikelaatu ruokasooda",
+          "description": "Puhdas, ruoanlaittoon tarkoitettu"
+        },
+        {
+          "name": "Tekninen ruokasooda",
+          "description": "Puhdistuskäyttöön, ei ruoanlaittoon"
+        }
+      ],
+      "tips": [
+        "Tarvitsee happoa toimiakseen (sitruunamehu, etikka, piimä)",
+        "Käytä heti sekoittamisen jälkeen - vaikutus alkaa välittömästi",
+        "Liika ruokasooda tekee ruoasta saippuamaista",
+        "Testaa tuoreus: sekoita lusikallinen etikkaan"
+      ],
+      "sourcing": "Osta elintarvikelaatua olevaa ruokasoodaa. Tarkista viimeinen käyttöpäivä, vaikka ruokasooda säilyy pitkään. Säilytä tiiviisti suljettuna kosteudelta suojattuna.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Leivinjauhe",
+          "id": "leivinjauhe",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "1 tl ruokasoodaa = 3 tl leivinjauhetta (vähennä suolaa)"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Hajuton",
+        "texture": "Hieno valkoinen jauhe",
+        "taste": "Ei makua oikein käytettynä, saippuamainen liikaa käytettynä"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "leivonta",
+        "nostatus",
+        "kemiallinen",
+        "emäksinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 0,
+        "saltiness": 1,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "mustapippuri",
+      "name": "Mustapippuri",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivoimakas - voimakas",
+        "Käyttökohteet": "Lihruoat, salaatit, marinadit, yleimauste",
+        "Säilyvyys": "Kokonaisena 2-3 vuotta, jauhettuna 1 vuosi"
+      },
+      "description": "Maailman käytetyin mauste, joka antaa ruoille terävyyttä ja syvyyttä. Sopii lähes kaikkiin suolaisiin ruokiin - 'maustekuningas'.",
+      "production": "Mustapippuri on pippuriköynnöksen (Piper nigrum) kypsymättömien hedelmien kuivattua muotoa. Köynnöstä kasvatetaan trooppisissa olosuhteissa, erityisesti Intiassa, Vietnamissa ja Indonesiassa. Pippurinmarjat kerätään vihreänä, juuri ennen kypsymistä, jolloin niiden piperiiinipitoisuus on korkeimmillaan. Auringon alla kuivatessa marjat kutistuvat ja tummuvat, muodostaen tutun ryppyisen, mustan pinnan. Sama kasvi tuottaa myös valkopippuria, joka on täysin kypsien marjojen sisäosa kuoren poistamisen jälkeen. Pippurin kauppa oli keskiajalla niin arvokasta, että sitä käytettiin maksuvälineenä ja kutsuttiin 'mustaksi kullaksi'.",
+      "variants": [
+        {
+          "name": "Kokonainen mustapippuri",
+          "description": "Säilyttää aromia parhaiten, jauhetaan käytön yhteydessä"
+        },
+        {
+          "name": "Karkeaksi jauhettu mustapippuri",
+          "description": "Voimakas maku, sopii steikeihin ja grillaukseen"
+        },
+        {
+          "name": "Hienoksi jauhettu mustapippuri",
+          "description": "Yleiskäyttöön, sekoittuu tasaisesti ruokaan"
+        }
+      ],
+      "tips": [
+        "Jauha aina juuri ennen käyttöä parhaan aromin saamiseksi",
+        "Lisää ruokaan vasta kypsennyksen lopussa jottei aromi katu",
+        "Säilytä kokonaisena viileässä, pimeässä paikassa",
+        "Paista kokonaiset pippurit kuivalla pannulla ennen jauhemista"
+      ],
+      "sourcing": "Valitse laadukas mustapippuri, joka on tasaisen mustan värinen ja tuoksuu voimakkaalta. Intian Malabar ja Tellicherry ovat arvostettuja laatuja.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Valkopippuri",
+          "id": "valkopippuri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Miedompi, ei väritä ruokaa, hienompaa makua"
+        },
+        {
+          "name": "Pippuriseos",
+          "id": "pippuriseos",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Monipuolisempi maku, sisältää eri pippurilajeja"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Terävä, lämmin, puinen",
+        "texture": "Kova marja, jauhettuna hieno",
+        "taste": "Terävä, kuuma, hieman sitruunainen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "perusmauste",
+        "terävä",
+        "lämmin",
+        "klassinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 0,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 1
+      }
+    },
+    {
+      "id": "kurkuma",
+      "name": "Kurkuma",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Mieto - keskivoimakas",
+        "Käyttökohteet": "Intialaiset currit, riisi, kasviruoat, kultamaito",
+        "Säilyvyys": "Jauheena 2-3 vuotta, tuoreena jääkaapissa 2 viikkoa"
+      },
+      "description": "Kultaisen keltainen mauste, joka antaa curreihin ja riisille kauniin värin. Mildosti maainen maku ja terveellinen kurkumiini-yhdiste.",
+      "production": "Kurkuma kuuluu samaan kasviperheeseen inkiväärin kanssa ja kasvaa trooppisessa ilmastossa pääasiassa Intiassa, Thaimaassa ja Perussa. Kasvin juurakot kerätään 7-10 kuukauden kasvukauden jälkeen, keitetään ja kuivataan auringossa ennen jauhemista. Kurkuman kultainen väri tulee kurkumiinista, joka on myös vastuussa mahdollisista terveydellisistä hyödyistä. Tuore kurkuma on yhä suositumpaa ja tarjoaa voimakkaamman aromin kuin kuivattu versio. Kurkuma värjää helposti kaiken mitä se koskettaa, minkä vuoksi sitä on käytetty tekstiilien värjäyksessä ja kosmetiikassa jo tuhansia vuosia. Aasiassa kurkumaa arvostetaan niin ruokavärjäyksessä kuin perinteisissä lääkinnällisissäkin tarkoituksissa.",
+      "variants": [
+        {
+          "name": "Kurkumajauhe",
+          "description": "Yleisin muoto, helppo käyttää ja säilyttää"
+        },
+        {
+          "name": "Tuore kurkuma",
+          "description": "Voimakkaampi maku, värikäs, kuoritaan kuten inkivääri"
+        },
+        {
+          "name": "Kurkumapasta",
+          "description": "Tuoreesta kurkumasta valmistettu pasta"
+        }
+      ],
+      "tips": [
+        "Lämmitä öljyssä ennen muiden ainesten lisäämistä aktivoidaksesi kurkumiinin",
+        "Yhdistä mustan pippurin kanssa paremman imeytymisen saamiseksi",
+        "Värjää ruoan lisäksi kädet ja astiat - käytä hanskoja",
+        "Lisää riisiin kauniin kultaisen värin saamiseksi"
+      ],
+      "sourcing": "Valitse kirkkaan kultainen kurkumajauhe, joka ei ole haalistunut. Tuore kurkuma löytyy aasialaisista elintarvikeliikkeistä - valitse kiinteät, sileäpintaiset juuret.",
+      "season": {
+        "availability": "Ympäri vuoden (jauhe), talvella paremmin tuoretta",
+        "bestSeason": "Talvi (tuore kurkuma)"
+      },
+      "alternatives": [
+        {
+          "name": "Sahrami",
+          "id": "sahrami",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Kalliimpi, hienovaraisempi maku, antaa kultaisen värin"
+        },
+        {
+          "name": "Curry-mausteseos",
+          "id": "curry-mausteseos",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Sisältää kurkumaa plus muita mausteita"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Maainen, lämmin, hieman sitruunainen",
+        "texture": "Hieno jauhe tai tuore juuri",
+        "taste": "Mieto, maainen, hieman kitkerä"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "terveellinen"
+      ],
+      "tags": [
+        "kultainen väri",
+        "kurkumiini",
+        "curry",
+        "terveellinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 3,
+        "umami": 1
+      }
+    },
+    {
+      "id": "juustokumina",
+      "name": "Juustokumina",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivoimakas",
+        "Käyttökohteet": "Meksikolainen, intialainen, marokkolainen ruoka",
+        "Säilyvyys": "Kokonaisena 3 vuotta, jauhettuna 1-2 vuotta"
+      },
+      "description": "Lämmin, maainen mauste, joka on curreiden ja meksikolaisten ruokien perusta. Pähkinäinen aromi sopii erinomaisesti papujen kanssa.",
+      "production": "Kumina kuuluu sarjakukkaisten heimoon ja kasvaa parhaiten kuivassa, kuumassa ilmastossa. Suurimmat tuottajat ovat Intia, Syyria ja Iran, joissa kumin on ollut tärkeä mauste jo muinaisista ajoista lähtien. Kuminan siemenet kehittyvät pienissä sarjakukissa ja kerätään käsin kun ne ovat kypsyessään muuttuneet ruskeiksi. Kuivaus tapahtuu perinteisesti auringossa, mikä kehittää ja vahvistaa kuminan tunnusomaisen maaisen, pähkinäisen aromin. Arkeologiset löydöt osoittavat, että kuminaa käytettiin jo muinaisessa Egyptissä ja Mesopotamiassa sekä ruoanlaitossa että sairaanhoidossa. Kumin on edelleen yksi maailman tärkeimmistä mausteista ja sen siemenet ovat oleellinen osa lukemattomia perinteisiä maustasekoituksia curry-jauheesta garam masalaan.",
+      "variants": [
+        {
+          "name": "Kokonaiset kuminansiemenet",
+          "description": "Säilyttää aromia parhaiten, voidaan paistaa kuivalla pannulla"
+        },
+        {
+          "name": "Jauhettu kumina",
+          "description": "Helppokäyttöinen, sekoittuu tasaisesti"
+        },
+        {
+          "name": "Paahdettukumina",
+          "description": "Syvempi, rikkaampi maku"
+        }
+      ],
+      "tips": [
+        "Paista kokonaisia siemeniä kuivalla pannulla ennen jauhemista",
+        "Lisää jauheliharuokiin syvyyttä ja lämpöä",
+        "Sopii erinomaisesti papuruokien kanssa",
+        "Jauha itse paremman aromin saamiseksi"
+      ],
+      "sourcing": "Valitse kokonaiset siemenet, jotka ovat tasaisen ruskeita ja tuoksuvat voimakkaalta. Intialaiset ja meksikolaiset elintarvikeliikkeet tarjoavat usein laadukasta kuminaa.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Korianterinsiemenet",
+          "id": "korianterinsiemenet",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Hieman sitruunainen, miedompi maku"
+        },
+        {
+          "name": "Kardemumma",
+          "id": "kardemumma",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Makeampi, aromaattisempi"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Lämmin, maainen, pähkinäinen",
+        "texture": "Pienet soikeat siemenet",
+        "taste": "Lämmin, hieman kurkistava, pähkinäinen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "lämmin",
+        "maainen",
+        "meksikolainen",
+        "intialainen"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 2,
+        "umami": 2
+      }
+    },
+    {
+      "id": "kaneli",
+      "name": "Kaneli",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivoimakas",
+        "Käyttökohteet": "Leivonta, jälkiruoat, kuumat juomat, aamupuuro",
+        "Säilyvyys": "Tankona 4 vuotta, jauhettuna 2-3 vuotta"
+      },
+      "description": "Makea, lämmin mauste joka määrittelee joululeivonnaisten ja kuumien juomien maun. Yksi maailman vanhimmista ja arvostetuimmista mausteista.",
+      "production": "Kaneli saadaan ikivihreistä kanelipuista, jotka kasvavat trooppisessa ilmastossa Sri Lankassa, Etelä-Intiassa ja Myanmarissa. Ceylon-kaneli (Cinnamomum verum) on 'aitoa' kanelia, kun taas yleisemmin käytetty Cassia-kaneli (Cinnamomum cassia) kasvaa Kiinassa ja Kaakkois-Aasiassa. Kanelin valmistus vaatii erityistaitoa: nuoret oksat leikataan sadekauden aikana, kun kosteus tekee kuoren irrottamisen helpommaksi. Ulkokuori kaavitaan pois ja sisäkuori leikataan pitkiksi kaistoiksi, jotka kuivuessaan käpristyvät luontaisesti tutuiksi kanelitangoiksi. Ceylon-kaneli on miedompi ja hienompi makuinen, kun taas Cassia on voimakkaampi ja sisältää enemmän kumariiinia. Kaneli oli aikoinaan niin arvokasta, että se oli yksi syy eurooppalaisten löytömatkoille.",
+      "variants": [
+        {
+          "name": "Ceylon kaneli",
+          "description": "Aito kaneli, hienostunut makea maku, ohut kuori"
+        },
+        {
+          "name": "Cassia kaneli",
+          "description": "Voimakkaampi maku, tavallisempi ja edullisempi"
+        },
+        {
+          "name": "Kanelitangot",
+          "description": "Kokonaiset kuorenpalat, sopii haudutukseen"
+        },
+        {
+          "name": "Kanelijauhe",
+          "description": "Yleisin muoto, helppo sekoittaa leivonnaisiin"
+        }
+      ],
+      "tips": [
+        "Ceylon kaneli on miedompi ja hienostuneempi kuin Cassia",
+        "Lisää kanelitanko kuumaan juomaan tai omenasoseen mausteen vuoksi",
+        "Säilytä ilmatiiviissä astiassa aromin säilyttämiseksi",
+        "Jauha tangot itse tuoreemman maun saamiseksi"
+      ],
+      "sourcing": "Ceylon kaneli on kalliimpaa mutta hienompaa makua. Cassia kaneli on tavallisempi ja sopii useimpiin tarkoituksiin. Tarkista alkuperä pakkauksesta.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Talvi (kuumat juomat ja leivonta)"
+      },
+      "alternatives": [
+        {
+          "name": "Kardemumma",
+          "id": "kardemumma",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Aromaattisempi, vähemmän makea"
+        },
+        {
+          "name": "Neilikka",
+          "id": "neilikka",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi, käytä vähemmän"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Makea, lämmin, kukkava",
+        "texture": "Ohut kuorenpala tai hieno jauhe",
+        "taste": "Makea, lämmin, hieman polttava"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "makea",
+        "lämmin",
+        "leivonta",
+        "klassinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 6,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 0
+      }
+    },
+    {
+      "id": "inkivaari",
+      "name": "Inkivääri",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivoimakas - voimakas",
+        "Käyttökohteet": "Aasialaiset ruoat, leivonta, juomat, marinadit",
+        "Säilyvyys": "Tuoreena 1-2 viikkoa, jauheena 2-3 vuotta"
+      },
+      "description": "Terävä, lämmittävä juuri joka on aasialaisen keittiön perusta. Sopii sekä suolaisiin ruokiin että piparkakkuihin. Tunnettu terveellisistä ominaisuuksistaan.",
+      "production": "Inkivääri (Zingiber officinale) on trooppinen juurakkokas, jota on viljelty Aasiassa yli 5000 vuotta. Suurimmat tuottajat nykyään ovat Intia, Kiina, Nepal ja Thaimaa, joissa ilmasto-olosuhteet ovat optimaaliset inkiväärin kasvulle. Inkivääri tarvitsee lämpöä, kosteutta ja hyvin vettä läpäisevää maata. Juurakot ovat valmiit korjattaviksi 8-12 kuukauden kuluttua istutuksesta. Nuori inkivääri on vähemmän kuituista ja miedompi makuinen, kun taas kypsempi inkivääri on terävämpää ja kuituisampaa. Inkiväärin terävä maku tulee gingeroleista ja shogaoleista, jotka ovat myös vastuussa sen mahdollisista terveydellisistä vaikutuksista. Kuivaamisprosessissa osa gingeroleista muuttuu shagooleiksi, mikä tekee kuivatusta inkiväärinjauheesta erilaisen makuisen kuin tuoreesta.",
+      "variants": [
+        {
+          "name": "Tuore inkivääri",
+          "description": "Raikas, terävä maku, kuoritaan ennen käyttöä"
+        },
+        {
+          "name": "Inkiväärijauhe",
+          "description": "Keskitetty maku, sopii leivontaan"
+        },
+        {
+          "name": "Säilötty inkivääri",
+          "description": "Makea-hapan, japanilaista tyyliä"
+        },
+        {
+          "name": "Kuivattu inkivääri",
+          "description": "Voimakkaampi maku kuin tuore"
+        }
+      ],
+      "tips": [
+        "Kuori inkivääri lusikalla, ei veitsellä - säästää enemmän lihaa",
+        "Jäädytä tuore inkivääri helpottamaan raastamista",
+        "Lisää inkivääriä taikinaan makeuttamaan ja lämmittämään",
+        "Tuore inkivääri säilyy jääkaapissa 2-3 viikkoa"
+      ],
+      "sourcing": "Valitse kiinteä, sileäpintainen inkivääri ilman ryppyjä. Tuore inkivääri löytyy useimmista ruokakaupoista, nuori inkivääri aasialaisista liikkeistä.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Syksy-talvi (tuoretta, nuorta)"
+      },
+      "alternatives": [
+        {
+          "name": "Galanga",
+          "id": "galanga",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Thaimaalainen vaihtoehto, miedompi maku"
+        },
+        {
+          "name": "Kurkuma",
+          "id": "kurkuma",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Samaa sukua, mutta erilainen maku"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Terävä, lämmin, sitruunainen",
+        "texture": "Kuituinen juuri, jauheena hieno",
+        "taste": "Terävä, polttava, lämmin"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "terveellinen"
+      ],
+      "tags": [
+        "aasialainen",
+        "terävä",
+        "lämmittävä",
+        "leivonta"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 1
+      }
+    },
+    {
+      "id": "neilikka",
+      "name": "Neilikka",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Erittäin voimakas",
+        "Käyttökohteet": "Leivonta, glögi, liharuoat, juurekset",
+        "Säilyvyys": "Kokonaisena 4-5 vuotta, jauhettuna 2-3 vuotta"
+      },
+      "description": "Intensiivisen aromaattinen 'joulumausteenauste' joka antaa glögille ja piparkakkuihin tunnusomaisen maun. Vähän riittää pitkälle.",
+      "production": "Neilikka on trooppisen neilikknapuun (Syzygium aromaticum) kukkavarsien kuivattua muotoa. Suurin osa maailman neilikkatuotannosta tulee Zanzibarilta, Madagaskarilta ja Indonesiasta, missä neilikknapuja on kasvatettu satoja vuosia. Neilikkanapit kerätään käsin juuri ennen kukkien aukeamista, kun kukkavarressa olevien eteeristen öljyjen pitoisuus on korkeimmillaan. Keruutyö vaatii tarkkuutta ja kokemusta, sillä oikea hetki on kriittinen aromin kannalta. Kuivaus tapahtuu auringossa tai matalassa lämpötilassa, kunnes napit muuttuvat ruskeiksi ja koviksi. Laadukas neilikka sisältää runsaasti eugenolia, joka antaa sille tunnusomaisen voimakkaan, hieman nukuttavan aromin. Neilikka oli keskiajalla niin arvokasta, että yhtä naulaa neilikkaa vaihdettiin yhtä lampaan arvoon.",
+      "variants": [
+        {
+          "name": "Kokonainen neilikka",
+          "description": "Säilyttää aromia parhaiten, voidaan poistaa ruoasta"
+        },
+        {
+          "name": "Jauhettu neilikka",
+          "description": "Helppokäyttöinen leivontaan"
+        }
+      ],
+      "tips": [
+        "Käytä säästeliäästi - liika neilikka tekee ruoasta karvasta",
+        "Työnnä kokonaisia neilikkanappeja sipuliin tai appelsiiniin",
+        "Paista kuivalla pannulla ennen jauhemista aromien aktivoimiseksi",
+        "Poista kokonaiset neilkat ennen tarjoilua"
+      ],
+      "sourcing": "Valitse kokonaiset neilkat, jotka ovat tummanruskeita ja tuoksuvat voimakkaalta. Laadukas neilikka jättää öljyä, kun sitä puristetaan kynnellä.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Talvi (kuumat juomat ja leivonta)"
+      },
+      "alternatives": [
+        {
+          "name": "Kaneli",
+          "id": "kaneli",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Miedompi, makeampi maku"
+        },
+        {
+          "name": "Maustepippuri",
+          "id": "maustepippuri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Sisältää neilikankaltaista makua"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Erittäin voimakas, makea, lämmin",
+        "texture": "Kova nappi, jauheena hieno",
+        "taste": "Voimakas, makea, hieman kirpakka"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "voimakas",
+        "lämmin",
+        "leivonta",
+        "joulumausteita"
+      ],
+      "flavorProfile": {
+        "sweetness": 5,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 2,
+        "umami": 1
+      }
+    },
+    {
+      "id": "kardemumma",
+      "name": "Kardemumma",
+      "category": "mausteet",
+      "properties": {
+        "Voimakkuus": "Keskivoimakas",
+        "Käyttökohteet": "Kahvi, leivonta, intialaiset ruoat, jälkiruoat",
+        "Säilyvyys": "Koko palloina 3-4 vuotta, siemeninä 2 vuotta, jauhettuna 1 vuosi"
+      },
+      "description": "'Maustekuningatar' - aromaattinen, kallis mauste joka antaa kahville ja leivonnaisille hienostuneen sitrusmaisen aromin. Skandinaavinen ja intialainen perusmauste.",
+      "production": "Kardemumma kasvaa trooppisissa sademetsäolosuhteissa Länsi-Ghatin vuoristossa Etelä-Intiassa ja Sri Lankassa, missä sitä on viljelty villiajoista asti. Kasvi kuuluu inkiväärikasvien heimoon ja tuottaa pieniä vihreitä kapseleita, jotka sisältävät mustat, aromaattiset siemenet. Kardemumman kerääminen on työvaltaista, sillä kapselit täytyy poimia käsin juuri ennen täyttä kypsyyttä, jotta niiden vihreä väri ja optimaalinen aromipitoisuus säilyvät. Yksi kasvi tuottaa vain noin 50-100 grammaa kardemummaa vuodessa, mikä tekee siitä maailman kolmanneksi kalleimmasta maustetta sahramin ja vaniljan jälkeen. Kaupallisesti tuotetaan myös mustaa kardemummaa (Amomum subulatum), joka on suurempaa ja savuisemman makuista, mutta se ei ole samaa lajia kuin vihreä kardemumma.",
+      "variants": [
+        {
+          "name": "Vihreä kardemumma",
+          "description": "Yleisin, hienostunut maku"
+        },
+        {
+          "name": "Musta kardemumma",
+          "description": "Voimakkaampi, savuinen maku"
+        },
+        {
+          "name": "Valkoinen kardemumma",
+          "description": "Valkaisu vihreästä, miedompi maku"
+        },
+        {
+          "name": "Kardemummasiemenet",
+          "description": "Kuoresta poistetut siemenet"
+        }
+      ],
+      "tips": [
+        "Jauha siemenet vasta käyttöhetkellä parhaan aromin saamiseksi",
+        "Riko pallo auki ja käytä vain sisällä olevat siemenet",
+        "Lisää kokonaisia palloja kiehuvaan maitoon tai kahviin",
+        "Paista palloja kuivalla pannulla ennen murskaamista"
+      ],
+      "sourcing": "Valitse vihreät, kiinteät kardemummapallot. Vältä kellastuneita tai kuivia palloja. Intialaiset elintarvikeliikkeet tarjoavat usein tuoreinta kardemummaa.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Kaneli + inkivääri",
+          "id": "kaneli",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Yhdistelmä voi korvata osittain kardemummaa"
+        },
+        {
+          "name": "Korianterinsiemenet",
+          "id": "korianterinsiemenet",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Hieman sitruunainen, mutta erilainen maku"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Aromaattinen, makea, sitruunainen",
+        "texture": "Kova pallo, sisällä pienet siemenet",
+        "taste": "Makea, aromaattinen, hieman sitruunainen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "aromaattinen",
+        "kallis",
+        "intialainen",
+        "skandinaavinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 4,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 1
+      }
+    }
+  ]
+}

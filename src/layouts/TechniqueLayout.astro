@@ -1,0 +1,227 @@
+---
+// src/layouts/TechniqueLayout.astro
+import BaseLayout from './BaseLayout.astro';
+
+const { frontmatter } = Astro.props;
+const { title, description, difficulty, category, time, related } = frontmatter;
+---
+
+<BaseLayout title={title} metaDescription={description || `Tekniikka: ${title}`} needsIngredientPopup={true} needsWikiLinks={true}>
+  <div class="max-w-6xl mx-auto">
+    <header class="mb-8">
+      <nav class="mb-4">
+        <a href="/hakemisto?filter=tekniikat" class="text-[var(--color-accent)] hover:underline text-sm font-medium">← Kaikki tekniikat</a>
+      </nav>
+    </header>
+    
+    <article class="prose max-w-none">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-8">
+          <slot />
+        </div>
+        
+        <div class="md:col-span-4">
+          <div class="bg-[var(--color-background)] border border-[var(--color-border)] rounded-md p-6 sticky top-8">
+            <h3 class="text-lg font-medium mb-4">Tekniikan tiedot</h3>
+            
+            <div class="space-y-4">
+              {difficulty && (
+                <div>
+                  <p class="text-sm text-[var(--color-text-muted)] mb-1">Vaikeustaso</p>
+                  <p class="font-medium">{difficulty}</p>
+                </div>
+              )}
+              
+              {category && (
+                <div>
+                  <p class="text-sm text-[var(--color-text-muted)] mb-1">Kategoria</p>
+                  <p class="font-medium">{category}</p>
+                </div>
+              )}
+              
+              {time && (
+                <div>
+                  <p class="text-sm text-[var(--color-text-muted)] mb-1">Aika</p>
+                  <p class="font-medium">{time}</p>
+                </div>
+              )}
+              
+              {related && related.length > 0 && (
+                <div>
+                  <p class="text-sm text-[var(--color-text-muted)] mb-2">Katso myös</p>
+                  <ul class="space-y-2">
+                    {related.map((item: string) => (
+                      <li>
+                        <a 
+                          href={`/hakemisto#${item.toLowerCase().replace(/ /g, '-')}`}
+                          class="text-[var(--color-accent)] hover:underline font-medium"
+                        >
+                          {item}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+    
+    <div class="my-24 border-t border-[var(--color-border)] pt-16">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+        <div class="md:col-span-2"></div>
+        <div class="md:col-span-8">
+          <h3 class="font-serif text-2xl mb-8">Liittyvät tekniikat</h3>
+          <ul class="space-y-6 list-none pl-0 grid md:grid-cols-2 gap-x-12 gap-y-6">
+            {/* These could be dynamically populated in the future */}
+            <li>
+              <a href="#" class="border-none hover:text-[var(--color-accent)] font-medium">Samankaltainen tekniikka</a>
+              <p class="text-sm text-[var(--color-text-muted)] mt-1">Kategoria</p>
+            </li>
+            <li>
+              <a href="#" class="border-none hover:text-[var(--color-accent)] font-medium">Samankaltainen tekniikka</a>
+              <p class="text-sm text-[var(--color-text-muted)] mt-1">Kategoria</p>
+            </li>
+            <li>
+              <a href="#" class="border-none hover:text-[var(--color-accent)] font-medium">Samankaltainen tekniikka</a>
+              <p class="text-sm text-[var(--color-text-muted)] mt-1">Kategoria</p>
+            </li>
+            <li>
+              <a href="#" class="border-none hover:text-[var(--color-accent)] font-medium">Samankaltainen tekniikka</a>
+              <p class="text-sm text-[var(--color-text-muted)] mt-1">Kategoria</p>
+            </li>
+          </ul>
+        </div>
+        <div class="md:col-span-2"></div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<style is:global>
+  /* Technique-specific styles */
+  
+  /* Technique styling */
+  .prose {
+    font-family: var(--body-font);
+    line-height: 1.7;
+  }
+  
+  .prose h1 {
+    font-family: var(--header-font);
+    font-weight: 700;
+    font-size: 3.2rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+  }
+  
+  .prose h2 {
+    font-family: var(--header-font);
+    font-weight: 600;
+    font-size: 2.2rem;
+    margin-top: 3rem;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+  }
+  
+  .prose h3 {
+    font-family: var(--header-font);
+    font-weight: 600;
+    font-size: 1.7rem;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+  
+  .prose p {
+    margin-bottom: 1.8rem;
+    line-height: 1.8;
+  }
+  
+  .prose ul, .prose ol {
+    margin-bottom: 1.8rem;
+    padding-left: 1.8rem;
+  }
+  
+  .prose ul {
+    list-style-type: disc;
+  }
+  
+  .prose ol {
+    list-style-type: decimal;
+  }
+  
+  .prose li {
+    margin-bottom: 0.6rem;
+  }
+  
+  .prose a {
+    color: var(--accent-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--accent-color);
+    transition: border-width 0.2s;
+  }
+  
+  .prose a:hover {
+    border-width: 2px;
+  }
+  
+  .prose blockquote {
+    border-left: 3px solid var(--accent-color);
+    padding-left: 2rem;
+    font-style: italic;
+    margin: 2.5rem 0;
+    font-size: 1.1rem;
+    line-height: 1.6;
+  }
+  
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 2rem 0;
+  }
+  
+  .prose table th {
+    background-color: var(--color-background-light, #f9fafb);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 2px solid var(--color-border, #e5e7eb);
+  }
+  
+  .prose table td {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid var(--color-border, #e5e7eb);
+  }
+  
+  .prose table tr:last-child td {
+    border-bottom: none;
+  }
+  
+  /* Code and pre elements */
+  .prose code {
+    font-family: var(--mono-font, monospace);
+    font-size: 0.9em;
+    background-color: var(--color-background-light, #f9fafb);
+    padding: 0.2em 0.4em;
+    border-radius: 0.25em;
+  }
+  
+  .prose pre {
+    background-color: var(--color-background-light, #f9fafb);
+    padding: 1.5rem;
+    border-radius: 0.375rem;
+    overflow-x: auto;
+    margin: 2rem 0;
+  }
+  
+  .prose pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+  }
+</style> 

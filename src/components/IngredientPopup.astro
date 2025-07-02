@@ -1,0 +1,9 @@
+---
+// Import the Preact component with a different name
+import IngredientPopupPreact from './IngredientPopup.jsx';
+// Component for ingredient popup functionality
+// Lazy loads data only when needed
+---
+
+<!-- Use client:idle instead of client:visible to reduce layout shifts -->
+<IngredientPopupPreact client:idle /> 

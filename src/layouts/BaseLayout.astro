@@ -1,0 +1,771 @@
+---
+import '../styles/global.css';
+import IngredientPopup from '../components/IngredientPopup.astro';
+import { ClientRouter } from 'astro:transitions';
+
+// Note: Ingredient data is now loaded dynamically on-demand to reduce HTML payload
+
+export interface Props {
+	title: string;
+	metaDescription?: string;
+	tocHeadings?: any[];
+	hasToc?: boolean;
+	needsIngredientPopup?: boolean;
+	needsWikiLinks?: boolean;
+	forceIngredientPopup?: boolean; // Always load popup (for hakemisto page)
+	mobileButtons?: Array<{
+		id: string;
+		ariaLabel: string;
+		title: string;
+		svgContent: string;
+		onClick?: string;
+	}>; // Custom buttons for mobile sidebar
+}
+
+const { title, metaDescription, tocHeadings, hasToc, needsIngredientPopup = false, needsWikiLinks = false, forceIngredientPopup = false, mobileButtons } = Astro.props;
+
+// Determine back navigation path and visibility based on current page
+const currentPath = decodeURIComponent(Astro.url.pathname);
+const urlParams = new URLSearchParams(Astro.url.search);
+
+// Enhanced back path with category filtering for recipe pages
+let backPath = '/';
+if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
+  // For individual recipe pages, try to get category from URL params or page data
+  const categoryParam = urlParams.get('category');
+  if (categoryParam) {
+    backPath = `/reseptit/?filters=category:${categoryParam.toLowerCase()}`;
+  } else {
+    backPath = '/reseptit/';
+  }
+} else if (currentPath === '/hakemisto') {
+  backPath = '/';
+} else if (currentPath !== '/') {
+  backPath = '/';
+}
+
+// Determine when to show left sidebar
+// Show everywhere except home page
+// Mobile visibility is handled via CSS based on mobileButtons presence
+const showLeftSidebar = currentPath !== '/';
+// Sidebar navigation button (part of the main sidebar system)
+const backButtonClass = 'p-3 flex-1 w-full border-0 interactive-element focus-enhanced lg:hidden flex items-center justify-center';
+
+// Default meta description
+const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan.";
+---
+
+<!doctype html>
+<html lang="fi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={metaDescription || defaultMetaDescription} />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Optimized font loading to prevent FOUT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=block" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=block" />
+		
+		<!-- Custom view transitions - fade animation -->
+		<style is:global>
+			@keyframes fadeIn {
+				from { opacity: 0; }
+				to { opacity: 1; }
+			}
+			
+			@keyframes fadeOut {
+				from { opacity: 1; }
+				to { opacity: 0; }
+			}
+			
+			::view-transition-old(root) {
+				animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) fadeOut both;
+			}
+			
+			::view-transition-new(root) {
+				animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) fadeIn both;
+			}
+			
+			/* Ensure consistent positioning during transitions */
+			::view-transition-group(root) {
+				animation-duration: 0s;
+			}
+		</style>
+		
+		<!-- Critical theme and layout scripts - inline to prevent FOUC -->
+		<script is:inline>
+			// Critical theme initialization - minimal inline
+			(function() {
+				function setTheme() {
+					const userTheme = localStorage.getItem('user-theme-choice');
+					const theme = userTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+					document.documentElement.setAttribute('data-theme', theme);
+				}
+				
+				setTheme();
+				document.addEventListener('astro:page-load', setTheme);
+			})();
+			
+
+			
+			// Critical left sidebar setting - minimal inline
+			(function() {
+				function setLeftSidebar() {
+					const enabled = localStorage.getItem('leftSidebarEnabled');
+					if (enabled === 'false') {
+						document.documentElement.setAttribute('data-left-sidebar', 'disabled');
+					} else {
+						document.documentElement.removeAttribute('data-left-sidebar');
+					}
+				}
+				
+				setLeftSidebar();
+				document.addEventListener('astro:page-load', setLeftSidebar);
+			})();
+			
+			// Critical layout initialization - minimal inline
+			(function() {
+				function setLayout() {
+					const html = document.documentElement;
+					html.setAttribute('data-layout', innerWidth >= 1024 ? 'desktop' : 'mobile');
+					html.setAttribute('data-sidebar', 'collapsed');
+				}
+				
+				setLayout();
+				document.addEventListener('astro:page-load', setLayout);
+			})();
+		</script>
+		
+		<!-- Enhanced meta tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription || defaultMetaDescription} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!-- Theme colors for mobile -->
+		<meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+		
+		<title>{title}</title>
+		
+		<ClientRouter />
+		
+		<!-- Critical CSS - Essential for preventing FOUC and layout shifts -->
+		<style is:inline>
+			:root {
+				--sidebar-width: 4rem;
+				--sidebar-width-desktop: 33.6%;
+				--spring-timing: cubic-bezier(0.34, 1.56, 0.64, 1);
+				--micro-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+				
+				/* Critical transition variables - prevent JS override issues */
+				--transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+				--transition-duration: 200ms;
+				--transition-duration-slow: 500ms;
+			}
+
+			/* Reserve scrollbar space up-front to prevent width jumps when content overflow triggers the scrollbar. */
+			html { scrollbar-gutter: stable; }
+			
+			/* Handle reduced motion preference immediately */
+			@media (prefers-reduced-motion: reduce) {
+				:root {
+					--transition-timing: ease;
+					--transition-duration: 0ms;
+					--transition-duration-slow: 0ms;
+				}
+			}
+			
+			/* All screen sizes - sidebar slides down from top but always shows bottom toggle */
+			#sidebar {
+				width: 100vw;
+				left: 0;
+				background: transparent; /* Make sidebar background transparent */
+				/* Default closed state - show only bottom toggle */
+				transform: translateY(calc(-100% + 48px));
+			}
+			
+			/* Left button bar styling */
+			#sidebar .w-12 {
+				background-color: transparent;
+				transition: background-color var(--transition-duration) var(--micro-timing);
+			}
+			
+			/* Left button bar background only when sidebar is open */
+			html[data-sidebar="open"] #sidebar .w-12,
+			html[data-sidebar="expanded"] #sidebar .w-12 {
+				background-color: rgb(243 244 246);
+			}
+			
+			html[data-theme="dark"][data-sidebar="open"] #sidebar .w-12,
+			html[data-theme="dark"][data-sidebar="expanded"] #sidebar .w-12 {
+				background-color: rgb(31 41 55);
+			}
+			
+			/* Toggle button container styling */
+			html[data-theme="dark"] #sidebar .bg-gray-50 {
+				background-color: rgb(55 65 81) !important;
+			}
+			
+			/* Mobile layout */
+			html[data-layout="mobile"] #sidebar {
+				height: 100vh;
+			}
+			
+			/* Desktop layout */
+			@media (min-width: 64rem) {
+				html[data-layout="desktop"] #sidebar {
+					height: 60dvh;
+					max-height: 800px;
+				}
+			}
+			
+			/* Open state - slide down from top (all screen sizes) */
+			html[data-layout="mobile"][data-sidebar="open"] #sidebar,
+			html[data-layout="desktop"][data-sidebar="expanded"] #sidebar {
+				transform: translateY(0);
+			}
+			
+			/* Ensure closed state always shows only bottom part */
+			html[data-layout="mobile"][data-sidebar="collapsed"] #sidebar,
+			html[data-layout="desktop"][data-sidebar="collapsed"] #sidebar {
+				transform: translateY(calc(-100% + 48px)) !important;
+			}
+			
+			html[data-layout="mobile"][data-sidebar="open"] #sidebar-overlay,
+			html[data-layout="desktop"][data-sidebar="expanded"] #sidebar-overlay {
+				opacity: 1;
+				pointer-events: auto;
+			}
+			
+			html[data-layout="mobile"][data-sidebar="open"] body {
+				overflow: hidden;
+			}
+			
+			/* Critical interactive elements */
+			.interactive-element {
+				overflow: hidden;
+				transform: translateZ(0);
+				transition: transform var(--transition-duration) var(--micro-timing);
+			}
+			
+			.interactive-element:hover {
+				transform: translateY(-1px) translateZ(0);
+			}
+			
+			.interactive-element:active {
+				transform: translateY(0) scale(0.98) translateZ(0);
+				transition-duration: 100ms;
+			}
+			
+			/* Sidebar critical styles */
+			#sidebar {
+				transition: transform 600ms cubic-bezier(.4,0,.2,1), background-color 0ms;
+				will-change: transform;
+			}
+			
+			/* Sidebar background states - immediate on open, delayed on close */
+			#sidebar.sidebar-bg-visible {
+				background-color: rgb(249 250 251);
+				transition: transform 600ms cubic-bezier(.4,0,.2,1), background-color 0ms;
+				z-index: 51;
+			}
+			
+			#sidebar.sidebar-bg-hiding {
+				background-color: rgb(249 250 251);
+				transition: transform 600ms cubic-bezier(.4,0,.2,1), background-color 0ms 600ms;
+				z-index: 51;
+			}
+			
+			/* Enhanced sidebar links with active states */
+			.sidebar-link {
+				position: relative;
+				transition: all var(--transition-duration) var(--micro-timing);
+			}
+			
+			.sidebar-link.active {
+				color: #d32f2f !important;
+			}
+
+			.sidebar-link.active::before {
+				content: "";
+				position: absolute;
+				left: -1rem;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 3px;
+				height: 24px;
+				background: #d32f2f;
+				border-radius: 0 2px 2px 0;
+			}
+			
+			.sidebar-large-btn:hover {
+				color: inherit;
+			}
+			
+			/* Dark mode overrides for sidebar buttons */
+			html[data-theme="dark"] .sidebar-large-btn.bg-white {
+				background-color: rgb(17 24 39) !important;
+			}
+			
+			html[data-theme="dark"] .sidebar-large-btn.bg-gray-50 {
+				background-color: rgb(55 65 81) !important;
+			}
+			
+			@keyframes active-indicator {
+				0% { width: 0; height: 0; }
+				100% { width: 3px; height: 24px; }
+			}
+			
+			/* Critical focus enhancement */
+			.focus-enhanced:focus-visible {
+				outline: 2px solid #d32f2f;
+				outline-offset: 2px;
+				border-radius: 4px;
+				box-shadow: 0 0 0 4px rgba(211, 47, 47, 0.1);
+			}
+			
+			/* Essential table layout */
+			#main-content { min-height: 60vh; }
+			table { table-layout: fixed; width: 100%; }
+			
+
+			
+			/* Prevent content flashing by reserving space for dynamic content */
+			.recipe-body ol li {
+				position: relative;
+				/* Reserve space for step completion indicator */
+				padding-left: 2rem;
+			}
+			
+			/* Hide elements that will be shown by JS to prevent flash */
+			.recipe-note-info, .recipe-note-notice {
+				display: none;
+			}
+			
+			/* Show all info notes when info mode is enabled */
+			body.info-mode-enabled .recipe-note-info,
+			body.info-mode-enabled .recipe-note-notice {
+				display: block !important;
+			}
+			
+			/* Site-wide left sidebar styling - handles navigation and page-specific buttons */
+			.site-left-sidebar {
+				transition: background-color var(--transition-duration) var(--micro-timing);
+			}
+			
+			/* Hide left sidebar when disabled */
+			html[data-left-sidebar="disabled"] .site-left-sidebar {
+				display: none;
+			}
+			
+			/* Remove main content margin when left sidebar is disabled */
+			html[data-left-sidebar="disabled"] #main-content {
+				margin-left: 0 !important;
+			}
+			
+			/* Dark mode support for site left sidebar */
+			html[data-theme="dark"] .site-left-sidebar {
+				background-color: rgb(31 41 55) !important;
+			}
+			
+			html[data-theme="dark"] .site-left-sidebar a:hover,
+			html[data-theme="dark"] .site-left-sidebar button:hover {
+				background-color: rgb(55 65 81) !important;
+			}
+			
+			/* Hide left sidebar on mobile when no custom buttons are provided */
+			.site-left-sidebar:not(.has-mobile-buttons) {
+				display: none;
+			}
+			
+			@media (min-width: 1024px) {
+				.site-left-sidebar:not(.has-mobile-buttons) {
+					display: flex;
+				}
+			}
+			
+			/* Main content margin - only when sidebar is actually visible */
+			.main-content-with-sidebar {
+				margin-left: 3rem; /* ml-12 equivalent */
+			}
+			
+			.main-content-with-sidebar:not(.has-mobile-buttons) {
+				margin-left: 0;
+			}
+			
+			@media (min-width: 1024px) {
+				.main-content-with-sidebar:not(.has-mobile-buttons) {
+					margin-left: 3rem;
+				}
+			}
+			
+			/* Dark mode support for mobile navigation cards */
+			html[data-theme="dark"] .sidebar-large-btn.bg-white {
+				background-color: rgb(31 41 55) !important;
+				border-color: rgb(55 65 81) !important;
+			}
+			
+			html[data-theme="dark"] .sidebar-large-btn.bg-white:hover {
+				background-color: rgb(55 65 81) !important;
+			}
+			
+			/* Dark mode support for refined mobile navigation */
+			html[data-theme="dark"] .bg-white.lg\\:bg-gray-50 {
+				background-color: rgb(31 41 55) !important;
+			}
+			
+			html[data-theme="dark"] .bg-gray-50.border-b {
+				background-color: rgb(55 65 81) !important;
+				border-color: rgb(75 85 99) !important;
+			}
+			
+			html[data-theme="dark"] .border-gray-100 {
+				border-color: rgb(55 65 81) !important;
+			}
+			
+			html[data-theme="dark"] .hover\\:bg-gray-50:hover {
+				background-color: rgb(55 65 81) !important;
+			}
+			
+			@media (prefers-color-scheme: dark) {
+				:root:not([data-theme]) .site-left-sidebar {
+					background-color: rgb(31 41 55);
+				}
+				
+				:root:not([data-theme]) .site-left-sidebar a:hover,
+				:root:not([data-theme]) .site-left-sidebar button:hover {
+					background-color: rgb(55 65 81);
+				}
+				
+				:root:not([data-theme]) .sidebar-large-btn.bg-white {
+					background-color: rgb(31 41 55);
+					border-color: rgb(55 65 81);
+				}
+				
+				:root:not([data-theme]) .sidebar-large-btn.bg-white:hover {
+					background-color: rgb(55 65 81);
+				}
+				
+				:root:not([data-theme]) .bg-white.lg\\:bg-gray-50 {
+					background-color: rgb(31 41 55);
+				}
+				
+				:root:not([data-theme]) .bg-gray-50.border-b {
+					background-color: rgb(55 65 81);
+					border-color: rgb(75 85 99);
+				}
+				
+				:root:not([data-theme]) .border-gray-100 {
+					border-color: rgb(55 65 81);
+				}
+				
+				:root:not([data-theme]) .hover\\:bg-gray-50:hover {
+					background-color: rgb(55 65 81);
+				}
+			}
+		</style>
+	</head>
+	<body class="antialiased">
+		<!-- Skip link for accessibility -->
+		<a href="#main-content" class="skip-link">Hyppää pääsisältöön</a>
+		
+		<!-- Table of Contents at top of page -->
+		{hasToc && tocHeadings && tocHeadings.length > 2 && (
+			<div class="page-toc-container">
+				<details class="page-toc">
+					<summary>
+						<span class="flex items-center gap-3">
+							<span>Sisällysluettelo</span>
+						</span>
+					</summary>
+					<nav>
+						<div>
+							<ul>
+								{tocHeadings.map((heading) => (
+									<li>
+										<a href={`#${heading.id}`}>
+											{heading.text}
+										</a>
+										{'children' in heading && heading.children.length > 0 && (
+											<ul class="page-toc-sub">
+												{heading.children.map((subheading) => (
+													<li>
+														<a href={`#${subheading.id}`}>
+															{subheading.text}
+														</a>
+													</li>
+												))}
+											</ul>
+										)}
+									</li>
+								))}
+							</ul>
+						</div>
+					</nav>
+				</details>
+			</div>
+		)}
+		
+		<div id="page-container">
+			<!-- Sidebar overlay for all screen sizes -->
+			<div id="sidebar-overlay" class="fixed inset-0 bg-black/20 z-40 opacity-0 pointer-events-none transition-opacity duration-300"></div>
+			
+			<!-- Site-wide left sidebar - navigation and page-specific buttons (hidden on home page) -->
+			{showLeftSidebar && (
+				<aside class={`site-left-sidebar flex fixed left-0 top-0 w-12 md:w-[5%] h-full bg-gray-100 flex-col items-center justify-center z-40 lg:z-30 ${mobileButtons ? 'has-mobile-buttons' : ''}`}>
+					{/* Desktop: Always show back button */}
+					<a 
+						href={backPath}
+						class="p-3 h-full w-full interactive-element focus-enhanced hover:bg-gray-200 transition-colors hidden lg:flex items-center justify-center" 
+						aria-label={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+						title={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+						</svg>
+					</a>
+					
+					{/* Mobile: Only show custom buttons if provided */}
+					{mobileButtons && (
+						<div class="flex flex-col h-full w-full lg:hidden">
+							{mobileButtons.map((button) => (
+								<button 
+									id={button.id}
+									class="p-3 flex-1 interactive-element focus-enhanced hover:bg-gray-200 transition-colors flex items-center justify-center"
+									aria-label={button.ariaLabel}
+									title={button.title}
+									onclick={button.onClick}
+								>
+									<Fragment set:html={button.svgContent} />
+								</button>
+							))}
+						</div>
+					)}
+				</aside>
+			)}
+			
+			<!-- Sidebar -->
+			<aside 
+				id="sidebar" 
+				class="fixed top-0 w-full h-full z-50 overflow-hidden flex flex-row" 
+				aria-label="Päävalikko"
+			>
+				<!-- Left button bar spanning full height -->
+				<div class="w-12 md:w-[5%] bg-gray-100 flex flex-col items-center relative">
+					<!-- Settings button (top half on mobile, full height on desktop) -->
+					<button 
+						id="settings-toggle" 
+						class="p-3 flex-1 lg:h-full interactive-element focus-enhanced" 
+						aria-label="Asetukset"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M9.594 3.94c.09-.542.56-.94 1.11-.94h2.593c.55 0 1.02.398 1.11.94l.213 1.281c.063.374.313.686.645.87.074.04.147.083.22.127.324.196.72.257 1.075.124l1.217-.456a1.125 1.125 0 011.37.49l1.296 2.247a1.125 1.125 0 01-.26 1.431l-1.003.827c-.293.24-.438.613-.431.992a6.759 6.759 0 010 .255c-.007.378.138.75.43.99l1.005.828c.424.35.534.954.26 1.43l-1.298 2.247a1.125 1.125 0 01-1.369.491l-1.217-.456c-.355-.133-.75-.072-1.076.124a6.57 6.57 0 01-.22.128c-.331.183-.581.495-.644.869l-.213 1.28c-.09.543-.56.941-1.11.941h-2.594c-.55 0-1.02-.398-1.11-.94l-.213-1.281c-.062-.374-.312-.686-.644-.87a6.52 6.52 0 01-.22-.127c-.325-.196-.72-.257-1.076-.124l-1.217.456a1.125 1.125 0 01-1.369-.49l-1.297-2.247a1.125 1.125 0 01.26-1.431l1.004-.827c.292-.24.437-.613.43-.992a6.932 6.932 0 010-.255c.007-.378-.138-.75-.43-.99l-1.004-.828a1.125 1.125 0 01-.26-1.43l1.297-2.247a1.125 1.125 0 011.37-.491l1.216.456c.356.133.751.072 1.076-.124.072-.044.146-.087.22-.128.332-.183.582-.495.644-.869l.214-1.281z" />
+							<path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+						</svg>
+					</button>
+					
+					<!-- Back navigation button (bottom half, conditionally visible, hidden in settings mode) -->
+					{showLeftSidebar && (
+						<a 
+							id="sidebar-navigation-back"
+							href={backPath}
+							class={backButtonClass}
+							aria-label={currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit' ? 'Takaisin resepteihin' : 'Takaisin etusivulle'}
+						>
+							<span class="text-xs font-medium transform -rotate-90 uppercase">Palaa</span>
+						</a>
+					)}
+					
+					<!-- Back button (centered, visible in settings mode) -->
+					<button 
+						id="sidebar-settings-back-header" 
+						class="p-3 h-full interactive-element focus-enhanced hidden" 
+						aria-label="Takaisin navigaatioon"
+					>
+						<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+							<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+						</svg>
+					</button>
+				</div>
+
+				<!-- Main sidebar content -->
+				<div class="flex flex-col h-full flex-1">
+					<!-- Top dynamic header -->
+					<div class="h-28 flex items-center bg-gray-50" id="sidebar-header">
+						<!-- Navigation Header (default) -->
+						<div id="sidebar-navigation-header" class="flex items-center justify-center w-full">
+							<!-- Title (center) -->
+							<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
+								<span class="text-xl sm:text-[4vmin] lg:text-[3.5vmin] font-serif font-bold">T</span>
+								<span class="text-base sm:text-[3vmin] lg:text-[2.5vmin] font-medium">omin</span>
+								<span class="text-xl sm:text-[4vmin] lg:text-[3.5vmin] font-serif font-bold ml-1">K</span>
+								<span class="text-base sm:text-[3vmin] lg:text-[2.5vmin] font-medium">okkaeilut</span>
+							</a>
+						</div>
+						
+						<!-- Settings Header (hidden by default) -->
+						<div id="sidebar-settings-header" class="flex items-center justify-center w-full hidden">
+							<!-- Title (center) -->
+							<h2 class="text-2xl lg:text-[2.5vmin] font-medium mb-0">Asetukset</h2>
+						</div>
+					</div>
+					
+					<!-- Main dynamic content area -->
+					<div class="flex-1 flex flex-col bg-gray-50 lg:px-10 px-6 min-h-0" id="sidebar-main-content">
+												<!-- Navigation View (default) -->
+						<nav class="flex flex-col lg:flex-row lg:mb-6 h-full w-full" role="navigation" aria-label="Sivuston päänavigaatio">
+							<!-- Reseptit Card -->
+							<a 
+								href="/reseptit/" 
+								class="sidebar-large-btn bg-white max-lg:rounded-t-2xl lg:rounded-2xl border-0 p-8 lg:p-6 flex items-center gap-4 min-h-[140px] lg:min-h-0 lg:h-full lg:w-[50%] interactive-element"
+							>
+								<div class="flex-1 flex justify-center">
+									<div class="text-center">
+										<h3 class="text-xl lg:text-lg sm:text-[4vmin] lg:text-[3vmin] font-bold lg:font-semibold mb-3 lg:mb-2 leading-tight text-gray-900">Reseptit</h3>
+										<p class="text-base lg:text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Löydä uusia makuelämyksiä ja inspiraatiota keittiöön</p>
+
+									</div>
+								</div>
+							</a>
+							
+							<!-- Hakemisto Card Container -->
+							<div class="flex h-auto lg:h-full lg:w-[50%] lg:ml-5 flex-col">
+								<!-- Reference Items -->
+								<div class="flex-1 flex flex-col lg:gap-4">
+									<a 
+										href="/hakemisto/?type=ainesosat" 
+										class="sidebar-large-btn flex-1 flex items-center gap-4 px-6 lg:px-6 py-6 lg:py-4 bg-white lg:rounded-2xl hover:bg-gray-50 lg:hover:bg-gray-100 transition-colors border-0"
+									>
+										<div class="flex-1 text-center">
+											<h4 class="text-lg lg:text-base sm:text-[3.5vmin] lg:text-[2.5vmin] font-semibold mb-2 lg:mb-1 leading-tight text-gray-900">Ainesosat</h4>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Tutustu ruoanlaiton raaka-aineisiin</p>
+										</div>
+									</a>
+									
+									<a 
+										href="/hakemisto/?type=välineet" 
+										class="sidebar-large-btn flex-1 flex items-center gap-4 px-6 lg:px-6 py-6 lg:py-4 bg-white lg:rounded-2xl hover:bg-gray-50 lg:hover:bg-gray-100 transition-colors border-0"
+									>
+										<div class="flex-1 text-center">
+											<h4 class="text-lg lg:text-base sm:text-[3.5vmin] lg:text-[2.5vmin] font-semibold mb-2 lg:mb-1 leading-tight text-gray-900">Välineet</h4>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Opi keittiövälineistä lisää</p>
+										</div>
+									</a>
+									
+									<a 
+										href="/hakemisto/?type=tekniikat" 
+										class="sidebar-large-btn flex-1 flex items-center gap-4 px-6 lg:px-6 py-6 lg:py-4 bg-white lg:rounded-2xl hover:bg-gray-50 lg:hover:bg-gray-100 transition-colors border-0"
+									>
+										<div class="flex-1 text-center">
+											<h4 class="text-lg lg:text-base sm:text-[3.5vmin] lg:text-[2.5vmin] font-semibold mb-2 lg:mb-1 leading-tight text-gray-900">Tekniikat</h4>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Syvenny ruoanlaiton tekniikoista</p>
+										</div>
+									</a>
+								</div>
+							</div>
+						</nav>
+
+						
+						<!-- Settings View (hidden by default) -->
+						<div id="sidebar-settings-view" class="flex-col lg:flex-row h-full min-h-0 hidden">
+							<div class="flex flex-col lg:flex-row lg:flex-wrap h-full w-full items-stretch lg:items-center overflow-y-auto lg:overflow-visible gap-0 lg:gap-0">
+								<!-- Dark Mode Setting -->
+								<div class="setting-group flex-shrink-0 min-h-[80px] lg:min-h-[140px] lg:h-full lg:w-[25%] flex items-center p-4 lg:p-6">
+									<div class="flex lg:flex-col items-center lg:items-center justify-between lg:justify-center gap-3 lg:gap-4 w-full">
+										<div class="flex flex-col text-left lg:text-center flex-1 lg:flex-none pr-4 lg:pr-0">
+											<label for="dark-mode-toggle" class="text-base lg:text-lg sm:text-[4vmin] lg:text-[3vmin] font-semibold mb-1 lg:mb-2 leading-tight">Tumma teema</label>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Vaihda sivuston ulkoasua</p>
+										</div>
+										<label class="info-toggle-switch flex-shrink-0">
+											<input type="checkbox" id="dark-mode-toggle">
+											<span class="info-toggle-switch-bg"></span>
+										</label>
+									</div>
+								</div>
+								
+								<!-- Info Mode Setting -->
+								<div class="setting-group flex-shrink-0 min-h-[80px] lg:min-h-[140px] lg:h-full lg:w-[25%] flex items-center p-4 lg:p-6">
+									<div class="flex lg:flex-col items-center lg:items-center justify-between lg:justify-center gap-3 lg:gap-4 w-full">
+										<div class="flex flex-col text-left lg:text-center flex-1 lg:flex-none pr-4 lg:pr-0">
+											<label for="info-mode-toggle" class="text-base lg:text-lg sm:text-[4vmin] lg:text-[3vmin] font-semibold mb-1 lg:mb-2 leading-tight">Näytä lisätiedot</label>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Näytä reseptien vinkit automaattisesti</p>
+										</div>
+										<label class="info-toggle-switch flex-shrink-0">
+											<input type="checkbox" id="info-mode-toggle">
+											<span class="info-toggle-switch-bg"></span>
+										</label>
+									</div>
+								</div>
+								
+								<!-- Timer Notifications Setting -->
+								<div class="setting-group flex-shrink-0 min-h-[80px] lg:min-h-[140px] lg:h-full lg:w-[25%] flex items-center p-4 lg:p-6">
+									<div class="flex lg:flex-col items-center lg:items-center justify-between lg:justify-center gap-3 lg:gap-4 w-full">
+										<div class="flex flex-col text-left lg:text-center flex-1 lg:flex-none pr-4 lg:pr-0">
+											<label for="timer-notifications" class="text-base lg:text-lg sm:text-[4vmin] lg:text-[3vmin] font-semibold mb-1 lg:mb-2 leading-tight">Ajastinäänet</label>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Salli ääniliiset ilmoitukset ajastimista</p>
+										</div>
+										<label class="info-toggle-switch flex-shrink-0">
+											<input type="checkbox" id="timer-notifications">
+											<span class="info-toggle-switch-bg"></span>
+										</label>
+									</div>
+								</div>
+								
+								<!-- Left Sidebar Setting -->
+								<div class="setting-group flex-shrink-0 min-h-[80px] lg:min-h-[140px] lg:h-full lg:w-[25%] flex items-center p-4 lg:p-6">
+									<div class="flex lg:flex-col items-center lg:items-center justify-between lg:justify-center gap-3 lg:gap-4 w-full">
+										<div class="flex flex-col text-left lg:text-center flex-1 lg:flex-none pr-4 lg:pr-0">
+											<label for="left-sidebar-toggle" class="text-base lg:text-lg sm:text-[4vmin] lg:text-[3vmin] font-semibold mb-1 lg:mb-2 leading-tight">Vasen sivupalkki</label>
+											<p class="text-sm sm:text-[2.5vmin] lg:text-[2vmin] text-gray-600 mb-0 leading-relaxed">Näytä sivun vasemmassa reunassa oleva toimintopalkki</p>
+										</div>
+										<label class="info-toggle-switch flex-shrink-0">
+											<input type="checkbox" id="left-sidebar-toggle" checked>
+											<span class="info-toggle-switch-bg"></span>
+										</label>
+									</div>
+								</div>
+								
+
+							</div>
+						</div>
+					</div>
+					
+					<!-- Bottom spacer with close -->
+					<div class="bottom-spacer z-10 h-12 flex items-center justify-center bg-gray-50">
+						<!-- Close/Open toggle button (centered) -->
+						<button 
+							id="sidebar-main-toggle" 
+							class="size-18 w-full h-full justify-items-center items-center interactive-element focus-enhanced" 
+							aria-label="Avaa/sulje valikko"
+						>
+							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="size-5 rotate-270">
+								<path d="M4 12l10 0"></path>
+								<path d="M4 12l4 4"></path>
+								<path d="M4 12l4 -4"></path>
+								<path d="M20 4l0 16"></path>
+							</svg>
+						</button>
+					</div>
+				</div>
+			</aside>
+			
+
+			
+			<!-- Content area -->
+			<main id="main-content" class={`flex-1 pt-24 md:pt-28 lg:pt-24 px-6 lg:px-8 pb-16 lg:pb-20 mt-12 ${showLeftSidebar ? `main-content-with-sidebar ${mobileButtons ? 'has-mobile-buttons' : ''}` : ''}`}>
+				<slot />
+			</main>
+		</div>
+		
+		{(needsIngredientPopup || forceIngredientPopup) && <IngredientPopup />}
+		
+		<!-- Load theme manager first, then base layout script -->
+		<script src="/scripts/theme-manager.js" is:inline></script>
+		<script src="/scripts/base-layout.js" is:inline></script>
+	</body>
+</html>

@@ -1,0 +1,482 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../layouts/BaseLayout.astro';
+import UnifiedFilterSystem from '../components/UnifiedFilterSystem.jsx';
+import { processRecipeData, getUniqueFilterValues, createRecipeNumberRegistry, setRecipeNumberRegistry, getRecipeNumber, formatRecipeNumber, generateNumberVariations } from '../utils/ruoanlaitto-data.ts';
+
+// Get all recipe entries
+const allRecipeEntries = await getCollection('Reseptit');
+
+// Create and set the recipe number registry for global access
+const numberRegistry = createRecipeNumberRegistry(allRecipeEntries);
+setRecipeNumberRegistry(numberRegistry);
+
+const { displayedRecipes } = processRecipeData(allRecipeEntries);
+
+// Define category configuration - order matters for display
+const CATEGORY_CONFIG = [
+  { key: 'kokkaus', displayName: 'Kokkaus' },
+  { key: 'leivonta', displayName: 'Leivonta' },
+  { key: 'juomat', displayName: 'Juomat' }
+];
+
+// Helper function to normalize category names
+const normalizeCategory = (category) => {
+  if (!category || typeof category !== 'string') return null;
+  return category.toLowerCase().trim();
+};
+
+// Helper function to get excerpt
+const getExcerpt = (description) => {
+  if (Array.isArray(description) && description.length > 0) return description[0];
+  if (typeof description === 'string') return description;
+  return 'Katso reseptin tiedot napsauttamalla.';
+};
+
+// Define recipe type interface
+interface ProcessedRecipe {
+  title: string;
+  slug: string;
+  excerpt: string;
+  image: string;
+  category: string | null;
+  id: string;
+  techniques: string[];
+  vaikeustaso: string | null;
+  dietaryType: string[];
+  costLevel: string | null;
+  tags: string[];
+  kokonaisaika: string | number | null;
+  recipeNumber: number | null;
+  formattedRecipeNumber: string | null;
+  numberVariations: string[];
+}
+
+// Process recipes and group by category
+const processedRecipes: Record<string, ProcessedRecipe[]> = {};
+const uncategorizedRecipes: ProcessedRecipe[] = [];
+
+// Initialize category groups
+CATEGORY_CONFIG.forEach(cat => {
+  processedRecipes[cat.key] = [];
+});
+
+// Process each recipe
+allRecipeEntries.forEach(entry => {
+  const normalizedCategory = normalizeCategory(entry.data.category);
+  
+  // Get recipe number
+  const recipeNumber = getRecipeNumber(entry.slug);
+  const formattedRecipeNumber = recipeNumber ? formatRecipeNumber(recipeNumber) : null;
+  const numberVariations = recipeNumber ? generateNumberVariations(recipeNumber) : [];
+  
+  // Extract base slug without category (to match [...slug].astro)
+  const baseSlug = entry.slug.includes('/') ? entry.slug.split('/').pop() || entry.slug : entry.slug;
+  
+  // Create recipe object with proper typing
+  const recipe: ProcessedRecipe = {
+    title: entry.data.title,
+    slug: baseSlug,
+    excerpt: getExcerpt(entry.data.description),
+    image: entry.data.image || '/placeholder-recipe.svg',
+    category: normalizedCategory,
+    id: entry.id,
+    techniques: entry.data.techniques || [],
+    vaikeustaso: entry.data.vaikeustaso || null,
+    dietaryType: Array.isArray(entry.data.dietary) ? [] : (entry.data.dietary?.type || []),
+    costLevel: entry.data.cost_level || null,
+    tags: entry.data.tags || [],
+    kokonaisaika: entry.data.time?.kokonaisaika || null,
+    recipeNumber: recipeNumber,
+    formattedRecipeNumber: formattedRecipeNumber,
+    numberVariations: numberVariations,
+  };
+
+  // Add to appropriate category or uncategorized
+  if (normalizedCategory && processedRecipes[normalizedCategory]) {
+    processedRecipes[normalizedCategory].push(recipe);
+  } else {
+    uncategorizedRecipes.push(recipe);
+  }
+});
+
+// Build final ordered structure for display
+const orderedCategories = CATEGORY_CONFIG
+  .filter(cat => processedRecipes[cat.key].length > 0)
+  .map(cat => ({
+    key: cat.key,
+    displayName: cat.displayName,
+    recipes: processedRecipes[cat.key]
+  }));
+
+
+
+// Extract filter options
+const categories = CATEGORY_CONFIG.map(cat => ({
+  id: cat.displayName,
+  name: cat.displayName
+}));
+
+// Prepare filter configuration for unified system
+const filterOptions = {
+  difficultyLevels: ['helppo', 'keskitaso', 'haastava', 'vaativa'],
+  dietaryTypes: getUniqueFilterValues(allRecipeEntries, 'dietaryTypes'),
+  tags: getUniqueFilterValues(allRecipeEntries, 'tags'),
+  costLevels: ['edullinen', 'kohtuullinen', 'hintava', 'kallis'],
+  sortOptions: [
+    { value: 'newest', label: 'Uusimmat ensin', default: true },
+    { value: 'name', label: 'Aakkosjärjestys' },
+    { value: 'category', label: 'Kategoria' },
+    { value: 'difficulty', label: 'Vaikeustaso' }
+  ]
+};
+
+// Configure filter buttons for the unified filter bar
+const filterButtons = [
+  {
+    id: 'category',
+    label: 'Kategoria',
+    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+    ariaLabel: 'Avaa kategoriasuodatin',
+    showOnMobile: true,
+    priority: 1
+  },
+  {
+    id: 'dietary',
+    label: 'Ruokavalio',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    ariaLabel: 'Avaa ruokavaliosuodatin',
+    showOnMobile: false,
+    priority: 2
+  }
+];
+
+// Configure filter sections for popups
+const individualFilterSections = {
+  category: {
+    id: 'category',
+    title: 'Kategoria',
+    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+    type: 'select' as const,
+    options: categories.map(cat => ({
+      id: cat.id,
+      label: cat.name,
+      value: cat.id.toLowerCase()
+    }))
+  },
+  dietary: {
+    id: 'dietary',
+    title: 'Ruokavalio',
+    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+    type: 'multiSelect' as const,
+    options: filterOptions.dietaryTypes.map(type => ({
+      id: type,
+      label: type,
+      value: type
+    })),
+    gridCols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4',
+    maxHeight: '64'
+  }
+};
+
+const mainFilterSections = [
+  {
+    id: 'sort',
+    title: 'Järjestys',
+    icon: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z',
+    type: 'select' as const,
+    isSort: true,
+    options: filterOptions.sortOptions.map(option => ({
+      id: option.value,
+      label: option.label,
+      value: option.value,
+      default: option.default
+    }))
+  },
+  {
+    id: 'vaikeustaso',
+    title: 'Vaikeustaso',
+    icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+    type: 'multiSelect' as const,
+    options: filterOptions.difficultyLevels.map(level => ({
+      id: level,
+      label: level.charAt(0).toUpperCase() + level.slice(1),
+      value: level
+    })),
+    gridCols: 'grid-cols-2 sm:grid-cols-4'
+  },
+  {
+    id: 'kokonaisaika',
+    title: 'Valmistusaika',
+    icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+    type: 'multiSelect' as const,
+    options: [
+      { id: 'quick', label: 'Nopea (alle 30 min)', value: 'quick' },
+      { id: 'medium', label: 'Keskipitkä (30-60 min)', value: 'medium' },
+      { id: 'long', label: 'Pitkä (1-2 tuntia)', value: 'long' },
+      { id: 'extended', label: 'Erittäin pitkä (yli 2h)', value: 'extended' }
+    ],
+    gridCols: 'grid-cols-1 sm:grid-cols-2'
+  },
+  {
+    id: 'costlevel',
+    title: 'Hintakategoria',
+    icon: 'M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1',
+    type: 'multiSelect' as const,
+    options: filterOptions.costLevels.map(level => ({
+      id: level,
+      label: level.charAt(0).toUpperCase() + level.slice(1),
+      value: level
+    })),
+    gridCols: 'grid-cols-2 sm:grid-cols-4'
+  },
+  {
+    id: 'techniques',
+    title: 'Tekniikat',
+    icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
+    type: 'multiSelect' as const,
+    options: getUniqueFilterValues(allRecipeEntries, 'techniques').map(technique => ({
+      id: technique,
+      label: technique,
+      value: technique
+    })),
+    maxHeight: '60',
+    gridCols: 'grid-cols-1 sm:grid-cols-2'
+  },
+  {
+    id: 'tags',
+    title: 'Tägit',
+    icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
+    type: 'multiSelect' as const,
+    options: filterOptions.tags.map(tag => ({
+      id: tag,
+      label: tag,
+      value: tag
+    })),
+    maxHeight: '64',
+    gridCols: 'grid-cols-2 sm:grid-cols-3'
+  }
+];
+---
+
+<Layout title="Reseptit | Ruoanlaitto">
+  <a href="#recipe-content" class="skip-link">
+    Siirry sisältöön
+  </a>
+
+  <header class="text-center mb-12 lg:mb-16">
+    <h1 class="text-5xl lg:text-6xl xl:text-7xl font-light mb-4 lg:mb-6 text-gray-900 tracking-tight leading-tight">
+      Reseptit
+    </h1>
+    <p class="text-xl lg:text-2xl text-gray-600 font-light mx-auto max-w-2xl leading-relaxed">
+      Löydä inspiraatiota keittiöön ja uusia makuelämyksiä
+    </p>
+  </header>
+
+  <!-- Main Content -->
+  <div class="max-w-4xl mx-auto">
+    <!-- Unified Filter System -->
+    <UnifiedFilterSystem
+      config={{
+          itemSelector: '.list-item-wrapper',
+        sectionSelector: '.category-section',
+        noResultsId: 'no-results',
+        filterBlocks: {
+          search: { fields: ['searchName', 'title', 'techniques', 'category', 'tags', 'recipeNumber', 'recipeNumberRaw', 'recipeNumberVariations'] },
+          category: { type: 'select' },
+          dietary: { type: 'multiSelect' },
+          vaikeustaso: { type: 'multiSelect' },
+          costlevel: { type: 'multiSelect' },
+          techniques: { type: 'multiSelect' },
+          kokonaisaika: { type: 'multiSelect' },
+          tags: { type: 'multiSelect' },
+          sort: { type: 'select' }
+        }
+      }}
+      searchPlaceholder="Etsi reseptejä..."
+      filterButtons={filterButtons as any}
+      mainFilterButton={{
+        ariaLabel: "Avaa lisäsuodattimet",
+        icon: "M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"
+      }}
+      individualFilterSections={Object.fromEntries(Object.entries(individualFilterSections))}
+      mainFilterSections={mainFilterSections as any}
+      resultsCountText="reseptiä löytyi"
+      client:load
+    />
+
+    <!-- No Results -->
+    <div id="no-results" class="hidden text-center justify-items-center py-20" role="status" aria-live="polite">
+      <div class="text-gray-500">
+        <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+        </svg>
+        <p class="text-lg font-medium text-gray-900 mb-2">Ei tuloksia</p>
+        <p class="text-gray-500">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
+      </div>
+    </div>
+
+    <!-- Recipe Content -->
+    <div id="recipe-content">
+      {orderedCategories.map(({ key, displayName, recipes }) => (
+        <section 
+          id={`category-${key}`} 
+          class="category-section scroll-mt-32 mb-10 lg:mb-12 last:mb-0"
+          data-category={key}
+        >
+          <!-- Category Header -->
+          <div class="mb-6">
+            <span class="reference-section-header">{displayName}</span>
+          </div>
+          
+          <!-- Recipes List -->
+          <div class="recipe-container space-y-1" data-category={key}>
+            {recipes.map((recipe) => (
+              <div 
+                class="list-item-wrapper item"
+                data-title={recipe.title.toLowerCase()}
+                data-category={recipe.category}
+                data-techniques={recipe.techniques?.join(',').toLowerCase() || ''}
+                data-vaikeustaso={recipe.vaikeustaso || ''}
+                data-difficulty={recipe.vaikeustaso || ''}
+                data-dietary={recipe.dietaryType?.join(',') || ''}
+                data-costlevel={recipe.costLevel || ''}
+                data-cost={recipe.costLevel || ''}
+                data-tags={recipe.tags?.join(',').toLowerCase() || ''}
+                data-kokonaisaika={recipe.kokonaisaika || ''}
+                data-id={recipe.id}
+                data-search-name={recipe.title.toLowerCase()}
+                data-date={recipe.id}
+                data-recipe-number={recipe.formattedRecipeNumber || ''}
+                data-recipe-number-raw={recipe.recipeNumber || ''}
+                data-recipe-number-variations={recipe.numberVariations.join(',')}
+              >
+                <a 
+                  href={`/reseptit/${recipe.slug}/`} 
+                  class="group list-item"
+                  data-astro-prefetch="hover"
+                >
+                  <div class="list-item-content">
+                    {recipe.formattedRecipeNumber && (
+                      <div class="list-item-number">
+                        #{recipe.formattedRecipeNumber}
+                      </div>
+                    )}
+                    <div class="list-item-image">
+                      <img 
+                        src={recipe.image} 
+                        alt={recipe.title} 
+                        loading="lazy"
+                        decoding="async"
+                        width="80"
+                        height="60"
+                        class="w-20 h-15 object-cover rounded-lg"
+                      />
+                    </div>
+                    <div class="list-item-text">
+                      <span class="list-item-title">
+                        {recipe.title}
+                      </span>
+                      {recipe.excerpt && (
+                        <p class="list-item-description">
+                          {recipe.excerpt}
+                        </p>
+                      )}
+                    </div>
+                    <svg 
+                      class="list-item-arrow" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      ))}
+
+      <!-- Show uncategorized recipes if any exist (for debugging) -->
+      {uncategorizedRecipes.length > 0 && (
+        <section 
+          id="category-uncategorized" 
+          class="category-section scroll-mt-32 mb-10 lg:mb-12 last:mb-0"
+          data-category="uncategorized"
+        >
+          <div class="mb-6">
+            <span class="reference-section-header">Luokittelemattomat</span>
+          </div>
+          
+          <div class="recipe-container space-y-1" data-category="uncategorized">
+            {uncategorizedRecipes.map((recipe) => (
+              <div 
+                class="list-item-wrapper item"
+                data-title={recipe.title.toLowerCase()}
+                data-category="uncategorized"
+                data-techniques={recipe.techniques?.join(',').toLowerCase() || ''}
+                data-vaikeustaso={recipe.vaikeustaso || ''}
+                data-difficulty={recipe.vaikeustaso || ''}
+                data-dietary={recipe.dietaryType?.join(',') || ''}
+                data-costlevel={recipe.costLevel || ''}
+                data-cost={recipe.costLevel || ''}
+                data-tags={recipe.tags?.join(',').toLowerCase() || ''}
+                data-kokonaisaika={recipe.kokonaisaika || ''}
+                data-id={recipe.id}
+                data-search-name={recipe.title.toLowerCase()}
+                data-date={recipe.id}
+                data-recipe-number={recipe.formattedRecipeNumber || ''}
+                data-recipe-number-raw={recipe.recipeNumber || ''}
+                data-recipe-number-variations={recipe.numberVariations.join(',')}
+              >
+                <a 
+                  href={`/reseptit/${recipe.slug}/`} 
+                  class="group list-item"
+                  data-astro-prefetch="hover"
+                >
+                  <div class="list-item-content">
+                    {recipe.formattedRecipeNumber && (
+                      <div class="list-item-number">
+                        #{recipe.formattedRecipeNumber}
+                      </div>
+                    )}
+                    <div class="list-item-image">
+                      <img 
+                        src={recipe.image} 
+                        alt={recipe.title} 
+                        loading="lazy"
+                        decoding="async"
+                        width="80"
+                        height="60"
+                        class="w-20 h-15 object-cover rounded-lg"
+                      />
+                    </div>
+                    <div class="list-item-text">
+                      <span class="list-item-title">
+                        {recipe.title}
+                      </span>
+                    </div>
+                    <svg 
+                      class="list-item-arrow" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    </svg>
+                  </div>
+                </a>
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
+    </div>
+  </div>
+
+
+</Layout>

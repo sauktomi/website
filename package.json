@@ -4,11 +4,27 @@
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
-    "build": "astro build",
+    "build": "node scripts/generate-redirects.mjs && astro build",
+    "build:redirects": "node scripts/generate-redirects.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.7.11"
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/preact": "^4.1.0",
+    "@astrojs/sitemap": "^3.4.1",
+    "@tailwindcss/typography": "^0.5.16",
+    "@tailwindcss/vite": "^4.1.5",
+    "astro": "^5.10.0",
+    "preact": "^10.26.9",
+    "rehype-autolink-headings": "^7.1.0",
+    "remark-gfm": "^4.0.1",
+    "tailwindcss": "^4.1.5",
+    "typescript": "^5.8.3",
+    "unist-util-visit": "^5.0.0"
+  },
+  "devDependencies": {
+    "glob": "^11.0.2",
+    "purgecss": "^7.0.2"
   }
 }

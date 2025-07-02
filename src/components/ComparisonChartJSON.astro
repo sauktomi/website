@@ -1,0 +1,72 @@
+---
+// Define the props interface
+interface ComparisonItem {
+  id: string;
+  name: string;
+  slug: string;
+  properties: Record<string, string>;
+}
+
+interface Props {
+  items: ComparisonItem[];
+  propertyOrder: string[];
+}
+
+const { items, propertyOrder } = Astro.props;
+---
+
+<div class="comparison-chart">
+  <div class="grid grid-cols-[auto,1fr] md:grid-cols-[auto,repeat(var(--num-items),1fr)] gap-2">
+    <!-- Empty cell for top-left corner -->
+    <div class="font-bold col-start-1 row-start-1"></div>
+    
+    <!-- Item names as column headers -->
+    {items.map((item, index) => (
+      <div class="font-bold text-center p-2 bg-blue-100 rounded" style={`grid-column: ${index + 2}; grid-row: 1;`}>
+<a href={`#${item.id}`} class="text-blue-700 hover:underline">
+          {item.name}
+        </a>
+      </div>
+    ))}
+    
+    <!-- Property rows -->
+    {propertyOrder.map((property, propertyIndex) => (
+      <>
+        <!-- Property name as row header -->
+        <div class="font-semibold p-2 bg-gray-100 rounded" style={`grid-column: 1; grid-row: ${propertyIndex + 2};`}>
+          {property}
+        </div>
+        
+        <!-- Property values for each item -->
+        {items.map((item, itemIndex) => (
+          <div class="p-2 border border-gray-200 rounded" style={`grid-column: ${itemIndex + 2}; grid-row: ${propertyIndex + 2};`}>
+            {item.properties[property] || '-'}
+          </div>
+        ))}
+      </>
+    ))}
+  </div>
+</div>
+
+<style define:vars={{ 'num-items': items.length }}>
+  .comparison-chart {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+  }
+  
+  @media (max-width: 768px) {
+    .comparison-chart {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    
+    .comparison-chart > .grid {
+      display: block;
+    }
+    
+    .comparison-chart > .grid > div {
+      margin-bottom: 0.5rem;
+    }
+  }
+</style> 

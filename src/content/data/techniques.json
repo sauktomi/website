@@ -1,0 +1,1260 @@
+{
+  "category": {
+    "kuumakypsentäminen": {
+      "id": "kuumakypsentäminen",
+      "name": "Kuumakypsentäminen",
+      "description": "Lämmön siirtäminen ruokaan proteiinien denaturaatiota ja makujen kehittymistä varten",
+      "properties": ["lämpötila", "aika", "välineet", "vaikeustaso"],
+      "science": "Lämpö muuttaa proteiinien rakennetta, hajottaa kollageenia gelatiineksi ja aktivoi entsyymejä. Maillard-reaktio alkaa 140°C:ssa."
+    },
+    "kylmävalmistus": {
+      "id": "kylmävalmistus", 
+      "name": "Kylmävalmistus",
+      "description": "Rakenteen ja makujen kehittäminen ilman lämpöä",
+      "properties": ["aika", "lämpötila", "välineet", "säilyvyys"],
+      "science": "Hyödyntää hapotusta, fermentaatiota ja entsymaattisia reaktioita. Matala lämpötila säilyttää aromeja."
+    },
+    "säilöntä": {
+      "id": "säilöntä",
+      "name": "Säilöntä", 
+      "description": "Mikrobiologisen pilaantumisen estäminen",
+      "properties": ["säilyvyys", "lämpötila", "välineet", "vaikeustaso"],
+      "science": "Estää mikrobitoimintaa pH-muutoksilla, vedenpoistoilla tai konservointimenetelmillä."
+    },
+    "maustaminen": {
+      "id": "maustaminen",
+      "name": "Maustaminen",
+      "description": "Makujen lisääminen ja tehostaminen",
+      "properties": ["aika", "määrä", "välineet", "vaikeustaso"],
+      "science": "Hyödyntää makureseptoreja ja aromayhdisteiden liukoisuutta. Timing on kriittinen."
+    },
+    "tekstuuritekniikat": {
+      "id": "tekstuuritekniikat",
+      "name": "Tekstuuritekniikat",
+      "description": "Ruoan rakenteen ja koostumuksen muokkaaminen",
+      "properties": ["välineet", "aika", "vaikeustaso", "tulos"],
+      "science": "Muokkaa proteiinien ja hiilihydraattien rakennetta, kontrolloiden suutuntumaa."
+    },
+    "leipominen": {
+      "id": "leipominen",
+      "name": "Leipominen",
+      "description": "Leivontatuotteiden valmistus gluteenin ja hiivan hyödyntämisellä",
+      "properties": ["lämpötila", "aika", "välineet", "vaikeustaso"],
+      "science": "Gluteenin kehittäminen, hiivan fermentaatio ja Maillard-reaktiot. Tarkat mittasuhteet kriittisiä."
+    },
+    "italialainen": {
+      "id": "italialainen",
+      "name": "Italialaiset tekniikat",
+      "description": "Perinteiset italialaiset tekniikat ja filosofia",
+      "properties": ["perinne", "välineet", "aika", "vaikeustaso"],
+      "science": "Raaka-aineiden kunnioittaminen ja tekniikoiden täydellinen hallinta."
+    },
+    "perustekniikat": {
+      "id": "perustekniikat",
+      "name": "Perustekniikat", 
+      "description": "Kaikkien keittiötaitojen tekniset perustaidot",
+      "properties": ["tarkkuus", "turvallisuus", "tehokkuus", "vaikeustaso"],
+      "science": "Muodostavat perustan monimutkaisemmille tekniikoille."
+    }
+  },
+  "items": {
+    "veitsentaidot": {
+      "id": "veitsentaidot",
+      "name": "Veitsentaidot",
+      "category": "perustekniikat",
+      "description": "Turvallinen ja tehokas veitsen käyttö - kaikkien keittiötaitojen perusta, joka määrittää ruoanvalmistuksen nopeuden, tarkkuuden ja turvallisuuden",
+      "properties": {
+        "tarkkuus": "Korkea",
+        "turvallisuus": "Kriittinen", 
+        "vaikeustaso": "Helppo-Keskitaso"
+      },
+      "science": "Terävä veitsi vaatii vähemmän painetta, vähentäen liukastumisriskiä.",
+      "variants": [
+        {"name": "Julienne", "description": "2x2x50mm tikkumuoto"},
+        {"name": "Brunoise", "description": "2x2x2mm kuutio"},
+        {"name": "Chiffonade", "description": "Lehtien ohut silppuaminen"},
+        {"name": "Macedoine", "description": "5x5x5mm kuutio"}
+      ],
+      "techniques": [
+        "Kynsiote: sormenpäät käyristetty, suojaa sormia",
+        "Ohjausote: etusormella veitsen selkää vasten",
+        "Köppänäote: täysi kontrolli, turvallinen"
+      ],
+      "tips": [
+        "Pidä veitsi terävänä - tylsä veitsi vaarallisempi",
+        "Käytä kynsiote sormien suojaamiseksi",
+        "Liikuta veitsen kärkeä, älä nosta kokonaan",
+        "Älä jätä veitsiä pesualtaaseen veden alle"
+      ],
+      "equipment": ["Terävä veitsi", "Leikkuulauta", "Hiomakivi"],
+      "difficulty": "Helppo-Keskitaso",
+      "timeRequired": "Elinikäinen oppiminen",
+      "tags": ["turvallisuus", "perustaidot", "tehokkuus"]
+    },
+    "mise-en-place": {
+      "id": "mise-en-place",
+      "name": "Mise en place",
+      "category": "perustekniikat",
+      "description": "Ranskalainen filosofia järjestelmällisestä valmistelusta - kaiken ainesten mittaaminen ja työvälineiden järjestäminen etukäteen tehostaa ruoanvalmistusta merkittävästi ja vähentää virheitä",
+      "properties": {
+        "järjestelmällisyys": "Korkea",
+        "tehokkuus": "Maksimaalinen",
+        "vaikeustaso": "Helppo"
+      },
+      "philosophy": "Asettaa paikoilleen - ammattikeittiöiden työfilosofia.",
+      "components": [
+        "Reseptin kokonaisvaltainen ymmärtäminen",
+        "Ainesten mittaaminen ja valmistelu",
+        "Työvälineiden järjestäminen",
+        "Työvaiheiden looginen suunnittelu"
+      ],
+      "benefits": [
+        "Vähentää stressiä ja virheitä",
+        "Nopeuttaa ruoanvalmistusta",
+        "Parantaa lopputuloksen laatua"
+      ],
+      "tips": [
+        "Lue resepti kaksi kertaa läpi",
+        "Mittaa ainekset pieniin kulhoihin",
+        "Järjestä työvälineet käyttöjärjestyksessä",
+        "Siivoa työskentelyn edetessä"
+      ],
+      "equipment": ["Pienet kulhot", "Mittavälineet", "Järjestetyt työvälineet"],
+      "difficulty": "Helppo",
+      "timeRequired": "15-30% kokonaisajasta",
+      "tags": ["järjestelmällisyys", "valmistelu", "ammatillisuus"]
+    },
+    "paistaminen": {
+      "id": "paistaminen",
+      "name": "Paistaminen",
+      "category": "kuumakypsentäminen",
+      "description": "Ruoan kypsyttäminen kuumassa rasvassa korkeassa lämmössä - luo ruskean, makukkaan kuoren Maillard-reaktion avulla säilyttäen sisuksen mehevänä ja mureana",
+      "properties": {
+        "lämpötila": "120-200°C",
+        "aika": "2-20 minuuttia",
+        "välineet": "Paistinpannu, rasva",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Maillard-reaktio alkaa 140°C:ssa luoden makuyhdisteitä. Vesi haihtuu pinnasta mahdollistaen kuoren muodostumisen.",
+      "variants": [
+        {"name": "Kuumapaistaminen", "temp": "200°C+", "time": "1-3 min"},
+        {"name": "Uunipaistaminen", "temp": "160-200°C", "time": "15-60 min"},
+        {"name": "Haudutuspaistaminen", "temp": "140-180°C", "time": "10-30 min"}
+      ],
+      "fats": [
+        "Oliiviöljy: makua antava, savupiste 190°C",
+        "Rypsiöljy: neutraali, savupiste 204°C", 
+        "Voi: makua antava, savupiste 150°C",
+        "Ghee: pähkinäinen, savupiste 250°C"
+      ],
+      "tips": [
+        "Kuumenna pannu ennen raaka-aineen lisäämistä",
+        "Älä liikuttele liikaa - anna muodostua kuori",
+        "Anna ruoan lepää ennen tarjoilua",
+        "Käytä sopivaa rasvaa lämpötilalle"
+      ],
+      "equipment": ["Paistinpannu", "Lasta", "Lämpömittari"],
+      "difficulty": "Helppo",
+      "timeRequired": "5-20 minuuttia",
+      "tags": ["kuuma", "rasva", "ruskistus", "maillard"]
+    },
+    "haudutus": {
+      "id": "haudutus",
+      "name": "Haudutus", 
+      "category": "kuumakypsentäminen",
+      "description": "Yhdistelmätekniikka jossa liha ensin ruskistetaan voimakkaassa lämmössä, sitten kypsytetään hitaasti nesteessä - muuttaa sitkeän kollageenin gelatiineksi tehden lihasta mureaa",
+      "properties": {
+        "lämpötila": "160-180°C uuni / 85-95°C neste",
+        "aika": "1-4 tuntia",
+        "välineet": "Raskaspohjainen kattila",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Kollageeni muuttuu gelatiineksi 70-80°C:ssa pitkässä kypsytyksessä. Kostea lämpö säilyttää mehut.",
+      "phases": [
+        {"name": "Ruskistus", "temp": "180-200°C", "time": "5-10 min"},
+        {"name": "Aromivihannesten lisäys", "temp": "120-140°C", "time": "5 min"},
+        {"name": "Deglasointi", "temp": "100°C", "time": "2 min"},
+        {"name": "Haudutus", "temp": "85-95°C", "time": "1-4h"}
+      ],
+      "liquids": [
+        "Viini: happamuus ja syvyys",
+        "Liemi: umami-maku",
+        "Olut: maltainen maku",
+        "Tomaattimurska: happamuus ja väri"
+      ],
+      "tips": [
+        "Valitse sitkeää lihaa jossa paljon kollageenia",
+        "Ruskista huolellisesti makujen kehittämiseksi",
+        "Neste peittää 1/3-2/3 raaka-aineesta",
+        "Käytä matala, tasainen lämpötila"
+      ],
+      "equipment": ["Raskaspohjainen kattila", "Tiivis kansi", "Uuni"],
+      "difficulty": "Keskitaso", 
+      "timeRequired": "2-5 tuntia",
+      "tags": ["hidas", "märkä lämpö", "kollageeni"]
+    },
+    "poaching": {
+      "id": "poaching",
+      "name": "Poaching",
+      "category": "kuumakypsentäminen", 
+      "description": "Herkkien raaka-aineiden varovainen kypsytys miedossa lämmössä maustetussa nesteessä - säilyttää mehevän, silkinpehmeän rakenteen ilman ylikuumentumista",
+      "properties": {
+        "lämpötila": "70-85°C",
+        "aika": "5-30 minuuttia",
+        "välineet": "Matala kattila, lämpömittari",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Matala lämpötila säilyttää herkkien proteiinien rakenteen estäen liiallisen koagulaation.",
+      "liquids": [
+        "Maustettu vesi: peruspoaching",
+        "Liemi: lisää makua",
+        "Viini: aromaattista",
+        "Maito: pehmeää, cremamaista"
+      ],
+      "applications": [
+        "Kala: säilyttää herkän rakenteen",
+        "Munat: täydellinen aamupala", 
+        "Hedelmät: desserttivaihtoehto",
+        "Siipikarja: kosteat rintapalat"
+      ],
+      "tips": [
+        "Vesi ei saa kiehua - vain hiljaisti porata",
+        "Lisää happoa munanvalkuaisen koagulointiin",
+        "Käytä tuoreinta mahdollista raaka-ainetta",
+        "Testaa kypsyys varovasti"
+      ],
+      "equipment": ["Matala kattila", "Lämpömittari", "Reikäkauhla"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "5-30 minuuttia", 
+      "tags": ["matala lämpötila", "hellävarainen", "kosteus"]
+    },
+    "keittäminen": {
+      "id": "keittäminen",
+      "name": "Keittäminen",
+      "category": "kuumakypsentäminen",
+      "description": "Ruoan kypsyttäminen kiehuvassa vedessä tai nesteessä - tehokas lämmönsiirtomenetelmä joka kypsyttää ruoan tasaisesti koko volyymissa konvektion avulla",
+      "properties": {
+        "lämpötila": "100°C",
+        "aika": "5-60 minuuttia", 
+        "välineet": "Kattila, vesi",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Vesi siirtää lämpöä tehokkaasti konvektion avulla. 100°C:ssa vesi muuttuu höyryksi.",
+      "variants": [
+        {"name": "Kiehautus", "time": "30s-2min", "purpose": "Prosessin pysäyttäminen"},
+        {"name": "Haudutus", "temp": "95-98°C", "time": "10-60min"},
+        {"name": "Osittainen keittäminen", "time": "50-80% normaalista"}
+      ],
+      "salting": [
+        "Yleissääntö: 1 rkl suolaa/litra",
+        "Pasta: 10g suolaa/litra", 
+        "Vihannekset: 1 tl/litra",
+        "Peruna: 2 tl/litra"
+      ],
+      "tips": [
+        "Suolaa vesi ennen ainesten lisäämistä",
+        "Älä täytä kattilaaja liikaa",
+        "Testaa kypsyys säännöllisesti",
+        "Käytä kylmää vettä kypsytyksen pysäyttämiseen"
+      ],
+      "equipment": ["Kattila", "Reikäkauhla", "Ajastin"],
+      "difficulty": "Helppo",
+      "timeRequired": "5-60 minuuttia",
+      "tags": ["kuuma", "vesi", "konvektio"]
+    },
+    "kiehautus": {
+      "id": "kiehautus", 
+      "name": "Kiehautus",
+      "category": "kuumakypsentäminen",
+      "description": "Vihannesten nopea keittäminen kiehuvassa vedessä ja välitön jäähdytys jääkylvyssä - pysäyttää entsyymitoiminnan säilyttäen kirkkaat värit ja ravintoaineet",
+      "properties": {
+        "lämpötila": "100°C + 0°C",
+        "aika": "30s-3min",
+        "välineet": "Kattila, jääkylpy",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Lyhyt kuumennys inaktivoi entsyymejä säilyttäen rakenteen ja ravintoaineet. Jääkylpy pysäyttää prosessin.",
+      "timing": [
+        "Parsa: 2-3 min",
+        "Parsakaali: 3 min", 
+        "Vihreät pavut: 2-3 min",
+        "Pinaatti: 30s",
+        "Porkkana: 3-4 min"
+      ],
+      "process": [
+        "Tuo vesi kiehun + suolaa",
+        "Lisää vihannekset pienissä erissä",
+        "Keita määrätty aika",
+        "Siirrä välittömästi jääkylpyyn",
+        "Anna jäähtyä täysin"
+      ],
+      "benefits": [
+        "Säilyttää kirkkaat värit",
+        "Säilyttää ravintoaineet",
+        "Nopeuttaa myöhempää valmistusta",
+        "Pidentää säilyvyyttä"
+      ],
+      "tips": [
+        "Älä täytä kattilaaja liikaa kerralla",
+        "Jääkylpy kriittinen - keskeyttää kypsytyksen",
+        "Kuivaa huolellisesti säilytystä varten",
+        "Käytä 24 tunnin sisällä"
+      ],
+      "equipment": ["Iso kattila", "Reikäkauhla", "Jää", "Kylmä vesi"],
+      "difficulty": "Helppo",
+      "timeRequired": "5-10 minuuttia",
+      "tags": ["nopea", "värit", "entsyymit", "säilyvyys"]
+    },
+    "confit": {
+      "id": "confit",
+      "name": "Confit",
+      "category": "kuumakypsentäminen", 
+      "description": "Perinteinen ranskalainen tekniikka: ruoan hidas kypsytys matalassa lämpötilassa täysin rasvaan upotettuna - luo uskomattoman murean rakenteen ja säilöö samalla ruoan",
+      "properties": {
+        "lämpötila": "60-85°C",
+        "aika": "1-8 tuntia",
+        "välineet": "Syvä kattila, rasva",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Matala lämpötila ja rasva estävät ylikuumentumisen säilyttäen mehut. Rasva toimii säilöntäaineena.",
+      "types": [
+        {"name": "Ankka confit", "temp": "70°C", "time": "2-3h"},
+        {"name": "Oliiviöljy confit", "temp": "60-65°C", "time": "1-2h"},
+        {"name": "Tomaatti confit", "temp": "65°C", "time": "3-4h"},
+        {"name": "Valkosipuli confit", "temp": "60°C", "time": "1h"}
+      ],
+      "preparation": [
+        "Suolaa raaka-aine etukäteen kosteuden poistamiseksi",
+        "Käytä riittävästi rasvaa täydelliseen peittämiseen",
+        "Esilämmitä rasva hitaasti haluttuun lämpötilaan",
+        "Lisää raaka-aine ja ylläpidä tasainen lämpötila"
+      ],
+      "tips": [
+        "Suolaa 2-24h etukäteen kosteuden poistamiseksi",
+        "Seuraa lämpötilaa tarkasti", 
+        "Säilytä rasvassa säilyvyyden parantamiseksi",
+        "Poista rasvasta vasta käyttöhetkellä"
+      ],
+      "storage": "Säilyy 2-4 viikkoa rasvassa jääkaapissa",
+      "equipment": ["Syvä kattila", "Lämpömittari", "Laadukas rasva"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "2-8 tuntia",
+      "tags": ["matala lämpötila", "rasva", "säilöntä", "mureus"]
+    },
+    "vaahdotus": {
+      "id": "vaahdotus",
+      "name": "Vaahdotus",
+      "category": "tekstuuritekniikat", 
+      "description": "Ilman sekoittaminen nesteen tai massan sekaan proteiinien avulla - luo kevyen, ilmavan rakenteen joka pysyy vakaana ja antaa tilavuutta leivonnaisiin ja jälkiruokiin",
+      "properties": {
+        "välineet": "Vatkain, kulho",
+        "aika": "2-15 minuuttia",
+        "vaikeustaso": "Helppo-Keskitaso",
+        "tulos": "Vaahdokas, ilmava rakenne"
+      },
+      "science": "Proteiinit muuttavat muotoaan ja ympäröivät ilmakuplat muodostaen stabiilin vaahdon.",
+      "variants": [
+        {"name": "Munien vaahdotus", "technique": "Kuuma/kylmä metodi"},
+        {"name": "Kerman vaahdotus", "technique": "Kylmä kerma, kylmä kulho"},
+        {"name": "Munanvalkuaisen vaahdotus", "technique": "Puhtaat välineet, asteittain sokeri"}
+      ],
+      "stages": [
+        "Soft peaks: vaahto painuu kokoon",
+        "Medium peaks: pysyvät hetken pystyssä", 
+        "Stiff peaks: pysyvät jäykästi pystyssä",
+        "Over-whipped: alkaa erottua ja rakeistua"
+      ],
+      "tips": [
+        "Käytä kylmää kermaa ja kulhoa",
+        "Älä vatkaa liikaa - kerma erottuu",
+        "Lisää sokeri vähitellen stabiilisuuden parantamiseksi",
+        "Varmista täysin puhtaat välineet munanvalkuaisille"
+      ],
+      "equipment": ["Vatkain", "Kylmä kulho", "Puhtaat välineet"],
+      "difficulty": "Helppo-Keskitaso",
+      "timeRequired": "2-15 minuuttia",
+      "tags": ["ilma", "vaahto", "kerma", "proteiini"]
+    },
+    "sekoitus": {
+      "id": "sekoitus",
+      "name": "Sekoitus",
+      "category": "tekstuuritekniikat",
+      "description": "Ainesten yhdistäminen tasaiseksi seokseksi gluteenin kehittymisen tarkalla hallinnalla - liian vähän sekoitusta jättää epätasaista, liian paljon tekee sitkeää",
+      "properties": {
+        "välineet": "Lasta, vatkain",
+        "aika": "30s-5min",
+        "vaikeustaso": "Helppo",
+        "tulos": "Tasainen seos"
+      },
+      "science": "Mekaaninen sekoitus yhdistää ainekset molekyylitasolla. Liiallinen sekoitus kehittää gluteenia.",
+      "methods": [
+        {"name": "Folding", "description": "Alakautta ylös kääntävä liike"},
+        {"name": "Creaming", "description": "Voin ja sokerin vaahdottaminen"},
+        {"name": "Cut and fold", "description": "Leikkaa-ja-taita tekniikka"}
+      ],
+      "tips": [
+        "Käytä laajoja, pyyhkiviä liikkeitä",
+        "Lopeta heti kun aines sekoittunut", 
+        "Älä ylisekoita gluteenin kehittymisen välttämiseksi",
+        "Seuraa koostumuksen muutoksia"
+      ],
+      "visual_cues": [
+        "Tasainen väri kauttaaltaan",
+        "Ei jauhoraitoja",
+        "Sileä rakenne",
+        "Ainekset täysin yhdistyneet"
+      ],
+      "equipment": ["Lasta", "Kulho", "Vatkain"],
+      "difficulty": "Helppo",
+      "timeRequired": "30s-5min", 
+      "tags": ["yhdistäminen", "rakenne", "gluteeni"]
+    },
+    "ruskistus": {
+      "id": "ruskistus",
+      "name": "Ruskistus",
+      "category": "kuumakypsentäminen",
+      "description": "Ruoan pinnan ruskistaminen erittäin korkeassa lämmössä - Maillard-reaktio ja karamellisointi luovat satoja uusia makuyhdisteitä ja houkuttelevan värin",
+      "properties": {
+        "lämpötila": "150-250°C", 
+        "aika": "1-10 minuuttia",
+        "välineet": "Kuuma pannu/uuni",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Maillard-reaktio aminohappojen ja sokereiden välillä luo makuyhdisteitä. Alkaa 140°C:ssa.",
+      "variants": [
+        {"name": "Karamellisointi", "temp": "160-180°C", "examples": "Sipuli, sokerikuorrutus"},
+        {"name": "Gratinointi", "temp": "200-250°C", "examples": "Lasagne, crème brûlée"},
+        {"name": "Searing", "temp": "200°C+", "examples": "Pihvi, kala"}
+      ],
+      "temperature_guide": [
+        "120-140°C: Hidas, syvä maku",
+        "140-170°C: Perus ruskistus", 
+        "170-200°C: Nopea, kirkas maku",
+        "200°C+: Searing, riski palamiseeen"
+      ],
+      "tips": [
+        "Kuivaa raaka-aine ennen ruskistamista",
+        "Käytä sopivaa rasvaa korkealle lämpötilalle",
+        "Älä liikuttele ruskistuksen aikana",
+        "Seuraa väriä ja tuoksua"
+      ],
+      "equipment": ["Paistinpannu", "Uuni", "Lasta", "Lämpömittari"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "1-10 minuuttia",
+      "tags": ["kuuma", "pinta", "maku", "maillard"]
+    },
+    "emulsifiointi": {
+      "id": "emulsifiointi",
+      "name": "Emulsifiointi", 
+      "category": "tekstuuritekniikat",
+      "description": "Kahden luonnostaan sekoittumattoman nesteen (öljy ja vesi) yhdistäminen tasaiseksi, sileäksi kastikkeeksi emulgoijien ja tarkan tekniikan avulla",
+      "properties": {
+        "välineet": "Vatkain, sauvasekoitin",
+        "aika": "2-10 minuuttia",
+        "vaikeustaso": "Keskitaso-Vaikea",
+        "tulos": "Sileä, tasainen kastike"
+      },
+      "science": "Emulgoijat sitovat vesi- ja rasvamolekyylit. Lesitiini munankeltuaisessa on vahva emulgoija.",
+      "emulsifiers": [
+        "Lesitiini (munankeltuainen): vahva, stabiili",
+        "Sinappi: sisältää musiinia", 
+        "Hunaja: glukoosin ominaisuudet",
+        "Proteiinit: munanvalkuainen, jauhoproteiinit"
+      ],
+      "types": [
+        {"name": "Öljy-vesi", "example": "Majoneesi", "ratio": "80% öljyä"},
+        {"name": "Vesi-öljy", "example": "Voi", "ratio": "80% rasvaa"},
+        {"name": "Kuuma", "example": "Hollandaise", "temp": "60-70°C"}
+      ],
+      "technique": [
+        "Aloita emulgoijalla ja vesifaasilla",
+        "Lisää öljy pisara kerrallaan",
+        "Vatkaa jatkuvasti",
+        "Nopeuta kun emulsio vakiintuu"
+      ],
+      "tips": [
+        "Lisää öljy hitaasti pisara kerrallaan aluksi",
+        "Pidä lämpötila tasaisena kuumissa emulsioissa", 
+        "Käytä huoneenlämpöisiä aineksia",
+        "Jos hajoaa: aloita uudella emulgoijalla"
+      ],
+      "equipment": ["Vatkain", "Sauvasekoitin", "Kulho", "Lämpömittari"],
+      "difficulty": "Keskitaso-Vaikea",
+      "timeRequired": "2-10 minuuttia",
+      "tags": ["kastike", "öljy", "lesitiini", "stabiilisuus"]
+    },
+    "sous-vide": {
+      "id": "sous-vide",
+      "name": "Sous vide",
+      "category": "kuumakypsentäminen",
+      "description": "Ranskasta tyhjiökypsennys - ruoan kypsyttäminen tyhjiöpakkauksessa täsmälleen hallitussa lämpötilassa, mahdollistaa täydellisen doneness-asteen ilman ylikypsymisen riskiä",
+      "properties": {
+        "lämpötila": "50-85°C",
+        "aika": "1-48 tuntia",
+        "välineet": "Tyhjiöpakkauskone, cirkulaattori",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Tarkka lämpötilakontrolli mahdollistaa optimaalisen denaturaation ilman ylikuumentumista.",
+      "temperature_guide": [
+        "50-55°C: Kala, pehmeä kananmuna",
+        "55-60°C: Herkkä kala",
+        "60-65°C: Sianliha, kananrinta", 
+        "65-70°C: Naudanliha medium-rare",
+        "70-85°C: Sitkeät lihapalat"
+      ],
+      "benefits": [
+        "Estää aromien haihtumisen",
+        "Parantaa lämmönsiirtoa",
+        "Estää hapettumisen", 
+        "Mahdollistaa infuusion"
+      ],
+      "tips": [
+        "Käytä tarkkaa lämpömittaria ja sirkulaattoria",
+        "Marinoi etukäteen paremman maun saamiseksi",
+        "Viimeistele ruskistamalla",
+        "Jäähdytä nopeasti jos ei tarjoilla heti"
+      ],
+      "safety": [
+        "Noudata HACCP-ohjeita",
+        "Älä pidä vaaravyöhykkeellä (5-60°C) liian pitkään",
+        "Jäähdytä nopeasti alle 5°C jos ei syödä heti"
+      ],
+      "equipment": ["Tyhjiöpakkauskone", "Cirkulaattori", "Vedenkestävät pussit"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "1-48 tuntia",
+      "tags": ["tyhjiö", "tarkka", "hidas", "teknologia"]
+    },
+    "fermentointi": {
+      "id": "fermentointi",
+      "name": "Fermentointi",
+      "category": "säilöntä",
+      "description": "Ikivanha säilöntätekniikka hyödyntäen hyödyllisiä mikrobeja - muuttaa ruoan makua, parantaa sen säilyvyyttä ja lisää probioottisia ominaisuuksia kontrolloidussa prosessissa",
+      "properties": {
+        "lämpötila": "15-30°C",
+        "aika": "Päivistä kuukausiin",
+        "välineet": "Puhdas astia, suola/sokeri",
+        "vaikeustaso": "Keskitaso-Vaikea"
+      },
+      "science": "Hyötyiset mikrobit tuottavat happoja estäen haitallisten bakteerien kasvun. pH laskee alle 4.6:n.",
+      "types": [
+        {"name": "Maitohappofermentaatio", "example": "Sauerkraut", "ph": "3.4-4.0", "salt": "2-3%"},
+        {"name": "Alkoholifermentaatio", "example": "Hiivat", "ph": "3.0-4.0", "temp": "20-25°C"},
+        {"name": "Etikkafermentaatio", "example": "Etikka", "ph": "2.5-3.5", "oxygen": "Vaatii"},
+        {"name": "Kombucha", "example": "SCOBY", "ph": "2.5-3.5", "time": "7-14 päivää"}
+      ],
+      "salt_calculations": [
+        "2% suolaliuos: 20g/litra",
+        "3% suolaliuos: 30g/litra", 
+        "Kuivasuolaus: 2-3% painosta"
+      ],
+      "tips": [
+        "Pidä välineet erittäin puhtaina",
+        "Käytä oikeaa suolapitoisuutta (2-3%)",
+        "Seuraa lämpötilaa ja kosteutta",
+        "Maista säännöllisesti kehityksen seuraamiseksi"
+      ],
+      "safety": [
+        "Seuraa pH:ta - alle 4.6 yleensä turvallista",
+        "Tunnista pilaantumisen merkit",
+        "Käytä puhtaita välineitä aina",
+        "Säilytä oikeassa lämpötilassa"
+      ],
+      "equipment": ["Lasipurkyt", "Suola (ei-jodittu)", "pH-mittari"],
+      "difficulty": "Keskitaso-Vaikea",
+      "timeRequired": "Viikosta kuukausiin",
+      "tags": ["mikrobit", "säilöntä", "hapot", "kontrolli"]
+    },
+    "savustaminen": {
+      "id": "savustaminen",
+      "name": "Savustaminen",
+      "category": "säilöntä",
+      "description": "Ruoan kypsyttäminen ja maustaminen puun palamisesta syntyvällä savulla - antaa syvän, kompleksin maun ja toimii luonnollisena säilöntämenetelmänä",
+      "properties": {
+        "lämpötila": "80-120°C (kuuma) / 15-25°C (kylmä)",
+        "aika": "2-12h (kuuma) / päiviä (kylmä)",
+        "välineet": "Savustin, puulastut",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Savun kemikaalit antavat makua ja toimivat säilöntäaineina. Pellicle-kalvo sitoo savumakuja.",
+      "types": [
+        {"name": "Kuumasavustus", "temp": "80-120°C", "time": "2-8h", "result": "Valmis syötäväksi"},
+        {"name": "Kylmäsavustus", "temp": "15-25°C", "time": "12-72h", "result": "Vaatii lisäkäsittelyn"},
+        {"name": "Nestemäinen savu", "temp": "Nopea", "time": "Minuutteja", "result": "Nopea savumaku"}
+      ],
+      "wood_types": [
+        "Tammi: voimakas, klassinen",
+        "Omena: mieto, hedelmäinen",
+        "Kirsikka: mieto, makea", 
+        "Hiiori: vahva, sianlihamaku",
+        "Saksanpähkinä: mieto, pähkinäinen"
+      ],
+      "preparation": [
+        "Suolaa tai marinoi etukäteen",
+        "Kuivaa pinta pellicle-kalvon muodostamiseksi", 
+        "Esilämmitä savustin",
+        "Käytä kuivia puulastuja"
+      ],
+      "tips": [
+        "Suolaa 4-24h etukäteen",
+        "Käytä kuivia puulastuja tasaista savua varten",
+        "Seuraa sisälämpötilaa tarkasti",
+        "Anna pellicle muodostua ennen savustusta"
+      ],
+      "equipment": ["Savustin", "Puulastut", "Lämpömittari"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "Tunneista päiviin",
+      "tags": ["savu", "maku", "säilöntä", "lämpötilakontrolli"]
+    },
+    "kuullotus": {
+      "id": "kuullotus",
+      "name": "Kuullotus",
+      "category": "kuumakypsentäminen",
+      "description": "Vihannesten ja mausteiden hellävarainen kypsyttäminen miedossa lämmössä rasvassa - vapauttaa ja konsentroi aromit ilman ruskistusta, muodostaen makukkaan pohjan kastikkeille",
+      "properties": {
+        "lämpötila": "60-80°C",
+        "aika": "5-15 minuuttia",
+        "välineet": "Pannu, rasva",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Matala lämpötila liuottaa aromiyhdisteitä rasvaan ilman Maillard-reaktioita.",
+      "applications": [
+        "Sipulin kuullotus kastikkeiden pohjaksi",
+        "Valkosipulin kuullotus aromien vapauttamiseksi",
+        "Yrttien kuullotus öljyyn",
+        "Mausteiden kuullotus tehon aktivoimiseksi"
+      ],
+      "visual_cues": [
+        "Sipuli läpikuultavaksi mutta ei värjäydy",
+        "Valkosipuli kultaiseksi mutta ei ruskeaksi",
+        "Tuoksu voimistuu ja makeammaksi",
+        "Pehmenee mutta säilyttää muodon"
+      ],
+      "timing": [
+        "Sipuli: 8-12 min läpikuultavaksi",
+        "Valkosipuli: 2-3 min kultaiseksi",
+        "Selleri ja porkkana: 5-8 min",
+        "Yrtit: 30s-2 min"
+      ],
+      "tips": [
+        "Käytä matalaa lämpötilaa",
+        "Sekoita säännöllisesti",
+        "Kuuntele ääntä - hiljainen suhina hyvä",
+        "Anna aikaa - kiirehtiminen pilaa aromit"
+      ],
+      "equipment": ["Pannu", "Lasta", "Rasva"],
+      "difficulty": "Helppo",
+      "timeRequired": "5-15 minuuttia",
+      "tags": ["pehmeä", "matala lämpötila", "aromit"]
+    },
+    "deglasointi": {
+      "id": "deglasointi",
+      "name": "Deglasointi",
+      "category": "kuumakypsentäminen",
+      "description": "Pannun pohjassa kiinni olevien palaneiden makujäänteiden liuottaminen alkoholilla tai nesteellä - pelastaa ja hyödyntää intensiiviset maku-aineet kastikkeen pohjaksi",
+      "properties": {
+        "lämpötila": "Keskikorkea",
+        "aika": "2-5 minuuttia", 
+        "välineet": "Pannu, neste, lasta",
+        "vaikeustaso": "Keskitaso"
+      },
+      "science": "Fond sisältää karamellisoituneita sokereita ja Maillard-reaktiotuotteita intensiivisine makuineen.",
+      "liquids": [
+        "Viini: klassinen, happamuus tasapainottaa",
+        "Brandy: voimakas, aromaattinen",
+        "Liemi: syvä umami-maku",
+        "Balsamico: makea-hapan tasapaino"
+      ],
+      "technique": [
+        "Poista pääraaka-aine pannulta",
+        "Kaada neste kuumaan pannuun",
+        "Kaavi irtonaiset osat puulastalla",
+        "Anna redusoitua haluttuun koostumukseen",
+        "Siivilöi tarvittaessa"
+      ],
+      "alcohol_options": [
+        "Valkoviini: kevyet kalat ja siipikarja",
+        "Punaviini: tummat lihat",
+        "Sherry: makea, pähkinäinen",
+        "Brandy: klassinen, flambeerattava"
+      ],
+      "tips": [
+        "Käytä alkoholia, viiniä tai liemivettä",
+        "Kaavi pannun pohja huolellisesti",
+        "Redusoi sopivaan koostumukseen",
+        "Älä anna palamis uudelleen"
+      ],
+      "equipment": ["Paistinpannu", "Puulasta", "Deglasointi neste"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "2-5 minuuttia",
+      "tags": ["maku", "kastike", "alkoholi", "fond"]
+    },
+    "redusointi": {
+      "id": "redusointi",
+      "name": "Redusointi",
+      "category": "kuumakypsentäminen", 
+      "description": "Nesteen haihduttaminen väkevöittämiseksi - konsentroi makuja ja paksuntaa koostumusta poistamalla vettä, tehden kastikkeista ja liemistä intensiivisempiä",
+      "properties": {
+        "lämpötila": "Vaihteleva",
+        "aika": "10-60 minuuttia",
+        "välineet": "Kattila, avoin pinta",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Vesi haihtuu 100°C:ssa konsentroiden makuyhdisteitä. 50% reduktio = kaksinkertainen maku.",
+      "applications": [
+        "Kastikkeiden vahentaminen",
+        "Liemien konsentrointi",
+        "Viinin redusointi deglasoinnin jälkeen",
+        "Balsamicon vahentaminen siirappimaiseksi"
+      ],
+      "ratios": [
+        "1:2 = kevyt, hieman paksuuntaa",
+        "1:3 = keskitaso, selvästi paksumpi",
+        "1:4+ = vahva, siirappimäinen",
+        "Au sec = lähes kuiva"
+      ],
+      "testing": [
+        "Lusikatesti: kuinka valuu lusikasta",
+        "Lautastesti: tiputtaa kylmälle lautaselle",
+        "Viskositeetti: vastus sekoitettaessa",
+        "Coating: kuinka peittää lusikan"
+      ],
+      "tips": [
+        "Käytä avointa kattilaa nopeampaan haihdutukseen",
+        "Sekoita säännöllisesti palamisen estämiseksi",
+        "Seuraa koostumuksen muutoksia",
+        "Lopeta kun haluttu koostumus saavutettu"
+      ],
+      "equipment": ["Avoin kattila", "Kauhla", "Aika", "Kärsivällisyys"],
+      "difficulty": "Helppo",
+      "timeRequired": "10-60 minuuttia",
+      "tags": ["konsentrointi", "maku", "haihdutus"]
+    },
+    "soseuttaminen": {
+      "id": "soseuttaminen",
+      "name": "Soseuttaminen",
+      "category": "tekstuuritekniikat",
+      "description": "Ruoan muuttaminen tasaiseksi, sileäksi massaksi rikkomalla solurakenteet mekaanisesti - luo veloutemaisen koostumuksen keitoille, kastikkeille ja lisukkeille",
+      "properties": {
+        "välineet": "Sauvasekoitin, tehosekoitin",
+        "aika": "1-5 minuuttia",
+        "vaikeustaso": "Helppo",
+        "tulos": "Sileä, tasainen rakenne"
+      },
+      "science": "Mekaaninen voima rikoo solurakenteet ja yhdistää ainekset homogeeniseksi massaksi.",
+      "methods": [
+        {"name": "Sauvasekoitin", "pros": "Helppo, kuumille aineille", "cons": "Ei yhtä sileä"},
+        {"name": "Tehosekoitin", "pros": "Erittäin sileä", "cons": "Voi lämmetä"},
+        {"name": "Siivilä", "pros": "Täydellinen sileys", "cons": "Hidas"},
+        {"name": "Food mill", "pros": "Siivilöi samalla", "cons": "Vaatii erikoisvälineen"}
+      ],
+      "texture_levels": [
+        "Rustic: karkea, näkyviä palasia",
+        "Smooth: sileä mutta ei täydellinen",
+        "Silky: täydellisen sileä, siivilöity",
+        "Foamy: ilmava, vaahdotettu"
+      ],
+      "liquid_additions": [
+        "Keitinvesi: neutraali",
+        "Liemi: lisää umami-makua",
+        "Kerma: rikkaus ja sileä suutuntuma",
+        "Voi: rikkaus ja kiiltoa"
+      ],
+      "tips": [
+        "Soseuta kuumat ainekset varovasti",
+        "Siivilöi tarvittaessa sileämmän tuloksen saamiseksi",
+        "Lisää nestettä vähitellen halutun koostumuksen saamiseksi",
+        "Maista ja mausta soseutuksen jälkeen"
+      ],
+      "safety": [
+        "Käytä syvää kulhoa roiskumisen estämiseksi",
+        "Älä täytä tehosekoitinta liian täyteen kuumalla",
+        "Anna jäähtyä hieman ennen soseuttamista"
+      ],
+      "equipment": ["Sauvasekoitin", "Tehosekoitin", "Siivilä", "Kulho"],
+      "difficulty": "Helppo",
+      "timeRequired": "1-5 minuuttia",
+      "tags": ["sileä", "massa", "rakenne"]
+    },
+    "leivonta": {
+      "id": "leivonta",
+      "name": "Leivonta",
+      "category": "leipominen",
+      "description": "Leivontatuotteiden valmistaminen uunissa korkeassa lämmössä - monimutkainen prosessi jossa kemialliset ja fysikaaliset muutokset muuttavat raaka-aineet valmiiksi leivonnaiseksi",
+      "properties": {
+        "lämpötila": "150-220°C",
+        "aika": "15-60 minuuttia",
+        "välineet": "Uuni, leivontavuoat",
+        "vaikeustaso": "Helppo-Keskitaso"
+      },
+      "science": "Lämpö aktivoi kohoaineet, koaguloi proteiinit, gelatinoi tärkkelystä ja luo Maillard-reaktioita.",
+      "phases": [
+        "0-5 min: kohoaineiden aktivointi ja lopullinen kohous",
+        "5-15 min: rakenteen muodostuminen",
+        "15+ min: kuoren ruskistuminen",
+        "Loppu: sisäinen kosteus tasaantuu"
+      ],
+      "temperature_guide": [
+        "150-160°C: Herkät leivonnaiset, marenkit",
+        "170-180°C: Kakut, muffinit, leipä",
+        "190-200°C: Pizza, kovat leivät",
+        "200°C+: Artesaanilijät"
+      ],
+      "doneness_tests": [
+        "Tikku testi: puhdas tikku keskeltä",
+        "Sisälämpötila: 90-95°C leivissä, 65-70°C kakuissa",
+        "Ääni testi: leipä soi ontolta",
+        "Joustotesti: pinta palautuu kosketuksesta"
+      ],
+      "tips": [
+        "Esilämmitä uuni 15-30 minuuttia",
+        "Mittaa ainekset tarkasti",
+        "Älä avaa luukkua ensimmäisten 15 minuutin aikana",
+        "Testaa kypsyys usealla metodilla"
+      ],
+      "humidity_control": [
+        "Höyry alkuvaiheessa: parempi kuoren kehitys",
+        "Kuiva loppu: rapeakuorinen tulos",
+        "Vesikuppi uunissa: lisää kosteutta",
+        "Avoin luukku lopussa: kuivattaa kuoren"
+      ],
+      "equipment": ["Tarkka uuni", "Leivontavuoat", "Vaaka", "Lämpömittari"],
+      "difficulty": "Helppo-Keskitaso",
+      "timeRequired": "15-60 minuuttia",
+      "tags": ["uuni", "tarkka", "kemia", "lämpötila"]
+    },
+    "autolyysi": {
+      "id": "autolyysi",
+      "name": "Autolyysi",
+      "category": "leipominen",
+      "description": "Jauhon ja veden lepuuttaminen ilman hiivaa tai suolaa - jauhojen omat entsyymit kehittävät gluteenia luonnollisesti tehden myöhemmän vaivauksen helpommaksi ja tehokkaammaksi",
+      "properties": {
+        "aika": "20-60 minuuttia",
+        "lämpötila": "Huoneenlämpö",
+        "välineet": "Kulho, peite",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Jauhojen entsyymit aktivoituvat kosteudessa ja alkavat kehittää gluteenia luonnollisesti.",
+      "enzymatic_action": [
+        "Amylaasi hajottaa tärkkelystä sokereiksi",
+        "Proteinaasi muokkaa gluteeniproteiineja",
+        "Hydraatio aloittaa gluteeniverkoston muodostumisen",
+        "pH muuttuu hieman happamammaksi"
+      ],
+      "benefits": [
+        "Helpottaa vaivaamista merkittävästi",
+        "Parantaa taikinan elastisuutta",
+        "Lisää makua entsymaattisten reaktioiden kautta",
+        "Säästää aikaa varsinaisessa vaivauksessa"
+      ],
+      "process": [
+        "Sekoita vain jauhot ja vesi",
+        "Ei suolaa (hidastaa entsyymitoimintaa)",
+        "Ei hiivaa (ei fermentaatiota)",
+        "Peitä kostean liinan alle",
+        "Anna levätä huoneenlämmössä"
+      ],
+      "hydration_levels": [
+        "75%: perus autolyysi",
+        "80%: selvä hyöty",
+        "85%+: maksimaalinen hyöty",
+        "Yli 100%: vaatii erityistekniikoita"
+      ],
+      "tips": [
+        "Sekoita vain jauhot ja vesi",
+        "Peitä kostean liinan alle",
+        "Älä lisää suolaa - hidastaa entsyymitoimintaa",
+        "Käytä 75-80% vettä jauhojen painosta"
+      ],
+      "timing": [
+        "20-30 min: perus hyöty",
+        "30-45 min: selvä parannus", 
+        "45-60 min: maksimaalinen hyöty",
+        "Yli 60 min: minimaalinen lisähyöty"
+      ],
+      "equipment": ["Kulho", "Kostea liina", "Vaaka", "Aika"],
+      "difficulty": "Helppo",
+      "timeRequired": "20-60 minuuttia",
+      "tags": ["gluteeni", "lepuutus", "entsyymit", "hydraatio"]
+    },
+    "taittelu": {
+      "id": "taittelu",
+      "name": "Taittelu",
+      "category": "leipominen",
+      "description": "Taikinan venyttäminen ja taittaminen fermentaation aikana gluteenin kehittämiseksi - vaihtoehto perinteiselle vaivaukselle joka vahvistaa taikinan rakennetta vähitellen",
+      "properties": {
+        "aika": "30s kerrallaan",
+        "toistot": "3-6 kertaa fermentaation aikana",
+        "välineet": "Kädet, työtaso",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Gluteeniverkosto vahvistuu venytyksestä ja järjestäytyy uudelleen. Jakaa hiivat tasaisesti.",
+      "technique": [
+        "Kostuta kädet hieman",
+        "Tartu taikinan reunasta",
+        "Venytä varovasti ylöspäin",
+        "Taita keskelle päälle",
+        "Toista kaikilta neljältä sivulta",
+        "Anna lepää 30 min seuraavaan kertaan"
+      ],
+      "patterns": [
+        "Letter fold: kolmeen osaan",
+        "Book fold: puoliksi",
+        "Cross fold: neljä sivua ristiin",
+        "Coil fold: keskeltä nostaminen ja käämiminen"
+      ],
+      "variants": [
+        {"name": "Coil fold", "use": "Korkean hydraation taikiroille"},
+        {"name": "Stretch and fold", "use": "Tavallisille leipätaikiroille"},
+        {"name": "Lamination", "use": "Vahvan gluteenin kehittämiseen"}
+      ],
+      "timing": [
+        "1. taittelu: 30 min fermentaation alusta",
+        "2. taittelu: 1h alusta",
+        "3. taittelu: 1.5h alusta",
+        "4. taittelu: 2h alusta (tarvittaessa)"
+      ],
+      "tips": [
+        "Kostuta kädet tarvittaessa",
+        "Älä repäise taikinaa",
+        "Tee säännöllisin välein",
+        "Seuraa taikinan jäykkyyttä"
+      ],
+      "equipment": ["Kädet", "Kostea liina", "Aika"],
+      "difficulty": "Helppo",
+      "timeRequired": "30s per kerta",
+      "tags": ["gluteeni", "venytys", "fermentaatio"]
+    },
+    "pursotus": {
+      "id": "pursotus",
+      "name": "Pursotus",
+      "category": "leipominen",
+      "description": "Taikinan tai massan muotoilu pursotinpussin ja tyllan avulla - mahdollistaa tarkat, tasaiset muodot ja ammattimaisen ulkonäön leivonnaisiin ja koristeluihin",
+      "properties": {
+        "välineet": "Pursotinpussi, tylla",
+        "aika": "5-15 minuuttia",
+        "vaikeustaso": "Keskitaso",
+        "tulos": "Tasaiset, kauniit muodot"
+      },
+      "science": "Tasainen paine ja oikea tylla luovat halutun muodon. Koostumus vaikuttaa virtausominaisuuksiin.",
+      "nozzle_types": [
+        {"name": "Tähtitylla", "sizes": "6-18mm", "uses": "Ruusukkeet, kermavirratteet"},
+        {"name": "Pyöreä tylla", "sizes": "4-15mm", "uses": "Macaronit, tasaiset muodot"},
+        {"name": "Levytylla", "sizes": "2-8mm", "uses": "Lehdet, nauhat"},
+        {"name": "Erityistyllat", "sizes": "vaihtelee", "uses": "Ammattimainen kaunistus"}
+      ],
+      "pressure_control": [
+        "Tasainen paine: yhtenäiset muodot",
+        "Lopeta paine ennen nostoa: ei häntä",
+        "Nosta suoraan ylös: puhdas muoto",
+        "Säädä nopeutta: hallitse virtausta"
+      ],
+      "consistency": [
+        "Liian löysä: ei pysy muodossa",
+        "Liian sakea: vaikea pursottaa",
+        "Optimaalinen: virtaa sujuvasti, säilyttää muodon",
+        "Lämpötila: vaikuttaa merkittävästi"
+      ],
+      "tips": [
+        "Pidä pussi kohtisuorassa pintaan",
+        "Harjoittele tasaista painetta",
+        "Pysäytä paine ennen nostamista",
+        "Pidä tylla lähellä pintaa"
+      ],
+      "equipment": ["Pursotinpussi", "Tyllävalikoima", "Leivinpaperi"],
+      "difficulty": "Keskitaso",
+      "timeRequired": "5-15 minuuttia",
+      "tags": ["muotoilu", "kaunistus", "tarkkuus"]
+    },
+    "kauliminen": {
+      "id": "kauliminen",
+      "name": "Kauliminen",
+      "category": "leipominen",
+      "description": "Taikinan levittäminen kaulimella tasaisen paksuiseksi levyksi - venyttää gluteeniverkoston hallitusti ja luo yhtenäisen rakenteen piirakoille, pastalle ja leivonnaisille",
+      "properties": {
+        "välineet": "Kaulin, työtaso, jauhot",
+        "aika": "2-10 minuuttia",
+        "vaikeustaso": "Helppo",
+        "tulos": "Tasaisen paksuinen levy"
+      },
+      "science": "Mekaaninen voima venyttää gluteeniverkoston ja jakaa taikinan tasaisesti.",
+      "technique": [
+        "Jauhoita työtaso kevyesti",
+        "Aloita keskeltä ja kaulitse ulos",
+        "Käännä taikinaa 90° säännöllisesti",
+        "Lisää jauhoja säästeliäästi",
+        "Tarkista paksuus säännöllisesti"
+      ],
+      "patterns": [
+        "Keskeltä ulos: tasainen paksuus",
+        "Ristikkäin: estää venymisen yhteen suuntaan",
+        "Kiertoliike: pyöritä taikinaa tasaisesti",
+        "Lyhyet vedot: estää repimisen"
+      ],
+      "thickness_guide": [
+        "1mm: Filo-taikina",
+        "2-3mm: Pasta, ohut pizza",
+        "3-5mm: Piirakkapohjat",
+        "5-8mm: Paksu pizza",
+        "10mm+: Focaccia"
+      ],
+      "troubleshooting": [
+        "Tarttuu: lisää jauhoja säästeliäästi",
+        "Repeää: anna taikinalle lepoaikaa",
+        "Epätasainen: vaihda suuntaa useammin",
+        "Kimpoaa takaisin: gluteeni liian kireä"
+      ],
+      "tips": [
+        "Jauhoita työtaso ja kaulin",
+        "Kaulitse keskeltä reunoja kohti",
+        "Käännä taikinaa säännöllisesti",
+        "Älä paina liikaa"
+      ],
+      "equipment": ["Kaulin", "Työtaso", "Jauhot", "Mitta"],
+      "difficulty": "Helppo",
+      "timeRequired": "2-10 minuuttia",
+      "tags": ["levitys", "tasainen", "gluteeni"]
+    },
+    "muotoilu": {
+      "id": "muotoilu",
+      "name": "Muotoilu",
+      "category": "leipominen",
+      "description": "Taikinan muokkaaminen haluttuun muotoon pintajännityksen luomiseksi - oikea tekniikka takaa tasaisen kuoren ja kauniin ulkomuodon valmiissa leivässä",
+      "properties": {
+        "välineet": "Kädet, työtaso",
+        "aika": "2-10 minuuttia",
+        "vaikeustaso": "Helppo-Keskitaso",
+        "tulos": "Haluttu muoto tasaisella pinnalla"
+      },
+      "science": "Pintajännitys gluteeniverkostossa luo tasaisen pinnan joka tukee rakennetta.",
+      "shapes": [
+        {"name": "Boule", "description": "Pyöreä leipä", "technique": "Pyöritä alla, vedä pintaa"},
+        {"name": "Batard", "description": "Soikea leipä", "technique": "Rullaa ja pidennä"},
+        {"name": "Baguette", "description": "Pitkä leipä", "technique": "Jatkuva rullaus"},
+        {"name": "Tin loaf", "description": "Vuokaleipä", "technique": "Litistä ja rullaa"}
+      ],
+      "phases": [
+        {"name": "Esimuotoilu", "rest": "15-30 min", "purpose": "Gluteenin rentoutus"},
+        {"name": "Lopullinen muotoilu", "rest": "Fermentaatioon", "purpose": "Lopullinen muoto"}
+      ],
+      "tension_creation": [
+        "Käännä saumakohta ylöspäin",
+        "Taita reunat keskelle",
+        "Käännä saumakohta alas",
+        "Vedä pintaa luoden jännitystä"
+      ],
+      "surface_quality": [
+        "Sileä pinta: oikea pintajännitys",
+        "Rypyssä: liian löysä muotoilu",
+        "Repeämät: liian kireä tai kuiva",
+        "Tasainen: hyvä tekniikka"
+      ],
+      "tips": [
+        "Älä käytä liikaa jauhoja",
+        "Luo pintaan tasainen jännitys",
+        "Anna levätä muotoilun jälkeen",
+        "Työtaso voi olla hieman tahmea"
+      ],
+      "equipment": ["Kädet", "Työtaso", "Taikinan kaavari"],
+      "difficulty": "Helppo-Keskitaso",
+      "timeRequired": "2-10 minuuttia",
+      "tags": ["muoto", "pintajännitys", "rakenne"]
+    },
+    "jäähdytys": {
+      "id": "jäähdytys",
+      "name": "Jäähdytys",
+      "category": "kylmävalmistus",
+      "description": "Ruoan tai taikinan jäähdyttäminen rakenteen stabiloimiseksi - hidastaa molekyyliliikettä, kovettaa rasvoja ja pysäyttää entsymaattisen toiminnan turvallisesti",
+      "properties": {
+        "lämpötila": "4-15°C", 
+        "aika": "30min-24h",
+        "välineet": "Jääkaappi, peite",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Matala lämpötila kovettaa rasvoja, stabiloi emulsioita ja hidastaa mikrobit.",
+      "phase_changes": [
+        "Rasvat kovettuvat: parempi käsiteltävyys",
+        "Proteiinit stabiloituvat: rakenne säilyy",
+        "Emulsiot vahvistuvat: eivät hajoa",
+        "Mikrobit hidastuvat: turvallisempi"
+      ],
+      "applications": [
+        "Taikinoiden lepuuttaminen ja stabilointi",
+        "Emulsioiden kovettaminen", 
+        "Ruoan turvallinen säilytys",
+        "Rakenteen stabilointi"
+      ],
+      "cooling_rates": [
+        "Nopea: jääkylpy, äkillinen pysäytys",
+        "Normaali: jääkaappi, kontroltoitu",
+        "Hidas: huoneenlämpö -> jääkaappi"
+      ],
+      "food_safety": [
+        "Kuuma ruoka: jäähdytä alle 2h alle 5°C:seen",
+        "Vaaravyöhyke: 5-60°C bakteerien nopea kasvu",
+        "Säilytys: pitkäaikaisesti alle 4°C",
+        "Jäähytysaika: ei saa ylittää turvallisia rajoja"
+      ],
+      "tips": [
+        "Peitä kosteus häviämisen estämiseksi",
+        "Älä aseta kuumaa ruokaa suoraan jääkaappiin",
+        "Anna riittävästi aikaa",
+        "Käytä matalimpia hyllyjä nopeampaan jäähtymiseen"
+      ],
+      "equipment": ["Jääkaappi", "Kelmu", "Astia", "Lämpömittari"],
+      "difficulty": "Helppo",
+      "timeRequired": "30min-24h",
+      "tags": ["kylmä", "stabilointi", "turvallisuus"]
+    },
+    "kypsytys": {
+      "id": "kypsytys",
+      "name": "Kypsytys",
+      "category": "kylmävalmistus",
+      "description": "Ruoan makujen ja koostumuksen kehittäminen ajan kuluessa kontrollioiduissa olosuhteissa - hyödyntää entsymaattisia reaktioita syvämpien, kompleksisempien makujen saamiseksi",
+      "properties": {
+        "lämpötila": "4-20°C",
+        "aika": "Tunneista kuukausiin", 
+        "välineet": "Säilytysastia",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Entsymaattiset reaktiot jatkuvat hitaasti matalassa lämmössä kehittäen aromeja ja mureuttaen rakenteita.",
+      "processes": [
+        "Entsymaattinen proteolyysi: proteiinit murenevat",
+        "Aromaattisten yhdisteiden kehittyminen",
+        "Makujen tasaantuminen",
+        "Rakenteen stabiloituminen"
+      ],
+      "examples": [
+        "Lihan kuivakypsytys: entsyymit mureuttavat",
+        "Juuston kypsyttäminen: mikrobien yhteistyö",
+        "Kastikkeiden kypsyttäminen: makujen tasaantuminen",
+        "Taikinoiden fermentaatio: hiivan toiminta"
+      ],
+      "optimal_conditions": [
+        "Lämpötila: 4-8°C pitkäaikainen, 15-20°C lyhytaikainen",
+        "Kosteus: 70-85% kuivumisen estämiseksi",
+        "Ilmanvaihto: kontrolltu hapen saanti",
+        "Puhtaus: pilaantumisen estäminen"
+      ],
+      "monitoring": [
+        "Visuaaliset muutokset: väri, rakenne",
+        "Aromtiset muutokset: tuoksu kehittyy",
+        "Tekstuurimuutokset: pehmenevät/kovettuvat",
+        "Makumuutokset: maistamisen kautta"
+      ],
+      "tips": [
+        "Säilytä asianmukaisissa oloissa",
+        "Anna riittävästi aikaa",
+        "Tarkkaile säilyvyysaikoja",
+        "Kirjaa muistiinpanoja muutosten seuraamiseksi"
+      ],
+      "equipment": ["Ilmatiivis astia", "Jääkaappi", "Merkintätarrat", "Päiväkirja"],
+      "difficulty": "Helppo",
+      "timeRequired": "Tunneista kuukausiin",
+      "tags": ["aika", "maku", "kehitys", "entsyymit"]
+    },
+    "kuivatus": {
+      "id": "kuivatus",
+      "name": "Kuivatus",
+      "category": "kylmävalmistus", 
+      "description": "Ruoan pinnan kuivattaminen ilmassa ennen kypsytystä parempaa ruskistusta varten - poistaa kosteuden joka estäisi lämpötilan nousun yli 100°C:n",
+      "properties": {
+        "lämpötila": "18-25°C",
+        "aika": "15-90 minuuttia",
+        "välineet": "Ilmava tila, ristikko",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Pinnan kosteus haihtuu mahdollistaen Maillard-reaktioiden nopean alkamisen.",
+      "moisture_effects": [
+        "Märkä pinta: höyristyy 100°C:ssa, ei ruskistu",
+        "Kuiva pinta: lämpötila voi nousta, nopea ruskistus",
+        "Pellicle-kalvo: proteiinien kuivuminen sitoo makuja"
+      ],
+      "applications": [
+        "Lihan kuivattaminen ennen paistamista",
+        "Kalan kuivattaminen ennen grillaamista",
+        "Siipiarjan kuivattaminen rapean kuoren saamiseksi",
+        "Vihannesten kuivattaminen friteerausta varten"
+      ],
+      "methods": [
+        "Luonnollinen kuivuminen: ilman kierrossa",
+        "Suolakuivaus: suola poistaa kosteutta",
+        "Paperipyyhe: mekaaninen kostuden poisto",
+        "Jääkaappikuivaus: kylmä, kuiva ilma"
+      ],
+      "indicators": [
+        "Pinta tuntuu kuivalta kosketuksessa",
+        "Ei jätä kosteutta sormeen",
+        "Väri hieman tumempi",
+        "Kiiltävyys häviää, mattampi pinta"
+      ],
+      "tips": [
+        "Varmista riittävä ilmanvaihto",
+        "Älä peitä kuivauksen aikana",
+        "Testaa sormella kuivuutta",
+        "Käännä tarvittaessa tasaisen kuivauksen varmistamiseksi"
+      ],
+      "equipment": ["Ilmava tila", "Ristikko", "Paperipyyhe", "Aika"],
+      "difficulty": "Helppo",
+      "timeRequired": "15-90 minuuttia",
+      "tags": ["ilma", "pinta", "kuiva", "ruskistus"]
+    },
+    "munanvalkuaisen-vanhentaminen": {
+      "id": "munanvalkuaisen-vanhentaminen",
+      "name": "Munanvalkuaisen vanhentaminen",
+      "category": "kylmävalmistus",
+      "description": "Munanvalkuaisten ikääntäminen 24-72 tuntia paremman marenkivaahdotuksen saamiseksi - proteiinien muutos helpottaa vaahdotusta ja parantaa vakautta",
+      "properties": {
+        "aika": "24-72 tuntia",
+        "lämpötila": "Huoneenlämpö tai jääkaappi",
+        "välineet": "Kulho, peite",
+        "vaikeustaso": "Helppo"
+      },
+      "science": "Ovomucin vähenee ja valkuaisproteiinien rakenne muuttuu helpottaen vaahdotusta.",
+      "protein_changes": [
+        "Ovomucin vähenee: vähemmän tahmeutta",
+        "Conalbumin muutos: parempi vaahdotuskyky",
+        "pH nousee: vaikuttaa vuorovaikutukseen",
+        "Vesirakkenne muuttuu: stabiilimpi vaahto"
+      ],
+      "benefits": [
+        "Helpompi ja nopeampi vaahdottaa",
+        "Stabiilimpi vaahto",
+        "Parempi volyymi ja keveys",
+        "Tasaisempi rakenne marenkeissa"
+      ],
+      "process": [
+        "Erota valkuaiset huolellisesti",
+        "Aseta puhtaaseen kulhoon",
+        "Peitä löyhästi talouspaperilla",
+        "Säilytä huoneenlämmössä tai jääkaapissa",
+        "Käytä 24-72 tunnin kuluttua"
+      ],
+      "timing": [
+        "24h: kevyt parannus",
+        "48h: selvä parannus vakaudessa",
+        "72h: maksimaalinen hyöty",
+        "5+ päivää: alkaa pilaantua"
+      ],
+      "storage_methods": [
+        "Huoneenlämpö: nopea vanhennus 24-48h",
+        "Jääkaappi: hidas vanhennus 48-72h",
+        "Pakastus: ei sovellu, rikkoo rakenteen"
+      ],
+      "tips": [
+        "Peitä löyhästi talouspaperilla",
+        "Ota huoneenlämpöön 30 min ennen käyttöä",
+        "Käytä 3-5 päivän sisällä",
+        "Säilytä puhtaassa astiassa"
+      ],
+      "quality_indicators": [
+        "Hyvä: kirkas, ei hajua, vaahdottuu hyvin",
+        "Käyttökelpoinen: hieman värimuutos ok",
+        "Pilaantunut: paha haju, väärä väri"
+      ],
+      "equipment": ["Kulho", "Talouspaperi", "Merkintätarra"],
+      "difficulty": "Helppo",
+      "timeRequired": "24-72 tuntia",
+      "tags": ["muna", "vanhentaminen", "stabiilisuus"]
+    }
+  }
+}

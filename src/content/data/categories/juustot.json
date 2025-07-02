@@ -1,0 +1,112 @@
+{
+  "category": {
+    "id": "juustot",
+    "name": "Juustot",
+    "subtitle": "Opas erilaisten juustojen ominaisuuksista ja käyttötarkoituksista",
+    "description": "Juustot ovat maidosta valmistettuja elintarvikkeita, jotka vaihtelevat rakenteeltaan, maultaan ja käyttötarkoituksiltaan. Niitä käytetään niin arkiruokien komponentteina kuin hienostuneissa juustolautasissa.",
+    "propertyOrder": [
+      "Rakenne",
+      "Kypsyys",
+      "Käyttökohteet",
+      "Säilyvyys"
+    ],
+    "imageUrl": "/images/ingredients/juustot.jpg",
+    "tags": [
+      "maitotuote",
+      "proteiini",
+      "kalsium",
+      "umami",
+      "suolaiset ruoat"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "emmental",
+      "name": "Emmental",
+      "category": "juustot",
+      "properties": {
+        "Rakenne": "Puolikova, joustava, elastinen, suurireikäinen",
+        "Kypsyys": "Nuori (2-4 kk), keskikypsä (6-8 kk), kypsä (12+ kk)",
+        "Käyttökohteet": "Fondue, gratinoidut ruoat, juustolautanen, raaste, voileivät",
+        "Säilyvyys": "Jääkaapissa 2-3 viikkoa oikein säilytettynä"
+      },
+      "description": "Sveitsiläinen reikäjuusto, joka sulaa erinomaisesti ja tuo fonduehin ja gratineihin miedon pähkinäisen maun. Tunnetaan suurista rei'istään ja joustavasta rakenteestaan.",
+      "production": "Emmentalin valmistus on monimutkainen prosessi, joka alkaa raakamaidosta, johon lisätään erikoiskulttuureja, mukaan lukien propioonihappobakteeri, joka on vastuussa juuston tunnusomaisista rei'istä. Maito saostetaan juoksetteella ja muodostettu massa asetetaan suuriin pyöreisiin muotteihin, joiden halkaisija voi olla jopa 80 senttiä. Suolauksen jälkeen juusto kypsytetään erityisossä lämpimässä kellarissa (20-24°C) noin kuukauden ajan, jonka aikana propioonihappobakteerit tuottavat hiilidioksidia ja muodostavat tyypilliset reiät. Tämän jälkeen juusto siirretään viileämpään kellariin (10-15°C) jatkokypsytystä varten. Aito sveitsiläinen Emmental (AOC-suojattu) valmistetaan perinteisillä menetelmillä alppimaiden maidosta, kun taas kansainväliset versiot voivat käyttää pastöroitua maitoa ja nopeampia menetelmiä. Juuston laatu riippuu suuresti maitolähteestä - kesämaito tuottaa aromaattisempaa juustoa kuin talvimaito.",
+      "variants": [
+        {
+          "name": "Nuori Emmental (2-4 kk)",
+          "description": "Mieto, makea, voimainen, hieman hapan, joustava rakenne"
+        },
+        {
+          "name": "Keskikypsä Emmental (6-8 kk)",
+          "description": "Pähkinäinen, hedelmäinen, tasapainoinen, monipuoliseen käyttöön"
+        },
+        {
+          "name": "Kypsä Emmental (12+ kk)",
+          "description": "Täyteläinen, voimakas, aromaattinen, kompleksinen, juustolautaselle"
+        },
+        {
+          "name": "Suomalainen Emmental",
+          "description": "Miedompi kuin sveitsiläinen, vähemmän reikiä, usein nuorempana käytetty"
+        }
+      ],
+      "tips": [
+        "Anna juuston lämmetä huoneenlämpöön ennen tarjoilua parhaan maun saavuttamiseksi",
+        "Käytä nuorta Emmentalia ruoanlaittoon ja kypsempää juustolautaselle",
+        "Fondueissa yhdistä Emmental muihin juustoihin, kuten Gruyèreen, tasapainoisemman maun saavuttamiseksi",
+        "Säilytä juusto juustopussissa tai -rasiassa, ei muovikelmulla peitettynä"
+      ],
+      "sourcing": "Valitse Emmental, jonka reikärakenne on selkeä ja jonka pinta on ehjä, kiiltävä ja kullankeltainen. Kypsyysaste vaikuttaa makuun - nuori on miedompi, kypsä voimakkaampi. Sveitsiläinen alkuperäinen Emmental (AOC/AOP-merkintä) on laadukkain. Lypsytuore versio on aromaattisempi kuin tehdasvalmisteinen.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Perinteisesti parasta kesällä, kun lehmät laiduntavat alppiniityillä"
+      },
+      "alternatives": [
+        {
+          "name": "Jarlsberg",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Norjalainen, maultaan hyvin samankaltainen"
+        },
+        {
+          "name": "Gruyère",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Maukkaampi, mutta sulaa samalla tavoin"
+        },
+        {
+          "name": "Maasdam",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Hollantilainen, miedompi versio"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Maitoinen, pähkinäinen, makea",
+        "texture": "Joustava, napakka, reikäinen, sulaa hyvin",
+        "taste": "Mieto, pähkinäinen, hivenen makea, kypsemmissä versioissa täyteläisempi"
+      },
+      "dietaryInfo": [
+        "sisältää maitoa",
+        "laktoosi (vähäinen)"
+      ],
+      "tags": [
+        "sveitsiläinen juusto",
+        "reikäjuusto",
+        "sulatusjuusto",
+        "fondue",
+        "gratiinikastikkeet"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 2,
+        "sourness": 1,
+        "bitterness": 0,
+        "umami": 7
+      }
+    }
+  ]
+}

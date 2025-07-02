@@ -1,16 +1,36 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout 
+	title="Tomi"
+	metaDescription="Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan."
+>
+	<div class="fixed inset-0 flex items-center justify-center">
+		<section class="text-center max-w-7xl place-items-center">
+			<h1 class="text-[18vmin] sm:text-[12vmin] font-bold leading-none tracking-tight mb-[3vh] text-gray-900">
+				Ruoanlaitto
+			</h1>
+			
+			<p class="text-lg sm:text-[3vmin] text-gray-600 mb-[6vh] leading-relaxed">
+				Sukella uusiin makuihin ja nauti <br> täyteläisistä herkuista.
+			</p>
+			
+			<nav class="w-9/12" aria-label="Päänavigaatio">
+				<a 
+					href="/reseptit/" 
+					class="flex items-center justify-center border-0 bg-gray-900 text-white font-medium rounded-t-xl text-sm sm:text-[2vmin] px-[10vmin] md:py-[2vmin] py-[3vmin] transition-transform scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-white"
+					aria-label="Selaa reseptejä"
+				>
+					Selaa reseptejä
+				</a>
+				<a 
+					href="/hakemisto/" 
+					class="flex items-center justify-center border-0 bg-white text-gray-900 font-medium shadow-md rounded-b-xl text-sm sm:text-[2vmin] px-[10vmin] md:py-[2vmin] py-[3vmin] transition-shadow hover:shadow-lg focus-visible:shadow-lg focus-visible:outline-2 focus-visible:outline-gray-600"
+					aria-label="Ruoanlaiton hakemisto"
+				>
+					Hakemisto
+				</a>
+			</nav>
+		</section>
+	</main>
+</BaseLayout>

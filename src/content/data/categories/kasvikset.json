@@ -1,0 +1,328 @@
+{
+  "category": {
+    "id": "kasvikset",
+    "name": "Kasvikset",
+    "subtitle": "Kattava opas vihanneksista, juureksista ja muista kasviksista",
+    "description": "Kasvikset ovat ruokavalion perusta, jotka tuovat annoksiin väriä, makua, tekstuuria ja tärkeitä ravintoaineita.",
+    "propertyOrder": [
+      "Satokausi",
+      "Ravintoaineet",
+      "Käyttökohteet",
+      "Säilyvyys"
+    ],
+    "imageUrl": "/images/ingredients/kasvikset.jpg",
+    "tags": [
+      "tuoreruoka",
+      "perusraaka-aine",
+      "kuitupitoiset",
+      "vitamiinit"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "bataatti",
+      "name": "Bataatti",
+      "category": "kasvikset",
+      "properties": {
+        "Satokausi": "Loppukesä - alkutalvi, parhaimmillaan loka-marraskuussa",
+        "Ravintoaineet": "A-vitamiini, C-vitamiini, kuidut, kalium",
+        "Käyttökohteet": "Keitot, soseruoat, uuniruoat, paistaminen",
+        "Säilyvyys": "Huoneenlämmössä 1-2 viikkoa, jääkaapissa jopa 1 kuukausi"
+      },
+      "description": "Makea, pähkinäinen juurikas joka ei ole sukua perunalle. Rikas A-vitamiinilla ja sopii sekä makeisiin että suolaisiin ruokiin.",
+      "production": "Bataatti kuuluu kiertokasvikasvien heimoon ja on alkuperältään Etelä-Amerikasta, missä sitä on viljelty yli 8000 vuotta. Kasvi kasvattaa syötäviä juurimukuloita maanalaisissa varsistossa, ja yksi kasvi voi tuottaa useita kiloja bataatteja. Bataatti voi kasvaa lauhkealla vyöhykkeellä, mutta tarvitsee pitkän, lämpimän kasvukauden (3-4 kuukautta) kukoistaakseen. Suomessa sitä voidaan kasvattaa kasvihuoneessa tai erityisen lämpimänä kesänä ulkona. Suurin osa Euroopan markkinoiden bataateista tulee Pohjois-Afrikasta, Espanjasta ja Portugalista. Bataatin makeus vaihtelee lajikkeen ja kasvuolosuhteiden mukaan - kuivemmat olosuhteet keskittävät makeus, kun taas runsas vesi laimentaa sitä. Violetit ja valkoiset lajikkeet ovat yleensä vähemmän makeita kuin oranssit.",
+      "variants": [
+        {
+          "name": "Oranssi bataatti",
+          "description": "Makeahko, pehmeän aromikas, beta-karoteenirikas, yleisin Euroopassa käytetty muoto"
+        },
+        {
+          "name": "Valkoinen bataatti",
+          "description": "Neutraalimpi, kuivempi, sopii perunan tapaan käytettäväksi"
+        },
+        {
+          "name": "Violetti bataatti",
+          "description": "Väriltään voimakas, antosyaanipitoinen, käytetään erikoisuutena ja värikkäissä annoksissa"
+        },
+        {
+          "name": "Japanilainen bataatti",
+          "description": "Purppuran värinen kuori, vaalea sisus, soveltuu hyvin paistamiseen"
+        }
+      ],
+      "tips": [
+        "Paahda bataatti kokonaisena foliossa uunissa (200°C, 45-60 min) erityisen makean ja intensiivisen maun saamiseksi",
+        "Bataatin kuori on ravintorikasta, jätä se paistettaessa paikalleen",
+        "Yhdistä bataatti hapokkaiden makujen kanssa tasapainoisen lopputuloksen saamiseksi",
+        "Bataatti kypsyy nopeammin kuin peruna, joten vähennä kypsennysaikaa perunareseptejä muunnettaessa"
+      ],
+      "sourcing": "Valitse kiinteät, tasaväriset bataatit ilman tummia laikkuja tai vihreitä kohtia. Kooltaan keskisuuret bataatit ovat usein maistuvimpia. Pieni kuivuus kuoressa on normaalia ja osoittaa oikeaa kypsyyttä ja varastointia. Pinnalla ei tulisi olla pehmeitä kohtia, halkeamia tai hometta.",
+      "season": {
+        "availability": "Ympäri vuoden tuontina, kotimainen loppukesästä alkutalveen",
+        "bestSeason": "Loka-marraskuu"
+      },
+      "alternatives": [
+        {
+          "name": "Peruna",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Neutraalimpi, kuivempi, vähemmän makea"
+        },
+        {
+          "name": "Kurpitsa",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Toimii hyvin soseissa ja keitoissa"
+        },
+        {
+          "name": "Porkkana",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Makeissa ruoissa, paahdetuissa annoksissa"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Makea, hieman pähkinäinen",
+        "texture": "Pehmeä, kuituinen, kosteampi kuin perunalla",
+        "taste": "Makea, pähkinäinen, hieman aromaattinen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "vähärasvainen"
+      ],
+      "tags": [
+        "juures",
+        "makea",
+        "tärkkelyspitoinen",
+        "värikkäät ruoat",
+        "superfood"
+      ],
+      "flavorProfile": {
+        "sweetness": 7,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 2
+      }
+    },
+    {
+      "id": "sipuli",
+      "name": "Sipuli",
+      "category": "kasvikset",
+      "properties": {
+        "Satokausi": "Syksy, säilyy talven yli",
+        "Ravintoaineet": "C-vitamiini, flavonoidit",
+        "Käyttökohteet": "Perusmauste, sauteeminen, paistaminen",
+        "Säilyvyys": "2-3 kuukautta kuivassa"
+      },
+      "description": "Keittiön peruspilari, joka antaa makua lähes kaikkiin suolaisiin ruokiin. Kuumentaminen muuttaa terävän maun makeaksi ja pehmeäksi.",
+      "production": "Sipuli on kaksivuotinen kasvi, joka ensimmäisenä vuonna muodostaa maanalaiseen raudateisen sälyttövarsikon - sen minkä me tunnemme sipulina. Toisena vuonna kasvi tuottaa kukkavanan ja siemeniä. Kaupallisesti sipuli korjataan ensimmäisen vuoden lopussa, kun lehdet alkavat keltoitaa ja kuivua. Sipulin säilyvyys riippuu korjuun ajoituksesta ja kuivauksesta - liian aikasin korjatut sipulit pilaantuvat nopeasti, kun taas täysin kypsät ja hyvin kuivatut voivat säilyä kuukausia. Sipulin tervaa aiheuttavat rikki yhdisteet, jotka vapautuvat solujen rikkoontuessa leikkaamisen yhteydessä. Nämä samat yhdisteet antavat sipulille sen tunnusomaisen voimakkaan maun raa'an syötynä. Kuumennettaessa nämä terävät yhdisteet muuttuvat makeiksi yhdisteiksi, erityisesti karamellisoituessa.",
+      "variants": [
+        {
+          "name": "Keltasipuli",
+          "description": "Yleisin, voimakas maku, säilyy pitkään"
+        },
+        {
+          "name": "Punainen sipuli",
+          "description": "Midompi maku, kaunis väri, hyvä raa'assa"
+        },
+        {
+          "name": "Valkoinen sipuli",
+          "description": "Mieto maku, valkoinen väri säilyy"
+        }
+      ],
+      "tips": [
+        "Pidä veistä kylmänä kyyneleiden välttämiseksi",
+        "Kuullota matalalla lämmöllä makeuden saamiseksi",
+        "Säilytä kuivassa, pimeässä paikassa",
+        "Poista vihreät osat katkeroiden makujen välttämiseksi"
+      ],
+      "sourcing": "Valitse kovia, kuivia sipuleita ilman vihreitä versoja. Väistä pehmeät tai itäneet sipulit.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Syksy-talvi"
+      },
+      "alternatives": [
+        {
+          "name": "Sipulijauhe",
+          "id": "sipulijauhe",
+          "forDiet": [
+            "kuivattu"
+          ],
+          "notes": "1 keskikokoinen sipuli = 1 rkl sipulijauhetta"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Voimakas, hieman pistävä",
+        "texture": "Rapea raa'assa, pehmeä kuumennettuna",
+        "taste": "Terävä raa'assa, makea kuumennettuna"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "perusraaka-aine",
+        "makuperusta",
+        "soffritto"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 3
+      }
+    },
+    {
+      "id": "valkosipuli",
+      "name": "Valkosipuli",
+      "category": "kasvikset",
+      "properties": {
+        "Satokausi": "Kesä, säilyy syksyyn",
+        "Ravintoaineet": "Alliini, C-vitamiini",
+        "Käyttökohteet": "Maustaminen, marinoidit, kastikkeet",
+        "Säilyvyys": "1-2 kuukautta kuivassa"
+      },
+      "description": "Voimakas mauste, joka tuo syvyyttä ja umamia ruokiin. Maku vaihtelee terävästä makeaan valmistustavan mukaan.",
+      "production": "Valkosipuli on sipulin suku lainen, joka muodostaa yksittäisen suuran luovan sijasta useista pienistä kynsiistä koostuvan pään. Valkosipuli on perinteisesti hyvin tärkeä mauste Välimeren alueella, Aasiassa ja Lähi-idässä, missä sitä on viljelty tuhansien vuosien ajan. Kasvi on monimutkainen: se tarvitsee kylmän jakson talvella kehittyäkseen kunnolla, ja sen viljely vaatii tarkkaa ajoitusta. Valkosipulin voimakas maku ja tuoksu johtuvat alliiniista, joka muuttuu allisiniksi entsyymin vaikutuksesta, kun solut rikkoutuvat. Tämä reaktio tuottaa orgaaniset rikkiyhdisteet, jotka antavat valkosipulille sen tunnusomaisen aromin. Kuumenrattaessa nämä terävät yhdisteet hajoavat ja muuttuvat miedommiksi, makeamiksi yhdisteiksi. Fermentoidut valkosipulituotteet, kuten musta valkosipuli, kehittävät kokonaan erilaisen, umamirikkaan makuprofiilin.",
+      "variants": [
+        {
+          "name": "Tuore valkosipuli",
+          "description": "Kostea, mieto, käytettävä nopeasti"
+        },
+        {
+          "name": "Kuivattu valkosipuli",
+          "description": "Voimakas maku, säilyy pitkään"
+        }
+      ],
+      "tips": [
+        "Poista itu keskeltä katkeroiden makujen välttämiseksi",
+        "Murskaa tai hienonna ennen kuumentamista aromien vapautumiseksi",
+        "Älä ruskista liikaa - muuttuu katkeraksi",
+        "Lisää viimeisenä herkästi ruskistuvissa ruuissa"
+      ],
+      "sourcing": "Valitse kovia, kuivia valkosipuleita. Väistä pehmeät tai itäneet.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Kesä-syksy (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Valkosipulijauhe",
+          "id": "valkosipulijauhe",
+          "forDiet": [
+            "kuivattu"
+          ],
+          "notes": "1 valkosipulinkynsi = 1/2 tl valkosipulijauhetta"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Voimakas, rikinä tuoksu",
+        "texture": "Kiinteä raa'assa, pehmeä kuumennettuna",
+        "taste": "Terävä raa'assa, makea ja umami kypsennettynä"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "mauste",
+        "aromit",
+        "perusraaka-aine"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 2,
+        "umami": 4
+      }
+    },
+    {
+      "id": "porkkana",
+      "name": "Porkkana",
+      "category": "kasvikset",
+      "properties": {
+        "Satokausi": "Kesä-syksy, säilyy talven yli",
+        "Ravintoaineet": "Beta-karoteeni, A-vitamiini, kuidut",
+        "Käyttökohteet": "Keitot, paistokset, salaatit, mehut",
+        "Säilyvyys": "Jääkaapissa 2-4 viikkoa"
+      },
+      "description": "Makea oranssi juurikas, joka on rikas beta-karoteenilla. Sopii sekä raa'aksi että kypsennetyksi ja on yksi monipuolisimmista kasviksista.",
+      "production": "Porkkana on kaksivuotinen kasvi, jota viljellään ensimmäisen vuoden juurivarren vuoksi. Nykyaikainen porkkana on tulosta pitkästä jalostustyöstä - alkuperäiset porkkanat olivat valkoisia tai purppuraisia, ja oranssi väri kehitettiin Hollannissa 1600-luvulla. Porkkanan makeus riippuu kasvuolosuhteista: viileät yöt ja lämpimät päivät edistävät sokerin muodostumista, kun taas liian lämmin sää voi tehdä juuresta kirvaan. Porkkanat voivat myös 'säiköhtyä' kovan maan tai kivien takia, mikä tekee niistä epämuodostuneita. Kaupallinen porkkana kerätään yleensä hieman ennen täyttä kypsyyttä optimaalisen rakenteen ja makean saavuttamiseksi. Suomalaiset porkkanat ovat tunnettuja hyvästä laadusta pohjoiseen kasvuolosuhteiden ansiosta - pitkä, valoisa kesä ja viileät yöt tuottavat makeita, rapeitaita juurikkaita.",
+      "variants": [
+        {
+          "name": "Tavallinen porkkana",
+          "description": "Oranssi, makea, yleisin lajike"
+        },
+        {
+          "name": "Violetti porkkana",
+          "description": "Antosyaanipitoinen, hieman maukkaampi"
+        },
+        {
+          "name": "Valkoinen porkkana",
+          "description": "Mieto maku, ei beta-karoteenia"
+        },
+        {
+          "name": "Vauvanporkkana",
+          "description": "Pienet, makeat, helppo käsitellä"
+        }
+      ],
+      "tips": [
+        "Kuori porkkana vasta juuri ennen käyttöä vitamiinien säilyttämiseksi",
+        "Paista porkkana kokonaisena makean maun korostamiseksi",
+        "Lisää hieman rasvaa beta-karoteenin imeytymisen parantamiseksi",
+        "Säilytä jääkaapissa muovipussissa kosteuden säilyttämiseksi"
+      ],
+      "sourcing": "Valitse kiinteät, tasaväriset porkkanat ilman halkeamia tai pehmeitä kohtia. Tuoreet porkkanat ovat kiiltäviä ja niissä on vielä vihreät varret. Vältä kuivia tai taipuisia porkkanoita.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Syksy-talvi"
+      },
+      "alternatives": [
+        {
+          "name": "Bataatti",
+          "id": "bataatti",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Makeampi, pehmeämpi rakenne"
+        },
+        {
+          "name": "Palsternakka",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Valkoisempi, hieman maukkaampi"
+        }
+      ],
+      "sensoryProfile": {
+        "aroma": "Makea, maamainen",
+        "texture": "Rapea raa'assa, pehmeä kypsennettynä",
+        "taste": "Makea, hieman maamainen"
+      },
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "vähärasvainen"
+      ],
+      "tags": [
+        "juures",
+        "beta-karoteeni",
+        "makea",
+        "perusraaka-aine"
+      ],
+      "flavorProfile": {
+        "sweetness": 6,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 2
+      }
+    }
+  ]
+}

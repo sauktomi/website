@@ -1,0 +1,299 @@
+{
+  "redirects": [
+    {
+      "source": "/reseptit/1",
+      "destination": "/reseptit/raspberry-syrup",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/001",
+      "destination": "/reseptit/raspberry-syrup",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/01",
+      "destination": "/reseptit/raspberry-syrup",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/2",
+      "destination": "/reseptit/kevyt-persikkapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/002",
+      "destination": "/reseptit/kevyt-persikkapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/02",
+      "destination": "/reseptit/kevyt-persikkapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/3",
+      "destination": "/reseptit/pte-sucre",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/003",
+      "destination": "/reseptit/pte-sucre",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/03",
+      "destination": "/reseptit/pte-sucre",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/4",
+      "destination": "/reseptit/suklaapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/004",
+      "destination": "/reseptit/suklaapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/04",
+      "destination": "/reseptit/suklaapiiras",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/5",
+      "destination": "/reseptit/hollandaise-kastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/005",
+      "destination": "/reseptit/hollandaise-kastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/05",
+      "destination": "/reseptit/hollandaise-kastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/6",
+      "destination": "/reseptit/jauhelihakastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/006",
+      "destination": "/reseptit/jauhelihakastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/06",
+      "destination": "/reseptit/jauhelihakastike",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/7",
+      "destination": "/reseptit/kasvissosekeitto",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/007",
+      "destination": "/reseptit/kasvissosekeitto",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/07",
+      "destination": "/reseptit/kasvissosekeitto",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/8",
+      "destination": "/reseptit/pan-seared-entrecte",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/008",
+      "destination": "/reseptit/pan-seared-entrecte",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/08",
+      "destination": "/reseptit/pan-seared-entrecte",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/9",
+      "destination": "/reseptit/perunamuusi",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/009",
+      "destination": "/reseptit/perunamuusi",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/09",
+      "destination": "/reseptit/perunamuusi",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/10",
+      "destination": "/reseptit/ranskalainen-sipulikeitto",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/010",
+      "destination": "/reseptit/ranskalainen-sipulikeitto",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/11",
+      "destination": "/reseptit/risotto-al-parmigiano",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/011",
+      "destination": "/reseptit/risotto-al-parmigiano",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/12",
+      "destination": "/reseptit/täydellinen-munakas",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/012",
+      "destination": "/reseptit/täydellinen-munakas",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/13",
+      "destination": "/reseptit/täydellinen-proteiinikypsennysteoria",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/013",
+      "destination": "/reseptit/täydellinen-proteiinikypsennysteoria",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/14",
+      "destination": "/reseptit/tomaattikastike-pastalle",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/014",
+      "destination": "/reseptit/tomaattikastike-pastalle",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/15",
+      "destination": "/reseptit/crme-ptissire",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/015",
+      "destination": "/reseptit/crme-ptissire",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/16",
+      "destination": "/reseptit/focaccia",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/016",
+      "destination": "/reseptit/focaccia",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/17",
+      "destination": "/reseptit/keksitaikina",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/017",
+      "destination": "/reseptit/keksitaikina",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/18",
+      "destination": "/reseptit/klassinen-ranskalainen-macaron",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/018",
+      "destination": "/reseptit/klassinen-ranskalainen-macaron",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/19",
+      "destination": "/reseptit/murotaikina",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/019",
+      "destination": "/reseptit/murotaikina",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/20",
+      "destination": "/reseptit/paahtoleipä-luontaisella-juurella",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/020",
+      "destination": "/reseptit/paahtoleipä-luontaisella-juurella",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/21",
+      "destination": "/reseptit/pannukakku",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/021",
+      "destination": "/reseptit/pannukakku",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/22",
+      "destination": "/reseptit/perusmuffinit",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/022",
+      "destination": "/reseptit/perusmuffinit",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/23",
+      "destination": "/reseptit/tavallinen-kakkupohja",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/023",
+      "destination": "/reseptit/tavallinen-kakkupohja",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/24",
+      "destination": "/reseptit/tiikerikakku",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/024",
+      "destination": "/reseptit/tiikerikakku",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/25",
+      "destination": "/reseptit/tuulihattutaikina",
+      "permanent": true
+    },
+    {
+      "source": "/reseptit/025",
+      "destination": "/reseptit/tuulihattutaikina",
+      "permanent": true
+    }
+  ]
+}
