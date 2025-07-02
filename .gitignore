@@ -2,6 +2,8 @@
 dist/
 # generated types
 .astro/
+# generated data
+src/generated/
 
 # dependencies
 node_modules/
@@ -22,3 +24,15 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+# VSCode settings
+.vscode/
+
+# System/editor files
+Thumbs.db
+ehthumbs.db
+*.swp
+*.swo
+
+# Deployment and processing scripts (local only)
+deploy.sh
+process-images.sh
