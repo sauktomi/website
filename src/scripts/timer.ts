@@ -23,7 +23,6 @@ let timerState: TimerState = {
 let intervalId: number | null = null;
 
 // DOM elements
-let timerPopover: HTMLElement | null = null;
 let timerTrigger: HTMLElement | null = null;
 let minutesInput: HTMLInputElement | null = null;
 let secondsInput: HTMLInputElement | null = null;
@@ -42,7 +41,6 @@ function initTimer(): void {
 }
 
 function setupElements(): void {
-  timerPopover = document.getElementById('timer-popover');
   timerTrigger = document.getElementById('timer-trigger');
   minutesInput = document.getElementById('timer-minutes-input') as HTMLInputElement;
   secondsInput = document.getElementById('timer-seconds-input') as HTMLInputElement;

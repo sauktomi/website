@@ -38,7 +38,7 @@ import { processUnifiedData } from '../remark-wiki-link.mjs';
 
 // Use the same unified data processing as recipe slug pages
 const processedData = processUnifiedData();
-const { allItems, ingredients, equipment: equipmentItems, techniques: techniqueItems, categories: dataCategories } = processedData;
+const { allItems, ingredients, categories: dataCategories } = processedData;
 
 // Get all categories from unified processing
 const ingredientCategories = dataCategories.ingredients;
@@ -84,24 +84,7 @@ allItems.sort((a: any, b: any) =>
 // Get all unique dietary tags for filtering (only from ingredients)
 const dietaryOptions = extractUniqueDietaryTags(ingredients as any[]);
 
-// Helper function to get optimized image URL
-const getOptimizedImageUrl = (item: any, size: 'small' | 'large' = 'small') => {
-  // Check if the item has optimized images embedded
-  if (item && item.optimizedImages && item.optimizedImages[size]) {
-    return item.optimizedImages[size];
-  }
-  
-  // Fallback: construct URL from original imageUrl
-  if (item && item.imageUrl) {
-    const lastDotIndex = item.imageUrl.lastIndexOf('.');
-    if (lastDotIndex > 0) {
-      const basePath = item.imageUrl.substring(0, lastDotIndex);
-      return `${basePath}-${size}.webp`;
-    }
-  }
-  
-  return null;
-};
+
 
 // Get all unique first letters for alphabet filtering
 const allFirstLetters = new Set<string>();
@@ -111,18 +94,9 @@ allItems.forEach((item: any) => {
   allFirstLetters.add(letterKey);
 });
 
-const activeLetters = Array.from(allFirstLetters).sort((a, b) => {
-  if (a === '#') return 1;
-  if (b === '#') return 1;
-  return a.localeCompare(b, 'fi');
-});
 
-// Configure alphabet links as filters for unified filter bar
-const alphabetLinks = activeLetters.map(letter => ({
-  letter: letter,
-  href: `#letter-${letter === '#' ? 'other' : letter}`,
-  label: `Näytä kirjain ${letter}`
-}));
+
+
 
 // Type options for unified hakemisto
 const typeOptions = [
@@ -131,60 +105,8 @@ const typeOptions = [
   { id: 'välineet', name: 'Välineet' }
 ];
 
-// Configure filter sections for the main popup
-const mainFilterSections = [
-  {
-    id: 'sort',
-    title: 'Järjestys',
-    icon: 'M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z',
-    type: 'select' as const,
-    isSort: true,
-    options: [
-      { id: 'alphabetical', label: 'Aakkosjärjestys', value: 'alphabetical', default: true },
-      { id: 'type', label: 'Tyyppi', value: 'type' },
-      { id: 'dietary', label: 'Ruokavalio', value: 'dietary' },
-      { id: 'category', label: 'Kategoria', value: 'category' }
-    ]
-  },
-  {
-    id: 'type',
-    title: 'Tyyppi',
-    icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-    type: 'multiSelect' as const,
-    options: typeOptions.map(type => ({
-      id: type.id,
-      label: type.name,
-      value: type.id
-    })),
-    gridCols: 'grid-cols-1 sm:grid-cols-3'
-  },
-  {
-    id: 'dietary',
-    title: 'Ruokavalio',
-    icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
-    type: 'multiSelect' as const,
-    options: dietaryOptions.map((diet: string) => ({
-      id: diet,
-      label: diet,
-      value: diet
-    })),
-    maxHeight: '60',
-    gridCols: 'grid-cols-2 sm:grid-cols-3 lg:grid-cols-4'
-  },
-  {
-    id: 'category',
-    title: 'Alakategoriat',
-    icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
-    type: 'select' as const,
-    options: categories.filter(cat => (cat as any).parent).map(category => ({
-      id: category.id,
-      label: category.name,
-      value: category.id
-    })),
-    maxHeight: '60',
-    gridCols: 'grid-cols-1 sm:grid-cols-2'
-  }
-];
+
+
 ---
 
 <Layout title="Hakemisto | Ruoanlaitto" needsWikiLinks={true}>
@@ -277,7 +199,7 @@ const mainFilterSections = [
       <!-- Main Content Groups - Side by Side Types -->
       <div class="content-groups-container" id="content-groups">
         {typeOptions.map(type => {
-          const typeItems = allItems.filter(item => item.type === type.id);
+          const typeItems = allItems.filter((item: any) => item.type === type.id);
           if (typeItems.length === 0) return null;
           
           return (

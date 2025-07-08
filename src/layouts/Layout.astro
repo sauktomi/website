@@ -37,29 +37,11 @@ export interface Props {
 	needsWikiLinks?: boolean;
 }
 
-const { title, metaDescription, tocHeadings, hasToc, needsWikiLinks = false } = Astro.props;
+const { title, metaDescription, tocHeadings, hasToc } = Astro.props;
 
-// Determine back navigation path and visibility based on current page
-const currentPath = decodeURIComponent(Astro.url.pathname);
-const urlParams = new URLSearchParams(Astro.url.search);
 
-// Enhanced back path with category filtering for recipe pages
-let backPath = '/';
-if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
-  // For individual recipe pages, try to get category from URL params or page data
-  const categoryParam = urlParams.get('category');
-  if (categoryParam) {
-    backPath = `/reseptit/?category=${categoryParam.toLowerCase()}`;
-  } else {
-    backPath = '/reseptit/';
-  }
-} else if (currentPath === '/hakemisto') {
-  backPath = '/';
-} else if (currentPath !== '/') {
-  backPath = '/';
-}
 
-const showSidebar = currentPath !== '/';
+
 
 // Default meta description
 const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan.";

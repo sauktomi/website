@@ -39,10 +39,6 @@ interface GridConfig {
   columns: number;
 }
 
-interface SiteInteractionsInstance {
-  getInstance(): SiteInteractions | null;
-}
-
 declare global {
   interface Window {
     requestIdleCallback: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;

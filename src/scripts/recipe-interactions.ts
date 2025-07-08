@@ -30,8 +30,6 @@
  * @version 2.0.0
  */
 
-import RecipeTimer from './timer';
-
 // Recipe Interactions Module
 // Extracted from src/pages/reseptit/[...slug].astro
 // Optimized for performance with lazy initialization and debounced operations
@@ -49,11 +47,6 @@ interface NavigationHandler {
 
 interface MiseEnPlaceState {
   [taskText: string]: boolean;
-}
-
-interface SectionContent {
-  elements: Element[];
-  correspondingList: HTMLOListElement | null;
 }
 
 declare global {
@@ -813,7 +806,6 @@ class RecipeInteractionManager {
 
 // Create global instance - ensure only one instance exists
 let globalRecipeManager: RecipeInteractionManager | null = null;
-let isInitialized = false;
 let navigationHandlers: NavigationHandler[] = [];
 
 function initializeRecipeManager(): void {
@@ -822,7 +814,6 @@ function initializeRecipeManager(): void {
     if (!globalRecipeManager) {
       globalRecipeManager = new RecipeInteractionManager();
       globalRecipeManager.init();
-      isInitialized = true;
     }
   }
 }
@@ -832,14 +823,6 @@ function resetRecipeManager(): void {
     globalRecipeManager.cleanup();
   }
   globalRecipeManager = null;
-  isInitialized = false;
-}
-
-function cleanupNavigationHandlers(): void {
-  navigationHandlers.forEach(({ event, handler }) => {
-    document.removeEventListener(event, handler);
-  });
-  navigationHandlers = [];
 }
 
 function addNavigationHandler(event: string, handler: EventListener): void {

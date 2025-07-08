@@ -61,11 +61,9 @@ export default function SimpleFilterSystem({
   config,
   searchPlaceholder = "Etsi...",
   filterSections = [],
-  resultsCountText = "tulosta löytyi"
 }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilters, setActiveFilters] = useState(new Map());
-  const [visibleCount, setVisibleCount] = useState(0);
   const searchInputRef = useRef(null);
 
   // Configuration with defaults
@@ -109,8 +107,6 @@ export default function SimpleFilterSystem({
     if (noResults) {
       noResults.style.display = visibleCount === 0 ? 'block' : 'none';
     }
-
-    setVisibleCount(visibleCount);
   };
 
   const itemMatchesFilters = (item, term, filters) => {
@@ -248,12 +244,11 @@ export default function SimpleFilterSystem({
         });
         
         // Update results count
-        const visibleItems = document.querySelectorAll('.list-item-wrapper[style*="display: none"]').length;
-        const totalItems = document.querySelectorAll('.list-item-wrapper').length;
-        const visibleCount = totalItems - visibleItems;
+
+
         
         // Update the visible count state
-        setVisibleCount(visibleCount);
+        // setVisibleCount(visibleCount); // This line is removed as per the edit hint
       });
     });
     
@@ -308,7 +303,7 @@ export default function SimpleFilterSystem({
       {/* Filter Controls */}
       <div class="filter-controls">
         {/* Filter Buttons */}
-        {filterSections.map((section, index) => {
+        {filterSections.map((section) => {
           const activeCount = getActiveFilterCount(section.id);
           return (
             <button

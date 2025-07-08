@@ -164,7 +164,8 @@ function cssOptimizer() {
     name: 'css-optimizer',
     hooks: {
       'astro:build:done': async ({ dir }) => {
-        await optimize(dir.pathname ?? dir);
+        const path = typeof dir === 'string' ? dir : dir.pathname || '';
+        await optimize(path);
       }
     }
   };
