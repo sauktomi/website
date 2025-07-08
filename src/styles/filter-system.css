@@ -354,8 +354,7 @@
   anchor-name: var(--anchor-name);
 }
 
-.filter-popover-positioned.popover-smooth-transition:popover-open {
-  position-anchor: var(--position-anchor);
+.filter-popover-positioned:popover-open {
   position-area: bottom;
   width: anchor-size(100%);
 }
@@ -372,10 +371,9 @@
 }
 
 .popover-smooth-transition:popover-open {
+  position-anchor: var(--position-anchor);
   opacity: 1;
   transform: scale(1) translateY(0);
-  place-self: anchor-center;
-  width: 105%;
 }
 
 /* Filter popup positioning and backdrop */

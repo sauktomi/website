@@ -1,11 +1,11 @@
 /**
  * Native Popover System
  * 
- * Lightweight popover management using the native HTML Popover API.
- * Provides ingredient information with optimal performance and minimal overhead.
+ * Simple popover management using the native HTML Popover API.
+ * Provides ingredient information with minimal overhead.
  * 
  * @author Tomi
- * @version 3.0.0
+ * @version 4.0.0
  */
 
 interface PopoverData {
@@ -16,7 +16,6 @@ interface PopoverData {
   science?: string;
   properties?: Record<string, string>;
   tips?: string[];
-  optimizedImages?: Record<string, string>;
   imageUrl?: string;
   variants?: Array<{name: string; description?: string; temp?: string; time?: string}>;
   techniques?: string[];
@@ -24,47 +23,13 @@ interface PopoverData {
   tags?: string[];
 }
 
-interface CategoryData {
-  category: {
-    id: string;
-    name: string;
-    subtitle?: string;
-    description?: string;
-  };
-  ingredients: PopoverData[];
-}
-
-interface EquipmentData {
-  category: Record<string, any>;
-  items: Record<string, PopoverData>;
-}
-
-interface TechniqueData {
-  category: Record<string, any>;
-  items: Record<string, PopoverData>;
-}
-
-class PopoverManager {
-  private static instance: PopoverManager;
-  private initialized = false;
-  private dataCache = new Map<string, any>();
-
-  static getInstance(): PopoverManager {
-    if (!PopoverManager.instance) {
-      PopoverManager.instance = new PopoverManager();
-    }
-    return PopoverManager.instance;
-  }
-
+const PopoverSystem = {
   init(): void {
-    if (this.initialized) return;
-    
     this.setupPopovers();
     this.setupGlobalListeners();
-    this.initialized = true;
-  }
+  },
 
-  private setupPopovers(): void {
+  setupPopovers(): void {
     const popovers = document.querySelectorAll<HTMLElement>('.ingredient-popover');
     
     popovers.forEach((popover) => {
@@ -73,20 +38,19 @@ class PopoverManager {
         this.initializePopover(popover, itemId, itemType, category);
       }
     });
-  }
+  },
 
-  private initializePopover(popover: HTMLElement, itemId: string, itemType: string, category?: string): void {
-    // Handle popover toggle events
+  initializePopover(popover: HTMLElement, itemId: string, itemType: string, category?: string): void {
     popover.addEventListener('toggle', (event: any) => {
       if (event.newState === 'open') {
         this.handlePopoverOpen(popover, itemId, itemType, category);
       } else if (event.newState === 'closed') {
-        this.handlePopoverClose();
+        document.body.style.overflow = '';
       }
     });
-  }
+  },
 
-  private async handlePopoverOpen(popover: HTMLElement, itemId: string, itemType: string, category?: string): Promise<void> {
+  async handlePopoverOpen(popover: HTMLElement, itemId: string, itemType: string, category?: string): Promise<void> {
     document.body.style.overflow = 'hidden';
     
     try {
@@ -100,14 +64,189 @@ class PopoverManager {
       console.error('Popover data loading failed:', error);
       this.showError(popover, 'Virhe tiedon lataamisessa');
     }
-  }
+  },
 
-  private handlePopoverClose(): void {
-    document.body.style.overflow = '';
-  }
+  async loadData(itemId: string, itemType: string, category?: string): Promise<PopoverData | null> {
+    try {
+      let data: any = null;
 
-  private setupGlobalListeners(): void {
-    // Handle escape key
+      switch (itemType) {
+        case 'ingredient':
+          if (category) {
+            const module = await import(`../../content/data/categories/${category}.json`);
+            data = module.default;
+          }
+          break;
+        case 'equipment':
+          const equipmentModule = await import('../../content/data/equipment.json');
+          data = equipmentModule.default;
+          break;
+        case 'technique':
+          const techniqueModule = await import('../../content/data/techniques.json');
+          data = techniqueModule.default;
+          break;
+      }
+
+      if (!data) return null;
+
+      return this.findItem(data, itemId, itemType);
+    } catch (error) {
+      console.error('Data loading error:', error);
+      return null;
+    }
+  },
+
+  findItem(data: any, itemId: string, itemType: string): PopoverData | null {
+    const normalizedId = this.normalizeId(itemId);
+
+    if (itemType === 'ingredient' && data.ingredients) {
+      return data.ingredients.find((ing: PopoverData) => 
+        ing.id === itemId || 
+        ing.id === normalizedId ||
+        (ing.id && this.normalizeId(ing.id) === normalizedId)
+      ) || null;
+    }
+
+    if (itemType === 'equipment' && data.items) {
+      return data.items[itemId] || data.items[normalizedId] || null;
+    }
+
+    if (itemType === 'technique' && data.items) {
+      return data.items[itemId] || data.items[normalizedId] || null;
+    }
+
+    return null;
+  },
+
+  normalizeId(str: string): string {
+    return str.toLowerCase().replace(/[^a-z0-9]/g, '');
+  },
+
+  renderPopover(popover: HTMLElement, data: PopoverData): void {
+    this.updateTitle(popover, data.name);
+    this.updateImage(popover, data);
+    this.updateContent(popover, data);
+  },
+
+  updateTitle(popover: HTMLElement, title: string): void {
+    const titleElement = popover.querySelector('.popover-title');
+    if (titleElement) {
+      titleElement.textContent = title;
+    }
+  },
+
+  updateImage(popover: HTMLElement, data: PopoverData): void {
+    const imageContainer = popover.querySelector('.popover-image-container');
+    if (!imageContainer) return;
+
+    if (data.imageUrl) {
+      imageContainer.innerHTML = `<img src="${data.imageUrl}" alt="${data.name}" class="popover-image w-full h-full object-cover" loading="lazy" decoding="async" />`;
+    } else {
+      imageContainer.innerHTML = `<div class="popover-image-placeholder w-full h-full flex items-center justify-center bg-secondary-light">
+        <svg class="size-12 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+        </svg>
+      </div>`;
+    }
+  },
+
+  updateContent(popover: HTMLElement, data: PopoverData): void {
+    const contentElement = popover.querySelector('.popover-text-content');
+    if (contentElement) {
+      contentElement.innerHTML = this.buildContent(data);
+    }
+  },
+
+  buildContent(data: PopoverData): string {
+    let content = '';
+
+    if (data.description) {
+      content += `<p class="popover-description">${data.description}</p>`;
+    }
+
+    if (data.production) {
+      content += `<div class="popover-section"><h4>Valmistus</h4><p>${data.production}</p></div>`;
+    }
+
+    if (data.science) {
+      content += `<div class="popover-section"><h4>Tiede</h4><p>${data.science}</p></div>`;
+    }
+
+    if (data.properties && Object.keys(data.properties).length > 0) {
+      content += this.buildPropertiesSection(data.properties);
+    }
+
+    if (data.variants && data.variants.length > 0) {
+      content += this.buildVariantsSection(data.variants);
+    }
+
+    if (data.tips && data.tips.length > 0) {
+      content += this.buildTipsSection(data.tips);
+    }
+
+    if (data.techniques && data.techniques.length > 0) {
+      content += this.buildTechniquesSection(data.techniques);
+    }
+
+    if (data.care) {
+      content += this.buildCareSection(data.care);
+    }
+
+    return content;
+  },
+
+  buildPropertiesSection(properties: Record<string, string>): string {
+    let html = '<div class="popover-section"><h4>Ominaisuudet</h4><ul>';
+    Object.entries(properties).forEach(([key, value]) => {
+      html += `<li><strong>${key}:</strong> ${value}</li>`;
+    });
+    html += '</ul></div>';
+    return html;
+  },
+
+  buildVariantsSection(variants: Array<{name: string; description?: string; temp?: string; time?: string}>): string {
+    let html = '<div class="popover-section"><h4>Variantit</h4><ul>';
+    variants.forEach(variant => {
+      html += `<li><strong>${variant.name}</strong>`;
+      if (variant.description) html += `: ${variant.description}`;
+      if (variant.temp) html += ` (${variant.temp})`;
+      if (variant.time) html += ` - ${variant.time}`;
+      html += '</li>';
+    });
+    html += '</ul></div>';
+    return html;
+  },
+
+  buildTipsSection(tips: string[]): string {
+    let html = '<div class="popover-section"><h4>Vinkit</h4><ul>';
+    tips.forEach(tip => {
+      html += `<li>${tip}</li>`;
+    });
+    html += '</ul></div>';
+    return html;
+  },
+
+  buildTechniquesSection(techniques: string[]): string {
+    let html = '<div class="popover-section"><h4>Tekniikat</h4><ul>';
+    techniques.forEach(technique => {
+      html += `<li>${technique}</li>`;
+    });
+    html += '</ul></div>';
+    return html;
+  },
+
+  buildCareSection(care: string): string {
+    return `<div class="popover-section"><h4>Hoito</h4><p>${care}</p></div>`;
+  },
+
+  showError(popover: HTMLElement, message: string): void {
+    const contentElement = popover.querySelector('.popover-text-content');
+    if (contentElement) {
+      contentElement.innerHTML = `<p class="popover-error">${message}</p>`;
+    }
+  },
+
+  setupGlobalListeners(): void {
     document.addEventListener('keydown', (event) => {
       if (event.key === 'Escape') {
         const openPopover = document.querySelector<HTMLElement>(':popover-open');
@@ -117,323 +256,6 @@ class PopoverManager {
       }
     });
   }
-
-  private async loadData(itemId: string, itemType: string, category?: string): Promise<PopoverData | null> {
-    const cacheKey = `${itemType}-${itemId}-${category || ''}`;
-    
-    if (this.dataCache.has(cacheKey)) {
-      return this.dataCache.get(cacheKey);
-    }
-
-    try {
-      let data: any = null;
-
-      switch (itemType) {
-        case 'ingredient':
-          if (category) {
-            data = await this.loadCategoryData(category);
-          }
-          break;
-        case 'equipment':
-          data = await this.loadEquipmentData();
-          break;
-        case 'technique':
-          data = await this.loadTechniqueData();
-          break;
-      }
-
-      if (!data) return null;
-
-      const item = this.findItem(data, itemId, itemType);
-      if (item) {
-        this.dataCache.set(cacheKey, item);
-        return item;
-      }
-    } catch (error) {
-      console.error('Data loading error:', error);
-    }
-
-    return null;
-  }
-
-  private async loadCategoryData(category: string): Promise<CategoryData | null> {
-    try {
-      // Use dynamic import with proper path resolution
-      const module = await import(`../../content/data/categories/${category}.json`);
-      return module.default;
-    } catch (error) {
-      console.error('Failed to load category data for:', category, error);
-      return null;
-    }
-  }
-
-  private async loadEquipmentData(): Promise<EquipmentData | null> {
-    try {
-      const module = await import('../../content/data/equipment.json');
-      return module.default;
-    } catch (error) {
-      console.error('Failed to load equipment data:', error);
-      return null;
-    }
-  }
-
-  private async loadTechniqueData(): Promise<TechniqueData | null> {
-    try {
-      const module = await import('../../content/data/techniques.json');
-      return module.default;
-    } catch (error) {
-      console.error('Failed to load technique data:', error);
-      return null;
-    }
-  }
-
-  private findItem(data: any, itemId: string, itemType: string): PopoverData | null {
-    const normalizedId = this.normalizeId(itemId);
-
-    if (itemType === 'ingredient' && data.ingredients) {
-      const found = data.ingredients.find((ing: PopoverData) => 
-        ing.id === itemId || 
-        ing.id === normalizedId ||
-        (ing.id && this.normalizeId(ing.id) === normalizedId)
-      );
-      return found || null;
-    }
-
-    if ((itemType === 'equipment' || itemType === 'technique') && data.items) {
-      // For equipment/techniques, items is an object with itemId as key
-      const item = data.items[itemId] || data.items[normalizedId];
-      if (item) return item;
-      
-      // Fallback: search through all items
-      const items = Object.values(data.items) as PopoverData[];
-      const found = items.find((item: PopoverData) => 
-        item.id === itemId || 
-        item.id === normalizedId ||
-        (item.id && this.normalizeId(item.id) === normalizedId)
-      );
-      return found || null;
-    }
-
-    return null;
-  }
-
-  private normalizeId(str: string): string {
-    if (!str) return '';
-    return str
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[åäö]/g, (match) => ({ 'å': 'a', 'ä': 'a', 'ö': 'o' }[match] || match));
-  }
-
-  private renderPopover(popover: HTMLElement, data: PopoverData): void {
-    this.updateTitle(popover, data.name);
-    this.updateImage(popover, data);
-    this.updateContent(popover, data);
-    this.addViewTransitions(popover, data);
-  }
-
-  private updateTitle(popover: HTMLElement, title: string): void {
-    const titleElement = popover.querySelector('.popover-title-text');
-    if (titleElement) {
-      titleElement.textContent = title || 'Nimeä ei saatavilla';
-    }
-  }
-
-  private updateImage(popover: HTMLElement, data: PopoverData): void {
-    const container = popover.querySelector('.popover-image-container');
-    if (!container) return;
-
-    const imageUrl = this.getImageUrl(data);
-    container.innerHTML = imageUrl 
-      ? `<img src="${imageUrl}" alt="${data.name}" class="popover-image w-full h-full object-cover" loading="lazy" decoding="async" />`
-      : `<div class="popover-image-placeholder w-full h-full flex items-center justify-center bg-secondary-light">
-           <svg class="size-12 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-           </svg>
-         </div>`;
-  }
-
-  private getImageUrl(data: PopoverData): string | null {
-    if (data.optimizedImages?.large) {
-      return data.optimizedImages.large;
-    }
-    
-    if (data.imageUrl) {
-      const lastDotIndex = data.imageUrl.lastIndexOf('.');
-      if (lastDotIndex > 0) {
-        const basePath = data.imageUrl.substring(0, lastDotIndex);
-        return `${basePath}-large.webp`;
-      }
-    }
-    
-    return null;
-  }
-
-  private updateContent(popover: HTMLElement, data: PopoverData): void {
-    const container = popover.querySelector('.popover-text-content');
-    if (!container) return;
-
-    const content = this.buildContent(data);
-    container.innerHTML = content;
-  }
-
-  private buildContent(data: PopoverData): string {
-    const parts: string[] = [];
-
-    if (data.description) {
-      parts.push(`<p class="popover-description text-base text-primary-dark leading-relaxed">${data.description}</p>`);
-    }
-
-    if (data.production) {
-      parts.push(`<p class="popover-production text-sm text-secondary-accent leading-relaxed">${data.production}</p>`);
-    }
-
-    if (data.science) {
-      parts.push(`<p class="popover-science text-sm text-secondary-accent leading-relaxed">${data.science}</p>`);
-    }
-
-    if (data.properties && Object.keys(data.properties).length > 0) {
-      parts.push(this.buildPropertiesSection(data.properties));
-    }
-
-    if (data.variants && data.variants.length > 0) {
-      parts.push(this.buildVariantsSection(data.variants));
-    }
-
-    if (data.tips && data.tips.length > 0) {
-      parts.push(this.buildTipsSection(data.tips));
-    }
-
-    if (data.techniques && data.techniques.length > 0) {
-      parts.push(this.buildTechniquesSection(data.techniques));
-    }
-
-    if (data.care) {
-      parts.push(this.buildCareSection(data.care));
-    }
-
-    return parts.length > 0 
-      ? parts.join('')
-      : '<p class="popover-no-content text-secondary-accent italic">Lisätietoja ei saatavilla.</p>';
-  }
-
-  private buildPropertiesSection(properties: Record<string, string>): string {
-    const propertyItems = Object.entries(properties)
-      .map(([key, value]) => `
-        <div class="popover-property-item flex justify-between items-start gap-4 py-2">
-          <dt class="popover-property-label text-sm font-medium text-primary-dark capitalize flex-shrink-0">${key}</dt>
-          <dd class="popover-property-value text-sm text-primary-dark text-right">${value}</dd>
-        </div>
-      `)
-      .join('');
-
-    return `
-      <div class="popover-properties">
-        <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Ominaisuudet</h3>
-        <dl class="popover-properties-list space-y-2">${propertyItems}</dl>
-      </div>
-    `;
-  }
-
-  private buildVariantsSection(variants: Array<{name: string; description?: string; temp?: string; time?: string}>): string {
-    const variantItems = variants
-      .map(variant => {
-        let description = '';
-        if (variant.description) {
-          description = variant.description;
-        } else if (variant.temp && variant.time) {
-          description = `${variant.temp}, ${variant.time}`;
-        } else if (variant.temp) {
-          description = variant.temp;
-        } else if (variant.time) {
-          description = variant.time;
-        }
-        return `<li class="popover-variant-item text-sm text-primary-dark"><strong>${variant.name}:</strong> ${description}</li>`;
-      })
-      .join('');
-
-    return `
-      <div class="popover-variants">
-        <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Variantit</h3>
-        <ul class="popover-variants-list space-y-1 list-disc list-inside">${variantItems}</ul>
-      </div>
-    `;
-  }
-
-  private buildTipsSection(tips: string[]): string {
-    const tipItems = tips
-      .map(tip => `<li class="popover-tip-item text-sm text-primary-dark">${tip}</li>`)
-      .join('');
-
-    return `
-      <div class="popover-tips">
-        <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Vinkit</h3>
-        <ul class="popover-tips-list space-y-2 list-disc list-inside">${tipItems}</ul>
-      </div>
-    `;
-  }
-
-  private buildTechniquesSection(techniques: string[]): string {
-    const techniqueItems = techniques
-      .map(technique => `<li class="popover-technique-item text-sm text-primary-dark">${technique}</li>`)
-      .join('');
-
-    return `
-      <div class="popover-techniques">
-        <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Tekniikat</h3>
-        <ul class="popover-techniques-list space-y-1 list-disc list-inside">${techniqueItems}</ul>
-      </div>
-    `;
-  }
-
-  private buildCareSection(care: string): string {
-    return `
-      <div class="popover-care">
-        <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Hoito</h3>
-        <p class="popover-care-text text-sm text-primary-dark leading-relaxed">${care}</p>
-      </div>
-    `;
-  }
-
-  private addViewTransitions(popover: HTMLElement, data: PopoverData): void {
-    const itemId = data.id || data.name?.toLowerCase().replace(/\s+/g, '-');
-    if (!itemId) return;
-
-    const image = popover.querySelector('.popover-image');
-    if (image) {
-      image.setAttribute('view-transition-name', `popover-image-${itemId}`);
-    }
-
-    const description = popover.querySelector('.popover-description');
-    if (description) {
-      description.setAttribute('view-transition-name', `popover-description-${itemId}`);
-    }
-  }
-
-  private showError(popover: HTMLElement, message: string): void {
-    this.updateTitle(popover, 'Virhe');
-    
-    const container = popover.querySelector('.popover-text-content');
-    if (container) {
-      container.innerHTML = `
-        <div class="popover-error text-center py-4">
-          <p class="popover-error-message text-red font-medium mb-2">${message}</p>
-          <p class="popover-error-help text-sm text-secondary-accent">
-            Löydät kaikki ainesosat, välineet ja tekniikat 
-            <a href="/hakemisto" class="popover-error-link text-primary-accent underline hover:decoration-solid">hakemistosta</a>.
-          </p>
-        </div>
-      `;
-    }
-  }
-}
-
-// Initialize when DOM is ready
-const initPopovers = () => {
-  PopoverManager.getInstance().init();
 };
 
-export default {
-  init: initPopovers
-};
+export default PopoverSystem;
