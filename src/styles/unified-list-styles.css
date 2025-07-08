@@ -1,0 +1,268 @@
+/**
+ * Unified List Styles
+ * 
+ * This file contains CSS styles for list components used across the website.
+ * It provides consistent styling for various types of lists including
+ * ingredient lists, navigation lists, and content lists.
+ * 
+ * Key Features:
+ * - Consistent list styling across components
+ * - Responsive list layouts
+ * - Interactive list item states
+ * - Accessibility-focused list design
+ * - Unified spacing and typography
+ * 
+ * List Types:
+ * - Navigation and menu lists
+ * - Ingredient and equipment lists
+ * - Content and article lists
+ * - Filter and category lists
+ * - Search result lists
+ * 
+ * Usage:
+ * - Applied to list components throughout the site
+ * - Provides consistent list presentation
+ * - Supports both ordered and unordered lists
+ * - Enables responsive list layouts
+ * 
+ * Dependencies:
+ * - Tailwind CSS v4
+ * - Custom theme variables
+ * - Component-specific styling
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+/* Unified List Styles */
+/* =============================================================================
+   UNIFIED LIST STYLES - UNIVERSAL COMPONENTS FOR HAKEMISTO AND RESEPTIT
+   ============================================================================= */
+
+/* ===== UNIVERSAL LIST ITEM STRUCTURE ===== */
+/* Base wrapper for all list items */
+.list-item-wrapper {
+  @apply relative;
+}
+
+/* Universal list item styling */
+.list-item {
+  @apply block border border-transparent min-h-10;
+  /* Performance optimizations */
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.list-item:focus {
+  @apply outline-2 outline-offset-2 outline-primary-accent;
+}
+
+/* ===== COLUMN LAYOUT ===== */
+/* Main content container using grid for side-by-side sections */
+.content-groups-container {
+  @apply grid grid-cols-1 sm:grid-cols-3 gap-8;
+}
+
+/* Column items stacked vertically */
+.list-item-wrapper {
+  @apply mb-2;
+}
+
+
+/* ===== RESPONSIVE BEHAVIOR ===== */
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  .item-content {
+    @apply gap-3;
+  }
+  
+  .item-title {
+    @apply text-base;
+  }
+}
+
+/* ===== ACCESSIBILITY ===== */
+/* Focus states */
+.list-item:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-dark;
+}
+
+/* ===== ANIMATION OPTIMIZATIONS ===== */
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .list-item,
+  .item-title {
+    transition: none;
+  }
+}
+
+/* ===== UNIFIED POPOVER STYLES ===== */
+/* Popover container */
+.ingredient-popover {
+  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm;
+  max-height: 80vh;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+}
+
+/* Apply flex layout only when popover is open */
+.ingredient-popover:popover-open {
+  @apply duration-200;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-popover::backdrop {
+  @apply bg-black/20 backdrop-blur-sm;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .ingredient-popover {
+    max-width: calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
+    max-height: 90vh;
+  }
+}
+
+/* Large screen optimizations for popovers */
+@media (min-width: 1024px) {
+  .ingredient-popover {
+    width: 500px;
+    max-height: 75vh;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ingredient-popover {
+    width: 600px;
+    max-height: 70vh;
+  }
+}
+
+@media (min-width: 1536px) {
+  .ingredient-popover {
+    width: 700px;
+    max-height: 65vh;
+  }
+}
+
+/* Popover header */
+.popover-header {
+  @apply flex items-center justify-between p-4 border-b border-secondary bg-secondary-light;
+}
+
+.popover-title {
+  @apply text-lg font-semibold text-primary-dark m-0;
+}
+
+.popover-close-btn {
+  @apply p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+
+.popover-close-icon {
+  @apply size-5 text-secondary-accent;
+}
+
+/* Popover content */
+.popover-content {
+  @apply p-4 space-y-4;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.popover-image-container {
+  @apply aspect-video rounded-lg overflow-hidden bg-secondary-light;
+}
+
+.popover-text-content {
+  @apply space-y-4;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Override prose styles for popover content */
+.popover-text-content h1,
+.popover-text-content h2,
+.popover-text-content h3,
+.popover-text-content h4,
+.popover-text-content h5,
+.popover-text-content h6 {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.popover-text-content h1:not(:last-child),
+.popover-text-content h2:not(:last-child),
+.popover-text-content h3:not(:last-child),
+.popover-text-content h4:not(:last-child),
+.popover-text-content h5:not(:last-child),
+.popover-text-content h6:not(:last-child) {
+  margin-bottom: 1rem !important;
+}
+
+/* Reset prose margins for popover paragraphs and lists */
+.popover-text-content p,
+.popover-text-content ul,
+.popover-text-content ol,
+.popover-text-content li {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.popover-text-content p:not(:last-child),
+.popover-text-content ul:not(:last-child),
+.popover-text-content ol:not(:last-child) {
+  margin-bottom: 1rem !important;
+}
+
+/* Override prose styles for popover images */
+.popover-image-container img,
+.popover-image {
+  margin: 0 !important;
+  padding: 0 !important;
+  display: block !important;
+}
+
+/* Custom scrollbar styling */
+.popover-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popover-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popover-content::-webkit-scrollbar-thumb {
+  background: var(--color-secondary-accent);
+  border-radius: 3px;
+}
+
+.popover-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}
+
+/* ===== NO RESULTS STYLING ===== */
+.no-results {
+  @apply hidden text-center justify-items-center py-20;
+}
+
+.no-results-icon {
+  @apply w-16 h-16 mx-auto mb-4 text-secondary;
+}
+
+.no-results-title {
+  @apply text-lg font-medium text-primary-dark mb-2;
+}
+
+.no-results-description {
+  @apply text-secondary-accent;
+} 

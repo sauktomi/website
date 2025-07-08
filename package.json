@@ -1,10 +1,12 @@
 {
-  "name": "",
+  "name": "finnish-recipe-website",
+  "description": "A Finnish recipe website built with Astro and Tailwind CSS v4, featuring Bold Minimalism design, container-driven responsive layouts, and native browser APIs for optimal performance.",
   "type": "module",
-  "version": "0.0.1",
+  "version": "2.0.0",
   "scripts": {
     "dev": "astro dev",
-    "build": "node scripts/generate-redirects.mjs && astro build",
+    "start": "astro dev",
+    "build": "astro check && astro build",
     "build:redirects": "node scripts/generate-redirects.mjs",
     "preview": "astro preview",
     "astro": "astro"
@@ -13,18 +15,20 @@
     "@astrojs/check": "^0.9.4",
     "@astrojs/preact": "^4.1.0",
     "@astrojs/sitemap": "^3.4.1",
-    "@tailwindcss/typography": "^0.5.16",
-    "@tailwindcss/vite": "^4.1.5",
+    "@tailwindcss/vite": "^4.1.11",
     "astro": "^5.10.0",
     "preact": "^10.26.9",
     "rehype-autolink-headings": "^7.1.0",
     "remark-gfm": "^4.0.1",
-    "tailwindcss": "^4.1.5",
+    "tailwindcss": "^4.1.11",
     "typescript": "^5.8.3",
     "unist-util-visit": "^5.0.0"
   },
   "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "beasties": "^0.3.4",
     "glob": "^11.0.2",
-    "purgecss": "^7.0.2"
+    "purgecss": "^7.0.2",
+    "terser": "^5.43.1"
   }
 }

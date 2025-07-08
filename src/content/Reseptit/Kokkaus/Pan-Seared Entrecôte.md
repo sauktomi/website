@@ -45,8 +45,7 @@ teoria:
   - "[[Ruokateoria/Maillard-reaktio ja karamellisointi|Maillard-reaktio ja karamellisointi]]"
 ---
 
-![Täydellisesti paistettu entrecôte pihvi](/placeholder-recipe.svg)
-<!-- ![Täydellisesti paistettu entrecôte pihvi](placeholder-pan-seared-entrecote.jpg) -->
+<!-- ![Täydellisesti paistettu entrecôte pihvi](/placeholder-recipe.svg) -->
 
 ## Valmistus
 

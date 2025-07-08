@@ -1,43 +1,33 @@
 import { visit } from 'unist-util-visit';
 
 /**
- * Remark plugin to automatically identify and wrap recipe sections (instructions, ingredients, mise en place)
- * in styled divs. This allows for easier and more consistent CSS targeting.
+ * Remark plugin to automatically identify and wrap recipe instruction sections
+ * in styled divs and add classes to instruction steps.
  */
 export function remarkRecipeSections() {
   return (tree) => {
     const sectionBoundaries = [];
     const sectionsToCreate = [];
 
-    // 1. First pass: Identify all headings and mark them as potential section boundaries.
+    // 1. First pass: Identify instruction headings
     visit(tree, 'heading', (node, index) => {
       const headingId = node.data?.hProperties?.id || '';
       const headingText = node.children?.[0]?.value?.toLowerCase() || '';
 
-      const getSectionType = () => {
-        if (['ohje', 'ohjeet', 'instructions'].some(term => headingId.includes(term) || headingText.includes(term))) {
-          return 'instructions';
-        }
-        if (['ainekset', 'ingredients'].some(term => headingId.includes(term) || headingText.includes(term))) {
-          return 'ingredients';
-        }
-        if (['mise-en-place', 'mise', 'esivalmistelut'].some(term => headingId.includes(term) || headingText.includes(term))) {
-          return 'mise';
-        }
-        return null;
-      };
+      const isInstructionSection = ['ohje', 'ohjeet', 'instructions'].some(term => 
+        headingId.includes(term) || headingText.includes(term)
+      );
 
-      sectionBoundaries.push({
-        index,
-        type: getSectionType(),
-        depth: node.depth,
-      });
+      if (isInstructionSection) {
+        sectionBoundaries.push({
+          index,
+          depth: node.depth,
+        });
+      }
     });
 
-    // 2. Determine the full range of each section (from its start heading to the next heading of same/higher level).
+    // 2. Determine the full range of each instruction section
     sectionBoundaries.forEach((boundary, i) => {
-      if (!boundary.type) return;
-
       let endIndex = tree.children.length;
       for (let j = i + 1; j < sectionBoundaries.length; j++) {
         if (sectionBoundaries[j].depth <= boundary.depth) {
@@ -48,11 +38,10 @@ export function remarkRecipeSections() {
       sectionsToCreate.push({
         startIndex: boundary.index,
         endIndex,
-        type: boundary.type,
       });
     });
 
-    // 3. Wrap the identified sections. We process in reverse to avoid shifting indices.
+    // 3. Wrap the identified instruction sections
     for (const section of sectionsToCreate.sort((a, b) => b.startIndex - a.startIndex)) {
       const nodesToWrap = tree.children.slice(section.startIndex, section.endIndex);
 
@@ -61,7 +50,7 @@ export function remarkRecipeSections() {
         data: {
           hName: 'div',
           hProperties: {
-            className: ['recipe-section', `recipe-section--${section.type}`],
+            className: ['recipe-section', 'recipe-section--instructions'],
           },
         },
         children: nodesToWrap,
@@ -70,7 +59,7 @@ export function remarkRecipeSections() {
       tree.children.splice(section.startIndex, nodesToWrap.length, wrapperNode);
     }
 
-    // 4. Second pass: Add specific classes to elements within the newly created sections.
+    // 4. Add classes to instruction steps within the sections
     visit(tree, 'div', (node) => {
       const hProperties = node.data?.hProperties;
       if (!hProperties || !hProperties.className) {
@@ -83,15 +72,11 @@ export function remarkRecipeSections() {
       } else if (typeof hProperties.className === 'string') {
         classNameString = hProperties.className;
       } else {
-        return; // Not a string or array, so we can't process it.
+        return;
       }
       
       if (classNameString.includes('recipe-section--instructions')) {
         processInstructionSteps(node);
-      } else if (classNameString.includes('recipe-section--ingredients')) {
-        processIngredientGroups(node);
-      } else if (classNameString.includes('recipe-section--mise')) {
-        processMiseItems(node);
       }
     });
   };
@@ -125,36 +110,145 @@ const processInstructionSteps = (sectionNode) => {
       listNode.children.forEach(listItem => {
         if (listItem.type === 'listItem') {
           addClass(listItem, 'recipe-instruction-step');
-        }
-      });
-    }
-  });
-};
-
-const processIngredientGroups = (sectionNode) => {
-  visit(sectionNode, 'list', (listNode) => {
-    if (!listNode.ordered) {
-      addClass(listNode, 'recipe-ingredients-list');
-      listNode.children.forEach(listItem => {
-        if (listItem.type === 'listItem') {
-          addClass(listItem, 'recipe-ingredient-item');
-        }
-      });
-    }
-  });
-};
-
-const processMiseItems = (sectionNode) => {
-  visit(sectionNode, 'list', (listNode) => {
-    const isTaskList = listNode.children.some(child => child.type === 'listItem' && typeof child.checked === 'boolean');
-    if (isTaskList) {
-      // Add both classes for compatibility
-      addClass(listNode, 'contains-task-list');
-      addClass(listNode, 'recipe-mise-list');
-      listNode.children.forEach(listItem => {
-        if (listItem.type === 'listItem') {
-          addClass(listItem, 'task-list-item');
-          addClass(listItem, 'recipe-mise-item');
+          
+                      // Process instruction step content
+            if (listItem.children && listItem.children.length > 0) {
+              let firstParagraph = null;
+              let infoNote = null;
+              
+              // Find the first paragraph and any info note
+              listItem.children.forEach(child => {
+                if (child.type === 'paragraph' && !firstParagraph) {
+                  firstParagraph = child;
+                } else if (child.type === 'div' && 
+                           child.data?.hProperties?.className?.includes('recipe-note-info')) {
+                  infoNote = child;
+                }
+              });
+            
+            // If we found both a first paragraph and an info note, insert the info content inline
+            if (firstParagraph && infoNote) {
+              const infoContent = infoNote.children?.find(child => 
+                child.data?.hProperties?.className?.includes('recipe-note-content')
+              );
+              
+              if (infoContent && infoContent.children) {
+                // Extract text content from the info note paragraphs
+                let textContent = '';
+                infoContent.children.forEach(paragraph => {
+                  if (paragraph.type === 'paragraph' && paragraph.children) {
+                    paragraph.children.forEach(child => {
+                      if (child.type === 'text') {
+                        textContent += child.value;
+                      } else if (child.type === 'emphasis' && child.children) {
+                        // Handle italic text
+                        child.children.forEach(emphasisChild => {
+                          if (emphasisChild.type === 'text') {
+                            textContent += emphasisChild.value;
+                          }
+                        });
+                      }
+                    });
+                  }
+                });
+                
+                if (textContent.trim()) {
+                  // Create inline info span with the extracted text
+                  const inlineInfoSpan = {
+                    type: 'span',
+                    data: {
+                      hName: 'span',
+                      hProperties: {
+                        className: 'inline-info-content'
+                      }
+                    },
+                    children: [
+                      {
+                        type: 'text',
+                        value: ` ${textContent.trim()}`
+                      }
+                    ]
+                  };
+                  
+                  // Create info button
+                  const infoButton = {
+                    type: 'button',
+                    data: {
+                      hName: 'button',
+                      hProperties: {
+                        className: 'recipe-info-button',
+                        'aria-label': 'Näytä lisätiedot',
+                        title: 'Näytä lisätiedot'
+                      }
+                    },
+                    children: [
+                      {
+                        type: 'svg',
+                        data: {
+                          hName: 'svg',
+                          hProperties: {
+                            className: 'recipe-info-icon',
+                            fill: 'none',
+                            stroke: 'currentColor',
+                            viewBox: '0 0 24 24'
+                          }
+                        },
+                        children: [
+                          {
+                            type: 'circle',
+                            data: {
+                              hName: 'circle',
+                              hProperties: {
+                                cx: '12',
+                                cy: '12',
+                                r: '9',
+                                'stroke-width': '0.5'
+                              }
+                            }
+                          },
+                          {
+                            type: 'path',
+                            data: {
+                              hName: 'path',
+                              hProperties: {
+                                className: 'info-char',
+                                'stroke-linecap': 'round',
+                                'stroke-linejoin': 'round',
+                                'stroke-width': '2',
+                                d: 'M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z'
+                              }
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  };
+                  
+                  // Add the inline info span to the end of the first paragraph
+                  if (!firstParagraph.children) {
+                    firstParagraph.children = [];
+                  }
+                  
+                  // Add a space before the info content if the paragraph doesn't end with space
+                  const lastChild = firstParagraph.children[firstParagraph.children.length - 1];
+                  if (lastChild && lastChild.type === 'text' && !lastChild.value.endsWith(' ')) {
+                    firstParagraph.children.push({ type: 'text', value: ' ' });
+                  }
+                  
+                  firstParagraph.children.push(inlineInfoSpan);
+                  
+                  // Add the info button at the beginning of the first paragraph
+                  firstParagraph.children.unshift(infoButton);
+                  
+                  // Remove the original info note from the list item
+                  const infoNoteIndex = listItem.children.indexOf(infoNote);
+                  if (infoNoteIndex > -1) {
+                    listItem.children.splice(infoNoteIndex, 1);
+                  }
+                }
+              }
+            }
+          }
         }
       });
     }

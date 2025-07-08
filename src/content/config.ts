@@ -1,3 +1,41 @@
+/**
+ * Astro Content Collection Configuration
+ * 
+ * This module defines the content collection schema and configuration for
+ * the Astro content management system. It specifies the structure and
+ * validation rules for recipe content and metadata.
+ * 
+ * Key Features:
+ * - Recipe collection schema definition
+ * - Frontmatter validation and type checking
+ * - Metadata field specifications
+ * - Optional and required field definitions
+ * - Union type support for flexible data
+ * 
+ * Schema Fields:
+ * - Basic metadata (title, description, tags)
+ * - Recipe details (category, difficulty, servings)
+ * - Time information (prep, cook, total time)
+ * - Dietary and allergen information
+ * - Technique and equipment requirements
+ * - Image and media specifications
+ * - Seasonal and occasion data
+ * 
+ * Usage:
+ * - Used by Astro for content validation
+ * - Provides TypeScript types for content entries
+ * - Ensures data consistency across recipes
+ * - Enables IntelliSense for content authors
+ * 
+ * Dependencies:
+ * - Astro Content Collections
+ * - Zod schema validation
+ * - TypeScript for type generation
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
 // src/content/config.ts
 import { defineCollection, z } from 'astro:content';
 

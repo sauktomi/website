@@ -1,0 +1,11 @@
+---
+description: This rule automates app analysis
+globs:
+alwaysApply: false
+---
+
+When asked to analyze the app:
+
+1. Run dev server with npm run dev
+2. Fetch logs from console
+3. Suggest performance improvements

@@ -81,7 +81,7 @@ subtitle: Monipuolinen Perusresepti
 - [[Suola|Suolaa]] maun mukaan (esim. ½ - 1 tl)
 - Vastajauhettua [[Mustapippuri|mustapippuria]] maun mukaan
 - (Valinnainen) Ripaus [[Muskottipähkinä|muskottipähkinää]], [[Curry|currya]], [[Inkivääri|inkivääriä]], [[Chili|chilihiutaleita]] tai muita mausteita kasvisten mukaan
-- (Valinnainen) 50-100 ml (ruoka)[[Kerma|kermaa]], [[Kaurakerma|kaurakermaa]], [[Kookosmaito|kookosmaitoa]] tai muuta kasvipohjaista kermaa
+- (Valinnainen) 50-100 ml [[Kerma|kermaa]], [[Kaurakerma|kaurakermaa]], [[Kookosmaito|kookosmaitoa]] tai muuta kasvipohjaista kermaa
 - (Valinnainen) Tuoreita yrttejä koristeluun (esim. [[Persilja|persilja]], [[Korianteri|korianteri]], [[Timjami|timjami]], [[Ruohosipuli|ruohosipuli]])
 - (Valinnainen) [[Krutonki|Krutonkeja]], paahdettuja [[Siemenet|siemeniä]] tai [[Pähkinät|pähkinöitä]] tarjoiluun
 

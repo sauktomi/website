@@ -1,0 +1,154 @@
+/**
+ * Base Styles Foundation
+ * 
+ * This file contains foundational CSS styles that establish the base
+ * design system for the website. It includes reset styles, base element
+ * styling, and fundamental design tokens.
+ * 
+ * Key Features:
+ * - CSS reset and normalization
+ * - Base element styling
+ * - Typography foundation
+ * - Color system base
+ * - Spacing and layout fundamentals
+ * 
+ * Base Elements:
+ * - HTML and body styling
+ * - Typography base styles
+ * - Link and button foundations
+ * - Form element basics
+ * - Layout container styles
+ * 
+ * Usage:
+ * - Imported early in the CSS cascade
+ * - Provides foundation for all other styles
+ * - Establishes design system consistency
+ * - Ensures cross-browser compatibility
+ * 
+ * Dependencies:
+ * - Modern CSS features
+ * - Custom CSS properties
+ * - Browser CSS support
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+/* Base Styles Foundation */
+
+/* =============================================================================
+   PERFORMANCE-OPTIMIZED GLOBAL STYLES
+   ============================================================================= */
+
+@layer base {
+  /* ===== CORE DESIGN SYSTEM ===== */
+  :root {
+    --baseline-grid: 1.5rem;
+    --measure: 70ch;
+    --spring-timing: cubic-bezier(0.34, 1.56, 0.64, 1);
+    --micro-timing: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-duration-slow: 500ms;
+    
+    /* Social Colors (non-theme dependent) */
+    --color-social-facebook: #1877f2;
+    --color-social-facebook-hover: #166fe5;
+    --color-social-whatsapp: #25d366;
+    --color-social-whatsapp-hover: #20c65a;
+  }
+  
+  /* Handle reduced motion preference */
+  @media (prefers-reduced-motion: reduce) {
+    :root {
+      --transition-timing: ease;
+      --transition-duration: 0ms;
+      --transition-duration-slow: 0ms;
+      --spring-timing: ease;
+      --micro-timing: ease;
+    }
+  }
+  
+  /* ===== OPTIMIZED BASE STYLES ===== */
+  html {
+    @apply bg-primary-light text-primary-dark font-sans antialiased scroll-smooth;
+    font-feature-settings: "liga", "kern", "calt";
+    text-rendering: optimizeLegibility;
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  }
+
+  h1 {
+    max-inline-size: 20ch;
+  }
+
+  /* ===== TYPOGRAPHY WITH TAILWIND INTEGRATION ===== */
+  .lead { @apply text-lg md:text-xl font-light mb-8 text-secondary-accent; }
+  .caption { @apply text-sm text-secondary-accent uppercase font-medium; }
+
+  /* ===== STREAMLINED LINK STYLES ===== */
+  a {
+    @apply text-current duration-200 underline-offset-6;
+  }
+
+  a:hover { @apply border-primary-accent; }
+  a:focus-visible { @apply outline-2 outline-offset-2 outline-primary-accent rounded; }
+  .sidebar-link { @apply border-b-0; }
+  .sidebar-link:hover { @apply text-primary-accent border-b-0; }
+
+  /* ===== CONTENT ELEMENTS ===== */
+  blockquote { @apply pl-8 border-l-[3px] border-primary-accent italic my-12 text-lg; }
+  
+  pre, code {
+    @apply font-mono text-sm rounded bg-tertiary-dark text-primary-light;
+  }
+  
+  code { @apply px-1 py-0.5; }
+  
+  pre { @apply p-6 overflow-x-auto my-8 bg-tertiary-dark; }
+  pre code { @apply bg-transparent p-0; }
+  figure { @apply my-8; }
+  img { @apply max-w-full h-auto; }
+  figcaption { @apply text-sm text-secondary-accent bg-secondary-light; }
+  hr { @apply my-12 border-t border-secondary; }
+  ul { @apply list-disc; }
+  ol { @apply list-decimal; }
+  
+  /* ===== TABLES WITH DIVIDE UTILITIES ===== */
+  table { @apply w-full border-collapse mb-6 max-w-(--measure); }
+  thead { @apply border-b-2 border-primary-dark; }
+  th { @apply font-medium text-left; }
+  tbody tr { @apply divide-y divide-secondary; }
+  th, td { @apply py-3 px-4; }
+  tr:hover { @apply bg-secondary-light; }
+  caption { @apply caption-bottom text-sm text-secondary-accent py-2; }
+}
+
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
+/* Necessary for dark mode, can't use theme layer - otherwise dark mode applies by default */
+[data-theme="dark"] {
+  /* Primary Colors - Dark Mode (Inverted Obsidian) */
+  --color-primary-light: var(--color-obsidian-8);
+  --color-primary: var(--color-obsidian-5);
+  --color-primary-accent: var(--color-obsidian-4);
+  --color-primary-dark: var(--color-obsidian-2);
+
+  /* Secondary Colors - Dark Mode (Inverted Light Range) */
+  --color-secondary-light: var(--color-obsidian-7);
+  --color-secondary: var(--color-obsidian-5);
+  --color-secondary-accent: var(--color-obsidian-4);
+  --color-secondary-dark: var(--color-obsidian-1);
+
+  /* Tertiary Colors - Dark Mode (Inverted Dark Range) */
+  --color-tertiary-light: var(--color-obsidian-11);
+  --color-tertiary: var(--color-obsidian-9);
+  --color-tertiary-accent: var(--color-obsidian-8);
+  --color-tertiary-dark: var(--color-obsidian-3);
+} 

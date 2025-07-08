@@ -1,0 +1,18 @@
+---
+description: Reduce website bloat
+globs:
+alwaysApply: false
+---
+
+1. Analyse the website for overengineered/duplicated solutions for no particular gain by utilising the "Docblock Extraction Methodology" command.
+2. List the files to modify at the very end with a 1-100% reason to change/remove each and/or suggestions
+
+### Docblock Extraction Methodology
+To maintain clarity and avoid duplication, this project uses a systematic approach to analyze file-level documentation:
+
+- **Docblock Extraction**: To get a true overview of the codebase's documented intent and structure, extract the full docblock content from each file (not just the file names).
+- **How to use**: Run the following command to print the full docblock (from `/**` to `*/`) for every non-content file:
+
+```sh
+find src -type f \( -name "*.ts" -o -name "*.js" -o -name "*.astro" -o -name "*.css" -o -name "*.mjs" \) -exec awk '/^\/\*\*/{flag=1; doc=""; file=FILENAME} flag{doc=doc $0 ORS} /\*\// && flag{flag=0; print "File: " file "\n" doc; doc=""}' {} +
+```

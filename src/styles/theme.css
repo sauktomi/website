@@ -1,0 +1,282 @@
+/**
+ * Tailwind CSS v4 Theme Configuration
+ * 
+ * This file defines the complete design system for the website using Tailwind CSS v4's
+ * @theme directive. It includes typography, colors, spacing, and responsive design tokens.
+ * 
+ * Design Philosophy: Bold Minimalism
+ * - Clean layouts with generous white space
+ * - Striking typography with consistent patterns
+ * - Subtle color accents for maximum impact
+ * - Container-driven responsive design
+ * 
+ * Key Features:
+ * - Responsive typography with container queries
+ * - Obsidian-based color palette
+ * - Systematic spacing scale
+ * - Container query breakpoints
+ * - Accessibility-focused design tokens
+ * 
+ * @author Tomi
+ * @version 4.0.0
+ */
+
+@theme {
+  /* ===== FONT FAMILIES ===== */
+  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-serif: "Playfair Display Variable", "Playfair Display", Georgia, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Monaco, Consolas, monospace;
+  --font-display: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+
+  /* ===== RESPONSIVE TYPOGRAPHY ===== */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 0.95rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);
+  --text-6xl: clamp(3.75rem, 3rem + 3.75vw, 4.5rem);
+  --text-7xl: clamp(4.5rem, 3.5rem + 5vw, 6rem);
+  --text-8xl: clamp(6rem, 4.5rem + 7.5vw, 8rem);
+  --text-9xl: clamp(8rem, 6rem + 10vw, 12rem);
+
+  /* ===== LINE HEIGHTS ===== */
+  --line-height-tight: 1.3;
+  --line-height-snug: 1.4;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.7;
+  --line-height-loose: 1.8;
+  --line-height-accessible: 1.5;
+  --line-height-optimal: 1.6;
+  --line-height-display: 1.1;
+  --line-height-hero: 1.0;
+
+  /* ===== LETTER SPACING ===== */
+  --letter-spacing-tighter: -0.03em;
+  --letter-spacing-tight: -0.015em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.02em;
+  --letter-spacing-wider: 0.04em;
+  --letter-spacing-widest: 0.08em;
+  --letter-spacing-accessible: 0.12em;
+  --letter-spacing-compliant: 0.16em;
+  --letter-spacing-display: -0.04em;
+  --letter-spacing-hero: -0.05em;
+
+  /* ===== SPACING SYSTEM ===== */
+  --spacing-18: 4.5rem;
+  --spacing-128: 32rem;
+  --spacing-touch-safe: 3rem;
+  --spacing-touch-min: 1.5rem;
+  --spacing-section: clamp(4rem, 6vw, 8rem);
+  --spacing-hero: clamp(6rem, 10vw, 12rem);
+  --spacing-gutter: clamp(1rem, 3vw, 2rem);
+  --spacing-container: clamp(1rem, 2vw, 1.5rem);
+  --spacing-content: clamp(2rem, 4vw, 4rem);
+  --spacing-element: clamp(1rem, 2vw, 1.5rem);
+  --spacing-paragraph: 2em;
+  --spacing-paragraph-lg: 2.25em;
+
+  /* ===== MAX WIDTHS ===== */
+  --max-w-content: 65ch;
+  --max-w-content-narrow: 50ch;
+  --max-w-content-wide: 75ch;
+  --max-w-hero: 80ch;
+  --max-w-form: 60ch;
+  --max-w-container-sm: 640px;
+  --max-w-container-md: 768px;
+  --max-w-container-lg: 1024px;
+  --max-w-container-xl: 1280px;
+  --max-w-container-2xl: 1536px;
+
+  /* ===== MIN HEIGHTS ===== */
+  --min-h-touch-target: 44px;
+  --min-h-touch-target-min: 24px;
+  --min-h-form-input: 44px;
+  --min-h-button: 44px;
+  --min-h-hero: 80vh;
+  --min-h-section: 60vh;
+  --min-h-card: 200px;
+
+  /* ===== CONTAINER QUERIES ===== */
+  --container-xs: 20rem;
+  --container-sm: 24rem;
+  --container-md: 28rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+  --container-3xl: 48rem;
+  --container-4xl: 56rem;
+  --container-5xl: 64rem;
+  --container-6xl: 72rem;
+  --container-7xl: 80rem;
+
+  /* ===== CONTAINER QUERY BREAKPOINTS ===== */
+  --container-query-sm: 640px;
+  --container-query-md: 768px;
+  --container-query-lg: 1024px;
+  --container-query-xl: 1280px;
+  --container-query-2xl: 1536px;
+
+  /* ===== COLOR SYSTEM ===== */
+  --color-neutral-50: #fafafa;
+  --color-neutral-100: #f5f5f5;
+  --color-neutral-200: #e5e5e5;
+  --color-neutral-300: #d4d4d4;
+  --color-neutral-400: #a3a3a3;
+  --color-neutral-500: #737373;
+  --color-neutral-600: #525252;
+  --color-neutral-700: #404040;
+  --color-neutral-800: #262626;
+  --color-neutral-900: #171717;
+  --color-neutral-950: #0a0a0a;
+
+  --color-accent-50: #f0f9ff;
+  --color-accent-100: #e0f2fe;
+  --color-accent-200: #bae6fd;
+  --color-accent-300: #7dd3fc;
+  --color-accent-400: #38bdf8;
+  --color-accent-500: #0ea5e9;
+  --color-accent-600: #0284c7;
+  --color-accent-700: #0369a1;
+  --color-accent-800: #075985;
+  --color-accent-900: #0c4a6e;
+  --color-accent-950: #082f49;
+
+  --color-focus-500: #3b82f6;
+  --color-error-500: #ef4444;
+  --color-success-500: #22c55e;
+  --color-warning-500: #f59e0b;
+
+  /* ===== OBSIDIAN COLOR SYSTEM ===== */
+  --color-obsidian-0: #ffffff;
+  --color-obsidian-1: #fafafa;
+  --color-obsidian-2: #f4f4f5;
+  --color-obsidian-3: #e4e4e7;
+  --color-obsidian-4: #d4d4d8;
+  --color-obsidian-5: #a1a1aa;
+  --color-obsidian-6: #71717a;
+  --color-obsidian-7: #52525b;
+  --color-obsidian-8: #3f3f46;
+  --color-obsidian-9: #27272a;
+  --color-obsidian-10: #18181b;
+  --color-obsidian-11: #09090b;
+
+  /* ===== PRIMARY COLORS (Mid-range Obsidian) ===== */
+  --color-primary-light: var(--color-obsidian-2);
+  --color-primary: var(--color-obsidian-6);
+  --color-primary-accent: var(--color-obsidian-7);
+  --color-primary-dark: var(--color-obsidian-9);
+
+  /* ===== SECONDARY COLORS (Light Obsidian Range) ===== */
+  --color-secondary-light: var(--color-obsidian-1);
+  --color-secondary: var(--color-obsidian-4);
+  --color-secondary-accent: var(--color-obsidian-6);
+  --color-secondary-dark: var(--color-obsidian-7);
+
+  /* ===== TERTIARY COLORS (Dark Obsidian Range) ===== */
+  --color-tertiary-light: var(--color-obsidian-3);
+  --color-tertiary: var(--color-obsidian-8);
+  --color-tertiary-accent: var(--color-obsidian-9);
+  --color-tertiary-dark: var(--color-obsidian-11);
+
+  /* ===== SUCCESS COLORS ===== */
+  --color-green-light: #dcfce7;
+  --color-green: #22c55e;
+  --color-green-accent: #16a34a;
+  --color-green-dark: #15803d;
+
+  /* ===== WARNING COLORS ===== */
+  --color-amber-light: #fef3c7;
+  --color-amber: #f59e0b;
+  --color-amber-accent: #d97706;
+  --color-amber-dark: #b45309;
+
+  /* ===== ERROR COLORS ===== */
+  --color-red-light: #fee2e2;
+  --color-red: #ef4444;
+  --color-red-accent: #dc2626;
+  --color-red-dark: #b91c1c;
+
+  /* ===== INFO COLORS ===== */
+  --color-blue-light: #cffafe;
+  --color-blue: #06b6d4;
+  --color-blue-accent: #0891b2;
+  --color-blue-dark: #0e7490;
+
+  /* ===== BORDER RADIUS ===== */
+  --radius-minimal: 0.125rem;
+  --radius-subtle: 0.25rem;
+  --radius-prominent: 0.5rem;
+  --radius-hero: 1rem;
+  --radius-touch: 0.5rem;
+
+  /* ===== BOX SHADOWS ===== */
+  --shadow-minimal: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-subtle: 0 2px 4px 0 rgb(0 0 0 / 0.08);
+  --shadow-prominent: 0 8px 16px 0 rgb(0 0 0 / 0.12);
+  --shadow-hero: 0 20px 40px 0 rgb(0 0 0 / 0.16);
+  --shadow-elevated: 0 25px 50px -12px rgb(0 0 0 / 0.20);
+  --shadow-focus: 0 0 0 2px rgb(59 130 246 / 0.5);
+  --shadow-focus-visible: 0 0 0 3px rgb(59 130 246 / 0.3);
+
+  /* ===== GRID TEMPLATES ===== */
+  --grid-cols-asymmetric: 1fr 3fr 1fr;
+  --grid-cols-feature: 5fr 7fr;
+  --grid-cols-gallery: repeat(12, 1fr);
+  --grid-cols-content: 1fr minmax(auto, 65ch) 1fr;
+  --grid-cols-content-wide: 1fr minmax(auto, 75ch) 1fr;
+  --grid-cols-content-narrow: 1fr minmax(auto, 50ch) 1fr;
+  --grid-cols-hero: minmax(1rem, 1fr) minmax(auto, 80ch) minmax(1rem, 1fr);
+  --grid-cols-split: 1fr 1fr;
+  --grid-cols-triple: 1fr 1fr 1fr;
+  --grid-cols-auto-fit: repeat(auto-fit, minmax(300px, 1fr));
+  --grid-cols-auto-fill: repeat(auto-fill, minmax(250px, 1fr));
+
+  /* ===== ANIMATIONS ===== */
+  --animate-fade-in: fadeIn 0.4s ease-out;
+  --animate-slide-up: slideUp 0.3s ease-out;
+  --animate-scale-in: scaleIn 0.3s ease-out;
+  --animate-fade-in-reduced: fadeInReduced 0.2s ease-out;
+  --animate-slide-up-reduced: slideUpReduced 0.15s ease-out;
+
+  /* ===== Z-INDEX ===== */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+  --z-toast: 1080;
+}
+
+/* ===== KEYFRAMES ===== */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeInReduced {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes slideUpReduced {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+} 

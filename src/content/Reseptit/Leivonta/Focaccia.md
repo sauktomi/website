@@ -58,6 +58,8 @@ teoria:
 
 ## Valmistus
 
+
+
 ### Mise en Place
 
 Kriittiset valmistelut ennen leivonnan aloittamista:
@@ -66,6 +68,10 @@ Kriittiset valmistelut ennen leivonnan aloittamista:
 - [ ] Varmista veden oikea lämpötila (37-40°C) hiivan aktivoimiseksi.
 - [ ] Voitele paistopelti (30x40cm) runsaalla oliiviöljyllä.
 - [ ] Valmistele yrtit ja muut mahdolliset päälliset.
+
+
+
+
 
 ### Ainekset
 
@@ -84,6 +90,10 @@ Kriittiset valmistelut ennen leivonnan aloittamista:
 - Karkeita [[Suola|merisuolahiutaleita]] (esim. Maldon tai fleur de sel)
 - Tuoreita yrttejä (esim. [[Rosmariini|rosmariininoksia]], [[Timjami|timjaminlehtiä]])
 - Valinnaisia lisäyksiä: halkaistuja [[Kirsikkatomaatti|kirsikkatomaatteja]], kivettömiä [[Oliivi|oliiveja]], ohuita [[Sipuli|sipulirenkaita]]
+
+
+
+instructions
 
 ### Ohje
 
@@ -147,6 +157,8 @@ Kriittiset valmistelut ennen leivonnan aloittamista:
 
 2. **Jäähdytys**: Ota focaccia uunista ja siirrä se välittömästi ritilälle jäähtymään. Tämä estää pohjaa kostumasta. Anna jäähtyä vähintään 15-20 minuuttia ennen leikkaamista.
     > **Huomio:** Vaikka tuoksu on houkutteleva, liian aikainen leikkaaminen voi tehdä sisuksesta taikinamaisen.
+
+
 
 ### Annostelu
 

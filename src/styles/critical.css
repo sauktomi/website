@@ -1,0 +1,129 @@
+/**
+ * Critical CSS
+ * 
+ * Critical path CSS that is inlined in the HTML head for above-the-fold
+ * content. Optimized for fast initial render and Core Web Vitals.
+ * 
+ * Features:
+ * - Above-the-fold styles for immediate rendering
+ * - View transition animations
+ * - Skip link accessibility
+ * - Home page specific optimizations
+ * - Mobile and desktop responsive adjustments
+ * - Focus management for keyboard navigation
+ * 
+ * Performance:
+ * - Inlined in HTML head for instant application
+ * - Minimal size for fast parsing
+ * - Optimized for First Contentful Paint (FCP)
+ * - Reduces layout shift during page load
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
+/* Critical CSS - Essential for preventing FOUC and layout shifts */
+:root {
+  --sidebar-width: 4rem;
+  --sidebar-width-desktop: 33.6%;
+  --transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-duration: 200ms;
+}
+
+/* Reserve scrollbar space up-front to prevent width jumps when content overflow triggers the scrollbar. */
+html { 
+  scrollbar-gutter: stable; 
+}
+
+/* All screen sizes - navbar slides down from top but always shows bottom toggle */
+#navbar {
+  height: 60dvh;
+}
+
+/* Mobile layout */
+html[data-layout="mobile"] #navbar {
+  height: 100dvh;
+}
+
+html[data-layout="mobile"][data-navbar="open"] body {
+  overflow: hidden;
+}
+
+/* Navbar background visibility */
+.navbar-bg-visible {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.navbar-bg-hiding {
+  background-color: transparent;
+  backdrop-filter: none;
+}
+
+/* Interactive element base styles */
+.interactive-element {
+  transition: all 0.2s ease-out;
+  cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.interactive-element:hover {
+  transform: translateY(-1px);
+}
+
+.interactive-element:active {
+  transform: translateY(0);
+}
+
+/* Focus enhanced styles */
+.focus-enhanced:focus-visible {
+  outline: 2px solid var(--color-primary-accent);
+  outline-offset: 2px;
+  border-radius: 0.5rem;
+}
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--color-primary-dark);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: 4px;
+  z-index: 10000;
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+
+/* Home page specific styles */
+html[data-page="home"] body {
+  overflow: hidden;
+}
+
+/* View transitions */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+::view-transition-old(root) {
+  animation: 250ms cubic-bezier(0.4, 0, 0.2, 1) fadeOut both;
+}
+
+::view-transition-new(root) {
+  animation: 400ms cubic-bezier(0.4, 0, 0.2, 1) fadeIn both;
+}
+
+/* Ensure consistent positioning during transitions */
+::view-transition-group(root) {
+  animation-duration: 0s;
+} 

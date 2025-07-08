@@ -1,4 +1,37 @@
 ---
+/**
+ * Comparison Chart JSON Component
+ * 
+ * This component generates JSON-LD structured data for recipe comparison
+ * charts. It creates semantic markup that helps search engines understand
+ * recipe relationships and nutritional information.
+ * 
+ * Key Features:
+ * - JSON-LD structured data generation
+ * - Recipe comparison markup
+ * - Nutritional information schema
+ * - Search engine optimization
+ * - Semantic data representation
+ * 
+ * Usage:
+ * - Used on recipe comparison pages
+ * - Provides structured data for SEO
+ * - Enhances search engine understanding
+ * - Supports recipe discovery
+ * 
+ * Props:
+ * - items: Array of comparison items with properties
+ * - propertyOrder: Ordered list of properties to display
+ * 
+ * Dependencies:
+ * - Astro framework
+ * - JSON-LD schema standards
+ * - Recipe data structure
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
 // Define the props interface
 interface ComparisonItem {
   id: string;
@@ -16,7 +49,7 @@ const { items, propertyOrder } = Astro.props;
 ---
 
 <div class="comparison-chart">
-  <div class="grid grid-cols-[auto,1fr] md:grid-cols-[auto,repeat(var(--num-items),1fr)] gap-2">
+  <div class="grid grid-cols-[auto_1fr] md:grid-cols-[auto_repeat(var(--num-items),1fr)] gap-2">
     <!-- Empty cell for top-left corner -->
     <div class="font-bold col-start-1 row-start-1"></div>
     
@@ -33,13 +66,13 @@ const { items, propertyOrder } = Astro.props;
     {propertyOrder.map((property, propertyIndex) => (
       <>
         <!-- Property name as row header -->
-        <div class="font-semibold p-2 bg-gray-100 rounded" style={`grid-column: 1; grid-row: ${propertyIndex + 2};`}>
+        <div class="font-semibold p-2 bg-secondary-light rounded" style={`grid-column: 1; grid-row: ${propertyIndex + 2};`}>
           {property}
         </div>
         
         <!-- Property values for each item -->
         {items.map((item, itemIndex) => (
-          <div class="p-2 border border-gray-200 rounded" style={`grid-column: ${itemIndex + 2}; grid-row: ${propertyIndex + 2};`}>
+          <div class="p-2 border border-secondary-light rounded" style={`grid-column: ${itemIndex + 2}; grid-row: ${propertyIndex + 2};`}>
             {item.properties[property] || '-'}
           </div>
         ))}

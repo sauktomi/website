@@ -1,0 +1,11 @@
+---
+description: This rule helps generate documentation
+globs:
+alwaysApply: false
+---
+
+Help draft documentation by:
+
+* Extracting code comments
+* Analyzing README.md
+* Generating markdown documentation

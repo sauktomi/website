@@ -1,0 +1,240 @@
+---
+/**
+ * Ingredient Popover Component
+ * 
+ * This component creates interactive popover elements for ingredient
+ * information. It uses the native HTML Popover API to display detailed
+ * ingredient data when users interact with ingredient links.
+ * 
+ * Key Features:
+ * - Native HTML popover implementation
+ * - Ingredient information display
+ * - Interactive popover triggers
+ * - Accessibility-focused design
+ * - Responsive popover layouts
+ * 
+ * Popover Content:
+ * - Ingredient name and description
+ * - Nutritional information
+ * - Substitution suggestions
+ * - Storage and handling tips
+ * - Category and classification
+ * 
+ * Usage:
+ * - Applied to ingredient links in recipes
+ * - Provides contextual ingredient information
+ * - Enhances recipe reading experience
+ * - Supports both desktop and mobile
+ * 
+ * Props:
+ * - itemId: Unique identifier for the item
+ * - itemType: Type of item (ingredient, equipment, technique)
+ * - category: Item category (optional)
+ * - triggerText: Text to display as trigger
+ * - className: Additional CSS classes
+ * - itemData: Static data for build-time rendering
+ * 
+ * Dependencies:
+ * - Native HTML Popover API
+ * - Astro framework
+ * - Ingredient data structure
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+export interface Props {
+  itemId: string;
+  itemType: 'ingredient' | 'equipment' | 'technique';
+  category?: string;
+  triggerText: string;
+  className?: string;
+  // Add static data props for build-time rendering
+  itemData?: {
+    name: string;
+    description?: string;
+    imageUrl?: string;
+    properties?: Record<string, any>;
+    tips?: string[];
+  };
+}
+
+const { itemId, itemType, category, triggerText, className = '', itemData } = Astro.props;
+
+// Generate unique IDs for popover elements
+const popoverId = `popover-${itemId}-${itemType}`;
+const triggerId = `trigger-${itemId}-${itemType}`;
+---
+
+<!-- Native HTML Popover API Implementation -->
+<button 
+  id={triggerId}
+  popovertarget={popoverId}
+  class={`ingredient-popover-trigger ${className} text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md`}
+  data-item-id={itemId}
+  data-item-type={itemType}
+  data-category={category}
+  aria-label={`Näytä tiedot: ${triggerText}`}
+  style="outline-color: var(--color-primary-accent);"
+>
+  {triggerText}
+</button>
+
+<div 
+  id={popoverId}
+  popover="auto"
+  class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm popover-backdrop popover-smooth-transition"
+  role="dialog"
+  aria-labelledby={`${popoverId}-title`}
+  data-item-id={itemId}
+  data-item-type={itemType}
+  data-category={category}
+>
+  <!-- Popover Header -->
+  <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
+    <h2 id={`${popoverId}-title`} class="popover-title text-lg font-semibold text-primary-dark m-0">
+      <span class="popover-title-text">{itemData?.name || triggerText}</span>
+    </h2>
+    <button 
+      class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+      style="outline-color: var(--color-primary-accent);"
+      popovertarget={popoverId}
+      popovertargetaction="hide"
+      aria-label="Sulje"
+    >
+      <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Popover Content -->
+  <div class="popover-content p-4 space-y-4">
+    <!-- Image Container -->
+    <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
+      {itemData?.imageUrl ? (
+        <img 
+          src={itemData.imageUrl} 
+          alt={itemData.name || triggerText}
+          class="popover-image w-full h-full object-cover"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div class="popover-image-placeholder w-full h-full flex items-center justify-center bg-secondary-light">
+          <svg class="popover-placeholder-icon size-12 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+          </svg>
+        </div>
+      )}
+    </div>
+    
+    <!-- Text Content -->
+    <div class="popover-text-content space-y-4">
+      {itemData?.description && (
+        <p class="popover-description text-base text-primary-dark leading-relaxed">
+          {itemData.description}
+        </p>
+      )}
+
+      {/* Properties */}
+      {itemData?.properties && Object.keys(itemData.properties).length > 0 && (
+        <div class="popover-properties">
+          <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Ominaisuudet</h3>
+          <dl class="popover-properties-list space-y-2">
+            {Object.entries(itemData.properties).map(([key, value]) => (
+              <div class="popover-property-item flex justify-between items-start gap-4 py-2">
+                <dt class="popover-property-label text-sm font-medium text-primary-dark capitalize flex-shrink-0">{key}</dt>
+                <dd class="popover-property-value text-sm text-primary-dark text-right">{value}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      )}
+
+      {/* Tips */}
+      {itemData?.tips && itemData.tips.length > 0 && (
+        <div class="popover-tips">
+          <h3 class="popover-section-title text-base font-semibold text-primary-dark mb-2">Vinkit</h3>
+          <ul class="popover-tips-list space-y-2 list-disc list-inside">
+            {itemData.tips.map((tip: string) => (
+              <li class="popover-tip-item text-sm text-primary-dark">{tip}</li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      {/* Fallback content */}
+      {!itemData && (
+        <div class="popover-fallback text-center py-4">
+          <p class="popover-fallback-message text-secondary-accent italic mb-2">
+            Lisätietoja ei saatavilla.
+          </p>
+          <p class="popover-fallback-help text-sm text-secondary-accent">
+            Löydät kaikki ainesosat, välineet ja tekniikat 
+            <a href="/hakemisto" class="popover-fallback-link text-primary-accent underline hover:decoration-solid"> hakemistosta</a>.
+          </p>
+        </div>
+      )}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Only essential custom CSS. Most styling handled by Tailwind classes. */
+  
+  /* Popover container - fixed height with overflow hidden */
+  .ingredient-popover {
+    max-height: 80vh;
+    overflow: hidden;
+  }
+  
+  /* Apply flex layout only when popover is open */
+  .ingredient-popover:popover-open {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Popover content area - scrollable */
+  .popover-content {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+  
+  /* Mobile responsive adjustments */
+  @media (max-width: 640px) {
+    .ingredient-popover {
+      max-width: calc(100vw - 2rem);
+      margin-left: 1rem;
+      margin-right: 1rem;
+      max-height: 90vh;
+    }
+  }
+  
+  /* Accessibility and reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    .ingredient-popover-trigger,
+    .popover-close-btn {
+      transition: none;
+    }
+  }
+  
+  /* Custom scrollbar styling for popover content */
+  .popover-content::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  .popover-content::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  
+  .popover-content::-webkit-scrollbar-thumb {
+    background: var(--color-secondary-accent);
+    border-radius: 3px;
+  }
+  
+  .popover-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+  }
+</style> 

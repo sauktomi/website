@@ -1,0 +1,174 @@
+---
+/**
+ * Main Layout Component
+ * 
+ * This is the primary layout template for all pages on the website.
+ * It provides the HTML structure, meta tags, navigation, and global scripts.
+ * 
+ * Features:
+ * - Responsive navigation with sidebar
+ * - View transitions for smooth page navigation
+ * - SEO meta tags and social media optimization
+ * - Font preloading for performance
+ * - Table of contents for long content
+ * - Accessibility features (skip links, ARIA labels)
+ * - Theme-aware meta tags
+ * 
+ * Props:
+ * - title: Page title
+ * - metaDescription: SEO description (optional)
+ * - tocHeadings: Table of contents data (optional)
+ * - hasToc: Whether to show TOC (optional)
+ * - needsWikiLinks: Whether page needs wiki link processing (optional)
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+import { ClientRouter } from 'astro:transitions';
+import Navbar from '../components/Navbar.astro';
+import '../styles/global.css';
+
+export interface Props {
+	title: string;
+	metaDescription?: string;
+	tocHeadings?: any[];
+	hasToc?: boolean;
+	needsWikiLinks?: boolean;
+}
+
+const { title, metaDescription, tocHeadings, hasToc, needsWikiLinks = false } = Astro.props;
+
+// Determine back navigation path and visibility based on current page
+const currentPath = decodeURIComponent(Astro.url.pathname);
+const urlParams = new URLSearchParams(Astro.url.search);
+
+// Enhanced back path with category filtering for recipe pages
+let backPath = '/';
+if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
+  // For individual recipe pages, try to get category from URL params or page data
+  const categoryParam = urlParams.get('category');
+  if (categoryParam) {
+    backPath = `/reseptit/?category=${categoryParam.toLowerCase()}`;
+  } else {
+    backPath = '/reseptit/';
+  }
+} else if (currentPath === '/hakemisto') {
+  backPath = '/';
+} else if (currentPath !== '/') {
+  backPath = '/';
+}
+
+const showSidebar = currentPath !== '/';
+
+// Default meta description
+const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan.";
+---
+
+<!doctype html>
+<html lang="fi">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content="Astro" />
+		
+		<!-- Meta tags -->
+		<meta name="description" content={metaDescription || defaultMetaDescription} />
+		<title>{title}</title>
+		
+		<!-- Optimized font loading to prevent FOUT -->
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.setAttribute('rel','stylesheet')" />
+		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" as="style" onload="this.setAttribute('rel','stylesheet')" />
+		<noscript>
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
+			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
+		</noscript>
+		
+		<!-- Enhanced meta tags -->
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={metaDescription || defaultMetaDescription} />
+		<meta property="og:type" content="website" />
+		<meta name="twitter:card" content="summary_large_image" />
+		
+		<!-- Performance resource hints -->
+		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
+		
+		<!-- Optimize images loading -->
+		<meta name="format-detection" content="telephone=no, address=no, email=no" />
+		
+		<!-- Theme colors for mobile -->
+		<meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
+		<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+		
+		<ClientRouter />
+		
+		<!-- Critical CSS and scripts are now imported through global.css -->
+	</head>
+	<body class="antialiased">
+		<!-- Skip link for accessibility -->
+		<a href="#main-content" class="skip-link">Hyppää pääsisältöön</a>
+		
+		<!-- PERSISTENT - Never re-initialized -->
+		<div id="persistent-wrapper" transition:persist>
+			<Navbar />
+		</div>
+		
+		<!-- LAYOUT CONTAINER -->
+		<div id="layout-container" class="flex">
+			<!-- SWAPPABLE CONTENT AREA -->
+			<div id="page-container" class="flex-1">
+				<!-- Table of Contents at top of page -->
+				{hasToc && tocHeadings && tocHeadings.length > 2 && (
+					<div class="page-toc-container">
+						<details class="page-toc">
+							<summary>
+								<span class="flex items-center gap-3">
+									<span>Sisällysluettelo</span>
+								</span>
+							</summary>
+							<nav>
+								<div>
+									<ul>
+										{tocHeadings.map((heading) => (
+											<li>
+												<a href={`#${heading.id}`}>
+													{heading.text}
+												</a>
+												{'children' in heading && heading.children.length > 0 && (
+													<ul class="page-toc-sub">
+														{heading.children.map((subheading: any) => (
+															<li>
+																<a href={`#${subheading.id}`}>
+																	{subheading.text}
+																</a>
+															</li>
+														))}
+													</ul>
+												)}
+											</li>
+										))}
+									</ul>
+								</div>
+							</nav>
+						</details>
+					</div>
+				)}
+
+				<!-- Content area -->
+				<main id="main-content" class="flex-1 pt-1 lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20 max-lg:mt-16 mt-4">
+					<slot />
+				</main>
+			</div>
+		</div>
+		
+		<!-- Initialization - loaded once, persists across all navigations -->
+		<script>
+			import initBaseLayout from '../scripts/base-layout.ts';
+			initBaseLayout();
+		</script>
+	</body>
+</html> 

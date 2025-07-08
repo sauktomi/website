@@ -1,22 +1,22 @@
 import { visit } from 'unist-util-visit';
 
 /**
- * Remark plugin to handle custom markdown containers for recipe notes
- * Supports :::info, :::notice, :::critical, :::tip containers
+ * Remark plugin to handle custom markdown containers for recipe info notes
+ * Supports :::info and :::notice containers only
  */
 export function remarkRecipeContainers() {
   return (tree) => {
     visit(tree, 'paragraph', (node, index, parent) => {
       if (!node.children || node.children.length === 0) return;
       
-      // Look for container syntax like :::info, :::notice, :::critical, :::tip
+      // Look for container syntax like :::info, :::notice
       const firstChild = node.children[0];
       if (firstChild && firstChild.type === 'text' && firstChild.value.trim().startsWith(':::')) {
         const match = firstChild.value.trim().match(/^:::(\w+)/);
         if (!match) return;
         
         const containerType = match[1].toLowerCase();
-        const validTypes = ['info', 'notice', 'critical', 'tip', 'warning'];
+        const validTypes = ['info', 'notice'];
         
         if (!validTypes.includes(containerType)) return;
         
@@ -118,10 +118,7 @@ export function remarkRecipeContainers() {
 function getNoteTitleByType(type) {
   const titles = {
     'info': 'Huomio',
-    'notice': 'Huomio', 
-    'critical': 'Kriittinen kohta',
-    'tip': 'Vinkki',
-    'warning': 'Varoitus'
+    'notice': 'Huomio'
   };
   return titles[type] || 'Huomio';
 }

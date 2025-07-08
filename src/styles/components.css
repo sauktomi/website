@@ -1,0 +1,731 @@
+/**
+ * Consolidated Component Styles
+ * 
+ * This file contains all component styles consolidated from multiple
+ * separate files to reduce fragmentation and improve maintainability.
+ * 
+ * Key Features:
+ * - Button and interactive element styling
+ * - Card and container component styles
+ * - Recipe-specific component styles
+ * - Popup and modal components
+ * - Form element styling and states
+ * - Navigation component styles
+ * 
+ * Component Categories:
+ * - Interactive elements (buttons, links)
+ * - Content containers (cards, sections)
+ * - Recipe components (cards, metadata, ingredients)
+ * - Popup and modal components
+ * - Form components (inputs, selects)
+ * - Navigation elements (menus, breadcrumbs)
+ * - Feedback components (alerts, notifications)
+ * 
+ * Usage:
+ * - Applied to reusable UI components
+ * - Provides consistent component styling
+ * - Supports responsive component layouts
+ * - Enables component composition
+ * 
+ * Dependencies:
+ * - Tailwind CSS v4
+ * - Custom theme variables
+ * - Component architecture
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
+/* =============================================================================
+   CONSOLIDATED COMPONENT SYSTEM
+   ============================================================================= */
+
+/* ===== BUTTON SYSTEM ===== */
+button {
+  @apply cursor-pointer;
+}
+
+.btn {
+  @apply inline-flex items-center gap-2 font-medium text-sm tracking-wide border-none rounded transition duration-200 bg-primary-dark text-primary-light px-6 py-3;
+}
+
+.btn:hover {
+  @apply bg-primary-accent -translate-y-0.5;
+}
+
+.btn:focus-visible { @apply outline-2 outline-offset-2 outline-primary-accent; }
+
+.btn-primary {
+  @apply inline-flex items-center gap-2 font-medium border rounded-lg transition duration-200 bg-primary-dark text-primary-light border-secondary px-6 py-3;
+}
+
+.btn-primary:hover { @apply bg-primary-accent; }
+
+.btn-secondary {
+  @apply inline-flex items-center gap-2 font-medium border rounded-lg transition duration-200 text-primary-dark border-secondary px-6 py-3;
+}
+
+.btn-secondary:hover { @apply bg-secondary-light; }
+
+.btn-primary-large {
+  @apply inline-flex items-center gap-2 font-medium border rounded-lg transition duration-200 bg-primary-dark text-primary-light border-secondary px-8 py-4;
+}
+
+.btn-secondary-large {
+  @apply inline-flex items-center gap-2 font-medium border rounded-lg transition duration-200 text-primary-dark border-secondary px-8 py-4;
+}
+
+.btn-action {
+  @apply inline-flex items-center gap-2 font-medium border rounded-lg transition duration-200 bg-blue-600 text-white border-blue-600 px-8 py-4;
+}
+
+.btn-search-close {
+  @apply p-2;
+}
+
+/* ===== CARD COMPONENTS ===== */
+.reference-card { 
+  @apply p-6 lg:p-8 h-full flex flex-col bg-primary-light border border-secondary overflow-hidden rounded-xl transition duration-300; 
+}
+
+.reference-card:hover { @apply border-secondary-accent -translate-y-0.5; }
+.reference-card:focus-within { @apply outline-2 outline-primary-dark outline-offset-2; }
+
+.modernist-card { 
+  @apply bg-primary-light border border-secondary overflow-hidden rounded-xl transition duration-300; 
+}
+
+.modernist-card:hover { @apply border-secondary-accent -translate-y-0.5; }
+.modernist-card:focus-within { @apply outline-2 outline-primary-dark outline-offset-2; }
+
+/* ===== LAYOUT SYSTEM ===== */
+.grid-asymmetric {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-[2fr_5fr_1fr] md:gap-x-8;
+}
+
+.layout-asymmetric {
+  @apply grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-[3fr_1fr];
+}
+
+.content-full { 
+  @apply col-span-full;
+}
+
+/* ===== REFERENCE COMPONENTS ===== */
+.reference-item {
+  @apply block border border-transparent rounded-xl transition duration-200 -mx-4 py-3 px-4;
+  transform: translateZ(0);
+  will-change: transform, opacity;
+  position: relative;
+}
+
+.reference-item:hover { @apply border-secondary; }
+.reference-item:focus { @apply outline-2 outline-offset-2 outline-primary-dark; }
+
+.reference-item-content { @apply flex items-center justify-between gap-4; }
+.reference-item-text { @apply flex-1 min-w-0; }
+.reference-item-title { 
+  @apply text-primary-dark font-medium text-lg block truncate; 
+  transform: translateZ(0);
+  will-change: transform, opacity;
+}
+
+.reference-item:hover .reference-item-title { @apply text-primary-dark; }
+.reference-item-description { @apply text-sm mb-0 text-secondary-accent mt-1 line-clamp-1; }
+.reference-item:hover .reference-item-description { @apply text-secondary-accent; }
+
+.dietary-tag {
+  @apply text-base font-mono h-full text-secondary-accent hover:text-primary-dark opacity-80; 
+}
+
+/* ===== VARIANT STYLING ===== */
+.variant-list { @apply mt-2 ml-4 space-y-1 border-l-2 border-secondary-light pl-4; }
+.variant-item { @apply block border border-transparent rounded-lg py-2 px-3; }
+
+.variant-item:hover { @apply border-secondary bg-secondary-light; }
+.variant-content { @apply flex items-center justify-between gap-3; }
+.variant-text { @apply flex-1 min-w-0; }
+.variant-title { @apply text-primary-dark font-medium text-base block truncate; }
+.variant-item:hover .variant-title { @apply text-secondary-accent; }
+.variant-description { @apply text-sm mb-0 text-secondary-accent mt-1 line-clamp-1; }
+.variant-item:hover .variant-description { @apply text-secondary-accent; }
+.variant-use { @apply text-xs mb-0 text-secondary-accent mt-1 italic; }
+.variant-arrow { @apply size-4 text-secondary-accent flex-shrink-0; }
+.variant-item:hover .variant-arrow { @apply text-secondary-accent; transform: translateX(0.125rem) translateZ(0); }
+
+/* ===== BADGE SYSTEM ===== */
+.badge-base { @apply inline-flex items-center text-xs font-normal rounded ml-1.5 opacity-80 px-2 py-0.5; }
+.badge-temp { @apply inline-flex items-center text-xs font-normal bg-orange-100 text-orange-700 rounded ml-1.5 opacity-80 px-2 py-0.5; }
+.badge-time { @apply inline-flex items-center text-xs font-normal bg-blue-100 text-blue-800 rounded ml-1.5 opacity-80 px-2 py-0.5; }
+
+/* ===== NAVIGATION COMPONENTS ===== */
+.breadcrumb-link { @apply text-secondary-accent inline-flex items-center gap-2; }
+.breadcrumb-link:hover { @apply text-secondary-accent; }
+.nav-back-icon { @apply size-4; }
+
+/* ===== RECIPE COMPONENTS ===== */
+.recipe-meta-info {
+  @apply flex flex-wrap items-center gap-y-4 md:gap-y-3 gap-x-6;
+}
+
+.recipe-meta-item { 
+  @apply flex items-center gap-2 text-primary-dark;
+}
+
+.recipe-meta-icon { 
+  @apply size-4 text-secondary-accent flex-shrink-0;
+}
+
+.recipe-meta-actions {
+  @apply ml-auto flex items-center gap-3;
+}
+
+/* ===== PAGE TABLE OF CONTENTS ===== */
+.page-toc-container {
+  @apply lg:hidden absolute left-12 right-12 top-24;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .page-toc-container {
+    top: 7rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .page-toc-container {
+    margin-left: 6rem;
+    top: 6rem;
+  }
+}
+
+.page-toc summary {
+  @apply text-sm font-medium cursor-pointer bg-secondary-light hover:bg-secondary-light max-lg:bg-secondary-light max-lg:border-b max-lg:border-secondary-light duration-150 relative text-primary-dark px-4 py-[0.846rem] max-lg:place-items-center;
+  user-select: none;
+  list-style: none;
+  outline: none;
+}
+
+.page-toc summary::-webkit-details-marker {
+  display: none;
+}
+
+.page-toc summary::marker {
+  display: none;
+}
+
+.page-toc summary::after {
+  content: "▼";
+  @apply absolute right-4 top-1/2 text-xs text-secondary-accent transition-transform duration-150;
+  transform: translateY(-50%);
+}
+
+.page-toc[open] summary::after {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+.page-toc summary:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-600;
+}
+
+.page-toc nav {
+  @apply bg-primary-light shadow-lg max-w-full max-h-[80vh] overflow-y-auto;
+}
+
+.page-toc nav > div {
+  @apply p-3;
+}
+
+.page-toc ul {
+  @apply space-y-0 text-sm list-none p-0 m-0;
+}
+
+.page-toc li {
+  @apply m-0;
+}
+
+.page-toc > nav ul {
+  @apply flex flex-wrap gap-x-6 md:gap-y-2 gap-y-3;
+}
+
+.page-toc > nav ul > li > a {
+  @apply text-primary-dark hover:text-blue-600 rounded duration-150 block font-normal py-1.5 px-0;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.page-toc > nav ul > li > a:hover {
+  @apply bg-blue-50 px-2 -mx-2;
+}
+
+.page-toc > nav ul > li > a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-600 bg-blue-50 px-2 -mx-2;
+}
+
+.page-toc .page-toc-sub {
+  @apply ml-0 mt-1 space-y-0;
+}
+
+.page-toc .page-toc-sub a {
+  @apply text-secondary-accent hover:text-blue-600 text-xs rounded duration-150 block py-1 px-0;
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.page-toc .page-toc-sub a:hover {
+  @apply bg-blue-50 px-2 -mx-2;
+}
+
+.page-toc .page-toc-sub a:focus-visible {
+  @apply outline-2 outline-offset-2 outline-blue-600 bg-blue-50 px-2 -mx-2;
+}
+
+.page-toc summary svg {
+  @apply size-4 text-secondary-accent;
+}
+
+/* ===== RECIPE NOTES & TIPS ===== */
+.recipe-note {
+  @apply my-4 border-l-4 p-6 md:-ml-16 -ml-20;
+}
+
+.recipe-note-info {
+  @apply bg-blue-50 border-l-blue-500 text-blue-900 border border-blue-200;
+}
+
+.recipe-note-notice {
+  @apply bg-blue-50 border-l-blue-500 text-blue-900 border border-blue-200;
+}
+
+.recipe-note-tip {
+  @apply bg-green-50 border-l-green-500 text-green-900 border border-green-200;
+}
+
+.recipe-note-warning {
+  @apply bg-yellow-50 border-l-yellow-500 text-yellow-900 border border-yellow-200;
+}
+
+.recipe-note-critical {
+  @apply bg-red-50 border-l-red-500 text-red-900 border border-red-200;
+}
+
+.recipe-note-success {
+  @apply bg-green-50 border-l-green-500 text-green-900 border border-green-200;
+}
+
+.recipe-note-title {
+  @apply font-semibold mb-2;
+}
+
+.recipe-note-info .recipe-note-title::before,
+.recipe-note-notice .recipe-note-title::before {
+  content: "ℹ️ ";
+  @apply mr-2;
+}
+
+.recipe-note-tip .recipe-note-title::before {
+  content: "💡 ";
+  @apply mr-2;
+}
+
+.recipe-note-warning .recipe-note-title::before {
+  content: "⚠️ ";
+  @apply mr-2;
+}
+
+.recipe-note-critical .recipe-note-title::before {
+  content: "🚨 ";
+  @apply mr-2;
+}
+
+.recipe-note-success .recipe-note-title::before {
+  content: "✅ ";
+  @apply mr-2;
+}
+
+.recipe-note-content {
+  @apply text-sm leading-relaxed;
+}
+
+.recipe-note-content p {
+  @apply mb-2 last:mb-0;
+}
+
+/* ===== WIKI LINKS ===== */
+.wiki-link {
+  @apply text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-2 transition-colors duration-200 px-0.5;
+}
+
+a.wiki-link--available {
+  @apply text-blue-600 hover:text-blue-800;
+}
+
+.wiki-link--available:hover { @apply decoration-solid; }
+
+.wiki-link--unavailable,
+.wiki-link--unavailable:hover {
+  @apply text-secondary-accent cursor-default no-underline;
+}
+
+.wiki-link--unavailable::after,
+.wiki-link--unavailable::before {
+  @apply opacity-0 transition-opacity duration-200;
+}
+
+.wiki-link--unavailable::before,
+.wiki-link--unavailable::after {
+  @apply absolute z-10 bg-secondary-dark text-primary-light text-xs rounded px-2 py-1 whitespace-nowrap;
+}
+
+.wiki-link--unavailable::before,
+.wiki-link--unavailable:hover::before,
+.wiki-link--unavailable:hover::after {
+  @apply opacity-100;
+}
+
+.ingredient-link {
+  @apply text-green-600 hover:text-green-800 underline decoration-dotted underline-offset-2 transition-colors duration-200 px-0.5;
+}
+
+.ingredient-link:hover { @apply decoration-solid; }
+
+.wiki-nonexistent {
+  @apply text-secondary-accent cursor-default no-underline relative;
+}
+
+.wiki-nonexistent::after {
+  @apply absolute z-10 bg-secondary-dark text-primary-light text-xs rounded whitespace-nowrap;
+  content: "Ei saatavilla";
+}
+
+.wiki-nonexistent::before {
+  @apply absolute z-10 bg-secondary-dark text-primary-light text-xs rounded whitespace-nowrap opacity-0 transition-opacity duration-200;
+  content: "Ei saatavilla";
+}
+
+.wiki-nonexistent::before { @apply px-2 py-1; }
+
+.wiki-nonexistent:hover::before { @apply opacity-100; }
+
+.ingredient-link[data-exists="false"] {
+  @apply text-secondary-accent cursor-default no-underline;
+}
+
+.ingredient-amount { @apply font-medium text-primary-dark mr-6 min-w-16 inline-block; }
+.ingredient-name { @apply flex-grow; }
+
+/* ===== RECIPE SIDEBAR ===== */
+.recipe-sidebar {
+  @apply space-y-4 mt-1 md:mt-24 mr-3;
+}
+
+.sidebar-card-header {
+  @apply font-semibold text-lg mb-2;
+}
+
+.sidebar-card-content {
+  @apply text-sm;
+}
+
+.sidebar-progress {
+  @apply w-full bg-secondary rounded-full h-2;
+}
+
+.sidebar-navigation ul {
+  @apply space-y-2 list-none;
+}
+
+/* ===== TIMER COMPONENTS ===== */
+.timer-inline {
+  @apply inline-flex items-center gap-1 text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-2 transition-colors duration-200 px-2 py-1;
+}
+
+.timer-inline:hover {
+  @apply decoration-solid;
+}
+
+.timer-inline-icon {
+  @apply size-4;
+}
+
+.timer-slider-container {
+  @apply flex items-center gap-3;
+}
+
+.timer-slider-label {
+  @apply text-sm font-medium;
+}
+
+.timer-slider {
+  @apply w-24 h-2 bg-secondary rounded-lg appearance-none cursor-pointer;
+}
+
+.timer-slider::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 bg-primary-dark rounded-full cursor-pointer;
+}
+
+.timer-slider::-moz-range-thumb {
+  @apply w-4 h-4 bg-primary-dark rounded-full cursor-pointer border-0;
+}
+
+.timer-slider:focus {
+  @apply outline-none;
+}
+
+.timer-slider:focus::-webkit-slider-thumb {
+  @apply bg-primary-accent;
+}
+
+.timer-slider:focus::-moz-range-thumb {
+  @apply bg-primary-accent;
+}
+
+.timer-slider-labels {
+  @apply flex justify-between text-xs text-secondary-accent;
+}
+
+.slider {
+  @apply w-full h-2 bg-secondary rounded-lg appearance-none cursor-pointer;
+}
+
+.slider::-webkit-slider-thumb {
+  @apply appearance-none w-4 h-4 bg-primary-dark rounded-full cursor-pointer;
+}
+
+.slider::-moz-range-thumb {
+  @apply w-4 h-4 bg-primary-dark rounded-full cursor-pointer border-0;
+}
+
+.slider:focus {
+  @apply outline-none;
+}
+
+.slider:focus::-webkit-slider-thumb {
+  @apply bg-primary-accent;
+}
+
+.slider:focus::-moz-range-thumb {
+  @apply bg-primary-accent;
+}
+
+/* ===== TIMER MODAL ===== */
+.timer-modal {
+  @apply fixed inset-0 z-50 flex items-center justify-center;
+  display: none;
+}
+
+.timer-backdrop {
+  @apply absolute inset-0 bg-black opacity-50;
+}
+
+.timer-panel {
+  @apply relative bg-primary-light rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all duration-300;
+  transform: scale(0.9) translateY(20px);
+  opacity: 0;
+}
+
+.timer-modal.timer-modal-open .timer-panel {
+  transform: scale(1) translateY(0);
+  opacity: 1;
+}
+
+.panel-wrapper {
+  @apply p-6;
+}
+
+.panel-content {
+  @apply space-y-4;
+}
+
+.timer-header {
+  @apply flex items-center justify-between mb-4;
+}
+
+.timer-header h3 {
+  @apply text-lg font-semibold text-primary-dark;
+}
+
+.timer-close-btn {
+  @apply text-secondary-accent hover:text-primary-dark;
+}
+
+.timer-controls {
+  @apply space-y-4;
+}
+
+.timer-input-container {
+  @apply space-y-2;
+}
+
+.timer-input-group {
+  @apply flex items-center gap-2;
+}
+
+.timer-input {
+  @apply w-16 px-2 py-1 text-center border border-secondary rounded;
+}
+
+.timer-separator {
+  @apply text-secondary-accent;
+}
+
+.timer-controls-container {
+  @apply flex gap-2;
+}
+
+.timer-btn {
+  @apply flex-1 px-4 py-2 text-sm font-medium rounded transition-colors duration-200;
+}
+
+.timer-start-btn {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.timer-pause-btn {
+  @apply bg-yellow-600 text-white hover:bg-yellow-700;
+}
+
+.timer-reset-btn {
+  @apply bg-secondary text-primary-dark hover:bg-secondary-accent;
+}
+
+/* ===== RECIPE SHARING ===== */
+.recipe-sharing {
+  @apply mt-6 p-4 bg-secondary-light rounded-lg;
+}
+
+.recipe-sharing h3 {
+  @apply text-lg font-semibold mb-3;
+}
+
+.social-share-buttons {
+  @apply flex gap-2;
+}
+
+.social-share-btn {
+  @apply flex-1 px-4 py-2 text-sm font-medium rounded transition-colors duration-200;
+}
+
+.social-share-btn { @apply px-4 py-2; }
+
+/* ===== RECIPE NAVIGATION ===== */
+.recipe-navigation {
+  @apply flex justify-between items-center mt-8 pt-6 border-t border-secondary;
+}
+
+/* ===== TIMER LINKS ===== */
+.timer-link {
+  @apply text-orange-600 hover:text-orange-800 underline decoration-dotted underline-offset-2 transition-colors duration-200;
+}
+
+.timer-link:hover { @apply decoration-solid; }
+.timer-link.timer-link-active { @apply text-orange-600 font-bold rounded no-underline; }
+
+/* ===== SCALED AMOUNTS ===== */
+.scaled-amount {
+  @apply bg-yellow-100 text-yellow-800 text-xs font-medium rounded;
+}
+
+.scaled-amount { @apply px-1 py-0.5; }
+
+.scaled-amount:hover {
+  @apply bg-yellow-200;
+}
+
+/* ===== SERVING CALCULATOR ===== */
+.serving-calculator {
+  @apply bg-secondary-light rounded-lg p-4;
+}
+
+.serving-calculator-controls { @apply flex items-center justify-between gap-4; }
+.serving-btn {
+  @apply px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700;
+}
+
+.serving-btn:hover { @apply bg-blue-700; }
+.serving-count { @apply min-w-12 text-center font-medium text-sm; }
+
+/* ===== POPUP SYSTEM ===== */
+.popup-trigger {
+  @apply cursor-pointer text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-2 transition-colors duration-200;
+}
+
+.popup-trigger:hover {
+  @apply decoration-solid;
+}
+
+.popup-content {
+  @apply bg-primary-light border border-secondary rounded-lg shadow-lg p-4 max-w-sm;
+}
+
+.popup-header {
+  @apply flex items-center justify-between mb-3;
+}
+
+.popup-title {
+  @apply text-lg font-semibold text-primary-dark;
+}
+
+.popup-close {
+  @apply text-secondary-accent hover:text-primary-dark cursor-pointer;
+}
+
+.popup-body {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== FORM COMPONENTS ===== */
+.form-group {
+  @apply space-y-2;
+}
+
+.form-label {
+  @apply block text-sm font-medium text-primary-dark;
+}
+
+.form-input {
+  @apply w-full px-3 py-2 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-accent focus:border-transparent;
+}
+
+.form-select {
+  @apply w-full px-3 py-2 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-accent focus:border-transparent;
+}
+
+.form-textarea {
+  @apply w-full px-3 py-2 border border-secondary rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-accent focus:border-transparent resize-y;
+}
+
+/* ===== FEEDBACK COMPONENTS ===== */
+.alert {
+  @apply p-4 rounded-lg border;
+}
+
+.alert-info {
+  @apply bg-blue-50 border-blue-200 text-blue-800;
+}
+
+.alert-success {
+  @apply bg-green-50 border-green-200 text-green-800;
+}
+
+.alert-warning {
+  @apply bg-yellow-50 border-yellow-200 text-yellow-800;
+}
+
+.alert-error {
+  @apply bg-red-50 border-red-200 text-red-800;
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+@media (max-width: 640px) {
+  .btn {
+    @apply px-4 py-2 text-sm;
+  }
+  
+  .reference-card {
+    @apply p-4;
+  }
+  
+  .page-toc-container {
+    @apply left-4 right-4;
+  }
+}

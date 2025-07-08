@@ -1,153 +1,177 @@
+/**
+ * Recipe Section Styles
+ * 
+ * This file contains CSS styles for recipe content sections and components.
+ * It provides styling for recipe structure, ingredient lists, instructions,
+ * and other recipe-specific content elements.
+ * 
+ * Key Features:
+ * - Recipe content structure styling
+ * - Ingredient list formatting
+ * - Instruction step styling
+ * - Recipe metadata display
+ * - Section heading hierarchy
+ * - Content spacing and typography
+ * 
+ * Recipe Components:
+ * - Ingredient lists and measurements
+ * - Step-by-step instructions
+ * - Recipe metadata cards
+ * - Section dividers and spacing
+ * - Content containers and layouts
+ * - Print-friendly styling
+ * 
+ * Usage:
+ * - Applied to recipe content pages
+ * - Used by recipe markdown processing
+ * - Provides consistent recipe presentation
+ * - Supports responsive recipe layouts
+ * 
+ * Dependencies:
+ * - Tailwind CSS v4
+ * - Custom theme variables
+ * - Markdown content processing
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+/* Recipe Section Styles */
+
+
 /* =============================================================================
-   RECIPE SECTIONS - OPTIMIZED STRUCTURE WITH SIZE UTILITIES
+   RECIPE INSTRUCTION STEPS - MINIMAL BOLD MODERNISTIC DESIGN
    ============================================================================= */
-
-/* ===== SHARED SECTION STYLES ===== */
-.recipe-body .recipe-section {
-  @apply mb-6 bg-white rounded-xl overflow-hidden;
-}
-
-.recipe-body .recipe-section > h2,
-.recipe-body .recipe-section > h3 {
-  @apply bg-gray-100 my-0 border-b border-gray-200;
-  letter-spacing: -0.01em;
-  position: relative;
-}
-
-.recipe-body .recipe-section > h2,
-.recipe-body .recipe-section > h3 { @apply px-8 py-6; }
-
-.recipe-body .recipe-section h4 {
-  @apply font-semibold mb-0;
-  letter-spacing: -0.01em;
-  margin-top: 0;
-}
-
-.recipe-body .recipe-section h4 { @apply px-8 py-6; }
-
-/* ===== INSTRUCTIONS SECTION ===== */
-.recipe-body .recipe-section--instructions h4 {
-  @apply bg-gray-100;
-}
-
-.recipe-body .recipe-instruction-steps {
-  @apply list-none mb-0;
-  counter-reset: instruction-counter;
-  margin-top: 0;
-}
-
-.recipe-body .recipe-instruction-steps { @apply px-6 py-4; }
-
-.recipe-body .recipe-instruction-steps:last-child:not(.section-content-collapsed) {
-  @apply mb-6;
-}
 
 /* Don't apply bottom margin when followed by collapsed content */
 .recipe-body .recipe-instruction-steps:last-child.section-content-collapsed {
   @apply mb-0;
 }
 
-.recipe-body .recipe-instruction-step {
-  @apply relative min-h-14 content-center transition-all duration-200 cursor-pointer select-none;
-  counter-increment: instruction-counter;
+/* Modern instruction steps container */
+.recipe-body .recipe-instruction-steps {
+  @apply space-y-8 my-12 p-0;
+  counter-reset: instruction-counter;
 }
 
-.recipe-body .recipe-instruction-step { @apply pl-16; }
+/* Individual instruction step - clean, spacious layout */
+.recipe-body .recipe-instruction-step {
+  @apply relative p-0 cursor-pointer overflow-hidden;
+  counter-increment: instruction-counter;
+  @apply min-h-auto transform-gpu will-change-[opacity,transform] transition-all duration-300 ease-out;
+}
 
+/* Step number - bold, geometric design */
 .recipe-body .recipe-instruction-step::before {
   content: counter(instruction-counter);
-  @apply absolute justify-center flex items-center top-0 -left-6 size-14 bg-blue-600 text-white text-xl font-bold transition-all duration-200;
-  line-height: 1;
-  pointer-events: auto;
-  z-index: 10;
+  @apply flex mr-8 mt-1 float-left items-center justify-center w-12 h-12 text-2xl font-black tracking-tight;
+  @apply bg-slate-900 text-primary-light rounded-lg shadow-lg;
+  @apply leading-none pointer-events-auto z-10 transform-gpu will-change-[transform] transition-all duration-300 ease-out;
 }
 
+/* Remove default list markers */
 .recipe-body .recipe-instruction-step::marker {
-  display: none;
+  @apply content-none;
 }
 
-/* Step hover effects */
+/* Step content area - clean typography with proper spacing */
+.recipe-body .recipe-instruction-step > * {
+  @apply mt-0 mb-0;
+}
+
+/* Ensure proper spacing for nested content */
+.recipe-body .recipe-instruction-step ul,
+.recipe-body .recipe-instruction-step ol {
+  @apply mt-4 mb-0 ml-6;
+}
+
+/* Style for inline info content that gets inserted into paragraphs */
+.recipe-body .recipe-instruction-step .inline-info-content {
+  @apply italic text-inherit hidden;
+}
+
+/* Show inline info content when info mode is enabled OR when individual step info is enabled */
+body.info-mode-enabled .recipe-body .recipe-instruction-step .inline-info-content,
+.recipe-body .recipe-instruction-step.step-info-enabled .inline-info-content {
+  @apply inline;
+}
+
+/* ===== INDIVIDUAL INFO BUTTONS ===== */
+.recipe-body .recipe-instruction-step .recipe-info-button {
+  @apply flex m-2 ml-5 mt-2 float-right items-center justify-center bg-transparent text-secondary-accent border-none rounded-lg size-8;
+  @apply transform-gpu will-change-[opacity,transform] transition-all duration-200 ease-in-out;
+}
+
+/* Hide info buttons when global info mode is enabled */
+body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-info-button {
+  @apply hidden;
+}
+
+.recipe-body .recipe-instruction-step .recipe-info-button:hover {
+  @apply scale-105;
+}
+
+.recipe-body .recipe-instruction-step .recipe-info-button .recipe-info-icon {
+  @apply size-5;
+}
+
+.recipe-body .recipe-instruction-step .recipe-info-button .info-char {
+  @apply text-xs font-bold;
+}
+
 .recipe-body .recipe-instruction-step:not(.step-completed):hover::before {
-  @apply bg-green-600;
-  transform: scale(1.05);
+  @apply scale-105;
 }
 
-/* Completed step styling */
+/* Completed step styling - elegant completion state */
 .recipe-body .recipe-instruction-step.step-completed {
-  @apply opacity-60;
+  @apply opacity-75;
 }
 
 .recipe-body .recipe-instruction-step.step-completed::before {
   content: "✓";
-  @apply text-white bg-green-600;
+  @apply bg-emerald-600 text-primary-light shadow-lg;
 }
 
 .recipe-body .recipe-instruction-step.step-completed:hover {
-  @apply opacity-80;
+  @apply opacity-90;
 }
 
-/* ===== INGREDIENTS SECTION ===== */
-.recipe-body .recipe-ingredients-list {
-  @apply list-disc py-0 pl-12 space-y-2;
+.recipe-body .recipe-instruction-step.step-completed:hover::before {
+  @apply bg-emerald-700 shadow-xl scale-105;
 }
 
-/* First ingredients list (no h4 before it) */
-.recipe-body .recipe-section--ingredients > h2 + .recipe-ingredients-list,
-.recipe-body .recipe-section--ingredients > h3 + .recipe-ingredients-list {
-  @apply px-6 py-6;
+/* Mobile responsiveness - maintain clean design on smaller screens */
+@media (max-width: 768px) {
+  .recipe-body .recipe-instruction-step::before {
+    @apply w-10 h-10 text-xl;
+  }
+  
+  .recipe-body .recipe-instruction-step .recipe-info-button {
+    @apply size-6;
+  }
 }
 
-.recipe-body .recipe-ingredient-item {
-  @apply leading-relaxed mb-2;
+/* Focus states for accessibility */
+.recipe-body .recipe-instruction-step:focus-within {
+  @apply outline-none;
+}
+
+.recipe-body .recipe-instruction-step:focus-within::before {
+  @apply ring-2 ring-slate-400 ring-offset-2;
 }
 
 /* ===== MISE EN PLACE SECTION ===== */
-/* When properly wrapped in .recipe-section */
-.recipe-body .recipe-section .recipe-mise-list,
-.recipe-body .recipe-section .contains-task-list {
-  @apply space-y-2;
-  margin: 0;
+.recipe-body .contains-task-list {
+  @apply pl-0;
 }
 
-.recipe-body .recipe-section .recipe-mise-list,
-.recipe-body .recipe-section .contains-task-list { @apply p-6; }
-
-/* When used directly under .recipe-body (legacy structure) */
-.recipe-body > .contains-task-list {
-  @apply mb-6 mt-0 border border-gray-200 bg-white rounded-xl space-y-2;
-}
-
-.recipe-body > .contains-task-list { @apply px-6 pt-4 pb-3; }
-
-.recipe-body .recipe-mise-item,
 .recipe-body .task-list-item {
-  @apply flex items-center gap-6 mb-5 leading-relaxed list-none;
+  @apply flex items-center gap-6 mb-5;
 }
 
-.recipe-body .recipe-mise-item input[type="checkbox"],
 .recipe-body .task-list-item input[type="checkbox"] {
-  @apply appearance-none size-5 border-2 border-gray-400 relative cursor-pointer bg-white transition-colors rounded-sm flex-shrink-0;
-}
-
-.recipe-body .recipe-mise-item input[type="checkbox"]:hover,
-.recipe-body .task-list-item input[type="checkbox"]:hover {
-  @apply border-blue-600;
-}
-
-.recipe-body .recipe-mise-item input[type="checkbox"]:checked,
-.recipe-body .task-list-item input[type="checkbox"]:checked {
-  @apply bg-blue-600 border-blue-600;
-}
-
-.recipe-body .recipe-mise-item input[type="checkbox"]:checked::after,
-.recipe-body .task-list-item input[type="checkbox"]:checked::after {
-  content: "✓";
-  @apply absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 text-xs font-bold text-white;
-}
-
-.recipe-body .recipe-mise-item.task-completed,
-.recipe-body .task-list-item.task-completed {
-  @apply line-through text-gray-500 opacity-70;
+  @apply size-5 md:size-6 cursor-pointer flex-shrink-0;
 }
 
 /* ===== SECTION COMPLETION CONTROLS ===== */
@@ -160,8 +184,8 @@
 .recipe-body .recipe-section--instructions h2.section-completed::after,
 .recipe-body .recipe-section--instructions h3.section-completed::after,
 .recipe-body .recipe-section--instructions h4.section-completed::after {
-  @apply absolute right-3 top-1/2 transform -translate-y-1/2 size-8 text-white text-sm font-bold rounded-full flex items-center justify-center transition-all duration-300 cursor-pointer;
-  opacity: 0;
+  @apply absolute right-3 top-1/2 -translate-y-1/2 size-8 text-primary-light text-sm font-bold rounded-full;
+  @apply flex items-center justify-center transition-all duration-300 cursor-pointer opacity-0;
 }
 
 /* X button for expanded completed sections */
@@ -169,8 +193,7 @@
 .recipe-body .recipe-section--instructions h3.section-completed:not(.section-collapsed).section-background-applied::after,
 .recipe-body .recipe-section--instructions h4.section-completed:not(.section-collapsed).section-background-applied::after {
   content: "✕";
-  @apply bg-red-500;
-  opacity: 1;
+  @apply bg-red-500 opacity-100;
   animation: button-fade-in 0.3s ease-out;
 }
 
@@ -185,8 +208,7 @@
 .recipe-body .recipe-section--instructions h3.section-completed.section-collapsed.section-background-applied::after,
 .recipe-body .recipe-section--instructions h4.section-completed.section-collapsed.section-background-applied::after {
   content: "✓";
-  @apply bg-green-600;
-  opacity: 1;
+  @apply bg-green-600 opacity-100;
   animation: button-fade-in 0.3s ease-out;
 }
 
@@ -203,48 +225,10 @@
   @apply bg-green-100;
 }
 
-/* ===== INFO BUTTONS IN INSTRUCTIONS ===== */
-.recipe-body .recipe-instruction-step .recipe-info-button {
-  @apply absolute flex -top-3 left-3 items-center justify-center size-8 bg-transparent text-gray-600 transition-all duration-200 border-none;
-  z-index: 10;
-}
-
-@media (max-width: 767px) {
-  .recipe-body .recipe-instruction-step .recipe-info-button {
-    @apply hidden;
-  }
-}
-
-@media (min-width: 768px) {
-  body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-info-button {
-    @apply hidden;
-  }
-}
-
-.recipe-body .recipe-instruction-step .recipe-info-button:hover {
-  @apply text-gray-700 scale-110;
-}
-
-/* Hide info notes by default in instructions */
-.recipe-body .recipe-instruction-step .recipe-note-info,
-.recipe-body .recipe-instruction-step .recipe-note-notice {
-  @apply hidden;
-}
-
-/* Show when info mode is enabled */
-body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-note-info,
-body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-note-notice {
-  @apply block;
-}
-
 /* ===== SETTINGS BUTTON ===== */
 .recipe-body .recipe-section > h2 .recipe-settings-button,
 .recipe-body .recipe-section > h3 .recipe-settings-button {
-  @apply absolute right-4 top-1/2 -translate-y-1/2 size-8 flex items-center justify-center bg-transparent text-gray-600 hover:text-gray-800 transition-all duration-200 border-none rounded-lg hover:bg-gray-200;
-}
-
-.recipe-body .recipe-settings-button:focus-visible {
-  @apply outline-2 outline-offset-2 outline-gray-500;
+  @apply float-right p-1.5 sm:p-2.5;
 }
 
 .recipe-body .recipe-settings-icon {
@@ -257,10 +241,8 @@ body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-note-notice
 
 /* ===== INFO TOGGLE CONTROLS ===== */
 .recipe-body .info-toggle-container {
-  @apply bg-gray-100 border-b border-gray-200;
+  @apply bg-secondary-light border-b border-secondary-light p-4;
 }
-
-.recipe-body .info-toggle-container { @apply p-4; }
 
 .recipe-body .info-toggle-container.hidden {
   @apply hidden;
@@ -278,108 +260,9 @@ body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-note-notice
   @apply text-xs mt-1;
 }
 
-.recipe-body .info-toggle-switch {
-  @apply relative inline-flex items-center cursor-pointer;
-}
-
-.recipe-body .info-toggle-switch input {
-  @apply absolute opacity-0 w-0 h-0;
-}
-
-.recipe-body .info-toggle-switch-bg {
-  @apply relative w-11 h-6 bg-gray-200 rounded-full transition-colors duration-200;
-}
-
-.recipe-body .info-toggle-switch-bg::after {
-  content: '';
-  @apply absolute top-0.5 left-0.5 size-5 bg-gray-50 border border-gray-200 rounded-full transition-all duration-200;
-}
-
-.recipe-body .info-toggle-switch input:checked + .info-toggle-switch-bg {
-  @apply bg-blue-600;
-}
-
-.recipe-body .info-toggle-switch input:checked + .info-toggle-switch-bg::after {
-  @apply translate-x-5 border-gray-50;
-}
-
-/* ===== MOBILE OPTIMIZATIONS ===== */
-@media (max-width: 767px) {
-  /* Remove recipe section backgrounds and styling */
-  .recipe-body .recipe-section {
-    @apply bg-transparent border-0 rounded-none mb-4;
-  }
-  
-  /* Remove header backgrounds and reduce padding */
-  .recipe-body .recipe-section > h2,
-  .recipe-body .recipe-section > h3 {
-    @apply bg-transparent border-0;
-  }
-  
-  .recipe-body .recipe-section > h2,
-  .recipe-body .recipe-section > h3 { @apply px-0 py-6; }
-  
-  .recipe-body .recipe-section h4 {
-    @apply bg-transparent;
-  }
-  
-  .recipe-body .recipe-section h4 { @apply px-0 py-2; }
-  
-  /* Remove padding from content areas - using logical properties to override any existing rules */
-  .recipe-body .recipe-instruction-steps,
-  .recipe-body .contains-task-list {
-    @apply py-2;
-  }
-  
-  .recipe-body .recipe-instruction-steps,
-  .recipe-body .contains-task-list { @apply px-0; }
-  
-  .recipe-body .recipe-ingredients-list {
-    @apply py-2;
-  }
-  
-  .recipe-body .recipe-ingredients-list { @apply px-5; }
-
-  .recipe-body .recipe-mise-list {
-    padding-inline: 0 !important;
-    padding-block: 0 !important;
-  }
-
-  /* Adjust first ingredients list padding */
-  .recipe-body .recipe-section--ingredients > h2 + .recipe-ingredients-list,
-  .recipe-body .recipe-section--ingredients > h3 + .recipe-ingredients-list {
-    @apply py-2;
-  }
-  
-  .recipe-body .recipe-section--ingredients > h2 + .recipe-ingredients-list,
-  .recipe-body .recipe-section--ingredients > h3 + .recipe-ingredients-list { @apply px-8; }
-  
-  /* Remove info toggle container background */
-  .recipe-body .info-toggle-container {
-    @apply bg-transparent border-0 p-0;
-  }
-  
-  /* Instruction step mobile adjustments */
-  .recipe-body .recipe-instruction-step {
-    @apply pl-20;
-  }
-  
-  .recipe-body .recipe-instruction-step::before {
-    @apply mb-4 left-0 top-0 h-12 rounded-lg;
-  }
-  
-  .recipe-body .recipe-instruction-step.step-completed::before {
-    @apply flex items-center justify-center;
-  }
-  
-  .recipe-body .recipe-instruction-step:not(.step-completed):hover::before {
-    @apply rounded-lg;
-  }
-}
-
 /* ===== COLLAPSED CONTENT ANIMATIONS ===== */
 .recipe-body .section-content-collapsed {
-  @apply max-h-0 my-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out py-0 border-b border-gray-600;
+  @apply max-h-0 my-0 overflow-hidden opacity-0 transition-all duration-500 ease-in-out py-0 border-b border-primary-dark;
 }
 
 .section-content-expanded {
@@ -397,4 +280,8 @@ body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-note-notice
   100% {
     opacity: 1;
   }
+}
+
+.header-container {
+  @apply flex items-center justify-between gap-4 md:mb-8 mb-4;
 }

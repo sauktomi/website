@@ -1,0 +1,119 @@
+---
+/**
+ * Mobile Infobar Component
+ * 
+ * This component provides a mobile-specific information bar that appears
+ * at the bottom of the screen on mobile devices. It contains contextual
+ * buttons and controls for mobile navigation and interactions.
+ * 
+ * Key Features:
+ * - Mobile-only display (hidden on desktop)
+ * - Fixed bottom positioning
+ * - Contextual action buttons
+ * - Touch-friendly interface
+ * - Responsive button layout
+ * 
+ * Mobile Features:
+ * - Recipe navigation controls
+ * - Timer and cooking tools
+ * - Quick access to key functions
+ * - Touch-optimized button sizes
+ * - Consistent mobile experience
+ * 
+ * Usage:
+ * - Used on recipe pages for mobile users
+ * - Provides quick access to common actions
+ * - Enhances mobile cooking experience
+ * - Supports touch-based interactions
+ * 
+ * Props:
+ * - buttons: Array of button configurations with SVG content and actions
+ * 
+ * Dependencies:
+ * - Astro framework
+ * - Mobile-first CSS
+ * - Touch interaction support
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+export interface Props {
+  buttons?: Array<{
+    id: string;
+    className?: string;
+    ariaLabel: string;
+    title: string;
+    svgContent: string;
+    onClick?: string;
+  }>;
+}
+
+const { buttons = [] } = Astro.props;
+---
+
+<!-- Mobile Infobar - Only visible on mobile devices -->
+<div id="mobile-infobar" class="md:hidden fixed bottom-0 h-16 left-0 right-0 z-51 bg-primary-light border-t border-secondary-light shadow-lg">
+  <div class="flex items-center justify-center gap-4 px-4 py-2 h-full">
+    {buttons.map((button) => (
+      <button 
+        id={button.id}
+        class={`flex items-center justify-center rounded-lg bg-secondary-light hover:bg-secondary-light focus-enhanced size-12 ${button.className || ''}`}
+        aria-label={button.ariaLabel}
+        title={button.title}
+        onclick={button.onClick}
+      >
+        <span set:html={button.svgContent} />
+      </button>
+    ))}
+  </div>
+</div>
+
+<style>
+  /* Ensure the infobar doesn't interfere with content */
+  #mobile-infobar {
+    /* Add bottom padding to main content to account for infobar */
+    margin-bottom: env(safe-area-inset-bottom);
+  }
+  
+  /* Dark mode support */
+  html[data-theme="dark"] #mobile-infobar {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  html[data-theme="dark"] #mobile-infobar button {
+    background: #374151;
+    color: #f9fafb;
+  }
+  
+  html[data-theme="dark"] #mobile-infobar button:hover {
+    background: #4b5563;
+  }
+  
+  /* Ensure proper spacing for content - only on mobile */
+  @media (max-width: 1023px) {
+    #main-content {
+      padding-bottom: 5rem; /* Account for infobar height */
+    }
+  }
+  
+  /* Active state for timer button */
+  .timer-active {
+    background: #f97316;
+    color: primary-light;
+  }
+  
+  /* Completed state for timer button */
+  .kitchen-timer-button.timer-completed {
+    background: #22c55e;
+    color: primary-light;
+    animation: pulse 2s infinite;
+  }
+  
+  @keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+</style> 

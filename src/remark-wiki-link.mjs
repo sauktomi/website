@@ -1,8 +1,38 @@
+/**
+ * Remark Wiki Link Plugin
+ * 
+ * Processes wiki-style links in markdown content, converting [[link text]] syntax
+ * to proper HTML links. Handles both internal and external links with intelligent
+ * URL generation and fallback handling.
+ * 
+ * Features:
+ * - Wiki-style link syntax: [[link text]]
+ * - Automatic URL generation for internal links
+ * - External link detection and handling
+ * - Fallback to search functionality for missing links
+ * - Link validation and error handling
+ * - Support for link aliases and redirects
+ * 
+ * Link Types:
+ * - Internal links: [[recipe name]] -> /reseptit/recipe-name
+ * - External links: [[https://example.com]] -> direct links
+ * - Search links: [[missing item]] -> search functionality
+ * 
+ * Processing:
+ * - Parses markdown content for wiki link patterns
+ * - Generates appropriate URLs based on link type
+ * - Handles special characters and URL encoding
+ * - Provides fallback behavior for broken links
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
 // src/remark-wiki-link.mjs
 import { visit } from 'unist-util-visit';
 import fs from 'fs';
 import path from 'path';
-import { normalizeForIngredientId } from './utils/normalization.js';
+import { normalizeForIngredientId } from './utils/normalization.ts';
 
 // Load ingredients data from individual category files
 let ingredientsData = null;
@@ -403,41 +433,194 @@ export function remarkWikiLinks() {
         
         if (specialMatch) {
           if (specialMatch.type === 'ingredient') {
-            // This is an ingredient - create a hash link for the popup
-            href = `#${specialMatch.id}`;
-            linkClass = 'wiki-link wiki-link--available wiki-link--ingredient';
-            dataAttributes = {
-              'data-wiki-ref': slug,
-              'data-ingredient-id': specialMatch.id,
-              'data-item-type': 'ingredient',
-              'data-category': specialMatch.category || 'unknown',
-              'data-exists': 'true',
-              'data-popup-handler': 'true'
-            };
+            // This is an ingredient - create popover trigger
+            const popoverId = `popover-${specialMatch.id}-ingredient`;
+            const triggerId = `trigger-${specialMatch.id}-ingredient`;
+            
+            children.unshift({
+              type: 'html',
+              value: `
+                <button 
+                  id="${triggerId}"
+                  popovertarget="${popoverId}"
+                  class="ingredient-popover-trigger wiki-link wiki-link--available wiki-link--ingredient text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="ingredient"
+                  data-category="${specialMatch.category || ''}"
+                  aria-label="Näytä tiedot: ${displayText}"
+                  style="outline-color: var(--color-primary-accent);"
+                >
+                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                </button>
+                <div 
+                  id="${popoverId}"
+                  popover="auto"
+                  class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+                  role="dialog"
+                  aria-labelledby="${popoverId}-title"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="ingredient"
+                  data-category="${specialMatch.category || ''}"
+                >
+                  <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
+                    <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
+                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                    </h2>
+                    <button 
+                      class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+                      style="outline-color: var(--color-primary-accent);"
+                      popovertarget="${popoverId}"
+                      popovertargetaction="hide"
+                      aria-label="Sulje"
+                    >
+                      <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="popover-content p-4 space-y-4">
+                    <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
+                      <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
+                        <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+                      </div>
+                    </div>
+                    <div class="popover-text-content space-y-4">
+                      <div class="popover-description-skeleton space-y-2">
+                        <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
+                        <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
+                        <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `
+            });
           } else if (specialMatch.type === 'equipment') {
-            // This is equipment - create a hash link for the popup
-            href = `#${specialMatch.id}`;
-            linkClass = 'wiki-link wiki-link--available wiki-link--equipment';
-            dataAttributes = {
-              'data-wiki-ref': slug,
-              'data-equipment-id': specialMatch.id,
-              'data-item-type': 'equipment',
-              'data-category': specialMatch.category || 'unknown',
-              'data-exists': 'true',
-              'data-popup-handler': 'true'
-            };
+            // This is equipment - create popover trigger
+            const popoverId = `popover-${specialMatch.id}-equipment`;
+            const triggerId = `trigger-${specialMatch.id}-equipment`;
+            
+            children.unshift({
+              type: 'html',
+              value: `
+                <button 
+                  id="${triggerId}"
+                  popovertarget="${popoverId}"
+                  class="ingredient-popover-trigger wiki-link wiki-link--available wiki-link--equipment text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="equipment"
+                  data-category="${specialMatch.category || ''}"
+                  aria-label="Näytä tiedot: ${displayText}"
+                  style="outline-color: var(--color-primary-accent);"
+                >
+                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                </button>
+                <div 
+                  id="${popoverId}"
+                  popover="auto"
+                  class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+                  role="dialog"
+                  aria-labelledby="${popoverId}-title"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="equipment"
+                  data-category="${specialMatch.category || ''}"
+                >
+                  <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
+                    <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
+                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                    </h2>
+                    <button 
+                      class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+                      style="outline-color: var(--color-primary-accent);"
+                      popovertarget="${popoverId}"
+                      popovertargetaction="hide"
+                      aria-label="Sulje"
+                    >
+                      <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="popover-content p-4 space-y-4">
+                    <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
+                      <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
+                        <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+                      </div>
+                    </div>
+                    <div class="popover-text-content space-y-4">
+                      <div class="popover-description-skeleton space-y-2">
+                        <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
+                        <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
+                        <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `
+            });
           } else if (specialMatch.type === 'technique') {
-            // This is technique - create a hash link for the popup
-            href = `#${specialMatch.id}`;
-            linkClass = 'wiki-link wiki-link--available wiki-link--technique';
-            dataAttributes = {
-              'data-wiki-ref': slug,
-              'data-technique-id': specialMatch.id,
-              'data-item-type': 'technique',
-              'data-category': specialMatch.category || 'unknown',
-              'data-exists': 'true',
-              'data-popup-handler': 'true'
-            };
+            // This is technique - create popover trigger
+            const popoverId = `popover-${specialMatch.id}-technique`;
+            const triggerId = `trigger-${specialMatch.id}-technique`;
+            
+            children.unshift({
+              type: 'html',
+              value: `
+                <button 
+                  id="${triggerId}"
+                  popovertarget="${popoverId}"
+                  class="ingredient-popover-trigger wiki-link wiki-link--available wiki-link--technique text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="technique"
+                  data-category="${specialMatch.category || ''}"
+                  aria-label="Näytä tiedot: ${displayText}"
+                  style="outline-color: var(--color-primary-accent);"
+                >
+                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                </button>
+                <div 
+                  id="${popoverId}"
+                  popover="auto"
+                  class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+                  role="dialog"
+                  aria-labelledby="${popoverId}-title"
+                  data-item-id="${specialMatch.id}"
+                  data-item-type="technique"
+                  data-category="${specialMatch.category || ''}"
+                >
+                  <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
+                    <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
+                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                    </h2>
+                    <button 
+                      class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+                      style="outline-color: var(--color-primary-accent);"
+                      popovertarget="${popoverId}"
+                      popovertargetaction="hide"
+                      aria-label="Sulje"
+                    >
+                      <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                      </svg>
+                    </button>
+                  </div>
+                  <div class="popover-content p-4 space-y-4">
+                    <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
+                      <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
+                        <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+                      </div>
+                    </div>
+                    <div class="popover-text-content space-y-4">
+                      <div class="popover-description-skeleton space-y-2">
+                        <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
+                        <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
+                        <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `
+            });
           }
         } else {
           // Check if this might be an ingredient/equipment/technique name that just wasn't found
@@ -490,21 +673,23 @@ export function remarkWikiLinks() {
           });
         }
         
-        // Add link node with appropriate classes for styling
-        children.unshift({
-          type: 'link',
-          url: href,
-          data: {
-            hProperties: {
-              className: linkClass,
-              ...dataAttributes
-            }
-          },
-          children: [{
-            type: 'text',
-            value: displayText
-          }]
-        });
+        // Only create link node if we have a valid href (for non-special matches)
+        if (href) {
+          children.unshift({
+            type: 'link',
+            url: href,
+            data: {
+              hProperties: {
+                className: linkClass,
+                ...dataAttributes
+              }
+            },
+            children: [{
+              type: 'text',
+              value: displayText
+            }]
+          });
+        }
         
         lastIndex = endIndex;
       }

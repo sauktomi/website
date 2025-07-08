@@ -1,0 +1,513 @@
+/**
+ * Consolidated Utility Styles
+ * 
+ * This file contains all utility styles consolidated from multiple
+ * separate files to reduce fragmentation and improve maintainability.
+ * 
+ * Key Features:
+ * - Accessibility utilities and helpers
+ * - Scrollbar utilities
+ * - Visibility and layout utilities
+ * - Animation and transition utilities
+ * - Print and media query utilities
+ * - Focus and interaction utilities
+ * 
+ * Utility Categories:
+ * - Accessibility enhancements
+ * - Scrollbar customization
+ * - Visibility controls
+ * - Layout helpers
+ * - Animation utilities
+ * - Print styles
+ * - Focus management
+ * - Interactive elements
+ * 
+ * Usage:
+ * - Applied to improve site accessibility
+ * - Provides utility classes for common patterns
+ * - Enhances user experience across devices
+ * - Supports responsive design patterns
+ * 
+ * Dependencies:
+ * - Modern CSS features
+ * - Browser accessibility support
+ * - WCAG guidelines compliance
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
+/* =============================================================================
+   CONSOLIDATED UTILITY SYSTEM
+   ============================================================================= */
+
+/* ===== SCROLLBAR UTILITIES ===== */
+.scrollbar-hidden {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.scrollbar-hidden::-webkit-scrollbar { 
+  display: none; 
+}
+
+.scrollbar-thin {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+.scrollbar-thin::-webkit-scrollbar { 
+  @apply w-1.5; 
+}
+
+.scrollbar-thin::-webkit-scrollbar-track { 
+  background: transparent; 
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb { 
+  @apply bg-secondary rounded-sm; 
+}
+
+.scrollbar-thin::-webkit-scrollbar-thumb:hover { 
+  @apply bg-secondary; 
+}
+
+/* ===== TOGGLE SWITCH ===== */
+.info-toggle-switch {
+  @apply relative inline-flex h-6 w-11 cursor-pointer items-center rounded-full focus:outline-none;
+}
+
+.info-toggle-switch input {
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0;
+  clip: rect(0, 0, 0, 0);
+}
+
+.info-toggle-switch-bg {
+  @apply relative inline-flex h-6 w-11 items-center rounded-full bg-secondary transition-colors duration-200;
+}
+
+.info-toggle-switch-bg::after {
+  @apply absolute left-1 h-4 w-4 rounded-full bg-primary-light shadow-sm transition-transform duration-200;
+  content: '';
+}
+
+.info-toggle-switch input:checked + .info-toggle-switch-bg {
+  @apply bg-blue-accent;
+}
+
+.info-toggle-switch input:checked + .info-toggle-switch-bg::after {
+  @apply translate-x-5;
+}
+
+/* ===== ACCESSIBILITY UTILITIES ===== */
+.skip-link {
+  @apply absolute -top-12 left-4 z-50 rounded transition duration-300 bg-primary-dark text-primary-light px-4 py-2;
+}
+
+.skip-link:focus { 
+  @apply top-4; 
+}
+
+.focus-enhanced { 
+  @apply outline-offset-2; 
+}
+
+.focus-enhanced:focus-visible { 
+  @apply outline-2 outline-primary-dark; 
+}
+
+.sr-only { 
+  @apply absolute w-px h-px p-0 -m-px overflow-hidden whitespace-nowrap border-0; 
+}
+
+.not-sr-only { 
+  @apply static w-auto h-auto p-0 m-0 overflow-visible whitespace-normal; 
+}
+
+/* ===== INTERACTIVE ELEMENTS ===== */
+.interactive-element { 
+  @apply cursor-pointer select-none overflow-hidden;
+  transform: translateZ(0);
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+.interactive-element:hover {
+  transform: translateY(-1px) translateZ(0);
+}
+
+.interactive-element:active {
+  transform: translateY(0) scale(0.98) translateZ(0);
+  transition-duration: 50ms;
+}
+
+.hover-translate { 
+  @apply transition-transform duration-200; 
+}
+
+.hover-translate:hover { 
+  @apply translate-x-1; 
+}
+
+/* ===== SPACING UTILITIES ===== */
+.v-space-1 { @apply my-4; }
+.v-space-2 { @apply my-6; }
+.v-space-4 { @apply my-8; }
+.v-space-6 { @apply my-12; }
+
+.vertical-divider { @apply w-px h-8 bg-secondary-light mx-4; }
+.horizontal-divider { @apply h-px w-full bg-secondary-light my-8; }
+
+/* ===== TEXT UTILITIES ===== */
+.line-clamp-1 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+.line-clamp-2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}
+
+/* ===== VISIBILITY UTILITIES ===== */
+.vis-flex {
+  @apply flex;
+}
+
+.vis-block {
+  @apply block;
+}
+
+.vis-inline-flex {
+  @apply inline-flex;
+}
+
+/* ===== ANIMATION UTILITIES ===== */
+@keyframes button-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ===== REDUCED MOTION ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+  .btn:hover, 
+  .modernist-card:hover,
+  .reference-card:hover,
+  .hover-translate:hover,
+  .social-share-btn:hover,
+  .ingredient-popover-trigger,
+  .skeleton-line {
+    transform: none;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ===== FOCUS ENHANCEMENTS ===== */
+.focus-enhanced:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary-dark;
+}
+
+/* ===== RECIPE BODY ENHANCEMENTS ===== */
+.recipe-body ol li {
+  @apply mb-2;
+}
+
+.recipe-body ol li:last-child {
+  @apply mb-0;
+}
+
+.recipe-note-info, .recipe-note-notice {
+  @apply bg-blue-50 border-l-blue-500 text-blue-900;
+}
+
+body.info-mode-enabled .recipe-note-info,
+body.info-mode-enabled .recipe-note-notice {
+  @apply bg-blue-100 border-l-blue-600;
+}
+
+/* ===== IMAGE ENHANCEMENTS ===== */
+img {
+  @apply max-w-full h-auto;
+}
+
+.recipe-body img {
+  @apply rounded-lg shadow-sm;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 1.5rem auto;
+}
+
+/* ===== VIEW TRANSITIONS ===== */
+::view-transition-old(popover-title-*),
+::view-transition-new(popover-title-*) {
+  @apply h-auto;
+  height: auto;
+}
+
+::view-transition-old(popover-image-*),
+::view-transition-new(popover-image-*) {
+  @apply h-auto;
+  height: auto;
+}
+
+::view-transition-old(popover-description-*),
+::view-transition-new(popover-description-*) {
+  @apply h-auto;
+  height: auto;
+}
+
+/* ===== PRINT STYLES ===== */
+@media print {
+  .sidebar, 
+  .page-toc,
+  .recipe-meta-actions,
+  .timer-modal,
+  .popup-system,
+  .social-share-buttons {
+    display: none !important;
+  }
+  
+  body {
+    @apply text-black bg-white;
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+  
+  .recipe-content { 
+    @apply max-w-full m-0 p-0; 
+  }
+  
+  img { 
+    max-width: 8cm; 
+    max-height: 8cm; 
+  }
+  
+  .page-toc {
+    @apply block static;
+  }
+  
+  .page-toc summary {
+    @apply block;
+  }
+  
+  .page-toc summary { 
+    @apply px-3 py-2; 
+  }
+  
+  .page-toc a {
+    @apply text-black no-underline;
+  }
+  
+  .recipe-title {
+    @apply text-2xl font-bold mb-4;
+  }
+  
+  .recipe-essentials {
+    @apply mb-6;
+  }
+  
+  .recipe-note {
+    @apply border-l-4 p-4 mb-4;
+  }
+  
+  .recipe-note { 
+    @apply p-2; 
+  }
+  
+  .sidebar-card,
+  .reference-card {
+    @apply border border-gray-300 p-4 mb-4;
+  }
+}
+
+/* ===== TOUCH DEVICE OPTIMIZATIONS ===== */
+@media (hover: none) and (pointer: coarse) {
+  .interactive-element:hover {
+    transform: none;
+  }
+  
+  .interactive-element:active {
+    transform: scale(0.98);
+  }
+}
+
+/* ===== HIGH CONTRAST MODE ===== */
+@media (prefers-contrast: high) {
+  .btn {
+    @apply border-2 border-current;
+  }
+  
+  .reference-card,
+  .modernist-card {
+    @apply border-2 border-current;
+  }
+  
+  .recipe-note {
+    @apply border-l-4 border-current;
+  }
+}
+
+/* ===== DARK MODE UTILITIES ===== */
+@media (prefers-color-scheme: dark) {
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-500;
+  }
+}
+
+/* ===== RESPONSIVE UTILITIES ===== */
+@media (max-width: 640px) {
+  .v-space-1 { @apply my-2; }
+  .v-space-2 { @apply my-4; }
+  .v-space-4 { @apply my-6; }
+  .v-space-6 { @apply my-8; }
+  
+  .vertical-divider { @apply h-6; }
+  .horizontal-divider { @apply my-6; }
+}
+
+@media (max-width: 768px) {
+  .skip-link {
+    @apply left-2;
+  }
+  
+  .focus-enhanced:focus-visible {
+    @apply outline-offset-1;
+  }
+}
+
+/* ===== PERFORMANCE UTILITIES ===== */
+.gpu-accelerated {
+  transform: translateZ(0);
+  will-change: transform;
+}
+
+.content-visibility-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 500px;
+}
+
+/* ===== LAYOUT UTILITIES ===== */
+.container-responsive {
+  @apply mx-auto px-4 sm:px-6 lg:px-8;
+  max-width: 1200px;
+}
+
+.aspect-video {
+  aspect-ratio: 16 / 9;
+}
+
+.aspect-square {
+  aspect-ratio: 1 / 1;
+}
+
+/* ===== TEXT UTILITIES ===== */
+.text-balance {
+  text-wrap: balance;
+}
+
+.text-pretty {
+  text-wrap: pretty;
+}
+
+/* ===== INTERACTION UTILITIES ===== */
+.pointer-events-none {
+  pointer-events: none;
+}
+
+.pointer-events-auto {
+  pointer-events: auto;
+}
+
+.user-select-none {
+  user-select: none;
+}
+
+.user-select-text {
+  user-select: text;
+}
+
+/* ===== POSITIONING UTILITIES ===== */
+.sticky-top {
+  @apply sticky top-0 z-10;
+}
+
+.sticky-bottom {
+  @apply sticky bottom-0 z-10;
+}
+
+/* ===== OVERFLOW UTILITIES ===== */
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-auto {
+  overflow: auto;
+}
+
+.overflow-scroll {
+  overflow: scroll;
+}
+
+.overflow-x-auto {
+  overflow-x: auto;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
+}
+
+/* ===== Z-INDEX UTILITIES ===== */
+.z-dropdown {
+  z-index: 1000;
+}
+
+.z-sticky {
+  z-index: 1020;
+}
+
+.z-fixed {
+  z-index: 1030;
+}
+
+.z-modal-backdrop {
+  z-index: 1040;
+}
+
+.z-modal {
+  z-index: 1050;
+}
+
+.z-popover {
+  z-index: 1060;
+}
+
+.z-tooltip {
+  z-index: 1070;
+} 

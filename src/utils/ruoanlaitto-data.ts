@@ -1,3 +1,42 @@
+/**
+ * Recipe Data Processing and Management
+ * 
+ * This module handles all recipe data processing, transformation, and management
+ * functions for the website. It provides utilities for processing recipe metadata,
+ * organizing content, and generating structured data for the frontend.
+ * 
+ * Key Features:
+ * - Recipe data enhancement and processing
+ * - Time data formatting and calculation
+ * - Difficulty level processing
+ * - Heading organization and TOC generation
+ * - Recipe numbering system management
+ * - Search and filtering utilities
+ * - Category and tag processing
+ * - Author and source data handling
+ * 
+ * Data Processing:
+ * - Frontmatter parsing and validation
+ * - Content structure analysis
+ * - Metadata extraction and formatting
+ * - Search index generation
+ * - Filter option creation
+ * 
+ * Usage:
+ * - Process recipe collections: processRecipeData(entries)
+ * - Enhance individual recipes: enhanceRecipeData(entry)
+ * - Generate filter options: getUniqueFilterValues(entries, field)
+ * - Format time data: formatTimeDisplay(minutes)
+ * 
+ * Dependencies:
+ * - Astro Content Collections
+ * - TypeScript for type safety
+ * - Normalization utilities
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
 // Shared utilities for ruoanlaitto data processing
 import type { CollectionEntry } from 'astro:content';
 
@@ -197,9 +236,9 @@ export function formatAllTimeData(processedTime: ProcessedTimeData | undefined):
 
 export function getDifficultyDisplay(level?: string): ProcessedDifficulty {
   const levels: Record<string, ProcessedDifficulty> = {
-    'helppo': { text: 'Helppo', color: 'text-green-600' },
-    'keskitaso': { text: 'Keskitaso', color: 'text-yellow-600' },
-    'haastava': { text: 'Haastava', color: 'text-red-600' }
+    'helppo': { text: 'Helppo', color: 'text-green' },
+    'keskitaso': { text: 'Keskitaso', color: 'text-amber' },
+    'haastava': { text: 'Haastava', color: 'text-red' }
   };
   
   const normalized = level?.toLowerCase() || 'keskitaso';

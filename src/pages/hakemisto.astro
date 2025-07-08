@@ -1,8 +1,37 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import UnifiedFilterSystem from '../components/UnifiedFilterSystem.jsx';
+/**
+ * Directory Page (Hakemisto)
+ * 
+ * Comprehensive directory of ingredients, equipment, and cooking techniques.
+ * Provides detailed information about cooking components with filtering and
+ * search capabilities.
+ * 
+ * Features:
+ * - Unified directory of ingredients, equipment, and techniques
+ * - Advanced filtering by type, dietary restrictions, and categories
+ * - Search functionality with real-time results
+ * - Alphabetical organization with quick navigation
+ * - Detailed information cards with images
+ * - Cross-references between related items
+ * 
+ * Content Types:
+ * - Ainesosat (Ingredients): Raw materials and food items
+ * - Välineet (Equipment): Kitchen tools and appliances
+ * - Tekniikat (Techniques): Cooking methods and procedures
+ * 
+ * Filter Options:
+ * - Type (ingredients, equipment, techniques)
+ * - Dietary restrictions (vegetarian, gluten-free, etc.)
+ * - Categories (subcategories within each type)
+ * - Alphabetical sorting
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
+import Layout from '../layouts/Layout.astro';
+import SimpleFilterSystem from '../components/SimpleFilterSystem.jsx';
 import { 
-  createAlphabeticalGroups, 
   extractUniqueDietaryTags
 } from '../utils/ruoanlaitto-data.ts';
 import { processUnifiedData } from '../remark-wiki-link.mjs';
@@ -47,19 +76,10 @@ const categories = [
   }))
 ];
 
-// Group items by type instead of alphabetically
-const itemsByType = {
-  ainesosat: ingredients as any[],
-  tekniikat: techniqueItems as any[],
-  välineet: equipmentItems as any[]
-};
-
 // Sort all items alphabetically at build time to prevent runtime resorting
-Object.keys(itemsByType).forEach(typeKey => {
-  itemsByType[typeKey].sort((a: any, b: any) => 
-    a.name.localeCompare(b.name, 'fi', { numeric: true, sensitivity: 'base' })
-  );
-});
+allItems.sort((a: any, b: any) => 
+  a.name.localeCompare(b.name, 'fi', { numeric: true, sensitivity: 'base' })
+);
 
 // Get all unique dietary tags for filtering (only from ingredients)
 const dietaryOptions = extractUniqueDietaryTags(ingredients as any[]);
@@ -93,7 +113,7 @@ allItems.forEach((item: any) => {
 
 const activeLetters = Array.from(allFirstLetters).sort((a, b) => {
   if (a === '#') return 1;
-  if (b === '#') return -1;
+  if (b === '#') return 1;
   return a.localeCompare(b, 'fi');
 });
 
@@ -143,7 +163,7 @@ const mainFilterSections = [
     title: 'Ruokavalio',
     icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
     type: 'multiSelect' as const,
-    options: dietaryOptions.map(diet => ({
+    options: dietaryOptions.map((diet: string) => ({
       id: diet,
       label: diet,
       value: diet
@@ -167,158 +187,180 @@ const mainFilterSections = [
 ];
 ---
 
-<BaseLayout title="Hakemisto | Ruoanlaitto" forceIngredientPopup={true} needsWikiLinks={true}>
+<Layout title="Hakemisto | Ruoanlaitto" needsWikiLinks={true}>
   <!-- Skip to content -->
-  <a href="#content-groups" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-gray-900 text-white px-4 py-2 rounded-lg z-50 transition-all">
+  <a href="#content-groups" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-dark text-primary-light px-4 py-2 rounded-lg z-50 transition-all">
     Siirry sisältöön
   </a>
 
   <div class="min-h-screen">
     <!-- Header -->
-    <header class="mb-12 sm:mb-16 text-center">
-      <h1 class="text-5xl md:text-6xl lg:text-7xl font-light mb-3 md:mb-6 text-gray-900 tracking-tight leading-tight">Hakemisto</h1>
-      <p class="text-xl md:text-2xl text-gray-600 font-light mx-auto max-w-2xl">Kattava hakemisto ruoanlaiton raaka-aineista, välineistä ja tekniikoista</p>
+    <header class="text-center">
+      <h1>Hakemisto</h1>
     </header>
 
     <!-- Main Content -->
-    <div class="max-w-4xl mx-auto">
-      <!-- Unified Filter System -->
-      <UnifiedFilterSystem
+    <div>
+      <!-- Simple Filter System -->
+      <SimpleFilterSystem
         config={{
           itemSelector: '.list-item-wrapper',
           sectionSelector: '.category-section',
-          noResultsId: 'no-results',
-          filterBlocks: {
-            search: { fields: ['searchName', 'name', 'tags'] },
-            sort: { type: 'select' },
-            type: { type: 'multiSelect' },
-            category: { type: 'select' },
-            dietary: { type: 'multiSelect' },
-            firstLetter: { type: 'select' }
-          }
+          noResultsId: 'no-results'
         }}
         searchPlaceholder="Etsi hakemistosta..."
-        alphabetLinks={alphabetLinks as any}
-        mainFilterButton={{
-          ariaLabel: "Avaa suodattimet",
-          icon: "M3 4a1 1 0 011-1h16a1 1 0 011 1v2.586a1 1 0 01-.293.707l-6.414 6.414a1 1 0 00-.293.707V17l-4 4v-6.586a1 1 0 00-.293-.707L3.293 7.707A1 1 0 013 7V4z"
-        }}
-        mainFilterSections={mainFilterSections as any}
+        filterSections={[
+          {
+            id: 'type',
+            title: 'Tyyppi',
+            icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+            type: 'multi' as const,
+            options: typeOptions.map(type => ({
+              id: type.id,
+              label: type.name,
+              value: type.id
+            }))
+          },
+          {
+            id: 'dietary',
+            title: 'Ruokavalio',
+            icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+            type: 'multi' as const,
+            options: dietaryOptions.map(diet => ({
+              id: diet,
+              label: diet,
+              value: diet
+            }))
+          },
+          {
+            id: 'category',
+            title: 'Alakategoriat',
+            icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
+            type: 'single' as const,
+            options: categories.filter(cat => 'parent' in cat && cat.parent).map(category => ({
+              id: category.id,
+              label: category.name,
+              value: category.id
+            }))
+          }
+        ]}
         resultsCountText="kohdetta löytyi"
-        client:load
+        client:visible
       />
 
-      <!-- No Results -->
-      <div id="no-results" class="hidden text-center justify-items-center py-20" role="status" aria-live="polite">
-        <div class="text-gray-500">
-          <svg class="w-16 h-16 mx-auto mb-4 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-          <p class="text-lg font-medium text-gray-900 mb-2">Ei tuloksia</p>
-          <p class="text-gray-500">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
+      <!-- Mobile Category Filter Buttons -->
+      <div class="mobile-category-buttons sm:hidden mt-4 mb-6">
+        <div class="flex gap-2">
+          {typeOptions.map(type => (
+            <button
+              class="mobile-category-button flex-1 px-4 py-2 rounded-lg border border-secondary text-primary-dark hover:bg-secondary-light transition-colors"
+              data-type={type.id}
+              aria-label={`Näytä ${type.name} kohteet`}
+            >
+              {type.name}
+            </button>
+          ))}
         </div>
       </div>
 
-      <!-- Main Content Groups -->
+      <!-- No Results -->
+      <div id="no-results" class="no-results" role="status" aria-live="polite">
+        <div class="text-secondary-accent">
+          <svg class="no-results-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <p class="no-results-title">Ei tuloksia</p>
+          <p class="no-results-description">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
+        </div>
+      </div>
+
+      <!-- Main Content Groups - Side by Side Types -->
       <div class="content-groups-container" id="content-groups">
-        <!-- Reference Items by Type -->
-        {Object.entries(itemsByType).map(([typeKey, items]) => {
-          const typeLabels = {
-            ainesosat: 'Ainesosat',
-            tekniikat: 'Tekniikat',
-            välineet: 'Välineet'
-          };
+        {typeOptions.map(type => {
+          const typeItems = allItems.filter(item => item.type === type.id);
+          if (typeItems.length === 0) return null;
           
           return (
-          <section 
-              id={`type-${typeKey}`} 
-              class="category-section scroll-mt-32 mb-10 lg:mb-12 last:mb-0"
-              data-type={typeKey}
-          >
-              <!-- Type Header -->
-              <div class="mb-6">
-                <span class="reference-section-header">{typeLabels[typeKey]}</span>
-              </div>
-              
-              <!-- Items List -->
-              <div class="recipe-container space-y-1" data-type={typeKey}>
-                  {items.map((item: any) => (
-                  <div 
-                      class="list-item-wrapper item"
-                    data-tags={item.tags?.join(',') || ''}
-                    data-dietary={item.dietaryInfo?.join(',') || ''}
-                    data-category={item.category}
-                    data-type={item.type}
-                    data-name={item.name}
-                    data-search-name={item.name.toLowerCase()}
-                      data-first-letter={item.name.charAt(0).toUpperCase().match(/^[A-ZÄÖÅ]/) ? item.name.charAt(0).toUpperCase() : '#'}
+            <div class="category-section" data-type={type.id}>
+              <h2 class="category-title text-2xl font-semibold text-primary-dark mb-4">
+                {type.name}
+              </h2>
+              {typeItems.map((hakemistoItem: any) => (
+                <div 
+                  class="list-item-wrapper item"
+                  data-tags={hakemistoItem.tags?.join(',') || ''}
+                  data-dietary={hakemistoItem.dietaryInfo?.join(',') || ''}
+                  data-category={hakemistoItem.category}
+                  data-type={hakemistoItem.type}
+                  data-name={hakemistoItem.name}
+                  data-search-name={hakemistoItem.name.toLowerCase()}
+                  data-first-letter={hakemistoItem.name.charAt(0).toUpperCase().match(/^[A-ZÄÖÅ]/) ? hakemistoItem.name.charAt(0).toUpperCase() : '#'}
+                >
+                  <button 
+                    id={`trigger-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+                    popovertarget={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+                    class="group list-item ingredient-popover-trigger text-left w-full"
+                    data-item-id={hakemistoItem.id}
+                    data-item-type={hakemistoItem.dataItemType}
+                    data-category={hakemistoItem.dataCategory}
+                    aria-label={`Näytä tiedot: ${hakemistoItem.name}`}
                   >
-                    <a 
-                      href={`#${item.id}`} 
-                        class="group list-item"
-                      data-popup-handler="true"
-                      data-item-type={item.dataItemType}
-                      data-category={item.dataCategory}
-                    >
-                        <div class="list-item-content">
-                          <div class="list-item-image">
-                            {getOptimizedImageUrl(item, 'small') ? (
-                              <img 
-                                src={getOptimizedImageUrl(item, 'small')} 
-                                alt={item.name} 
-                                loading="lazy" 
-                                decoding="async" 
-                                width="80" 
-                                height="60" 
-                                class="w-20 h-15 object-cover rounded-lg"
-                              />
-                            ) : (
-                              <div class="w-20 h-15 rounded-lg bg-gray-100 flex items-center justify-center">
-                                <svg class="w-8 h-8 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  {typeKey === 'ainesosat' && (
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path>
-                                  )}
-                                  {typeKey === 'välineet' && (
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-                                  )}
-                                  {typeKey === 'tekniikat' && (
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-                                  )}
-                                </svg>
-                              </div>
-                            )}
-                          </div>
-                          <div class="list-item-text">
-                            <span class="list-item-title">
-                            {item.name}
-                          </span>
-                          {item.description && (
-                              <p class="list-item-description">
-                              {item.description}
-                            </p>
-                          )}
-                        </div>
-                        <svg 
-                            class="list-item-arrow" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          viewBox="0 0 24 24"
-                          aria-hidden="true"
-                        >
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                    <span view-transition-name={`popover-title-${hakemistoItem.id}`}>
+                      {hakemistoItem.name}
+                    </span>
+                  </button>
+                  
+                  <!-- Popover for this item -->
+                  <div 
+                    id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+                    popover="auto"
+                    class="ingredient-popover"
+                    role="dialog"
+                    aria-labelledby={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`}
+                    data-item-id={hakemistoItem.id}
+                    data-item-type={hakemistoItem.dataItemType}
+                    data-category={hakemistoItem.dataCategory}
+                  >
+                    <div class="popover-header">
+                      <h2 id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`} class="popover-title">
+                        <span class="popover-title-text" view-transition-name={`popover-title-${hakemistoItem.id}`}>Ladataan...</span>
+                      </h2>
+                      <button 
+                        class="popover-close-btn"
+                        style="outline-color: var(--color-primary-accent);"
+                        popovertarget={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+                        popovertargetaction="hide"
+                        aria-label="Sulje"
+                      >
+                        <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                         </svg>
+                      </button>
+                    </div>
+                    <div class="popover-content">
+                      <div class="popover-image-container">
+                        <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
+                          <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+                        </div>
                       </div>
-                    </a>
+                      <div class="popover-text-content">
+                        <div class="popover-description-skeleton space-y-2">
+                          <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
+                          <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
+                          <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
-                ))}
+                </div>
+              ))}
             </div>
-          </section>
           );
         })}
       </div>
     </div>
   </div>
-</BaseLayout>
+	</Layout>
 
 
 

@@ -65,7 +65,6 @@ teoria:
 
 ### Mise en Place
 
-
 - [ ] Punnitse vadelmat ja sokeri tarkasti [[Digitaalivaaka (Digital Scale)|digitaalivaa'alla]].
 - [ ] Mittaa suola.
 - [ ] Valmistele valitsemasi menetelmän vaatimat välineet (Sous Vide -allas, purkki, vesihaudekattila).

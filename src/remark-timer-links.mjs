@@ -1,3 +1,33 @@
+/**
+ * Remark Timer Links Plugin
+ * 
+ * Processes timer links in markdown content, converting [timer:duration] syntax
+ * to interactive HTML elements with kitchen timer functionality.
+ * 
+ * Features:
+ * - Timer link syntax: [timer:5min], [timer:1h 30min]
+ * - Automatic time parsing and validation
+ * - Interactive timer button generation
+ * - Sound alerts and notifications
+ * - Mobile-optimized timer controls
+ * - Accessibility features for screen readers
+ * 
+ * Time Formats:
+ * - Minutes: [timer:5min], [timer:30min]
+ * - Hours and minutes: [timer:1h 30min], [timer:2h 15min]
+ * - Hours only: [timer:1h], [timer:2h]
+ * - Complex formats: [timer:1h 30min 45s]
+ * 
+ * Generated HTML:
+ * - Interactive timer buttons with countdown display
+ * - Start/pause/reset controls
+ * - Visual feedback for timer states
+ * - Integration with kitchen timer system
+ * 
+ * @author Tomi
+ * @version 2.0.0
+ */
+
 import { visit } from 'unist-util-visit';
 
 /**

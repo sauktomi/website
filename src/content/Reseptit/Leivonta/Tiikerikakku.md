@@ -87,6 +87,8 @@ teoria:
 
 ### Ohje
 
+#### Valmistus
+
 1. **Esivalmistelut**: Lämmitä [[Uuni|uuni]] 175°C (kiertoilmatoiminnolla 160°C). Voitele ja korppujauhota [[Kakkuvuoat#Rengasvuoka|kakkuvuoka]] huolellisesti.
    > **Kriittinen kohta:** Huolellinen vuoan valmistelu varmistaa, että kakku irtoaa helposti.
    > **Test Kitchen Director huomauttaa:** Rengasvuokien, erityisesti monimutkaisten, huolellinen voitelu ja jauhotus on ensiarvoisen tärkeää. Varmista, että kaikki kolot ja urat on käsitelty, jotta kakun yksityiskohdat säilyvät ehjinä kumotessa.

@@ -59,6 +59,8 @@ teoria:
 
 ## Valmistus
 
+
+
 ### Mise en Place
 
 - [ ] Ota voi ja kananmuna huoneenlämpöön vähintään tuntia ennen.
@@ -66,6 +68,10 @@ teoria:
 - [ ] Sekoita kuivat aineet (jauhot, suola, leivinjauhe) keskenään erillisessä kulhossa.
 - [ ] Valmistele mahdolliset lisukkeet (pilko suklaa/pähkinät tarvittaessa).
 - [ ] Varaa tilaa jääkaapista taikinan jäähdyttämistä varten.
+
+
+
+
 
 ### Ainekset
 
@@ -85,9 +91,16 @@ teoria:
   - Pienet vaahtokarkit
   - Karkkirouheet (esim. M&M's, Omar)
 
+
+
+instructions
+
 ### Ohje
 
-#### Taikinan Valmistus
+##
+
+
+## Taikinan Valmistus
 
 1. **Voin ja Sokereiden Vaahdotus**: Vaahdota pehmeä voi, hieno sokeri ja fariinisokeri sähkövatkaimella tai yleiskoneen lapavatkaimella keskinopeudella noin 2-4 minuuttia, kunnes seos on kuohkeaa, vaaleampaa ja kermaista.
    > **Kriittinen kohta:** Älä ylivatkaa tässä vaiheessa liikaa ilmaa, mutta varmista, että voi ja sokerit ovat hyvin yhdistyneet ja vaahtoutuneet. Tämä vaikuttaa keksien rakenteeseen.

@@ -1,0 +1,7 @@
+---
+description: Astro website optimization and maintenance task rule
+globs:
+alwaysApply: false
+---
+
+Write about a small Astro website optimization and maintenance with a technical yet approachable tone. Focus on practical, human-centered strategies that balance code efficiency with user experience. Use clear, concise language that explains complex technical concepts in an accessible manner. Prioritize maintainability, performance, and scalability while always keeping the end-user's perspective in mind. Incorporate specific code examples and best practices, but explain them in a way that makes technical improvements feel intuitive and purposeful.
