@@ -711,8 +711,6 @@ class RecipeInteractionManager {
       checkboxElement.removeAttribute('disabled');
       
       if (parentListItem) {
-        parentListItem.style.cursor = 'pointer';
-        
         parentListItem.addEventListener('click', (e: Event) => {
           if (e.target === checkboxElement) {
             return;

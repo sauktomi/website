@@ -84,6 +84,12 @@ const reseptitCollection = defineCollection({
       z.null()
     ]).optional(),
     mise_en_place: z.array(z.string()).optional(),
+    ingredients: z.array(z.object({
+      name: z.string(),
+      amount: z.string().optional(),
+      unit: z.string().optional(),
+      notes: z.string().optional(),
+    })).optional(),
     image: z.string().optional(),
     imageCaption: z.string().optional(),
     imageAlt: z.string().optional(),

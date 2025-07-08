@@ -153,6 +153,12 @@ export interface EnhancedRecipeData {
   flavor_profile?: any;
   equipment?: string[];
   mise_en_place?: string[];
+  ingredients?: Array<{
+    name: string;
+    amount?: string;
+    unit?: string;
+    notes?: string;
+  }>;
   image?: string;
   description?: string | string[];
   
@@ -464,6 +470,7 @@ export async function enhanceRecipeData(entry: CollectionEntry<'Reseptit'>): Pro
     flavor_profile: entry.data.flavor_profile,
     equipment: entry.data.equipment,
     mise_en_place: entry.data.mise_en_place,
+    ingredients: (entry.data as any).ingredients,
     image: (entry.data as any).image,
     description: entry.data.description,
     

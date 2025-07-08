@@ -68,10 +68,16 @@ This document outlines identified overengineering and duplication issues in the 
 - Over-engineered for basic markdown enhancement
 
 **Action:** Consolidate into 2-3 core plugins
-- [ ] Merge wiki-link and timer-link plugins
-- [ ] Create shared data loading utilities
-- [ ] Simplify regex patterns
-- [ ] Remove duplicate AST manipulation
+- [x] Separate generic wiki-link and recipe-specific link plugins
+- [x] Create shared data loading utilities
+- [x] Simplify regex patterns
+- [x] Remove duplicate AST manipulation
+- [x] Move ingredient data to frontmatter
+- [x] Create frontmatter-based ingredient rendering
+- [x] Auto-determine ingredient categories from name
+- [x] Show warnings for missing ingredients instead of build errors
+- [x] Move mise en place to frontmatter
+- [x] Fix mise en place and ingredients rendering location in main content
 
 ### 5. Data Loading Duplication
 **Current State:** Multiple data loading patterns across files

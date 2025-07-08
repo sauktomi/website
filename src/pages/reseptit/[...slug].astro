@@ -35,6 +35,7 @@
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 import { enhanceRecipeData, createRecipeNumberRegistry, setRecipeNumberRegistry, type EnhancedRecipeData } from '../../utils/ruoanlaitto-data.ts';
+import { getItemTypeAndCategory } from '../../remark-recipe-links.mjs';
 
 export async function getStaticPaths() {
   const reseptit = await getCollection('Reseptit');
@@ -79,6 +80,7 @@ const {
   annokset,
   dietary,
   mise_en_place,
+  ingredients,
   image,
   description,
   processedTime,
@@ -90,6 +92,102 @@ const {
 } = enhancedData;
 
 import MobileInfobar from '../../components/MobileInfobar.astro';
+
+/**
+ * Create ingredient HTML with popover functionality
+ */
+function createIngredientHTML(ingredient) {
+  const { name, amount, unit, notes } = ingredient;
+  
+  // Get ingredient type and category from the data system
+  const itemInfo = getItemTypeAndCategory(name);
+  
+  // Show warning if ingredient not found, but continue with fallback
+  if (!itemInfo) {
+    console.warn(`⚠️  Ingredient "${name}" not found in ingredient database. Please add it to the appropriate category file.`);
+    
+    // Return fallback HTML with structured spans
+    return `
+      <li class="ingredient-item">
+        <span class="ingredient-fallback text-current">
+          ${amount ? `<span class="ingredient-amount">${amount}</span>` : ''}
+          ${unit ? `<span class="ingredient-unit"> ${unit}</span>` : ''}
+          <span class="ingredient-name"> ${name}</span>
+          ${notes ? `<span class="ingredient-notes"> (${notes})</span>` : ''}
+        </span>
+      </li>
+    `;
+  }
+  
+  const itemType = itemInfo.type;
+  const itemCategory = itemInfo.category;
+  const itemId = itemInfo.id;
+  
+  // Create popover ID and trigger ID
+  const popoverId = `popover-${itemId}-${itemType}`;
+  const triggerId = `trigger-${itemId}-${itemType}`;
+  
+  return `
+    <li class="ingredient-item">
+      ${amount ? `<span class="ingredient-amount">${amount}</span>` : ''}
+      ${unit ? `<span class="ingredient-unit">${unit}</span>` : ''}
+      <button 
+        id="${triggerId}"
+        popovertarget="${popoverId}"
+        class="ingredient-popover-trigger wiki-link wiki-link--available wiki-link--${itemType} text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md"
+        data-item-id="${itemId}"
+        data-item-type="${itemType}"
+        data-category="${itemCategory}"
+        aria-label="Näytä tiedot: ${name}"
+        style="outline-color: var(--color-primary-accent);"
+      >
+        <span class="ingredient-name" view-transition-name="popover-title-${itemId}">${name}</span>
+      </button>
+      ${notes ? `<span class="ingredient-notes"> (${notes})</span>` : ''}
+      <div 
+        id="${popoverId}"
+        popover="auto"
+        class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+        role="dialog"
+        aria-labelledby="${popoverId}-title"
+        data-item-id="${itemId}"
+        data-item-type="${itemType}"
+        data-category="${itemCategory}"
+      >
+        <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
+          <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
+            <span class="popover-title-text" view-transition-name="popover-title-${itemId}">Ladataan...</span>
+          </h2>
+          <button 
+            class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+            style="outline-color: var(--color-primary-accent);"
+            popovertarget="${popoverId}"
+            popovertargetaction="hide"
+            aria-label="Sulje"
+          >
+            <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
+        <div class="popover-content p-4 space-y-4">
+          <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
+            <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
+              <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+            </div>
+          </div>
+          <div class="popover-text-content space-y-4">
+            <div class="popover-description-skeleton space-y-2">
+              <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
+              <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
+              <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </li>
+  `;
+}
 
 // Define mobile buttons for recipe pages
 const mobileButtons = [
@@ -215,6 +313,36 @@ const mobileButtons = [
         
         <!-- Recipe content with enhanced typography -->
         <div class="recipe-body max-w-none">
+          <!-- Valmistus section with ingredients and mise en place -->
+          {(mise_en_place && mise_en_place.length > 0) || (ingredients && ingredients.length > 0) ? (
+            <section id="valmistus-section">
+              <h2 id="valmistus">Valmistus</h2>
+              
+              <!-- Mise en place -->
+              {mise_en_place && mise_en_place.length > 0 && (
+                <div>
+                  <h3 id="mise-en-place">Mise en place</h3>
+                  <ul>
+                    {mise_en_place.map((task) => (
+                      <li class="task-list-item">
+                        <input type="checkbox" disabled />
+                        <span>{task}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+              
+              <!-- Ingredients -->
+              {ingredients && ingredients.length > 0 && (
+                <div>
+                  <h3 id="ainekset">Ainekset</h3>
+                  <ul set:html={ingredients.map(ingredient => createIngredientHTML(ingredient)).join('')} />
+                </div>
+              )}
+            </section>
+          ) : null}
+          
           <Content />
         </div>
         
@@ -227,25 +355,22 @@ const mobileButtons = [
             <h4 class="sidebar-card-header">Pikasiirtymä</h4>
             <div class="sidebar-card-content">
               <ul>
-                {groupedHeadings.filter(heading => !heading.text.toLowerCase().includes('valmistus') && !heading.text.toLowerCase().includes('vinkit') && !heading.text.toLowerCase().includes('liitteet')).map((heading) => (
+                {/* Main sections - Valmistus, Ohje, and instruction sections */}
+                {(mise_en_place && mise_en_place.length > 0) || (ingredients && ingredients.length > 0) ? (
                   <li>
-                    <a href={`#${heading.id}`}>
-                      {heading.text}
+                    <a href="#valmistus">
+                      Valmistus
                     </a>
                   </li>
-                ))}
-                {/* Ainekset link */}
-                <li>
-                  <a href="#ainekset">
-                    Ainekset
-                  </a>
-                </li>
+                ) : null}
+                
                 {/* Ohje link */}
                 <li>
                   <a href="#ohje">
                     Ohje
                   </a>
                 </li>
+                
                 {/* Instruction sections */}
                 {instructionSections.length > 0 && instructionSections.map((section, index) => (
                   <li>
@@ -254,31 +379,41 @@ const mobileButtons = [
                     </a>
                   </li>
                 ))}
-                {/* Vinkit and Liitteet side by side */}
-                <li class="flex gap-4">
-                  {groupedHeadings.filter(heading => heading.text.toLowerCase().includes('vinkit')).map((heading) => (
-                    <a href={`#${heading.id}`} class="flex-1">
+                
+                {/* Other headings */}
+                {groupedHeadings.filter(heading => 
+                  !heading.text.toLowerCase().includes('valmistus') && 
+                  !heading.text.toLowerCase().includes('ohje') && 
+                  !heading.text.toLowerCase().includes('vinkit') && 
+                  !heading.text.toLowerCase().includes('liitteet')
+                ).map((heading) => (
+                  <li>
+                    <a href={`#${heading.id}`}>
                       {heading.text}
                     </a>
-                  ))}
-                  {groupedHeadings.filter(heading => heading.text.toLowerCase().includes('liitteet')).map((heading) => (
-                    <a href={`#${heading.id}`} class="flex-1">
+                  </li>
+                ))}
+                
+                {/* Vinkit and Liitteet as separate items */}
+                {groupedHeadings.filter(heading => heading.text.toLowerCase().includes('vinkit')).map((heading) => (
+                  <li>
+                    <a href={`#${heading.id}`}>
                       {heading.text}
                     </a>
-                  ))}
-                </li>
+                  </li>
+                ))}
+                {groupedHeadings.filter(heading => heading.text.toLowerCase().includes('liitteet')).map((heading) => (
+                  <li>
+                    <a href={`#${heading.id}`}>
+                      {heading.text}
+                    </a>
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
           
-          {mise_en_place && mise_en_place.length > 0 && (
-            <div id="mise-en-place" class="sidebar-card">
-              <h4 class="sidebar-card-header">Mise en place</h4>
-              <div id="mise-content" class="sidebar-card-content">
-                <p>Valmistele ainekset ja välineet.</p>
-              </div>
-            </div>
-          )}
+
           
           {/* Unified timer interface */}
           <div class="sidebar-card">

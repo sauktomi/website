@@ -345,7 +345,6 @@ a.wiki-link--available {
   @apply text-secondary-accent cursor-default no-underline;
 }
 
-.ingredient-amount { @apply font-medium text-primary-dark mr-6 min-w-16 inline-block; }
 .ingredient-name { @apply flex-grow; }
 
 /* ===== RECIPE SIDEBAR ===== */

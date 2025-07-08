@@ -21,6 +21,7 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import { remarkWikiLinks } from './src/remark-wiki-link.mjs';
+import { remarkRecipeLinks } from './src/remark-recipe-links.mjs';
 import { remarkTimerLinks } from './src/remark-timer-links.mjs';
 import { remarkFigureCaption } from './src/scripts/remarkFigureCaption.mjs';
 
@@ -112,7 +113,7 @@ export default defineConfig({
     }
   },
   markdown: {
-    remarkPlugins: [remarkWikiLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeSections],
+    remarkPlugins: [remarkWikiLinks, remarkRecipeLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeSections],
     rehypePlugins: [rehypeAutolinkHeadings],
     shikiConfig: {
       theme: 'github-light',

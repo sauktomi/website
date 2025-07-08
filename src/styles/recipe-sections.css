@@ -130,15 +130,15 @@
 }
 
 /* ===== MISE EN PLACE SECTION ===== */
-.recipe-body .contains-task-list {
-  @apply pl-0;
+#mise-en-place + ul {
+  @apply pl-0 my-6;
 }
 
-.recipe-body .task-list-item {
-  @apply flex items-center gap-6 mb-5;
+#mise-en-place + ul .task-list-item {
+  @apply flex items-center gap-6 mb-5 cursor-pointer;
 }
 
-.recipe-body .task-list-item input[type="checkbox"] {
+#mise-en-place + ul .task-list-item input[type="checkbox"] {
   @apply size-5 md:size-6 cursor-pointer flex-shrink-0;
 }
 

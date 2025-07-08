@@ -36,6 +36,67 @@ equipment:
   - "[[Veitsi (Knife)|veitsi]]"
   - "[[Leikkuulauta (Cutting Board)|leikkuulauta]]"
   - "[[Mittakupit ja -lusikat (Measuring Cups and Spoons)|mittakupit ja -lusikat]]"
+mise_en_place:
+  - "Pese, kuori ja hienonna sipuli, valkosipuli, porkkana ja selleri pieniksi, tasaisiksi kuutioiksi (soffritto)."
+  - "Avaa tomaattimurskatölkit valmiiksi."
+  - "Mittaa mausteet ja yrtit."
+  - "Valmista pasta keitettäväksi (keitetään erikseen kastikkeen valmistuessa)."
+ingredients:
+  - name: "Oliiviöljy"
+    amount: "2-3"
+    unit: "rkl"
+    notes: "extra virgin"
+  - name: "Sipuli"
+    amount: "1"
+    unit: "kpl"
+    notes: "keltasipuli, keskikokoinen (n. 100-120g), hienonnettuna"
+  - name: "Valkosipuli"
+    amount: "2-3"
+    unit: "kynsiä"
+    notes: "hienonnettuna tai murskattuna"
+  - name: "Porkkana"
+    amount: "1"
+    unit: "kpl"
+    notes: "keskikokoinen (n. 70-80g), kuorittu ja erittäin hienoksi hienonnettuna"
+  - name: "Selleri"
+    amount: "1-2"
+    unit: "vartta"
+    notes: "(n. 60-70g), erittäin hienoksi hienonnettuna"
+  - name: "Tomaattimurska"
+    amount: "800"
+    unit: "g"
+    notes: "(2 tlk) laadukasta, mielellään San Marzano -lajiketta"
+  - name: "Suola"
+    amount: "1"
+    unit: "tl"
+    notes: "hienoa merisuolaa"
+  - name: "Mustapippuri"
+    amount: "½"
+    unit: "tl"
+    notes: "vastajauhettua"
+  - name: "Sokeri"
+    amount: "½-1"
+    unit: "tl"
+    notes: "tasapainottamaan tomaatin happamuutta"
+  - name: "Laakerinlehti"
+    amount: "1-2"
+    unit: "kpl"
+  - name: "Basilika"
+    amount: "1"
+    unit: "kourallinen"
+    notes: "tuoreita lehtiä (n. 10-15 lehteä)"
+  - name: "Oregano"
+    amount: "½"
+    unit: "tl"
+    notes: "kuivattua (valinnainen)"
+  - name: "Chili"
+    amount: "1"
+    unit: "ripaus"
+    notes: "chilihiutaleita (valinnainen)"
+  - name: "Parmigiano Reggiano"
+    amount: "1"
+    unit: "kpl"
+    notes: "raastettua (tai Pecorino Romanoa)"
 nutrient_profile: null # {calories: X, protein: Yg, carbs: Zg, fat: Wg} # Placeholder
 season: [kevät, kesä (parhaat tomaatit), syksy, talvi]
 occasion: [arki, lounas, päivällinen, perusruoka]
@@ -54,42 +115,6 @@ teoria:
 - [[Ruokateoria/Tomaatin kemia ja kypsennys|Tomaatin kemia ja kypsennysvaikutukset]]
 - [[Ruokateoria/Haudutuksen periaatteet|Haudutuksen merkitys maun kehittymiselle]]
 ---
-
-## Valmistus
-
-### Mise en Place
-
-- [ ] Pese, kuori ja hienonna sipuli, valkosipuli, porkkana ja selleri pieniksi, tasaisiksi kuutioiksi (soffritto).
-- [ ] Avaa tomaattimurskatölkit valmiiksi.
-- [ ] Mittaa mausteet ja yrtit.
-- [ ] Valmista pasta keitettäväksi (keitetään erikseen kastikkeen valmistuessa).
-
-### Ainekset
-
-#### Kastikkeen Pohja (Soffritto)
-
-- 2-3 rkl laadukasta [[Oliiviöljy|extra virgin -oliiviöljyä]]
-- 1 keskikokoinen [[Sipuli|keltasipuli]] (n. 100-120g), hienonnettuna
-- 2-3 [[Valkosipuli|valkosipulinkynttä]], hienonnettuna tai murskattuna
-- 1 keskikokoinen [[Porkkana|porkkana]] (n. 70-80g), kuorittu ja erittäin hienoksi hienonnettuna
-- 1-2 [[Selleri|sellerinvartta]] (n. 60-70g), erittäin hienoksi hienonnettuna
-
-#### Tomaattipohja ja Mausteet
-
-- 800g (2 tlk) laadukasta [[Tomaattimurska|tomaattimurskaa]] (mielellään San Marzano -lajiketta) tai paseerattua tomaattia (passata). **San Marzano -tomaatit ovat ihanteellisia niiden tasapainoisen makeuden ja alhaisemman happamuuden vuoksi.** Jos käytät kokonaisia säilyketomaatteja, **murskaa ne käsin tai perunamuusinuijalla** ennen kattilaan lisäämistä.
-- 1 tl hienoa [[Suola|merisuolaa]] (tai maun mukaan)
-- ½ tl vastajauhettua [[Mustapippuri|mustapippuria]]
-- ½ - 1 tl [[Sokeri|sokeria]] (tasapainottamaan tomaatin happamuutta, maun mukaan)
-- 1-2 [[Laakerinlehti|laakerinlehteä]]
-- Kourallinen tuoreita [[Basilika|basilikanlehtiä]] (n. 10-15 lehteä), osa hienonnettuna, osa kokonaisina
-- (Valinnainen) Ripaus kuivattua [[Oregano|oreganoa]] (½ tl)
-- (Valinnainen) Ripaus [[Chili|chilihiutaleita]] (jos pidät pienestä potkusta)
-
-#### Viimeistelyyn
-
-- Tuoreita [[Basilika|basilikanlehtiä]]
-- Raastettua [[Parmigiano Reggiano|Parmigiano Reggianoa]] (tai [[Pecorino Romano|Pecorino Romanoa]])
-- Hyvälaatuista [[Oliiviöljy|extra virgin -oliiviöljyä]]
 
 ### Ohje
 
