@@ -347,25 +347,138 @@ a.wiki-link--available {
 
 .ingredient-name { @apply flex-grow; }
 
-/* ===== RECIPE SIDEBAR ===== */
+/* ===== RECIPE SIDEBAR SYSTEM ===== */
 .recipe-sidebar {
   @apply space-y-4 mt-1 md:mt-24 mr-3;
 }
 
-.sidebar-card-header {
-  @apply font-semibold text-lg mb-2;
+/* Main content positioning for desktop */
+@media (min-width: 768px) {
+  .main-grid {
+    position: relative;
+  }
 }
 
+/* Sidebar trigger button */
+.sidebar-trigger-btn {
+  @apply transition-all duration-200;
+}
+
+.sidebar-trigger-btn:hover {
+  @apply scale-105;
+}
+
+.sidebar-trigger-btn:active {
+  @apply scale-95;
+}
+
+/* ===== BOTTOM DOCK SYSTEM (Unified) ===== */
+.bottom-dock {
+  @apply fixed top-0 right-0 left-0 z-50 hover:bg-primary-light border-t border-secondary shadow-lg flex items-center justify-end gap-2 p-3 md:p-4;
+}
+
+.dynamic-buttons {
+  @apply flex items-center gap-2;
+}
+
+.dynamic-button {
+  @apply flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary-dark hover:bg-secondary-accent transition-all duration-200 text-sm font-medium;
+}
+.dynamic-button:hover {
+  @apply scale-105;
+}
+.dynamic-button:active {
+  @apply scale-95;
+}
+
+.mobile-timer-text {
+  @apply text-xs font-mono font-bold;
+}
+
+/* ===== NAVIGATION POPOVER ===== */
+.navigation-popover {
+  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm;
+  max-height: 80vh;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  z-index: 1060;
+}
+.navigation-popover:popover-open {
+  @apply duration-200;
+  display: flex;
+  flex-direction: column;
+}
+.navigation-popover::backdrop {
+  @apply bg-black/20 backdrop-blur-sm;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 640px) {
+  .navigation-popover {
+    max-width: calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
+    max-height: 90vh;
+  }
+}
+@media (min-width: 1024px) {
+  .navigation-popover {
+    width: 500px;
+    max-height: 75vh;
+  }
+}
+@media (min-width: 1280px) {
+  .navigation-popover {
+    width: 600px;
+    max-height: 70vh;
+  }
+}
+@media (min-width: 1536px) {
+  .navigation-popover {
+    width: 700px;
+    max-height: 65vh;
+  }
+}
+
+.popover-header {
+  @apply flex items-center justify-between p-4 border-b border-secondary bg-secondary-light;
+}
+.popover-title {
+  @apply text-lg font-semibold text-primary-dark m-0;
+}
+.popover-close-btn {
+  @apply p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+}
+.popover-close-icon {
+  @apply size-5 text-secondary-accent;
+}
+.popover-content {
+  @apply p-4 space-y-4;
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+/* Sidebar navigation in popover */
 .sidebar-card-content {
   @apply text-sm;
 }
 
-.sidebar-progress {
-  @apply w-full bg-secondary rounded-full h-2;
+.sidebar-card-content ul {
+  @apply space-y-2 list-none;
 }
 
-.sidebar-navigation ul {
-  @apply space-y-2 list-none;
+/* Pin button for navigation popover */
+.pin-button {
+  @apply inline-flex items-center justify-center w-6 h-6 rounded hover:bg-secondary transition-colors duration-200 text-secondary-accent;
+  vertical-align: middle;
+  margin-right: 0.25rem;
+}
+.pin-button svg {
+  @apply w-3 h-3;
 }
 
 /* ===== TIMER COMPONENTS ===== */
@@ -511,7 +624,7 @@ a.wiki-link--available {
 }
 
 .timer-btn {
-  @apply flex-1 px-4 py-2 text-sm font-medium rounded transition-colors duration-200;
+  @apply px-4 py-2 gap-1 text-sm items-center font-medium rounded transition-colors duration-200;
 }
 
 .timer-start-btn {

@@ -76,7 +76,7 @@ Website/
 │   ├── components/               # Reusable UI components
 │   │   ├── Navbar.astro          # Main navigation component
 │   │   ├── SimpleFilterSystem.jsx # Unified filtering system
-│   │   ├── MobileInfobar.astro   # Mobile interface controls
+
 │   │   ├── IngredientPopover.astro # Ingredient information popovers
 │   │   ├── RecipeMetadata.astro  # Recipe metadata display
 │   │   ├── RelatedItems.astro    # Related content display

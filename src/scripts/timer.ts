@@ -197,6 +197,14 @@ function updateUI(): void {
     mobileTimerBtn.classList.toggle('timer-active', timerState.isRunning);
   }
   
+  // Dispatch timer state change event for dock integration
+  document.dispatchEvent(new CustomEvent('timerStateChanged', {
+    detail: {
+      isRunning: timerState.isRunning,
+      totalSeconds: timerState.totalSeconds
+    }
+  }));
+  
   // Update buttons
   if (startBtn && pauseBtn) {
     startBtn.style.display = timerState.isRunning ? 'none' : 'flex';
