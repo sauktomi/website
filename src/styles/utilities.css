@@ -238,14 +238,7 @@
   @apply mb-0;
 }
 
-.recipe-note-info, .recipe-note-notice {
-  @apply bg-blue-50 border-l-blue-500 text-blue-900;
-}
 
-body.info-mode-enabled .recipe-note-info,
-body.info-mode-enabled .recipe-note-notice {
-  @apply bg-blue-100 border-l-blue-600;
-}
 
 /* ===== IMAGE ENHANCEMENTS ===== */
 img {

@@ -23,7 +23,7 @@ import tailwindcss from '@tailwindcss/vite';
 import { remarkWikiLinks } from './src/remark-wiki-link.mjs';
 import { remarkTimerLinks } from './src/remark-timer-links.mjs';
 import { remarkFigureCaption } from './src/scripts/remarkFigureCaption.mjs';
-import { remarkRecipeContainers } from './src/scripts/remark-recipe-containers.mjs';
+
 import { remarkRecipeSections } from './src/scripts/remark-recipe-sections.mjs';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
@@ -112,7 +112,7 @@ export default defineConfig({
     }
   },
   markdown: {
-    remarkPlugins: [remarkWikiLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeContainers, remarkRecipeSections],
+    remarkPlugins: [remarkWikiLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeSections],
     rehypePlugins: [rehypeAutolinkHeadings],
     shikiConfig: {
       theme: 'github-light',

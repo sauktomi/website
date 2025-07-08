@@ -96,11 +96,7 @@ teoria:
 #### Soffritton Valmistus
 
 1. **Kasvisten Kuullotus**: Kuumenna oliiviöljy suuressa kattilassa tai padassa keskilämmöllä. Lisää hienonnettu sipuli, porkkana ja selleri. Kuullota kasviksia hitaasti ja kärsivällisesti noin 8-10 minuuttia, kunnes ne ovat pehmenneet huomattavasti ja sipuli on läpikuultavaa. Älä ruskista kasviksia.
-*Soffritton hidas kuullotus on perusta kastikkeen syvälle maulle. Kasvisten tulee makeutua, ei ruskistua.*
-
-   :::info
-   Visuaalinen merkki: Kasvikset ovat pehmeitä, hieman kutistuneita ja tuoksuvat makealta.
-   :::
+   - *Soffritton hidas kuullotus on perusta kastikkeen syvälle maulle. Kasvisten tulee makeutua, ei ruskistua.*
 
    <!-- ![Lähikuva hitaasti kuullottuvasta soffrittosta pannulla, näytä kasvisten pehmeä, läpikuultava rakenne](placeholder-soffritto-kuullotus.jpg) -->
 
@@ -109,19 +105,12 @@ teoria:
 #### Kastikkeen Haudutus
 
 1. **Tomaatin ja Mausteiden Lisäys**: Kaada tomaattimurska (tai passata) kattilaan kasvisten päälle. Lisää suola, pippuri, sokeri, laakerinlehdet ja noin puolet tuoreista basilikanlehdistä (voit lisätä ne kokonaisina tai revittyinä). Sekoita hyvin.
-
-   :::info
-   Voit huuhdella tomaattitölkit pienellä määrällä vettä (n. 0.5 dl per tölkki) ja lisätä sen kastikkeeseen, jotta saat kaiken tomaatin talteen.
-   :::
+   - *Voit huuhdella tomaattitölkit pienellä määrällä vettä (n. 0.5 dl per tölkki) ja lisätä sen kastikkeeseen, jotta saat kaiken tomaatin talteen.*
 
    <!-- ![Kattila, jossa soffritto ja lisätyt tomaatit ja mausteet, näytä seoksen väri ja koostumus ennen haudutusta](placeholder-tomaattikastike-keitto.jpg) -->
 
 2. **Hauduttaminen**: Kuumenna kastike kiehuvaksi, alenna sitten lämpöä niin, että kastike juuri ja juuri poreilee (simmer). Peitä kattila kannella, mutta jätä pieni rako, jotta höyry pääsee poistumaan ja kastike tiivistyy hieman. Hauduta kastiketta vähintään 30 minuuttia, mieluiten 45-60 minuuttia tai jopa pidempään. Mitä pidempi haudutusaika, sitä syvempi ja pyöreämpi maku.
-*Hidas, pitkä haudutus miedolla lämmöllä on avainasemassa. Sekoita kastiketta silloin tällöin pohjaa myöten, ettei se pala kiinni.*
-
-   :::info
-   Visuaalinen merkki: Kastike on paksuuntunut hieman, sen väri on syventynyt ja öljy saattaa nousta hieman pintaan.
-   :::
+   - *Hidas, pitkä haudutus miedolla lämmöllä on avainasemassa. Sekoita kastiketta silloin tällöin pohjaa myöten, ettei se pala kiinni.*
 
 3. **Viimeistely**: Kun kastike on hautunut riittävästi, poista laakerinlehdet. Maista kastiketta ja säädä mausteita tarvittaessa (suola, pippuri, sokeri). Sekoita joukkoon loput tuoreesta basilikasta (voit hienontaa osan). Voit halutessasi soseuttaa kastikkeen osittain tai kokonaan sauvasekoittimella, jos haluat täysin sileän rakenteen, mutta perinteisesti siinä saa olla hieman rakennetta.
 
@@ -131,10 +120,7 @@ teoria:
 2. Ota talteen noin 1-2 dl pastan keitinvettä juuri ennen pastan valuttamista.
 3. Valuta pasta, mutta älä huuhtele. Siirrä valutettu pasta takaisin kuumaan kattilaan tai suoraan tomaattikastikkeen joukkoon (jos kattila on riittävän suuri).
 4. Lisää noin 2/3 tomaattikastikkeesta pastan joukkoon ja sekoita hyvin. Lisää tarvittaessa tilkka pastan keitinvettä, jotta kastike sekoittuu tasaisesti ja tarttuu kauniisti pastaan. Anna pastan "imeä" kastiketta hetki miedolla lämmöllä.
-
-   :::info
-   Pastan keitinveden tärkkelys auttaa kastiketta tarttumaan pastaan ja tekee kokonaisuudesta yhtenäisemmän.
-   :::
+   - *Pastan keitinveden tärkkelys auttaa kastiketta tarttumaan pastaan ja tekee kokonaisuudesta yhtenäisemmän.*
 
 ### Annostelu ja Tarjoilu
 

@@ -17,7 +17,6 @@ export default function initBaseLayout() {
     await import('./layout/theme-manager.ts').then(module => module.default.init());
     await import('./layout/settings-manager.ts').then(module => new module.default().init());
     await import('./site-interactions.ts'); // auto-initializes
-    await import('./info-mode-manager.ts'); // auto-initializes
     
     // Page-specific modules
     const path = window.location.pathname;

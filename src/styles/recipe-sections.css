@@ -85,39 +85,7 @@
   @apply mt-4 mb-0 ml-6;
 }
 
-/* Style for inline info content that gets inserted into paragraphs */
-.recipe-body .recipe-instruction-step .inline-info-content {
-  @apply italic text-inherit hidden;
-}
 
-/* Show inline info content when info mode is enabled OR when individual step info is enabled */
-body.info-mode-enabled .recipe-body .recipe-instruction-step .inline-info-content,
-.recipe-body .recipe-instruction-step.step-info-enabled .inline-info-content {
-  @apply inline;
-}
-
-/* ===== INDIVIDUAL INFO BUTTONS ===== */
-.recipe-body .recipe-instruction-step .recipe-info-button {
-  @apply flex m-2 ml-5 mt-2 float-right items-center justify-center bg-transparent text-secondary-accent border-none rounded-lg size-8;
-  @apply transform-gpu will-change-[opacity,transform] transition-all duration-200 ease-in-out;
-}
-
-/* Hide info buttons when global info mode is enabled */
-body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-info-button {
-  @apply hidden;
-}
-
-.recipe-body .recipe-instruction-step .recipe-info-button:hover {
-  @apply scale-105;
-}
-
-.recipe-body .recipe-instruction-step .recipe-info-button .recipe-info-icon {
-  @apply size-5;
-}
-
-.recipe-body .recipe-instruction-step .recipe-info-button .info-char {
-  @apply text-xs font-bold;
-}
 
 .recipe-body .recipe-instruction-step:not(.step-completed):hover::before {
   @apply scale-105;
@@ -239,26 +207,7 @@ body.info-mode-enabled .recipe-body .recipe-instruction-step .recipe-info-button
   @apply rotate-90;
 }
 
-/* ===== INFO TOGGLE CONTROLS ===== */
-.recipe-body .info-toggle-container {
-  @apply bg-secondary-light border-b border-secondary-light p-4;
-}
 
-.recipe-body .info-toggle-container.hidden {
-  @apply hidden;
-}
-
-.recipe-body .info-toggle-header {
-  @apply flex items-center justify-between gap-4;
-}
-
-.recipe-body .info-toggle-label {
-  @apply text-sm font-medium;
-}
-
-.recipe-body .info-toggle-description {
-  @apply text-xs mt-1;
-}
 
 /* ===== COLLAPSED CONTENT ANIMATIONS ===== */
 .recipe-body .section-content-collapsed {
