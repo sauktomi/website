@@ -1,0 +1,279 @@
+---
+/**
+ * Top Navigation Component
+ * 
+ * Persistent top navigation system with clean, minimal design.
+ * Features a responsive design with mobile-first approach.
+ * 
+ * Features:
+ * - Responsive design with mobile-first approach
+ * - Collapsible sidebar for mobile navigation
+ * - Back navigation with context awareness
+ * - Theme switching controls
+ * - Settings and preferences access
+ * - Touch-friendly interface elements
+ * 
+ * Navigation Logic:
+ * - Home page: No back navigation
+ * - Recipe pages: Back to recipe listing with category context
+ * - Directory page: Back to home
+ * - Other pages: Back to home
+ * 
+ * Mobile Features:
+ * - Top navigation bar with essential controls
+ * - Swipe gestures for sidebar
+ * - Touch-optimized button sizes
+ * - Accessibility features for screen readers
+ * 
+ * @author Tomi
+ * @version 3.0.0
+ */
+
+// Determine when to show sidebar
+const currentPath = decodeURIComponent(Astro.url.pathname);
+const urlParams = new URLSearchParams(Astro.url.search);
+
+// Enhanced back path with category filtering for recipe pages
+let backPath = '/';
+if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
+  // For individual recipe pages, try to get category from URL params or page data
+  const categoryParam = urlParams.get('category');
+  if (categoryParam) {
+    backPath = `/reseptit/?category=${categoryParam.toLowerCase()}`;
+  } else {
+    backPath = '/reseptit/';
+  }
+} else if (currentPath === '/hakemisto') {
+  backPath = '/';
+} else if (currentPath !== '/') {
+  backPath = '/';
+}
+
+const showSidebar = currentPath !== '/';
+---
+
+<!-- Main Navigation Dialog -->
+<dialog 
+	id="navbar-dialog" 
+	class="navbar-dialog bg-secondary-light border-0 rounded-none p-0 max-w-none w-full h-full max-h-full backdrop:bg-black/20"
+	aria-label="Päävalikko"
+>
+	<!-- Dialog Header -->
+	<div class="flex items-center justify-between p-6 border-b border-secondary">
+		<!-- Settings Toggle Button -->
+		<button 
+			id="navbar-settings-toggle"
+			class="p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+			aria-label="Avaa asetukset"
+		>
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+			</svg>
+		</button>
+		
+		<!-- Title -->
+		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
+			<span class="text-2xl lg:text-3xl font-serif font-bold">T</span>
+			<span class="text-lg lg:text-xl font-medium">omin</span>
+			<span class="text-2xl lg:text-3xl font-serif font-bold ml-1">K</span>
+			<span class="text-lg lg:text-xl font-medium">okkaeilut</span>
+		</a>
+		
+		<!-- Close Button -->
+		<button 
+			class="p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+			onclick="document.getElementById('navbar-dialog').close()"
+			aria-label="Sulje valikko"
+		>
+			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+			</svg>
+		</button>
+	</div>
+
+	<!-- Dialog Content -->
+	<div class="flex flex-col p-6 h-full lg:h-[68dvh]">
+		<!-- Navigation Links -->
+		<nav class="flex flex-1 flex-col lg:flex-row gap-8 w-full" role="navigation" aria-label="Sivuston päänavigaatio">
+			<!-- Reseptit Card -->
+			<a 
+				href="/reseptit/" 
+				class="navbar-card border-0 flex items-center gap-4 min-h-[140px] lg:h-full lg:w-1/2 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+				onclick="document.getElementById('navbar-dialog').close()"
+			>
+				<div class="flex-1 flex justify-center">
+					<div class="text-center">
+						<h3 class="text-xl lg:text-lg lg:font-semibold mb-3 lg:mb-2 leading-tight text-primary-dark font-bold">Reseptit</h3>
+						<p class="text-base lg:text-sm text-secondary-accent mb-0 leading-relaxed">Löydä uusia makuelämyksiä ja inspiraatiota keittiöön</p>
+					</div>
+				</div>
+			</a>
+			
+			<!-- Hakemisto Cards -->
+			<div class="flex h-auto lg:h-full lg:w-1/2 flex-col gap-4">
+				<a 
+					href="/hakemisto/?type=ainesosat" 
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					onclick="document.getElementById('navbar-dialog').close()"
+				>
+					<div class="flex-1 text-center">
+						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Ainesosat</h4>
+						<p class="text-sm text-secondary-accent mb-0 leading-relaxed">Tutustu ruoanlaiton raaka-aineisiin</p>
+					</div>
+				</a>
+				
+				<a 
+					href="/hakemisto/?type=välineet" 
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					onclick="document.getElementById('navbar-dialog').close()"
+				>
+					<div class="flex-1 text-center">
+						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Välineet</h4>
+						<p class="text-sm text-secondary-accent mb-0 leading-relaxed">Opi keittiövälineistä lisää</p>
+					</div>
+				</a>
+				
+				<a 
+					href="/hakemisto/?type=tekniikat" 
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					onclick="document.getElementById('navbar-dialog').close()"
+				>
+					<div class="flex-1 text-center">
+						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Tekniikat</h4>
+						<p class="text-sm text-secondary-accent mb-0 leading-relaxed">Syvenny ruoanlaiton tekniikoista</p>
+					</div>
+				</a>
+			</div>
+		</nav>
+
+		<!-- Settings Section -->
+		<div id="navbar-settings-section" class="mt-12 pt-8 hidden">
+			<h2 class="text-xl lg:text-2xl text-center font-semibold mb-6 text-primary-dark">Asetukset</h2>
+			
+			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+				<!-- Dark Mode Setting -->
+				<div class="setting-item flex items-center justify-between p-4 bg-primary-light rounded-lg">
+					<div class="flex flex-col">
+						<label for="dark-mode-toggle" class="text-base font-semibold mb-1">Tumma teema</label>
+						<p class="text-sm text-secondary-accent">Vaihda sivuston ulkoasua</p>
+					</div>
+					<label class="info-toggle-switch">
+						<input type="checkbox" id="dark-mode-toggle">
+						<span class="info-toggle-switch-bg"></span>
+					</label>
+				</div>
+				
+				<!-- Timer Notifications Setting -->
+				<div class="setting-item flex items-center justify-between p-4 bg-primary-light rounded-lg">
+					<div class="flex flex-col">
+						<label for="timer-notifications" class="text-base font-semibold mb-1">Ajastinäänet</label>
+						<p class="text-sm text-secondary-accent">Salli ääniliiset ilmoitukset ajastimista</p>
+					</div>
+					<label class="info-toggle-switch">
+						<input type="checkbox" id="timer-notifications">
+						<span class="info-toggle-switch-bg"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+	</div>
+</dialog>
+
+<!-- Top Navigation Bar -->
+<div id="top-navigation" class="top-navigation">
+	<!-- Left side: Back button -->
+	<div class="top-nav-left">
+		<!-- Back Button (hidden on home page) -->
+		{showSidebar && (
+			<a 
+				href={backPath}
+				class="top-nav-btn back-btn" 
+				aria-label={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+				title={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+			>
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+				</svg>
+			</a>
+		)}
+	</div>
+
+	<!-- Center: Title -->
+	<div class="top-nav-center">
+		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
+			<span class="text-xl lg:text-2xl font-serif font-bold">T</span>
+			<span class="text-base lg:text-lg font-medium">omin</span>
+			<span class="text-xl lg:text-2xl font-serif font-bold ml-1">K</span>
+			<span class="text-base lg:text-lg font-medium">okkaeilut</span>
+		</a>
+	</div>
+
+	<!-- Right side: Menu button -->
+	<div class="top-nav-right">
+		<button 
+			id="navbar-toggle" 
+			class="top-nav-btn menu-toggle-btn" 
+			aria-label="Avaa valikko"
+			onclick="document.getElementById('navbar-dialog').showModal()"
+		>
+			<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+			</svg>
+		</button>
+	</div>
+</div>
+
+<style>
+	/* Dialog styling */
+	.navbar-dialog {
+		margin: 0;
+		padding: 0;
+	}
+	
+	/* Mobile fullscreen, desktop centered */
+	@media (min-width: 1024px) {
+		.navbar-dialog {
+			width: 85vw;
+			height: 85vh;
+			border-radius: 1rem;
+			margin: 7.5vh auto;
+		}
+	}
+	
+	/* Large screen optimizations */
+	@media (min-width: 1280px) {
+		.navbar-dialog {
+			width: 80vw;
+			height: 80vh;
+			margin: 10vh auto;
+		}
+	}
+	
+	@media (min-width: 1536px) {
+		.navbar-dialog {
+			width: 75vw;
+			height: 75vh;
+			margin: 12.5vh auto;
+		}
+	}
+	
+	/* Card styling */
+	.navbar-card {
+		transition: all 0.2s ease-out;
+	}
+	
+	.navbar-card:hover {
+		transform: translateY(-2px);
+		box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Setting item styling */
+	.setting-item {
+		transition: all 0.2s ease-out;
+	}
+	
+	.setting-item:hover {
+		transform: translateY(-1px);
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+</style> 

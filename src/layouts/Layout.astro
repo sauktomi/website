@@ -26,7 +26,7 @@
  */
 
 import { ClientRouter } from 'astro:transitions';
-import Navbar from '../components/Navbar.astro';
+import TopNavigation from '../components/TopNavigation.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -96,7 +96,7 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		
 		<!-- PERSISTENT - Never re-initialized -->
 		<div id="persistent-wrapper" transition:persist>
-			<Navbar />
+			<TopNavigation />
 		</div>
 		
 		<!-- LAYOUT CONTAINER -->
@@ -141,7 +141,7 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 				)}
 
 				<!-- Content area -->
-				<main id="main-content" class="flex-1 pt-1 lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20 max-lg:mt-16 mt-20">
+				<main id="main-content" class="flex-1 pt-1 lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20">
 					<slot />
 				</main>
 			</div>
@@ -150,7 +150,9 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<!-- Initialization - loaded once, persists across all navigations -->
 		<script>
 			import initBaseLayout from '../scripts/base-layout.ts';
+			import initTopNavigation from '../scripts/top-navigation-manager.ts';
 			initBaseLayout();
+			initTopNavigation.initTopNavigation();
 		</script>
 	</body>
 </html> 

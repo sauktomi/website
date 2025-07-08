@@ -1,16 +1,17 @@
 /**
- * Dock Manager
+ * Top Navigation Manager
  * 
- * Handles the universal bottom pill bar (dock) functionality for recipe pages.
+ * Handles the universal top navigation bar functionality for all pages.
  * Features:
- * - Desktop: Shows full sidebar content in a dock at bottom
+ * - Desktop: Shows full navigation with dynamic buttons
  * - Mobile: Shows condensed content with timer and dynamic buttons
  * - Toggle functionality to show/hide content
  * - Dynamic button pinning from popup content
- * - Timer integration for mobile dock
+ * - Timer integration for recipe pages
+ * - Back navigation and menu toggle
  * 
  * @author Tomi
- * @version 1.0.0
+ * @version 2.0.0
  */
 
 interface DynamicButton {
@@ -26,14 +27,14 @@ let dockState = {
   isMobile: false
 };
 
-// Initialize dock functionality
-function initDock(): void {
-  setupDockElements();
+// Initialize top navigation functionality
+function initTopNavigation(): void {
+  setupTopNavigationElements();
   setupEventListeners();
-  updateDockState();
+  updateTopNavigationState();
 }
 
-function setupDockElements(): void {
+function setupTopNavigationElements(): void {
   // Set initial state based on screen size
   dockState.isMobile = window.innerWidth < 768;
 }
@@ -282,7 +283,7 @@ function updatePinButtonState(id: string, isPinned: boolean): void {
   }
 }
 
-function updateDockState(): void {
+function updateTopNavigationState(): void {
   // Load dynamic buttons
   loadDynamicButtons();
 }
@@ -305,10 +306,10 @@ if (typeof window !== 'undefined') {
 // Initialize when DOM is ready
 if (typeof document !== 'undefined') {
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initDock);
+    document.addEventListener('DOMContentLoaded', initTopNavigation);
   } else {
-    initDock();
+    initTopNavigation();
   }
 }
 
-export default { initDock }; 
+export default { initTopNavigation }; 

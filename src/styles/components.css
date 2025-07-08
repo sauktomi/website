@@ -372,27 +372,44 @@ a.wiki-link--available {
   @apply scale-95;
 }
 
-/* ===== BOTTOM DOCK SYSTEM (Unified) ===== */
-.bottom-dock {
-  @apply fixed top-0 right-0 left-0 z-50 hover:bg-primary-light border-t border-secondary shadow-lg flex items-center justify-end gap-2 p-3 md:p-4;
+/* ===== TOP NAVIGATION SYSTEM (Unified) ===== */
+.top-navigation {
+  @apply max-w-query-lg mx-auto bg-primary-light flex items-center justify-between p-3 md:p-4;
 }
 
-.dynamic-buttons {
-  @apply flex items-center gap-2;
-}
-
-.dynamic-button {
-  @apply flex items-center justify-center w-10 h-10 rounded-full bg-secondary text-primary-dark hover:bg-secondary-accent transition-all duration-200 text-sm font-medium;
-}
-.dynamic-button:hover {
-  @apply scale-105;
-}
-.dynamic-button:active {
-  @apply scale-95;
+.top-nav-btn {
+  @apply flex items-center justify-center h-touch-safe min-w-touch-safe text-sm font-medium;
 }
 
 .mobile-timer-text {
-  @apply text-xs font-mono font-bold;
+  @apply mt-1 text-xs font-mono font-bold;
+}
+
+/* ===== RECIPE OVERLAY NAVIGATION ===== */
+.recipe-overlay-nav {
+  @apply fixed md:top-4 top-2 right-0 bg-transparent backdrop-blur-3xl left-0 max-w-query-lg mx-auto rounded-xl z-40 shadow-lg flex items-center justify-between p-3 md:p-4;
+  transform: translateY(-130%);
+  transition: transform 0.5s ease-out;
+}
+
+.recipe-overlay-nav.visible {
+  transform: translateY(0);
+}
+
+.overlay-nav-left {
+  @apply flex items-center gap-2;
+}
+
+.overlay-nav-center {
+  @apply flex items-center justify-center flex-1;
+}
+
+.overlay-nav-right {
+  @apply flex items-center gap-2;
+}
+
+.overlay-nav-title {
+  @apply text-base lg:text-lg font-medium text-primary-dark truncate max-w-60 lg:max-w-md;
 }
 
 /* ===== NAVIGATION POPOVER ===== */
@@ -624,7 +641,7 @@ a.wiki-link--available {
 }
 
 .timer-btn {
-  @apply px-4 py-2 gap-1 text-sm items-center font-medium rounded transition-colors duration-200;
+  @apply px-4 py-2 gap-3 font-medium rounded-full;
 }
 
 .timer-start-btn {

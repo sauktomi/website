@@ -35,16 +35,6 @@ html {
   scrollbar-gutter: stable; 
 }
 
-/* All screen sizes - navbar slides down from top but always shows bottom toggle */
-#navbar {
-  height: 60dvh;
-}
-
-/* Mobile layout */
-html[data-layout="mobile"] #navbar {
-  height: 100dvh;
-}
-
 html[data-layout="mobile"][data-navbar="open"] body {
   overflow: hidden;
 }

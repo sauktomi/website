@@ -95,9 +95,52 @@ const {
 
 ---
 
-<Layout title={title} tocHeadings={groupedHeadings} needsWikiLinks={true}>
+<Layout 
+	title={title} 
+	tocHeadings={groupedHeadings} 
+	needsWikiLinks={true}
+>
   <!-- Add canonical URL for SEO -->
   <link slot="head" rel="canonical" href={enhancedData.canonicalUrl} />
+
+  <!-- Recipe-specific overlay navigation (appears on scroll) -->
+  <div id="recipe-overlay-nav" class="recipe-overlay-nav">
+    <div class="overlay-nav-left">
+      <button 
+        id="mobile-timer-btn"
+        popovertarget="timer-popover"
+        class="top-nav-btn timer-btn"
+        aria-label="Keittiöajastin"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+        <span class="mobile-timer-text"></span>
+      </button>
+    </div>
+
+    <div class="overlay-nav-center">
+      <span class="overlay-nav-title">{title}</span>
+    </div>
+
+    <div class="overlay-nav-right">
+      <button 
+        id="navigation-toggle"
+        popovertarget="navigation-popover"
+        class="top-nav-btn toggle-btn"
+        aria-label="Näytä pikasiirtymä"
+      >
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <circle cx="5" cy="7" r="1.5" />
+          <rect x="9" y="6" width="10" height="2" rx="1" />
+          <circle cx="5" cy="12" r="1.5" />
+          <rect x="9" y="11" width="10" height="2" rx="1" />
+          <circle cx="5" cy="17" r="1.5" />
+          <rect x="9" y="16" width="10" height="2" rx="1" />
+        </svg>
+      </button>
+    </div>
+  </div>
 
   <div class="main-grid">
     <!-- Main content area -->
@@ -425,38 +468,7 @@ const {
     </div>
   </div>
 
-  <!-- Universal Bottom Pill Bar (Dock) -->
-  <div id="bottom-dock" class="bottom-dock">
-    <!-- Timer button (always visible) -->
-    <button 
-      id="mobile-timer-btn"
-      popovertarget="timer-popover"
-      class="mobile-dock-btn timer-btn"
-      aria-label="Keittiöajastin"
-    >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
-      </svg>
-      <span class="mobile-timer-text"></span>
-    </button>
 
-    <!-- Dynamic navigation buttons (pinned from popup) -->
-    <div id="dynamic-buttons" class="dynamic-buttons">
-      {/* Buttons will be added dynamically via JavaScript */}
-    </div>
-
-    <!-- Navigation toggle button -->
-    <button 
-      id="navigation-toggle"
-      popovertarget="navigation-popover"
-      class="mobile-dock-btn toggle-btn"
-      aria-label="Näytä pikasiirtymä"
-    >
-      <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
-      </svg>
-    </button>
-  </div>
   
   <!-- Unified Timer Popover -->
   <div 
@@ -546,5 +558,36 @@ const {
 <script>
   import '../../scripts/timer.ts';
   import '../../scripts/recipe-interactions.ts';
-  import '../../scripts/dock-manager.ts';
+  import '../../scripts/top-navigation-manager.ts';
+  
+  // Recipe overlay navigation scroll behavior
+  let ticking = false;
+  
+  function updateOverlayNav() {
+    const overlayNav = document.getElementById('recipe-overlay-nav');
+    const recipeTitle = document.querySelector('.recipe-title');
+    
+    if (!overlayNav || !recipeTitle) return;
+    
+    const titleRect = recipeTitle.getBoundingClientRect();
+    const titleBottom = titleRect.bottom;
+    
+    // Show overlay when the h1 title is completely out of view (above the viewport)
+    if (titleBottom <= 0) {
+      overlayNav.classList.add('visible');
+    } else {
+      overlayNav.classList.remove('visible');
+    }
+    
+    ticking = false;
+  }
+  
+  function requestTick() {
+    if (!ticking) {
+      requestAnimationFrame(updateOverlayNav);
+      ticking = true;
+    }
+  }
+  
+  window.addEventListener('scroll', requestTick, { passive: true });
 </script>
