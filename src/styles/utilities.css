@@ -238,8 +238,6 @@
   @apply mb-0;
 }
 
-
-
 /* ===== IMAGE ENHANCEMENTS ===== */
 img {
   @apply max-w-full h-auto;
@@ -314,9 +312,7 @@ img {
     @apply text-black no-underline;
   }
   
-  .recipe-title {
-    @apply text-2xl font-bold mb-4;
-  }
+
   
   .recipe-essentials {
     @apply mb-6;
@@ -406,20 +402,6 @@ img {
   contain-intrinsic-size: 0 500px;
 }
 
-/* ===== LAYOUT UTILITIES ===== */
-.container-responsive {
-  @apply mx-auto px-4 sm:px-6 lg:px-8;
-  max-width: 1200px;
-}
-
-.aspect-video {
-  aspect-ratio: 16 / 9;
-}
-
-.aspect-square {
-  aspect-ratio: 1 / 1;
-}
-
 /* ===== TEXT UTILITIES ===== */
 .text-balance {
   text-wrap: balance;
@@ -444,36 +426,6 @@ img {
 
 .user-select-text {
   user-select: text;
-}
-
-/* ===== POSITIONING UTILITIES ===== */
-.sticky-top {
-  @apply sticky top-0 z-10;
-}
-
-.sticky-bottom {
-  @apply sticky bottom-0 z-10;
-}
-
-/* ===== OVERFLOW UTILITIES ===== */
-.overflow-hidden {
-  overflow: hidden;
-}
-
-.overflow-auto {
-  overflow: auto;
-}
-
-.overflow-scroll {
-  overflow: scroll;
-}
-
-.overflow-x-auto {
-  overflow-x: auto;
-}
-
-.overflow-y-auto {
-  overflow-y: auto;
 }
 
 /* ===== Z-INDEX UTILITIES ===== */

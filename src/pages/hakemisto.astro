@@ -4,14 +4,14 @@
  * 
  * Comprehensive directory of ingredients, equipment, and cooking techniques.
  * Provides detailed information about cooking components with filtering and
- * search capabilities.
+ * search capabilities optimized for container queries.
  * 
  * Features:
  * - Unified directory of ingredients, equipment, and techniques
  * - Advanced filtering by type, dietary restrictions, and categories
  * - Search functionality with real-time results
  * - Alphabetical organization with quick navigation
- * - Detailed information cards with images
+ * - Container-responsive information cards with images
  * - Cross-references between related items
  * 
  * Content Types:
@@ -110,179 +110,195 @@ const typeOptions = [
 ---
 
 <Layout title="Hakemisto | Ruoanlaitto" needsWikiLinks={true}>
-  <!-- Skip to content -->
-  <a href="#content-groups" class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-dark text-primary-light px-4 py-2 rounded-lg z-50 transition-all">
-    Siirry sisältöön
-  </a>
+  <div class="container-query">
+    <!-- Skip to content -->
+    <a href="#content-groups" class="skip-link">
+      Siirry sisältöön
+    </a>
 
-  <div class="min-h-screen">
-    <!-- Header -->
-    <header class="text-center">
-      <h1>Hakemisto</h1>
-    </header>
+            <div class="page-container">
+      <!-- Header -->
+      <header class="page-header">
+        <h1 class="hero-title">
+          Hakemisto
+        </h1>
+      </header>
 
-    <!-- Main Content -->
-    <div>
-      <!-- Simple Filter System -->
-      <SimpleFilterSystem
-        config={{
-          itemSelector: '.list-item-wrapper',
-          sectionSelector: '.category-section',
-          noResultsId: 'no-results'
-        }}
-        searchPlaceholder="Etsi hakemistosta..."
-        filterSections={[
-          {
-            id: 'type',
-            title: 'Tyyppi',
-            icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-            type: 'multi' as const,
-            options: typeOptions.map(type => ({
-              id: type.id,
-              label: type.name,
-              value: type.id
-            }))
-          },
-          {
-            id: 'dietary',
-            title: 'Ruokavalio',
-            icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
-            type: 'multi' as const,
-            options: dietaryOptions.map(diet => ({
-              id: diet,
-              label: diet,
-              value: diet
-            }))
-          },
-          {
-            id: 'category',
-            title: 'Alakategoriat',
-            icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
-            type: 'single' as const,
-            options: categories.filter(cat => 'parent' in cat && cat.parent).map(category => ({
-              id: category.id,
-              label: category.name,
-              value: category.id
-            }))
-          }
-        ]}
-        resultsCountText="kohdetta löytyi"
-        client:visible
-      />
+      <!-- Main Content -->
+      <div class="main-content">
+        <!-- Simple Filter System -->
+        <SimpleFilterSystem
+          config={{
+            itemSelector: '.list-item-wrapper',
+            sectionSelector: '.category-section',
+            noResultsId: 'no-results'
+          }}
+          searchPlaceholder="Etsi hakemistosta..."
+          filterSections={[
+            {
+              id: 'type',
+              title: 'Tyyppi',
+              icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+              type: 'multi' as const,
+              options: typeOptions.map(type => ({
+                id: type.id,
+                label: type.name,
+                value: type.id
+              }))
+            },
+            {
+              id: 'dietary',
+              title: 'Ruokavalio',
+              icon: 'M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z',
+              type: 'multi' as const,
+              options: dietaryOptions.map(diet => ({
+                id: diet,
+                label: diet,
+                value: diet
+              }))
+            },
+            {
+              id: 'category',
+              title: 'Alakategoriat',
+              icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
+              type: 'single' as const,
+              options: categories.filter(cat => 'parent' in cat && cat.parent).map(category => ({
+                id: category.id,
+                label: category.name,
+                value: category.id
+              }))
+            }
+          ]}
+          resultsCountText="kohdetta löytyi"
+          client:visible
+        />
 
-      <!-- Mobile Category Filter Buttons -->
-      <div class="mobile-category-buttons sm:hidden mt-4 mb-6">
-        <div class="flex gap-2">
-          {typeOptions.map(type => (
-            <button
-              class="mobile-category-button flex-1 px-4 py-2 rounded-lg border border-secondary text-primary-dark hover:bg-secondary-light transition-colors"
-              data-type={type.id}
-              aria-label={`Näytä ${type.name} kohteet`}
-            >
-              {type.name}
-            </button>
-          ))}
-        </div>
-      </div>
-
-      <!-- No Results -->
-      <div id="no-results" class="no-results" role="status" aria-live="polite">
-        <div class="text-secondary-accent">
-          <svg class="no-results-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-          </svg>
-          <p class="no-results-title">Ei tuloksia</p>
-          <p class="no-results-description">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
-        </div>
-      </div>
-
-      <!-- Main Content Groups - Side by Side Types -->
-      <div class="content-groups-container" id="content-groups">
-        {typeOptions.map(type => {
-          const typeItems = allItems.filter((item: any) => item.type === type.id);
-          if (typeItems.length === 0) return null;
-          
-          return (
-            <div class="category-section" data-type={type.id}>
-              <h2 class="category-title text-2xl font-semibold text-primary-dark mb-4">
+        <!-- Mobile Category Filter Buttons -->
+        <div class="mobile-category-buttons">
+          <div class="mobile-category-buttons-container">
+            {typeOptions.map(type => (
+              <button
+                class="mobile-category-button"
+                data-type={type.id}
+                aria-label={`Näytä ${type.name} kohteet`}
+              >
                 {type.name}
-              </h2>
-              {typeItems.map((hakemistoItem: any) => (
-                <div 
-                  class="list-item-wrapper item"
-                  data-tags={hakemistoItem.tags?.join(',') || ''}
-                  data-dietary={hakemistoItem.dietaryInfo?.join(',') || ''}
-                  data-category={hakemistoItem.category}
-                  data-type={hakemistoItem.type}
-                  data-name={hakemistoItem.name}
-                  data-search-name={hakemistoItem.name.toLowerCase()}
-                  data-first-letter={hakemistoItem.name.charAt(0).toUpperCase().match(/^[A-ZÄÖÅ]/) ? hakemistoItem.name.charAt(0).toUpperCase() : '#'}
-                >
-                  <button 
-                    id={`trigger-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
-                    popovertarget={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
-                    class="group list-item ingredient-popover-trigger text-left w-full"
-                    data-item-id={hakemistoItem.id}
-                    data-item-type={hakemistoItem.dataItemType}
-                    data-category={hakemistoItem.dataCategory}
-                    aria-label={`Näytä tiedot: ${hakemistoItem.name}`}
-                  >
-                    <span view-transition-name={`popover-title-${hakemistoItem.id}`}>
-                      {hakemistoItem.name}
-                    </span>
-                  </button>
-                  
-                  <!-- Popover for this item -->
-                  <div 
-                    id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
-                    popover="auto"
-                    class="ingredient-popover"
-                    role="dialog"
-                    aria-labelledby={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`}
-                    data-item-id={hakemistoItem.id}
-                    data-item-type={hakemistoItem.dataItemType}
-                    data-category={hakemistoItem.dataCategory}
-                  >
-                    <div class="popover-header">
-                      <h2 id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`} class="popover-title">
-                        <span class="popover-title-text" view-transition-name={`popover-title-${hakemistoItem.id}`}>Ladataan...</span>
-                      </h2>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- No Results -->
+        <div id="no-results" class="no-results" role="status" aria-live="polite">
+          <div class="no-results-content">
+            <svg class="no-results-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+            <p class="no-results-title">Ei tuloksia</p>
+            <p class="no-results-description">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
+          </div>
+        </div>
+
+        <!-- Main Content Groups - Responsive Side by Side Types -->
+        <div class="content-groups-container" id="content-groups">
+          {typeOptions.map(type => {
+            const typeItems = allItems.filter((item: any) => item.type === type.id);
+            if (typeItems.length === 0) return null;
+            
+            return (
+              <div class="category-section" data-type={type.id}>
+                <h2>
+                  {type.name}
+                </h2>
+                <div class="category-items">
+                  {typeItems.map((hakemistoItem: any) => (
+                    <div 
+                      class="list-item-wrapper item"
+                      data-tags={hakemistoItem.tags?.join(',') || ''}
+                      data-dietary={hakemistoItem.dietaryInfo?.join(',') || ''}
+                      data-category={hakemistoItem.category}
+                      data-type={hakemistoItem.type}
+                      data-name={hakemistoItem.name}
+                      data-search-name={hakemistoItem.name.toLowerCase()}
+                      data-first-letter={hakemistoItem.name.charAt(0).toUpperCase().match(/^[A-ZÄÖÅ]/) ? hakemistoItem.name.charAt(0).toUpperCase() : '#'}
+                    >
                       <button 
-                        class="popover-close-btn"
-                        style="outline-color: var(--color-primary-accent);"
+                        id={`trigger-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
                         popovertarget={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
-                        popovertargetaction="hide"
-                        aria-label="Sulje"
+                        class="group list-item ingredient-popover-trigger"
+                        data-item-id={hakemistoItem.id}
+                        data-item-type={hakemistoItem.dataItemType}
+                        data-category={hakemistoItem.dataCategory}
+                        aria-label={`Näytä tiedot: ${hakemistoItem.name}`}
                       >
-                        <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                        </svg>
+                        <h3 class="item-title">
+                          <span view-transition-name={`popover-title-${hakemistoItem.id}`}>
+                            {hakemistoItem.name}
+                          </span>
+                        </h3>
+                        {hakemistoItem.description && (
+                          <p class="item-description">
+                            {hakemistoItem.description}
+                          </p>
+                        )}
                       </button>
                     </div>
-                    <div class="popover-content">
-                      <div class="popover-image-container">
-                        <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
-                          <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
-                        </div>
-                      </div>
-                      <div class="popover-text-content">
-                        <div class="popover-description-skeleton space-y-2">
-                          <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
-                          <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
-                          <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  ))}
                 </div>
-              ))}
-            </div>
-          );
-        })}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </div>
+    
+    <!-- Deferred Popover HTML - Loaded after main content -->
+    <div class="popover-container">
+      {allItems.map((hakemistoItem: any) => (
+        <div 
+          id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+          popover="auto"
+          class="ingredient-popover"
+          role="dialog"
+          aria-labelledby={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`}
+          data-item-id={hakemistoItem.id}
+          data-item-type={hakemistoItem.dataItemType}
+          data-category={hakemistoItem.dataCategory}
+        >
+          <div class="popover-header">
+            <h2 id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`} class="popover-title">
+              <span class="popover-title-text" view-transition-name={`popover-title-${hakemistoItem.id}`}>Ladataan...</span>
+            </h2>
+            <button 
+              class="popover-close-btn"
+              popovertarget={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}`}
+              popovertargetaction="hide"
+              aria-label="Sulje"
+            >
+              <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+              </svg>
+            </button>
+          </div>
+          <div class="popover-content">
+            <div class="popover-image-container">
+              <div class="popover-image-skeleton">
+                <div class="skeleton-placeholder"></div>
+              </div>
+            </div>
+            <div class="popover-text-content">
+              <div class="popover-description-skeleton">
+                <div class="skeleton-line"></div>
+                <div class="skeleton-line skeleton-line-short"></div>
+                <div class="skeleton-line skeleton-line-medium"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
   </div>
-	</Layout>
+</Layout>
 
 
 

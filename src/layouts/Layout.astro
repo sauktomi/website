@@ -90,62 +90,18 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		
 		<!-- Critical CSS and scripts are now imported through global.css -->
 	</head>
-	<body class="antialiased">
+	<body class="antialiased relative 2xl:max-w-query-2xl xl:max-w-query-xl lg:max-w-query-lg md:max-w-query-md sm:max-w-query-sm mx-auto">
 		<!-- Skip link for accessibility -->
 		<a href="#main-content" class="skip-link">Hyppää pääsisältöön</a>
 		
 		<!-- PERSISTENT - Never re-initialized -->
-		<div id="persistent-wrapper" transition:persist>
+		<div id="persistent-wrapper" class="min-h-[10dvh]" transition:persist>
 			<TopNavigation />
 		</div>
-		
-		<!-- LAYOUT CONTAINER -->
-		<div id="layout-container" class="flex">
-			<!-- SWAPPABLE CONTENT AREA -->
-			<div id="page-container" class="flex-1">
-				<!-- Table of Contents at top of page -->
-				{hasToc && tocHeadings && tocHeadings.length > 2 && (
-					<div class="page-toc-container">
-						<details class="page-toc">
-							<summary>
-								<span class="flex items-center gap-3">
-									<span>Sisällysluettelo</span>
-								</span>
-							</summary>
-							<nav>
-								<div>
-									<ul>
-										{tocHeadings.map((heading) => (
-											<li>
-												<a href={`#${heading.id}`}>
-													{heading.text}
-												</a>
-												{'children' in heading && heading.children.length > 0 && (
-													<ul class="page-toc-sub">
-														{heading.children.map((subheading: any) => (
-															<li>
-																<a href={`#${subheading.id}`}>
-																	{subheading.text}
-																</a>
-															</li>
-														))}
-													</ul>
-												)}
-											</li>
-										))}
-									</ul>
-								</div>
-							</nav>
-						</details>
-					</div>
-				)}
-
-				<!-- Content area -->
-				<main id="main-content" class="flex-1 pt-1 lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20">
-					<slot />
-				</main>
-			</div>
-		</div>
+			<!-- Content area -->
+			<main id="main-content" class="min-h-[90dvh] lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20">
+				<slot />
+			</main>
 		
 		<!-- Initialization - loaded once, persists across all navigations -->
 		<script>

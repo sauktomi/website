@@ -6,10 +6,10 @@
  * clear navigation to the main sections: recipes and directory.
  * 
  * Design Features:
- * - Full-screen hero section with responsive typography
+ * - Full-screen hero section with container-responsive typography
  * - Bold minimalism with striking visual hierarchy
  * - Touch-friendly navigation buttons
- * - Optimized for mobile and desktop
+ * - Optimized for mobile and desktop within container constraints
  * - View transition prefetching for performance
  * 
  * Navigation:
@@ -26,34 +26,32 @@ import Layout from '../layouts/Layout.astro';
 	title="Tomi"
 	metaDescription="Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan."
 >
-	<div class="fixed inset-0 flex items-center justify-center">
-		<section class="text-center max-w-7xl place-items-center">
-			<h1 class="text-[18vmin] sm:text-[12vmin] font-bold leading-none tracking-tight mb-[3vh] text-primary-dark">
-				Tervetuloa!
-			</h1>
-			
-			<p class="text-lg sm:text-[3vmin] text-secondary-accent mb-[6vh] leading-relaxed">
-				Sukella uusiin makuihin ja nauti <br> täyteläisistä herkuista.
-			</p>
-			
-			<nav class="w-9/12" aria-label="Päänavigaatio">
-				<a 
-					href="/reseptit/" 
-					class="flex items-center justify-center border-0 bg-primary-dark text-primary-light font-medium rounded-t-xl text-sm sm:text-[2vmin] px-[10vmin] md:py-[2vmin] py-[3vmin] transition-transform scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-primary-light"
-					aria-label="Selaa reseptejä"
-					data-astro-prefetch="viewport"
-				>
-					Selaa reseptejä
-				</a>
-				<a 
-					href="/hakemisto/" 
-					class="flex items-center justify-center border-0 bg-primary-light text-primary-dark font-medium shadow-md rounded-b-xl text-sm sm:text-[2vmin] px-[10vmin] md:py-[2vmin] py-[3vmin] transition-shadow hover:shadow-lg focus-visible:shadow-lg focus-visible:outline-2 focus-visible:outline-primary-dark"
-					aria-label="Ruoanlaiton hakemisto"
-					data-astro-prefetch="viewport"
-				>
-					Hakemisto
-				</a>
-			</nav>
-		</section>
-	</div>
+<section class="hero-section">
+	<h1 class="hero-title">
+		Tervetuloa!
+	</h1>
+	
+	<p class="hero-subtitle">
+		Sukella uusiin makuihin ja nauti <br class="hidden sm:block"> täyteläisistä herkuista.
+	</p>
+	
+	<nav class="hero-navigation" aria-label="Päänavigaatio">
+		<a 
+			href="/reseptit/" 
+			class="hero-button hero-button-primary"
+			aria-label="Selaa reseptejä"
+			data-astro-prefetch="viewport"
+		>
+			Selaa reseptejä
+		</a>
+		<a 
+			href="/hakemisto/" 
+			class="hero-button hero-button-secondary"
+			aria-label="Ruoanlaiton hakemisto"
+			data-astro-prefetch="viewport"
+		>
+			Hakemisto
+		</a>
+	</nav>
+</section>
 	</Layout>

@@ -42,77 +42,77 @@
 
 /* Essential container query breakpoints */
 @container component (min-width: 640px) {
-  .@sm\:text-lg { font-size: 1.125rem; }
-  .@sm\:text-xl { font-size: 1.25rem; }
-  .@sm\:text-2xl { font-size: 1.5rem; }
-  .@sm\:p-6 { padding: 1.5rem; }
-  .@sm\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .@sm\:py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .@sm\:space-y-4 { margin-top: 1rem; }
-  .@sm\:space-y-6 { margin-top: 1.5rem; }
-  .@sm\:gap-4 { gap: 1rem; }
-  .@sm\:gap-6 { gap: 1.5rem; }
-  .@sm\:flex-row { flex-direction: row; }
-  .@sm\:items-center { align-items: center; }
-  .@sm\:justify-center { justify-content: center; }
+  .@sm\:text-lg { @apply text-lg; }
+  .@sm\:text-xl { @apply text-xl; }
+  .@sm\:text-2xl { @apply text-2xl; }
+  .@sm\:p-6 { @apply p-6; }
+  .@sm\:px-6 { @apply px-6; }
+  .@sm\:py-6 { @apply py-6; }
+  .@sm\:space-y-4 { @apply space-y-4; }
+  .@sm\:space-y-6 { @apply space-y-6; }
+  .@sm\:gap-4 { @apply gap-4; }
+  .@sm\:gap-6 { @apply gap-6; }
+  .@sm\:flex-row { @apply flex-row; }
+  .@sm\:items-center { @apply items-center; }
+  .@sm\:justify-center { @apply justify-center; }
 }
 
 @container component (min-width: 768px) {
-  .@md\:text-lg { font-size: 1.125rem; }
-  .@md\:text-xl { font-size: 1.25rem; }
-  .@md\:text-2xl { font-size: 1.5rem; }
-  .@md\:text-3xl { font-size: 1.875rem; }
-  .@md\:p-6 { padding: 1.5rem; }
-  .@md\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .@md\:py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .@md\:space-y-4 { margin-top: 1rem; }
-  .@md\:space-y-6 { margin-top: 1.5rem; }
-  .@md\:gap-4 { gap: 1rem; }
-  .@md\:gap-6 { gap: 1.5rem; }
-  .@md\:flex-row { flex-direction: row; }
-  .@md\:items-center { align-items: center; }
-  .@md\:justify-center { justify-content: center; }
-  .@md\:w-1\/2 { width: 50%; }
-  .@md\:h-full { height: 100%; }
+  .@md\:text-lg { @apply text-lg; }
+  .@md\:text-xl { @apply text-xl; }
+  .@md\:text-2xl { @apply text-2xl; }
+  .@md\:text-3xl { @apply text-3xl; }
+  .@md\:p-6 { @apply p-6; }
+  .@md\:px-6 { @apply px-6; }
+  .@md\:py-6 { @apply py-6; }
+  .@md\:space-y-4 { @apply space-y-4; }
+  .@md\:space-y-6 { @apply space-y-6; }
+  .@md\:gap-4 { @apply gap-4; }
+  .@md\:gap-6 { @apply gap-6; }
+  .@md\:flex-row { @apply flex-row; }
+  .@md\:items-center { @apply items-center; }
+  .@md\:justify-center { @apply justify-center; }
+  .@md\:w-1\/2 { @apply w-1/2; }
+  .@md\:h-full { @apply h-full; }
 }
 
 @container component (min-width: 1024px) {
-  .@lg\:text-lg { font-size: 1.125rem; }
-  .@lg\:text-xl { font-size: 1.25rem; }
-  .@lg\:text-2xl { font-size: 1.5rem; }
-  .@lg\:text-3xl { font-size: 1.875rem; }
-  .@lg\:text-4xl { font-size: 2.25rem; }
-  .@lg\:p-6 { padding: 1.5rem; }
-  .@lg\:px-6 { padding-left: 1.5rem; padding-right: 1.5rem; }
-  .@lg\:py-6 { padding-top: 1.5rem; padding-bottom: 1.5rem; }
-  .@lg\:space-y-4 { margin-top: 1rem; }
-  .@lg\:space-y-6 { margin-top: 1.5rem; }
-  .@lg\:gap-4 { gap: 1rem; }
-  .@lg\:gap-6 { gap: 1.5rem; }
-  .@lg\:flex-row { flex-direction: row; }
-  .@lg\:items-center { align-items: center; }
-  .@lg\:justify-center { justify-content: center; }
-  .@lg\:w-1\/2 { width: 50%; }
-  .@lg\:h-full { height: 100%; }
-  .@lg\:mb-2 { margin-bottom: 0.5rem; }
-  .@lg\:mb-6 { margin-bottom: 1.5rem; }
-  .@lg\:text-base { font-size: 1rem; }
-  .@lg\:text-sm { font-size: 0.875rem; }
-  .@lg\:font-semibold { font-weight: 600; }
-  .@lg\:font-bold { font-weight: 700; }
+  .@lg\:text-lg { @apply text-lg; }
+  .@lg\:text-xl { @apply text-xl; }
+  .@lg\:text-2xl { @apply text-2xl; }
+  .@lg\:text-3xl { @apply text-3xl; }
+  .@lg\:text-4xl { @apply text-4xl; }
+  .@lg\:p-6 { @apply p-6; }
+  .@lg\:px-6 { @apply px-6; }
+  .@lg\:py-6 { @apply py-6; }
+  .@lg\:space-y-4 { @apply space-y-4; }
+  .@lg\:space-y-6 { @apply space-y-6; }
+  .@lg\:gap-4 { @apply gap-4; }
+  .@lg\:gap-6 { @apply gap-6; }
+  .@lg\:flex-row { @apply flex-row; }
+  .@lg\:items-center { @apply items-center; }
+  .@lg\:justify-center { @apply justify-center; }
+  .@lg\:w-1\/2 { @apply w-1/2; }
+  .@lg\:h-full { @apply h-full; }
+  .@lg\:mb-2 { @apply mb-2; }
+  .@lg\:mb-6 { @apply mb-6; }
+  .@lg\:text-base { @apply text-base; }
+  .@lg\:text-sm { @apply text-sm; }
+  .@lg\:font-semibold { @apply font-semibold; }
+  .@lg\:font-bold { @apply font-bold; }
 }
 
 @container component (min-width: 1280px) {
-  .@xl\:text-lg { font-size: 1.125rem; }
-  .@xl\:text-xl { font-size: 1.25rem; }
-  .@xl\:text-2xl { font-size: 1.5rem; }
-  .@xl\:text-3xl { font-size: 1.875rem; }
-  .@xl\:text-4xl { font-size: 2.25rem; }
-  .@xl\:p-8 { padding: 2rem; }
-  .@xl\:px-8 { padding-left: 2rem; padding-right: 2rem; }
-  .@xl\:py-8 { padding-top: 2rem; padding-bottom: 2rem; }
-  .@xl\:space-y-6 { margin-top: 1.5rem; }
-  .@xl\:space-y-8 { margin-top: 2rem; }
-  .@xl\:gap-6 { gap: 1.5rem; }
-  .@xl\:gap-8 { gap: 2rem; }
+  .@xl\:text-lg { @apply text-lg; }
+  .@xl\:text-xl { @apply text-xl; }
+  .@xl\:text-2xl { @apply text-2xl; }
+  .@xl\:text-3xl { @apply text-3xl; }
+  .@xl\:text-4xl { @apply text-4xl; }
+  .@xl\:p-8 { @apply p-8; }
+  .@xl\:px-8 { @apply px-8; }
+  .@xl\:py-8 { @apply py-8; }
+  .@xl\:space-y-6 { @apply space-y-6; }
+  .@xl\:space-y-8 { @apply space-y-8; }
+  .@xl\:gap-6 { @apply gap-6; }
+  .@xl\:gap-8 { @apply gap-8; }
 } 

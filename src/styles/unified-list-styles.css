@@ -3,14 +3,13 @@
  * 
  * This file contains CSS styles for list components used across the website.
  * It provides consistent styling for various types of lists including
- * ingredient lists, navigation lists, and content lists.
+ * ingredient lists, navigation lists, and content lists using Tailwind utilities.
  * 
  * Key Features:
- * - Consistent list styling across components
- * - Responsive list layouts
+ * - Responsive list styling using Tailwind breakpoints
  * - Interactive list item states
  * - Accessibility-focused list design
- * - Unified spacing and typography
+ * - Unified spacing and typography with Tailwind utilities
  * 
  * List Types:
  * - Navigation and menu lists
@@ -23,70 +22,54 @@
  * - Applied to list components throughout the site
  * - Provides consistent list presentation
  * - Supports both ordered and unordered lists
- * - Enables responsive list layouts
+ * - Enables responsive list layouts using Tailwind
  * 
  * Dependencies:
  * - Tailwind CSS v4
  * - Custom theme variables
- * - Component-specific styling
  * 
  * @author Tomi
- * @version 1.0.0
+ * @version 3.0.0
  */
 
-/* Unified List Styles */
 /* =============================================================================
-   UNIFIED LIST STYLES - UNIVERSAL COMPONENTS FOR HAKEMISTO AND RESEPTIT
+   UNIFIED LIST STYLES - TAILWIND-BASED COMPONENTS
    ============================================================================= */
 
-/* ===== UNIVERSAL LIST ITEM STRUCTURE ===== */
-/* Base wrapper for all list items */
-.list-item-wrapper {
-  @apply relative;
-}
-
-/* Universal list item styling */
-.list-item {
-  @apply block border border-transparent min-h-10;
-  /* Performance optimizations */
-  transform: translateZ(0);
-  will-change: transform, opacity;
-  position: relative;
-  transition: all 0.2s ease-in-out;
-}
-
-.list-item:focus {
-  @apply outline-2 outline-offset-2 outline-primary-accent;
-}
-
-/* ===== COLUMN LAYOUT ===== */
-/* Main content container using grid for side-by-side sections */
+/* ===== RESPONSIVE COLUMN LAYOUT ===== */
+/* Main content container using Tailwind responsive utilities */
 .content-groups-container {
-  @apply grid grid-cols-1 sm:grid-cols-3 gap-8;
+  @apply flex flex-wrap gap-6 justify-around;
 }
 
-/* Column items stacked vertically */
+/* Column items with responsive spacing */
 .list-item-wrapper {
-  @apply mb-2;
+  @apply mb-2 md:mb-3 lg:mb-4;
+}
+
+/* ===== CATEGORY SECTION STYLING ===== */
+.category-section {
+  @apply space-y-4 md:space-y-5 lg:space-y-6 min-w-80 max-w-128 flex-1;
 }
 
 
-/* ===== RESPONSIVE BEHAVIOR ===== */
-/* Mobile optimizations */
-@media (max-width: 768px) {
-  .item-content {
-    @apply gap-3;
-  }
-  
-  .item-title {
-    @apply text-base;
-  }
-}
 
 /* ===== ACCESSIBILITY ===== */
 /* Focus states */
 .list-item:focus-visible {
   @apply outline-2 outline-offset-2 outline-primary-dark;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .list-item {
+    @apply border-2;
+  }
+  
+  .list-item:hover,
+  .list-item:focus {
+    @apply border-primary-dark;
+  }
 }
 
 /* ===== ANIMATION OPTIMIZATIONS ===== */
@@ -96,12 +79,16 @@
   .item-title {
     transition: none;
   }
+  
+  .list-item:hover {
+    transform: none;
+  }
 }
 
-/* ===== UNIFIED POPOVER STYLES ===== */
-/* Popover container */
+/* ===== POPOVER STYLES ===== */
+/* Popover container with responsive sizing */
 .ingredient-popover {
-  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm;
+  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-h-[80vh] overflow-hidden backdrop-blur-sm;
   max-height: 80vh;
   overflow: hidden;
   position: fixed;
@@ -109,6 +96,10 @@
   left: 50%;
   transform: translate(-50%, -50%);
   margin: 0;
+  
+  /* Base size for smallest screens */
+  width: calc(100vw - 2rem);
+  max-width: 20rem;
 }
 
 /* Apply flex layout only when popover is open */
@@ -119,7 +110,40 @@
 }
 
 .ingredient-popover::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  @apply bg-black/50;
+}
+
+/* Responsive popover sizing using Tailwind breakpoints */
+@media (min-width: 640px) {
+  .ingredient-popover {
+    width: 28rem;
+    max-width: 28rem;
+    max-height: 90vh;
+  }
+}
+
+@media (min-width: 1024px) {
+  .ingredient-popover {
+    width: 32rem;
+    max-width: 32rem;
+    max-height: 75vh;
+  }
+}
+
+@media (min-width: 1280px) {
+  .ingredient-popover {
+    width: 36rem;
+    max-width: 36rem;
+    max-height: 70vh;
+  }
+}
+
+@media (min-width: 1536px) {
+  .ingredient-popover {
+    width: 42rem;
+    max-width: 42rem;
+    max-height: 65vh;
+  }
 }
 
 /* Mobile responsive adjustments */
@@ -131,137 +155,352 @@
   }
 }
 
-/* Large screen optimizations for popovers */
-@media (min-width: 1024px) {
-  .ingredient-popover {
-    width: 500px;
-    max-height: 75vh;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ingredient-popover {
-    width: 600px;
-    max-height: 70vh;
-  }
-}
-
-@media (min-width: 1536px) {
-  .ingredient-popover {
-    width: 700px;
-    max-height: 65vh;
-  }
-}
-
-/* Popover header */
+/* Popover header with responsive padding */
 .popover-header {
-  @apply flex items-center justify-between p-4 border-b border-secondary bg-secondary-light;
+  @apply flex items-center justify-between border-b border-secondary bg-secondary-light p-3 md:p-4 lg:p-6;
 }
 
 .popover-title {
-  @apply text-lg font-semibold text-primary-dark m-0;
+  @apply font-semibold text-primary-dark m-0 text-base md:text-lg lg:text-xl;
 }
 
 .popover-close-btn {
-  @apply p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+  @apply rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 p-2 md:p-3;
+  outline-color: var(--color-primary-accent);
 }
 
 .popover-close-icon {
-  @apply size-5 text-secondary-accent;
+  @apply text-secondary-accent w-4 h-4 md:w-5 md:h-5;
 }
 
-/* Popover content */
+/* Popover content with responsive spacing */
 .popover-content {
-  @apply p-4 space-y-4;
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
+  @apply p-3 md:p-4 lg:p-6 space-y-4 md:space-y-6;
 }
 
-.popover-image-container {
-  @apply aspect-video rounded-lg overflow-hidden bg-secondary-light;
-}
-
-.popover-text-content {
-  @apply space-y-4;
-  word-wrap: break-word;
-  overflow-wrap: break-word;
-}
-
-/* Override prose styles for popover content */
-.popover-text-content h1,
-.popover-text-content h2,
-.popover-text-content h3,
-.popover-text-content h4,
-.popover-text-content h5,
-.popover-text-content h6 {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.popover-text-content h1:not(:last-child),
-.popover-text-content h2:not(:last-child),
-.popover-text-content h3:not(:last-child),
-.popover-text-content h4:not(:last-child),
-.popover-text-content h5:not(:last-child),
-.popover-text-content h6:not(:last-child) {
-  margin-bottom: 1rem !important;
-}
-
-/* Reset prose margins for popover paragraphs and lists */
-.popover-text-content p,
-.popover-text-content ul,
-.popover-text-content ol,
-.popover-text-content li {
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.popover-text-content p:not(:last-child),
-.popover-text-content ul:not(:last-child),
-.popover-text-content ol:not(:last-child) {
-  margin-bottom: 1rem !important;
-}
-
-/* Override prose styles for popover images */
-.popover-image-container img,
-.popover-image {
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block !important;
-}
-
-/* Custom scrollbar styling */
-.popover-content::-webkit-scrollbar {
-  width: 6px;
-}
-
-.popover-content::-webkit-scrollbar-track {
-  background: transparent;
-}
-
-.popover-content::-webkit-scrollbar-thumb {
-  background: var(--color-secondary-accent);
-  border-radius: 3px;
-}
-
-.popover-content::-webkit-scrollbar-thumb:hover {
-  background: var(--color-secondary);
-}
-
-/* ===== NO RESULTS STYLING ===== */
+/* ===== NO RESULTS STATE ===== */
 .no-results {
-  @apply hidden text-center justify-items-center py-20;
+  @apply hidden;
 }
 
+.no-results.show {
+  @apply block;
+}
+
+/* Responsive no results styling */
 .no-results-icon {
-  @apply w-16 h-16 mx-auto mb-4 text-secondary;
+  @apply w-8 h-8 md:w-12 md:h-12 lg:w-16 lg:h-16;
 }
 
 .no-results-title {
-  @apply text-lg font-medium text-primary-dark mb-2;
+  @apply text-lg md:text-xl lg:text-2xl;
 }
 
 .no-results-description {
-  @apply text-secondary-accent;
+  @apply text-base md:text-lg;
 } 
+
+/* ===== PAGE LAYOUT COMPONENTS ===== */
+/* Main page container with responsive spacing */
+.page-container {
+  @apply min-h-screen space-y-8 md:space-y-10 lg:space-y-12;
+}
+
+/* Page header with responsive typography */
+.page-header {
+  @apply text-center mb-8;
+}
+
+
+
+/* Main content area with responsive spacing */
+.main-content {
+  @apply space-y-8 md:space-y-10 lg:space-y-12;
+}
+
+/* ===== MOBILE CATEGORY BUTTONS ===== */
+/* Mobile category filter buttons container */
+.mobile-category-buttons {
+  @apply sm:hidden mt-4 mb-6;
+}
+
+.mobile-category-buttons-container {
+  @apply flex gap-2;
+}
+
+/* Individual mobile category button */
+.mobile-category-button {
+  @apply flex-1 px-3 py-2 md:px-4 md:py-3 rounded-lg border border-secondary text-primary-dark transition-colors text-sm md:text-base;
+}
+
+.mobile-category-button:hover {
+  @apply bg-secondary-light;
+}
+
+/* ===== CATEGORY ITEMS ===== */
+/* Category items container with responsive spacing */
+.category-items {
+  @apply space-y-3 md:space-y-4;
+}
+
+/* ===== ITEM CONTENT ===== */
+/* Item title with Tailwind responsive typography */
+.item-title {
+  @apply font-medium text-primary-dark mb-2 text-base md:text-lg lg:text-xl;
+}
+
+/* Item description with Tailwind responsive typography */
+.item-description {
+  @apply text-secondary-accent line-clamp-2 text-sm md:text-base;
+}
+
+/* ===== NO RESULTS ENHANCEMENTS ===== */
+/* No results content container */
+.no-results-content {
+  @apply text-secondary-accent text-center py-12 md:py-16;
+}
+
+/* No results icon with responsive sizing */
+.no-results-icon {
+  @apply mx-auto mb-4 w-12 h-12 md:w-16 md:h-16;
+}
+
+/* No results title with Tailwind responsive typography */
+.no-results-title {
+  @apply font-semibold mb-2 text-lg md:text-xl;
+}
+
+/* No results description with Tailwind responsive typography */
+.no-results-description {
+  @apply text-base md:text-lg;
+}
+
+/* ===== POPOVER SKELETON ENHANCEMENTS ===== */
+/* Popover image skeleton with proper sizing */
+.popover-image-skeleton {
+  @apply w-full h-full bg-secondary-light animate-pulse;
+}
+
+.skeleton-placeholder {
+  @apply w-full h-full bg-secondary-light;
+}
+
+/* Popover description skeleton with proper spacing */
+.popover-description-skeleton {
+  @apply space-y-2;
+}
+
+.skeleton-line {
+  @apply h-4 bg-secondary-light animate-pulse rounded;
+}
+
+.skeleton-line-short {
+  @apply w-3/4;
+}
+
+.skeleton-line-medium {
+  @apply w-1/2;
+}
+
+/* ===== RECIPE-SPECIFIC STYLING ===== */
+
+
+/* Enhanced list item styling for recipe cards */
+.list-item.group {
+  @apply block text-left py-2;
+}
+
+.list-item.group:hover,
+.list-item.group:focus-visible {
+  @apply -translate-y-0.5 transition-transform duration-200;
+}
+
+/* ===== SKIP LINK ===== */
+/* Accessibility skip link for keyboard navigation */
+.skip-link {
+  @apply sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 bg-primary-dark text-primary-light px-4 py-2 rounded-lg z-50 transition-all;
+}
+
+/* ===== RECIPE DETAIL PAGE STYLES ===== */
+/* Main grid layout for recipe pages */
+.main-grid {
+  @apply grid gap-8;
+}
+
+/* Main content area with prose styling */
+.content-main {
+  @apply ml-auto;
+}
+
+/* Recipe header section */
+.recipe-header {
+  @apply mb-8 md:mb-10 lg:mb-12;
+}
+
+.header-container {
+  @apply text-secondary-accent hover:text-primary-dark mb-6 md:mb-8;
+}
+
+.header-meta {
+  @apply flex items-center gap-4 md:gap-6 lg:gap-8;
+}
+
+.item-number {
+  @apply text-secondary-accent text-sm md:text-base lg:text-lg;
+}
+
+.print-button {
+  @apply p-2 md:p-3 text-secondary-accent hover:text-primary-dark transition-colors duration-200;
+}
+
+.print-icon {
+  @apply w-5 h-5 md:w-6 md:h-6;
+}
+
+
+
+/* Recipe essentials section */
+.recipe-essentials {
+  @apply mb-6 md:mb-8 lg:mb-10;
+}
+
+.recipe-meta-info {
+  @apply flex flex-wrap items-center gap-4 md:gap-6 lg:gap-8;
+}
+
+.recipe-meta-item {
+  @apply flex items-center;
+}
+
+.meta-text {
+  @apply text-base md:text-lg lg:text-xl text-primary-dark;
+}
+
+/* Recipe description */
+.recipe-description {
+  @apply mb-8 md:mb-10 lg:mb-12;
+}
+
+.recipe-lead {
+  @apply text-lg md:text-xl lg:text-2xl text-secondary-accent leading-relaxed max-w-3xl;
+}
+
+/* Recipe hero image */
+.recipe-hero-image {
+  @apply mb-8 md:mb-10 lg:mb-12;
+}
+
+.image-caption {
+  @apply text-sm md:text-base text-secondary-accent mt-3 md:mt-4 text-center;
+}
+
+/* Recipe body content */
+.recipe-body {
+  @apply max-w-none space-y-8 md:space-y-10 lg:space-y-12;
+}
+
+/* Section styling */
+.valmistus-section {
+  @apply space-y-6 md:space-y-8;
+}
+
+/* Mise en place section */
+.mise-en-place-section {
+  @apply space-y-4 md:space-y-6;
+}
+
+.task-list {
+  @apply space-y-2 md:space-y-3;
+}
+
+.task-list-item {
+  @apply flex items-start gap-3;
+}
+
+.task-checkbox {
+  @apply mt-2 flex-shrink-0;
+}
+
+.task-text {
+  @apply text-base md:text-lg lg:text-xl;
+}
+
+/* Ingredients section */
+.ingredients-section {
+  @apply space-y-4 md:space-y-6;
+}
+
+.ingredients-list {
+  @apply space-y-3 md:space-y-4;
+}
+
+.ingredient-item {
+  @apply flex flex-wrap items-baseline gap-2 text-base md:text-lg lg:text-xl;
+}
+
+.ingredient-fallback {
+  @apply text-current;
+}
+
+.ingredient-amount {
+  @apply font-medium;
+}
+
+.ingredient-unit {
+  @apply text-current;
+}
+
+.ingredient-name {
+  @apply text-current;
+}
+
+.ingredient-notes {
+  @apply text-secondary-accent;
+}
+
+/* Contact section */
+.contact-section {
+  @apply py-12 md:py-16 lg:py-20 text-center;
+}
+
+.contact-content {
+  @apply space-y-6 md:space-y-8;
+}
+
+.contact-button {
+  @apply inline-flex items-center px-6 py-3 md:px-8 md:py-4 bg-primary-dark text-primary-light font-medium rounded-lg hover:bg-primary-accent transition-colors duration-200 text-base md:text-lg;
+}
+
+.contact-description {
+  @apply text-base md:text-lg text-secondary-accent max-w-2xl mx-auto;
+}
+
+/* ===== HOME PAGE STYLES ===== */
+/* Hero section */
+.hero-section {
+  @apply space-y-4 absolute top-0 bottom-[10dvh] place-self-center justify-items-center py-16 xl:py-20;
+}
+
+.hero-title {
+  @apply text-6xl md:text-7xl lg:text-8xl font-bold text-primary-dark leading-tight tracking-tight text-center;
+}
+
+.hero-subtitle {
+  @apply mb-8 text-xl md:text-2xl lg:text-3xl text-secondary-accent leading-relaxed text-center max-w-2xl;
+}
+
+.hero-navigation {
+  @apply w-full md:max-w-[45%] lg:max-w-lg;
+}
+
+.hero-button {
+  @apply flex items-center justify-center border-0 font-medium text-base md:text-lg lg:text-xl px-8 md:px-12 py-4 md:py-5 lg:py-6;
+}
+
+.hero-button-primary {
+  @apply bg-primary-dark text-primary-light rounded-t-xl transition-transform hover:scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-primary-light;
+}
+
+.hero-button-secondary {
+  @apply bg-primary-light text-primary-dark shadow-md rounded-b-xl transition-shadow hover:shadow-lg focus-visible:shadow-lg focus-visible:outline-2 focus-visible:outline-primary-dark;
+}

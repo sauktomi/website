@@ -38,7 +38,6 @@
 
 /* Recipe Section Styles */
 
-
 /* =============================================================================
    RECIPE INSTRUCTION STEPS - MINIMAL BOLD MODERNISTIC DESIGN
    ============================================================================= */
@@ -84,8 +83,6 @@
 .recipe-body .recipe-instruction-step ol {
   @apply mt-4 mb-0 ml-6;
 }
-
-
 
 .recipe-body .recipe-instruction-step:not(.step-completed):hover::before {
   @apply scale-105;
@@ -206,8 +203,6 @@
 .recipe-body .recipe-settings-button[aria-expanded="true"] .recipe-settings-icon {
   @apply rotate-90;
 }
-
-
 
 /* ===== COLLAPSED CONTENT ANIMATIONS ===== */
 .recipe-body .section-content-collapsed {

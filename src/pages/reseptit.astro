@@ -7,11 +7,11 @@
  * cooking time, techniques, dietary restrictions, and more.
  * 
  * Features:
- * - Grid layout with responsive recipe cards
+ * - Container-responsive grid layout with recipe cards
  * - Advanced filtering system with multiple criteria
  * - Search functionality with real-time results
  * - Recipe numbering system for easy reference
- * - Category-based organization
+ * - Category-based organization optimized for container queries
  * - Optimized images with lazy loading
  * 
  * Filter Options:
@@ -120,141 +120,147 @@ const filterOptions = {
 ---
 
 <Layout title="Reseptit | Ruoanlaitto">
-  <header class="text-center">
-    <h1>
-      Reseptit
-    </h1>
-  </header>
+  <div class="page-container">
+    <header class="page-header">
+      <h1 class="hero-title">
+        Reseptit
+      </h1>
+    </header>
 
-  <!-- Main Content -->
-  <div>
-    <!-- Simple Filter System -->
-    <SimpleFilterSystem
-      config={{
-        itemSelector: '.list-item-wrapper',
-        sectionSelector: '.category-section',
-        noResultsId: 'no-results'
-      }}
-      searchPlaceholder="Etsi reseptejä..."
-      filterSections={[
-        {
-          id: 'vaikeustaso',
-          title: 'Vaikeustaso',
-          icon: 'M13 10V3L4 14h7v7l9-11h-7z',
-          type: 'multi',
-          options: filterOptions.difficultyLevels.map(level => ({
-            id: level,
-            label: level.charAt(0).toUpperCase() + level.slice(1),
-            value: level
-          }))
-        },
-        {
-          id: 'kokonaisaika',
-          title: 'Valmistusaika',
-          icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
-          type: 'multi',
-          options: [
-            { id: 'quick', label: 'Nopea (alle 30 min)', value: 'quick' },
-            { id: 'medium', label: 'Keskipitkä (30-60 min)', value: 'medium' },
-            { id: 'long', label: 'Pitkä (1-2 tuntia)', value: 'long' },
-            { id: 'extended', label: 'Erittäin pitkä (yli 2h)', value: 'extended' }
-          ]
-        },
-        {
-          id: 'techniques',
-          title: 'Tekniikat',
-          icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
-          type: 'multi',
-          options: getUniqueFilterValues(allRecipeEntries, 'techniques').map(technique => ({
-            id: technique,
-            label: technique,
-            value: technique
-          }))
-        },
-        {
-          id: 'tags',
-          title: 'Tägit',
-          icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
-          type: 'multi',
-          options: filterOptions.tags.map(tag => ({
-            id: tag,
-            label: tag,
-            value: tag
-          }))
-        }
-      ]}
-      resultsCountText="reseptiä löytyi"
-      client:visible
-    />
+    <!-- Main Content -->
+    <div class="main-content">
+      <!-- Simple Filter System -->
+      <SimpleFilterSystem
+        config={{
+          itemSelector: '.list-item-wrapper',
+          sectionSelector: '.category-section',
+          noResultsId: 'no-results'
+        }}
+        searchPlaceholder="Etsi reseptejä..."
+        filterSections={[
+          {
+            id: 'vaikeustaso',
+            title: 'Vaikeustaso',
+            icon: 'M13 10V3L4 14h7v7l9-11h-7z',
+            type: 'multi',
+            options: filterOptions.difficultyLevels.map(level => ({
+              id: level,
+              label: level.charAt(0).toUpperCase() + level.slice(1),
+              value: level
+            }))
+          },
+          {
+            id: 'kokonaisaika',
+            title: 'Valmistusaika',
+            icon: 'M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z',
+            type: 'multi',
+            options: [
+              { id: 'quick', label: 'Nopea (alle 30 min)', value: 'quick' },
+              { id: 'medium', label: 'Keskipitkä (30-60 min)', value: 'medium' },
+              { id: 'long', label: 'Pitkä (1-2 tuntia)', value: 'long' },
+              { id: 'extended', label: 'Erittäin pitkä (yli 2h)', value: 'extended' }
+            ]
+          },
+          {
+            id: 'techniques',
+            title: 'Tekniikat',
+            icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
+            type: 'multi',
+            options: getUniqueFilterValues(allRecipeEntries, 'techniques').map(technique => ({
+              id: technique,
+              label: technique,
+              value: technique
+            }))
+          },
+          {
+            id: 'tags',
+            title: 'Tägit',
+            icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
+            type: 'multi',
+            options: filterOptions.tags.map(tag => ({
+              id: tag,
+              label: tag,
+              value: tag
+            }))
+          }
+        ]}
+        resultsCountText="reseptiä löytyi"
+        client:visible
+      />
 
-    <!-- Mobile Category Filter Buttons -->
-    <div class="mobile-category-buttons sm:hidden mt-4 mb-6">
-      <div class="flex gap-2">
-        {categories.map(category => (
-          <button
-            class="mobile-category-button flex-1 px-4 py-2 rounded-lg border border-secondary text-primary-dark hover:bg-secondary-light transition-colors"
-            data-category={category.id}
-            aria-label={`Näytä ${category.name} reseptit`}
-          >
-            {category.name}
-          </button>
-        ))}
-      </div>
-    </div>
-
-    <!-- No Results -->
-    <div id="no-results" class="no-results" role="status" aria-live="polite">
-      <div class="text-secondary-accent">
-        <svg class="no-results-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
-        </svg>
-        <p class="no-results-title">Ei tuloksia</p>
-        <p class="no-results-description">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
-      </div>
-    </div>
-
-    <!-- Recipe Content - Side by Side Categories -->
-    <div class="content-groups-container" id="recipe-content">
-      {categories.map(category => {
-        const categoryRecipes = allRecipes.filter(recipe => recipe.category === category.id);
-        if (categoryRecipes.length === 0) return null;
-        
-        return (
-          <div class="category-section" data-category={category.id}>
-            <h2 class="category-title text-2xl font-semibold text-primary-dark mb-4">
+      <!-- Mobile Category Filter Buttons -->
+      <div class="mobile-category-buttons">
+        <div class="mobile-category-buttons-container">
+          {categories.map(category => (
+            <button
+              class="mobile-category-button"
+              data-category={category.id}
+              aria-label={`Näytä ${category.name} reseptit`}
+            >
               {category.name}
-            </h2>
-            {categoryRecipes.map((recipe) => (
-              <div 
-                class="list-item-wrapper item"
-                data-title={recipe.title.toLowerCase()}
-                data-category={recipe.category}
-                data-techniques={recipe.techniques?.join(',').toLowerCase() || ''}
-                data-vaikeustaso={recipe.vaikeustaso || ''}
-                data-difficulty={recipe.vaikeustaso || ''}
-                data-dietary={recipe.dietaryType?.join(',') || ''}
-                data-costlevel={recipe.costLevel || ''}
-                data-cost={recipe.costLevel || ''}
-                data-tags={recipe.tags?.join(',').toLowerCase() || ''}
-                data-kokonaisaika={recipe.kokonaisaika || ''}
-                data-id={recipe.id}
-                data-search-name={recipe.title.toLowerCase()}
-                data-date={recipe.id}
-                data-recipe-number={recipe.formattedRecipeNumber || ''}
-                data-recipe-number-raw={recipe.recipeNumber || ''}
-                data-recipe-number-variations={recipe.numberVariations.join(',')}
-              >
-                <a 
-                  href={`/reseptit/${recipe.slug}/`} 
-                  class="group list-item"
-                >
-                  {recipe.title}
-                </a>
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- No Results -->
+      <div id="no-results" class="no-results" role="status" aria-live="polite">
+        <div class="no-results-content">
+          <svg class="no-results-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <p class="no-results-title">Ei tuloksia</p>
+          <p class="no-results-description">Kokeile eri hakusanoja tai tyhjennä suodattimet</p>
+        </div>
+      </div>
+
+      <!-- Recipe Content - Responsive Categories -->
+      <div class="content-groups-container" id="recipe-content">
+        {categories.map(category => {
+          const categoryRecipes = allRecipes.filter(recipe => recipe.category === category.id);
+          if (categoryRecipes.length === 0) return null;
+          
+          return (
+            <div class="category-section" data-category={category.id}>
+              <h2>
+                {category.name}
+              </h2>
+              <div class="category-items">
+                {categoryRecipes.map((recipe) => (
+                  <div 
+                    class="list-item-wrapper item"
+                    data-title={recipe.title.toLowerCase()}
+                    data-category={recipe.category}
+                    data-techniques={recipe.techniques?.join(',').toLowerCase() || ''}
+                    data-vaikeustaso={recipe.vaikeustaso || ''}
+                    data-difficulty={recipe.vaikeustaso || ''}
+                    data-dietary={recipe.dietaryType?.join(',') || ''}
+                    data-costlevel={recipe.costLevel || ''}
+                    data-cost={recipe.costLevel || ''}
+                    data-tags={recipe.tags?.join(',').toLowerCase() || ''}
+                    data-kokonaisaika={recipe.kokonaisaika || ''}
+                    data-id={recipe.id}
+                    data-search-name={recipe.title.toLowerCase()}
+                    data-date={recipe.id}
+                    data-recipe-number={recipe.formattedRecipeNumber || ''}
+                    data-recipe-number-raw={recipe.recipeNumber || ''}
+                    data-recipe-number-variations={recipe.numberVariations.join(',')}
+                  >
+                    <a 
+                      href={`/reseptit/${recipe.slug}/`} 
+                      class="group list-item"
+                    >
+                      <span class="recipe-title">
+                        {recipe.title}
+                      </span>
+                    </a>
+                  </div>
+                ))}
               </div>
-            ))}
-          </div>
-        );
-      })}
+            </div>
+          );
+        })}
+      </div>
     </div>
   </div>
 </Layout>

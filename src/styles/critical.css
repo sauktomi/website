@@ -41,52 +41,40 @@ html[data-layout="mobile"][data-navbar="open"] body {
 
 /* Navbar background visibility */
 .navbar-bg-visible {
-  background-color: rgba(0, 0, 0, 0.5);
+  @apply bg-black/50;
 }
 
 .navbar-bg-hiding {
-  background-color: transparent;
+  @apply bg-transparent;
   backdrop-filter: none;
 }
 
 /* Interactive element base styles */
 .interactive-element {
-  transition: all 0.2s ease-out;
-  cursor: pointer;
-  user-select: none;
+  @apply transition-all duration-200 cursor-pointer select-none;
   -webkit-tap-highlight-color: transparent;
 }
 
 .interactive-element:hover {
-  transform: translateY(-1px);
+  @apply -translate-y-px;
 }
 
 .interactive-element:active {
-  transform: translateY(0);
+  @apply translate-y-0;
 }
 
 /* Focus enhanced styles */
 .focus-enhanced:focus-visible {
-  outline: 2px solid var(--color-primary-accent);
-  outline-offset: 2px;
-  border-radius: 0.5rem;
+  @apply outline-2 outline-primary-accent outline-offset-2 rounded-lg;
 }
 
 /* Skip link */
 .skip-link {
-  position: absolute;
-  top: -40px;
-  left: 6px;
-  background: var(--color-primary-dark);
-  color: white;
-  padding: 8px;
-  text-decoration: none;
-  border-radius: 4px;
-  z-index: 10000;
+  @apply absolute -top-10 left-6 bg-primary-dark text-white px-2 py-2 rounded z-[10000] no-underline;
 }
 
 .skip-link:focus {
-  top: 6px;
+  @apply top-6;
 }
 
 /* Home page specific styles */

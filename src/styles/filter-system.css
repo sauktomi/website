@@ -44,7 +44,7 @@
 
 /* Search Input */
 .filter-search-container {
-  @apply relative;
+  @apply relative mx-auto;
 }
 
 .filter-search-icon {
@@ -56,7 +56,7 @@
 }
 
 .filter-search-input {
-  @apply w-full pl-12 pr-4 py-3 text-base bg-primary-light border border-secondary rounded-lg outline-none transition-all duration-200;
+  @apply w-[80dvw] max-w-query-sm pl-12 pr-4 py-3 text-base bg-primary-light border border-secondary rounded-full outline-none transition-all duration-200;
 }
 
 .filter-search-input:focus {
@@ -74,7 +74,7 @@
 
 /* Filter Buttons */
 .filter-button {
-  @apply inline-flex flex-1 justify-center rounded-xl items-center gap-2 px-4 py-2 text-sm h-11 transition-all duration-200 border border-secondary bg-primary-light;
+  @apply inline-flex min-w-36 flex-1 justify-center rounded-xl items-center gap-2 px-4 py-2 text-sm h-11 transition-all border border-secondary bg-primary-light;
 }
 
 .filter-button:focus,
@@ -87,7 +87,7 @@
 }
 
 .filter-button-text {
-  @apply hidden sm:inline;
+  @apply inline;
 }
 
 .filter-button-badge {
@@ -170,7 +170,7 @@
 
 /* Main Container */
 .filter-system-container {
-  @apply mb-8 flex flex-col gap-6;
+  @apply mb-8 flex flex-col gap-12;
 }
 
 /* =============================================================================
@@ -248,69 +248,71 @@
 
 /* Filter Content */
 .filter-content {
-  @apply p-3;
+  @apply bg-primary-light border border-secondary rounded-xl rounded-t-none max-h-[80vh] overflow-hidden;
 }
 
 /* Filter Items */
 .filter-item {
-  @apply text-sm min-h-16 w-full text-left;
+  @apply block border border-transparent rounded-lg py-2 px-3;
 }
 
 .filter-item {
-  @apply px-8 py-6;
+  @apply transition-all duration-200;
 }
 
 .filter-item:hover {
-  @apply bg-secondary-light border-secondary-light;
+  @apply border-secondary bg-secondary-light;
 }
 
 .filter-item:focus {
-  @apply bg-secondary-light border-secondary-light outline-none;
+  @apply outline-2 outline-offset-2 outline-primary-dark;
 }
 
 .filter-item-active {
-  @apply bg-secondary-light text-primary-dark;
+  @apply bg-primary-dark text-primary-light;
 }
 
-/* Legacy Filter Classes (for reference pages) */
+/* Category Filter */
 .category-filter {
-  @apply w-full text-left text-sm rounded-lg border border-transparent hover:border-secondary focus:border-secondary-accent transition-all duration-200 focus:outline-none;
+  @apply flex items-center justify-between gap-3;
 }
 
 .category-filter {
-  @apply px-3 py-2;
+  @apply w-full;
+}
+
+/* Dietary Filter */
+.dietary-filter {
+  @apply flex items-center justify-between gap-3;
 }
 
 .dietary-filter {
-  @apply w-full text-left text-sm rounded-lg border border-transparent hover:border-secondary focus:border-secondary-accent transition-all duration-200 focus:outline-none;
+  @apply w-full;
 }
 
-.dietary-filter {
-  @apply px-3 py-2;
+/* Type Filter */
+.type-filter {
+  @apply flex items-center justify-between gap-3;
 }
 
 .type-filter {
-  @apply w-full text-left text-sm rounded-lg border border-transparent hover:border-secondary focus:border-secondary-accent transition-all duration-200 focus:outline-none;
+  @apply w-full;
 }
 
-.type-filter {
-  @apply px-3 py-2;
-}
-
-/* Active states for legacy filters */
+/* Active filter states */
 .category-filter.filter-item-active,
 .dietary-filter.filter-item-active,
 .type-filter.filter-item-active {
-  @apply bg-secondary-light text-primary-dark border-secondary;
+  @apply bg-primary-dark text-primary-light;
 }
 
-/* Filter Card Components */
+/* Filter Cards */
 .filter-card {
-  @apply p-6 text-center cursor-pointer bg-primary-light border border-secondary overflow-hidden rounded-xl transition-all duration-300;
+  @apply block border border-transparent rounded-xl transition duration-200;
 }
 
 .filter-card:hover {
-  @apply border-secondary-accent -translate-y-0.5;
+  @apply border-secondary;
 }
 
 .filter-card:focus-within {
@@ -319,15 +321,15 @@
 
 /* Navigation Container */
 .nav-container {
-  @apply relative;
+  @apply flex flex-col gap-4;
 }
 
 /* Search Input Container */
 .search-input-container {
-  @apply bg-primary-light/95 backdrop-blur-md border border-secondary-light/80 rounded-xl shadow-sm mb-4;
+  @apply relative;
 }
 
-/* Visibility Utility Classes */
+/* Visibility Utilities */
 .vis-flex {
   @apply flex;
 }
@@ -340,92 +342,96 @@
   @apply inline-flex;
 }
 
-/* Remove bottom radius when filter popups are open */
+/* Filter bar with expanded popover */
 .filter-bar:has([aria-expanded="true"]) {
-  @apply rounded-b-none;
+  @apply relative;
 }
 
-/* =============================================================================
-   ESSENTIAL CSS THAT CANNOT BE CONVERTED TO TAILWIND
-   ============================================================================= */
+.filter-bar:has([aria-expanded="true"])::after {
+  @apply absolute bottom-0 left-0 right-0 h-px bg-secondary;
+  content: '';
+}
 
-/* CSS Anchor Positioning for Filter Popovers */
+/* Filter button anchor */
 .filter-button-anchor {
-  anchor-name: var(--anchor-name);
+  @apply relative;
 }
 
+/* Popover positioning */
 .filter-popover-positioned:popover-open {
   position-area: bottom;
   width: anchor-size(100%);
 }
 
-/* Popover Backdrop Styles */
+/* Popover backdrop */
 .popover-backdrop::backdrop {
-  background: rgba(0, 0, 0, 0.5);
+  @apply bg-black/20;
 }
 
-/* Smooth transitions for popovers */
+/* Smooth popover transitions */
 .popover-smooth-transition {
-  transition: opacity 0.2s ease-out;
-  opacity: 0;
+  @apply transition-all duration-200;
 }
 
 .popover-smooth-transition:popover-open {
-  opacity: 1;
-  transform: scale(1) translateY(0);
+  @apply opacity-100 scale-100;
 }
 
-/* Filter popup positioning and backdrop */
+/* Filter popup */
 .filter-popup {
-  max-width: 90vw;
+  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm;
   max-height: 80vh;
-  overflow-y: auto;
+  overflow: hidden;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  margin: 0;
 }
 
 .filter-popup:popover-open {
-  display: block;
-  opacity: 1;
-  visibility: visible;
+  @apply duration-200;
+  display: flex;
+  flex-direction: column;
 }
 
 .filter-popup::backdrop {
-  background-color: rgba(0, 0, 0, 0.3);
-  pointer-events: none;
+  @apply bg-black/50;
 }
 
-/* Container-aware responsive design */
-@container component (min-width: 768px) {
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
   .filter-popup {
-    max-width: 82vw;
+    max-width: calc(100vw - 2rem);
+    width: calc(100vw - 2rem);
+    max-height: 90vh;
   }
 }
 
-/* Large screen optimizations for filter popups */
 @media (min-width: 1024px) {
   .filter-popup {
+    width: 500px;
     max-height: 75vh;
   }
 }
 
 @media (min-width: 1280px) {
   .filter-popup {
+    width: 600px;
     max-height: 70vh;
   }
 }
 
 @media (min-width: 1536px) {
   .filter-popup {
+    width: 700px;
     max-height: 65vh;
   }
 }
 
-/* Special handling for filter sections in main popup */
+/* Filter section spacing */
 .filter-section .space-y-2 .filter-item {
-  margin: 0;
+  @apply mb-2;
 }
 
 /* Print styles */

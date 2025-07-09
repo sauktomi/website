@@ -144,12 +144,12 @@ const {
 
   <div class="main-grid">
     <!-- Main content area -->
-    <div id="recipe-main" class="content-main mx-auto prose md:prose-xl xl:prose-2xl dark:prose-invert">
+    <div id="recipe-main" class="content-main ml-auto prose md:prose-xl xl:prose-2xl dark:prose-invert">
       <!-- Enhanced recipe header -->
-      <header>
-          <div class="header-container text-secondary-accent hover:text-primary-dark">
-            <div class="flex items-center gap-16">
-              <span class="item-number text-secondary-accent">
+      <header class="recipe-header">
+          <div class="header-container">
+            <div class="header-meta">
+              <span class="item-number">
                 #{enhancedData.formattedRecipeNumber}
               </span>
 
@@ -167,13 +167,13 @@ const {
               )}
             </div>
             
-            <button onclick="window.print()" class="p-2 text-secondary-accent hover:text-primary-dark" aria-label="Tulosta resepti">
-              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <button onclick="window.print()" class="print-button" aria-label="Tulosta resepti">
+              <svg class="print-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
               </svg>
             </button>
           </div>
-        <h1 class="recipe-title">
+        <h1>
           {title}
         </h1>
         
@@ -182,7 +182,7 @@ const {
           <div class="recipe-meta-info">
             {processedTime && (
               <div class="recipe-meta-item">
-                <span>
+                <span class="meta-text">
                   {formattedTime?.totalTime}
                 </span>
               </div>
@@ -190,13 +190,13 @@ const {
             
             {difficulty && (
               <div class="recipe-meta-item">
-                <span class={`font-medium ${difficulty.color}`}>{difficulty.text}</span>
+                <span class={`meta-text ${difficulty.color}`}>{difficulty.text}</span>
               </div>
             )}
             
             {annokset && (
               <div class="recipe-meta-item">
-                <span>{annokset}</span>
+                <span class="meta-text">{annokset}</span>
               </div>
             )}
         </div>
@@ -204,7 +204,7 @@ const {
         <!-- Recipe description -->
         {description && (
           <div class="recipe-description">
-            <p class="lead">
+            <p class="recipe-lead">
               {Array.isArray(description) 
               ? description[0] 
               : description
@@ -230,7 +230,7 @@ const {
             )}
           </div>
           {enhancedData.metadataProps?.imageCaption && (
-            <figcaption>
+            <figcaption class="image-caption">
               {enhancedData.metadataProps.imageCaption}
             </figcaption>
           )}
@@ -238,21 +238,21 @@ const {
       </header>
       
       <!-- Recipe content with enhanced typography -->
-      <div class="recipe-body max-w-none">
+      <div class="recipe-body">
         <!-- Valmistus section with ingredients and mise en place -->
         {(mise_en_place && mise_en_place.length > 0) || (ingredients && ingredients.length > 0) ? (
-          <section id="valmistus-section">
+          <section id="valmistus-section" class="valmistus-section">
             <h2 id="valmistus">Valmistus</h2>
             
             <!-- Mise en place -->
             {mise_en_place && mise_en_place.length > 0 && (
-              <div>
+              <div class="mise-en-place-section">
                 <h3 id="mise-en-place">Mise en place</h3>
-                <ul>
+                <ul class="task-list">
                   {mise_en_place.map((task) => (
                     <li class="task-list-item">
-                      <input type="checkbox" disabled />
-                      <span>{task}</span>
+                      <input type="checkbox" disabled class="task-checkbox" />
+                      <span class="task-text">{task}</span>
                     </li>
                   ))}
                 </ul>
@@ -261,9 +261,9 @@ const {
             
             <!-- Ingredients -->
             {ingredients && ingredients.length > 0 && (
-              <div>
+              <div class="ingredients-section">
                 <h3 id="ainekset">Ainekset</h3>
-                <ul>
+                <ul class="ingredients-list">
                   {ingredients.map((ingredient) => {
                     const { name, amount, unit, notes } = ingredient;
                     const itemInfo = getItemTypeAndCategory(name);
@@ -271,7 +271,7 @@ const {
                     if (!itemInfo) {
                       return (
                         <li class="ingredient-item">
-                          <span class="ingredient-fallback text-current">
+                          <span class="ingredient-fallback">
                             {amount && <span class="ingredient-amount">{amount}</span>}
                             {unit && <span class="ingredient-unit"> {unit}</span>}
                             <span class="ingredient-name"> {name}</span>
@@ -294,12 +294,11 @@ const {
                         <button 
                           id={triggerId}
                           popovertarget={popoverId}
-                          class={`ingredient-popover-trigger wiki-link wiki-link--available wiki-link--${itemType} text-current underline decoration-dotted underline-offset-2 hover:decoration-solid transition-all duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 rounded-md`}
+                          class={`ingredient-popover-trigger wiki-link wiki-link--available wiki-link--${itemType}`}
                           data-item-id={itemId}
                           data-item-type={itemType}
                           data-category={itemCategory}
                           aria-label={`Näytä tiedot: ${name}`}
-                          style="outline-color: var(--color-primary-accent);"
                         >
                           <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
                         </button>
@@ -307,40 +306,39 @@ const {
                         <div 
                           id={popoverId}
                           popover="auto"
-                          class="ingredient-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+                          class="ingredient-popover"
                           role="dialog"
                           aria-labelledby={`${popoverId}-title`}
                           data-item-id={itemId}
                           data-item-type={itemType}
                           data-category={itemCategory}
                         >
-                          <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
-                            <h2 id={`${popoverId}-title`} class="popover-title text-lg font-semibold text-primary-dark m-0">
+                          <div class="popover-header">
+                            <h2 id={`${popoverId}-title`} class="popover-title">
                               <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
                             </h2>
                             <button 
-                              class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
-                              style="outline-color: var(--color-primary-accent);"
+                              class="popover-close-btn"
                               popovertarget={popoverId}
                               popovertargetaction="hide"
                               aria-label="Sulje"
                             >
-                              <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
                               </svg>
                             </button>
                           </div>
-                          <div class="popover-content p-4 space-y-4">
-                            <div class="popover-image-container aspect-video rounded-lg overflow-hidden bg-secondary-light">
-                              <div class="popover-image-skeleton w-full h-full bg-secondary-light animate-pulse">
-                                <div class="skeleton-placeholder w-full h-full bg-secondary-light"></div>
+                          <div class="popover-content">
+                            <div class="popover-image-container">
+                              <div class="popover-image-skeleton">
+                                <div class="skeleton-placeholder"></div>
                               </div>
                             </div>
-                            <div class="popover-text-content space-y-4">
-                              <div class="popover-description-skeleton space-y-2">
-                                <div class="skeleton-line h-4 bg-secondary-light animate-pulse rounded"></div>
-                                <div class="skeleton-line skeleton-line-short h-4 bg-secondary-light animate-pulse rounded w-3/4"></div>
-                                <div class="skeleton-line skeleton-line-medium h-4 bg-secondary-light animate-pulse rounded w-1/2"></div>
+                            <div class="popover-text-content">
+                              <div class="popover-description-skeleton">
+                                <div class="skeleton-line"></div>
+                                <div class="skeleton-line skeleton-line-short"></div>
+                                <div class="skeleton-line skeleton-line-medium"></div>
                               </div>
                             </div>
                           </div>
@@ -365,7 +363,7 @@ const {
    
    <!-- Contact section -->
    <section class="contact-section">
-     <div class="text-center">
+     <div class="contact-content">
        <h2>
          Kysyttävää? Palautetta?
        </h2>
