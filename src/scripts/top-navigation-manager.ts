@@ -22,7 +22,7 @@ interface DynamicButton {
 }
 
 // Global state
-let dockState = {
+let topNavState = {
   dynamicButtons: new Map<string, DynamicButton>(),
   isMobile: false
 };
@@ -36,7 +36,7 @@ function initTopNavigation(): void {
 
 function setupTopNavigationElements(): void {
   // Set initial state based on screen size
-  dockState.isMobile = window.innerWidth < 768;
+  topNavState.isMobile = window.innerWidth < 768;
 }
 
 function setupEventListeners(): void {
@@ -58,38 +58,38 @@ function setupEventListeners(): void {
 
 function handleResize(): void {
   // Update mobile state for potential future use
-  dockState.isMobile = window.innerWidth < 768;
+  topNavState.isMobile = window.innerWidth < 768;
 }
 
 function handleTimerStateChange(event: CustomEvent): void {
   const { isRunning, totalSeconds } = event.detail;
-  updateMobileTimer(isRunning, totalSeconds);
+  updateTimerButton(isRunning, totalSeconds);
 }
 
-function updateMobileTimer(isRunning: boolean, totalSeconds: number): void {
-  const mobileTimerBtn = document.getElementById('mobile-timer-btn');
-  if (!mobileTimerBtn) return;
+function updateTimerButton(isRunning: boolean, totalSeconds: number): void {
+  const timerBtn = document.getElementById('timer-btn');
+  if (!timerBtn) return;
   
   // Timer button is always visible
-  mobileTimerBtn.style.display = 'flex';
+  timerBtn.style.display = 'flex';
   
   if (isRunning) {
     const minutes = Math.floor(totalSeconds / 60);
     const seconds = totalSeconds % 60;
-    const timerText = mobileTimerBtn.querySelector('.mobile-timer-text');
+    const timerText = timerBtn.querySelector('.timer-text');
     
     if (timerText) {
       timerText.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
     }
     
-    mobileTimerBtn.classList.add('timer-active');
+    timerBtn.classList.add('timer-active');
   } else {
-    const timerText = mobileTimerBtn.querySelector('.mobile-timer-text');
+    const timerText = timerBtn.querySelector('.timer-text');
     if (timerText) {
       timerText.textContent = 'Ajastin';
     }
     
-    mobileTimerBtn.classList.remove('timer-active');
+    timerBtn.classList.remove('timer-active');
   }
 }
 
@@ -103,7 +103,7 @@ function handlePinButton(event: CustomEvent): void {
     icon
   };
   
-  dockState.dynamicButtons.set(id, dynamicButton);
+  topNavState.dynamicButtons.set(id, dynamicButton);
   updateDynamicButtons();
   
   // Save to localStorage
@@ -116,7 +116,7 @@ function handlePinButton(event: CustomEvent): void {
 function handleUnpinButton(event: CustomEvent): void {
   const { id } = event.detail;
   
-  dockState.dynamicButtons.delete(id);
+  topNavState.dynamicButtons.delete(id);
   updateDynamicButtons();
   
   // Save to localStorage
@@ -134,7 +134,7 @@ function updateDynamicButtons(): void {
   dynamicButtonsContainer.innerHTML = '';
   
   // Add dynamic buttons
-  dockState.dynamicButtons.forEach((button, id) => {
+  topNavState.dynamicButtons.forEach((button, id) => {
     const buttonElement = document.createElement('button');
     buttonElement.className = 'dynamic-button';
     buttonElement.setAttribute('data-button-id', id);
@@ -160,7 +160,7 @@ function updateDynamicButtons(): void {
 
 function saveDynamicButtons(): void {
   try {
-    const buttonsArray = Array.from(dockState.dynamicButtons.entries());
+    const buttonsArray = Array.from(topNavState.dynamicButtons.entries());
     localStorage.setItem('dynamicButtons', JSON.stringify(buttonsArray));
   } catch (error) {
     // Silent fallback
@@ -172,7 +172,7 @@ function loadDynamicButtons(): void {
     const saved = localStorage.getItem('dynamicButtons');
     if (saved) {
       const buttonsArray = JSON.parse(saved);
-      dockState.dynamicButtons = new Map(buttonsArray);
+      topNavState.dynamicButtons = new Map(buttonsArray);
       updateDynamicButtons();
     }
   } catch (error) {
@@ -196,20 +196,20 @@ function addPinButtonsToSidebarLinks(): void {
       
       // Create pin button
       const pinButton = document.createElement('button');
-      pinButton.className = 'pin-button mr-2 p-1 rounded hover:bg-secondary transition-colors duration-200';
+      pinButton.className = 'pin-button mr-2 p-1 rounded transition-colors duration-200';
       
       // Check if already pinned
-      const isPinned = dockState.dynamicButtons.has(href);
+      const isPinned = topNavState.dynamicButtons.has(href);
       
       // Set initial state
       if (isPinned) {
-        pinButton.innerHTML = '<svg class="w-3 h-3 text-secondary-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
-        pinButton.classList.add('text-secondary-accent');
+        pinButton.innerHTML = '<svg class="w-3 h-3 text-primary-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+        pinButton.classList.add('text-primary-accent');
         pinButton.setAttribute('aria-label', `Poista kiinnitys ${text}`);
         pinButton.setAttribute('title', `Poista kiinnitys ${text}`);
       } else {
-        pinButton.innerHTML = '<svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
-        pinButton.classList.add('text-secondary');
+        pinButton.innerHTML = '<svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+        pinButton.classList.add('text-primary');
         pinButton.setAttribute('aria-label', `Kiinnitä ${text} palkkiin`);
         pinButton.setAttribute('title', `Kiinnitä ${text} palkkiin`);
       }
@@ -220,7 +220,7 @@ function addPinButtonsToSidebarLinks(): void {
         e.stopPropagation();
         
         // Check current state dynamically
-        const currentlyPinned = dockState.dynamicButtons.has(href);
+        const currentlyPinned = topNavState.dynamicButtons.has(href);
         
         if (currentlyPinned) {
           // Unpin
@@ -269,15 +269,15 @@ function updatePinButtonState(id: string, isPinned: boolean): void {
   
   // Update pin button appearance
   if (isPinned) {
-    pinButton.innerHTML = '<svg class="w-3 h-3 text-secondary-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
-    pinButton.classList.remove('text-secondary');
-    pinButton.classList.add('text-secondary-accent');
+    pinButton.innerHTML = '<svg class="w-3 h-3 text-primary-accent" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+    pinButton.classList.remove('text-primary');
+    pinButton.classList.add('text-primary-accent');
     pinButton.setAttribute('aria-label', `Poista kiinnitys ${link.textContent?.trim()}`);
     pinButton.setAttribute('title', `Poista kiinnitys ${link.textContent?.trim()}`);
   } else {
-    pinButton.innerHTML = '<svg class="w-3 h-3 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
-    pinButton.classList.remove('text-secondary-accent');
-    pinButton.classList.add('text-secondary');
+    pinButton.innerHTML = '<svg class="w-3 h-3 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"/></svg>';
+    pinButton.classList.remove('text-primary-accent');
+    pinButton.classList.add('text-primary');
     pinButton.setAttribute('aria-label', `Kiinnitä ${link.textContent?.trim()} palkkiin`);
     pinButton.setAttribute('title', `Kiinnitä ${link.textContent?.trim()} palkkiin`);
   }

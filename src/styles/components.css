@@ -381,15 +381,20 @@ a.wiki-link--available {
   @apply flex items-center justify-center h-touch-safe min-w-touch-safe text-sm font-medium;
 }
 
-.mobile-timer-text {
+.close-btn {
+  @apply text-secondary-accent hover:text-primary-dark;
+}
+
+.timer-text {
   @apply mt-1 text-xs font-mono font-bold;
 }
 
 /* ===== RECIPE OVERLAY NAVIGATION ===== */
 .recipe-overlay-nav {
-  @apply fixed md:top-4 top-2 right-0 bg-transparent backdrop-blur-3xl left-0 max-w-query-lg mx-auto rounded-xl z-40 shadow-lg flex items-center justify-between p-3 md:p-4;
+  @apply fixed xl:top-4 lg:top-2 top-0 right-0 gap-3 bg-transparent backdrop-blur-3xl left-0 max-w-query-lg mx-auto rounded-xl z-40 shadow-lg flex items-center justify-between p-3 md:p-4;
   transform: translateY(-130%);
   transition: transform 0.5s ease-out;
+  anchor-name: --position-anchor;
 }
 
 .recipe-overlay-nav.visible {
@@ -401,7 +406,7 @@ a.wiki-link--available {
 }
 
 .overlay-nav-center {
-  @apply flex items-center justify-center flex-1;
+  @apply md:flex items-center justify-center flex-1;
 }
 
 .overlay-nav-right {
@@ -409,79 +414,49 @@ a.wiki-link--available {
 }
 
 .overlay-nav-title {
-  @apply text-base lg:text-lg font-medium text-primary-dark truncate max-w-60 lg:max-w-md;
+  @apply text-base lg:text-lg font-medium text-primary-dark line-clamp-2 lg:max-w-md;
+  text-wrap: balance;
 }
 
 /* ===== NAVIGATION POPOVER ===== */
 .navigation-popover {
-  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm;
-  max-height: 80vh;
-  overflow: hidden;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  z-index: 1060;
-}
-.navigation-popover:popover-open {
-  @apply duration-200;
-  display: flex;
-  flex-direction: column;
-}
-.navigation-popover::backdrop {
-  @apply bg-black/20 backdrop-blur-sm;
-  background: rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 640px) {
-  .navigation-popover {
-    max-width: calc(100vw - 2rem);
-    width: calc(100vw - 2rem);
-    max-height: 90vh;
-  }
-}
-@media (min-width: 1024px) {
-  .navigation-popover {
-    width: 500px;
-    max-height: 75vh;
-  }
-}
-@media (min-width: 1280px) {
-  .navigation-popover {
-    width: 600px;
-    max-height: 70vh;
-  }
-}
-@media (min-width: 1536px) {
-  .navigation-popover {
-    width: 700px;
-    max-height: 65vh;
-  }
-}
-
-.popover-header {
-  @apply flex items-center justify-between p-4 border-b border-secondary bg-secondary-light;
-}
-.popover-title {
-  @apply text-lg font-semibold text-primary-dark m-0;
+  @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent lg:w-query-lg w-full max-h-[80vh] overflow-hidden;
+  position-anchor: --position-anchor;
+  position-area: bottom;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #1f2937; /* Dark gray for better contrast */
 }
 .popover-close-btn {
-  @apply p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+  @apply p-2 rounded-lg hover:bg-white/20 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
+  outline-color: var(--color-primary-accent);
 }
 .popover-close-icon {
-  @apply size-5 text-secondary-accent;
+  @apply size-5;
+  color: #6b7280; /* Medium gray for better contrast */
 }
+
 .popover-content {
-  @apply p-4 space-y-4;
-  flex: 1;
+  @apply p-4 mx-auto justify-items-center;
   overflow-y: auto;
   overflow-x: hidden;
+  color: #1f2937; /* Dark gray for better contrast */
 }
 
 /* Sidebar navigation in popover */
 .sidebar-card-content {
   @apply text-sm;
+  color: #1f2937; /* Dark gray for better contrast */
+}
+
+.sidebar-card-content a {
+  color: #1f2937; /* Dark gray for better contrast */
+  text-decoration: none;
+}
+
+.sidebar-card-content a:hover {
+  color: #374151; /* Slightly lighter on hover */
+  text-decoration: underline;
 }
 
 .sidebar-card-content ul {
@@ -490,17 +465,22 @@ a.wiki-link--available {
 
 /* Pin button for navigation popover */
 .pin-button {
-  @apply inline-flex items-center justify-center w-6 h-6 rounded hover:bg-secondary transition-colors duration-200 text-secondary-accent;
+  @apply inline-flex items-center justify-center size-8 rounded transition-colors duration-200 text-secondary-accent;
   vertical-align: middle;
-  margin-right: 0.25rem;
+  margin-right: 2rem;
 }
 .pin-button svg {
-  @apply w-3 h-3;
+  @apply size-touch-min;
 }
 
 /* ===== TIMER COMPONENTS ===== */
-.timer-popover:popover-open {
-  place-self: anchor-center;
+.timer-popover {
+  @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent lg:w-query-lg w-full max-h-[80vh] overflow-hidden;
+  position-anchor: --position-anchor;
+  position-area: bottom;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  color: #1f2937; /* Dark gray for better contrast */
 }
 
 .timer-inline {
@@ -515,8 +495,12 @@ a.wiki-link--available {
   @apply size-4;
 }
 
+.timer-btn-icon {
+  @apply w-3 h-3 mr-1;
+}
+
 .timer-slider-container {
-  @apply flex items-center gap-3;
+  @apply w-5/6;
 }
 
 .timer-slider-label {
@@ -524,7 +508,7 @@ a.wiki-link--available {
 }
 
 .timer-slider {
-  @apply w-24 h-2 bg-secondary rounded-lg appearance-none cursor-pointer;
+  @apply w-full h-2 bg-white/20 rounded-lg appearance-none cursor-pointer;
 }
 
 .timer-slider::-webkit-slider-thumb {
@@ -548,7 +532,8 @@ a.wiki-link--available {
 }
 
 .timer-slider-labels {
-  @apply flex justify-between text-xs text-secondary-accent;
+  @apply flex justify-between text-xs mt-1;
+  color: #6b7280; /* Medium gray for better contrast */
 }
 
 .slider {
@@ -621,40 +606,36 @@ a.wiki-link--available {
 }
 
 .timer-input-container {
-  @apply space-y-2;
+  @apply flex items-center justify-center gap-1 mb-4 bg-white/10 p-3 rounded-lg border border-white/20;
 }
 
 .timer-input-group {
-  @apply flex items-center gap-2;
+  @apply flex-1 text-center;
 }
 
 .timer-input {
-  @apply w-16 px-2 py-1 text-center border border-secondary rounded;
+  @apply w-full text-2xl font-mono font-bold text-center bg-transparent border-none rounded focus:outline-none focus:bg-white/10 focus:border-white/20;
+  color: #1f2937; /* Dark gray for better contrast */
 }
 
 .timer-separator {
-  @apply text-secondary-accent;
+  @apply text-2xl font-mono font-bold;
+  color: #1f2937; /* Dark gray for better contrast */
 }
 
 .timer-controls-container {
-  @apply flex gap-2;
+  @apply flex mb-2 gap-2 justify-center;
 }
 
 .timer-btn {
-  @apply px-4 py-2 gap-3 font-medium rounded-full;
+  @apply px-4 py-2 gap-3 min-h-12 min-w-15 md:min-w-30 text-primary-dark font-medium rounded-full flex items-center justify-center;
 }
 
-.timer-start-btn {
-  @apply bg-green-600 text-white hover:bg-green-700;
+.timer-btn:hover,
+.timer-btn:focus-visible {
+  @apply bg-white/20 border-white/30 transform -translate-y-px shadow-md;
 }
 
-.timer-pause-btn {
-  @apply bg-yellow-600 text-white hover:bg-yellow-700;
-}
-
-.timer-reset-btn {
-  @apply bg-secondary text-primary-dark hover:bg-secondary-accent;
-}
 
 /* ===== RECIPE SHARING ===== */
 .recipe-sharing {

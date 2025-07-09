@@ -174,30 +174,30 @@ function updateUI(): void {
       : 'Avaa ajastin';
     }
     
-  // Update mobile timer
-    const mobileTimerBtn = document.getElementById('kitchen-timer');
-    if (mobileTimerBtn) {
-      const svgElement = mobileTimerBtn.querySelector('svg');
+  // Update timer button
+    const timerBtn = document.getElementById('timer-btn');
+    if (timerBtn) {
+      const svgElement = timerBtn.querySelector('svg');
       if (svgElement) {
       if (timerState.isRunning) {
           svgElement.style.display = 'none';
-          let timerText = mobileTimerBtn.querySelector('.mobile-timer-text');
+          let timerText = timerBtn.querySelector('.timer-text');
           if (!timerText) {
             timerText = document.createElement('span');
-            timerText.className = 'mobile-timer-text text-sm font-mono font-bold';
-            mobileTimerBtn.appendChild(timerText);
+            timerText.className = 'timer-text text-sm font-mono font-bold';
+            timerBtn.appendChild(timerText);
           }
           timerText.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
         } else {
           svgElement.style.display = 'block';
-        mobileTimerBtn.querySelector('.mobile-timer-text')?.remove();
+        timerBtn.querySelector('.timer-text')?.remove();
           }
         }
     
-    mobileTimerBtn.classList.toggle('timer-active', timerState.isRunning);
+    timerBtn.classList.toggle('timer-active', timerState.isRunning);
   }
   
-  // Dispatch timer state change event for dock integration
+  // Dispatch timer state change event for top navigation integration
   document.dispatchEvent(new CustomEvent('timerStateChanged', {
     detail: {
       isRunning: timerState.isRunning,

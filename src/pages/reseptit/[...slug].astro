@@ -107,7 +107,7 @@ const {
   <div id="recipe-overlay-nav" class="recipe-overlay-nav">
     <div class="overlay-nav-left">
       <button 
-        id="mobile-timer-btn"
+        id="timer-btn"
         popovertarget="timer-popover"
         class="top-nav-btn timer-btn"
         aria-label="Keittiöajastin"
@@ -115,7 +115,7 @@ const {
         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
         </svg>
-        <span class="mobile-timer-text"></span>
+        <span class="timer-text"></span>
       </button>
     </div>
 
@@ -383,30 +383,12 @@ const {
   <div 
     id="navigation-popover"
     popover="auto"
-    class="navigation-popover bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm"
+    class="navigation-popover"
     role="dialog"
-    aria-labelledby="navigation-popover-title"
   >
-    <!-- Popover Header -->
-    <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
-      <h2 id="navigation-popover-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
-        Pikasiirtymä
-      </h2>
-      <button 
-        class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
-        style="outline-color: var(--color-primary-accent);"
-        popovertarget="navigation-popover"
-        popovertargetaction="hide"
-        aria-label="Sulje"
-      >
-        <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
 
     <!-- Popover Content -->
-    <div class="popover-content p-4">
+    <div class="popover-content">
       <div class="sidebar-card-content">
         <ul>
           {/* Main sections - Valmistus, Ohje, and instruction sections */}
@@ -474,45 +456,42 @@ const {
   <div 
     id="timer-popover"
     popover="auto"
-    class="timer-popover timer-popover-positioned bg-primary-light border border-secondary rounded-xl shadow-prominent max-w-md w-full max-h-[80vh] overflow-hidden backdrop-blur-sm popover-backdrop popover-smooth-transition"
+    class="timer-popover"
     role="dialog"
     aria-labelledby="timer-popover-title"
-    position-anchor="--timer-anchor"
-    position-area="center"
   >
-    <!-- Popover Header -->
-    <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
-      <h2 id="timer-popover-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
-        Keittiöajastin
-      </h2>
-      <button 
-        class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
-        style="outline-color: var(--color-primary-accent);"
-        popovertarget="timer-popover"
-        popovertargetaction="hide"
-        aria-label="Sulje"
-      >
-        <svg class="popover-close-icon size-5 text-secondary-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-        </svg>
-      </button>
-    </div>
 
     <!-- Popover Content -->
-    <div class="popover-content p-4 space-y-4">
+    <div class="popover-content">
       <!-- Timer display/input -->
-      <div class="flex items-center justify-center gap-1 mb-4 bg-secondary-light p-3 rounded-lg border border-secondary-light">
-        <div class="flex-1 text-center">
-          <input id="timer-minutes-input" type="number" min="0" max="999" value="5" class="w-full text-2xl font-mono font-bold text-center bg-transparent border-none rounded text-primary-dark focus:outline-none focus:bg-secondary-light focus:border-secondary">
+      <div class="timer-input-container">
+        <div class="timer-input-group">
+          <input id="timer-minutes-input" type="number" min="0" max="999" value="5" class="timer-input">
         </div>
-        <span class="text-2xl font-mono font-bold text-primary-dark">:</span>
-        <div class="flex-1 text-center">
-          <input id="timer-seconds-input" type="number" min="0" max="59" value="00" class="w-full text-2xl font-mono font-bold text-center bg-transparent border-none rounded text-primary-dark focus:outline-none focus:bg-secondary-light focus:border-secondary">
+        <span class="timer-separator">:</span>
+        <div class="timer-input-group">
+          <input id="timer-seconds-input" type="number" min="0" max="59" value="00" class="timer-input">
         </div>
       </div>
       
+      <!-- Timer controls -->
+      <div class="timer-controls-container">
+        <button id="reset-timer" class="timer-btn timer-reset-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-rotate-ccw"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+          Nollaa
+        </button>
+        <button id="start-timer" class="timer-btn timer-start-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play"><polygon points="6 3 20 12 6 21 6 3"/></svg>
+          Käynnistä
+        </button>
+        <button id="pause-timer" class="timer-btn timer-pause-btn" style="display: none;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-pause"><rect x="14" y="4" width="4" height="16" rx="1"/><rect x="6" y="4" width="4" height="16" rx="1"/></svg>
+          Tauko
+        </button>
+      </div>
+            
       <!-- Timer slider -->
-      <div id="timer-slider-container" class="mb-4 w-full">
+      <div id="timer-slider-container" class="timer-slider-container">
         <input 
           id="timer-slider" 
           type="range" 
@@ -520,35 +499,14 @@ const {
           max="90" 
           step="1" 
           value="5" 
-          class="w-full h-2 bg-secondary-light rounded-lg appearance-none cursor-pointer slider"
+          class="timer-slider"
           title="Valitse aika 5-90 minuutin väliltä"
         >
-        <div id="timer-slider-labels" class="flex justify-between text-xs text-primary-dark mt-1">
+        <div id="timer-slider-labels" class="timer-slider-labels">
           <span>5 min</span>
           <span>45 min</span>
           <span>1h 30min</span>
         </div>
-      </div>
-      
-      <!-- Timer controls -->
-      <div class="flex flex-col gap-2 justify-center items-center w-full timer-controls-container">
-        <button id="start-timer" class="timer-btn timer-start-btn" title="Käynnistä ajastin">
-          <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M8 5v14l11-7z"/>
-          </svg>
-          Käynnistä
-        </button>
-        <button id="pause-timer" class="timer-btn timer-pause-btn" title="Pysäytä ajastin" style="display: none;">
-          <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 24 24">
-            <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
-          </svg>
-          Pysäytä
-        </button>
-        <button id="reset-timer" class="timer-btn timer-reset-btn" title="Nollaa ajastin" style="display: none;">
-          <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
-          </svg>
-        </button>
       </div>
     </div>
   </div>
