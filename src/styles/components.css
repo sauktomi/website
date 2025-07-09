@@ -138,6 +138,12 @@ button {
   @apply text-base font-mono h-full text-secondary-accent hover:text-primary-dark opacity-80; 
 }
 
+/* Comma separation for dietary tags */
+.dietary-tags .comma-separated:not(:last-child)::after {
+  content: ",";
+  margin-right: 0.5rem;
+}
+
 /* ===== VARIANT STYLING ===== */
 .variant-list { @apply mt-2 ml-4 space-y-1 border-l-2 border-secondary-light pl-4; }
 .variant-item { @apply block border border-transparent rounded-lg py-2 px-3; }
@@ -463,6 +469,10 @@ a.wiki-link--available {
   @apply space-y-2 list-none;
 }
 
+.sidebar-card-content ul li ul {
+  @apply mt-2 ml-4;
+}
+
 /* ===== TIMER COMPONENTS ===== */
 .timer-popover {
   @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent lg:w-query-lg w-full max-h-[80vh] overflow-hidden;
@@ -490,7 +500,7 @@ a.wiki-link--available {
 }
 
 .timer-slider-container {
-  @apply w-5/6;
+  @apply w-5/6 max-w-query-sm;
 }
 
 .timer-slider-label {

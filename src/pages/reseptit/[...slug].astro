@@ -120,7 +120,7 @@ const {
     </div>
 
     <div class="overlay-nav-center">
-      <span class="overlay-nav-title">{title}</span>
+      <a href="#top" class="overlay-nav-title">{title}</a>
     </div>
 
     <div class="overlay-nav-right">
@@ -148,24 +148,24 @@ const {
       <!-- Enhanced recipe header -->
       <header>
           <div class="header-container text-secondary-accent hover:text-primary-dark">
-            <span class="item-number">
-              #{enhancedData.formattedRecipeNumber}
-            </span>
+            <div class="flex items-center gap-16">
+              <span class="item-number text-secondary-accent">
+                #{enhancedData.formattedRecipeNumber}
+              </span>
 
-            <!-- Dietary information -->
-            {dietary && (
-              Array.isArray(dietary) 
-                ? dietary.length > 0 
-                : dietary.type?.length > 0
-            ) && (
-              <div class="dietary-tags">
-                {(Array.isArray(dietary) ? dietary : dietary.type || []).map((diet: string) => (
-                  <span class="dietary-tag">
-                    {diet}
-                  </span>
-                ))}
-              </div>
-            )}
+              <!-- Dietary information -->
+              {dietary && (
+                Array.isArray(dietary) 
+                  ? dietary.length > 0 
+                  : dietary.type?.length > 0
+              ) && (
+                <div class="dietary-tags">
+                  {(Array.isArray(dietary) ? dietary : dietary.type || []).map((diet: string) => (
+                    <span class="dietary-tag comma-separated">{diet}</span>
+                  ))}
+                </div>
+              )}
+            </div>
             
             <button onclick="window.print()" class="p-2 text-secondary-accent hover:text-primary-dark" aria-label="Tulosta resepti">
               <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -405,16 +405,19 @@ const {
             <a href="#ohje">
               Ohje
             </a>
+            {/* Instruction sections */}
+            {instructionSections.length > 0 && (
+              <ul>
+                {instructionSections.map((section, index) => (
+                  <li>
+                    <a href={`#${section.id}`}>
+                      {index + 1}. {section.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            )}
           </li>
-          
-          {/* Instruction sections */}
-          {instructionSections.length > 0 && instructionSections.map((section, index) => (
-            <li>
-              <a href={`#${section.id}`}>
-                {index + 1}. {section.text}
-              </a>
-            </li>
-          ))}
           
           {/* Other headings */}
           {groupedHeadings.filter(heading => 
