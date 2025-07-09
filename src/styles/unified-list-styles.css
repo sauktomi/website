@@ -43,13 +43,13 @@
 }
 
 /* Column items with responsive spacing */
-.list-item-wrapper {
-  @apply mb-2 md:mb-3 lg:mb-4;
+.category-items {
+  @apply space-y-4;
 }
 
 /* ===== CATEGORY SECTION STYLING ===== */
 .category-section {
-  @apply space-y-4 md:space-y-5 lg:space-y-6 min-w-80 max-w-128 flex-1;
+  @apply space-y-4 min-w-80 max-w-128 flex-1;
 }
 
 
@@ -218,35 +218,10 @@
   @apply space-y-8 md:space-y-10 lg:space-y-12;
 }
 
-/* ===== MOBILE CATEGORY BUTTONS ===== */
-/* Mobile category filter buttons container */
-.mobile-category-buttons {
-  @apply sm:hidden mt-4 mb-6;
-}
-
-.mobile-category-buttons-container {
-  @apply flex gap-2;
-}
-
-/* Individual mobile category button */
-.mobile-category-button {
-  @apply flex-1 px-3 py-2 md:px-4 md:py-3 rounded-lg border border-secondary text-primary-dark transition-colors text-sm md:text-base;
-}
-
-.mobile-category-button:hover {
-  @apply bg-secondary-light;
-}
-
-/* ===== CATEGORY ITEMS ===== */
-/* Category items container with responsive spacing */
-.category-items {
-  @apply space-y-3 md:space-y-4;
-}
-
 /* ===== ITEM CONTENT ===== */
 /* Item title with Tailwind responsive typography */
 .item-title {
-  @apply font-medium text-primary-dark mb-2 text-base md:text-lg lg:text-xl;
+  @apply font-medium text-primary-dark mb-1 text-base;
 }
 
 /* Item description with Tailwind responsive typography */
@@ -307,12 +282,7 @@
 
 /* Enhanced list item styling for recipe cards */
 .list-item.group {
-  @apply block text-left py-2;
-}
-
-.list-item.group:hover,
-.list-item.group:focus-visible {
-  @apply -translate-y-0.5 transition-transform duration-200;
+  @apply block text-left;
 }
 
 /* ===== SKIP LINK ===== */
@@ -490,7 +460,7 @@
 }
 
 .hero-navigation {
-  @apply w-full md:max-w-[45%] lg:max-w-lg;
+  @apply w-full max-w-64 md:max-w-sm lg:max-w-lg;
 }
 
 .hero-button {

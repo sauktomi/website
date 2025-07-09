@@ -116,7 +116,7 @@ const typeOptions = [
       Siirry sisältöön
     </a>
 
-            <div class="page-container">
+    <div class="page-container">
       <!-- Header -->
       <header class="page-header">
         <h1 class="hero-title">
@@ -137,7 +137,7 @@ const typeOptions = [
           filterSections={[
             {
               id: 'type',
-              title: 'Tyyppi',
+              title: 'Kategoriat',
               icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
               type: 'multi' as const,
               options: typeOptions.map(type => ({
@@ -173,21 +173,6 @@ const typeOptions = [
           client:visible
         />
 
-        <!-- Mobile Category Filter Buttons -->
-        <div class="mobile-category-buttons">
-          <div class="mobile-category-buttons-container">
-            {typeOptions.map(type => (
-              <button
-                class="mobile-category-button"
-                data-type={type.id}
-                aria-label={`Näytä ${type.name} kohteet`}
-              >
-                {type.name}
-              </button>
-            ))}
-          </div>
-        </div>
-
         <!-- No Results -->
         <div id="no-results" class="no-results" role="status" aria-live="polite">
           <div class="no-results-content">
@@ -207,7 +192,7 @@ const typeOptions = [
             
             return (
               <div class="category-section" data-type={type.id}>
-                <h2>
+                <h2 id={type.id}>
                   {type.name}
                 </h2>
                 <div class="category-items">

@@ -84,6 +84,8 @@
     text-wrap: balance;
   }
 
+  h2 { @apply text-2xl; }
+
   /* ===== TYPOGRAPHY WITH TAILWIND INTEGRATION ===== */
   .lead { @apply text-lg md:text-xl font-light mb-8 text-secondary-accent; }
   .caption { @apply text-sm text-secondary-accent uppercase font-medium; }

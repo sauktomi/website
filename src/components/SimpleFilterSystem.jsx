@@ -60,7 +60,7 @@ import { useEffect, useRef, useState } from 'preact/hooks';
 export default function SimpleFilterSystem({ 
   config,
   searchPlaceholder = "Etsi...",
-  filterSections = [],
+  filterSections = []
 }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilters, setActiveFilters] = useState(new Map());
@@ -215,49 +215,6 @@ export default function SimpleFilterSystem({
     setSearchTerm('');
     applyFilters('', new Map());
   };
-
-  // Initialize mobile category buttons
-  useEffect(() => {
-    const categoryButtons = document.querySelectorAll('.mobile-category-button');
-    
-    categoryButtons.forEach(button => {
-      button.addEventListener('click', () => {
-        const categoryId = button.getAttribute('data-category') || button.getAttribute('data-type');
-        if (!categoryId) return;
-        
-        // Remove active state from all buttons
-        categoryButtons.forEach(btn => btn.classList.remove('bg-secondary-light', 'border-primary-accent'));
-        
-        // Add active state to clicked button
-        button.classList.add('bg-secondary-light', 'border-primary-accent');
-        
-        // Show/hide sections based on category
-        const sections = document.querySelectorAll('.category-section');
-        sections.forEach(section => {
-          const sectionElement = section;
-          const sectionCategory = sectionElement.getAttribute('data-category') || sectionElement.getAttribute('data-type');
-          if (sectionCategory === categoryId) {
-            sectionElement.style.display = '';
-          } else {
-            sectionElement.style.display = 'none';
-          }
-        });
-        
-        // Update results count
-
-
-        
-        // Update the visible count state
-        // setVisibleCount(visibleCount); // This line is removed as per the edit hint
-      });
-    });
-    
-    // Set first button as active by default
-    const firstButton = categoryButtons[0];
-    if (firstButton) {
-      firstButton.classList.add('bg-secondary-light', 'border-primary-accent');
-    }
-  }, []);
 
   // Handle popover state for filter buttons
   useEffect(() => {
