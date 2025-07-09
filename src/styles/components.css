@@ -463,16 +463,6 @@ a.wiki-link--available {
   @apply space-y-2 list-none;
 }
 
-/* Pin button for navigation popover */
-.pin-button {
-  @apply inline-flex items-center justify-center size-8 rounded transition-colors duration-200 text-secondary-accent;
-  vertical-align: middle;
-  margin-right: 2rem;
-}
-.pin-button svg {
-  @apply size-touch-min;
-}
-
 /* ===== TIMER COMPONENTS ===== */
 .timer-popover {
   @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent lg:w-query-lg w-full max-h-[80vh] overflow-hidden;

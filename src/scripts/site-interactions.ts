@@ -29,6 +29,8 @@
  * @version 2.0.0
  */
 
+import { throttle, executeWhenIdle } from '../utils/performance.ts';
+
 /**
  * Site-wide interaction enhancements
  * Optimized for performance and progressive enhancement
@@ -37,13 +39,6 @@
 interface GridConfig {
   selectors: string;
   columns: number;
-}
-
-declare global {
-  interface Window {
-    requestIdleCallback: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
-    cancelIdleCallback: (id: number) => void;
-  }
 }
 
 class SiteInteractions {
@@ -57,30 +52,6 @@ class SiteInteractions {
     this.handleAnchorClick = null;
     
     this.init();
-  }
-
-  // Utilities
-  static debounce<T extends (...args: any[]) => any>(func: T, wait: number): (...args: Parameters<T>) => void {
-    let timeout: NodeJS.Timeout;
-    return function executedFunction(this: unknown, ...args: Parameters<T>) {
-      const later = () => {
-        clearTimeout(timeout);
-        func.apply(this, args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
-
-  static throttle<T extends (...args: any[]) => any>(func: T, limit: number): (...args: Parameters<T>) => void {
-    let inThrottle: boolean;
-    return function executedFunction(this: unknown, ...args: Parameters<T>) {
-      if (!inThrottle) {
-        func.apply(this, args);
-        inThrottle = true;
-        setTimeout(() => inThrottle = false, limit);
-      }
-    };
   }
 
   // Enhanced smooth scrolling
@@ -296,7 +267,7 @@ class SiteInteractions {
     });
 
     // Update grid columns on resize
-    window.addEventListener('resize', SiteInteractions.throttle(() => {
+    window.addEventListener('resize', throttle(() => {
       gridConfig.columns = this.getGridColumns();
     }, 250));
   }
@@ -347,11 +318,7 @@ class SiteInteractions {
       this.handleReducedMotion();
     };
 
-    if (window.requestIdleCallback) {
-      window.requestIdleCallback(initFeatures, { timeout: 2000 });
-    } else {
-      setTimeout(initFeatures, 100);
-    }
+    executeWhenIdle(initFeatures, 2000);
   }
 
   // Cleanup method for SPA navigation

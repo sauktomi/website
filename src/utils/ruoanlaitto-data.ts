@@ -191,7 +191,7 @@ export interface EnhancedRecipeData {
 
 // Constants
 export const ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZÅÄÖ'.split('');
-export const SEARCH_DEBOUNCE_MS = 300;
+
 export const MAX_TOP_TAGS = 8;
 export const MIN_SEARCH_LENGTH = 3;
 

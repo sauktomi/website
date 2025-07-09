@@ -50,7 +50,7 @@
 
 /* Modern instruction steps container */
 .recipe-body .recipe-instruction-steps {
-  @apply space-y-8 my-12 p-0;
+  @apply space-y-8 p-0;
   counter-reset: instruction-counter;
 }
 

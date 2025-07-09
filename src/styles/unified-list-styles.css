@@ -119,7 +119,6 @@
 }
 
 .ingredient-popover::backdrop {
-  @apply bg-black/20 backdrop-blur-sm;
   background: rgba(0, 0, 0, 0.5);
 }
 

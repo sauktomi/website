@@ -25,10 +25,6 @@ export default function initBaseLayout() {
       await import('./recipe-interactions.ts'); // auto-initializes
       await import('./layout/popover-system.ts').then(module => module.default.init());
     }
-    
-    if (path.includes('/hakemisto')) {
-      await import('./smart-preloader.ts'); // auto-initializes
-    }
   };
 
   // Initialize on DOM ready
@@ -43,9 +39,6 @@ export default function initBaseLayout() {
     // Cleanup global managers if they exist
     if (window.globalRecipeManager) {
       window.globalRecipeManager.cleanup();
-    }
-    if (window.smartIngredientPreloader) {
-      window.smartIngredientPreloader.cleanup();
     }
   });
 

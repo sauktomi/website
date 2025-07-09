@@ -34,11 +34,7 @@
 // Extracted from src/pages/reseptit/[...slug].astro
 // Optimized for performance with lazy initialization and debounced operations
 
-interface EventListenerTracker {
-  element: Element | Document | Window;
-  event: string;
-  handler: EventListener;
-}
+import { debounce, executeWhenIdle, cancelIdleExecution } from '../utils/performance.ts';
 
 interface NavigationHandler {
   event: string;
@@ -55,8 +51,6 @@ declare global {
     globalRecipeManager: RecipeInteractionManager | null;
     RecipeSharing?: { init(): void };
     RecipeNavigation?: { init(): void };
-    requestIdleCallback: (callback: IdleRequestCallback, options?: IdleRequestOptions) => number;
-    cancelIdleCallback: (id: number) => void;
   }
   
   interface HTMLElement {
@@ -71,7 +65,6 @@ class RecipeInteractionManager {
   private isInitialLoad: boolean;
   private handleResize: EventListener | null;
   private timeoutIds: number[];
-  private eventListeners: EventListenerTracker[];
   private idleCallbackIds: number[];
   private isInitialized: boolean;
 
@@ -82,7 +75,6 @@ class RecipeInteractionManager {
     this.isInitialLoad = true;
     this.handleResize = null;
     this.timeoutIds = [];
-    this.eventListeners = [];
     this.idleCallbackIds = [];
     this.isInitialized = false;
   }
@@ -115,31 +107,16 @@ class RecipeInteractionManager {
       this.initializeModules();
     };
 
-    if (window.requestIdleCallback) {
-      const idleId = window.requestIdleCallback(initFeatures, { timeout: 2000 });
+    const idleId = executeWhenIdle(initFeatures, 2000);
+    if (idleId) {
       this.idleCallbackIds.push(idleId);
-    } else {
-      const timeoutId = window.setTimeout(initFeatures, 100);
-      this.timeoutIds.push(timeoutId);
     }
   }
 
   // Debounced save operation to reduce localStorage writes
-  private debouncedSave = this.debounce(() => {
+  private debouncedSave = debounce(() => {
     this.saveCompletionStates();
   }, 300);
-
-  private debounce<T extends (...args: any[]) => any>(func: T, wait: number): (...args: Parameters<T>) => void {
-    let timeout: NodeJS.Timeout;
-    return function executedFunction(this: unknown, ...args: Parameters<T>) {
-      const later = () => {
-        clearTimeout(timeout);
-        func.apply(this, args);
-      };
-      clearTimeout(timeout);
-      timeout = setTimeout(later, wait);
-    };
-  }
 
   private loadCompletionStates(): void {
     try {
@@ -253,17 +230,10 @@ class RecipeInteractionManager {
             }
             
             // Defer heavy operations
-            if ('requestIdleCallback' in window) {
-              (window as any).requestIdleCallback(() => {
-                this.debouncedSave();
-                this.updateStepProgress();
-              }, { timeout: 100 });
-            } else {
-              setTimeout(() => {
-                this.debouncedSave();
-                this.updateStepProgress();
-              }, 0);
-            }
+            executeWhenIdle(() => {
+              this.debouncedSave();
+              this.updateStepProgress();
+            }, 100);
           });
         });
       });
@@ -783,19 +753,9 @@ class RecipeInteractionManager {
     }
     
     // Cancel idle callbacks
-    if (this.idleCallbackIds && window.cancelIdleCallback) {
-      this.idleCallbackIds.forEach(id => window.cancelIdleCallback(id));
+    if (this.idleCallbackIds) {
+      this.idleCallbackIds.forEach(id => cancelIdleExecution(id));
       this.idleCallbackIds = [];
-    }
-    
-    // Remove any other event listeners that were added
-    if (this.eventListeners) {
-      this.eventListeners.forEach(({ element, event, handler }) => {
-        if (element && element.removeEventListener) {
-          element.removeEventListener(event, handler);
-        }
-      });
-      this.eventListeners = [];
     }
     
     this.isInitialized = false;
