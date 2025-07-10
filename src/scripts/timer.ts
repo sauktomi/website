@@ -21,7 +21,6 @@ let timerState: TimerState = {
 };
 
 let intervalId: number | null = null;
-let timerLinksListenerAdded = false;
 let isInitialized = false;
 
 // DOM elements
@@ -37,8 +36,6 @@ let triggerText: HTMLElement | null = null;
 // Initialize timer
 function initTimer(): void {
   setupElements();
-  
-  // Always set up event listeners to ensure they work after view transitions
   setupEventListeners();
   
   // Only restore state and mark as initialized on first run
@@ -81,17 +78,18 @@ function setupEventListeners(): void {
   const formatSecondsInput = () => formatInput(secondsInput!);
   
   if (minutesInput) {
+    minutesInput.removeEventListener('input', validateMinutesInput);
+    minutesInput.removeEventListener('blur', formatMinutesInput);
     minutesInput.addEventListener('input', validateMinutesInput);
     minutesInput.addEventListener('blur', formatMinutesInput);
   }
   
   if (secondsInput) {
+    secondsInput.removeEventListener('input', validateSecondsInput);
+    secondsInput.removeEventListener('blur', formatSecondsInput);
     secondsInput.addEventListener('input', validateSecondsInput);
     secondsInput.addEventListener('blur', formatSecondsInput);
   }
-  
-  // Timer links - use event delegation (already set up globally)
-  // No need to re-add document listener as it's already there
 }
 
 function startTimer(): void {
@@ -120,10 +118,10 @@ function startTimer(): void {
     if (timerState.totalSeconds > 0) {
       timerState.totalSeconds--;
       updateUI();
-      } else {
+    } else {
       handleComplete();
-      }
-    }, 1000);
+    }
+  }, 1000);
 }
 
 function pauseTimer(): void {
@@ -161,7 +159,7 @@ function handleComplete(): void {
   if (intervalId) {
     clearInterval(intervalId);
     intervalId = null;
-    }
+  }
     
   playSound();
   showNotification();
@@ -170,20 +168,22 @@ function handleComplete(): void {
 }
 
 function playSound(): void {
-    try {
-    new Audio('/sounds/timer-alarm.mp3').play().catch(() => {});
-    } catch (error) {
+  try {
+    new Audio('/sounds/timer-alarm.mp3').play().catch(() => {
+      // Silent fallback if audio fails
+    });
+  } catch (error) {
     // Silent fallback
   }
-    }
+}
 
 function showNotification(): void {
-    if ('Notification' in window && Notification.permission === 'granted') {
-      new Notification('Keittiöajastin', {
-        body: 'Aika on umpeutunut!',
-        icon: '/icons/timer-icon.png'
-      });
-    }
+  if ('Notification' in window && Notification.permission === 'granted') {
+    new Notification('Keittiöajastin', {
+      body: 'Aika on umpeutunut!',
+      icon: '/icons/timer-icon.png'
+    });
+  }
 }
 
 function updateUI(): void {
@@ -200,36 +200,36 @@ function updateUI(): void {
   if (!triggerText) triggerText = document.querySelector('.timer-trigger-text');
   if (!timerTrigger) timerTrigger = document.getElementById('timer-trigger');
     
-    // Update inputs
+  // Update inputs
   if (minutesInput) minutesInput.value = minutes.toString();
   if (secondsInput) secondsInput.value = seconds.toString().padStart(2, '0');
     
-    // Update trigger text
+  // Update trigger text
   if (triggerText) {
     triggerText.textContent = timerState.isRunning 
       ? `${minutes}:${seconds.toString().padStart(2, '0')}`
       : 'Avaa ajastin';
-    }
+  }
     
   // Update timer button
-    const timerBtn = document.getElementById('timer-btn');
-    if (timerBtn) {
-      const svgElement = timerBtn.querySelector('svg');
-      if (svgElement) {
+  const timerBtn = document.getElementById('timer-btn');
+  if (timerBtn) {
+    const svgElement = timerBtn.querySelector('svg');
+    if (svgElement) {
       if (timerState.isRunning) {
-          svgElement.style.display = 'none';
-          let timerText = timerBtn.querySelector('.timer-text');
-          if (!timerText) {
-            timerText = document.createElement('span');
-            timerText.className = 'timer-text text-sm font-mono font-bold';
-            timerBtn.appendChild(timerText);
-          }
-          timerText.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
-        } else {
-          svgElement.style.display = 'block';
-        timerBtn.querySelector('.timer-text')?.remove();
-          }
+        svgElement.style.display = 'none';
+        let timerText = timerBtn.querySelector('.timer-text');
+        if (!timerText) {
+          timerText = document.createElement('span');
+          timerText.className = 'timer-text text-sm font-mono font-bold';
+          timerBtn.appendChild(timerText);
         }
+        timerText.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+      } else {
+        svgElement.style.display = 'block';
+        timerBtn.querySelector('.timer-text')?.remove();
+      }
+    }
     
     timerBtn.classList.toggle('timer-active', timerState.isRunning);
   }
@@ -252,12 +252,12 @@ function updateUI(): void {
     const shouldShow = !timerState.isRunning && 
       (timerState.totalSeconds !== 300 || timerState.hasCompleted);
     resetBtn.style.display = shouldShow ? 'flex' : 'none';
-    }
+  }
 
   // Update trigger button
   if (timerTrigger) {
     timerTrigger.classList.toggle('timer-active', timerState.isRunning);
-    }
+  }
 
   // Update slider
   if (timerSlider) {
@@ -267,8 +267,8 @@ function updateUI(): void {
     const container = document.getElementById('timer-slider-container');
     if (container) {
       container.style.display = timerState.isRunning ? 'none' : 'block';
-      }
     }
+  }
 }
 
 function updateSliderBackground(): void {
@@ -277,10 +277,10 @@ function updateSliderBackground(): void {
   const min = parseInt(timerSlider.min) || 5;
   const max = parseInt(timerSlider.max) || 90;
   const val = parseInt(timerSlider.value) || min;
-    const percent = ((val - min) / (max - min)) * 100;
+  const percent = ((val - min) / (max - min)) * 100;
   
-    const accent = 'var(--color-secondary-accent, #f59e42)';
-    const base = 'var(--color-secondary-light, #f3f4f6)';
+  const accent = 'var(--color-secondary-accent, #f59e42)';
+  const base = 'var(--color-secondary-light, #f3f4f6)';
   timerSlider.style.background = `linear-gradient(to right, ${accent} 0%, ${accent} ${percent}%, ${base} ${percent}%, ${base} 100%)`;
 }
 
@@ -313,39 +313,39 @@ function formatInput(input: HTMLInputElement): void {
 }
 
 function parseTimeText(timeText: string): number {
-    const text = timeText.trim().toLowerCase();
-    let totalSeconds = 0;
-    
+  const text = timeText.trim().toLowerCase();
+  let totalSeconds = 0;
+  
   // Hours (t = tunti)
-    const hourMatch = text.match(/(\d+(?:[.,]\d+)?)\s*t/i);
-    if (hourMatch) {
-      const hours = parseFloat(hourMatch[1].replace(',', '.'));
-      totalSeconds += hours * 3600;
-    }
-    
+  const hourMatch = text.match(/(\d+(?:[.,]\d+)?)\s*t/i);
+  if (hourMatch) {
+    const hours = parseFloat(hourMatch[1].replace(',', '.'));
+    totalSeconds += hours * 3600;
+  }
+  
   // Minutes
-    const minuteMatch = text.match(/(\d+)\s*min/i);
-    if (minuteMatch) {
-      totalSeconds += parseInt(minuteMatch[1]) * 60;
-    }
-    
+  const minuteMatch = text.match(/(\d+)\s*min/i);
+  if (minuteMatch) {
+    totalSeconds += parseInt(minuteMatch[1]) * 60;
+  }
+  
   // Seconds
-    const secondMatch = text.match(/(\d+)\s*s/i);
-    if (secondMatch) {
-      totalSeconds += parseInt(secondMatch[1]);
-    }
-    
+  const secondMatch = text.match(/(\d+)\s*s/i);
+  if (secondMatch) {
+    totalSeconds += parseInt(secondMatch[1]);
+  }
+  
   // Ranges (e.g., "5-10 minuuttia")
-    if (totalSeconds === 0) {
-      const rangeMatch = text.match(/(\d+)-(\d+)/);
-      if (rangeMatch) {
-        const min = parseInt(rangeMatch[1]);
-        const max = parseInt(rangeMatch[2]);
+  if (totalSeconds === 0) {
+    const rangeMatch = text.match(/(\d+)-(\d+)/);
+    if (rangeMatch) {
+      const min = parseInt(rangeMatch[1]);
+      const max = parseInt(rangeMatch[2]);
       totalSeconds = Math.floor((min + max) / 2) * 60;
-      }
     }
-    
-    return Math.max(300, totalSeconds);
+  }
+  
+  return Math.max(300, totalSeconds);
 }
 
 function startTimerFromText(timeText: string, triggerElement?: HTMLElement): void {
@@ -361,6 +361,7 @@ function startTimerFromText(timeText: string, triggerElement?: HTMLElement): voi
   startTimer();
   
   if (triggerElement) {
+    // Remove active class from all timer links
     document.querySelectorAll('.timer-link.active-timer-link')
       .forEach(link => link.classList.remove('active-timer-link'));
     triggerElement.classList.add('active-timer-link');
@@ -372,7 +373,7 @@ function saveState(): void {
     localStorage.setItem('recipeTimerState', JSON.stringify(timerState));
   } catch (error) {
     // Silent fallback
-    }
+  }
 }
 
 function restoreState(): void {
@@ -411,85 +412,73 @@ function restoreState(): void {
   }
 }
 
-// Global function for timer links
-if (typeof window !== 'undefined') {
-  (window as any).startTimerFromText = startTimerFromText;
-    }
-
-// Initialize when DOM is ready
-if (typeof document !== 'undefined') {
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTimer);
-  } else {
-    initTimer();
-  }
+// Enhanced timer links handler with better error handling
+function handleTimerLinkClick(e: Event): void {
+  const target = e.target as HTMLElement;
+  const timerLink = target.closest('.timer-link') as HTMLElement;
   
-  // Reinitialize on view transitions (Astro)
-  document.addEventListener('astro:page-load', initTimer);
+  if (!timerLink) return;
   
-  // Set up timer links event listener once
-  if (!timerLinksListenerAdded) {
-    document.addEventListener('click', (e) => {
-      const target = e.target as HTMLElement;
-      const timerLink = target.closest('.timer-link');
-      
-      if (timerLink && timerLink instanceof HTMLElement) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
-        const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
-        
-        if (totalMinutes > 0) {
-          const totalSeconds = Math.round(totalMinutes * 60);
-          timerState.totalSeconds = totalSeconds;
-          updateUI();
-          startTimer();
-          
-          // Open the timer popover
-          const timerPopover = document.getElementById('timer-popover');
-          if (timerPopover && 'showPopover' in timerPopover) {
-            (timerPopover as any).showPopover();
-          }
-        } else {
-          // Fallback to parsing time text
-          startTimerFromText(timeText, timerLink);
-        }
-      }
-    });
-
-    // Add keyboard support for timer links
-    document.addEventListener('keydown', (e) => {
-      const target = e.target as HTMLElement;
-      const timerLink = target.closest('.timer-link');
-      
-      if (timerLink && timerLink instanceof HTMLElement && (e.key === 'Enter' || e.key === ' ')) {
-        e.preventDefault();
-        e.stopPropagation();
-        
-        const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
-        const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
-        
-        if (totalMinutes > 0) {
-          const totalSeconds = Math.round(totalMinutes * 60);
-          timerState.totalSeconds = totalSeconds;
-          updateUI();
-          startTimer();
-          
-          // Open the timer popover
-          const timerPopover = document.getElementById('timer-popover');
-          if (timerPopover && 'showPopover' in timerPopover) {
-            (timerPopover as any).showPopover();
-          }
-        } else {
-          // Fallback to parsing time text
-          startTimerFromText(timeText, timerLink);
-        }
-      }
-    });
+  // Prevent any default behavior
+  e.preventDefault();
+  e.stopPropagation();
+  
+  try {
+    const timeText = timerLink.dataset.timerText || timerLink.textContent?.trim() || '';
+    const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
     
-    timerLinksListenerAdded = true;
+    if (totalMinutes > 0) {
+      const totalSeconds = Math.round(totalMinutes * 60);
+      timerState.totalSeconds = totalSeconds;
+      timerState.hasCompleted = false;
+      updateUI();
+      startTimer();
+      
+      // Open the timer popover if available
+      const timerPopover = document.getElementById('timer-popover');
+      if (timerPopover && 'showPopover' in timerPopover) {
+        (timerPopover as any).showPopover();
+      }
+      
+      // Mark this timer link as active
+      document.querySelectorAll('.timer-link.active-timer-link')
+        .forEach(link => link.classList.remove('active-timer-link'));
+      timerLink.classList.add('active-timer-link');
+      
+    } else if (timeText) {
+      // Fallback to parsing time text
+      startTimerFromText(timeText, timerLink);
+    }
+  } catch (error) {
+    console.warn('Timer link error:', error);
   }
 }
 
-export default { initTimer }; 
+// Global function for timer links (for backward compatibility)
+if (typeof window !== 'undefined') {
+  (window as any).startTimerFromText = startTimerFromText;
+}
+
+// Initialize when DOM is ready
+if (typeof document !== 'undefined') {
+  // Set up timer links event listener with better error handling
+  document.addEventListener('click', handleTimerLinkClick, { 
+    capture: true, // Use capture phase to ensure we catch it first
+    passive: false  // Allow preventDefault
+  });
+  
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initTimer);
+  } else {
+    // Use setTimeout to ensure DOM is fully ready
+    setTimeout(initTimer, 0);
+  }
+  
+  // Reinitialize on view transitions (Astro)
+  document.addEventListener('astro:page-load', () => {
+    // Small delay to ensure DOM is updated
+    setTimeout(initTimer, 10);
+  });
+}
+
+export default { initTimer };

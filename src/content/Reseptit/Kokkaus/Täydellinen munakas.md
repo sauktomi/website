@@ -77,7 +77,7 @@ _Kuva: ._
 
 #### Munaseoksen Valmistelu
 
-1. **Munien Vatkaus**: Riko kananmunat kulhoon. Lisää suola, pippuri ja halutessasi vesi/maito/kerma. Vatkaa munia haarukalla tai pienellä vispilällä kevyesti, mutta perusteellisesti, noin 30-60 sekuntia. Tavoitteena on rikkoa keltuaisen ja valkuaisen rakenne ja sekoittaa ne tasaiseksi massaksi ilman, että seokseen muodostuu liikaa vaahtoa. Seoksen tulisi olla juoksevaa ja yhtenäistä.
+1. **Munien Vatkaus**: Riko kananmunat kulhoon. Lisää suola, pippuri ja halutessasi vesi/maito/kerma. Vatkaa munia haarukalla tai pienellä vispilällä kevyesti, mutta perusteellisesti, noin 30-60 sek. Tavoitteena on rikkoa keltuaisen ja valkuaisen rakenne ja sekoittaa ne tasaiseksi massaksi ilman, että seokseen muodostuu liikaa vaahtoa. Seoksen tulisi olla juoksevaa ja yhtenäistä.
    > **Kriittinen kohta:** Älä vatkaa munia liian voimakkaasti tai liian kauan. Liika ilma tekee munakkaasta sitkeän ja kuivan. Juuri ja juuri sekoittunut, tasainen massa on paras.
    > **Visuaalinen merkki:** Keltuainen ja valkuainen ovat täysin sekoittuneet, mutta seos ei ole vaahtoutunut voimakkaasti. Muutama ilmakupla on ok.
 
@@ -91,8 +91,8 @@ _Kuva: ._
    > **Visuaalinen merkki:** Voi on sulanut, kuohuu kevyesti ja tuoksuu pähkinäiseltä, mutta ei ole palanut.
 
 2. **Munaseoksen Kaataminen Pannulle**: Kaada vatkattu munaseos kerralla kuumalle, voisulalla voidellulle pannulle. Anna seoksen levitä tasaisesti.
-3. **Kypsennyksen Alkuvaihe**: Anna munakkaan hyytyä koskemattomana noin 15-30 sekuntia, kunnes reunat alkavat jähmettyä ja pohja on saanut ohuen, hyytyneen kerroksen. Voit hieman kallistella pannua, jotta raaka munaseos valuu reunoille.
-4. **Sekoittelu ja Hyydyttäminen (Nopea Vaihe)**: Kun reunat ovat hyytyneet, ala lastalla varovasti työntää kypsynyttä munakasta reunoilta kohti keskustaa samalla kallistellen pannua niin, että nestemäinen munaseos valuu paljastuneelle kuumalle pannunpohjalle. Toista tätä nopein, lyhyin liikkein ympäri pannua, kunnes suurin osa munakkaasta on hyytynyt, mutta pinta on edelleen hieman kostea ja kiiltävä ("baveuse"). Tämä vaihe kestää vain noin 30-60 sekuntia.
+3. **Kypsennyksen Alkuvaihe**: Anna munakkaan hyytyä koskemattomana noin 15-30 sek, kunnes reunat alkavat jähmettyä ja pohja on saanut ohuen, hyytyneen kerroksen. Voit hieman kallistella pannua, jotta raaka munaseos valuu reunoille.
+4. **Sekoittelu ja Hyydyttäminen (Nopea Vaihe)**: Kun reunat ovat hyytyneet, ala lastalla varovasti työntää kypsynyttä munakasta reunoilta kohti keskustaa samalla kallistellen pannua niin, että nestemäinen munaseos valuu paljastuneelle kuumalle pannunpohjalle. Toista tätä nopein, lyhyin liikkein ympäri pannua, kunnes suurin osa munakkaasta on hyytynyt, mutta pinta on edelleen hieman kostea ja kiiltävä ("baveuse"). Tämä vaihe kestää vain noin 30-60 sek.
    > **Kriittinen kohta:** Toimi nopeasti ja päättäväisesti. Tavoitteena on luoda kerroksia ja kypsentää munakas tasaisesti ilman, että se ruskistuu pohjasta.
    > **Visuaalinen merkki:** Munakas on enimmäkseen hyytynyt, mutta pinta on vielä pehmeä, kiiltävä ja hieman tutiseva.
 

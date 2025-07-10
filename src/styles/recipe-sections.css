@@ -127,16 +127,16 @@
 }
 
 /* ===== MISE EN PLACE SECTION ===== */
-#mise-en-place + ul {
+.task-list {
   @apply pl-0 my-6;
 }
 
-#mise-en-place + ul .task-list-item {
-  @apply flex items-center gap-6 mb-5 cursor-pointer;
+.task-list-item {
+  @apply flex gap-6 mb-5 cursor-pointer;
 }
 
-#mise-en-place + ul .task-list-item input[type="checkbox"] {
-  @apply size-5 md:size-6 cursor-pointer flex-shrink-0;
+.task-checkbox {
+  @apply mt-1 size-5 md:size-6 cursor-pointer flex-shrink-0;
 }
 
 /* ===== SECTION COMPLETION CONTROLS ===== */

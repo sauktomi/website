@@ -120,12 +120,12 @@ teoria:
 
 #### Soffritton Valmistus
 
-1. **Kasvisten Kuullotus**: Kuumenna oliiviöljy suuressa kattilassa tai padassa keskilämmöllä. Lisää hienonnettu sipuli, porkkana ja selleri. Kuullota kasviksia hitaasti ja kärsivällisesti noin 8-10 minuuttia, kunnes ne ovat pehmenneet huomattavasti ja sipuli on läpikuultavaa. Älä ruskista kasviksia.
+1. **Kasvisten Kuullotus**: Kuumenna oliiviöljy suuressa kattilassa tai padassa keskilämmöllä. Lisää hienonnettu sipuli, porkkana ja selleri. Kuullota kasviksia hitaasti ja kärsivällisesti noin 8-10 min, kunnes ne ovat pehmenneet huomattavasti ja sipuli on läpikuultavaa. Älä ruskista kasviksia.
    - *Soffritton hidas kuullotus on perusta kastikkeen syvälle maulle. Kasvisten tulee makeutua, ei ruskistua.*
 
    <!-- ![Lähikuva hitaasti kuullottuvasta soffrittosta pannulla, näytä kasvisten pehmeä, läpikuultava rakenne](placeholder-soffritto-kuullotus.jpg) -->
 
-2. **Valkosipulin Lisäys**: Lisää hienonnettu valkosipuli kattilaan ja jatka kuullottamista vielä 1-2 minuuttia, kunnes valkosipuli tuoksuu aromaattiselta. Varo polttamasta valkosipulia.
+2. **Valkosipulin Lisäys**: Lisää hienonnettu valkosipuli kattilaan ja jatka kuullottamista vielä 1-2 min, kunnes valkosipuli tuoksuu aromaattiselta. Varo polttamasta valkosipulia.
 
 #### Kastikkeen Haudutus
 
@@ -134,7 +134,7 @@ teoria:
 
    <!-- ![Kattila, jossa soffritto ja lisätyt tomaatit ja mausteet, näytä seoksen väri ja koostumus ennen haudutusta](placeholder-tomaattikastike-keitto.jpg) -->
 
-2. **Hauduttaminen**: Kuumenna kastike kiehuvaksi, alenna sitten lämpöä niin, että kastike juuri ja juuri poreilee (simmer). Peitä kattila kannella, mutta jätä pieni rako, jotta höyry pääsee poistumaan ja kastike tiivistyy hieman. Hauduta kastiketta vähintään 30 minuuttia, mieluiten 45-60 minuuttia tai jopa pidempään. Mitä pidempi haudutusaika, sitä syvempi ja pyöreämpi maku.
+2. **Hauduttaminen**: Kuumenna kastike kiehuvaksi, alenna sitten lämpöä niin, että kastike juuri ja juuri poreilee (simmer). Peitä kattila kannella, mutta jätä pieni rako, jotta höyry pääsee poistumaan ja kastike tiivistyy hieman. Hauduta kastiketta vähintään 30 min, mieluiten 45-60 min tai jopa pidempään. Mitä pidempi haudutusaika, sitä syvempi ja pyöreämpi maku.
    - *Hidas, pitkä haudutus miedolla lämmöllä on avainasemassa. Sekoita kastiketta silloin tällöin pohjaa myöten, ettei se pala kiinni.*
 
 3. **Viimeistely**: Kun kastike on hautunut riittävästi, poista laakerinlehdet. Maista kastiketta ja säädä mausteita tarvittaessa (suola, pippuri, sokeri). Sekoita joukkoon loput tuoreesta basilikasta (voit hienontaa osan). Voit halutessasi soseuttaa kastikkeen osittain tai kokonaan sauvasekoittimella, jos haluat täysin sileän rakenteen, mutta perinteisesti siinä saa olla hieman rakennetta.
@@ -165,7 +165,7 @@ Jäähtynyt kastike säilyy jääkaapissa ilmatiiviissä rasiassa 4-5 päivää 
 
 - **Soffritto**: Käytä matala-keskilämpöä, jotta kasvikset makeutuvat eivätkä pala
 - **Haudutus**: Erittäin matala lämpö (simmer) takaa makujen hitaan kehittymisen
-- **Älä kiirehdi Soffrittoa**: Varaa vähintään 8-10 minuuttia kuullotukseen
+- **Älä kiirehdi Soffrittoa**: Varaa vähintään 8-10 min kuullotukseen
 - **Haudutusaika**: Pidempi haudutus (30-90 min) tuottaa syvemmän maun
 
 ### Raaka-aineiden korvaaminen

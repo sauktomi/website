@@ -103,7 +103,7 @@ instructions
    > **Kriittinen kohta:** Oikea veden lämpötila on elintärkeä hiivan heräämiselle. Liian kuuma vesi tappaa hiivan, liian kylmä hidastaa prosessia.
    > **Visuaalinen merkki:** Aktivoitu hiiva alkaa kuplia kevyesti 5-10 minuutissa.
 
-2. **Autolyysi (Suositeltava)**: Sekoita jauhot ja loput vedestä suuressa kulhossa vain sen verran, että kaikki jauhot kostuvat. Peitä ja anna levätä 20-30 minuuttia.
+2. **Autolyysi (Suositeltava)**: Sekoita jauhot ja loput vedestä suuressa kulhossa vain sen verran, että kaikki jauhot kostuvat. Peitä ja anna levätä 20-30 min.
    > **Kriittinen kohta:** Autolyysi parantaa taikinan käsiteltävyyttä, makua ja rakennetta ilman vaivaamista.
    > **Visuaalinen merkki:** Taikina on kostea ja yhtenäinen, mutta ei vielä sileä.
 
@@ -113,8 +113,8 @@ instructions
 #### Vaivaus ja Ensimmäinen Kohotus
 
 1. **Vaivaaminen**:
-   - **Yleiskoneella**: Vaivaa taikinakoukulla alhaisella nopeudella 5-7 minuuttia, sitten keskitasolla 3-5 minuuttia, kunnes taikina on sileää, kimmoisaa ja irtoaa kulhon reunoista, mutta on edelleen hyvin pehmeää ja hieman tahmeaa.
-   - **Käsin**: Siirrä taikina kevyesti öljytylle työtasolle. Vaivaa käyttäen "stretch and fold" -tekniikkaa tai perinteistä vaivausta 10-15 minuuttia. Taikina on aluksi hyvin tarttuvaa; vältä lisäämästä liikaa jauhoja. Käytä tarvittaessa apuna öljyttyä taikinakaavinta.
+   - **Yleiskoneella**: Vaivaa taikinakoukulla alhaisella nopeudella 5-7 min, sitten keskitasolla 3-5 min, kunnes taikina on sileää, kimmoisaa ja irtoaa kulhon reunoista, mutta on edelleen hyvin pehmeää ja hieman tahmeaa.
+   - **Käsin**: Siirrä taikina kevyesti öljytylle työtasolle. Vaivaa käyttäen "stretch and fold" -tekniikkaa tai perinteistä vaivausta 10-15 min. Taikina on aluksi hyvin tarttuvaa; vältä lisäämästä liikaa jauhoja. Käytä tarvittaessa apuna öljyttyä taikinakaavinta.
      > **Kriittinen kohta:** Riittävä vaivaus kehittää gluteeniverkoston, joka antaa focaccialle sen sitkeän rakenteen. Taikina on valmis, kun se läpäisee "ikkunatestin" (venytettäessä ohueksi kalvoksi se ei repeä heti).
      > **Visuaalinen merkki:** Taikina on sileä, kiiltävä ja kimmoisa.
 
@@ -123,14 +123,14 @@ instructions
 
 #### Taittelu ja Toinen Kohotus
 
-1. **Taittelut (Stretch and Folds)**: Kun taikina on kohonnut, suorita 2-3 sarjaa taitoksia 30 minuutin välein. Kostuta tai öljyä kädet kevyesti. Tartu taikinan reunaan, venytä sitä ylöspäin ja taita se taikinan päälle. Käännä kulhoa 90 astetta ja toista, kunnes olet kiertänyt koko taikinan (4 taittoa per sarja).
+1. **Taittelut (Stretch and Folds)**: Kun taikina on kohonnut, suorita 2-3 sarjaa taitoksia 30 min välein. Kostuta tai öljyä kädet kevyesti. Tartu taikinan reunaan, venytä sitä ylöspäin ja taita se taikinan päälle. Käännä kulhoa 90 astetta ja toista, kunnes olet kiertänyt koko taikinan (4 taittoa per sarja).
    > **Kriittinen kohta:** Taittelut vahvistavat gluteenirakennetta hellävaraisesti, lisäten ilmavuutta ja sitkeyttä ilman intensiivistä vaivaamista.
    > **Visuaalinen merkki:** Taikina muuttuu jokaisen taittelukerran jälkeen kimmoisammaksi ja pitää muotonsa paremmin.
 
    <!-- ![Taikinan taitteluprosessi (stretch and fold)](placeholder-stretch-fold.jpg) -->
 
-2. **Pellille Siirto ja Esikohotus**: Voitele paistopelti (n. 30x40cm) erittäin runsaalla oliiviöljyllä (2-3 rkl). Kaada tai kumoa taikina varovasti pellille. Venyttele ja painele taikinaa hellästi sormenpäillä, jotta se täyttää pellin tasaisesti. Jos taikina vetäytyy voimakkaasti kasaan, anna sen levätä peitettynä 10-15 minuuttia ja yritä uudelleen.
-   Peitä pelti kevyesti muovikelmulla ja anna kohota huoneenlämmössä noin 30-60 minuuttia, tai kunnes taikina on selvästi pulleampi.
+2. **Pellille Siirto ja Esikohotus**: Voitele paistopelti (n. 30x40cm) erittäin runsaalla oliiviöljyllä (2-3 rkl). Kaada tai kumoa taikina varovasti pellille. Venyttele ja painele taikinaa hellästi sormenpäillä, jotta se täyttää pellin tasaisesti. Jos taikina vetäytyy voimakkaasti kasaan, anna sen levätä peitettynä 10-15 min ja yritä uudelleen.
+   Peitä pelti kevyesti muovikelmulla ja anna kohota huoneenlämmössä noin 30-60 min, tai kunnes taikina on selvästi pulleampi.
 
 #### Muotoilu ja Lopullinen Kohotus
 
@@ -144,18 +144,18 @@ instructions
    Ripottele päälle runsaasti karkeita merisuolahiutaleita ja haluamiasi tuoreita yrttejä (esim. rosmariininoksia, timjaminlehtiä). Jos käytät muita päällisiä (tomaatit, oliivit), paina ne kevyesti taikinaan.
    > **Huomio:** Öljy-vesiemulsio auttaa luomaan erityisen mehevän ja maukkaan pinnan, sekä edistää rapean kuoren muodostumista.
 
-3. **Lopullinen Kohotus**: Peitä pelti uudelleen kevyesti ja anna focaccian kohota vielä 20-40 minuuttia lämpimässä paikassa. Taikinan tulisi näyttää ilmavalta ja kuopat hieman pehmentyneiltä.
+3. **Lopullinen Kohotus**: Peitä pelti uudelleen kevyesti ja anna focaccian kohota vielä 20-40 min lämpimässä paikassa. Taikinan tulisi näyttää ilmavalta ja kuopat hieman pehmentyneiltä.
     Lämmitä uuni 220°C (kiertoilma 200°C) tänä aikana. Aseta uuniritilä keskitasolle.
 
 #### Paistaminen ja Jäähdytys
 
-1. **Paistaminen**: Paista esilämmitetyssä uunissa 220°C (kiertoilma 200°C) noin 20-25 minuuttia. Focaccia on valmis, kun sen pinta on syvän kultaisenruskea ja reunat ovat rapeita. Pohjan tulisi myös olla saanut väriä.
+1. **Paistaminen**: Paista esilämmitetyssä uunissa 220°C (kiertoilma 200°C) noin 20-25 min. Focaccia on valmis, kun sen pinta on syvän kultaisenruskea ja reunat ovat rapeita. Pohjan tulisi myös olla saanut väriä.
     > **Kriittinen kohta:** Tarkkaile paistamista loppuvaiheessa, ettei pinta tummu liikaa. Jokainen uuni on erilainen.
     > **Visuaalinen merkki:** Kullanruskea, kupliva pinta; reunat irtoavat helposti pellistä.
 
     <!-- ![Focaccia paistumassa uunissa, kauniisti kohonneena](placeholder-focaccia-baking.jpg) -->
 
-2. **Jäähdytys**: Ota focaccia uunista ja siirrä se välittömästi ritilälle jäähtymään. Tämä estää pohjaa kostumasta. Anna jäähtyä vähintään 15-20 minuuttia ennen leikkaamista.
+2. **Jäähdytys**: Ota focaccia uunista ja siirrä se välittömästi ritilälle jäähtymään. Tämä estää pohjaa kostumasta. Anna jäähtyä vähintään 15-20 min ennen leikkaamista.
     > **Huomio:** Vaikka tuoksu on houkutteleva, liian aikainen leikkaaminen voi tehdä sisuksesta taikinamaisen.
 
 
@@ -176,8 +176,8 @@ Tarjoile focaccia suurelta leikkuulaudalta tai tarjoiluvadilta, josta jokainen v
 ### Säilytys
 
 - **Tuoreena**: Focaccia on parhaimmillaan paistopäivänä.
-- **Seuraavana päivänä**: Säilytä ilmatiiviissä pussissa huoneenlämmössä 1-2 päivää. Voit lämmittää palan uunissa 5-10 minuuttia 180°C lämmössä rapean pinnan palauttamiseksi.
-- **Pakastus**: Jäähdytä kokonaan. Leikkaa annospaloiksi, kääri tiukasti muovikelmuun ja sitten folioon tai pakastepussiin. Säilyy pakastimessa 1 kuukausi. Sulata huoneenlämmössä ja lämmitä uunissa 180°C 5-10 minuuttia.
+- **Seuraavana päivänä**: Säilytä ilmatiiviissä pussissa huoneenlämmössä 1-2 päivää. Voit lämmittää palan uunissa 5-10 min 180°C lämmössä rapean pinnan palauttamiseksi.
+- **Pakastus**: Jäähdytä kokonaan. Leikkaa annospaloiksi, kääri tiukasti muovikelmuun ja sitten folioon tai pakastepussiin. Säilyy pakastimessa 1 kuukausi. Sulata huoneenlämmössä ja lämmitä uunissa 180°C 5-10 min.
 
 ## Vinkit
 

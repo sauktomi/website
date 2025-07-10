@@ -102,7 +102,7 @@ instructions
 
 ## Taikinan Valmistus
 
-1. **Voin ja Sokereiden Vaahdotus**: Vaahdota pehmeä voi, hieno sokeri ja fariinisokeri sähkövatkaimella tai yleiskoneen lapavatkaimella keskinopeudella noin 2-4 minuuttia, kunnes seos on kuohkeaa, vaaleampaa ja kermaista.
+1. **Voin ja Sokereiden Vaahdotus**: Vaahdota pehmeä voi, hieno sokeri ja fariinisokeri sähkövatkaimella tai yleiskoneen lapavatkaimella keskinopeudella noin 2-4 min, kunnes seos on kuohkeaa, vaaleampaa ja kermaista.
    > **Kriittinen kohta:** Älä ylivatkaa tässä vaiheessa liikaa ilmaa, mutta varmista, että voi ja sokerit ovat hyvin yhdistyneet ja vaahtoutuneet. Tämä vaikuttaa keksien rakenteeseen.
    > **Visuaalinen merkki:** Seos on selvästi vaalentunut ja koostumukseltaan kuohkeaa.
 
@@ -119,7 +119,7 @@ instructions
 
 #### Taikinan Jäähdytys (Tärkeä Vaihe)
 
-1. **Jäähdytys**: Muotoile taikinasta pallo tai litteä kiekko. Kääri se tiiviisti elintarvikekelmuun. Anna taikinan levätä ja jähmettyä jääkaapissa vähintään 30-60 minuuttia. Parhaan tuloksen saat jäähdyttämällä taikinaa useamman tunnin tai jopa yön yli (2-24 tuntia).
+1. **Jäähdytys**: Muotoile taikinasta pallo tai litteä kiekko. Kääri se tiiviisti elintarvikekelmuun. Anna taikinan levätä ja jähmettyä jääkaapissa vähintään 30-60 min. Parhaan tuloksen saat jäähdyttämällä taikinaa useamman tunnin tai jopa yön yli (2-24 tuntia).
    > **KRIITINEN KOHTA:** Jäähdytys on erittäin tärkeää. Se kiinteyttää voin, mikä estää keksejä leviämästä liikaa uunissa. Se antaa myös jauhoille aikaa imeä nestettä, mikä parantaa makua ja rakennetta (tekee kekseistä sitkeämpiä).
 
 #### Keksien Muotoilu ja Paistaminen
@@ -130,11 +130,11 @@ instructions
 
    <!-- ![Keksitaikinapallot aseteltuna leivinpaperille pellille, valmiina paistettavaksi.](placeholder-keksitaikina-pallot-pellilla.jpg) -->
 
-3. **Paistaminen**: Paista keksejä uunin keskitasolla noin 10-14 minuuttia. Paistoaika riippuu keksien koosta ja halutusta kypsyydestä. Keksit ovat valmiita, kun niiden reunat ovat saaneet kauniin kullanruskean värin, mutta keskusta näyttää vielä aavistuksen pehmeältä ja vaaleammalta.
+3. **Paistaminen**: Paista keksejä uunin keskitasolla noin 10-14 min. Paistoaika riippuu keksien koosta ja halutusta kypsyydestä. Keksit ovat valmiita, kun niiden reunat ovat saaneet kauniin kullanruskean värin, mutta keskusta näyttää vielä aavistuksen pehmeältä ja vaaleammalta.
    > **Huomio:** Jos haluat rapeampia keksejä, paista hieman pidempään. Jos haluat sitkeämpiä, ota ne pois hieman aikaisemmin.
    > **Visuaalinen merkki:** Reunat ovat kullanruskeat ja kiinteät, keskusta vielä pehmeän näköinen.
 
-4. **Jäähdytys Pellillä**: Ota pelti uunista ja anna keksien jäähtyä pellillä noin 5-10 minuuttia. Tänä aikana ne jatkavat hieman kypsymistä ja kiinteytyvät.
+4. **Jäähdytys Pellillä**: Ota pelti uunista ja anna keksien jäähtyä pellillä noin 5-10 min. Tänä aikana ne jatkavat hieman kypsymistä ja kiinteytyvät.
 5. **Lopullinen Jäähdytys**: Siirrä keksit varovasti lastalla ritilälle jäähtymään kokonaan.
 
 <!-- ![Valmiit, täydellisesti paistuneet keksit jäähtymässä ritilällä.](placeholder-valmiit-keksit-jahtymassa.jpg) -->
@@ -167,7 +167,7 @@ Tarjoile jäähtyneet keksit vadilta, lautaselta tai keksipurkista. Ei yleensä 
 
 ### Ajoituksen kriittiset pisteet
 
-- Voin ja sokerin vaahdotus: 2-4 minuuttia on optimaalinen aika
+- Voin ja sokerin vaahdotus: 2-4 min on optimaalinen aika
 - Jäähdytysaika jääkaapissa: vähintään 30-60 min, mieluiten 2-24h
 - Paisto: tarkka ajoitus 10-14 min välillä voi merkittävästi vaikuttaa lopputulokseen (rapeampi vs. sitkeämpi)
 - Jäähdytys pellillä 5-10 min ennen siirtoa ritilälle
@@ -182,7 +182,7 @@ Tarjoile jäähtyneet keksit vadilta, lautaselta tai keksipurkista. Ei yleensä 
 ### Muut Vinkit
 
 - **Pitkä Jäähdytys**: Jos mahdollista, jäähdytä taikinaa 24-48 tuntia. Maku syvenee entisestään.
-- **Pakasta Taikinapalloja**: Tee kerralla isompi taikina, pyörittele palloiksi ja pakasta ne tiiviisti pakattuna. Voit paistaa muutaman keksin kerrallaan suoraan pakastimesta (lisää paistoaikaan 1-2 minuuttia).
+- **Pakasta Taikinapalloja**: Tee kerralla isompi taikina, pyörittele palloiksi ja pakasta ne tiiviisti pakattuna. Voit paistaa muutaman keksin kerrallaan suoraan pakastimesta (lisää paistoaikaan 1-2 min).
 - **Merisuolahiutaleet**: Ripaus hyvää merisuolaa valmiiden keksien päälle korostaa makuja, erityisesti suklaan kanssa.
 
 ## Liitteet

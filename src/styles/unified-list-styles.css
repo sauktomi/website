@@ -87,7 +87,7 @@
 /* Popover container with responsive sizing */
 .ingredient-popover {
   @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-h-[80vh] overflow-hidden backdrop-blur-sm;
-  max-height: 80vh;
+  max-height: 80dvh;
   overflow: hidden;
   position: fixed;
   top: 50%;
@@ -116,7 +116,7 @@
   .ingredient-popover {
     width: 28rem;
     max-width: 28rem;
-    max-height: 90vh;
+    max-height: 90dvh;
   }
 }
 
@@ -124,7 +124,7 @@
   .ingredient-popover {
     width: 32rem;
     max-width: 32rem;
-    max-height: 75vh;
+    max-height: 75dvh;
   }
 }
 
@@ -132,7 +132,7 @@
   .ingredient-popover {
     width: 36rem;
     max-width: 36rem;
-    max-height: 70vh;
+    max-height: 70dvh;
   }
 }
 
@@ -140,7 +140,7 @@
   .ingredient-popover {
     width: 42rem;
     max-width: 42rem;
-    max-height: 65vh;
+    max-height: 65dvh;
   }
 }
 
@@ -149,7 +149,7 @@
   .ingredient-popover {
     max-width: calc(100vw - 2rem);
     width: calc(100vw - 2rem);
-    max-height: 90vh;
+    max-height: 90dvh;
   }
 }
 
@@ -372,58 +372,25 @@
   @apply space-y-6 md:space-y-8;
 }
 
-/* Mise en place section */
-.mise-en-place-section {
-  @apply space-y-4 md:space-y-6;
-}
-
-.task-list {
-  @apply space-y-2 md:space-y-3;
-}
-
-.task-list-item {
-  @apply flex items-start gap-3;
-}
-
-.task-checkbox {
-  @apply mt-2 flex-shrink-0;
-}
-
-.task-text {
-  @apply text-base md:text-lg lg:text-xl;
-}
-
 /* Ingredients section */
 .ingredients-section {
-  @apply space-y-4 md:space-y-6;
+  @apply max-w-[85lvw] overflow-x-auto;
 }
 
 .ingredients-list {
-  @apply space-y-3 md:space-y-4;
-}
-
-.ingredient-item {
-  @apply flex flex-wrap items-baseline gap-2 text-base md:text-lg lg:text-xl;
-}
-
-.ingredient-fallback {
-  @apply text-current;
+  @apply space-y-1 box-border w-max min-w-full;
 }
 
 .ingredient-amount {
-  @apply font-medium;
+  @apply font-bold font-mono;
 }
 
 .ingredient-unit {
-  @apply text-current;
-}
-
-.ingredient-name {
-  @apply text-current;
+  @apply font-mono;
 }
 
 .ingredient-notes {
-  @apply text-secondary-accent;
+  @apply text-secondary hover:text-secondary-dark;
 }
 
 /* Contact section */

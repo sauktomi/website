@@ -99,7 +99,7 @@ teoria:
 
 - Välttämätön 55°C ylittäville lihapaloille
 - Mahdollistaa lihasnesteiden uudelleenjakautumisen
-- Pituus: 5-10 minuuttia pienemmille, 20-30 minuuttia suuremmille paloille
+- Pituus: 5-10 min pienemmille, 20-30 min suuremmille paloille
 - Optimaalista: löyhä folioteltta, ei tiivistä sulkemista
 
 ## Vinkit

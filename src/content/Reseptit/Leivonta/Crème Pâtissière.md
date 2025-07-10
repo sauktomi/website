@@ -82,7 +82,7 @@ teoria:
 #### Maidon Infusointi
 
 1. **Vaniljan Valmistelu**: Jos käytät vaniljatankoa, halkaise se pituussuunnassa veitsenkärjellä ja kaavi siemenet. Laita sekä siemenet että tyhjä tanko kattilaan maidon kanssa.
-2. **Maidon Kuumennus**: Kuumenna maito (ja vanilja) kattilassa keskilämmöllä lähes kiehumispisteeseen (kunnes reunoille alkaa muodostua pieniä kuplia). Nosta kattila liedeltä. Jos käytit tankoa, peitä kannella ja anna vaniljan hautua maidossa noin 10-15 minuuttia maun tehostamiseksi. Poista vaniljatanko ennen seuraavaa vaihetta.
+2. **Maidon Kuumennus**: Kuumenna maito (ja vanilja) kattilassa keskilämmöllä lähes kiehumispisteeseen (kunnes reunoille alkaa muodostua pieniä kuplia). Nosta kattila liedeltä. Jos käytit tankoa, peitä kannella ja anna vaniljan hautua maidossa noin 10-15 min maun tehostamiseksi. Poista vaniljatanko ennen seuraavaa vaihetta.
    > **Huomio:** Älä anna maidon kiehua voimakkaasti. Infusointi tehostaa vaniljan makua.
    > **Visuaalinen merkki:** Maito on kuumaa ja siitä nousee höyryä.
 
@@ -102,7 +102,7 @@ teoria:
 5. **Kypsennys**: Kuumenna seosta keskilämmöllä koko ajan pohjaa myöten vispaten tai kumilastalla sekoittaen. On erittäin tärkeää, että seos ei pala pohjaan.
    > **Kriittinen kohta:** Jatkuva sekoitus, erityisesti pohjasta ja reunoilta, on elintärkeää.
 
-6. **Sakeutuminen ja Kiehautus**: Kreemi alkaa paksuuntua melko nopeasti. Kun se alkaa selvästi sakeutua, jatka voimakasta vispaamista. Anna kreemin kiehahtaa ja pulpahtaa kunnolla 1-2 kertaa. Kypsennä vielä noin 30-60 sekuntia kiehumisen alkamisen jälkeen koko ajan sekoittaen, jotta tärkkelys kypsyy täysin ja poistaa jauhoisen maun.
+6. **Sakeutuminen ja Kiehautus**: Kreemi alkaa paksuuntua melko nopeasti. Kun se alkaa selvästi sakeutua, jatka voimakasta vispaamista. Anna kreemin kiehahtaa ja pulpahtaa kunnolla 1-2 kertaa. Kypsennä vielä noin 30-60 sek kiehumisen alkamisen jälkeen koko ajan sekoittaen, jotta tärkkelys kypsyy täysin ja poistaa jauhoisen maun.
    > **Kriittinen kohta:** Kreemin on kiehahdettava kunnolla, jotta tärkkelys aktivoituu ja kreemi sakenee oikein. Varo kuitenkin ylikypsentämistä.
    > **Visuaalinen merkki:** Kreemi on paksua, kiiltävää ja vispilä jättää siihen selviä jälkiä. Ensimmäiset isot kuplat nousevat pintaan.
 
@@ -155,8 +155,8 @@ Crème Pâtissière käytetään tyypillisesti muiden leivonnaisten osana.
 
 ### Ajoituksen kriittiset pisteet
 
-- Vaniljan infusointi maitoon: Anna hautua noin 10-15 minuuttia parhaan aromin saamiseksi
-- Kreemin kiehautus: Anna kiehahtaa 1-2 kertaa ja jatka kypsennystä vielä 30-60 sekuntia
+- Vaniljan infusointi maitoon: Anna hautua noin 10-15 min parhaan aromin saamiseksi
+- Kreemin kiehautus: Anna kiehahtaa 1-2 kertaa ja jatka kypsennystä vielä 30-60 sek
 - Välitön siivilöinti ja voin lisäys heti kypsennyksen jälkeen
 - Jäähdytysaika: Vähintään 2-4 tuntia, mieluiten yön yli
 

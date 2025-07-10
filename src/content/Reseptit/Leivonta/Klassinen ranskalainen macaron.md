@@ -130,7 +130,7 @@ teoria:
    > **Vinkki:** Pidä pursotinpussia kohtisuorassa peltiin nähden ja lopeta pursotus nopealla pyöräytysliikkeellä, jotta huippuja ei synny.
 
 2. **Ilmakuplien Poisto**: Kopauta peltiä voimakkaasti pöytää vasten 3-5 kertaa. Tämä auttaa poistamaan ilmakuplia taikinasta ja tasoittaa macaronien pinnan. Voit myös puhkoa pintaan jääneet isot ilmakuplat varovasti hammastikulla.
-3. **Kuivatus (Croûtage)**: Anna pursotettujen macaron-kuorien kuivua huoneenlämmössä (vedottomassa paikassa) noin 30-90 minuuttia, tai kunnes niiden pinta on kosketuskuiva. Kun kosketat macaronin pintaa kevyesti sormella, taikina ei saa tarttua sormeen, vaan pinnan tulisi tuntua ohuelta kalvolta.
+3. **Kuivatus (Croûtage)**: Anna pursotettujen macaron-kuorien kuivua huoneenlämmössä (vedottomassa paikassa) noin 30-90 min, tai kunnes niiden pinta on kosketuskuiva. Kun kosketat macaronin pintaa kevyesti sormella, taikina ei saa tarttua sormeen, vaan pinnan tulisi tuntua ohuelta kalvolta.
     > **Kriittinen kohta:** Kuivatusaika riippuu suuresti huoneen ilmankosteudesta. Tämä vaihe on tärkeä "jalan" muodostumiselle.
     > **Visuaalinen merkki:** Macaronien pinta on matta, ei enää kiiltävä, ja tuntuu kuivalta.
 
@@ -139,14 +139,14 @@ teoria:
 #### Vaihe 5: [[Tarkka Paistaminen (Macaronit)|Paistaminen]]
 
 1. **Uunin Esilämmitys**: Esilämmitä [[Uuni (Oven)|uuni]] tarkasti 140-160°C (ylä-alalämpö). Uunin lämpötila on erittäin kriittinen ja voi vaatia kokeilua omalla uunilla. [[Uunilämpömittari (Oven Thermometer)|Uunilämpömittari]] on hyödyllinen.
-2. **Paistaminen**: Paista macaron-kuoria uunin keskitasolla yksi pelti kerrallaan noin 14-18 minuuttia. Käännä pelti tarvittaessa puolivälissä paistoa, jos uunisi paistaa epätasaisesti. Macaronit ovat kypsiä, kun "jalat" ovat muodostuneet, kuoret ovat hieman kohonneet ja ne irtoavat helposti leivinpaperista tai matosta, kun niitä varovasti kokeilee (eivät heilu). Pinta ei saa ruskistua liikaa.
+2. **Paistaminen**: Paista macaron-kuoria uunin keskitasolla yksi pelti kerrallaan noin 14-18 min. Käännä pelti tarvittaessa puolivälissä paistoa, jos uunisi paistaa epätasaisesti. Macaronit ovat kypsiä, kun "jalat" ovat muodostuneet, kuoret ovat hieman kohonneet ja ne irtoavat helposti leivinpaperista tai matosta, kun niitä varovasti kokeilee (eivät heilu). Pinta ei saa ruskistua liikaa.
     > **Huomio:** Tarkkaile macaronien kypsymistä tarkasti. Paistoaika voi vaihdella.
 
-3. **Jäähdytys Pellillä**: Ota pelti uunista ja anna macaron-kuorien jäähtyä täysin pellillä ennen niiden irrottamista. Tämä kestää noin 15-20 minuuttia.
+3. **Jäähdytys Pellillä**: Ota pelti uunista ja anna macaron-kuorien jäähtyä täysin pellillä ennen niiden irrottamista. Tämä kestää noin 15-20 min.
 
 #### Vaihe 6: Täytteen Valmistus ([[Suklaaganachen Valmistus|Suklaaganache]])
 
-1. **Suklaan Sulatus Kerman Kanssa**: Rouhi [[Makeiset#Tumma suklaa|suklaa]] hienoksi ja laita se lämmönkestävään [[Kulho (Mixing Bowl)|kulhoon]]. Kuumenna [[Maitotuotteet#Kuohukerma|kerma]] pienessä [[Kattilat ja Kasarit (Baking Equipment)|kattilassa]] lähes kiehumispisteeseen. Kaada kuuma kerma rouhitun suklaan päälle. Anna seistä noin 3-5 minuuttia ilman sekoittamista, jotta suklaa sulaa.
+1. **Suklaan Sulatus Kerman Kanssa**: Rouhi [[Makeiset#Tumma suklaa|suklaa]] hienoksi ja laita se lämmönkestävään [[Kulho (Mixing Bowl)|kulhoon]]. Kuumenna [[Maitotuotteet#Kuohukerma|kerma]] pienessä [[Kattilat ja Kasarit (Baking Equipment)|kattilassa]] lähes kiehumispisteeseen. Kaada kuuma kerma rouhitun suklaan päälle. Anna seistä noin 3-5 min ilman sekoittamista, jotta suklaa sulaa.
 2. **Ganachen Sekoittaminen**: Aloita sekoittaminen varovasti vispilällä tai kumilastalla kulhon keskeltä pienin pyörivin liikkein, kunnes seos emulgoituu ja muuttuu tasaiseksi ja kiiltäväksi ganacheksi.
 3. **Voin ja Mausteiden Lisäys**: Lisää pehmeä [[Öljyt ja Rasvat#Voi|voi]] ja mahdollinen [[Mausteet#Merisuola|suola]] sekä [[Mausteet#Vanilja|vaniljauute]]. Sekoita, kunnes voi on täysin sulanut ja sekoittunut ganacheen. Ganachen tulisi olla sileää ja kiiltävää.
 4. **Ganachen Jäähdytys**: Anna ganachen jäähtyä ensin huoneenlämpöiseksi. Peitä sitten kelmulla (kelmu suoraan ganachen pinnalla) ja siirrä jääkaappiin jähmettymään noin 1-2 tunniksi, tai kunnes se on sopivan paksua pursotettavaksi (ei liian kovaa).
@@ -160,7 +160,7 @@ teoria:
 
     > **KRIITINEN KOHTA:** Kypsytys on olennainen osa macaronien valmistusta. Sen aikana täytteen kosteus imeytyy kuoriin, tehden niistä sisältä pehmeän sitkeitä ja ulkoa edelleen rapeita. Maut myös syvenevät ja tasapainottuvat.
 
-5. **Tarjoiluvalmistelut**: Ota macaronit jääkaapista huoneenlämpöön noin 20-30 minuuttia ennen tarjoilua, jotta niiden maku ja rakenne pääsevät parhaiten oikeuksiinsa.
+5. **Tarjoiluvalmistelut**: Ota macaronit jääkaapista huoneenlämpöön noin 20-30 min ennen tarjoilua, jotta niiden maku ja rakenne pääsevät parhaiten oikeuksiinsa.
 
 ### Annostelu ja Tarjoilu
 
@@ -194,8 +194,8 @@ Täydellisen macaronin tunnistaa tasaisesta, kirkkaasta väristä ja selkeästä
 
 - Munanvalkuaisten vanhentaminen: 24-72 tuntia ennen leipomista
 - Macaronage-vaihe: Sekoitusajan hallinta on kriittistä oikean koostumuksen saavuttamiseksi
-- Kuivatusaika: 30-90 minuuttia riippuen ilmankosteudesta ja lämpötilasta
-- Paistoaika: 14-18 minuuttia, tarkka seuranta tarpeen
+- Kuivatusaika: 30-90 min riippuen ilmankosteudesta ja lämpötilasta
+- Paistoaika: 14-18 min, tarkka seuranta tarpeen
 - Kypsytys jääkaapissa: vähintään 24 tuntia, mieluiten 48 tuntia
 
 ### Ilmankosteuden vaikutus

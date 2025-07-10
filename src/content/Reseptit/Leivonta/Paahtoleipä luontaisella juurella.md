@@ -116,17 +116,17 @@ teoria:
 
    <!-- ![Aktiivinen, kupliva esitaikina (levain) valmiina käytettäväksi](placeholder-levain-valmis.jpg) -->
 
-#### Vaihe 2: Autolyysi (Aamulla, 30-60 minuuttia)
+#### Vaihe 2: Autolyysi (Aamulla, 30-60 min)
 
 1. Sekoita suuressa kulhossa 400g vahvaa vehnäjauhoa, 50g täysjyvävehnäjauhoa ja 280-300g lämmintä vettä (n. 30-32°C). Sekoita vain sen verran, että kaikki jauhot kostuvat. Älä vaivaa.
-2. Peitä kulho ja anna taikinan levätä (autolysoitua) huoneenlämmössä 30-60 minuuttia.
+2. Peitä kulho ja anna taikinan levätä (autolysoitua) huoneenlämmössä 30-60 min.
    > **Huomio:** Autolyysi antaa jauhojen imeä vettä rauhassa, mikä helpottaa gluteenin muodostumista, parantaa taikinan käsiteltävyyttä ja leivän makua.
 
-#### Vaihe 3: Taikinan Sekoitus ja Ensimmäinen Vaivaus (Noin 10-15 minuuttia)
+#### Vaihe 3: Taikinan Sekoitus ja Ensimmäinen Vaivaus (Noin 10-15 min)
 
 1. Lisää kaikki kypsynyt esitaikina (n. 250g), 10g suolaa ja valinnainen hunaja autolysoituneen taikinan joukkoon.
-2. **Sekoitus ja Vaivaus**: Jos käytät yleiskonetta, vaivaa taikinakoukulla matalalla nopeudella 3-5 minuuttia ja sitten keskitasolla 5-7 minuuttia, tai kunnes taikina irtoaa kulhon reunoista ja on sileää ja kimmoisaa. Taikinan tavoitelämpötila on n. 25-26°C.
-   Jos vaivaat käsin: Sekoita ainekset ensin karkeasti yhteen kulhossa. Kumoa taikina sitten kevyesti jauhotetulle (tai erittäin kevyesti öljytylle) työtasolle. Vaivaa taikinaa käyttäen "slap and fold" -tekniikkaa tai perinteistä puskemista ja taittelua noin 10-15 minuuttia, kunnes taikina on sileää, kimmoisaa ja läpäisee "ikkunatestin" (venyy ohueksi kalvoksi repeämättä).
+2. **Sekoitus ja Vaivaus**: Jos käytät yleiskonetta, vaivaa taikinakoukulla matalalla nopeudella 3-5 min ja sitten keskitasolla 5-7 min, tai kunnes taikina irtoaa kulhon reunoista ja on sileää ja kimmoisaa. Taikinan tavoitelämpötila on n. 25-26°C.
+   Jos vaivaat käsin: Sekoita ainekset ensin karkeasti yhteen kulhossa. Kumoa taikina sitten kevyesti jauhotetulle (tai erittäin kevyesti öljytylle) työtasolle. Vaivaa taikinaa käyttäen "slap and fold" -tekniikkaa tai perinteistä puskemista ja taittelua noin 10-15 min, kunnes taikina on sileää, kimmoisaa ja läpäisee "ikkunatestin" (venyy ohueksi kalvoksi repeämättä).
    > **Kriittinen kohta:** Älä lisää liikaa jauhoja vaivauksen aikana. Taikina saa olla hieman tahmeaa.
    > **Visuaalinen merkki (Ikkunatesti):** Ota pieni pala taikinaa ja venytä sitä varovasti sormiesi välissä. Jos pystyt venyttämään sen niin ohueksi, että valo kuultaa läpi ilman repeämistä, gluteeniverkosto on kehittynyt riittävästi.
 
@@ -134,17 +134,17 @@ teoria:
 
 1. Siirrä taikina kevyesti öljyttyyn, kannelliseen kulhoon tai astiaan.
 2. Anna taikinan kohota huoneenlämmössä (n. 21-24°C) noin 3-5 tuntia. Taikinan tulisi kasvaa noin 30-50% tilavuudestaan.
-3. **Taitot (Stretch and Folds)**: Tee taitolleja 30-45 minuutin välein ensimmäisten 1.5-2 tunnin aikana (yhteensä 3-4 taittoa). Kostuta kädet kevyesti vedellä. Tartu taikinan yhteen reunaan, venytä sitä varovasti ylöspäin ja taita se taikinan päälle. Käännä kulhoa 90 astetta ja toista, kunnes olet tehnyt tämän kaikilta neljältä sivulta. Peitä kulho jokaisen taiton jälkeen.
+3. **Taitot (Stretch and Folds)**: Tee taitolleja 30-45 min välein ensimmäisten 1.5-2 tunnin aikana (yhteensä 3-4 taittoa). Kostuta kädet kevyesti vedellä. Tartu taikinan yhteen reunaan, venytä sitä varovasti ylöspäin ja taita se taikinan päälle. Käännä kulhoa 90 astetta ja toista, kunnes olet tehnyt tämän kaikilta neljältä sivulta. Peitä kulho jokaisen taiton jälkeen.
    > **Huomio:** Taitot vahvistavat gluteenirakennetta, tasoittavat taikinan lämpötilaa ja edistävät fermentaatiota.
    > **Visuaalinen merkki:** Taikina muuttuu jokaisen taiton jälkeen sileämmäksi, kimmoisammaksi ja alkaa pitää muotonsa paremmin.
 
    <!-- ![Taikinan venytys ja taitto (stretch and fold) bulkkifermentaation aikana](placeholder-hapanjuuri-taitto.jpg) -->
 
-#### Vaihe 5: Esimuotoilu (Noin 15-30 minuuttia)
+#### Vaihe 5: Esimuotoilu (Noin 15-30 min)
 
 1. Kun taikina on kohonnut riittävästi (kasvanut n. 30-50%, tuntuu ilmavalta ja siinä on kuplia), kumoa se varovasti erittäin kevyesti jauhotetulle työtasolle. Vältä repimistä.
 2. Esimuotoile taikina hellävaraisesti pyöreäksi tai suorakaiteen muotoiseksi palloksi. Tarkoitus on luoda kevyt pintajännitys. Älä työnnä ilmaa liikaa pois.
-3. Peitä taikina liinalla tai kulholla ja anna sen levätä (bench rest) 15-30 minuuttia. Tämä rentouttaa gluteenia ja helpottaa lopullista muotoilua.
+3. Peitä taikina liinalla tai kulholla ja anna sen levätä (bench rest) 15-30 min. Tämä rentouttaa gluteenia ja helpottaa lopullista muotoilua.
 
 #### Vaihe 6: Lopullinen Muotoilu ja Vuokaan Asettaminen
 
@@ -157,18 +157,18 @@ teoria:
 1. Peitä leipävuoka kelmulla tai laita se isoon muovipussiin. Siirrä vuoka jääkaappiin hitaaseen kylmäkohotukseen 8-18 tunniksi (esim. yön yli).
    > **Huomio:** Kylmäkohotus kehittää leivän makua syvemmäksi ja moniulotteisemmaksi. Se myös tekee taikinasta helpommin käsiteltävän ja viillettävän ennen paistoa.
 
-#### Vaihe 8: Paistaminen (Noin 40-45 minuuttia)
+#### Vaihe 8: Paistaminen (Noin 40-45 min)
 
-1. **Uunin ja Paistoastian Esilämmitys**: Noin 45-60 minuuttia ennen paistoa, aseta valurautapata kansineen (tai paistokivi ja tyhjä metallinen uunivuoka höyryä varten alatasolle) uuniin ja esilämmitä uuni 230-250°C (ylä-alalämpö).
+1. **Uunin ja Paistoastian Esilämmitys**: Noin 45-60 min ennen paistoa, aseta valurautapata kansineen (tai paistokivi ja tyhjä metallinen uunivuoka höyryä varten alatasolle) uuniin ja esilämmitä uuni 230-250°C (ylä-alalämpö).
 2. **Viimeistelyt Ennen Paistoa**: Ota leipävuoka jääkaapista juuri ennen paistoa. Jos haluat, voit kevyesti sumuttaa leivän pinnan vedellä.
 3. **Viillot (Scoring)**: Tee terävällä veitsellä tai partaterällä yksi tai useampi nopea, noin 1-1.5 cm syvä viilto leivän pintaan. Tämä ohjaa leivän kohoamista uunissa.
    > **Vinkki:** Yksi pitkä viilto keskelle leipää toimii hyvin vuokaleivässä.
 
    <!-- ![Hapanjuurileivän viiltäminen partaterällä ennen paistoa](placeholder-hapanjuuri-viillot.jpg) -->
 
-4. **Paisto (Valurautapadassa)**: Ota kuuma pata varovasti uunista. Poista kansi. Kumoa tai nosta leipä varovasti (tarvittaessa leivinpaperin avulla) kuumaan pataan. Laita kansi päälle ja siirrä pata takaisin uuniin. Paista kannen alla 20 minuuttia.
-   Poista padan kansi, alenna uunin lämpötilaa 210-220°C:een ja jatka paistamista vielä 20-25 minuuttia, tai kunnes leivän kuori on kauniin syvän kullanruskea ja sisälämpötila on noin 96-98°C. Leipä kuulostaa ontolta, kun sen pohjaa koputtaa.
-5. **Paisto (Ilman Pataa, Paistokivellä/Pellillä)**: Aseta leipä kuumalle paistokivelle tai uunipellille. Luo höyryä uuniin kaatamalla noin 1 dl kiehuvaa vettä esilämmitettyyn metallivuokaan uunin pohjalle. Sulje uuninluukku nopeasti. Paista 230°C:ssa 15-20 minuuttia. Poista höyryastia (varo kuumaa höyryä!) ja alenna lämpötila 210-220°C:een. Jatka paistamista 20-25 minuuttia, tai kunnes leipä on kypsä.
+4. **Paisto (Valurautapadassa)**: Ota kuuma pata varovasti uunista. Poista kansi. Kumoa tai nosta leipä varovasti (tarvittaessa leivinpaperin avulla) kuumaan pataan. Laita kansi päälle ja siirrä pata takaisin uuniin. Paista kannen alla 20 min.
+   Poista padan kansi, alenna uunin lämpötilaa 210-220°C:een ja jatka paistamista vielä 20-25 min, tai kunnes leivän kuori on kauniin syvän kullanruskea ja sisälämpötila on noin 96-98°C. Leipä kuulostaa ontolta, kun sen pohjaa koputtaa.
+5. **Paisto (Ilman Pataa, Paistokivellä/Pellillä)**: Aseta leipä kuumalle paistokivelle tai uunipellille. Luo höyryä uuniin kaatamalla noin 1 dl kiehuvaa vettä esilämmitettyyn metallivuokaan uunin pohjalle. Sulje uuninluukku nopeasti. Paista 230°C:ssa 15-20 min. Poista höyryastia (varo kuumaa höyryä!) ja alenna lämpötila 210-220°C:een. Jatka paistamista 20-25 min, tai kunnes leipä on kypsä.
 
 #### Vaihe 9: Jäähdytys (Erittäin Tärkeää! Vähintään 2-4 tuntia)
 
@@ -205,7 +205,7 @@ Paahtoleipä säilyy parhaiten huoneenlämmössä hyvin käärittynä paperipuss
 ### Ajoituksen hallinta
 
 - **Tarkkaile taikinaa**: Ajat ovat viitteellisiä - fermentaatio riippuu lämpötilasta ja juuren aktiivisuudesta.
-- **Taitot**: 30-45 minuutin välein ensimmäisten 1.5-2 tunnin aikana fermentaatiossa.
+- **Taitot**: 30-45 min välein ensimmäisten 1.5-2 tunnin aikana fermentaatiossa.
 - **Fermentaation merkit**: Taikina tuntuu ilmavalta, on kasvanut 30-50% ja siinä näkyy kuplia.
 - **Sormitesti**: Paina kevyesti taikinan pintaa. Jos painauma palautuu hitaasti, fermentaatio on sopivassa vaiheessa.
 
@@ -222,7 +222,7 @@ Paahtoleipä säilyy parhaiten huoneenlämmössä hyvin käärittynä paperipuss
 
 ### Paistotekniikka
 
-- **Uunin esilämmitys**: Esilämmitä uuni ja paistoastia vähintään 45-60 minuuttia.
+- **Uunin esilämmitys**: Esilämmitä uuni ja paistoastia vähintään 45-60 min.
 - **Höyry**: Riittävä höyry paiston alussa on tärkeää hyvän kuoren ja leivän kohoamisen kannalta.
 - **Viillot**: Tee viillot terävällä veitsellä tai partaterällä juuri ennen paistoa.
 - **Paistovaiheet**: Ensimmäinen vaihe korkeassa lämpötilassa (230-250°C) höyryssä/kannella, toinen vaihe matalammassa lämpötilassa (210-220°C) ilman höyryä/kantta.

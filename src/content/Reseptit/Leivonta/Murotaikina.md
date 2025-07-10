@@ -93,14 +93,14 @@ teoria:
    > **Kriitinen kohta:** Älä vaivaa taikinaa! Sekoita mahdollisimman vähän, vain kunnes taikina muodostuu. Liika neste tai liika sekoittaminen kehittää gluteenia ja tekee pohjasta sitkeän.
    > **Visuaalinen merkki:** Taikina on hieman kosteaa ja pysyy kasassa puristettaessa, mutta ei ole märkää tai tahmeaa.
 
-4. **Kokoaminen ja Jäähdytys**: Kaada taikinamurut kevyesti jauhotetulle työtasolle ja painele ne nopeasti yhteen palloksi. Muotoile pallo litteäksi kiekoksi (noin 2-3 cm paksu). Kääri kiekko tiiviisti elintarvikekelmuun ja siirrä jääkaappiin lepäämään vähintään 30 minuutiksi, mieluiten tunniksi tai jopa yön yli.
+4. **Kokoaminen ja Jäähdytys**: Kaada taikinamurut kevyesti jauhotetulle työtasolle ja painele ne nopeasti yhteen palloksi. Muotoile pallo litteäksi kiekoksi (noin 2-3 cm paksu). Kääri kiekko tiiviisti elintarvikekelmuun ja siirrä jääkaappiin lepäämään vähintään 30 min, mieluiten tunniksi tai jopa yön yli.
    > **Huomio:** Kiekon muoto helpottaa myöhempää kaulimista. Jäähdytys rentouttaa gluteenia ja kovettaa voin uudelleen.
 
    <!-- ![Valmis murotaikina muotoiltuna litteäksi kiekoksi ja käärittynä kelmuun, valmiina jääkaappiin](placeholder-murotaikina-kiekko.jpg) -->
 
 #### Taikinan Kauliminen ja Vuokaan Asettaminen
 
-1. **Kauliminen**: Ota jäähtynyt taikinakiekko jääkaapista noin 5-10 minuuttia ennen kaulimista, jotta se hieman pehmenee. Kauli taikina kevyesti jauhotetulla työtasolla tai kahden leivinpaperiarkin välissä noin 3-4 mm paksuiseksi, vuokaa suuremmaksi ympyräksi (halkaisija noin 5-7 cm suurempi kuin vuoan halkaisija).
+1. **Kauliminen**: Ota jäähtynyt taikinakiekko jääkaapista noin 5-10 min ennen kaulimista, jotta se hieman pehmenee. Kauli taikina kevyesti jauhotetulla työtasolla tai kahden leivinpaperiarkin välissä noin 3-4 mm paksuiseksi, vuokaa suuremmaksi ympyräksi (halkaisija noin 5-7 cm suurempi kuin vuoan halkaisija).
    > **Vinkki:** Pyöritä taikinaa neljänneskierros aina muutaman kaulimisvedon jälkeen, jotta se ei tartu alustaan ja kauliutuu tasaisesti. Lisää jauhoja vain tarvittaessa.
 
 2. **Vuokaan Siirtäminen**: Kieritä kaulittu taikinalevy varovasti kaulimen ympärille ja nosta se piirakkavuoan päälle. Rullaa taikina auki vuokaan. Painele taikina varovasti mutta tiiviisti vuoan pohjalle ja reunoille, erityisesti pohjan ja reunan liitoskohtaan. Vältä taikinan venyttämistä.
@@ -108,7 +108,7 @@ teoria:
 
    <!-- ![Kaulittu murotaikina aseteltuna huolellisesti piirakkavuokaan](placeholder-murotaikina-vuoassa.jpg) -->
 
-4. **Pohjan Pistely ja Jäähdytys**: Pistele taikinapohja kauttaaltaan haarukalla. Tämä estää pohjaa kohoamasta liikaa paiston aikana. Siirrä vuoka vielä jääkaappiin tai pakastimeen jäähtymään noin 15-30 minuutiksi ennen paistamista. Tämä auttaa pohjaa pitämään muotonsa paremmin.
+4. **Pohjan Pistely ja Jäähdytys**: Pistele taikinapohja kauttaaltaan haarukalla. Tämä estää pohjaa kohoamasta liikaa paiston aikana. Siirrä vuoka vielä jääkaappiin tai pakastimeen jäähtymään noin 15-30 min ennen paistamista. Tämä auttaa pohjaa pitämään muotonsa paremmin.
 
 #### Esipaisto (Sokkopaisto)
 
@@ -116,8 +116,8 @@ teoria:
 
 1. **Uunin Esilämmitys**: Esilämmitä uuni 190-200°C (ylä-alalämpö).
 2. **Vuoraaminen ja Painot**: Ota vuoka jääkaapista. Rypistä leivinpaperiarkki ja levitä se taikinapohjan päälle niin, että se peittää myös reunat. Täytä vuoka sokkopaistokuulilla, kuivatuilla herneillä/pavuilla tai raa'alla riisillä. Painojen tulee täyttää vuoka reunoja myöten, jotta reunat eivät valu paiston aikana.
-3. **Ensimmäinen Paisto**: Paista uunin keskitasolla noin 15 minuuttia.
-4. **Painojen Poisto ja Toinen Paisto**: Ota vuoka varovasti uunista. Nosta leivinpaperi painoineen pois. Jos pohja näyttää vielä kostealta, paista vielä 5-10 minuuttia, tai kunnes pohja on saanut kevyesti väriä ja näyttää kuivalta.
+3. **Ensimmäinen Paisto**: Paista uunin keskitasolla noin 15 min.
+4. **Painojen Poisto ja Toinen Paisto**: Ota vuoka varovasti uunista. Nosta leivinpaperi painoineen pois. Jos pohja näyttää vielä kostealta, paista vielä 5-10 min, tai kunnes pohja on saanut kevyesti väriä ja näyttää kuivalta.
 5. **Jäähdytys**: Anna esipaistetun pohjan jäähtyä hieman ennen täytteen lisäämistä.
 
 #### Paistaminen Täytteen Kanssa

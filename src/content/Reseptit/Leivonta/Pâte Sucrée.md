@@ -85,7 +85,7 @@ teoria:
 
 #### Taikinan Valmistus (Creaming Method)
 
-1. **Voin ja Tomusokerin Vaahdotus**: Vaahdota pehmeä voi, siivilöity tomusokeri ja suola yleiskoneen lapavatkaimella tai sähkövatkaimella keskinopeudella, kunnes seos on vaaleaa, kermaista ja kuohkeaa (noin 2-3 minuuttia). Lisää vaniljauute (jos käytät) ja sekoita lyhyesti.
+1. **Voin ja Tomusokerin Vaahdotus**: Vaahdota pehmeä voi, siivilöity tomusokeri ja suola yleiskoneen lapavatkaimella tai sähkövatkaimella keskinopeudella, kunnes seos on vaaleaa, kermaista ja kuohkeaa (noin 2-3 min). Lisää vaniljauute (jos käytät) ja sekoita lyhyesti.
    > **Huomio:** Älä vatkaa liikaa, jotta taikinaan ei tule liikaa ilmaa, mikä voi aiheuttaa kutistumista paistaessa.
 
    <!-- ![Pehmeä voi ja tomusokeri vaahdotettuna vaaleaksi ja kermaiseksi.](placeholder-sucree-creaming.jpg) -->
@@ -104,18 +104,18 @@ teoria:
 
 #### Taikinan Kauliminen ja Vuokaan Asettaminen
 
-1. **Kauliminen**: Ota jäähtynyt taikina jääkaapista noin 10-15 minuuttia ennen kaulimista. Kauli taikina kevyesti jauhotetulla alustalla tai kahden leivinpaperiarkin välissä noin 2.5-3 mm paksuiseksi levyksi. Kauli vuokaa suuremmaksi (n. 5-7 cm isompi halkaisija).
+1. **Kauliminen**: Ota jäähtynyt taikina jääkaapista noin 10-15 min ennen kaulimista. Kauli taikina kevyesti jauhotetulla alustalla tai kahden leivinpaperiarkin välissä noin 2.5-3 mm paksuiseksi levyksi. Kauli vuokaa suuremmaksi (n. 5-7 cm isompi halkaisija).
 2. **Vuokaan Siirtäminen**: Siirrä taikina varovasti vuokaan (kuten Pâte Brisée -ohjeessa, kieritä kaulimen ympärille). Painele taikina huolellisesti vuoan pohjalle ja reunoille ilman venyttämistä.
 3. **Reunojen Siistiminen**: Leikkaa ylimääräinen taikina pois terävällä veitsellä vuoan reunaa pitkin.
-4. **Jäähdytys**: Siirrä vuorattu vuoka jääkaappiin tai pakastimeen vähintään 30 minuutiksi ennen paistamista. Tämä auttaa pohjaa säilyttämään muotonsa.
+4. **Jäähdytys**: Siirrä vuorattu vuoka jääkaappiin tai pakastimeen vähintään 30 min ennen paistamista. Tämä auttaa pohjaa säilyttämään muotonsa.
 
 #### Esipaisto (Sokkopaisto) (Suositellaan lähes aina Pâte Sucréelle)
 
 1. **Uunin Esilämmitys**: Esilämmitä uuni 170-180°C (ylä-alalämpö).
 2. **Pistely ja Vuoraaminen**: Ota vuoka kylmästä. Pistele pohja tiheästi haarukalla. Vuoraa pohja leivinpaperilla ja täytä sokkopaistopainoilla.
-3. **Paistaminen Painojen Kanssa**: Paista uunin keskitasolla noin 15-20 minuuttia, kunnes reunat ovat alkaneet saada väriä.
-4. **Painojen Poisto ja Loppupaisto**: Poista painot ja leivinpaperi varovasti. Paista pohjaa vielä 5-10 minuuttia, kunnes se on kauttaaltaan vaalean kullanruskea ja näyttää kuivalta.
-5. **(Valinnainen) Munavoitelu**: Jos haluat erityisen vedenkestävän pohjan (esim. kosteille kreemitäytteille), voit voidella kuuman pohjan kevyesti munankeltuaisella (sekoitettuna tilkkaan kermaa tai vettä) ja laittaa sen takaisin uuniin 1-2 minuutiksi, kunnes voitelu on kuivunut kiiltäväksi kalvoksi.
+3. **Paistaminen Painojen Kanssa**: Paista uunin keskitasolla noin 15-20 min, kunnes reunat ovat alkaneet saada väriä.
+4. **Painojen Poisto ja Loppupaisto**: Poista painot ja leivinpaperi varovasti. Paista pohjaa vielä 5-10 min, kunnes se on kauttaaltaan vaalean kullanruskea ja näyttää kuivalta.
+5. **(Valinnainen) Munavoitelu**: Jos haluat erityisen vedenkestävän pohjan (esim. kosteille kreemitäytteille), voit voidella kuuman pohjan kevyesti munankeltuaisella (sekoitettuna tilkkaan kermaa tai vettä) ja laittaa sen takaisin uuniin 1-2 min, kunnes voitelu on kuivunut kiiltäväksi kalvoksi.
 6. **Jäähdytys**: Anna pohjan jäähtyä täysin ritilällä ennen täyttämistä.
 
    <!-- ![Sokkopaistettu Pâte Sucrée -pohja kauniin kullanruskeana.](placeholder-sucree-sokkopaisto.jpg) -->
@@ -172,7 +172,7 @@ Pâte Sucrée on täydellinen pohja hedelmä- ja marjatartaleteille, sitruunator
 ### Ongelmanratkaisu
 
 - **Taikina Murenee Kaulittaessa**: Taikina on liian kylmää. Anna lämmetä hieman huoneenlämmössä tai painele sitä nopeasti käsien välissä lämmittääksesi.
-- **Taikina Tarttuu Kaulittaessa**: Taikina on liian lämmintä. Viilennä jääkaapissa 15-20 minuuttia ja käytä enemmän jauhoja tai kaulimiseen leivinpaperia.
+- **Taikina Tarttuu Kaulittaessa**: Taikina on liian lämmintä. Viilennä jääkaapissa 15-20 min ja käytä enemmän jauhoja tai kaulimiseen leivinpaperia.
 - **Pohja Kutistuu Paistettaessa**: Taikina on todennäköisesti ollut liian lämmintä tai sitä on ylivaivattu. Varmista, että jäähdytät pohjaa riittävästi ennen paistoa ja että et kehitä liikaa gluteenia.
 - **Pohja Muuttuu Liian Tummaksi**: Uuni on liian kuuma. Laske lämpöä 10-20 asteella tai suojaa reunat foliolla.
 - **Pohja Jää Raakaoloinen**: Paisto on ollut liian lyhyt tai lämpötila liian matala. Pidennä paistoaikaa tai nosta lämpöä hieman.

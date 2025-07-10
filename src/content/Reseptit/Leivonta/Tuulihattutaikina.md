@@ -92,13 +92,13 @@ subtitle: Pâte à Choux - Perusresepti
 2. **Jauhojen Lisäys**: Ota kattila liedeltä heti kiehahduksen jälkeen. Lisää kaikki siivilöidyt jauhot kattilaan YHDELLÄ KERTAA. Ala heti sekoittaa voimakkaasti puulastalla tai tukevalla silikonilastalla, kunnes kaikki jauhot ovat kostuneet ja muodostuu yhtenäinen, paksu taikinapallo.
    > **Kriittinen kohta:** Jauhojen lisääminen kerralla ja nopea sekoitus estää paakkujen muodostumisen.
 
-3. **Kuivattaminen (Dessécher)**: Palauta kattila matalalle tai keski-matalalle lämmölle. Jatka taikinan jatkuvaa sekoittamista ja "paistamista" kattilassa noin 1-3 minuuttia. Taikina on valmis, kun se irtoaa helposti kattilan reunoista ja pohjasta yhtenäisenä pallona, ja kattilan pohjalle alkaa muodostua ohut kalvo.
+3. **Kuivattaminen (Dessécher)**: Palauta kattila matalalle tai keski-matalalle lämmölle. Jatka taikinan jatkuvaa sekoittamista ja "paistamista" kattilassa noin 1-3 min. Taikina on valmis, kun se irtoaa helposti kattilan reunoista ja pohjasta yhtenäisenä pallona, ja kattilan pohjalle alkaa muodostua ohut kalvo.
    > **KRIITINEN KOHTA:** Tämä kuivatusvaihe on olennainen. Se poistaa ylimääräistä kosteutta ja kypsentää tärkkelystä, mikä on välttämätöntä hyvän kohoamisen kannalta. Älä kuitenkaan kuivata liikaa.
    > **Visuaalinen merkki:** Taikina on kiinteä pallo, ei enää tartu reunoihin, ja pohjalla näkyy ohut vaalea kerros.
 
    <!-- ![Pâte à choux -taikinan kuivatusvaihe kattilassa matalalla lämmöllä](placeholder-choux-panade-kuivatus.jpg) -->
 
-4. **Jäähdytys**: Siirrä kuuma taikinapallo yleiskoneen kulhoon (jos käytät) tai toiseen sekoituskulhoon. Anna taikinan jäähtyä hieman, noin 5-10 minuuttia, jotta se ei ole polttavan kuumaa. Voit nopeuttaa jäähtymistä sekoittamalla sitä hitaasti yleiskoneen tasovispilällä tai lastalla.
+4. **Jäähdytys**: Siirrä kuuma taikinapallo yleiskoneen kulhoon (jos käytät) tai toiseen sekoituskulhoon. Anna taikinan jäähtyä hieman, noin 5-10 min, jotta se ei ole polttavan kuumaa. Voit nopeuttaa jäähtymistä sekoittamalla sitä hitaasti yleiskoneen tasovispilällä tai lastalla.
    > **Huomio:** Taikinan tulee olla vielä lämmin, mutta ei niin kuuma, että se kypsentää kananmunat heti lisättäessä (ihannelämpötila n. 60-70°C).
 
 #### Vaihe 2: Munien Lisääminen
@@ -121,11 +121,11 @@ subtitle: Pâte à Choux - Perusresepti
 
 2. **Pinnan Tasoitus (Valinnainen)**: Voit tasoittaa pursotuksesta jääneet huiput kevyesti vedellä kostutetulla sormella tai haarukan takaosalla.
 3. **Voitelu (Valinnainen)**: Halutessasi voit sivellä leivonnaisten pinnan kevyesti munankeltuaisella tai muna-vesiseoksella kiillon ja värin saamiseksi.
-4. **Paistaminen**: Esilämmitä uuni 200-210°C (ylä-alalämpö). Laita pelti uunin keskitasolle. Paista ensin noin 10-15 minuuttia korkeammassa lämpötilassa, kunnes leivonnaiset ovat kohonneet kunnolla ja alkaneet saada väriä. Laske sitten uunin lämpötilaa 175-180°C:een ja jatka paistamista vielä 15-25 minuuttia, tai kunnes ne ovat kauniin kullanruskeita, kiinteitä ja tuntuvat kevyiltä.
-    > **KRIITINEN KOHTA:** ÄLÄ AVAA UUNIN LUUKKUA ensimmäisen 15-20 minuutin aikana, muuten höyry karkaa ja leivonnaiset lässähtävät!
+4. **Paistaminen**: Esilämmitä uuni 200-210°C (ylä-alalämpö). Laita pelti uunin keskitasolle. Paista ensin noin 10-15 min korkeammassa lämpötilassa, kunnes leivonnaiset ovat kohonneet kunnolla ja alkaneet saada väriä. Laske sitten uunin lämpötilaa 175-180°C:een ja jatka paistamista vielä 15-25 min, tai kunnes ne ovat kauniin kullanruskeita, kiinteitä ja tuntuvat kevyiltä.
+    > **KRIITINEN KOHTA:** ÄLÄ AVAA UUNIN LUUKKUA ensimmäisen 15-20 min aikana, muuten höyry karkaa ja leivonnaiset lässähtävät!
     > **Visuaalinen merkki:** Leivonnaiset ovat paisuneet moninkertaisiksi, ovat kauttaaltaan kullanruskeita ja näyttävät kuivilta.
 
-5. **Kuivatus Uunissa (Valinnainen mutta suositeltava)**: Kun leivonnaiset ovat kypsiä, sammuta uuni. Voit tehdä pienen reiän tai viillon jokaisen leivonnaisen pohjaan tai kylkeen päästääksesi höyryn ulos. Laita leivonnaiset takaisin uuniin ja jätä uunin luukku hieman raolleen (esim. puulastan avulla). Anna niiden kuivua jälkilämmössä noin 10-15 minuuttia. Tämä auttaa niitä pysymään rapeina pidempään.
+5. **Kuivatus Uunissa (Valinnainen mutta suositeltava)**: Kun leivonnaiset ovat kypsiä, sammuta uuni. Voit tehdä pienen reiän tai viillon jokaisen leivonnaisen pohjaan tai kylkeen päästääksesi höyryn ulos. Laita leivonnaiset takaisin uuniin ja jätä uunin luukku hieman raolleen (esim. puulastan avulla). Anna niiden kuivua jälkilämmössä noin 10-15 min. Tämä auttaa niitä pysymään rapeina pidempään.
 6. **Jäähdytys**: Siirrä valmiit Pâte à Choux -kuoret ritilälle jäähtymään kokonaan ennen täyttämistä.
 
 ### Annostelu ja Tarjoilu
@@ -155,7 +155,7 @@ subtitle: Pâte à Choux - Perusresepti
 
 ### Säilytys
 
-- **Paistetut, Täyttämättömät Kuoret**: Säilytä ilmatiiviissä rasiassa huoneenlämmössä 1-2 päivää. Ne pehmenevät nopeasti. Voit yrittää rapeuttaa niitä uudelleen kuumassa uunissa (175°C) muutaman minuutin ajan.
+- **Paistetut, Täyttämättömät Kuoret**: Säilytä ilmatiiviissä rasiassa huoneenlämmössä 1-2 päivää. Ne pehmenevät nopeasti. Voit yrittää rapeuttaa niitä uudelleen kuumassa uunissa (175°C) muutaman min ajan.
 - **Pakastetut Kuoret**: Jäähdytä täysin ja pakasta ilmatiiviissä rasiassa tai pussissa jopa 1 kuukauden ajan. Sulata huoneenlämmössä ja rapeuta tarvittaessa uunissa ennen täyttämistä.
 - **Täytetyt Leivonnaiset**: Säilytä jääkaapissa ja nauti muutaman tunnin kuluessa parhaan rakenteen takaamiseksi.
 
@@ -166,7 +166,7 @@ subtitle: Pâte à Choux - Perusresepti
 - Kuivatusvaihe liedellä ja riittävä paistoaika ovat avainasemassa oikean rakenteen saavuttamisessa
 - Liian kostea taikina tai liian lyhyt paistoaika johtaa lässähtäneisiin leivonnaisiin
 - Korkea alkulämpötila saa veden höyrystymään nopeasti ja leivonnaiset kohoamaan
-- ÄLÄ AVAA UUNIN LUUKKUA ensimmäisen 15-20 minuutin aikana
+- ÄLÄ AVAA UUNIN LUUKKUA ensimmäisen 15-20 min aikana
 
 ### Munien Määrä ja Taikinan Koostumus
 

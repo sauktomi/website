@@ -95,13 +95,13 @@ teoria:
 #### Paistaminen
 
 1. **Taikinan Kaataminen Vuokaan**: Kaada valmis taikina esivalmisteltuun uunivuokaan.
-2. **Paistaminen**: Paista pannukakkua uunin keski- tai alatasolla 200-225°C:ssa noin 25-35 minuuttia. Paistoaika riippuu uunista ja vuoan koosta sekä materiaalista. Pannukakku on kypsä, kun se on kauniisti kohonnut, saanut kullanruskean värin ja reunat ovat hieman rapeita. Keskusta saa jäädä aavistuksen pehmeäksi ja tutisevaksi, mutta ei raa'aksi.
+2. **Paistaminen**: Paista pannukakkua uunin keski- tai alatasolla 200-225°C:ssa noin 25-35 min. Paistoaika riippuu uunista ja vuoan koosta sekä materiaalista. Pannukakku on kypsä, kun se on kauniisti kohonnut, saanut kullanruskean värin ja reunat ovat hieman rapeita. Keskusta saa jäädä aavistuksen pehmeäksi ja tutisevaksi, mutta ei raa'aksi.
    > **Huomio:** Pannukakku kohoaa paiston aikana ja laskee hieman jäähtyessään – tämä on normaalia.
    > **Visuaalinen merkki:** Pinta on kauniin ruskea, reunat ovat kohonneet ja saaden väriä. Kokeiltaessa puutikulla keskeltä, tikkuun ei tartu märkää taikinaa.
 
    <!-- ![Pannukakku paistumassa uunissa, kauniisti kohonneena ja saaden väriä](placeholder-pannukakku-uunissa.jpg) -->
 
-3. **Jäähdytys**: Ota valmis pannukakku uunista. Anna sen jäähtyä vuoassa noin 5-10 minuuttia ennen paloiksi leikkaamista ja tarjoilua. Pannukakku on parasta hieman lämpimänä.
+3. **Jäähdytys**: Ota valmis pannukakku uunista. Anna sen jäähtyä vuoassa noin 5-10 min ennen paloiksi leikkaamista ja tarjoilua. Pannukakku on parasta hieman lämpimänä.
 
 ### Annostelu ja Tarjoilu
 
@@ -127,8 +127,8 @@ Leikkaa jäähtynyt pannukakku neliöiksi tai vinoneliöiksi. Tarjoile palat lä
 ### Lämpötilat ja ajastukset
 
 - Uunin lämpötila: 200-225°C (ylä-alalämpö)
-- Paistoaika: 25-35 minuuttia, vuoan koosta riippuen
-- Jäähdytys ennen tarjoilua: 5-10 minuuttia
+- Paistoaika: 25-35 min, vuoan koosta riippuen
+- Jäähdytys ennen tarjoilua: 5-10 min
 - Voin sulatus: Sulata voi mikrossa tai kattilassa, anna jäähtyä hieman ennen käyttöä
 
 ### Vuoan koko ja materiaali

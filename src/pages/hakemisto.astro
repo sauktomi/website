@@ -30,7 +30,7 @@
  */
 
 import Layout from '../layouts/Layout.astro';
-import SimpleFilterSystem from '../components/SimpleFilterSystem.jsx';
+import FilterSystem from '../components/FilterSystem.astro';
 import { 
   extractUniqueDietaryTags
 } from '../utils/ruoanlaitto-data.ts';
@@ -126,8 +126,8 @@ const typeOptions = [
 
       <!-- Main Content -->
       <div class="main-content">
-        <!-- Simple Filter System -->
-        <SimpleFilterSystem
+        <!-- Filter System -->
+        <FilterSystem
           config={{
             itemSelector: '.list-item-wrapper',
             sectionSelector: '.category-section',
@@ -170,7 +170,6 @@ const typeOptions = [
             }
           ]}
           resultsCountText="kohdetta löytyi"
-          client:visible
         />
 
         <!-- No Results -->

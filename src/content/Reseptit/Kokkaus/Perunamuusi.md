@@ -81,7 +81,7 @@ teoria:
 
 1. **Valmistelu**: Kuori perunat ja leikkaa ne suunnilleen samankokoisiksi, noin 3-4 cm paloiksi. Tasainen koko varmistaa tasaisen kypsymisen. Huuhtele perunapalat nopeasti kylmällä vedellä poistaaksesi ylimääräistä pintatärkkelystä.
 2. **Keittäminen**: Laita perunapalat suureen kattilaan ja peitä ne reilusti kylmällä vedellä (vettä noin 2-3 cm perunoiden yläpuolelle). Lisää karkea merisuola keitinveteen (n. 1 rkl / 2 litraa vettä).
-   Kuumenna vesi kiehuvaksi. Alenna sitten lämpöä niin, että vesi juuri ja juuri poreilee (simmer). Keitä perunoita kannen alla noin 15-25 minuuttia, tai kunnes ne ovat täysin kypsiä ja pehmeitä. Kypsyyden voit testata työntämällä veitsenkärjen perunanpalaan – sen tulisi upota helposti ilman vastusta.
+   Kuumenna vesi kiehuvaksi. Alenna sitten lämpöä niin, että vesi juuri ja juuri poreilee (simmer). Keitä perunoita kannen alla noin 15-25 min, tai kunnes ne ovat täysin kypsiä ja pehmeitä. Kypsyyden voit testata työntämällä veitsenkärjen perunanpalaan – sen tulisi upota helposti ilman vastusta.
    > **Kriittinen kohta:** Älä keitä perunoita liian kypsiksi tai liian voimakkaasti, jotta ne eivät ime liikaa vettä ja hajoa.
    > **Visuaalinen merkki:** Perunat ovat pehmeitä läpi asti, mutta eivät ole vielä hajonneet mössöksi.
 
@@ -89,7 +89,7 @@ teoria:
 
 #### Soseuttaminen ja Viimeistely
 
-1. **Valutus ja Höyryttäminen**: Kaada keitetyt perunat välittömästi lävikköön ja valuta kaikki keitinvesi huolellisesti pois. Anna perunoiden höyrystyä kuiviksi lävikössä muutaman minuutin ajan. Voit myös palauttaa valutetut perunat kuumaan, tyhjään kattilaan liedelle hetkeksi (erittäin matala lämpö), jotta kaikki ylimääräinen kosteus haihtuu.
+1. **Valutus ja Höyryttäminen**: Kaada keitetyt perunat välittömästi lävikköön ja valuta kaikki keitinvesi huolellisesti pois. Anna perunoiden höyrystyä kuiviksi lävikössä muutaman min ajan. Voit myös palauttaa valutetut perunat kuumaan, tyhjään kattilaan liedelle hetkeksi (erittäin matala lämpö), jotta kaikki ylimääräinen kosteus haihtuu.
    > **Kriittinen kohta:** Perunoiden kuivaaminen höyryttämällä on tärkeää, jotta muusista ei tule vetistä.
 
 2. **Maidon/Kerman Lämmitys**: Kuumenna maito tai kerma pienessä kattilassa lähes kiehumispisteeseen. Älä anna sen kiehua.

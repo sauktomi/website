@@ -100,7 +100,7 @@ teoria:
    > **Kriittinen kohta:** Painaminen varmistaa tasaisen kontaktin pannuun
    > **Visuaalinen merkki:** Liha alkaa saada ruskeaa väriä reunoilta
 
-4. Kun pihvien alapinta on saanut kauniin värin (noin 2-3 minuuttia), käännä ne. Lisää timjami, valkosipulikynnet ja voi pannulle.
+4. Kun pihvien alapinta on saanut kauniin värin (noin 2-3 min), käännä ne. Lisää timjami, valkosipulikynnet ja voi pannulle.
    <!-- ![Lähikuva pihvin rapeasta, tummanruskeasta paistopinnasta.](placeholder-pihvi-kaannos.jpg) -->
 
 5. **Aromi-infuusio**: Kallista pannua, kerää sulanutta voita, valkosipulia, timjamia **ja halutessasi muutama ohut siivu salottisipulia** lastalla tai lusikalla ja valele pihvejä jatkuvasti niiden kypsyessä toiselta puolelta.
@@ -118,11 +118,11 @@ teoria:
 
 #### Lepo ja tarjoilu
 
-1. **Kriittinen lepovaihe**: Ota pihvit pannulta ja anna levätä lämpimässä paikassa (esim. ritilällä pellin päällä, jotta ilma kiertää eikä pohja vety, tai sammutetussa, vielä hieman lämpimässä uunissa) 8-10 minuuttia. Voit peittää ne löyhästi foliolla, mutta älä sulje tiiviisti.
+1. **Kriittinen lepovaihe**: Ota pihvit pannulta ja anna levätä lämpimässä paikassa (esim. ritilällä pellin päällä, jotta ilma kiertää eikä pohja vety, tai sammutetussa, vielä hieman lämpimässä uunissa) 8-10 min. Voit peittää ne löyhästi foliolla, mutta älä sulje tiiviisti.
     > **Kriittinen kohta:** Lepovaiheessa lihasnesteet uudelleenjakautuvat
     > **Visuaalinen merkki:** Liha ei "vuoda" nesteitä lautaselle leikattaessa
 
-2. Halutessasi voit varovasti lämmittää pihvit uudelleen pannulla miedolla lämmöllä noin 30 sekuntia per puoli juuri ennen tarjoilua, tai tarjoilla ne suoraan levon jälkeen kuumalta lautaselta.
+2. Halutessasi voit varovasti lämmittää pihvit uudelleen pannulla miedolla lämmöllä noin 30 sek per puoli juuri ennen tarjoilua, tai tarjoilla ne suoraan levon jälkeen kuumalta lautaselta.
 3. Leikkaa liha viipaleiksi poikkisyin (vastakarvaan) tai tarjoa kokonaisina pihveinä.
 4. Viimeistele vielä hyvällä merisuolalla tai fleur de selillä juuri ennen tarjoilua.
 
@@ -154,7 +154,7 @@ Tämä ruoka on tarkoitettu nautittavaksi välittömästi valmistuksen jälkeen.
 ### Tekniikat ja työvälineet
 
 - **Lihan valinta**: Entrecôte (ribeye) on marmoroitu pihvi, joka sisältää riittävästi rasvaa mehevyyden takaamiseksi. Hyvä marmorointi on olennaisempaa kuin väri.
-- **Valelu-tekniikka**: Kokenut kokki voi vaihtoehtoisesti lämmittää pannun erittäin kuumaksi, paistaa lihan 1 minuutin molemmilta puolilta, lisätä voin ja valkosipulin, ja valmistaa pihvin kokonaan valelemalla jatkuvasti 2-3 minuutin ajan.
+- **Valelu-tekniikka**: Kokenut kokki voi vaihtoehtoisesti lämmittää pannun erittäin kuumaksi, paistaa lihan 1 min molemmilta puolilta, lisätä voin ja valkosipulin, ja valmistaa pihvin kokonaan valelemalla jatkuvasti 2-3 min ajan.
 
 ### Raaka-aineiden korvaaminen
 
@@ -216,5 +216,5 @@ Tämä resepti demonstroi useita tärkeitä ruoanvalmistuksen periaatteita, jotk
 ### Testausmuistiinpanot
 
 - Testauspäivä: 2024-11-26
-- Testaajan huomiot: Valeleminen toimi hyvin, mutta pannun kuumuus vaihteli liikaa. Tarkista pannun kunnollinen esilämmitys. Lepovaihe 10 minuuttia toimi täydellisesti.
+- Testaajan huomiot: Valeleminen toimi hyvin, mutta pannun kuumuus vaihteli liikaa. Tarkista pannun kunnollinen esilämmitys. Lepovaihe 10 min toimi täydellisesti.
 - Muutokset seuraavaan versioon: Tarkennetaan pannun lämpötilan hallintaa ja mahdollisesti lisätään ohje pannun tasaisen lämmön testaamiseen.

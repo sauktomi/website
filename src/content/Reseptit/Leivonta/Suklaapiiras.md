@@ -95,10 +95,10 @@ imageAlt: Kokonainen, valmis piiras lautasella, yläviisto kuvakulma korostaen k
    > **Visuaalinen merkki**: Taikina on tasaisesti vuoan pohjalla ja reunoilla.
 
 4. **Pistele pohja**: Pistele taikinapohja haarukalla.
-5. **Sokea paisto (vaihe 1)**: Aseta leivinpaperiarkki taikinan päälle ja täytä se paistokuulilla tai kuivatuilla herneillä. Paista 180°C uunissa 15 minuuttia.
+5. **Sokea paisto (vaihe 1)**: Aseta leivinpaperiarkki taikinan päälle ja täytä se paistokuulilla tai kuivatuilla herneillä. Paista 180°C uunissa 15 min.
    > **Kriittinen kohta**: Painojen tulee peittää koko pohja, jotta reunat eivät valu ja pohja ei kohoa.
 
-6. **Sokea paisto (vaihe 2)**: Poista leivinpaperi ja painot. Paista pohjaa vielä 10-15 minuuttia, tai kunnes se on kevyesti kullanruskea ja kypsä.
+6. **Sokea paisto (vaihe 2)**: Poista leivinpaperi ja painot. Paista pohjaa vielä 10-15 min, tai kunnes se on kevyesti kullanruskea ja kypsä.
    > **Visuaalinen merkki**: Pohja on saanut tasaisen vaaleanruskean värin ja näyttää kuivalta.
 
 7. **Jäähdytä**: Anna pohjan jäähtyä vuoassaan ritilällä.
@@ -128,7 +128,7 @@ _Kuva: Suklaa-kermaseoksen valmistusvaihe, jossa ainekset yhdistetään tasaisek
 #### Piiraan kokoaminen ja paistaminen
 
 1. **Kaada täyte pohjalle**: Kaada suklaatäyte varovasti esipaistetun ja jäähtyneen piirakkapohjan päälle.
-2. **"Paistaminen"**: Kuumenna uuni uudelleen 180°C (kiertoilma 160°C). Laita piiras uuniin ja **sammuta uuni välittömästi**. Anna piiraan olla jälkilämmössä uunissa 45 minuuttia. Älä avaa uunin luukkua tänä aikana.
+2. **"Paistaminen"**: Kuumenna uuni uudelleen 180°C (kiertoilma 160°C). Laita piiras uuniin ja **sammuta uuni välittömästi**. Anna piiraan olla jälkilämmössä uunissa 45 min. Älä avaa uunin luukkua tänä aikana.
    > **Kriittinen kohta**: Uuni on oltava kuuma, kun piiras laitetaan sisään, mutta se sammutetaan heti. Tämä takaa hellävaraisen kypsymisen.
    > **Visuaalinen merkki**: Täyte on hyytynyt reunoilta, mutta saattaa vielä hieman tutista keskeltä.
 
@@ -145,7 +145,7 @@ _Kuva: Leikattu pala suklaapiirasta, jossa näkyy silkkinen täyte ja rapea pohj
 
 ### Annostelu
 
-Aseta yksi siivu suklaapiirasta lautasen keskelle. Piiras on parhaimmillaan huoneenlämpöisenä, joten ota se jääkaapista noin 30-60 minuuttia ennen tarjoilua. Voit täydentää makuja ohuella vaniljakastikkeella tai tuoreilla marjoilla. Kevyesti makeutettu kermavaahto tai crème fraîche sopivat myös erinomaisesti. Viimeistele annos sirottelemalla lautaselle hieman kaakaojauhetta tai tomusokeria.
+Aseta yksi siivu suklaapiirasta lautasen keskelle. Piiras on parhaimmillaan huoneenlämpöisenä, joten ota se jääkaapista noin 30-60 min ennen tarjoilua. Voit täydentää makuja ohuella vaniljakastikkeella tai tuoreilla marjoilla. Kevyesti makeutettu kermavaahto tai crème fraîche sopivat myös erinomaisesti. Viimeistele annos sirottelemalla lautaselle hieman kaakaojauhetta tai tomusokeria.
 
 Täydellisesti tehty suklaapiiras on ulkonäöltään syvänruskea, lähes mustaksi kiiltävä täyte kullanruskean pohjan päällä. Matala, elegantti profiili korostaa täytteen silkkistä, peilimäistä pintaa. Tuoksultaan piiras tarjoaa intensiivisen tumman suklaan aromit, voin vivahteen pohjasta ja kermaisempia sivunuotteja. Tekstuuriltaan täyte on erittäin sileä, pehmeä ja lähes moussemainen, joka luo merkittävän kontrastin rapean, murenevan pohjan kanssa. Maultaan piiras tarjoaa ensin voimakkaan, hieman karvaan laatusuklaan maun, jota tasapainottaa makeus ja kermainen täyteläisyys, jättäen pitkän, miellyttävän suklaan jälkimaun.
 
@@ -180,7 +180,7 @@ Säilytä valmis suklaapiiras jääkaapissa, tiiviisti kelmulla peitettynä. Se 
   - 1-2 tl laadukasta espressojauhetta syventämään suklaan makua
   - Ripaus cayennepippuria tai chilihiutaleita tuomaan lämpöä
   - Tilkka kahvilikööriä, Cointreau'ta tai tummaa rommia tuomaan aromaattista syvyyttä
-- **Tarjoilulämpötila**: Piiras on parhaimmillaan, kun sen annetaan lämmetä huoneenlämmössä 30-60 minuuttia ennen tarjoilua.
+- **Tarjoilulämpötila**: Piiras on parhaimmillaan, kun sen annetaan lämmetä huoneenlämmössä 30-60 min ennen tarjoilua.
 
 ### Ongelmanratkaisu
 

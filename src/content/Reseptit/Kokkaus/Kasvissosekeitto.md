@@ -92,7 +92,7 @@ subtitle: Monipuolinen Perusresepti
 1. **Kasvisten Valmistelu**: Pese, kuori (tarvittaessa) ja pilko kaikki kasvikset suunnilleen samankokoisiksi, noin 2-3 cm kuutioiksi. Tasainen koko auttaa niiden kypsymisessä samanaikaisesti.
    > **Huomio:** Erityisen kovat juurekset (porkkana, palsternakka) kannattaa pilkkoa hieman pienemmiksi kuin pehmeämmät kasvikset (kesäkurpitsa, kukkakaali).
 
-2. **Sipulin ja Valkosipulin Kuullotus**: Kuumenna öljy tai voi suuressa kattilassa keskilämmöllä. Lisää hienonnettu sipuli ja kuullota sitä noin 5-7 minuuttia, kunnes se on pehmeää ja läpikuultavaa, mutta ei ruskistunutta.
+2. **Sipulin ja Valkosipulin Kuullotus**: Kuumenna öljy tai voi suuressa kattilassa keskilämmöllä. Lisää hienonnettu sipuli ja kuullota sitä noin 5-7 min, kunnes se on pehmeää ja läpikuultavaa, mutta ei ruskistunutta.
    > **Kriittinen kohta:** Sipulin huolellinen kuullotus ilman ruskistamista luo keitolle makean ja aromaattisen perustan.
    > **Visuaalinen merkki:** Sipuli on pehmeää ja lasimaista.
 
@@ -102,14 +102,14 @@ subtitle: Monipuolinen Perusresepti
 
 #### Keittäminen
 
-1. **Kasvisten Lisäys**: Lisää pilkotut kasvikset (myös perunat, jos käytät) kattilaan. Sekoittele ja kuullota niitä kevyesti sipulin kanssa noin 3-5 minuuttia. Tämä herättää kasvisten makuja.
+1. **Kasvisten Lisäys**: Lisää pilkotut kasvikset (myös perunat, jos käytät) kattilaan. Sekoittele ja kuullota niitä kevyesti sipulin kanssa noin 3-5 min. Tämä herättää kasvisten makuja.
 
 2. **Nesteen Lisäys**: Kaada kuuma kasvisliemi kattilaan niin, että kasvikset juuri ja juuri peittyvät. Liemen määrä vaikuttaa lopullisen keiton paksuuteen – voit lisätä nestettä myöhemmin, jos haluat ohuempaa keittoa.
    > **Huomio:** Aloita pienemmällä liemimäärällä, voit aina ohentaa keittoa myöhemmin.
 
    <!-- ![Kasvikset ja liemi kattilassa valmiina keitettäväksi](placeholder-kasvissosekeitto-keittoainekset.jpg) -->
 
-3. **Keittäminen**: Kuumenna keitto kiehuvaksi. Alenna sitten lämpöä, peitä kattila kannella (jätä pieni rako höyrylle) ja anna hautua hiljalleen noin 15-25 minuuttia, tai kunnes kaikki kasvikset ovat täysin pehmeitä ja kypsiä. Kypsymisaika riippuu kasvisten laadusta ja palojen koosta.
+3. **Keittäminen**: Kuumenna keitto kiehuvaksi. Alenna sitten lämpöä, peitä kattila kannella (jätä pieni rako höyrylle) ja anna hautua hiljalleen noin 15-25 min, tai kunnes kaikki kasvikset ovat täysin pehmeitä ja kypsiä. Kypsymisaika riippuu kasvisten laadusta ja palojen koosta.
    > **Kriittinen kohta:** Kasvisten tulee olla täysin kypsiä, jotta keitosta tulee sileää. Testaa kypsyyttä esimerkiksi haarukalla.
    > **Visuaalinen merkki:** Kasvikset ovat pehmeitä ja niitä voi helposti painaa rikki kattilan reunaa vasten.
 
@@ -181,7 +181,7 @@ Tarjoiluehdotukset:
 #### Keitto on rakeista/ei samettista
 
 - **Syy:** Kasvikset eivät ole täysin kypsiä, tai soseutus ei ole ollut riittävän tehokasta tai pitkäkestoista.
-- **Korjaus:** Varmista, että kasvikset ovat todella täysin pehmeitä ennen soseutusta. Soseuta keitto sauvasekoittimella vähintään 2-3 minuuttia varmistaen, että kaikki palat on käsitelty. Jos käytät tehosekoitinta, soseuta useammassa erässä ja pidempään kuin luulet tarpeen.
+- **Korjaus:** Varmista, että kasvikset ovat todella täysin pehmeitä ennen soseutusta. Soseuta keitto sauvasekoittimella vähintään 2-3 min varmistaen, että kaikki palat on käsitelty. Jos käytät tehosekoitinta, soseuta useammassa erässä ja pidempään kuin luulet tarpeen.
 
 #### Keitto maistuu vetiseltä tai mauttomalta
 

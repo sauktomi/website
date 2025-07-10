@@ -59,7 +59,7 @@ subtitle: Bolognese-tyyppinen peruskastike
 ### Mise en Place
 
 - [ ] Pilko sipuli, valkosipuli ja muut kasvikset (porkkana, selleri) hienoiksi pieniksi kuutioiksi.
-- [ ] Ota jauheliha huoneenlämpöön noin 30 minuuttia ennen paistamista.
+- [ ] Ota jauheliha huoneenlämpöön noin 30 min ennen paistamista.
 - [ ] Mittaa valmiiksi tomaattimurska, pyree ja liemi.
 - [ ] Valmistele yrtit.
 
@@ -101,13 +101,13 @@ subtitle: Bolognese-tyyppinen peruskastike
 
 #### Pohjan Valmistelu (Sofrito)
 
-1. **Kasvisten Kuullotus**: Kuumenna öljy/voi suuressa padassa tai paksupohjaisessa pannussa keskilämmöllä. Lisää hienonnettu sipuli ja kuullota hitaasti noin 5-7 minuuttia, kunnes se on pehmeää ja läpikuultavaa, mutta ei ruskistunutta.
+1. **Kasvisten Kuullotus**: Kuumenna öljy/voi suuressa padassa tai paksupohjaisessa pannussa keskilämmöllä. Lisää hienonnettu sipuli ja kuullota hitaasti noin 5-7 min, kunnes se on pehmeää ja läpikuultavaa, mutta ei ruskistunutta.
    > **Kriittinen kohta:** Hidas kuullotus vapauttaa sipulin makeuden ja luo pohjan maulle. Älä polta sipulia.
    > **Visuaalinen merkki:** Sipuli on pehmeää, lasimaista ja tuoksuu makealta.
 
    <!-- ![Sipulin ja kasvisten huolellinen kuullotus pannulla](placeholder-jauhelihakastike-sipuli.jpg) -->
 
-2. Lisää hienonnettu porkkana (ja selleri, jos käytät). Jatka kuullottamista vielä 5-7 minuuttia, kunnes kasvikset ovat hieman pehmenneet. Lisää lopuksi hienonnettu valkosipuli (ja anjovistahna, jos käytät) ja kuullota vielä minuutti, kunnes se tuoksuu, varo polttamasta.
+2. Lisää hienonnettu porkkana (ja selleri, jos käytät). Jatka kuullottamista vielä 5-7 min, kunnes kasvikset ovat hieman pehmenneet. Lisää lopuksi hienonnettu valkosipuli (ja anjovistahna, jos käytät) ja kuullota vielä minuutti, kunnes se tuoksuu, varo polttamasta.
    > **Huomio:** Valkosipuli palaa herkästi, joten se lisätään vasta kasvisten pehmennyttyä.
 
 #### Lihan Ruskistus ja Kastikkeen Kasaus
@@ -118,23 +118,23 @@ subtitle: Bolognese-tyyppinen peruskastike
 
    <!-- ![Jauheliha ruskistumassa pannulla kullanruskeaksi](placeholder-jauhelihakastike-liha.jpg) -->
 
-2. Sekoita ruskistettu jauheliha kasvisten joukkoon. Lisää tomaattipyree ja paista sekoitellen noin 1-2 minuuttia, kunnes sen väri syvenee hieman.
+2. Sekoita ruskistettu jauheliha kasvisten joukkoon. Lisää tomaattipyree ja paista sekoitellen noin 1-2 min, kunnes sen väri syvenee hieman.
    > **Huomio:** Tomaattipyreen "paahtaminen" poistaa kitkeryyttä ja syventää sen makua.
 
-3. **(Valinnainen Punaviini)**: Jos käytät punaviiniä, kaada se pannuun ja anna kiehahtaa voimakkaasti samalla pohjaa raaputtaen, jotta kaikki maut irtoavat (deglazing). Anna alkoholin haihtua noin 2-3 minuuttia.
+3. **(Valinnainen Punaviini)**: Jos käytät punaviiniä, kaada se pannuun ja anna kiehahtaa voimakkaasti samalla pohjaa raaputtaen, jotta kaikki maut irtoavat (deglazing). Anna alkoholin haihtua noin 2-3 min.
    > **Huomio:** Pohjaan tarttuneiden paistojäämien irrottaminen tuo lisämakua kastikkeeseen.
 
 4. **Nesteiden ja Mausteiden Lisäys**: Lisää tomaattimurska, lihaliemi ja laakerinlehdet. Mausta oreganolla, basilikalla, timjamilla (jos käytät), suolalla, pippurilla ja sokerilla. Sekoita hyvin.
 
 #### Haudutus ja Viimeistely
 
-1. **Hauduttaminen**: Kuumenna kastike kiehuvaksi, alenna sitten lämpö matalaksi niin, että kastike juuri ja juuri poreilee. Peitä kannella (jätä pieni rako höyrylle) ja anna hautua vähintään 45 minuuttia. Mieluiten 1.5 - 2 tuntia, tai jopa pidempään, jos aikaa on. Sekoita silloin tällöin ja lisää tarvittaessa nestettä (vettä tai lihalientä), jos kastike tuntuu liian kuivalta.
+1. **Hauduttaminen**: Kuumenna kastike kiehuvaksi, alenna sitten lämpö matalaksi niin, että kastike juuri ja juuri poreilee. Peitä kannella (jätä pieni rako höyrylle) ja anna hautua vähintään 45 min. Mieluiten 1.5 - 2 tuntia, tai jopa pidempään, jos aikaa on. Sekoita silloin tällöin ja lisää tarvittaessa nestettä (vettä tai lihalientä), jos kastike tuntuu liian kuivalta.
    > **Kriittinen kohta:** Pitkä, hidas haudutus miedolla lämmöllä tekee kastikkeesta mureaa ja syventää makuja.
    > **Visuaalinen merkki:** Kastike on sakeutunut, väri on syventynyt ja tuoksu on täyteläinen.
 
    <!-- ![Jauhelihakastike hautumassa hiljalleen padassa](placeholder-jauhelihakastike-haudutus.jpg) -->
 
-2. **Maun Tarkistus**: Kun kastike on hautunut tarpeeksi, poista laakerinlehdet. Jos haluat täyteläisemmän, klassisen Bolognese-tyyppisen kastikkeen, sekoita joukkoon tässä vaiheessa 50-100 ml täysmaitoa tai kermaa ja anna hautua vielä 10-15 minuuttia, kunnes se on imeytynyt kastikkeeseen. Tarkista sitten maku. Lisää tarvittaessa suolaa, pippuria tai sokerilla.
+2. **Maun Tarkistus**: Kun kastike on hautunut tarpeeksi, poista laakerinlehdet. Jos haluat täyteläisemmän, klassisen Bolognese-tyyppisen kastikkeen, sekoita joukkoon tässä vaiheessa 50-100 ml täysmaitoa tai kermaa ja anna hautua vielä 10-15 min, kunnes se on imeytynyt kastikkeeseen. Tarkista sitten maku. Lisää tarvittaessa suolaa, pippuria tai sokerilla.
    > **Huomio:** Voit viimeistellä kastikkeen myös lisäämällä tuoretta, hienonnettua basilikaa tai persiljaa lopussa.
 
 ### Annostelu ja Tarjoilu

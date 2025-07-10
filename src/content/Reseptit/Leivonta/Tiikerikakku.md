@@ -96,7 +96,7 @@ teoria:
 
    <!-- ![Huolellisesti voideltu ja korppujauhotettu rengasvuoka valmiina taikinalle.](placeholder-tiikerikakku-vuoka.jpg) -->
 
-2. **Voi-sokerivaahto**: Vatkaa huoneenlämpöinen [[Öljyt ja Rasvat#Voi|voi]] ja [[Sokerit#Hieno sokeri|sokeri]] [[Sähkövatkain|sähkövatkaimella]] vaaleaksi, kuohkeaksi vaahdoksi. Tähän kuluu noin 3-5 minuuttia. Katso [[Voin ja Sokerin Vaahdotus]].
+2. **Voi-sokerivaahto**: Vatkaa huoneenlämpöinen [[Öljyt ja Rasvat#Voi|voi]] ja [[Sokerit#Hieno sokeri|sokeri]] [[Sähkövatkain|sähkövatkaimella]] vaaleaksi, kuohkeaksi vaahdoksi. Tähän kuluu noin 3-5 min. Katso [[Voin ja Sokerin Vaahdotus]].
    > **Kriittinen kohta:** Riittävä vaahdotus tekee kakusta kuohkean. Vaahto on valmista, kun se on selvästi vaalentunut ja ilmavampaa.
    > **Flavor Scientist lisää:** Voikreemauksen aikana sokeri hankaa voihin pieniä ilmakuplia. Tämä ei ainoastaan kevennä rakennetta, vaan myös parantaa makujen vapautumista ja antaa ylellisen suutuntuman.
    > **Visuaalinen merkki:** Voi-sokeriseos on vaaleaa, lähes valkoista, ja sen tilavuus on kasvanut.
@@ -127,10 +127,10 @@ teoria:
 
    <!-- ![Taikinat kerrostettuna vuokaan ja marmorointikuvio tehtynä veitsellä.](placeholder-tiikerikakku-kuviointi.jpg) -->
 
-9. **Paistaminen**: Paista kakkua [[Uuni|uunin]] alatasolla 175°C (kiertoilma 160°C) noin 45-55 minuuttia. Kakun kypsyyttä voi kokeilla [[Kypsyyden Tarkistaminen Leivonnassa|puutikulla]] noin 40 minuutin paiston jälkeen. Kun tikkuun ei tartu märkää taikinaa, kakku on kypsä.
+9. **Paistaminen**: Paista kakkua [[Uuni|uunin]] alatasolla 175°C (kiertoilma 160°C) noin 45-55 min. Kakun kypsyyttä voi kokeilla [[Kypsyyden Tarkistaminen Leivonnassa|puutikulla]] noin 40 min paiston jälkeen. Kun tikkuun ei tartu märkää taikinaa, kakku on kypsä.
    > **Huomio:** Paistoaika voi vaihdella uunista ja vuoan materiaalista riippuen.
 
-10. **Jäähdytys**: Anna kakun jäähtyä vuoassaan noin 10-15 minuuttia ennen kumoamista [[Jäähdytysritilä|ritilälle]]. Anna kakun jäähtyä ritilällä kokonaan ennen leikkaamista.
+10. **Jäähdytys**: Anna kakun jäähtyä vuoassaan noin 10-15 min ennen kumoamista [[Jäähdytysritilä|ritilälle]]. Anna kakun jäähtyä ritilällä kokonaan ennen leikkaamista.
     > **Kriittinen kohta:** Älä kumoa kakkua liian kuumana, se voi hajota. Anna sen myös jäähtyä kunnolla, jotta se on helpompi leikata.
 
 ## Lisätiedot

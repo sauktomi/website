@@ -25,7 +25,7 @@
  * - Integration with kitchen timer system
  * 
  * @author Tomi
- * @version 2.0.0
+ * @version 2.0.1
  */
 
 import { visit } from 'unist-util-visit';
@@ -109,32 +109,20 @@ function findTimeExpression(text) {
 }
 
 /**
- * Create a timer link element
+ * Create a timer button element using raw HTML
  * @param {string} timeText The original time text
  * @param {number} totalMinutes Total minutes for the timer
- * @returns {Object} AST node for the timer link
+ * @returns {Object} AST node for the timer button
  */
-function createTimerLink(timeText, totalMinutes) {
+function createTimerButton(timeText, totalMinutes) {
   const timerId = `timer-${Math.random().toString(36).substring(2, 11)}`;
   
+  // Create a button element instead of a link to avoid href="#" issues
+  const buttonHTML = `<button type="button" class="timer-link" data-timer-minutes="${totalMinutes}" data-timer-text="${timeText}" data-timer-id="${timerId}" data-timer-action="start" title="Aloita ${timeText} ajastin"><span>${timeText}</span></button>`;
+  
   return {
-    type: 'link',
-    url: '', // Remove href to prevent page jumping
-    data: {
-      hProperties: {
-        className: 'timer-link',
-        'data-timer-minutes': totalMinutes,
-        'data-timer-text': timeText,
-        'data-timer-id': timerId,
-        'data-timer-action': 'start',
-        role: 'button',
-        tabindex: '0'
-      }
-    },
-    children: [{
-      type: 'text',
-      value: timeText
-    }]
+    type: 'html',
+    value: buttonHTML
   };
 }
 
@@ -142,10 +130,13 @@ export function remarkTimerLinks() {
   return (tree) => {
     let inOhjeSection = false;
     
-    // First pass: find all h3 headers to track sections
+    // Process text nodes in the ohje section
     const processTextNode = (node, index, parent) => {
-      // Skip if this text node is already inside a timer link
-      if (parent && parent.type === 'link' && parent.data?.hProperties?.className === 'timer-link') {
+      // Skip if this text node is already inside a timer element
+      if (parent && (
+        (parent.type === 'link' && parent.data?.hProperties?.className === 'timer-link') ||
+        (parent.type === 'html' && parent.value?.includes('timer-link'))
+      )) {
         return;
       }
       
@@ -172,8 +163,8 @@ export function remarkTimerLinks() {
           });
         }
         
-        // Add timer link
-        children.unshift(createTimerLink(match.timeText, match.totalMinutes));
+        // Add timer button
+        children.unshift(createTimerButton(match.timeText, match.totalMinutes));
         
         lastIndex = endIndex;
       }
@@ -216,4 +207,4 @@ export function remarkTimerLinks() {
       }
     });
   };
-} 
+}

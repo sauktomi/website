@@ -93,7 +93,7 @@ subtitle: Voikastikkeiden Äiti
 1. **Vesihauteen Kuumennus**: Kuumenna vesi vesihaudekattilassa juuri ja juuri kiehumispisteeseen (simmering). Veden ei tule kiehua voimakkaasti, eikä se saa koskettaa kulhon pohjaa.
    > **Huomio:** Liian kuuma vesihaude kypsentää keltuaiset liian nopeasti tehden niistä kokkelia.
 
-2. **Keltuaisten Vatkaus**: Laita huoneenlämpöiset munankeltuaiset, kylmä vesi ja ripaus suolaa vesihaudekulhoon. Vatkaa seosta voimakkaasti ja jatkuvasti pallovispilällä, kunnes seos vaalenee, paksunee ja muuttuu kuohkeaksi sabayon-vaahdoksi. Tämä kestää noin 3-5 minuuttia. Vaahto on valmista, kun vispilä jättää siihen hetkellisesti jäljen ("pystyy kirjoittamaan nauhaa").
+2. **Keltuaisten Vatkaus**: Laita huoneenlämpöiset munankeltuaiset, kylmä vesi ja ripaus suolaa vesihaudekulhoon. Vatkaa seosta voimakkaasti ja jatkuvasti pallovispilällä, kunnes seos vaalenee, paksunee ja muuttuu kuohkeaksi sabayon-vaahdoksi. Tämä kestää noin 3-5 min. Vaahto on valmista, kun vispilä jättää siihen hetkellisesti jäljen ("pystyy kirjoittamaan nauhaa").
    > **Kriittinen kohta:** Älä anna keltuaisvaahdon lämpötilan nousta yli 65-70°C, muuten se kypsyy kokkeliksi. Nosta kulho tarvittaessa hetkeksi pois vesihauteesta vatkausta jatkaen, jos seos tuntuu kuumenevan liikaa.
    > **Visuaalinen merkki:** Vaahto on vaaleankeltaista, ilmavaa ja kaksinkertaistunut tilavuudeltaan.
 

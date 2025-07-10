@@ -39,10 +39,6 @@ export interface Props {
 
 const { title, metaDescription, tocHeadings, hasToc } = Astro.props;
 
-
-
-
-
 // Default meta description
 const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan.";
 ---
@@ -67,10 +63,6 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<meta property="og:description" content={metaDescription || defaultMetaDescription} />
 		<meta property="og:type" content="website" />
 		<meta name="twitter:card" content="summary_large_image" />
-		
-		<!-- Performance resource hints -->
-		<link rel="dns-prefetch" href="//fonts.googleapis.com" />
-		<link rel="dns-prefetch" href="//fonts.gstatic.com" />
 		
 		<!-- Optimize images loading -->
 		<meta name="format-detection" content="telephone=no, address=no, email=no" />

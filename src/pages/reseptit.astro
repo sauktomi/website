@@ -28,7 +28,7 @@
 
 import { getCollection } from 'astro:content';
 import Layout from '../layouts/Layout.astro';
-import SimpleFilterSystem from '../components/SimpleFilterSystem.jsx';
+import FilterSystem from '../components/FilterSystem.astro';
 import { processRecipeData, getUniqueFilterValues, createRecipeNumberRegistry, setRecipeNumberRegistry, getRecipeNumber, formatRecipeNumber, generateNumberVariations } from '../utils/ruoanlaitto-data.ts';
 
 // Get all recipe entries with proper numbering
@@ -130,8 +130,8 @@ const filterOptions = {
 
     <!-- Main Content -->
     <div class="main-content">
-      <!-- Simple Filter System -->
-      <SimpleFilterSystem
+      <!-- Filter System -->
+      <FilterSystem
         config={{
           itemSelector: '.list-item-wrapper',
           sectionSelector: '.category-section',
@@ -197,7 +197,6 @@ const filterOptions = {
           }
         ]}
         resultsCountText="reseptiä löytyi"
-        client:visible
       />
 
       <!-- No Results -->

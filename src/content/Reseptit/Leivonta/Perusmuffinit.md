@@ -13,7 +13,7 @@ time:
   valmistusaika: 15 # aktiivinen valmistelu
   paistoaika: 18-22 # paistoaika uunissa
   jäähdytysaika: 15 # 5 min vuoissa + 10 min ritilällä
-  kokonaisaika: 48-52 # Noin 50 minuuttia
+  kokonaisaika: 48-52 # Noin 50 min
 annokset: 12 kpl # keskikokoisia muffineja
 säilyvyys: 2-3 päivää huoneenlämmössä tiiviissä rasiassa, 4-5 päivää jääkaapissa, 2-3 kuukautta pakastettuna
 lähde: "Yleinen perusmuffiniresepti, monia variaatioita"
@@ -119,10 +119,10 @@ teoria:
 
    <!-- ![Muffinivuoat täytettynä taikinalla noin kolme neljäsosaa täyteen](placeholder-muffinivuoat-taytetty.jpg) -->
 
-7. **Paistaminen**: Paista muffineja [[Uuni|uunin]] keskitasolla 200°C (kiertoilma 180°C) noin 18-22 minuuttia. Muffinit ovat kypsiä, kun ne ovat kauniisti kohonneet, saaneet kullanruskean pinnan ja [[Kypsyyden Tarkistaminen Leivonnassa|puutikulla kokeiltaessa]] tikkuun ei tartu märkää taikinaa.
-   > **Huomio:** Paistoaika voi vaihdella uunista riippuen. Aloita kypsyyden tarkistaminen noin 18 minuutin kohdalla.
+7. **Paistaminen**: Paista muffineja [[Uuni|uunin]] keskitasolla 200°C (kiertoilma 180°C) noin 18-22 min. Muffinit ovat kypsiä, kun ne ovat kauniisti kohonneet, saaneet kullanruskean pinnan ja [[Kypsyyden Tarkistaminen Leivonnassa|puutikulla kokeiltaessa]] tikkuun ei tartu märkää taikinaa.
+   > **Huomio:** Paistoaika voi vaihdella uunista riippuen. Aloita kypsyyden tarkistaminen noin 18 min kohdalla.
 
-8. **Jäähdytys**: Ota muffinipelti uunista. Anna muffinien jäähtyä pellillä noin 5 minuuttia ennen kuin siirrät ne varovasti [[Jäähdytysritilä|ritilälle]] jäähtymään kokonaan.
+8. **Jäähdytys**: Ota muffinipelti uunista. Anna muffinien jäähtyä pellillä noin 5 min ennen kuin siirrät ne varovasti [[Jäähdytysritilä|ritilälle]] jäähtymään kokonaan.
    > **Kriittinen kohta:** Lyhyt jäähdytys pellillä auttaa muffineja kiinteytymään, mutta liian pitkä pitää ne kosteina pohjasta.
 
 ### Annostelu ja Tarjoilu
@@ -153,7 +153,7 @@ Tarjoilusuositukset:
 ### Lämpötilat ja paistoaika
 
 - Uunin alkuun korkeampi lämpötila auttaa muffineja kohoamaan nopeasti
-- Paistoaika vaihtelee 18-22 minuutin välillä uunista ja lisukkeista riippuen
+- Paistoaika vaihtelee 18-22 min välillä uunista ja lisukkeista riippuen
 - Tarkista kypsyys puutikulla - kun tikkuun ei tartu märkää taikinaa, muffinit ovat valmiita
 
 ### Raaka-aineiden korvaaminen

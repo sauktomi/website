@@ -41,14 +41,9 @@ html[data-layout="mobile"][data-navbar="open"] body {
   overflow: hidden;
 }
 
-/* Navbar background visibility */
-.navbar-bg-visible {
-  @apply bg-black/50;
-}
-
-.navbar-bg-hiding {
-  @apply bg-transparent;
-  backdrop-filter: none;
+/* Navbar */
+.navbar-dialog {
+  @apply bg-secondary-light border-0 rounded-none p-0 max-w-none size-full max-h-full;
 }
 
 /* Interactive element base styles */

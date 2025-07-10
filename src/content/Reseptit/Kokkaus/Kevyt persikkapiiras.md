@@ -115,7 +115,7 @@ testing_iterations: 2
    <!-- ![Persikkaviipaleet aseteltuna piirakkapohjalle, kermatäytettä kaadetaan päälle](placeholder-persikkapiiras-tayte.jpg) -->
 
 2. Kaada täytesekoitus persikkasiivujen päälle
-3. Paista 175°C 30 minuuttia tai kunnes täyte on hyytynyt mutta hieman värisee keskeltä
+3. Paista 175°C 30 min tai kunnes täyte on hyytynyt mutta hieman värisee keskeltä
    > **Kriittinen kohta:** Vältä paistamasta liikaa, täyte kovettuu jäähtyessään
    > **Visuaalinen merkki:** Reunat kiinteät, keskusta hieman hyytelömäinen
 
@@ -152,7 +152,7 @@ Koristele annos vaniljakastikkeella, mintunlehdillä tai syötävillä kukilla. 
 
 ### Säilytys
 
-Säilytä jääkaapissa tiiviisti peitettynä 2-3 päivää. Ei sovellu pakastettavaksi, täytteen rakenne kärsii sulatettaessa. Ota huoneenlämpöön 15-30 minuuttia ennen tarjoilua optimaalisen maun saavuttamiseksi.
+Säilytä jääkaapissa tiiviisti peitettynä 2-3 päivää. Ei sovellu pakastettavaksi, täytteen rakenne kärsii sulatettaessa. Ota huoneenlämpöön 15-30 min ennen tarjoilua optimaalisen maun saavuttamiseksi.
 
 ## Vinkit
 

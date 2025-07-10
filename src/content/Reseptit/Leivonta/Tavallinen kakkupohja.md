@@ -88,7 +88,7 @@ teoria:
 
 1. **Vuoan Valmistelu ja Uunin Esilämmitys**: Esilämmitä uuni 175°C (ylä-alalämpö). Valmistele kakkuvuoka: Pingota leivinpaperi irtopohjavuoan pohjalle. Reunoja ei yleensä voidella, jotta taikina pääsee tarttumaan ja kohoamaan tasaisesti reunoja pitkin.
 
-2. **Munien ja Sokerin Vaahdotus**: Riko huoneenlämpöiset kananmunat suureen, puhtaaseen ja rasvattomaan kulhoon. Lisää sokeri ja vaniljasokeri. Vatkaa seosta sähkövatkaimella tai yleiskoneella suurella nopeudella vähintään 5-10 minuuttia. Vaahdon tulee olla erittäin paksua, kuohkeaa, vaaleaa ja jättää selviä nauhamaisia jälkiä pintaan, kun nostat vispilän ("nauhatesti" tai "ribbon stage").
+2. **Munien ja Sokerin Vaahdotus**: Riko huoneenlämpöiset kananmunat suureen, puhtaaseen ja rasvattomaan kulhoon. Lisää sokeri ja vaniljasokeri. Vatkaa seosta sähkövatkaimella tai yleiskoneella suurella nopeudella vähintään 5-10 min. Vaahdon tulee olla erittäin paksua, kuohkeaa, vaaleaa ja jättää selviä nauhamaisia jälkiä pintaan, kun nostat vispilän ("nauhatesti" tai "ribbon stage").
    > **KRIITINEN KOHTA:** Huolellinen ja riittävän pitkä vaahdotus on KAIKEN A ja O tämän kakun onnistumiselle. Ilmava vaahto takaa kuohkean lopputuloksen. Älä lopeta vatkaamista liian aikaisin!
    > **Visuaalinen merkki:** Vaahto on kolminkertaistunut tilavuudeltaan, erittäin vaaleaa ja paksua. Kun nostat vispilän, vaahto valuu siitä nauhana, joka jää hetkeksi näkyviin vaahdon pinnalle ennen uppoamistaan.
 
@@ -108,10 +108,10 @@ teoria:
 #### Paistaminen ja jäähdyttäminen
 
 1. **Taikinan Kaataminen Vuokaan**: Kaada valmis taikina välittömästi esivalmisteltuun kakkuvuokaan. Tasoita pinta varovasti lastalla, jos tarpeen. Älä kopauttele vuokaa.
-2. **Paistaminen**: Paista kakkua heti 175°C uunin alatasolla noin 30-40 minuuttia. Kakku on kypsä, kun se on kauniin kullanruskea, reunat ovat hieman irronneet vuoan reunoista ja keskelle työnnettyyn puutikkuun ei tartu märkää taikinaa. Voit myös kevyesti painaa kakun pintaa sormella; kypsä kakku tuntuu kimmoisalta ja palautuu painalluksesta.
-   > **Huomio:** Älä avaa uunin luukkua ensimmäisen 20-25 minuutin aikana, jotta kakku ei lässähdä.
+2. **Paistaminen**: Paista kakkua heti 175°C uunin alatasolla noin 30-40 min. Kakku on kypsä, kun se on kauniin kullanruskea, reunat ovat hieman irronneet vuoan reunoista ja keskelle työnnettyyn puutikkuun ei tartu märkää taikinaa. Voit myös kevyesti painaa kakun pintaa sormella; kypsä kakku tuntuu kimmoisalta ja palautuu painalluksesta.
+   > **Huomio:** Älä avaa uunin luukkua ensimmäisen 20-25 min aikana, jotta kakku ei lässähdä.
 
-3. **Jäähdytys Vuoassa**: Ota kakku uunista ja anna sen jäähtyä vuoassaan noin 5-10 minuuttia.
+3. **Jäähdytys Vuoassa**: Ota kakku uunista ja anna sen jäähtyä vuoassaan noin 5-10 min.
 4. **Kumoaminen ja Lopullinen Jäähdytys**: Kumoa kakku varovasti ritilälle. Jos käytit leivinpaperia pohjalla, poista se varovasti. Anna kakun jäähtyä ritilällä täysin ennen leikkaamista, täyttämistä tai käärimistä.
    > **Kriittinen kohta:** Anna kakun jäähtyä kunnolla, mieluiten useita tunteja tai yön yli, ennen kuin leikkaat sen kerroksiin. Lämmin kakku murenee helposti.
 
@@ -145,7 +145,7 @@ teoria:
 
 ### Paistaminen ja jäähdytys
 
-- Älä avaa uunin luukkua ensimmäisen 20-25 minuutin aikana
+- Älä avaa uunin luukkua ensimmäisen 20-25 min aikana
 - Anna kakun jäähtyä kunnolla, mieluiten useita tunteja tai yön yli, ennen leikkaamista
 - Jotkut leipurit kääntävät kakun ylösalaisin ritilälle jäähtymään, jotta sen pinta tasoittuu
 

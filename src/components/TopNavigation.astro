@@ -53,9 +53,11 @@ const showSidebar = currentPath !== '/';
 ---
 
 <!-- Main Navigation Dialog -->
-<dialog 
-	id="navbar-dialog" 
-	class="navbar-dialog bg-secondary-light border-0 rounded-none p-0 max-w-none w-full h-full max-h-full backdrop:bg-black/20"
+<div 
+	id="navbar-dialog"
+	class="navbar-dialog"
+	popover="auto"
+	role="dialog"
 	aria-label="Päävalikko"
 >
 	<!-- Dialog Header -->
@@ -72,7 +74,7 @@ const showSidebar = currentPath !== '/';
 		</button>
 		
 		<!-- Title -->
-		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0 navbar-close-link" aria-label="Etusivu">
+		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
 			<span class="text-2xl lg:text-3xl font-serif font-bold">T</span>
 			<span class="text-lg lg:text-xl font-medium">omin</span>
 			<span class="text-2xl lg:text-3xl font-serif font-bold ml-1">K</span>
@@ -82,6 +84,8 @@ const showSidebar = currentPath !== '/';
 		<!-- Close Button -->
 		<button 
 			class="navbar-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
+			popovertarget="navbar-dialog"
+			popovertargetaction="hide"
 			aria-label="Sulje valikko"
 		>
 			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -97,7 +101,7 @@ const showSidebar = currentPath !== '/';
 			<!-- Reseptit Card -->
 			<a 
 				href="/reseptit/" 
-				class="navbar-card navbar-close-link border-0 flex items-center gap-4 min-h-[140px] lg:h-full lg:w-1/2 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+				class="navbar-card border-0 flex items-center gap-4 min-h-[140px] lg:h-full lg:w-1/2 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 			>
 				<div class="flex-1 flex justify-center">
 					<div class="text-center">
@@ -111,7 +115,7 @@ const showSidebar = currentPath !== '/';
 			<div class="flex h-auto lg:h-full lg:w-1/2 flex-col gap-4">
 				<a 
 					href="/hakemisto/?type=ainesosat" 
-					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Ainesosat</h4>
@@ -121,7 +125,7 @@ const showSidebar = currentPath !== '/';
 				
 				<a 
 					href="/hakemisto/?type=välineet" 
-					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Välineet</h4>
@@ -131,7 +135,7 @@ const showSidebar = currentPath !== '/';
 				
 				<a 
 					href="/hakemisto/?type=tekniikat" 
-					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
+					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Tekniikat</h4>
@@ -172,25 +176,23 @@ const showSidebar = currentPath !== '/';
 			</div>
 		</div>
 	</div>
-</dialog>
+</div>
 
 <!-- Top Navigation Bar -->
 <div id="top-navigation" class="top-navigation">
 	<!-- Left side: Back button -->
-	<div class="top-nav-left">
-		<!-- Back Button (hidden on home page) -->
-		{showSidebar && (
-			<a 
-				href={backPath}
-				class="top-nav-btn back-btn" 
-				aria-label={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
-				title={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
-			>
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-				</svg>
-			</a>
-		)}
+	<div class="top-nav-left" data-show-back={showSidebar}>
+		<!-- Back Button (always present, visibility controlled by CSS) -->
+		<a 
+			href={backPath}
+			class="top-nav-btn back-btn" 
+			aria-label={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+			title={currentPath.startsWith('/reseptit/') ? 'Takaisin resepteihin' : currentPath === '/hakemisto' ? 'Takaisin etusivulle' : 'Takaisin'}
+		>
+			<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+				<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+			</svg>
+		</a>
 	</div>
 
 	<!-- Center: Title -->
@@ -206,7 +208,8 @@ const showSidebar = currentPath !== '/';
 	<!-- Right side: Menu button -->
 	<div class="top-nav-right">
 		<button 
-			id="navbar-toggle" 
+			id="navbar-toggle"
+			popovertarget="navbar-dialog" 
 			class="top-nav-btn menu-toggle-btn" 
 			aria-label="Avaa valikko"
 		>
@@ -224,6 +227,7 @@ const showSidebar = currentPath !== '/';
 	 * 
 	 * Manages dynamic updates to navigation state during client-side transitions.
 	 * Handles back button visibility and href updates based on current page.
+	 * Now uses HTML Popover API for better browser compatibility.
 	 */
 	class TopNavigationManager {
 		constructor() {
@@ -234,16 +238,11 @@ const showSidebar = currentPath !== '/';
 			// Update navigation on page transitions
 			document.addEventListener('astro:after-swap', () => {
 				this.updateNavigationState();
-				this.closeDialogIfOpen();
+				this.closePopoverIfOpen();
 			});
 
-			// Close dialog when clicking outside
-			document.addEventListener('click', (e) => {
-				const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
-				if (dialog && dialog.open && e.target === dialog) {
-					dialog.close();
-				}
-			});
+			// Close popover when clicking outside (handled by popover="auto")
+			// No need for manual click outside handling with popover="auto"
 
 			// Initialize event listeners
 			this.setupEventListeners();
@@ -253,47 +252,8 @@ const showSidebar = currentPath !== '/';
 		}
 
 		setupEventListeners() {
-			// Menu toggle button
-			const menuToggle = document.getElementById('navbar-toggle');
-			if (menuToggle) {
-				menuToggle.removeEventListener('click', this.handleMenuToggle);
-				menuToggle.addEventListener('click', this.handleMenuToggle);
-			}
-
-			// Close button
-			const closeBtn = document.querySelector('.navbar-close-btn');
-			if (closeBtn) {
-				closeBtn.removeEventListener('click', this.handleCloseBtn);
-				closeBtn.addEventListener('click', this.handleCloseBtn);
-			}
-
-			// All links that should close the dialog
-			const closeLinks = document.querySelectorAll('.navbar-close-link');
-			closeLinks.forEach(link => {
-				link.removeEventListener('click', this.handleCloseLink);
-				link.addEventListener('click', this.handleCloseLink);
-			});
-		}
-
-		handleMenuToggle = () => {
-			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
-			if (dialog) {
-				dialog.showModal();
-			}
-		}
-
-		handleCloseBtn = () => {
-			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
-			if (dialog) {
-				dialog.close();
-			}
-		}
-
-		handleCloseLink = () => {
-			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
-			if (dialog) {
-				dialog.close();
-			}
+			// No manual event listeners needed - popover API handles everything
+			// The popovertarget and popovertargetaction attributes handle all interactions
 		}
 
 		updateNavigationState() {
@@ -319,54 +279,24 @@ const showSidebar = currentPath !== '/';
 
 			console.log('TopNav: Calculated back path', { backPath });
 
-			// Show/hide back button and update its href
-			const backButton = document.querySelector('.top-nav-btn.back-btn') as HTMLAnchorElement;
+			// Update back button container and button
 			const backButtonContainer = document.querySelector('.top-nav-left') as HTMLElement;
+			const backButton = document.querySelector('.top-nav-btn.back-btn') as HTMLAnchorElement;
 			const showSidebar = currentPath !== '/';
 
-			if (showSidebar) {
-				if (backButton) {
-					// Update existing back button
-					backButton.href = backPath;
-					backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
-					backButton.setAttribute('title', this.getBackLabel(currentPath));
-					console.log('TopNav: Updated back button', { href: backButton.href });
-				} else {
-					// Create back button if it doesn't exist
-					this.createBackButton(backButtonContainer, backPath, currentPath);
-				}
-				
-				if (backButtonContainer) {
-					backButtonContainer.style.display = 'block';
-				}
-			} else {
-				// Hide back button on home page
-				if (backButtonContainer) {
-					backButtonContainer.style.display = 'none';
-				}
+			if (backButtonContainer) {
+				backButtonContainer.setAttribute('data-show-back', showSidebar.toString());
 			}
 
-			// Re-setup event listeners after navigation
-			this.setupEventListeners();
+			if (backButton) {
+				backButton.href = backPath;
+				backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
+				backButton.setAttribute('title', this.getBackLabel(currentPath));
+				console.log('TopNav: Updated back button', { href: backButton.href, showSidebar });
+			}
 		}
 
-		createBackButton(container: HTMLElement, backPath: string, currentPath: string) {
-			if (!container) return;
-			
-			const backButton = document.createElement('a');
-			backButton.href = backPath;
-			backButton.className = 'top-nav-btn back-btn';
-			backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
-			backButton.setAttribute('title', this.getBackLabel(currentPath));
-			
-			backButton.innerHTML = `
-				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
-					<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
-				</svg>
-			`;
-			
-			container.appendChild(backButton);
-		}
+
 
 		getBackLabel(currentPath: string): string {
 			if (currentPath.startsWith('/reseptit/')) {
@@ -378,10 +308,10 @@ const showSidebar = currentPath !== '/';
 			}
 		}
 
-		closeDialogIfOpen() {
-			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
-			if (dialog && dialog.open) {
-				dialog.close();
+		closePopoverIfOpen() {
+			const popover = document.getElementById('navbar-dialog') as HTMLElement;
+			if (popover && 'hidePopover' in popover && popover.matches(':popover-open')) {
+				(popover as any).hidePopover();
 			}
 		}
 	}
@@ -395,7 +325,7 @@ const showSidebar = currentPath !== '/';
 </script>
 
 <style>
-	/* Dialog styling */
+	/* Popover styling */
 	.navbar-dialog {
 		margin: 0;
 		padding: 0;
@@ -407,7 +337,9 @@ const showSidebar = currentPath !== '/';
 			width: 85vw;
 			height: 85vh;
 			border-radius: 1rem;
-			margin: 7.5vh auto;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
 		}
 	}
 	
@@ -416,7 +348,6 @@ const showSidebar = currentPath !== '/';
 		.navbar-dialog {
 			width: 80vw;
 			height: 80vh;
-			margin: 10vh auto;
 		}
 	}
 	
@@ -424,7 +355,6 @@ const showSidebar = currentPath !== '/';
 		.navbar-dialog {
 			width: 75vw;
 			height: 75vh;
-			margin: 12.5vh auto;
 		}
 	}
 	
@@ -446,5 +376,10 @@ const showSidebar = currentPath !== '/';
 	.setting-item:hover {
 		transform: translateY(-1px);
 		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	}
+	
+	/* Back button visibility control */
+	.top-nav-left:not([data-show-back="true"]) {
+		display: none;
 	}
 </style> 

@@ -1,0 +1,494 @@
+---
+/**
+ * Simple Filter System Astro Component
+ * 
+ * UI component that works with filter-system.ts utilities
+ * to provide filtering functionality for recipe and directory pages.
+ */
+
+ import type { FilterSection, FilterConfig } from '../scripts/filter-system.ts';
+
+interface Props {
+  config: FilterConfig;
+  searchPlaceholder?: string;
+  filterSections?: FilterSection[];
+  resultsCountText?: string;
+  updateUrl?: boolean;
+}
+
+const {
+  config,
+  searchPlaceholder = "Etsi...",
+  filterSections = [],
+  resultsCountText = "tulosta löytyi",
+  updateUrl = true
+} = Astro.props;
+---
+
+<div class="filter-system-container">
+  <!-- Filter Controls -->
+  <div class="filter-controls">
+    <!-- Filter Buttons -->
+    {filterSections.map((section) => (
+      <button
+        popovertarget={`filter-popover-${section.id}`}
+        class="filter-button"
+        aria-label={`Avaa ${section.title} suodattimet`}
+        aria-expanded="false"
+        style={`--anchor-name: --filter-button-${section.id}`}
+        data-section-id={section.id}
+      >
+        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={section.icon}></path>
+        </svg>
+        <span class="filter-button-badge" style="display: none;" aria-label="aktiivisten suodattimien määrä">
+          0
+        </span>
+      </button>
+    ))}
+  </div>
+
+  <!-- Search Input -->
+  <div class="filter-search-container">
+    <div class="filter-search-icon">
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+      </svg>
+    </div>
+    <input
+      type="search"
+      placeholder={searchPlaceholder}
+      class="filter-search-input"
+      aria-label="Etsi sisältöä"
+      data-search-input
+    />
+    <!-- Clear Search Button -->
+    <button
+      class="filter-clear-button"
+      aria-label="Tyhjennä hakuteksti"
+      style="display: none;"
+      data-clear-search
+    >
+      <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Filter Popovers -->
+  {filterSections.map((section) => (
+    <div
+      id={`filter-popover-${section.id}`}
+      popover="auto"
+      class="filter-popover filter-popover-positioned popover-smooth-transition"
+      style={`--position-anchor: --filter-button-${section.id}`}
+      data-section-id={section.id}
+      data-section-type={section.type}
+    >
+      <!-- Filter Options -->
+      <div class="filter-options">
+        {section.options.map((option) => (
+          <button
+            aria-pressed="false"
+            aria-label={`Valitse ${section.title} suodatin: ${option.label}`}
+            class="filter-option-button"
+            data-filter-value={option.value}
+            data-section-id={section.id}
+            data-section-type={section.type}
+          >
+            <span class="filter-option-text">{option.label}</span>
+          </button>
+        ))}
+      </div>
+
+      <!-- Clear Section Filters Button -->
+      <div class="filter-clear-section" style="display: none;">
+        <button
+          class="filter-clear-section-button"
+          aria-label={`Tyhjennä ${section.title} suodattimet`}
+          data-clear-section={section.id}
+        >
+          Tyhjennä suodattimet
+        </button>
+      </div>
+    </div>
+  ))}
+</div>
+
+<script>
+  import {
+    applyFilters,
+    initializeFiltersFromUrl,
+    updateUrlWithFilters,
+    handleMultiSelectFilter,
+    handleSingleSelectFilter,
+    getActiveFilterCount,
+    clearSectionFilters,
+    isFilterActive,
+    debounce,
+    type FilterSection,
+    type FilterConfig
+  } from '../scripts/filter-system.ts';
+
+  // Get component props from data attributes (set by Astro)
+  const filterSystemContainer = document.querySelector('.filter-system-container') as HTMLElement;
+  if (!filterSystemContainer) throw new Error('Filter system container not found');
+
+  // Extract configuration from the component - these will be re-found during initialization
+  let searchInput: HTMLInputElement | null = null;
+  let clearSearchBtn: HTMLButtonElement | null = null;
+  
+  // Get filter sections from DOM
+  const filterSections: FilterSection[] = Array.from(
+    document.querySelectorAll('[data-section-id]')
+  ).map(element => {
+    const sectionElement = element as HTMLElement;
+    const sectionId = sectionElement.dataset.sectionId!;
+    const sectionType = sectionElement.dataset.sectionType as 'single' | 'multi';
+    
+    // Get options from the popover
+    const options = Array.from(
+      sectionElement.querySelectorAll('[data-filter-value]')
+    ).map(optionElement => {
+      const optEl = optionElement as HTMLElement;
+      return {
+        id: optEl.dataset.filterValue!,
+        label: optEl.textContent?.trim() || '',
+        value: optEl.dataset.filterValue!
+      };
+    });
+
+    return {
+      id: sectionId,
+      title: sectionId, // You might want to get this from somewhere else
+      icon: '', // Not needed for functionality
+      type: sectionType,
+      options
+    };
+  }).filter(section => section.options.length > 0);
+
+  // Configuration - you might want to pass this via data attributes
+  const config: FilterConfig = {
+    itemSelector: '.list-item-wrapper',
+    sectionSelector: '.category-section',
+    noResultsId: 'no-results'
+  };
+
+  // State
+  let searchTerm = '';
+  let activeFilters = new Map<string, string | string[]>();
+  let isInitialized = false;
+  let currentOpenPopover: string | null = null;
+
+  // Reset state for new page
+  function resetState() {
+    searchTerm = '';
+    activeFilters = new Map<string, string | string[]>();
+    isInitialized = false;
+    currentOpenPopover = null;
+  }
+
+  // Initialize filters from URL
+  function initializeFilters() {
+    // Reset state first
+    resetState();
+    
+    // Re-find search elements
+    searchInput = document.querySelector('[data-search-input]') as HTMLInputElement;
+    clearSearchBtn = document.querySelector('[data-clear-search]') as HTMLButtonElement;
+    
+    // Re-get filter sections in case DOM has changed
+    const newFilterSections: FilterSection[] = Array.from(
+      document.querySelectorAll('[data-section-id]')
+    ).map(element => {
+      const sectionElement = element as HTMLElement;
+      const sectionId = sectionElement.dataset.sectionId!;
+      const sectionType = sectionElement.dataset.sectionType as 'single' | 'multi';
+      
+      // Get options from the popover
+      const options = Array.from(
+        sectionElement.querySelectorAll('[data-filter-value]')
+      ).map(optionElement => {
+        const optEl = optionElement as HTMLElement;
+        return {
+          id: optEl.dataset.filterValue!,
+          label: optEl.textContent?.trim() || '',
+          value: optEl.dataset.filterValue!
+        };
+      });
+
+      return {
+        id: sectionId,
+        title: sectionId,
+        icon: '',
+        type: sectionType,
+        options
+      };
+    }).filter(section => section.options.length > 0);
+
+    // Update the filterSections reference
+    if (newFilterSections.length > 0) {
+      filterSections.length = 0;
+      filterSections.push(...newFilterSections);
+    }
+    
+    const { urlFilters, searchTerm: urlSearchTerm } = initializeFiltersFromUrl(filterSections);
+    
+    activeFilters = urlFilters;
+    searchTerm = urlSearchTerm;
+    
+    if (searchInput) {
+      searchInput.value = searchTerm;
+      updateSearchUI();
+    }
+    
+    updateFilterUI();
+    updatePopoverAriaExpanded();
+    applyFilters(searchTerm, activeFilters, config);
+    
+    // Attach search event listeners with fresh element references
+    attachSearchEventListeners();
+    
+    isInitialized = true;
+  }
+
+  // Update search UI
+  function updateSearchUI() {
+    if (clearSearchBtn) {
+      clearSearchBtn.style.display = searchTerm ? 'flex' : 'none';
+    }
+  }
+
+  // Update filter button badges and active states
+  function updateFilterUI() {
+    filterSections.forEach(section => {
+      const button = document.querySelector(`[data-section-id="${section.id}"]`) as HTMLElement;
+      const badge = button?.querySelector('.filter-button-badge') as HTMLElement;
+      const clearSection = document.querySelector(`[data-clear-section="${section.id}"]`)?.parentElement as HTMLElement;
+      
+      const activeCount = getActiveFilterCount(section.id, activeFilters);
+      
+      if (badge) {
+        badge.textContent = activeCount.toString();
+        badge.style.display = activeCount > 0 ? 'flex' : 'none';
+      }
+      
+      // Update button aria-label with active count
+      if (button) {
+        const baseLabel = `Avaa ${section.title} suodattimet`;
+        const activeLabel = activeCount > 0 
+          ? `${baseLabel} (${activeCount} aktiivinen${activeCount > 1 ? 'a' : ''})`
+          : baseLabel;
+        button.setAttribute('aria-label', activeLabel);
+      }
+      
+      if (clearSection) {
+        clearSection.style.display = activeCount > 0 ? 'block' : 'none';
+      }
+      
+      // Update option buttons
+      section.options.forEach(option => {
+        const optionButton = document.querySelector(
+          `[data-section-id="${section.id}"][data-filter-value="${option.value}"]`
+        ) as HTMLElement;
+        
+        if (optionButton) {
+          const isActive = isFilterActive(section.id, option.value, activeFilters, section.type);
+          optionButton.setAttribute('aria-pressed', isActive.toString());
+          optionButton.classList.toggle('active', isActive);
+        }
+      });
+    });
+  }
+
+  // Debounced filter application and URL update
+  const debouncedUpdate = debounce(() => {
+    if (isInitialized) {
+      applyFilters(searchTerm, activeFilters, config);
+      updateUrlWithFilters(activeFilters, searchTerm);
+    }
+  }, 300);
+
+  // Attach search event listeners
+  function attachSearchEventListeners() {
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchTerm = (e.target as HTMLInputElement).value;
+        updateSearchUI();
+        debouncedUpdate();
+      });
+    }
+
+    if (clearSearchBtn) {
+      clearSearchBtn.addEventListener('click', () => {
+        searchTerm = '';
+        if (searchInput) {
+          searchInput.value = '';
+          searchInput.focus();
+        }
+        updateSearchUI();
+        debouncedUpdate();
+      });
+    }
+  }
+
+  // Filter option clicks
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const filterButton = target.closest('[data-filter-value]') as HTMLElement;
+    
+    if (filterButton) {
+      const sectionId = filterButton.dataset.sectionId!;
+      const sectionType = filterButton.dataset.sectionType as 'single' | 'multi';
+      const value = filterButton.dataset.filterValue!;
+      
+      if (sectionType === 'multi') {
+        activeFilters = handleMultiSelectFilter(sectionId, value, activeFilters);
+      } else {
+        activeFilters = handleSingleSelectFilter(sectionId, value, activeFilters);
+        // Hide popover for single-select
+        const popover = document.getElementById(`filter-popover-${sectionId}`);
+        if (popover && 'hidePopover' in popover) {
+          (popover as any).hidePopover();
+        }
+      }
+      
+      updateFilterUI();
+      debouncedUpdate();
+    }
+  });
+
+  // Clear section filters
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const clearButton = target.closest('[data-clear-section]') as HTMLElement;
+    
+    if (clearButton) {
+      const sectionId = clearButton.dataset.clearSection!;
+      activeFilters = clearSectionFilters(sectionId, activeFilters);
+      updateFilterUI();
+      debouncedUpdate();
+    }
+  });
+
+  // Handle popover state for aria-expanded
+  function updatePopoverAriaExpanded() {
+    filterSections.forEach(section => {
+      const popover = document.getElementById(`filter-popover-${section.id}`) as HTMLElement;
+      const button = document.querySelector(`[popovertarget="filter-popover-${section.id}"]`) as HTMLElement;
+      
+      if (popover && button) {
+        const isOpen = popover.matches(':popover-open');
+        button.setAttribute('aria-expanded', isOpen.toString());
+      }
+    });
+  }
+
+  // Track which popover is currently open (moved to state section above)
+
+  // Update aria-expanded for all buttons based on current state
+  function updateAllAriaExpanded() {
+    filterSections.forEach(section => {
+      const button = document.querySelector(`[popovertarget="filter-popover-${section.id}"]`) as HTMLElement;
+      if (button) {
+        const buttonIsOpen = section.id === currentOpenPopover;
+        button.setAttribute('aria-expanded', buttonIsOpen.toString());
+      }
+    });
+  }
+
+  // Listen for popover state changes
+  document.addEventListener('toggle', (e) => {
+    const popover = e.target as HTMLElement;
+    if (popover.matches('[popover]')) {
+      const sectionId = popover.dataset.sectionId;
+      if (sectionId) {
+        // Check if this popover is now open
+        const isOpen = popover.matches(':popover-open');
+        
+        if (isOpen) {
+          currentOpenPopover = sectionId;
+        } else if (currentOpenPopover === sectionId) {
+          currentOpenPopover = null;
+        }
+        
+        updateAllAriaExpanded();
+      }
+    }
+  });
+
+  // Handle clicks on filter buttons
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    const filterButton = target.closest('[popovertarget]') as HTMLElement;
+    
+    if (filterButton) {
+      const popoverId = filterButton.getAttribute('popovertarget');
+      if (popoverId) {
+        const sectionId = popoverId.replace('filter-popover-', '');
+        
+        // If clicking the same button that's already open, it will close
+        if (currentOpenPopover === sectionId) {
+          currentOpenPopover = null;
+        } else {
+          // If clicking a different button, it will open (and close the previous one)
+          currentOpenPopover = sectionId;
+        }
+        
+        // Use a small delay to let the popover state change, then update
+        setTimeout(() => {
+          updateAllAriaExpanded();
+        }, 10);
+      }
+    }
+  });
+
+  // Handle clicks outside popovers to close them and update ARIA state
+  document.addEventListener('click', (e) => {
+    const target = e.target as HTMLElement;
+    
+    // Check if click is outside any filter popover and filter button
+    const isClickInsidePopover = target.closest('[popover]');
+    const isClickOnFilterButton = target.closest('[popovertarget]');
+    
+    // If click is outside both popover and filter button, and we have an open popover
+    if (!isClickInsidePopover && !isClickOnFilterButton && currentOpenPopover) {
+      // Close the currently open popover
+      const openPopover = document.getElementById(`filter-popover-${currentOpenPopover}`);
+      if (openPopover && 'hidePopover' in openPopover) {
+        (openPopover as any).hidePopover();
+      }
+      
+      // Update state and ARIA attributes
+      currentOpenPopover = null;
+      updateAllAriaExpanded();
+    }
+  });
+
+  // Initialize when DOM is ready
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initializeFilters);
+  } else {
+    initializeFilters();
+  }
+
+  // Handle Astro view transitions
+  document.addEventListener('astro:page-load', () => {
+    // Re-initialize filters after view transition
+    setTimeout(() => {
+      initializeFilters();
+    }, 50); // Slightly longer delay to ensure DOM is fully ready
+  });
+
+  // Also handle navigation events for better compatibility
+  document.addEventListener('astro:after-swap', () => {
+    setTimeout(() => {
+      initializeFilters();
+    }, 50);
+  });
+
+  // Handle before navigation to clean up
+  document.addEventListener('astro:before-swap', () => {
+    resetState();
+  });
+</script>

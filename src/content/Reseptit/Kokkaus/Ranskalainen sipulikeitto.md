@@ -105,31 +105,31 @@ subtitle: Soupe à l'Oignon Gratinée
    > **Huomio:** Tasainen viipalointi takaa tasaisen kypsymisen.
 
 2. **Aloitus**: Kuumenna voi ja oliiviöljy suuressa, paksupohjaisessa padassa keskilämmöllä. Kun voi on sulanut ja lakannut kuohumasta, lisää sipuliviipaleet, suola ja sokeri. Sekoita hyvin, jotta sipulit peittyvät rasvalla.
-3. **Hidas Karamellisointi**: Laske lieden lämpötila matalaksi (low-medium low). Kypsennä sipuleita erittäin hitaasti ja kärsivällisesti noin 60-75 minuuttia. Sekoita noin 10-15 minuutin välein, aluksi harvemmin ja loppua kohden useammin, jotta sipulit eivät pala pohjaan. Sipulien tulisi pehmetä, luovuttaa nestettä ja sitten hitaasti saada syvän, mahonginruskean värin ja makean, pähkinäisen aromin.
+3. **Hidas Karamellisointi**: Laske lieden lämpötila matalaksi (low-medium low). Kypsennä sipuleita erittäin hitaasti ja kärsivällisesti noin 60-75 min. Sekoita noin 10-15 min välein, aluksi harvemmin ja loppua kohden useammin, jotta sipulit eivät pala pohjaan. Sipulien tulisi pehmetä, luovuttaa nestettä ja sitten hitaasti saada syvän, mahonginruskean värin ja makean, pähkinäisen aromin.
    > **Kriittinen kohta:** Tämä on keiton tärkein ja aikaavievin vaihe. ÄLÄ kiirehdi prosessia nostamalla lämpötilaa. Liian korkea lämpö polttaa sipulit ja tekee niistä kitkeriä sen sijaan, että karamellisoisi ne makeiksi.
    > **Visuaalinen merkki:** Sipulit kutistuvat huomattavasti (noin ¼ alkuperäisestä tilavuudesta), muuttuvat tahmeiksi ja saavat syvän, tasaisen ruskean värin.
 
    <!-- ![Hitaasti karamellisoidut sipulit padassa, syvänruskeina ja makean tuoksuisina](placeholder-sipuli-karamellisointi.jpg) -->
 
-4. **Jauhojen Lisäys**: Kun sipulit ovat täydellisen karamellisoituneet, ripottele vehnäjauhot niiden päälle. Sekoita ja kypsennä noin 2 minuuttia jatkuvasti sekoittaen. Tämä suurustaa keittoa hieman ja poistaa jauhojen raa'an maun.
+4. **Jauhojen Lisäys**: Kun sipulit ovat täydellisen karamellisoituneet, ripottele vehnäjauhot niiden päälle. Sekoita ja kypsennä noin 2 min jatkuvasti sekoittaen. Tämä suurustaa keittoa hieman ja poistaa jauhojen raa'an maun.
 
 #### Keiton Valmistus
 
-1. **Deglasointi**: Kaada valkoviini (tai siideri) pataan. Nosta lämpöä hieman ja kiehauta neste samalla kun kaavit huolellisesti padan pohjalle mahdollisesti tarttuneet karamellisoituneet palat puulastalla. Anna nesteen kiehua ja redusoitua noin puoleen, 2-3 minuuttia.
+1. **Deglasointi**: Kaada valkoviini (tai siideri) pataan. Nosta lämpöä hieman ja kiehauta neste samalla kun kaavit huolellisesti padan pohjalle mahdollisesti tarttuneet karamellisoituneet palat puulastalla. Anna nesteen kiehua ja redusoitua noin puoleen, 2-3 min.
    > **Huomio:** Deglasointi irrottaa kaikki arvokkaat makuaineet padan pohjalta ja tuo ne osaksi keittoa.
 
-2. **Liemen ja Yrttien Lisäys**: Lisää kuuma lihaliemi, laakerinlehdet ja timjaminoksat pataan. Kuumenna keitto kiehuvaksi, alenna sitten lämpöä ja anna hautua hiljalleen, osittain kannella peitettynä, vähintään 30-45 minuuttia, jotta maut syvenevät ja yhdistyvät.
+2. **Liemen ja Yrttien Lisäys**: Lisää kuuma lihaliemi, laakerinlehdet ja timjaminoksat pataan. Kuumenna keitto kiehuvaksi, alenna sitten lämpöä ja anna hautua hiljalleen, osittain kannella peitettynä, vähintään 30-45 min, jotta maut syvenevät ja yhdistyvät.
 3. **Maustaminen**: Poista laakerinlehdet ja timjaminoksat. Maista keittoa ja säädä mausteita tarvittaessa (suola, mustapippuri). Voit lisätä tässä vaiheessa tilkan konjakkia tai brandya tuomaan lisäsyvyyttä.
 
 #### Krutongit ja Gratinointi
 
-1. **Krutonkien Valmistus**: Esilämmitä uuni 200°C (grillivastus, jos mahdollista, loppuvaiheeseen). Hiero leipäviipaleiden molemmat puolet halkaistulla valkosipulinkynnellä (jos käytät) ja sivele ne kevyesti oliiviöljyllä. Paahda leipiä uunipellillä noin 5-7 minuuttia per puoli, tai kunnes ne ovat rapeita ja kullanruskeita.
+1. **Krutonkien Valmistus**: Esilämmitä uuni 200°C (grillivastus, jos mahdollista, loppuvaiheeseen). Hiero leipäviipaleiden molemmat puolet halkaistulla valkosipulinkynnellä (jos käytät) ja sivele ne kevyesti oliiviöljyllä. Paahda leipiä uunipellillä noin 5-7 min per puoli, tai kunnes ne ovat rapeita ja kullanruskeita.
 2. **Keiton Annostelu**: Aseta uuninkestävät annoskulhot uunipellille. Jaa kuuma sipulikeitto kulhoihin.
 3. **Gratinointi**: Aseta 1-2 paahdettua leipäviipaletta (krutonkia) jokaisen keittoannoksen pinnalle. Ripottele päälle runsaasti raastettua Gruyère- ja Comté/Emmental-juustoa (ja parmesaania, jos käytät). Varmista, että juusto peittää leivän ja ulottuu hieman myös keiton pinnalle reunoille.
 
     <!-- ![Sipulikeittokulhot valmiina gratinointiin, leipäviipaleet ja juustoraaste pinnalla](placeholder-sipulikeitto-gratinointi-valmistelu.jpg) -->
 
-4. **Paistaminen**: Nosta pelti kulhoineen uunin ylätasolle. Gratinoi 200-220°C:ssa (tai grillivastuksen alla) noin 5-10 minuuttia, tai kunnes juusto on sulanut, kuplii ja saanut kauniin kullanruskean, hieman rapean pinnan. Tarkkaile huolellisesti, ettei juusto pala.
+4. **Paistaminen**: Nosta pelti kulhoineen uunin ylätasolle. Gratinoi 200-220°C:ssa (tai grillivastuksen alla) noin 5-10 min, tai kunnes juusto on sulanut, kuplii ja saanut kauniin kullanruskean, hieman rapean pinnan. Tarkkaile huolellisesti, ettei juusto pala.
 5. **Tarjoilu**: Ota kulhot varovasti uunista (ne ovat erittäin kuumia!). Anna jäähtyä hetki ennen tarjoilua. Tarjoile välittömästi.
 
 ### Annostelu
@@ -154,7 +154,7 @@ Tarjoile perinteisissä, uuninkestävissä sipulikeittokulhoissa (leijonapääku
 
 ### Yleiset Tekniset Huomiot
 
-1. **Sipulien Karamellisointi – Kärsivällisyyden Mestarinäyte**: Tämä on ehdottomasti tärkein vaihe. Varaa riittävästi aikaa (vähintään 60 minuuttia, mieluiten pidempään) ja käytä matalaa lämpöä. Jatkuva pohjan tarkkailu ja sekoittelu loppuvaiheessa estää palamisen.
+1. **Sipulien Karamellisointi – Kärsivällisyyden Mestarinäyte**: Tämä on ehdottomasti tärkein vaihe. Varaa riittävästi aikaa (vähintään 60 min, mieluiten pidempään) ja käytä matalaa lämpöä. Jatkuva pohjan tarkkailu ja sekoittelu loppuvaiheessa estää palamisen.
 2. **Liemen Laatu**: Käytä parasta mahdollista lihalientä (itse tehty naudanlihaliemi on ihanteellinen). Hyvä liemi on keiton sielu sipulien ohella.
 3. **Juuston Valinta**: Aito Gruyère on klassinen valinta sen erinomaisen sulavuuden ja pähkinäisen maun vuoksi. Comté tai Emmental toimivat myös hyvin, yksin tai sekoituksena. Vältä prosessoituja juustoja.
 4. **Leivän Valinta**: Käytä rapeakuorista patonkia tai maalaisleipää, joka kestää hyvin keiton kosteuden ilman hajoamista liikaa.
@@ -166,7 +166,7 @@ Sipulien karamellisoinnissa lämpötilan hallinta on kriittistä. Liian kuuma ky
 
 ### Ajoituksen kriittiset pisteet
 
-Kaksi kriittistä vaihetta ovat sipulien karamellisointi (60-75 minuuttia) ja gratinointi (tarkka valvonta). Sipulien kanssa maltti on valttia, ota aikaa ja nauti prosessista. Gratinoinnissa taas jokainen sekunti voi olla ratkaiseva täydellisen kullanruskean värin saavuttamisessa.
+Kaksi kriittistä vaihetta ovat sipulien karamellisointi (60-75 min) ja gratinointi (tarkka valvonta). Sipulien kanssa maltti on valttia, ota aikaa ja nauti prosessista. Gratinoinnissa taas jokainen sekunti voi olla ratkaiseva täydellisen kullanruskean värin saavuttamisessa.
 
 ### Raaka-aineiden korvaaminen
 

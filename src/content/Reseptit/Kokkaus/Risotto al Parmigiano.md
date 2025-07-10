@@ -104,38 +104,38 @@ subtitle: Klassinen Parmesaani-Risotto
 
 #### Soffritto ja Tostatura
 
-1. **Soffritto (Pohjan Kuullotus)**: Kuumenna oliiviöljy (ja mahdollinen voi) paksupohjaisessa kasarissa keskilämmöllä. Lisää hienonnettu sipuli ja salottisipuli. Kuullota niitä hitaasti ja hellävaraisesti noin 5-7 minuuttia, kunnes ne ovat pehmeitä, läpikuultavia ja makeita, mutta eivät ole saaneet väriä.
+1. **Soffritto (Pohjan Kuullotus)**: Kuumenna oliiviöljy (ja mahdollinen voi) paksupohjaisessa kasarissa keskilämmöllä. Lisää hienonnettu sipuli ja salottisipuli. Kuullota niitä hitaasti ja hellävaraisesti noin 5-7 min, kunnes ne ovat pehmeitä, läpikuultavia ja makeita, mutta eivät ole saaneet väriä.
    > **Kriittinen kohta:** Huolellinen, hidas kuullotus ilman ruskistamista luo makean ja aromaattisen pohjan risotolle.
    > **Visuaalinen merkki:** Sipulit ovat pehmeitä ja lasimaisia, eivät ruskeita.
 
-2. **Tostatura (Riisin Paahtaminen)**: Lisää risottoriisi kasariin. Nosta lämpöä hieman (keski-korkea) ja paahda riisiä jatkuvasti **puu- tai silikonilastalla** sekoittaen noin 2-3 minuuttia. Riisinjyvien tulisi kuumentua kunnolla ja muuttua reunoiltaan hieman läpikuultaviksi, ikään kuin lasimaisiksi. Keskusta pysyy valkoisena.
+2. **Tostatura (Riisin Paahtaminen)**: Lisää risottoriisi kasariin. Nosta lämpöä hieman (keski-korkea) ja paahda riisiä jatkuvasti **puu- tai silikonilastalla** sekoittaen noin 2-3 min. Riisinjyvien tulisi kuumentua kunnolla ja muuttua reunoiltaan hieman läpikuultaviksi, ikään kuin lasimaisiksi. Keskusta pysyy valkoisena.
    > **Kriittinen kohta:** Tostatura "sinetöi" riisinjyvän pinnan, auttaen sitä imemään nestettä hitaammin ja vapauttamaan tärkkelystä tasaisesti. Tämä vaihe on avain kermaiseen rakenteeseen ilman, että jyvät hajoavat.
 
 <!-- ![Risottoriisin paahtaminen kasarissa, jyvät muuttumassa läpikuultaviksi reunoilta](placeholder-risotto-tostatura.jpg) -->
 
 #### Deglasointi ja Kypsennys
 
-1. **Deglasointi (Viinin Lisäys)**: Kaada valkoviini riisin päälle. Sekoita jatkuvasti ja anna kiehua voimakkaasti, kunnes alkoholin pistävä tuoksu on haihtunut ja viini on lähes kokonaan imeytynyt riisiin. Tämä kestää noin 1-2 minuuttia.
+1. **Deglasointi (Viinin Lisäys)**: Kaada valkoviini riisin päälle. Sekoita jatkuvasti ja anna kiehua voimakkaasti, kunnes alkoholin pistävä tuoksu on haihtunut ja viini on lähes kokonaan imeytynyt riisiin. Tämä kestää noin 1-2 min.
    > **Huomio:** Viini tuo happamuutta ja syvyyttä makuun. Anna alkoholin haihtua kunnolla.
 
 2. **Nesteen Lisääminen Vaiheittain**: Kun viini on imeytynyt, ala lisätä kuumaa lientä yksi kauhallinen (n. 1.5-2 dl) kerrallaan. Varmista, että edellinen liemierä on lähes kokonaan imeytynyt ennen seuraavan lisäämistä. Sekoita risottoa jatkuvasti, mutta hellävaraisesti, lastalla. Liikkeen tulisi olla enemmänkin "hämmentämistä" kuin voimakasta vatkaamista. Pidä lämpötila sellaisena, että risotto poreilee kevyesti koko ajan (lempeä "hymyilevä" poreilu).
    > **Kriittinen kohta:** Jatkuva, hellävarainen sekoitus irrottaa tärkkelystä riisinjyvien pinnasta, mikä luo risoton tunnusomaisen kermaisen rakenteen. Liian voimakas sekoitus voi rikkoa jyvät.
 
-3. Jatka liemen lisäämistä ja sekoittamista tällä tavoin noin 16-18 minuuttia. Risoton kypsennysaika riippuu riisilajikkeesta ja lieden tehosta.
-4. **Kypsyyden Tarkistus**: Maista riisinjyvää noin 15-16 minuutin kohdalla. Sen tulisi olla kypsä mutta keskeltä vielä hieman napakka (al dente). Älä ylikypsennä; riisi jatkaa kypsymistään vielä mantecatura-vaiheessa.
+3. Jatka liemen lisäämistä ja sekoittamista tällä tavoin noin 16-18 min. Risoton kypsennysaika riippuu riisilajikkeesta ja lieden tehosta.
+4. **Kypsyyden Tarkistus**: Maista riisinjyvää noin 15-16 min kohdalla. Sen tulisi olla kypsä mutta keskeltä vielä hieman napakka (al dente). Älä ylikypsennä; riisi jatkaa kypsymistään vielä mantecatura-vaiheessa.
    > **Huomio:** Jos liemi loppuu kesken ja riisi ei ole vielä kypsää, voit käyttää kuumaa vettä viimeisiin lisäyksiin.
 
 #### Mantecatura (Viimeistely)
 
 1. **Liedeltä Nosto**: Kun riisi on juuri ja juuri al dente (hieman kiinteä keskeltä) ja risotto on kosteaa mutta ei vetistä, ota kasari pois liedeltä. Lisää suolaa ja pippuria varovasti tässä vaiheessa, muistaen että parmesaani on myös suolaista.
 
-2. **Voin ja Juuston Lisäys (Mantecare)**: Lisää kylmä, kuutioitu voi ja hienoksi raastettu Parmigiano Reggiano -juusto risottoon. Sekoita erittäin voimakkaasti puulastalla tai heiluttele kasaria voimakkaasti sivuttain ja pyörittäen, jotta voi ja juusto emulgoituvat risottoon ja tekevät siitä erittäin kermaisen ja ilmavan. **Lisää halutessasi tässä vaiheessa myös pieni, jääkylmä nokare voita (n. 10-15g) ja sekoita se nopeasti joukkoon parhaan kiillon ja täyteläisyyden saavuttamiseksi.** Tämä vaihe kestää noin 1-2 minuuttia.
+2. **Voin ja Juuston Lisäys (Mantecare)**: Lisää kylmä, kuutioitu voi ja hienoksi raastettu Parmigiano Reggiano -juusto risottoon. Sekoita erittäin voimakkaasti puulastalla tai heiluttele kasaria voimakkaasti sivuttain ja pyörittäen, jotta voi ja juusto emulgoituvat risottoon ja tekevät siitä erittäin kermaisen ja ilmavan. **Lisää halutessasi tässä vaiheessa myös pieni, jääkylmä nokare voita (n. 10-15g) ja sekoita se nopeasti joukkoon parhaan kiillon ja täyteläisyyden saavuttamiseksi.** Tämä vaihe kestää noin 1-2 min.
    > **Kriittinen kohta:** Mantecatura on risoton tärkein vaihe täydellisen koostumuksen saavuttamiseksi. Kylmä voi auttaa emulsion muodostumisessa ja tekee rakenteesta silkkisen. **Jääkylmän voin lisääminen lopuksi parantaa entisestään rakennetta ja kiiltoa.**
    > **Visuaalinen merkki:** Risotto muuttuu kiiltäväksi, samettiseksi ja saa "all'onda" -rakenteen (aaltoileva, valuva).
 
    <!-- ![Mantecatura-vaihe: voin ja parmesaanin voimakas sekoittaminen risottoon liedeltä nostamisen jälkeen](placeholder-risotto-mantecatura.jpg) -->
 
-3. **Lepuutus**: Peitä kasari kannella ja anna risoton levätä 2-3 minuuttia ennen tarjoilua. Tämä antaa makujen tasaantua ja rakenteen viimeisteltyä.
+3. **Lepuutus**: Peitä kasari kannella ja anna risoton levätä 2-3 min ennen tarjoilua. Tämä antaa makujen tasaantua ja rakenteen viimeisteltyä.
 
 ### Annostelu ja Tarjoilu
 

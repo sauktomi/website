@@ -403,6 +403,14 @@ button.wiki-link--available {
   @apply text-secondary-accent hover:text-primary-dark;
 }
 
+.timer-link {
+  @apply inline-flex font-mono text-base;
+}
+
+.timer-link:hover {
+  @apply underline-offset-5 underline text-shadow-xs;
+}
+
 .timer-text {
   @apply mt-1 font-mono text-base font-bold text-primary-light;
 }
@@ -511,7 +519,7 @@ button.wiki-link--available {
 
 /* ===== TIMER COMPONENTS ===== */
 .timer-popover {
-  @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent w-full max-h-[80vh] overflow-hidden;
+  @apply bg-transparent backdrop-blur-3xl rounded-b-xl shadow-prominent w-[anchor-size(100%)] max-h-[80vh] overflow-hidden;
   @apply border border-white/20;
   /* Container-responsive width */
   max-width: min(var(--max-w-container-lg, 1024px), calc(100vw - 1rem));
@@ -735,19 +743,6 @@ button.wiki-link--available {
 }
 
 /* ===== TIMER LINKS ===== */
-.timer-link {
-  @apply text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-2 transition-colors duration-200 cursor-pointer;
-  text-decoration: none;
-}
-
-.timer-link:hover {
-  @apply decoration-solid;
-}
-
-.timer-link:focus-visible {
-  @apply outline-2 outline-offset-2 outline-blue-600 rounded;
-}
-
 .timer-active {
   @apply bg-amber-600 text-orange-600 hover:text-orange-800 underline decoration-dotted underline-offset-2 transition-colors duration-200;
 }
