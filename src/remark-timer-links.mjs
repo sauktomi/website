@@ -119,14 +119,16 @@ function createTimerLink(timeText, totalMinutes) {
   
   return {
     type: 'link',
-    url: '#',
+    url: '',
     data: {
       hProperties: {
         className: 'timer-link',
         'data-timer-minutes': totalMinutes,
         'data-timer-text': timeText,
         'data-timer-id': timerId,
-        'data-timer-action': 'start'
+        'data-timer-action': 'start',
+        role: 'button',
+        tabindex: '0'
       }
     },
     children: [{

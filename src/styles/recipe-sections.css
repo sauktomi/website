@@ -190,6 +190,28 @@
   @apply bg-green-100;
 }
 
+/* ===== TIMER LINKS ===== */
+.timer-link {
+  @apply inline-flex items-center gap-1 px-2 py-1 text-sm font-medium;
+  @apply bg-secondary-light text-secondary-dark rounded-md;
+  @apply hover:bg-secondary-accent hover:text-primary-light;
+  @apply focus:outline-none focus:ring-2 focus:ring-secondary-accent focus:ring-offset-1;
+  @apply transition-all duration-200 cursor-pointer;
+  @apply border border-transparent hover:border-secondary-accent;
+}
+
+.timer-link:hover {
+  @apply transform scale-105;
+}
+
+.timer-link:active {
+  @apply transform scale-95;
+}
+
+.timer-link.active-timer-link {
+  @apply bg-secondary-accent text-primary-light ring-2 ring-secondary-accent;
+}
+
 /* ===== SETTINGS BUTTON ===== */
 .recipe-body .recipe-section > h2 .recipe-settings-button,
 .recipe-body .recipe-section > h3 .recipe-settings-button {

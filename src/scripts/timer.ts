@@ -429,12 +429,14 @@ if (typeof document !== 'undefined') {
   
   // Set up timer links event listener once
   if (!timerLinksListenerAdded) {
+    // Handle click events
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       const timerLink = target.closest('.timer-link');
       
       if (timerLink && timerLink instanceof HTMLElement) {
         e.preventDefault();
+        e.stopPropagation();
         const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
         const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
         
@@ -455,6 +457,36 @@ if (typeof document !== 'undefined') {
         }
       }
     });
+
+    // Handle keyboard events for accessibility
+    document.addEventListener('keydown', (e) => {
+      const target = e.target as HTMLElement;
+      const timerLink = target.closest('.timer-link');
+      
+      if (timerLink && timerLink instanceof HTMLElement && (e.key === 'Enter' || e.key === ' ')) {
+        e.preventDefault();
+        e.stopPropagation();
+        const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
+        const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
+        
+        if (totalMinutes > 0) {
+          const totalSeconds = Math.round(totalMinutes * 60);
+          timerState.totalSeconds = totalSeconds;
+          updateUI();
+          startTimer();
+          
+          // Open the timer popover
+          const timerPopover = document.getElementById('timer-popover');
+          if (timerPopover && 'showPopover' in timerPopover) {
+            (timerPopover as any).showPopover();
+          }
+        } else {
+          // Fallback to parsing time text
+          startTimerFromText(timeText, timerLink);
+        }
+      }
+    });
+    
     timerLinksListenerAdded = true;
   }
 }

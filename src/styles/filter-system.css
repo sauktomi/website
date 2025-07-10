@@ -100,9 +100,12 @@
   @apply relative inline-flex flex-1 justify-center rounded-xl items-center gap-2 text-sm h-11 transition-all;
 }
 
-.filter-button:focus,
-.filter-button[aria-expanded="true"] {
+.filter-button:focus {
   @apply outline-none ring-1 ring-offset-1 ring-secondary rounded-b-none;
+}
+
+.filter-button[aria-expanded="true"] {
+  @apply min-w-36 outline-none rounded-b-none ring-1 ring-offset-1 ring-secondary;
 }
 
 .filter-button svg {
