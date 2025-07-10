@@ -293,11 +293,11 @@ button {
 
 /* ===== WIKI LINKS ===== */
 .wiki-link {
-  @apply text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-2 transition-colors duration-200 px-0.5;
+  @apply text-blue-600 hover:text-blue-800 underline decoration-dotted underline-offset-6 transition-colors duration-200 px-0.5;
 }
 
-a.wiki-link--available {
-  @apply text-blue-600 hover:text-blue-800;
+button.wiki-link--available {
+  @apply text-primary-dark hover:text-primary-dark;
 }
 
 .wiki-link--available:hover { @apply decoration-solid; }
@@ -380,12 +380,16 @@ a.wiki-link--available {
 
 /* ===== TOP NAVIGATION SYSTEM (Unified) ===== */
 .top-navigation {
-  @apply relative bg-primary-light flex items-center justify-between;
+  @apply relative z-50 bg-primary-light flex items-center justify-between;
   padding: clamp(0.75rem, 2vw, 1.5rem);
 }
 
 .top-nav-center {
   @apply absolute left-0 right-0 place-self-center;
+}
+
+.top-nav-right {
+  @apply ml-auto;
 }
 
 .top-nav-btn {

@@ -52,22 +52,15 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" type="image/svg+xml" href="" />
 		<meta name="generator" content="Astro" />
 		
 		<!-- Meta tags -->
 		<meta name="description" content={metaDescription || defaultMetaDescription} />
 		<title>{title}</title>
 		
-		<!-- Optimized font loading to prevent FOUT -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" as="style" onload="this.setAttribute('rel','stylesheet')" />
-		<link rel="preload" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" as="style" onload="this.setAttribute('rel','stylesheet')" />
-		<noscript>
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" />
-			<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" />
-		</noscript>
+		<!-- Local Inter font loading -->
+		<link rel="stylesheet" href="/fonts.css" />
 		
 		<!-- Enhanced meta tags -->
 		<meta property="og:title" content={title} />
@@ -82,10 +75,75 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<!-- Optimize images loading -->
 		<meta name="format-detection" content="telephone=no, address=no, email=no" />
 		
-		<!-- Theme colors for mobile -->
-		<meta name="theme-color" content="#fcfcfc" media="(prefers-color-scheme: light)" />
-		<meta name="theme-color" content="#0f0f0f" media="(prefers-color-scheme: dark)" />
+		<!-- Critical CSS - Inlined for immediate application -->
+		<style is:inline>
+			/* Critical CSS - Essential for preventing FOUC and layout shifts */
+			:root {
+				--sidebar-width: 4rem;
+				--sidebar-width-desktop: 33.6%;
+				--transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
+				--transition-duration: 200ms;
+			}
+
+			/* Reserve scrollbar space up-front to prevent width jumps when content overflow triggers the scrollbar. */
+			html {
+				font-family: "Inter Variable", "Inter", system-ui, sans-serif;
+				scrollbar-gutter: stable;
+				font-feature-settings: "liga", "kern", "calt";
+				text-rendering: optimizeLegibility;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+			}
+
+			/* Skip link */
+			.skip-link {
+				position: absolute;
+				top: -2.5rem;
+				left: 1.5rem;
+				background-color: var(--color-primary-dark);
+				color: white;
+				padding: 0.5rem;
+				border-radius: 0.25rem;
+				z-index: 10000;
+				text-decoration: none;
+			}
+
+			.skip-link:focus {
+				top: 1.5rem;
+			}
+
+			.dark {
+			  /* Primary Colors - Dark Mode (Inverted Obsidian) */
+			  --color-primary-light: var(--color-obsidian-8);
+			  --color-primary: var(--color-obsidian-5);
+			  --color-primary-accent: var(--color-obsidian-4);
+			  --color-primary-dark: var(--color-obsidian-2);
+			
+			  /* Secondary Colors - Dark Mode (Inverted Light Range) */
+			  --color-secondary-light: var(--color-obsidian-7);
+			  --color-secondary: var(--color-obsidian-5);
+			  --color-secondary-accent: var(--color-obsidian-4);
+			  --color-secondary-dark: var(--color-obsidian-1);
+			
+			  /* Tertiary Colors - Dark Mode (Inverted Dark Range) */
+			  --color-tertiary-light: var(--color-obsidian-11);
+			  --color-tertiary: var(--color-obsidian-9);
+			  --color-tertiary-accent: var(--color-obsidian-8);
+			  --color-tertiary-dark: var(--color-obsidian-3);
+			} 
+		</style>
 		
+		<!-- Inline script to prevent theme flash -->
+		<script is:inline>
+			// On page load, check localStorage first, then system preference
+			const isDark = localStorage.theme === "dark" || 
+				(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+			document.documentElement.classList.toggle("dark", isDark);
+		</script>
+		
+<style>
+
+</style>
 		<ClientRouter />
 		
 		<!-- Critical CSS and scripts are now imported through global.css -->
@@ -99,7 +157,7 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 			<TopNavigation />
 		</div>
 			<!-- Content area -->
-			<main id="main-content" class="min-h-[90dvh] lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20">
+			<main id="main-content" class="min-h-[90dvh] md:mt-6 lg:pt-4 px-6 lg:px-8 pb-16 lg:pb-20">
 				<slot />
 			</main>
 		

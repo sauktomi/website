@@ -35,6 +35,8 @@ html {
   scrollbar-gutter: stable; 
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html[data-layout="mobile"][data-navbar="open"] body {
   overflow: hidden;
 }

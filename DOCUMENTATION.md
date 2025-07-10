@@ -74,7 +74,6 @@ Website/
 │   └── sounds/                   # Audio files (timer alerts)
 ├── src/
 │   ├── components/               # Reusable UI components
-│   │   ├── Navbar.astro          # Main navigation component
 │   │   ├── SimpleFilterSystem.jsx # Unified filtering system
 
 │   │   ├── IngredientPopover.astro # Ingredient information popovers

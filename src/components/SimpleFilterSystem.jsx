@@ -8,6 +8,7 @@
  * Features:
  * - Real-time search with multiple data attribute support
  * - Multi-select and single-select filter options
+ * - URL-based filtering with shareable links
  * - Native HTML Popover API for filter interfaces
  * - Mobile-optimized touch interactions
  * - Automatic results counting and display
@@ -27,9 +28,10 @@
  * - Directory page: Filter by type, dietary restrictions, categories
  * - Search across multiple data attributes
  * - Real-time results updating
+ * - URL-based filter initialization and updates
  * 
  * @author Tomi
- * @version 2.0.0
+ * @version 2.1.0
  */
 
 import { useEffect, useRef, useState } from 'preact/hooks';
@@ -56,14 +58,17 @@ import { useEffect, useRef, useState } from 'preact/hooks';
  * @param {string} [props.searchPlaceholder="Etsi..."] - Placeholder text for search input
  * @param {FilterSection[]} [props.filterSections=[]] - Array of filter sections
  * @param {string} [props.resultsCountText="tulosta löytyi"] - Text for results count
+ * @param {boolean} [props.updateUrl=true] - Whether to update URL when filters change
  */
 export default function SimpleFilterSystem({ 
   config,
   searchPlaceholder = "Etsi...",
-  filterSections = []
+  filterSections = [],
+  updateUrl = true
 }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [activeFilters, setActiveFilters] = useState(new Map());
+  const [isInitialized, setIsInitialized] = useState(false);
   const searchInputRef = useRef(null);
 
   // Configuration with defaults
@@ -73,6 +78,83 @@ export default function SimpleFilterSystem({
     noResultsId: 'no-results',
     ...config
   };
+
+  // Initialize filters from URL parameters on component mount
+  useEffect(() => {
+    if (typeof window === 'undefined' || isInitialized) return;
+    
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlFilters = new Map();
+    
+    // Check each filter section for matching URL parameters
+    filterSections.forEach(section => {
+      const paramValue = urlParams.get(section.id);
+      if (paramValue) {
+        // Validate that the parameter value exists in the section options
+        const validOptions = section.options.map(opt => opt.value);
+        
+        if (section.type === 'multi') {
+          // For multi-select, support comma-separated values
+          const values = paramValue.split(',').filter(val => validOptions.includes(val));
+          if (values.length > 0) {
+            urlFilters.set(section.id, values);
+          }
+        } else {
+          // For single-select, only set if value is valid
+          if (validOptions.includes(paramValue)) {
+            urlFilters.set(section.id, paramValue);
+          }
+        }
+      }
+    });
+    
+    // Also check for search parameter
+    const searchParam = urlParams.get('search') || urlParams.get('q');
+    if (searchParam) {
+      setSearchTerm(searchParam);
+    }
+    
+    if (urlFilters.size > 0) {
+      setActiveFilters(urlFilters);
+    }
+    
+    setIsInitialized(true);
+  }, [filterSections]);
+
+  // Update URL when filters change (debounced)
+  useEffect(() => {
+    if (!isInitialized || !updateUrl || typeof window === 'undefined') return;
+    
+    const timeoutId = setTimeout(() => {
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams();
+      
+      // Add active filters to URL
+      activeFilters.forEach((value, key) => {
+        if (Array.isArray(value)) {
+          params.set(key, value.join(','));
+        } else {
+          params.set(key, value);
+        }
+      });
+      
+      // Add search term if present
+      if (searchTerm.trim()) {
+        params.set('search', searchTerm);
+      }
+      
+      // Update URL without causing page reload
+      const newUrl = params.toString() 
+        ? `${url.pathname}?${params.toString()}` 
+        : url.pathname;
+        
+      if (newUrl !== window.location.pathname + window.location.search) {
+        window.history.replaceState({}, '', newUrl);
+      }
+    }, 300); // Debounce URL updates
+    
+    return () => clearTimeout(timeoutId);
+  }, [activeFilters, searchTerm, isInitialized, updateUrl]);
 
   // Core filtering logic (simplified)
   const applyFilters = (term = searchTerm, filters = activeFilters) => {
@@ -132,24 +214,109 @@ export default function SimpleFilterSystem({
 
     // Other filters
     for (const [filterType, filterValue] of filters.entries()) {
-      const itemValue = item.dataset[filterType.toLowerCase()] || '';
+      let itemValue = '';
+      
+      // Map filter types to correct data attributes
+      switch (filterType) {
+        case 'vaikeustaso':
+          // Check both vaikeustaso and difficulty attributes
+          itemValue = item.dataset.vaikeustaso || item.dataset.difficulty || '';
+          break;
+        case 'kokonaisaika':
+          // Handle time categorization
+          const rawTime = item.dataset.kokonaisaika || '';
+          if (rawTime) {
+            // Convert raw time to category
+            const timeValue = categorizeTime(rawTime);
+            itemValue = timeValue;
+          }
+          break;
+        case 'techniques':
+          itemValue = item.dataset.techniques || '';
+          break;
+        case 'category':
+          itemValue = item.dataset.category || '';
+          break;
+        case 'tags':
+          itemValue = item.dataset.tags || '';
+          break;
+        case 'dietary':
+          itemValue = item.dataset.dietary || '';
+          break;
+        case 'type':
+          itemValue = item.dataset.type || '';
+          break;
+        default:
+          // Try direct attribute match
+          itemValue = item.dataset[filterType.toLowerCase()] || '';
+      }
       
       if (Array.isArray(filterValue)) {
         const itemValues = itemValue.split(',').map(v => v.trim().toLowerCase());
-        const matches = filterValue.some(fv => itemValues.includes(fv.toLowerCase()));
+        const matches = filterValue.some(fv => {
+          const filterVal = fv.toLowerCase();
+          // For difficulty levels, also check compound values (e.g., "keskivaikea-vaativa")
+          return itemValues.some(itemVal => {
+            // Split compound values and check if any part matches
+            const itemParts = itemVal.split('-').map(part => part.trim());
+            return itemParts.includes(filterVal) || itemVal === filterVal;
+          });
+        });
         if (!matches) return false;
       } else {
-        if (itemValue.toLowerCase() !== filterValue.toLowerCase()) return false;
+        const filterVal = filterValue.toLowerCase();
+        const itemParts = itemValue.toLowerCase().split('-').map(part => part.trim());
+        if (!itemParts.includes(filterVal) && itemValue.toLowerCase() !== filterVal) return false;
       }
     }
 
     return true;
   };
 
+  // Helper function to categorize time values
+  const categorizeTime = (timeValue) => {
+    if (!timeValue) return '';
+    
+    // Handle ranges like "80-105" or single values like "45"
+    const timeStr = timeValue.toString();
+    
+    // Extract the highest number from ranges (e.g., "80-105" -> 105)
+    const numbers = timeStr.match(/\d+/g);
+    if (!numbers) return '';
+    
+    const maxMinutes = Math.max(...numbers.map(n => parseInt(n)));
+    
+    // Handle hour notation (e.g., "~4-5h" -> 240-300 minutes)
+    if (timeStr.includes('h') || timeStr.includes('tuntia')) {
+      // Convert hours to minutes (assuming the numbers are hours)
+      const hourNumbers = timeStr.match(/\d+/g);
+      if (hourNumbers) {
+        const maxHours = Math.max(...hourNumbers.map(n => parseInt(n)));
+        const totalMinutes = maxHours * 60;
+        
+        if (totalMinutes <= 30) return 'quick';
+        if (totalMinutes <= 60) return 'medium';
+        if (totalMinutes <= 120) return 'long';
+        return 'extended';
+      }
+    }
+    
+    // Handle very long times (like 20-30h which would be 1200-1800 minutes)
+    if (maxMinutes > 1000) return 'extended';
+    
+    // Handle very short times (like 7-8 minutes)
+    if (maxMinutes <= 30) return 'quick';
+    if (maxMinutes <= 60) return 'medium';
+    if (maxMinutes <= 120) return 'long';
+    return 'extended';
+  };
+
   // Apply filters when search term or filters change
   useEffect(() => {
-    applyFilters();
-  }, [searchTerm, activeFilters]);
+    if (isInitialized) {
+      applyFilters();
+    }
+  }, [searchTerm, activeFilters, isInitialized]);
 
   // Helper function to get active filter count for a section
   const getActiveFilterCount = (sectionId) => {
@@ -190,7 +357,6 @@ export default function SimpleFilterSystem({
     }
     
     setActiveFilters(newActiveFilters);
-    applyFilters(searchTerm, newActiveFilters);
     
     // Hide the popover after selection only for single-select filters
     if (type === 'single') {
@@ -206,14 +372,12 @@ export default function SimpleFilterSystem({
     const newActiveFilters = new Map(activeFilters);
     newActiveFilters.delete(sectionId);
     setActiveFilters(newActiveFilters);
-    applyFilters(searchTerm, newActiveFilters);
   };
 
   // Clear all filters
   const clearAllFilters = () => {
     setActiveFilters(new Map());
     setSearchTerm('');
-    applyFilters('', new Map());
   };
 
   // Clear search input only
@@ -247,6 +411,33 @@ export default function SimpleFilterSystem({
 
   return (
     <div class="filter-system-container">
+      
+      {/* Filter Controls */}
+      <div class="filter-controls">
+        {/* Filter Buttons */}
+        {filterSections.map((section) => {
+          const activeCount = getActiveFilterCount(section.id);
+          return (
+            <button
+              key={section.id}
+              popovertarget={`filter-popover-${section.id}`}
+              class="filter-button"
+              aria-label={`Avaa ${section.title} suodattimet`}
+              style={`--anchor-name: --filter-button-${section.id}`}
+            >
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={section.icon}></path>
+              </svg>
+              {activeCount > 0 && (
+                <span class="filter-button-badge" aria-label={`${activeCount} suodatin aktiivinen`}>
+                  {activeCount}
+                </span>
+              )}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Search Input */}
       <div class="filter-search-container">
         <div class="filter-search-icon">
@@ -275,32 +466,6 @@ export default function SimpleFilterSystem({
             </svg>
           </button>
         )}
-      </div>
-
-      {/* Filter Controls */}
-      <div class="filter-controls">
-        {/* Filter Buttons */}
-        {filterSections.map((section) => {
-          const activeCount = getActiveFilterCount(section.id);
-          return (
-            <button
-              key={section.id}
-              popovertarget={`filter-popover-${section.id}`}
-              class="filter-button"
-              aria-label={`Avaa ${section.title} suodattimet`}
-              style={`--anchor-name: --filter-button-${section.id}`}
-            >
-              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={section.icon}></path>
-              </svg>
-              {activeCount > 0 && (
-                <span class="filter-button-badge" aria-label={`${activeCount} suodatin aktiivinen`}>
-                  {activeCount}
-                </span>
-              )}
-            </button>
-          );
-        })}
       </div>
 
       {/* Filter Popovers */}
@@ -342,9 +507,6 @@ export default function SimpleFilterSystem({
                   class="filter-clear-section-button"
                   aria-label={`Tyhjennä ${section.title} suodattimet`}
                 >
-                  <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                  </svg>
                   Tyhjennä suodattimet
                 </button>
               </div>

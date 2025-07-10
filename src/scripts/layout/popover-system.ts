@@ -27,6 +27,52 @@ const PopoverSystem = {
   init(): void {
     this.setupPopovers();
     this.setupGlobalListeners();
+    
+    // Lazy load JSON data if on hakemisto page
+    if (window.location.pathname === '/hakemisto' || window.location.pathname === '/hakemisto/') {
+      this.preloadJsonData();
+    }
+  },
+
+  preloadJsonData(): void {
+    const preloadModules = async () => {
+      const modules = [
+        // Equipment and techniques
+        () => import('../../content/data/equipment.json'),
+        () => import('../../content/data/techniques.json'),
+        // Ingredient category files
+        () => import('../../content/data/categories/hedelmät.json'),
+        () => import('../../content/data/categories/jauhot.json'),
+        () => import('../../content/data/categories/juustot.json'),
+        () => import('../../content/data/categories/kasvikset.json'),
+        () => import('../../content/data/categories/maitotuotteet.json'),
+        () => import('../../content/data/categories/mausteet.json'),
+        () => import('../../content/data/categories/rasva.json'),
+        () => import('../../content/data/categories/sokeri.json')
+      ];
+
+      // Load all modules in parallel
+      const loadPromises = modules.map(async (moduleLoader) => {
+        try {
+          await moduleLoader();
+          console.log('Preloaded JSON module');
+        } catch (error) {
+          // Silently fail - this is just preloading
+          console.debug('Failed to preload JSON module:', error);
+        }
+      });
+
+      // Wait for all modules to load (or fail) in the background
+      await Promise.allSettled(loadPromises);
+    };
+
+    // Start preloading when idle
+    if ('requestIdleCallback' in window) {
+      requestIdleCallback(() => preloadModules(), { timeout: 5000 });
+    } else {
+      // Fallback for browsers without requestIdleCallback
+      setTimeout(preloadModules, 2000);
+    }
   },
 
   setupPopovers(): void {

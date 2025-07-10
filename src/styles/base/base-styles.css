@@ -69,9 +69,7 @@
   
   /* ===== OPTIMIZED BASE STYLES ===== */
   html {
-    @apply bg-primary-light text-primary-dark font-sans antialiased scroll-smooth;
-    font-feature-settings: "liga", "kern", "calt";
-    text-rendering: optimizeLegibility;
+    @apply bg-primary-light text-primary-dark scroll-smooth;
   }
   
   @media (prefers-reduced-motion: reduce) {
@@ -92,8 +90,10 @@
 
   /* ===== STREAMLINED LINK STYLES ===== */
   a {
-    @apply text-current duration-200 underline-offset-6;
+    @apply text-primary-dark duration-200 underline-offset-6;
   }
+
+  button, label { color: var(--color-primary-dark); }
 
   a:hover { @apply border-primary-accent; }
   a:focus-visible { @apply outline-2 outline-offset-2 outline-primary-accent rounded; }
@@ -127,26 +127,3 @@
   tr:hover { @apply bg-secondary-light; }
   caption { @apply caption-bottom text-sm text-secondary-accent py-2; }
 }
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-/* Necessary for dark mode, can't use theme layer - otherwise dark mode applies by default */
-[data-theme="dark"] {
-  /* Primary Colors - Dark Mode (Inverted Obsidian) */
-  --color-primary-light: var(--color-obsidian-8);
-  --color-primary: var(--color-obsidian-5);
-  --color-primary-accent: var(--color-obsidian-4);
-  --color-primary-dark: var(--color-obsidian-2);
-
-  /* Secondary Colors - Dark Mode (Inverted Light Range) */
-  --color-secondary-light: var(--color-obsidian-7);
-  --color-secondary: var(--color-obsidian-5);
-  --color-secondary-accent: var(--color-obsidian-4);
-  --color-secondary-dark: var(--color-obsidian-1);
-
-  /* Tertiary Colors - Dark Mode (Inverted Dark Range) */
-  --color-tertiary-light: var(--color-obsidian-11);
-  --color-tertiary: var(--color-obsidian-9);
-  --color-tertiary-accent: var(--color-obsidian-8);
-  --color-tertiary-dark: var(--color-obsidian-3);
-} 

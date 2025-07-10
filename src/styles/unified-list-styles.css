@@ -52,8 +52,6 @@
   @apply space-y-4 min-w-80 max-w-128 flex-1;
 }
 
-
-
 /* ===== ACCESSIBILITY ===== */
 /* Focus states */
 .list-item:focus-visible {
@@ -208,7 +206,7 @@
 
 /* Page header with responsive typography */
 .page-header {
-  @apply text-center mb-8;
+  @apply text-center mb-6;
 }
 
 
@@ -448,7 +446,7 @@
 /* ===== HOME PAGE STYLES ===== */
 /* Hero section */
 .hero-section {
-  @apply space-y-4 absolute top-0 bottom-[10dvh] place-self-center justify-items-center py-16 xl:py-20;
+  @apply space-y-4 absolute top-0 bottom-[10dvh] place-self-center justify-items-center;
 }
 
 .hero-title {
@@ -468,7 +466,7 @@
 }
 
 .hero-button-primary {
-  @apply bg-primary-dark text-primary-light rounded-t-xl transition-transform hover:scale-105 focus-visible:scale-105 focus-visible:outline-2 focus-visible:outline-primary-light;
+  @apply bg-primary-dark text-primary-light rounded-t-xl transition-transform scale-105 focus-visible:outline-2 focus-visible:outline-primary-light;
 }
 
 .hero-button-secondary {

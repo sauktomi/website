@@ -24,7 +24,7 @@ class SettingsManager {
     // Load dark mode setting
     const darkModeToggle = document.getElementById('dark-mode-toggle') as HTMLInputElement;
     if (darkModeToggle) {
-      const stored = localStorage.getItem('user-theme-choice');
+      const stored = localStorage.theme;
       if (stored === 'dark' || stored === 'light') {
         darkModeToggle.checked = stored === 'dark';
       } else {
@@ -65,11 +65,11 @@ class SettingsManager {
     if (darkModeToggle) {
       darkModeToggle.addEventListener('change', () => {
         const isDark = darkModeToggle.checked;
-        localStorage.setItem('user-theme-choice', isDark ? 'dark' : 'light');
         
         // Apply theme using ThemeManager
         const windowWithTheme = window as CustomWindow;
         if (windowWithTheme.ThemeManager) {
+          windowWithTheme.ThemeManager._persist(isDark ? 'dark' : 'light');
           windowWithTheme.ThemeManager.apply(isDark);
           windowWithTheme.ThemeManager.setupState(isDark);
         }

@@ -64,7 +64,7 @@
 .recipe-body .recipe-instruction-step::before {
   content: counter(instruction-counter);
   @apply flex mr-8 mt-1 float-left items-center justify-center w-12 h-12 text-2xl font-black tracking-tight;
-  @apply bg-slate-900 text-primary-light rounded-lg shadow-lg;
+  @apply bg-primary-dark text-primary-light rounded-lg shadow-lg;
   @apply leading-none pointer-events-auto z-10 transform-gpu will-change-[transform] transition-all duration-300 ease-out;
 }
 
@@ -123,7 +123,7 @@
 }
 
 .recipe-body .recipe-instruction-step:focus-within::before {
-  @apply ring-2 ring-slate-400 ring-offset-2;
+  @apply ring-2 ring-primary-accent ring-offset-2;
 }
 
 /* ===== MISE EN PLACE SECTION ===== */

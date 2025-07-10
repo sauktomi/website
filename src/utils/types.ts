@@ -46,6 +46,7 @@ export interface ThemeState {
   isDark?: boolean;
   apply?: () => void;
   toggle?: () => boolean;
+  setSystemPreference?: () => void;
 }
 
 export interface IngredientDataLoader {

@@ -72,7 +72,7 @@ const showSidebar = currentPath !== '/';
 		</button>
 		
 		<!-- Title -->
-		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
+		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu" onclick="document.getElementById('navbar-dialog').close()">
 			<span class="text-2xl lg:text-3xl font-serif font-bold">T</span>
 			<span class="text-lg lg:text-xl font-medium">omin</span>
 			<span class="text-2xl lg:text-3xl font-serif font-bold ml-1">K</span>
@@ -147,7 +147,7 @@ const showSidebar = currentPath !== '/';
 		</nav>
 
 		<!-- Settings Section -->
-		<div id="navbar-settings-section" class="mt-12 pt-8 hidden">
+		<div id="navbar-settings-section" class="md:mt-12 pt-8 hidden">
 			<h2 class="text-xl lg:text-2xl text-center font-semibold mb-6 text-primary-dark">Asetukset</h2>
 			
 			<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
@@ -222,6 +222,125 @@ const showSidebar = currentPath !== '/';
 		</button>
 	</div>
 </div>
+
+<!-- Client-side Navigation Handler -->
+<script>
+	/**
+	 * TopNavigation Client-side Handler
+	 * 
+	 * Manages dynamic updates to navigation state during client-side transitions.
+	 * Handles back button visibility and href updates based on current page.
+	 */
+	class TopNavigationManager {
+		constructor() {
+			this.init();
+		}
+
+		init() {
+			// Update navigation on page transitions
+			document.addEventListener('astro:after-swap', () => {
+				this.updateNavigationState();
+				this.closeDialogIfOpen();
+			});
+
+			// Close dialog when clicking outside
+			document.addEventListener('click', (e) => {
+				const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
+				if (dialog && dialog.open && e.target === dialog) {
+					dialog.close();
+				}
+			});
+		}
+
+		updateNavigationState() {
+			const currentPath = decodeURIComponent(window.location.pathname);
+			const urlParams = new URLSearchParams(window.location.search);
+			
+			// Calculate back path
+			let backPath = '/';
+			if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
+				const categoryParam = urlParams.get('category');
+				if (categoryParam) {
+					backPath = `/reseptit/?category=${categoryParam.toLowerCase()}`;
+				} else {
+					backPath = '/reseptit/';
+				}
+			} else if (currentPath === '/hakemisto') {
+				backPath = '/';
+			} else if (currentPath !== '/') {
+				backPath = '/';
+			}
+
+			// Show/hide back button and update its href
+			const backButton = document.querySelector('.top-nav-btn.back-btn') as HTMLAnchorElement;
+			const backButtonContainer = document.querySelector('.top-nav-left') as HTMLElement;
+			const showSidebar = currentPath !== '/';
+
+			if (showSidebar) {
+				if (backButton) {
+					// Update existing back button
+					backButton.href = backPath;
+					backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
+					backButton.setAttribute('title', this.getBackLabel(currentPath));
+				} else {
+					// Create back button if it doesn't exist
+					this.createBackButton(backButtonContainer, backPath, currentPath);
+				}
+				
+				if (backButtonContainer) {
+					backButtonContainer.style.display = 'block';
+				}
+			} else {
+				// Hide back button on home page
+				if (backButtonContainer) {
+					backButtonContainer.style.display = 'none';
+				}
+			}
+		}
+
+		createBackButton(container: HTMLElement, backPath: string, currentPath: string) {
+			if (!container) return;
+			
+			const backButton = document.createElement('a');
+			backButton.href = backPath;
+			backButton.className = 'top-nav-btn back-btn';
+			backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
+			backButton.setAttribute('title', this.getBackLabel(currentPath));
+			
+			backButton.innerHTML = `
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-5">
+					<path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+				</svg>
+			`;
+			
+			container.appendChild(backButton);
+		}
+
+		getBackLabel(currentPath: string): string {
+			if (currentPath.startsWith('/reseptit/')) {
+				return 'Takaisin resepteihin';
+			} else if (currentPath === '/hakemisto') {
+				return 'Takaisin etusivulle';
+			} else {
+				return 'Takaisin';
+			}
+		}
+
+		closeDialogIfOpen() {
+			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
+			if (dialog && dialog.open) {
+				dialog.close();
+			}
+		}
+	}
+
+	// Initialize when DOM is ready
+	if (document.readyState === 'loading') {
+		document.addEventListener('DOMContentLoaded', () => new TopNavigationManager());
+	} else {
+		new TopNavigationManager();
+	}
+</script>
 
 <style>
 	/* Dialog styling */
