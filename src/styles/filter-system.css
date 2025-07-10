@@ -102,7 +102,7 @@
 
 .filter-button:focus,
 .filter-button[aria-expanded="true"] {
-  @apply min-w-36 outline-none ring-1 ring-offset-1 ring-secondary rounded-b-none;
+  @apply outline-none ring-1 ring-offset-1 ring-secondary rounded-b-none;
 }
 
 .filter-button svg {

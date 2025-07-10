@@ -72,7 +72,7 @@ const showSidebar = currentPath !== '/';
 		</button>
 		
 		<!-- Title -->
-		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu" onclick="document.getElementById('navbar-dialog').close()">
+		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0 navbar-close-link" aria-label="Etusivu">
 			<span class="text-2xl lg:text-3xl font-serif font-bold">T</span>
 			<span class="text-lg lg:text-xl font-medium">omin</span>
 			<span class="text-2xl lg:text-3xl font-serif font-bold ml-1">K</span>
@@ -81,8 +81,7 @@ const showSidebar = currentPath !== '/';
 		
 		<!-- Close Button -->
 		<button 
-			class="p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
-			onclick="document.getElementById('navbar-dialog').close()"
+			class="navbar-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
 			aria-label="Sulje valikko"
 		>
 			<svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -98,8 +97,7 @@ const showSidebar = currentPath !== '/';
 			<!-- Reseptit Card -->
 			<a 
 				href="/reseptit/" 
-				class="navbar-card border-0 flex items-center gap-4 min-h-[140px] lg:h-full lg:w-1/2 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
-				onclick="document.getElementById('navbar-dialog').close()"
+				class="navbar-card navbar-close-link border-0 flex items-center gap-4 min-h-[140px] lg:h-full lg:w-1/2 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 			>
 				<div class="flex-1 flex justify-center">
 					<div class="text-center">
@@ -113,8 +111,7 @@ const showSidebar = currentPath !== '/';
 			<div class="flex h-auto lg:h-full lg:w-1/2 flex-col gap-4">
 				<a 
 					href="/hakemisto/?type=ainesosat" 
-					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
-					onclick="document.getElementById('navbar-dialog').close()"
+					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Ainesosat</h4>
@@ -124,8 +121,7 @@ const showSidebar = currentPath !== '/';
 				
 				<a 
 					href="/hakemisto/?type=välineet" 
-					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
-					onclick="document.getElementById('navbar-dialog').close()"
+					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Välineet</h4>
@@ -135,8 +131,7 @@ const showSidebar = currentPath !== '/';
 				
 				<a 
 					href="/hakemisto/?type=tekniikat" 
-					class="navbar-card flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
-					onclick="document.getElementById('navbar-dialog').close()"
+					class="navbar-card navbar-close-link flex-1 flex items-center border-0 p-6 bg-primary-light rounded-xl hover:bg-secondary-light transition-colors duration-200"
 				>
 					<div class="flex-1 text-center">
 						<h4 class="text-lg lg:text-base font-semibold mb-2 lg:mb-1 leading-tight text-primary-dark">Tekniikat</h4>
@@ -214,7 +209,6 @@ const showSidebar = currentPath !== '/';
 			id="navbar-toggle" 
 			class="top-nav-btn menu-toggle-btn" 
 			aria-label="Avaa valikko"
-			onclick="document.getElementById('navbar-dialog').showModal()"
 		>
 			<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
@@ -250,11 +244,63 @@ const showSidebar = currentPath !== '/';
 					dialog.close();
 				}
 			});
+
+			// Initialize event listeners
+			this.setupEventListeners();
+			
+			// Also update navigation state on initial load
+			this.updateNavigationState();
+		}
+
+		setupEventListeners() {
+			// Menu toggle button
+			const menuToggle = document.getElementById('navbar-toggle');
+			if (menuToggle) {
+				menuToggle.removeEventListener('click', this.handleMenuToggle);
+				menuToggle.addEventListener('click', this.handleMenuToggle);
+			}
+
+			// Close button
+			const closeBtn = document.querySelector('.navbar-close-btn');
+			if (closeBtn) {
+				closeBtn.removeEventListener('click', this.handleCloseBtn);
+				closeBtn.addEventListener('click', this.handleCloseBtn);
+			}
+
+			// All links that should close the dialog
+			const closeLinks = document.querySelectorAll('.navbar-close-link');
+			closeLinks.forEach(link => {
+				link.removeEventListener('click', this.handleCloseLink);
+				link.addEventListener('click', this.handleCloseLink);
+			});
+		}
+
+		handleMenuToggle = () => {
+			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
+			if (dialog) {
+				dialog.showModal();
+			}
+		}
+
+		handleCloseBtn = () => {
+			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
+			if (dialog) {
+				dialog.close();
+			}
+		}
+
+		handleCloseLink = () => {
+			const dialog = document.getElementById('navbar-dialog') as HTMLDialogElement;
+			if (dialog) {
+				dialog.close();
+			}
 		}
 
 		updateNavigationState() {
 			const currentPath = decodeURIComponent(window.location.pathname);
 			const urlParams = new URLSearchParams(window.location.search);
+			
+			console.log('TopNav: Updating navigation state', { currentPath, search: window.location.search });
 			
 			// Calculate back path
 			let backPath = '/';
@@ -271,6 +317,8 @@ const showSidebar = currentPath !== '/';
 				backPath = '/';
 			}
 
+			console.log('TopNav: Calculated back path', { backPath });
+
 			// Show/hide back button and update its href
 			const backButton = document.querySelector('.top-nav-btn.back-btn') as HTMLAnchorElement;
 			const backButtonContainer = document.querySelector('.top-nav-left') as HTMLElement;
@@ -282,6 +330,7 @@ const showSidebar = currentPath !== '/';
 					backButton.href = backPath;
 					backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
 					backButton.setAttribute('title', this.getBackLabel(currentPath));
+					console.log('TopNav: Updated back button', { href: backButton.href });
 				} else {
 					// Create back button if it doesn't exist
 					this.createBackButton(backButtonContainer, backPath, currentPath);
@@ -296,6 +345,9 @@ const showSidebar = currentPath !== '/';
 					backButtonContainer.style.display = 'none';
 				}
 			}
+
+			// Re-setup event listeners after navigation
+			this.setupEventListeners();
 		}
 
 		createBackButton(container: HTMLElement, backPath: string, currentPath: string) {

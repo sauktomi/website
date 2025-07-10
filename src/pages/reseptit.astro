@@ -246,6 +246,7 @@ const filterOptions = {
                     <a 
                       href={`/reseptit/${recipe.slug}/`} 
                       class="group list-item"
+                      data-recipe-category={recipe.category}
                     >
                       <span class="recipe-title">
                         {recipe.title}
@@ -261,3 +262,43 @@ const filterOptions = {
     </div>
   </div>
 </Layout>
+
+<script>
+  // Update recipe links to preserve category parameter
+  function updateRecipeLinks() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const categoryParam = urlParams.get('category');
+    
+    if (categoryParam) {
+      // Update all recipe links to include the category parameter
+      document.querySelectorAll('.list-item').forEach(link => {
+        if (link instanceof HTMLAnchorElement) {
+          const href = link.href;
+          const url = new URL(href);
+          url.searchParams.set('category', categoryParam);
+          link.href = url.toString();
+        }
+      });
+    }
+  }
+  
+  // Run on initial load
+  updateRecipeLinks();
+  
+  // Run when URL changes (filter updates)
+  let lastUrl = window.location.href;
+  const observer = new MutationObserver(() => {
+    if (window.location.href !== lastUrl) {
+      lastUrl = window.location.href;
+      updateRecipeLinks();
+    }
+  });
+  
+  observer.observe(document.body, {
+    childList: true,
+    subtree: true
+  });
+  
+  // Also update on popstate (browser back/forward)
+  window.addEventListener('popstate', updateRecipeLinks);
+</script>
