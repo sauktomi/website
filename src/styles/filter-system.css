@@ -56,7 +56,7 @@
 }
 
 .filter-search-input {
-  @apply w-[80dvw] max-w-query-sm pl-12 pr-4 py-3 text-base bg-primary-light border border-secondary rounded-full outline-none transition-all duration-200;
+  @apply w-[80dvw] max-w-query-sm pl-12 pr-12 py-3 text-base bg-primary-light border border-secondary rounded-full outline-none transition-all duration-200;
 }
 
 .filter-search-input:focus {
@@ -67,6 +67,29 @@
   @apply text-secondary-accent;
 }
 
+/* Clear Search Button positioned on the right side of search input */
+.filter-clear-button {
+  @apply absolute top-1/2 right-3 -translate-y-1/2 flex items-center justify-center w-8 h-8 text-secondary-accent hover:text-primary-dark transition-all duration-200 rounded-full;
+}
+
+.filter-clear-button:focus {
+  @apply outline-none ring-2 ring-primary-accent;
+}
+
+.filter-clear-button svg {
+  @apply w-5 h-5;
+}
+
+/* Remove browser default clear button */
+.filter-search-input::-webkit-search-cancel-button {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.filter-search-input::-ms-clear {
+  display: none;
+}
+
 /* Filter Controls Container */
 .filter-controls {
   @apply flex flex-wrap gap-3 justify-around;
@@ -74,7 +97,7 @@
 
 /* Filter Buttons */
 .filter-button {
-  @apply inline-flex min-w-36 flex-1 justify-center rounded-xl items-center gap-2 px-4 py-2 text-sm h-11 transition-all border border-secondary bg-primary-light;
+  @apply inline-flex min-w-36 flex-1 justify-center rounded-xl items-center gap-2 px-4 py-2 text-sm h-11 transition-all;
 }
 
 .filter-button:focus,
@@ -86,48 +109,20 @@
   @apply w-4 h-4 text-secondary-accent;
 }
 
-.filter-button-text {
-  @apply inline;
-}
-
 .filter-button-badge {
   @apply inline-flex items-center justify-center w-5 h-5 text-xs font-semibold text-primary-light bg-primary-dark rounded-full;
 }
 
-/* Clear All Filters Button */
-.clear-all-button {
-  @apply inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-secondary-accent h-11 transition-all duration-200;
-}
 
-.clear-all-button:hover {
-  @apply text-primary-dark;
-}
-
-.clear-all-button:focus {
-  @apply outline-none ring-2 ring-primary-accent rounded-lg;
-}
-
-.clear-all-button svg {
-  @apply w-4 h-4;
-}
-
-.clear-all-button-text {
-  @apply hidden sm:inline;
-}
 
 /* Filter Popovers */
 .filter-popover {
-  @apply bg-primary-light border border-secondary rounded-xl rounded-t-none max-h-[80vh] overflow-hidden backdrop-blur-sm z-50 ring-1 ring-offset-1 ring-secondary;
-}
-
-/* Popover Content */
-.filter-popover-content {
-  @apply p-4 flex flex-col gap-4;
+  @apply bg-primary-light rounded-xl rounded-t-none max-h-[80vh] overflow-hidden z-50 ring-1 ring-offset-1 ring-secondary;
 }
 
 /* Filter Options Grid */
 .filter-options {
-  @apply flex flex-col gap-2 max-h-60 overflow-y-auto;
+  @apply flex flex-col p-4 gap-2 max-h-60 overflow-y-auto;
 }
 
 /* Filter Option Buttons */
@@ -350,11 +345,6 @@
 .filter-bar:has([aria-expanded="true"])::after {
   @apply absolute bottom-0 left-0 right-0 h-px bg-secondary;
   content: '';
-}
-
-/* Filter button anchor */
-.filter-button-anchor {
-  @apply relative;
 }
 
 /* Popover positioning */

@@ -140,6 +140,17 @@ const filterOptions = {
         searchPlaceholder="Etsi reseptejä..."
         filterSections={[
           {
+            id: 'techniques',
+            title: 'Tekniikat',
+            icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
+            type: 'multi',
+            options: getUniqueFilterValues(allRecipeEntries, 'techniques').map(technique => ({
+              id: technique,
+              label: technique,
+              value: technique
+            }))
+          },
+          {
             id: 'vaikeustaso',
             title: 'Vaikeustaso',
             icon: 'M13 10V3L4 14h7v7l9-11h-7z',
@@ -148,6 +159,17 @@ const filterOptions = {
               id: level,
               label: level.charAt(0).toUpperCase() + level.slice(1),
               value: level
+            }))
+          },
+          {
+            id: 'category',
+            title: 'Kategoriat',
+            icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
+            type: 'multi',
+            options: categories.map(category => ({
+              id: category.id,
+              label: category.name,
+              value: category.id
             }))
           },
           {
@@ -163,17 +185,6 @@ const filterOptions = {
             ]
           },
           {
-            id: 'techniques',
-            title: 'Tekniikat',
-            icon: 'M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z',
-            type: 'multi',
-            options: getUniqueFilterValues(allRecipeEntries, 'techniques').map(technique => ({
-              id: technique,
-              label: technique,
-              value: technique
-            }))
-          },
-          {
             id: 'tags',
             title: 'Tägit',
             icon: 'M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-7 7a2 2 0 01-2.828 0l-7-7A1.994 1.994 0 013 12V7a4 4 0 014-4z',
@@ -182,17 +193,6 @@ const filterOptions = {
               id: tag,
               label: tag,
               value: tag
-            }))
-          },
-          {
-            id: 'category',
-            title: 'Kategoriat',
-            icon: 'M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10',
-            type: 'multi',
-            options: categories.map(category => ({
-              id: category.id,
-              label: category.name,
-              value: category.id
             }))
           }
         ]}

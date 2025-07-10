@@ -524,7 +524,7 @@ const {
   
   function updateOverlayNav() {
     const overlayNav = document.getElementById('recipe-overlay-nav');
-    const recipeTitle = document.querySelector('.recipe-title');
+    const recipeTitle = document.querySelector('h1');
     
     if (!overlayNav || !recipeTitle) return;
     
@@ -549,4 +549,27 @@ const {
   }
   
   window.addEventListener('scroll', requestTick, { passive: true });
+  
+  // Manage popover open state for overlay navigation styling
+  const overlayNav = document.getElementById('recipe-overlay-nav');
+  const timerPopover = document.getElementById('timer-popover');
+  const navigationPopover = document.getElementById('navigation-popover');
+  
+  function updatePopoverState() {
+    if (!overlayNav || !timerPopover || !navigationPopover) return;
+    
+    if (timerPopover.hasAttribute('popover') && timerPopover.getAttribute('popover') === 'auto' && timerPopover.matches(':popover-open') || 
+        navigationPopover.hasAttribute('popover') && navigationPopover.getAttribute('popover') === 'auto' && navigationPopover.matches(':popover-open')) {
+      overlayNav.setAttribute('data-popover-open', 'true');
+    } else {
+      overlayNav.setAttribute('data-popover-open', 'false');
+    }
+  }
+  
+  if (timerPopover && navigationPopover) {
+    timerPopover.addEventListener('toggle', updatePopoverState);
+    navigationPopover.addEventListener('toggle', updatePopoverState);
+    // Initial check in case a popover is already open
+    updatePopoverState();
+  }
 </script>

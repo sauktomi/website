@@ -216,6 +216,14 @@ export default function SimpleFilterSystem({
     applyFilters('', new Map());
   };
 
+  // Clear search input only
+  const clearSearchInput = () => {
+    setSearchTerm('');
+    if (searchInputRef.current) {
+      searchInputRef.current.focus();
+    }
+  };
+
   // Handle popover state for filter buttons
   useEffect(() => {
     const filterButtons = document.querySelectorAll('.filter-button[popovertarget]');
@@ -255,6 +263,18 @@ export default function SimpleFilterSystem({
           class="filter-search-input"
           aria-label="Etsi sisältöä"
         />
+        {/* Clear Search Button - positioned on the right side of search */}
+        {searchTerm && (
+          <button
+            onClick={clearSearchInput}
+            class="filter-clear-button"
+            aria-label="Tyhjennä hakuteksti"
+          >
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        )}
       </div>
 
       {/* Filter Controls */}
@@ -266,14 +286,13 @@ export default function SimpleFilterSystem({
             <button
               key={section.id}
               popovertarget={`filter-popover-${section.id}`}
-              class="filter-button filter-button-anchor"
+              class="filter-button"
               aria-label={`Avaa ${section.title} suodattimet`}
               style={`--anchor-name: --filter-button-${section.id}`}
             >
               <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d={section.icon}></path>
               </svg>
-              <span class="filter-button-text">{section.title}</span>
               {activeCount > 0 && (
                 <span class="filter-button-badge" aria-label={`${activeCount} suodatin aktiivinen`}>
                   {activeCount}
@@ -282,20 +301,6 @@ export default function SimpleFilterSystem({
             </button>
           );
         })}
-
-        {/* Clear All Filters Button */}
-        {activeFilters.size > 0 && (
-          <button
-            onClick={clearAllFilters}
-            class="clear-all-button"
-            aria-label="Tyhjennä kaikki suodattimet"
-          >
-            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-            </svg>
-            <span class="clear-all-button-text">Tyhjennä kaikki</span>
-          </button>
-        )}
       </div>
 
       {/* Filter Popovers */}
@@ -308,8 +313,6 @@ export default function SimpleFilterSystem({
           style={`--position-anchor: --filter-button-${section.id}`}
         >
 
-          {/* Popover Content */}
-          <div class="filter-popover-content">
             {/* Filter Options */}
             <div class="filter-options">
               {section.options.map((option) => {
@@ -347,7 +350,6 @@ export default function SimpleFilterSystem({
               </div>
             )}
           </div>
-        </div>
       ))}
 
     </div>
