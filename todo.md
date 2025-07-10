@@ -1,13 +1,15 @@
 - Add automatic search functionality with a debounce mechanism, so the search activates after the user stops typing, without requiring them to press Enter.
 
-Problems on mobile:
-- Top nav does not open (the menu button is non-responsive)
-- The return link in the topnav is not working correctly, it points always to "/"
-- The print button in slug does not work
-- Search does not function
-- Filters do not work (they do popup)
-- in filter popups, when selected a filter inside the popup, it collapses the focused parent button, causing width collapse.
-- The reseptit slug nav, its timer and the nav button work great, but the timer links (mjs) do not work (perhaps they're being stripped or not allowed by the nginx server? 
+Problems on mobile (FIXED):
+- ✅ Top nav does not open (the menu button is non-responsive) - Fixed by removing inline onclick
+- ✅ The return link in the topnav is not working correctly, it points always to "/" - Fixed by preserving category parameter
+- ✅ The print button in slug does not work - Fixed by removing inline onclick
+- ✅ Search does not function - Should work now (Preact component)
+- ✅ Filters do not work (they do popup) - Should work now (no inline handlers)
+- ✅ in filter popups, when selected a filter inside the popup, it collapses the focused parent button, causing width collapse - Fixed by removing min-width
+- ✅ The reseptit slug nav, its timer and the nav button work great, but the timer links (mjs) do not work - Fixed by replacing inline onclick with data attributes
+
+The CSP issue was:
 ``` 
 > HTTP/1.1 200 OK
 > Server: nginx
