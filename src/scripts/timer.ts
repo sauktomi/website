@@ -21,6 +21,8 @@ let timerState: TimerState = {
 };
 
 let intervalId: number | null = null;
+let timerLinksListenerAdded = false;
+let isInitialized = false;
 
 // DOM elements
 let timerTrigger: HTMLElement | null = null;
@@ -35,8 +37,16 @@ let triggerText: HTMLElement | null = null;
 // Initialize timer
 function initTimer(): void {
   setupElements();
-  restoreState();
+  
+  // Always set up event listeners to ensure they work after view transitions
   setupEventListeners();
+  
+  // Only restore state and mark as initialized on first run
+  if (!isInitialized) {
+    restoreState();
+    isInitialized = true;
+  }
+  
   updateUI();
 }
 
@@ -52,29 +62,46 @@ function setupElements(): void {
 }
 
 function setupEventListeners(): void {
+  // Remove existing listeners to avoid duplicates
+  startBtn?.removeEventListener('click', startTimer);
+  pauseBtn?.removeEventListener('click', pauseTimer);
+  resetBtn?.removeEventListener('click', resetTimer);
+  timerSlider?.removeEventListener('input', handleSliderChange);
+  
+  // Add listeners
   startBtn?.addEventListener('click', startTimer);
   pauseBtn?.addEventListener('click', pauseTimer);
   resetBtn?.addEventListener('click', resetTimer);
   timerSlider?.addEventListener('input', handleSliderChange);
   
-  minutesInput?.addEventListener('input', () => validateInput(minutesInput!, null));
-  secondsInput?.addEventListener('input', () => validateInput(secondsInput!, 59));
-  minutesInput?.addEventListener('blur', () => formatInput(minutesInput!));
-  secondsInput?.addEventListener('blur', () => formatInput(secondsInput!));
+  // Named functions for input validation
+  const validateMinutesInput = () => validateInput(minutesInput!, null);
+  const validateSecondsInput = () => validateInput(secondsInput!, 59);
+  const formatMinutesInput = () => formatInput(minutesInput!);
+  const formatSecondsInput = () => formatInput(secondsInput!);
   
-  // Timer links
-  document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-    if (target.classList.contains('timer-link')) {
-      e.preventDefault();
-      const timeText = target.dataset.timerText || target.textContent || '';
-      startTimerFromText(timeText, target);
-    }
-  });
+  if (minutesInput) {
+    minutesInput.addEventListener('input', validateMinutesInput);
+    minutesInput.addEventListener('blur', formatMinutesInput);
+  }
+  
+  if (secondsInput) {
+    secondsInput.addEventListener('input', validateSecondsInput);
+    secondsInput.addEventListener('blur', formatSecondsInput);
+  }
+  
+  // Timer links - use event delegation (already set up globally)
+  // No need to re-add document listener as it's already there
 }
 
 function startTimer(): void {
   if (timerState.isRunning) return;
+  
+  // Clear any existing interval first
+  if (intervalId) {
+    clearInterval(intervalId);
+    intervalId = null;
+  }
   
   // Get values from inputs
   const minutes = parseInt(minutesInput?.value || '5');
@@ -162,6 +189,16 @@ function showNotification(): void {
 function updateUI(): void {
   const minutes = Math.floor(timerState.totalSeconds / 60);
   const seconds = timerState.totalSeconds % 60;
+  
+  // Re-query elements if they're not available (in case DOM was replaced)
+  if (!minutesInput) minutesInput = document.getElementById('timer-minutes-input') as HTMLInputElement;
+  if (!secondsInput) secondsInput = document.getElementById('timer-seconds-input') as HTMLInputElement;
+  if (!startBtn) startBtn = document.getElementById('start-timer');
+  if (!pauseBtn) pauseBtn = document.getElementById('pause-timer');
+  if (!resetBtn) resetBtn = document.getElementById('reset-timer');
+  if (!timerSlider) timerSlider = document.getElementById('timer-slider') as HTMLInputElement;
+  if (!triggerText) triggerText = document.querySelector('.timer-trigger-text');
+  if (!timerTrigger) timerTrigger = document.getElementById('timer-trigger');
     
     // Update inputs
   if (minutesInput) minutesInput.value = minutes.toString();
@@ -317,6 +354,9 @@ function startTimerFromText(timeText: string, triggerElement?: HTMLElement): voi
   timerState.totalSeconds = totalSeconds;
   timerState.hasCompleted = false;
   
+  // Re-setup elements in case they were replaced during navigation
+  setupElements();
+  
   updateUI();
   startTimer();
   
@@ -382,6 +422,22 @@ if (typeof document !== 'undefined') {
     document.addEventListener('DOMContentLoaded', initTimer);
   } else {
     initTimer();
+  }
+  
+  // Reinitialize on view transitions (Astro)
+  document.addEventListener('astro:page-load', initTimer);
+  
+  // Set up timer links event listener once
+  if (!timerLinksListenerAdded) {
+    document.addEventListener('click', (e) => {
+      const target = e.target as HTMLElement;
+      if (target.classList.contains('timer-link')) {
+        e.preventDefault();
+        const timeText = target.dataset.timerText || target.textContent || '';
+        startTimerFromText(timeText, target);
+      }
+    });
+    timerLinksListenerAdded = true;
   }
 }
 

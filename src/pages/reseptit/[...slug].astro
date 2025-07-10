@@ -521,8 +521,10 @@ const {
   
   // Recipe overlay navigation scroll behavior
   let ticking = false;
+  let scrollHandler: ((e: Event) => void) | null = null;
   
   function updateOverlayNav() {
+    // Re-query elements in case DOM was replaced
     const overlayNav = document.getElementById('recipe-overlay-nav');
     const recipeTitle = document.querySelector('h1');
     
@@ -548,14 +550,36 @@ const {
     }
   }
   
-  window.addEventListener('scroll', requestTick, { passive: true });
+  function initOverlayNavigation() {
+    // Remove existing scroll listener if it exists
+    if (scrollHandler) {
+      window.removeEventListener('scroll', scrollHandler);
+    }
+    
+    // Create new scroll handler
+    scrollHandler = requestTick;
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    
+    // Initial check
+    updateOverlayNav();
+  }
+  
+  // Initialize overlay navigation
+  initOverlayNavigation();
+  
+  // Reinitialize on view transitions
+  document.addEventListener('astro:page-load', () => {
+    if (window.location.pathname.includes('/reseptit/')) {
+      initOverlayNavigation();
+    }
+  });
   
   // Manage popover open state for overlay navigation styling
-  const overlayNav = document.getElementById('recipe-overlay-nav');
-  const timerPopover = document.getElementById('timer-popover');
-  const navigationPopover = document.getElementById('navigation-popover');
-  
   function updatePopoverState() {
+    const overlayNav = document.getElementById('recipe-overlay-nav');
+    const timerPopover = document.getElementById('timer-popover');
+    const navigationPopover = document.getElementById('navigation-popover');
+    
     if (!overlayNav || !timerPopover || !navigationPopover) return;
     
     if (timerPopover.hasAttribute('popover') && timerPopover.getAttribute('popover') === 'auto' && timerPopover.matches(':popover-open') || 
@@ -566,10 +590,31 @@ const {
     }
   }
   
-  if (timerPopover && navigationPopover) {
-    timerPopover.addEventListener('toggle', updatePopoverState);
-    navigationPopover.addEventListener('toggle', updatePopoverState);
-    // Initial check in case a popover is already open
-    updatePopoverState();
+  function initPopoverStateManagement() {
+    const timerPopover = document.getElementById('timer-popover');
+    const navigationPopover = document.getElementById('navigation-popover');
+    
+    if (timerPopover && navigationPopover) {
+      // Remove existing listeners to avoid duplicates
+      timerPopover.removeEventListener('toggle', updatePopoverState);
+      navigationPopover.removeEventListener('toggle', updatePopoverState);
+      
+      // Add new listeners
+      timerPopover.addEventListener('toggle', updatePopoverState);
+      navigationPopover.addEventListener('toggle', updatePopoverState);
+      
+      // Initial check in case a popover is already open
+      updatePopoverState();
+    }
   }
+  
+  // Initialize popover state management
+  initPopoverStateManagement();
+  
+  // Reinitialize on view transitions
+  document.addEventListener('astro:page-load', () => {
+    if (window.location.pathname.includes('/reseptit/')) {
+      initPopoverStateManagement();
+    }
+  });
 </script>

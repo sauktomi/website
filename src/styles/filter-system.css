@@ -56,7 +56,7 @@
 }
 
 .filter-search-input {
-  @apply w-[80dvw] max-w-query-sm pl-12 pr-12 py-3 text-base bg-primary-light border border-secondary rounded-full outline-none transition-all duration-200;
+  @apply w-[80dvw] max-w-query-sm px-16 py-3 text-base bg-primary-light border border-secondary rounded-full outline-none transition-all duration-200;
 }
 
 .filter-search-input:focus {
