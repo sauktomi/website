@@ -42,46 +42,30 @@
    RECIPE INSTRUCTION STEPS - MINIMAL BOLD MODERNISTIC DESIGN
    ============================================================================= */
 
-/* Don't apply bottom margin when followed by collapsed content */
-.recipe-body .recipe-instruction-steps:last-child.section-content-collapsed {
-  @apply mb-0;
-}
-
 /* Modern instruction steps container */
 .recipe-body .recipe-instruction-steps {
-  @apply space-y-8 p-0;
+  @apply space-y-8 pl-16;
   counter-reset: instruction-counter;
-}
-
-/* Individual instruction step - clean, spacious layout */
-.recipe-body .recipe-instruction-step {
-  @apply relative p-0 cursor-pointer overflow-hidden;
-  counter-increment: instruction-counter;
-  @apply min-h-auto transform-gpu will-change-[opacity,transform] transition-all duration-300 ease-out;
 }
 
 /* Step number - bold, geometric design */
 .recipe-body .recipe-instruction-step::before {
   content: counter(instruction-counter);
-  @apply flex mr-8 mt-1 float-left items-center justify-center w-12 h-12 text-2xl font-black tracking-tight;
-  @apply bg-primary-dark text-primary-light rounded-lg shadow-lg;
-  @apply leading-none pointer-events-auto z-10 transform-gpu will-change-[transform] transition-all duration-300 ease-out;
+  @apply flex -ml-16 -mt-1.5 float-left items-center justify-center size-12 text-2xl;
+  @apply text-primary-dark;
+  @apply pointer-events-auto z-10 transform-gpu will-change-[transform] transition-all duration-300 ease-out;
+}
+
+/* Individual instruction step - clean, spacious layout */
+.recipe-body .recipe-instruction-step {
+  @apply p-0 cursor-pointer;
+  counter-increment: instruction-counter;
+  @apply transform-gpu will-change-[opacity,transform] transition-all duration-300 ease-out;
 }
 
 /* Remove default list markers */
 .recipe-body .recipe-instruction-step::marker {
   @apply content-none;
-}
-
-/* Step content area - clean typography with proper spacing */
-.recipe-body .recipe-instruction-step > * {
-  @apply mt-0 mb-0;
-}
-
-/* Ensure proper spacing for nested content */
-.recipe-body .recipe-instruction-step ul,
-.recipe-body .recipe-instruction-step ol {
-  @apply mt-4 mb-0 ml-6;
 }
 
 .recipe-body .recipe-instruction-step:not(.step-completed):hover::before {
@@ -95,7 +79,7 @@
 
 .recipe-body .recipe-instruction-step.step-completed::before {
   content: "✓";
-  @apply bg-emerald-600 text-primary-light shadow-lg;
+  @apply bg-emerald-600 text-primary-light;
 }
 
 .recipe-body .recipe-instruction-step.step-completed:hover {
@@ -103,18 +87,7 @@
 }
 
 .recipe-body .recipe-instruction-step.step-completed:hover::before {
-  @apply bg-emerald-700 shadow-xl scale-105;
-}
-
-/* Mobile responsiveness - maintain clean design on smaller screens */
-@media (max-width: 768px) {
-  .recipe-body .recipe-instruction-step::before {
-    @apply w-10 h-10 text-xl;
-  }
-  
-  .recipe-body .recipe-instruction-step .recipe-info-button {
-    @apply size-6;
-  }
+  @apply bg-emerald-700 scale-105;
 }
 
 /* Focus states for accessibility */
@@ -139,55 +112,59 @@
   @apply mt-1 size-5 md:size-6 cursor-pointer flex-shrink-0;
 }
 
+.recipe-body .recipe-section--instructions h4 {
+  @apply text-xl mb-8 underline underline-offset-10;
+}
+
 /* ===== SECTION COMPLETION CONTROLS ===== */
-.recipe-body .recipe-section--instructions h2.section-completed,
-.recipe-body .recipe-section--instructions h3.section-completed,
-.recipe-body .recipe-section--instructions h4.section-completed {
+.recipe-body h2.section-completed,
+.recipe-body h3.section-completed,
+.recipe-body h4.section-completed {
   @apply relative cursor-pointer transition-all duration-200;
 }
 
-.recipe-body .recipe-section--instructions h2.section-completed::after,
-.recipe-body .recipe-section--instructions h3.section-completed::after,
-.recipe-body .recipe-section--instructions h4.section-completed::after {
-  @apply absolute right-3 top-1/2 -translate-y-1/2 size-8 text-primary-light text-sm font-bold rounded-full;
+.recipe-body h2.section-completed::after,
+.recipe-body h3.section-completed::after,
+.recipe-body h4.section-completed::after {
+  @apply absolute right-6 top-1/2 -translate-y-1/2 size-8 text-primary-light text-sm font-bold rounded-full;
   @apply flex items-center justify-center transition-all duration-300 cursor-pointer opacity-0;
 }
 
 /* X button for expanded completed sections */
-.recipe-body .recipe-section--instructions h2.section-completed:not(.section-collapsed).section-background-applied::after,
-.recipe-body .recipe-section--instructions h3.section-completed:not(.section-collapsed).section-background-applied::after,
-.recipe-body .recipe-section--instructions h4.section-completed:not(.section-collapsed).section-background-applied::after {
+.recipe-body h2.section-completed:not(.section-collapsed).section-background-applied::after,
+.recipe-body h3.section-completed:not(.section-collapsed).section-background-applied::after,
+.recipe-body h4.section-completed:not(.section-collapsed).section-background-applied::after {
   content: "✕";
   @apply bg-red-500 opacity-100;
   animation: button-fade-in 0.3s ease-out;
 }
 
-.recipe-body .recipe-section--instructions h2.section-completed:not(.section-collapsed).section-background-applied:hover::after,
-.recipe-body .recipe-section--instructions h3.section-completed:not(.section-collapsed).section-background-applied:hover::after,
-.recipe-body .recipe-section--instructions h4.section-completed:not(.section-collapsed).section-background-applied:hover::after {
+.recipe-body h2.section-completed:not(.section-collapsed).section-background-applied:hover::after,
+.recipe-body h3.section-completed:not(.section-collapsed).section-background-applied:hover::after,
+.recipe-body h4.section-completed:not(.section-collapsed).section-background-applied:hover::after {
   @apply scale-110 bg-red-600;
 }
 
 /* Checkmark for collapsed completed sections */
-.recipe-body .recipe-section--instructions h2.section-completed.section-collapsed.section-background-applied::after,
-.recipe-body .recipe-section--instructions h3.section-completed.section-collapsed.section-background-applied::after,
-.recipe-body .recipe-section--instructions h4.section-completed.section-collapsed.section-background-applied::after {
+.recipe-body h2.section-completed.section-collapsed.section-background-applied::after,
+.recipe-body h3.section-completed.section-collapsed.section-background-applied::after,
+.recipe-body h4.section-completed.section-collapsed.section-background-applied::after {
   content: "✓";
   @apply bg-green-600 opacity-100;
   animation: button-fade-in 0.3s ease-out;
 }
 
-.recipe-body .recipe-section--instructions h2.section-completed.section-collapsed.section-background-applied:hover::after,
-.recipe-body .recipe-section--instructions h3.section-completed.section-collapsed.section-background-applied:hover::after,
-.recipe-body .recipe-section--instructions h4.section-completed.section-collapsed.section-background-applied:hover::after {
+.recipe-body h2.section-completed.section-collapsed.section-background-applied:hover::after,
+.recipe-body h3.section-completed.section-collapsed.section-background-applied:hover::after,
+.recipe-body h4.section-completed.section-collapsed.section-background-applied:hover::after {
   @apply scale-110;
 }
 
 /* Collapsed section styling */
-.recipe-body .recipe-section--instructions h2.section-completed.section-collapsed.section-background-applied,
-.recipe-body .recipe-section--instructions h3.section-completed.section-collapsed.section-background-applied,
-.recipe-body .recipe-section--instructions h4.section-completed.section-collapsed.section-background-applied {
-  @apply bg-green-100;
+.recipe-body h2.section-completed.section-collapsed.section-background-applied,
+.recipe-body h3.section-completed.section-collapsed.section-background-applied,
+.recipe-body h4.section-completed.section-collapsed.section-background-applied {
+  @apply bg-green-100 p-8 mb-0 mt-0;
 }
 
 /* ===== SETTINGS BUTTON ===== */

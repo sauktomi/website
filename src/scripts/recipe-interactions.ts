@@ -162,15 +162,15 @@ class RecipeInteractionManager {
           const mouseX = e.clientX;
           const mouseY = e.clientY;
           
-          let isInNumberArea = false;
+          // Fixed step number area size: size-12 (48px × 48px)
+          const numberAreaSize = 48;
           
-          // Grid layout: step number is in the first column, but only the actual number area is clickable
-          const numberAreaWidth = window.innerWidth < 768 ? 40 : 48; // w-10 on mobile, w-12 on desktop
-          const numberAreaHeight = window.innerWidth < 768 ? 40 : 48; // h-10 on mobile, h-12 on desktop
+          // Account for -ml-16 (64px negative margin) positioning
+          const numberAreaLeft = rect.left - 64;
           
-          // Check if mouse is in the actual step number area (not the entire left column)
-          isInNumberArea = mouseX >= rect.left && mouseX <= rect.left + numberAreaWidth &&
-                          mouseY >= rect.top && mouseY <= rect.top + numberAreaHeight;
+          // Check if mouse is in the actual step number area
+          const isInNumberArea = mouseX >= numberAreaLeft && mouseX <= numberAreaLeft + numberAreaSize &&
+                                mouseY >= rect.top && mouseY <= rect.top + numberAreaSize;
           
           if (isInNumberArea) {
             (step as HTMLElement).style.cursor = 'pointer';
@@ -201,18 +201,20 @@ class RecipeInteractionManager {
           
           // Use requestAnimationFrame for immediate visual feedback
           requestAnimationFrame(() => {
-            // Calculate if click is in the step number area (flexbox layout)
+            // Calculate if click is in the step number area
             const rect = step.getBoundingClientRect();
             const clickX = e.clientX;
             const clickY = e.clientY;
             
-            // Step number area dimensions based on grid CSS
-            const numberAreaWidth = window.innerWidth < 768 ? 40 : 48; // w-10 on mobile, w-12 on desktop
-            const numberAreaHeight = window.innerWidth < 768 ? 40 : 48; // h-10 on mobile, h-12 on desktop
+            // Fixed step number area size: size-12 (48px × 48px)
+            const numberAreaSize = 48;
             
-            // Check if click is within the actual step number area (not the entire left column)
-            const isInNumberArea = clickX >= rect.left && clickX <= rect.left + numberAreaWidth &&
-                                 clickY >= rect.top && clickY <= rect.top + numberAreaHeight;
+            // Account for -ml-16 (64px negative margin) positioning
+            const numberAreaLeft = rect.left - 64;
+            
+            // Check if click is within the actual step number area
+            const isInNumberArea = clickX >= numberAreaLeft && clickX <= numberAreaLeft + numberAreaSize &&
+                                 clickY >= rect.top && clickY <= rect.top + numberAreaSize;
             
             if (!isInNumberArea) {
               return; // Only handle clicks in the step number area

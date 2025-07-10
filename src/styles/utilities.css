@@ -229,15 +229,6 @@
   @apply outline-2 outline-offset-2 outline-primary-dark;
 }
 
-/* ===== RECIPE BODY ENHANCEMENTS ===== */
-.recipe-body ol li {
-  @apply mb-2;
-}
-
-.recipe-body ol li:last-child {
-  @apply mb-0;
-}
-
 /* ===== IMAGE ENHANCEMENTS ===== */
 img {
   @apply max-w-full h-auto;
