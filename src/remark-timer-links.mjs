@@ -119,7 +119,7 @@ function createTimerLink(timeText, totalMinutes) {
   
   return {
     type: 'link',
-    url: '',
+    url: '', // Remove href to prevent page jumping
     data: {
       hProperties: {
         className: 'timer-link',

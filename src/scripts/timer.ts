@@ -429,7 +429,6 @@ if (typeof document !== 'undefined') {
   
   // Set up timer links event listener once
   if (!timerLinksListenerAdded) {
-    // Handle click events
     document.addEventListener('click', (e) => {
       const target = e.target as HTMLElement;
       const timerLink = target.closest('.timer-link');
@@ -437,6 +436,7 @@ if (typeof document !== 'undefined') {
       if (timerLink && timerLink instanceof HTMLElement) {
         e.preventDefault();
         e.stopPropagation();
+        
         const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
         const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
         
@@ -458,7 +458,7 @@ if (typeof document !== 'undefined') {
       }
     });
 
-    // Handle keyboard events for accessibility
+    // Add keyboard support for timer links
     document.addEventListener('keydown', (e) => {
       const target = e.target as HTMLElement;
       const timerLink = target.closest('.timer-link');
@@ -466,6 +466,7 @@ if (typeof document !== 'undefined') {
       if (timerLink && timerLink instanceof HTMLElement && (e.key === 'Enter' || e.key === ' ')) {
         e.preventDefault();
         e.stopPropagation();
+        
         const timeText = timerLink.dataset.timerText || timerLink.textContent || '';
         const totalMinutes = parseFloat(timerLink.dataset.timerMinutes || '0');
         
