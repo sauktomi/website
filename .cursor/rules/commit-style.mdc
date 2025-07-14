@@ -1,0 +1,18 @@
+---
+description: Commit Message Rule
+globs:
+alwaysApply: false
+---
+
+When committing changes:
+- Keep the change message short and concise
+- Aim for below 50 characters when possible
+- Use imperative mood (e.g., "Add feature" not "Added feature")
+- Be specific about what changed
+- Avoid unnecessary words like "Update", "Fix", "Change" unless they add clarity
+
+Examples:
+- ✅ "Add dark mode toggle"
+- ✅ "Remove unused dependencies"
+- ✅ "Update navigation component"
+- ❌ "This commit updates the navigation component to fix the mobile menu issue"

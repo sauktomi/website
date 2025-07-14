@@ -1,0 +1,28 @@
+---
+description: Merge Workflow Rule
+globs:
+alwaysApply: false
+---
+
+When merging changes from development to main:
+
+1. **Switch to main branch:**
+   ```bash
+   git checkout main
+   ```
+
+2. **Merge development branch:**
+   ```bash
+   git merge development
+   ```
+
+3. **Push to remote (optional):**
+   - Only push if user explicitly requests it
+   - Otherwise, leave it as a local merge
+   - If pushing is requested: `git push origin main`
+
+**Workflow:**
+- Always merge development → main (not the other way around)
+- Keep development branch for ongoing work
+- Use main for stable, production-ready code
+- Confirm merge was successful before proceeding
