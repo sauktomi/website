@@ -13,11 +13,13 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
+*.log
 
 # environment variables
 .env
 .env.production
+.env.local
+.env.development
 
 # macOS-specific files
 .DS_Store
@@ -32,7 +34,16 @@ Thumbs.db
 ehthumbs.db
 *.swp
 *.swo
+*~
+
+# Temporary files
+*.tmp
+*.cache
+*.temp
 
 # Deployment and processing scripts (local only)
 deploy.sh
 process-images.sh
+
+# Cursor specific (optional - uncomment if you want to ignore Cursor rules)
+# .cursor/

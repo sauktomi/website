@@ -1,0 +1,15 @@
+---
+description: Ensure development branch workflow
+globs:
+alwaysApply: false
+---
+
+**Branch Management Rule:**
+
+- At the start of every new chat or dev session, check the current git branch.
+- If not on `development`, switch to it:  
+  `git checkout development`
+- Confirm with `git status` before making changes.
+- Only use `main` for hotfixes or if explicitly instructed.
+
+Default to `development` for all new features and improvements.
