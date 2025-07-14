@@ -1,0 +1,244 @@
+{
+  "recipes": {
+    "001": {
+      "title": "Klassinen Italialainen Tomaattikastike Pastalle",
+      "tags": ["pääruoka", "pasta", "italialainen", "kastike", "perusresepti", "tomaatti", "kasvis", "gluteeniton"],
+      "cuisine": "italialainen",
+      "category": "kokkaus",
+      "collections": [
+        {
+          "collection": "Kokkauskurssi",
+          "order": 3
+        },
+        {
+          "collection": "Perusreseptit",
+          "order": 3
+        },
+        {
+          "collection": "Italialaiset Klassikot",
+          "order": 4
+        }
+      ],
+      "vaikeustaso": "helppo",
+      "time": {
+        "valmistusaika": 15,
+        "keittoaika": "30-45",
+        "kokonaisaika": "45-60"
+      },
+      "annokset": "4-6 (n. 1 litra kastiketta)",
+      "säilyvyys": "4-5 päivää jääkaapissa, 3-4 kuukautta pakastettuna",
+      "lähde": "Italialainen perinteinen kotiruokatekniikka",
+      "equipment": [
+        "[[Kattila (Pot)|suuri kattila]]",
+        "[[Pata (Dutch Oven)|syvä pata]]",
+        "[[Puulusikka (Wooden Spoon)|puulasta]]",
+        "[[Kauha (Ladle)|kauha]]",
+        "[[Veitsi (Knife)|veitsi]]",
+        "[[Leikkuulauta (Cutting Board)|leikkuulauta]]",
+        "[[Mittakupit ja -lusikat (Measuring Cups and Spoons)|mittakupit ja -lusikat]]"
+      ],
+      "techniques": ["soffritto"],
+      "dietary": {
+        "type": ["kasvis", "gluteeniton"],
+        "allergens": ["selleri"]
+      },
+      "cost_level": "edullinen",
+      "season": ["kevät", "kesä", "syksy", "talvi"],
+      "occasion": ["arki", "lounas", "päivällinen", "perusruoka"],
+      "nutrient_profile": null,
+      "flavor_profile": {
+        "primary": ["tomaattinen (makea & hapokas)", "umami"],
+        "secondary": ["yrttinen (basilika)", "sipulin makeus", "valkosipulin aromikkuus"],
+        "texture": ["samettinen", "hieman paksu", "pehmeä"]
+      },
+      "testing_iterations": 0,
+      "teoria": [
+        "[[Ruokateoria/Soffritto Tekniikka|Soffritto - Italialaisen keittiön perusta]]",
+        "[[Ruokateoria/Tomaatin kemia ja kypsennys|Tomaatin kemia ja kypsennysvaikutukset]]",
+        "[[Ruokateoria/Haudutuksen periaatteet|Haudutuksen merkitys maun kehittymiselle]]"
+      ]
+    },
+    "002": {
+      "title": "Klassinen Ranskalainen Munakas",
+      "tags": ["aamiainen", "brunssi", "lounas", "kevyt ateria", "munat", "klassikko", "ranskalainen", "perusresepti", "nopea"],
+      "cuisine": "ranskalainen",
+      "category": "kokkaus",
+      "collections": [
+        {
+          "collection": "Kokkauskurssi",
+          "order": 1
+        },
+        {
+          "collection": "Perusreseptit",
+          "order": 1
+        },
+        {
+          "collection": "Ranskalaiset Klassikot",
+          "order": 5
+        }
+      ],
+      "vaikeustaso": "keskivaikea",
+      "time": {
+        "valmistusaika": 5,
+        "paistoaika": "2-3",
+        "kokonaisaika": "7-8"
+      },
+      "annokset": 1,
+      "säilyvyys": "Tarjoiltava välittömästi.",
+      "lähde": "Ranskalaisen keittiön perustekniikat, Escoffier, Julia Child",
+      "equipment": [
+        "[[Paistinpannu (Frying Pan)|non-stick paistinpannu (halkaisija n. 20-24 cm)]]",
+        "[[Kulho (Mixing Bowl)|kulho]]",
+        "[[Haarukka (Fork)|haarukka]]",
+        "[[Vispilä (Whisk)|vispilä]]",
+        "[[Nuolija (Spatula)|lasta (mieluiten silikoninen)]]",
+        "[[Lautanen (Plate)|lämmitetty tarjoilulautanen]]"
+      ],
+      "techniques": ["vatkaus", "nopea paistaminen", "rullaus"],
+      "dietary": {
+        "type": ["lakto-vegetaarinen", "gluteeniton"],
+        "allergens": ["muna", "maito (voi, jos käytössä)"]
+      },
+      "cost_level": "edullinen",
+      "season": ["kevät", "kesä", "syksy", "talvi"],
+      "occasion": ["aamiainen", "brunssi", "lounas", "nopea illallinen"],
+      "nutrient_profile": null,
+      "flavor_profile": {
+        "primary": ["munan täyteläisyys", "voin pähkinäisyys (jos käytetty)"],
+        "secondary": ["hienovarainen suolaisuus", "yrttien raikkaus (jos käytetty)"],
+        "texture": ["kuohkea", "pehmeä", "sisältä hieman kostea (baveuse)", "ulkoa sileä"]
+      },
+      "testing_iterations": 1,
+      "teoria": [
+        "[[Ruokateoria/Munaproteiinien koaguloituminen|Munaproteiinien koaguloituminen]]",
+        "[[Ruokateoria/Paistinpannun valinta ja käyttö|Paistinpannun valinta munakkaalle]]"
+      ]
+    },
+    "003": {
+      "title": "Tiikerikakku",
+      "tags": ["kakku", "kahvikakku", "perusteet", "klassikko", "kuivakakku"],
+      "cuisine": "suomalainen",
+      "category": "leivonta",
+      "collections": [
+        {
+          "collection": "Leivontakurssi",
+          "order": 2
+        },
+        {
+          "collection": "Perusreseptit",
+          "order": 3
+        },
+        {
+          "collection": "Kahvikakut",
+          "order": 1
+        }
+      ],
+      "vaikeustaso": "helppo",
+      "time": {
+        "valmistusaika": 20,
+        "paistoaika": "45-55",
+        "jäähdytysaika": "40-45",
+        "kokonaisaika": "105-120"
+      },
+      "annokset": "12-16 palaa",
+      "säilyvyys": "3-5 päivää huoneenlämmössä tiiviissä rasiassa, 1-2 viikkoa jääkaapissa, 2-3 kuukautta pakastettuna",
+      "lähde": "Perinteinen suomalainen kahvikakkuresepti",
+      "equipment": [
+        "[[Rengasvuoka (Ring Mold)|kakkuvuoka (rengasvuoka n. 1.8-2.2L)]]",
+        "[[Sähkövatkain (Hand Mixer)|sähkövatkain]]",
+        "[[Yleiskone (Stand Mixer)|yleiskone]]",
+        "[[Kulho (Mixing Bowl)|kaksi kulhoa]]",
+        "[[Vispilä (Whisk)|vispilä]]",
+        "[[Nuolija (Spatula)|kumilasta/nuolija]]",
+        "[[Mittakupit ja -lusikat (Measuring Cups and Spoons)|mittakupit ja -lusikat]]",
+        "[[Leivinpaperi (Parchment Paper)|leivinpaperia (tarvittaessa)]]",
+        "[[Ritilä (Cooling Rack)|ritilä jäädytykseen]]"
+      ],
+      "techniques": ["marmorointi"],
+      "dietary": {
+        "type": ["lakto-vegetaarinen"],
+        "allergens": ["vehnä", "muna", "maito"]
+      },
+      "cost_level": "edullinen",
+      "season": ["kevät", "kesä", "syksy", "talvi"],
+      "occasion": ["kahvipöytään", "juhlat", "arkiherkku", "myyjäiset"],
+      "nutrient_profile": null,
+      "flavor_profile": {
+        "primary": ["makea", "vaniljainen", "kaakaoinen"],
+        "secondary": ["voin aromi"],
+        "texture": ["pehmeä", "kuohkea", "kostea", "tiivis mutta mureneva"]
+      },
+      "testing_iterations": 1,
+      "teoria": [
+        "[[Vaahdotuksen merkitys leivonnassa|Vaahdotuksen merkitys leivonnassa]]",
+        "[[Kuivakakkujen rakenne|Kuivakakkujen rakenne]]"
+      ]
+    },
+    "004": {
+      "title": "Vadelmasiirappi - Kolme Tapaa",
+      "tags": ["juoma", "siirappi", "vadelma", "cocktail", "mocktail", "perusresepti", "sous-vide", "kylmäuutto"],
+      "cuisine": "kansainvälinen",
+      "category": "juomat",
+      "collections": [
+        {
+          "collection": "Baarimestarin kurssi",
+          "order": 2
+        },
+        {
+          "collection": "Kesän juomat 2025",
+          "order": 1
+        },
+        {
+          "collection": "Mökkiloma",
+          "order": 1
+        },
+        {
+          "collection": "Siirapit ja Infuusiot",
+          "order": 1
+        }
+      ],
+      "vaikeustaso": "helppo",
+      "time": {
+        "valmistusaika": "10-15",
+        "paistoaika": 120,
+        "jäähdytysaika": "30-60",
+        "kokonaisaika": 165
+      },
+      "annokset": "n. 300-350 ml siirappia",
+      "säilyvyys": "1-2 viikkoa jääkaapissa ilmatiiviissä pullossa. Lisäämällä n. 30ml (1 oz) kirkasta, neutraalia alkoholia (esim. vodkaa) säilyvyys paranee useisiin viikkoihin/kuukausiin.",
+      "lähde": "Home sweet spirits: https://www.youtube.com/watch?v=Supeq0aJcmA",
+      "equipment": [
+        "[[Digitaalivaaka (Digital Scale)|Digitaalivaaka]]",
+        "[[Siivilä (Sieve Strainer)|Siivilä (hieno)]]",
+        "[[Juustokangas (Cheesecloth)|Juustokangas tai pähkinämaitopussi]]",
+        "[[Pullo (Bottle)|Pullo säilytykseen]]",
+        "[[Kulho (Mixing Bowl)|Kulho]]",
+        "[[Sous Vide -sirkulaattori (Sous Vide Circulator)|Sous Vide -sirkulaattori]]",
+        "[[Vakuumipussi (Vacuum Sealer Bag)|Vakuumipussi]]",
+        "[[Lasipurkki (Glass Jar)|Iso lasipurkki]]",
+        "[[Kattila (Pot)|Iso kattila]]",
+        "[[Lämpömittari (Thermometer)|Lämpömittari (valinnainen vesihauteeseen)]]"
+      ],
+      "techniques": ["sous vide", "kylmäuutto", "vesihaude", "siivilöinti"],
+      "dietary": {
+        "type": ["vegaaninen", "gluteeniton", "laktoositon"],
+        "allergens": []
+      },
+      "cost_level": "edullinen-keskitaso",
+      "season": ["kesä", "syksy"],
+      "occasion": ["cocktailit", "mocktailit", "jälkiruoat", "juomien maustaminen"],
+      "nutrient_profile": null,
+      "flavor_profile": {
+        "primary": ["makea", "voimakas vadelma"],
+        "secondary": ["raikas", "hieman hapokas"],
+        "texture": ["siirappimainen", "sileä", "juokseva"]
+      },
+      "testing_iterations": 1,
+      "teoria": [
+        "[[Ruokateoria/Sokerin rooli säilönnässä|Sokerin rooli säilönnässä ja viskositeetissa]]",
+        "[[Ruokateoria/Maun uuttaminen eri lämpötiloissa|Maun uuttaminen eri lämpötiloissa (kylmä vs. kuuma)]]",
+        "[[Ruokateoria/Sous Vide -kypsennyksen perusteet|Sous Vide -tekniikan hyödyt makujen säilyttämisessä]]"
+      ]
+    }
+  }
+} 

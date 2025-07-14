@@ -66,16 +66,10 @@ Website/
 ├── public/                        # Static assets
 │   ├── favicon.svg               # Site favicon
 │   ├── _redirects                # Netlify redirects
-│   ├── images/                   # Optimized images
-│   │   ├── ingredients/          # Ingredient images
-│   │   └── placeholder-recipe.svg
-│   ├── icons/                    # UI icons
-│   ├── scripts/                  # Client-side scripts
+│   ├── placeholder-recipe.svg    # Fallback recipe image
 │   └── sounds/                   # Audio files (timer alerts)
 ├── src/
 │   ├── components/               # Reusable UI components
-│   │   ├── SimpleFilterSystem.jsx # Unified filtering system
-
 │   │   ├── IngredientPopover.astro # Ingredient information popovers
 │   │   ├── RecipeMetadata.astro  # Recipe metadata display
 │   │   ├── RelatedItems.astro    # Related content display
@@ -108,7 +102,6 @@ Website/
 │   │   └── remark-*.mjs          # Markdown processing plugins
 │   │       ├── remark-wiki-link.mjs      # Wiki link processing
 │   │       ├── remark-timer-links.mjs    # Timer link processing
-│   │       ├── remark-recipe-containers.mjs # Recipe container processing
 │   │       ├── remark-recipe-sections.mjs   # Recipe section processing
 │   │       └── remarkFigureCaption.mjs   # Figure caption processing
 │   ├── styles/                   # CSS and theme files
@@ -120,20 +113,13 @@ Website/
 │   │   ├── unified-list-styles.css # List component styles
 │   │   ├── base/                 # Base styles
 │   │   │   └── base-styles.css   # Foundation styles
-│   │   ├── components/           # Component styles
-│   │   │   ├── components.css    # General component styles
-│   │   │   ├── recipe-styles.css # Recipe component styles
-│   │   │   └── popup-system.css  # Popover/popup styles
-│   │   ├── layout/               # Layout styles
-│   │   │   └── container-queries.css # Container query system
-│   │   └── utilities/            # Utility styles
-│   │       └── accessibility.css # Accessibility utilities
+│   │   ├── components.css        # General component styles
+│   │   ├── container-queries.css # Container query system
+│   │   └── utilities.css         # Utility styles
 │   └── utils/                    # TypeScript utilities
 │       ├── types.ts              # Type definitions
 │       ├── performance.ts        # Performance utilities (debounce, throttle, idle callbacks)
 │       ├── ruoanlaitto-data.ts   # Recipe data processing
-│       ├── ingredient-data.ts    # Ingredient data utilities
-│       └── normalization.ts      # Text normalization utilities
 └── generated/                    # Build output (auto-generated)
 ```
 
@@ -382,13 +368,13 @@ annokset: 4
 - **Performance**: Lighthouse CI, WebPageTest
 - **Content**: Markdown editors, image optimization tools
 
-## 🔄 Recent Optimizations (December 2024)
+## 🔄 Recent Optimizations (June 2024)
 
 ### Code Cleanup
-- **Removed Unused Files**: `sidebar-manager.ts`, `smart-preloader.ts`, `utils/dom.ts`
-- **Consolidated Utilities**: Created `utils/performance.ts` for shared debounce/throttle functions
-- **Simplified Timer System**: Replaced complex multi-file timer with single `timer.ts` module
-- **Removed Redundancies**: Eliminated duplicate utility functions and over-engineered patterns
+- **Removed Unused Files**: `src/utils/ingredient-data.ts`, `src/utils/recipe-integration-example.ts`, `public/sounds/timer-alarm.mp3`, `public/icons/timer-icon.png`, `public/images/ingredients/`, `public/scripts/`, `build.log`
+- **Restored Required Utility**: `src/utils/normalization.ts` was restored because it is required by `src/remark-recipe-links.mjs` for ingredient and equipment link normalization.
+- **Consolidated Utilities**: All remaining utility files are now in active use and required by the build or runtime.
+- **Project Structure Updated**: The project tree above reflects the current, minimal, and accurate file structure as of June 2024.
 
 ### Architecture Improvements
 - **Performance Utilities**: Single source of truth for debounce, throttle, and requestIdleCallback
@@ -397,12 +383,12 @@ annokset: 4
 - **Type Safety**: Maintained TypeScript coverage throughout optimizations
 
 ### Impact
-- **Code Reduction**: ~200 lines of redundant code removed
+- **Code Reduction**: All unused files and assets removed
 - **Maintainability**: Cleaner, more focused codebase
 - **Performance**: No functional changes, improved code organization
 - **Developer Experience**: Easier to understand and modify
 
 ---
 
-*Last updated: December 2024*
+*Last updated: June 2024*
 *Maintained by: Tomi* 

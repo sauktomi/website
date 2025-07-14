@@ -4,37 +4,67 @@
       "id": "vuoat",
       "name": "Vuoat",
       "description": "Leipomiseen ja paistamiseen tarvittavat vuoat ja muotit",
-      "properties": ["materiaali", "koko", "käyttötarkoitus", "lämmönkesto"]
+      "properties": [
+        "materiaali",
+        "koko",
+        "käyttötarkoitus",
+        "lämmönkesto"
+      ]
     },
     "työkalut": {
       "id": "työkalut", 
       "name": "Työkalut",
       "description": "Keittiön perustyökalut ruoanvalmistukseen",
-      "properties": ["materiaali", "koko", "käyttötarkoitus", "hoito"]
+      "properties": [
+        "materiaali",
+        "koko",
+        "käyttötarkoitus",
+        "hoito"
+      ]
     },
     "mittausvälineet": {
       "id": "mittausvälineet",
       "name": "Mittausvälineet", 
       "description": "Tarkkojen mittausten tekemiseen tarvittavat välineet",
-      "properties": ["tarkkuus", "mittausala", "yksikkö", "kalibrointi"]
+      "properties": [
+        "tarkkuus",
+        "mittausala",
+        "yksikkö",
+        "kalibrointi"
+      ]
     },
     "sähkölaitteet": {
       "id": "sähkölaitteet",
       "name": "Sähkölaitteet",
       "description": "Sähkökäyttöiset keittiökoneet ja -laitteet",
-      "properties": ["teho", "nopeudet", "lisävarusteet", "koko"]
+      "properties": [
+        "teho",
+        "nopeudet",
+        "lisävarusteet",
+        "koko"
+      ]
     },
     "paistaminen": {
       "id": "paistaminen", 
       "name": "Paistaminen",
       "description": "Paistamiseen ja kypsyttämiseen tarvittavat välineet",
-      "properties": ["materiaali", "koko", "lämmönkesto", "pinnoite"]
+      "properties": [
+        "materiaali",
+        "koko",
+        "lämmönkesto",
+        "pinnoite"
+      ]
     },
     "erikoisvälineet": {
       "id": "erikoisvälineet",
       "name": "Erikoisvälineet",
       "description": "Erityistekniikkoihin ja ammattimaiseen ruoanvalmistukseen",
-      "properties": ["käyttötarkoitus", "teknologia", "tarkkuus", "hinta"]
+      "properties": [
+        "käyttötarkoitus",
+        "teknologia",
+        "tarkkuus",
+        "hinta"
+      ]
     }
   },
   "items": {
@@ -47,21 +77,39 @@
         "materiaali": "Puu, marmori, silikoni",
         "koko": "25-50 cm",
         "käyttötarkoitus": "Taikinan levitys, muotoilu",
-        "hoito": "Käsinpesu, kuivaus"
+        "hoito": "Käsinpesu, kuivaus. Puukaulin: öljyä säännöllisesti, älä jätä likoamaan"
       },
+      "käyttö": "Jäähdytä kaulin, ripottele jauhoja työpöydälle, aseta taikina keskelle, levitä keskeltä ulospäin tasaisesti, käännä taikinaa välillä.",
       "variants": [
-        {"name": "Puukaulin", "description": "Perinteinen ja monipuolinen"},
-        {"name": "Marmorikaulin", "description": "Pysyy viileänä, sopii voitaikinalle"},
-        {"name": "Silikonikaulin", "description": "Ei tartu, helppo puhdistaa"}
+        {
+          "name": "Puukaulin",
+          "description": "Perinteinen ja monipuolinen"
+        },
+        {
+          "name": "Marmorikaulin",
+          "description": "Pysyy viileänä, sopii voitaikinalle"
+        },
+        {
+          "name": "Silikonikaulin",
+          "description": "Ei tartu, helppo puhdistaa"
+        }
       ],
       "tips": [
         "Jäähdytä kaulin ennen voitaikinan käsittelyä",
         "Käytä jauhoja tarttumisen estämiseksi",
         "Levitä keskeltä ulospäin tasaisesti"
       ],
-      "techniques": ["Voitaikina", "Piirakkakuori", "Keksitaikina", "Pasta"],
-      "care": "Puukaulin: öljyä säännöllisesti, älä jätä likoamaan",
-      "tags": ["leipominen", "taikina", "perustyökalu"]
+      "techniques": [
+        "Voitaikina",
+        "Piirakkakuori",
+        "Keksitaikina",
+        "Pasta"
+      ],
+      "tags": [
+        "leipominen",
+        "taikina",
+        "perustyökalu"
+      ]
     },
     "piirakkavuoka": {
       "id": "piirakkavuoka",
@@ -74,20 +122,41 @@
         "käyttötarkoitus": "Piirakat, quichet, tartat",
         "lämmönkesto": "180-250°C"
       },
+      "käyttö": "Voitele vuoka huolellisesti, levitä taikina tasaisesti, paina pohjaan reikä, kypsennä reseptin mukaan, anna jäähtyä ennen irrottamista.",
       "variants": [
-        {"name": "Metallinen", "description": "Johtaa lämpöä hyvin, ruskistaa pohjan"},
-        {"name": "Keraaminen", "description": "Säilyttää lämmön, sopii tarjoiluun"},
-        {"name": "Lasinen", "description": "Mahdollistaa pohjan seuraamisen"},
-        {"name": "Irrotettava", "description": "Helpottaa irrottamista ehjänä"}
+        {
+          "name": "Metallinen",
+          "description": "Johtaa lämpöä hyvin, ruskistaa pohjan"
+        },
+        {
+          "name": "Keraaminen",
+          "description": "Säilyttää lämmön, sopii tarjoiluun"
+        },
+        {
+          "name": "Lasinen",
+          "description": "Mahdollistaa pohjan seuraamisen"
+        },
+        {
+          "name": "Irrotettava",
+          "description": "Helpottaa irrottamista ehjänä"
+        }
       ],
       "tips": [
         "Voitele vuoka huolellisesti tai käytä leivinpaperia",
         "Esikypsentä kuori tarvittaessa sokkona",
-        "Anna jäähtyä ennen irrottamista"
+        "Anna jäähtyä ennen irrottamista",
+        "Metallinen: kuivaa ruosteen välttämiseksi"
       ],
-      "techniques": ["Sokkoleipominen", "Piirakkakuoren valmistus", "Quiche"],
-      "care": "Metallinen: kuivaa ruosteen välttämiseksi",
-      "tags": ["leipominen", "piirakat", "vuoka"]
+      "techniques": [
+        "Sokkoleipominen",
+        "Piirakkakuoren valmistus",
+        "Quiche"
+      ],
+      "tags": [
+        "leipominen",
+        "piirakat",
+        "vuoka"
+      ]
     },
     "yleiskone": {
       "id": "yleiskone", 
@@ -100,19 +169,38 @@
         "lisävarusteet": "Vatkaimet, koukkutaikina, leikkurit",
         "koko": "4-7L kulho"
       },
+      "käyttö": "Aseta kulho kiinnikkeeseen, lisää ainekset, käytä koukkutaikinaa 5-8 minuuttia, vaihda vatkaimet kermalle, aloita alhaisella nopeudella.",
       "variants": [
-        {"name": "KitchenAid", "description": "Ammattitason, laaja lisävarustevalkoima"},
-        {"name": "Bosch Universal", "description": "Kompakti, hyvä raskaaseen taikinaan"},
-        {"name": "Ankarsrum", "description": "Ruotsalainen, ainutlaatuinen sekoitustapa"}
+        {
+          "name": "KitchenAid",
+          "description": "Ammattitason, laaja lisävarustevalkoima"
+        },
+        {
+          "name": "Bosch Universal",
+          "description": "Kompakti, hyvä raskaaseen taikinaan"
+        },
+        {
+          "name": "Ankarsrum",
+          "description": "Ruotsalainen, ainutlaatuinen sekoitustapa"
+        }
       ],
       "tips": [
         "Aloita alhaisella nopeudella",
         "Älä ylisekoita taikinaa",
-        "Käytä oikeaa lisävarustetta eri tehtäviin"
+        "Käytä oikeaa lisävarustetta eri tehtäviin",
+        "Puhdista lisävarusteet perusteellisesti"
       ],
-      "techniques": ["Taikinanteko", "Vatkaaminen", "Soutaminen", "Haketus"],
-      "care": "Puhdista lisävarusteet perusteellisesti",
-      "tags": ["sähkölaite", "vatkaus", "ammattilainen"]
+      "techniques": [
+        "Taikinanteko",
+        "Vatkaaminen",
+        "Soutaminen",
+        "Haketus"
+      ],
+      "tags": [
+        "sähkölaite",
+        "vatkaus",
+        "ammattilainen"
+      ]
     },
     "digitaalivaaka": {
       "id": "digitaalivaaka",
@@ -125,19 +213,36 @@
         "yksikkö": "g, kg, oz, lb",
         "kalibrointi": "Automaattinen nollaus"
       },
+      "käyttö": "Nollaa vaaka, aseta astia päälle, nollaa uudelleen, lisää ainekset yksi kerrallaan, mittaa tarkasti reseptin mukaan.",
       "variants": [
-        {"name": "Kompakti", "description": "Pieni, sopii pieniin keittiöihin"},
-        {"name": "Ammattivaa ka", "description": "0.1g tarkkuus, molekyyligastronomiaan"},
-        {"name": "Suurkapasiteetti", "description": "Jopa 10kg, suurempiin eriin"}
+        {
+          "name": "Kompakti",
+          "description": "Pieni, sopii pieniin keittiöihin"
+        },
+        {
+          "name": "Ammattivaa ka",
+          "description": "0.1g tarkkuus, molekyyligastronomiaan"
+        },
+        {
+          "name": "Suurkapasiteetti",
+          "description": "Jopa 10kg, suurempiin eriin"
+        }
       ],
       "tips": [
         "Nollaa vaaka astian kanssa",
         "Mittaa nesteet myös painolla",
-        "Sijoita tasaiselle alustalle"
+        "Sijoita tasaiselle alustalle",
+        "Pyyhi kuivaksi, säilytä turvassa iskuilta"
       ],
-      "techniques": ["Baker's percentage", "Tarkat mittaukset"],
-      "care": "Pyyhi kuivaksi, säilytä turvassa iskuilta",
-      "tags": ["mittaus", "tarkkuus", "perustyökalu"]
+      "techniques": [
+        "Baker's percentage",
+        "Tarkat mittaukset"
+      ],
+      "tags": [
+        "mittaus",
+        "tarkkuus",
+        "perustyökalu"
+      ]
     },
     "paistinpannu": {
       "id": "paistinpannu",
@@ -150,20 +255,42 @@
         "lämmönkesto": "200-260°C",
         "pinnoite": "Tefloni, keraaminen, luonnollinen"
       },
+      "käyttö": "Kuumenna pannu korkeaan lämpöön, lisää öljy, ruskista ruoka 2-3 minuuttia per puoli, käännä vain kerran, anna lepätä ennen leikkaamista.",
       "variants": [
-        {"name": "Teflonpinnoitettu", "description": "Helppo puhdistaa, sopii herkille"},
-        {"name": "Valurauta", "description": "Säilyttää lämmön, parantuu käytössä"},
-        {"name": "Ruostumaton teräs", "description": "Kestävä, korkeisiin lämpötiloihin"},
-        {"name": "Hilloitettu", "description": "Kaasuliekille, nopea lämpeneminen"}
+        {
+          "name": "Teflonpinnoitettu",
+          "description": "Helppo puhdistaa, sopii herkille"
+        },
+        {
+          "name": "Valurauta",
+          "description": "Säilyttää lämmön, parantuu käytössä"
+        },
+        {
+          "name": "Ruostumaton teräs",
+          "description": "Kestävä, korkeisiin lämpötiloihin"
+        },
+        {
+          "name": "Hilloitettu",
+          "description": "Kaasuliekille, nopea lämpeneminen"
+        }
       ],
       "tips": [
         "Kuumenna pannu ennen öljyn lisäämistä",
         "Älä täytä liian täyteen",
-        "Anna lihan ruskistua rauhassa"
+        "Anna lihan ruskistua rauhassa",
+        "Valurauta: kuivaa, öljyä säännöllisesti"
       ],
-      "techniques": ["Searing", "Sauteeraus", "Ruskistus", "Omeletti"],
-      "care": "Valurauta: kuivaa, öljyä säännöllisesti",
-      "tags": ["paistaminen", "ruskistus", "monipuolinen"]
+      "techniques": [
+        "Searing",
+        "Sauteeraus",
+        "Ruskistus",
+        "Omeletti"
+      ],
+      "tags": [
+        "paistaminen",
+        "ruskistus",
+        "monipuolinen"
+      ]
     },
     "uuni": {
       "id": "uuni",
@@ -176,20 +303,40 @@
         "toiminnot": "Ylä/alalämpö, kiertoilma, grilli",
         "koko": "50-90L sisätila"
       },
+      "käyttö": "Esilämmitä uuni 10-15 minuuttia ennen käyttöä, sijoita ruoka keskelle ritilää, käytä uunilämpömittaria tarkkuuden varmistamiseksi, anna jäähtyä ennen avaamista.",
       "variants": [
-        {"name": "Sähköuuni kiertoilmalla", "description": "Tasainen lämpö"},
-        {"name": "Kaasu uuni", "description": "Kostea lämpö, hyvä leipomiseen"},
-        {"name": "Kombiuuni", "description": "Höyry + kuuma ilma"},
-        {"name": "Puuuuni", "description": "Korkeat lämpötilat, ainutlaatuinen maku"}
+        {
+          "name": "Sähköuuni kiertoilmalla",
+          "description": "Tasainen lämpö"
+        },
+        {
+          "name": "Kaasu uuni",
+          "description": "Kostea lämpö, hyvä leipomiseen"
+        },
+        {
+          "name": "Kombiuuni",
+          "description": "Höyry + kuuma ilma"
+        },
+        {
+          "name": "Puuuuni",
+          "description": "Korkeat lämpötilat, ainutlaatuinen maku"
+        }
       ],
       "tips": [
         "Esilämmitä aina ennen käyttöä",
         "Käytä uunilämpömittaria tarkkuuden varmistamiseksi",
         "Sijoita ritilä oikealle korkeudelle"
       ],
-      "techniques": ["Leipominen", "Paistaminen", "Hauduttaminen"],
-      "care": "Puhdista säännöllisesti",
-      "tags": ["leipominen", "paistaminen", "peruslaite"]
+      "techniques": [
+        "Leipominen",
+        "Paistaminen",
+        "Hauduttaminen"
+      ],
+      "tags": [
+        "leipominen",
+        "paistaminen",
+        "peruslaite"
+      ]
     },
     "sous-vide-sirkulaattori": {
       "id": "sous-vide-sirkulaattori",
@@ -202,19 +349,35 @@
         "tarkkuus": "±0.1°C",
         "hinta": "100-400€"
       },
+      "käyttö": "Täytä kattila vettä, kiinnitä sirkulaattori reunaan, aseta lämpötila, lisää vakuumipussit veteen, kypsennä tarvittavan ajan, ruskista lopuksi maun parantamiseksi.",
       "variants": [
-        {"name": "Immersion Circulator", "description": "Kiinnittyy kattilan reunaan"},
-        {"name": "All-in-one", "description": "Sisäänrakennettu vesisäiliö"},
-        {"name": "WiFi-yhteydellä", "description": "Etäohjaus älypuhelimella"}
+        {
+          "name": "Immersion Circulator",
+          "description": "Kiinnittyy kattilan reunaan"
+        },
+        {
+          "name": "All-in-one",
+          "description": "Sisäänrakennettu vesisäiliö"
+        },
+        {
+          "name": "WiFi-yhteydellä",
+          "description": "Etäohjaus älypuhelimella"
+        }
       ],
       "tips": [
         "Käytä vakuumipusseja tai tiiveitä pusseja",
         "Esilämmitä vesihauteita",
         "Ruskista liha lopuksi maun parantamiseksi"
       ],
-      "techniques": ["Sous-vide", "Tarkka lämpötilakypsenns"],
-      "care": "Huuhtele puhtaaksi käytön jälkeen",
-      "tags": ["sous-vide", "tarkka lämpötila", "erikoistekniikka"]
+      "techniques": [
+        "Sous-vide",
+        "Tarkka lämpötilakypsenns"
+      ],
+      "tags": [
+        "sous-vide",
+        "tarkka lämpötila",
+        "erikoistekniikka"
+      ]
     },
     "vispilä": {
       "id": "vispilä",
@@ -227,20 +390,40 @@
         "käyttötarkoitus": "Vatkaus, sekoitus, kastikkeet",
         "hoito": "Tiskikonepesu OK"
       },
+      "käyttö": "Käytä nopeita, pyöriviä liikkeitä ranne rentona, valitse oikean kokoinen astiaraan, aloita hitaasti roiskeiden välttämiseksi, lisää ainekset vähitellen.",
       "variants": [
-        {"name": "Teräsvispilä", "description": "Monipuolinen, sopii kuumiin kastikkeisiin"},
-        {"name": "Silikonivispilä", "description": "Ei naarmuta pinnoitettuja astioita"},
-        {"name": "Balloon whisk", "description": "Ilmavaan vaahdotukseen"},
-        {"name": "Litteä vispilä", "description": "Kastikkeihin ja mataliin astioihin"}
+        {
+          "name": "Teräsvispilä",
+          "description": "Monipuolinen, sopii kuumiin kastikkeisiin"
+        },
+        {
+          "name": "Silikonivispilä",
+          "description": "Ei naarmuta pinnoitettuja astioita"
+        },
+        {
+          "name": "Balloon whisk",
+          "description": "Ilmavaan vaahdotukseen"
+        },
+        {
+          "name": "Litteä vispilä",
+          "description": "Kastikkeihin ja mataliin astioihin"
+        }
       ],
       "tips": [
         "Käytä nopeita, pyöriviä liikkeitä",
         "Pidä ranne rentona",
         "Valitse oikean kokoinen astiaraan"
       ],
-      "techniques": ["Hollandaise", "Mayonnaise", "Vaahtovaatimin"],
-      "care": "Varmista että ruoanjätteet poistuvat lankojen välistä",
-      "tags": ["vatkaus", "kastikkeet", "perustyökalu"]
+      "techniques": [
+        "Hollandaise",
+        "Mayonnaise",
+        "Vaahtovaatimin"
+      ],
+      "tags": [
+        "vatkaus",
+        "kastikkeet",
+        "perustyökalu"
+      ]
     },
     "sähkövatkain": {
       "id": "sähkövatkain",
@@ -253,19 +436,36 @@
         "lisävarusteet": "Vatkaimet, koukkutaikina",
         "koko": "Käsikoko, kevyt"
       },
+      "käyttö": "Aloita matalalla nopeudella roiskeiden välttämiseksi, vatkaa kermavaahtoa kylmässä astiassa, puhdista vatkaimet heti käytön jälkeen, käytä oikeaa vatkaintyyppiä eri tehtäviin.",
       "variants": [
-        {"name": "Perus käsivatkain", "description": "Yksinkertainen, kotikäyttöön"},
-        {"name": "Turbo-vatkain", "description": "Tehokkaampi, pulse-ominaisuus"},
-        {"name": "Akkukäyttöinen", "description": "Langaton, kompakti"}
+        {
+          "name": "Perus käsivatkain",
+          "description": "Yksinkertainen, kotikäyttöön"
+        },
+        {
+          "name": "Turbo-vatkain",
+          "description": "Tehokkaampi, pulse-ominaisuus"
+        },
+        {
+          "name": "Akkukäyttöinen",
+          "description": "Langaton, kompakti"
+        }
       ],
       "tips": [
         "Aloita matalalla nopeudella roiskeiden välttämiseksi",
         "Vatkaa kermavaahtoa kylmässä astiassa",
         "Puhdista vatkaimet heti käytön jälkeen"
       ],
-      "techniques": ["Kermaavaahto", "Munaaavahto", "Marengit"],
-      "care": "Älä upota moottoriosaa veteen",
-      "tags": ["sähkölaite", "vatkaus", "kompakti"]
+      "techniques": [
+        "Kermaavaahto",
+        "Munaaavahto",
+        "Marengit"
+      ],
+      "tags": [
+        "sähkölaite",
+        "vatkaus",
+        "kompakti"
+      ]
     },
     "kulho": {
       "id": "kulho",
@@ -278,20 +478,40 @@
         "käyttötarkoitus": "Sekoitus, vatkaus, säilytys",
         "hoito": "Tiskikonepesu useimmiten OK"
       },
+      "käyttö": "Hanki erikokoisia kulhoja eri tehtäviin, laita märkä liina alle liukumisen estämiseksi, jäähdytä metallikulho ennen kermavaahdotusta, käytä sopivaa kokoa sekoitettavalle määrälle.",
       "variants": [
-        {"name": "Laasikulho", "description": "Ei ota hajua, ei reagoi happojen kanssa"},
-        {"name": "Metallikulho", "description": "Kestävä, nopea jäähdytys"},
-        {"name": "Muovikulho", "description": "Kevyt, turvallinen"},
-        {"name": "Keraaminen", "description": "Kaunis, säilyttää lämmön"}
+        {
+          "name": "Laasikulho",
+          "description": "Ei ota hajua, ei reagoi happojen kanssa"
+        },
+        {
+          "name": "Metallikulho",
+          "description": "Kestävä, nopea jäähdytys"
+        },
+        {
+          "name": "Muovikulho",
+          "description": "Kevyt, turvallinen"
+        },
+        {
+          "name": "Keraaminen",
+          "description": "Kaunis, säilyttää lämmön"
+        }
       ],
       "tips": [
         "Hanki erikokoisia kulhoja",
         "Laita märkä liina alle liukumisen estämiseksi",
         "Jäähdytä metallikulho ennen kermavaahdotusta"
       ],
-      "techniques": ["Sekoitus", "Vatkaus", "Marinistäminen"],
-      "care": "Lasi: vältä äkillisiä lämpötilamuutoksia",
-      "tags": ["sekoitus", "säilytys", "monipuolinen"]
+      "techniques": [
+        "Sekoitus",
+        "Vatkaus",
+        "Marinistäminen"
+      ],
+      "tags": [
+        "sekoitus",
+        "säilytys",
+        "monipuolinen"
+      ]
     },
     "mittakupit": {
       "id": "mittakupit",
@@ -304,19 +524,35 @@
         "yksikkö": "ml, dl, tl, rkl",
         "kalibrointi": "Standardikoot"
       },
+      "käyttö": "Tasoita kuivat ainekset veitsellä, mittaa nesteet silmien tasolla, erottele kuivien ja märkien ainesten mittarit, käytä oikeaa mittakokoa tarkkuuden varmistamiseksi.",
       "variants": [
-        {"name": "Amerikkalainen", "description": "Cups ja tablespoons"},
-        {"name": "Metrinen", "description": "ml ja dl pohjaiset"},
-        {"name": "Säädettävät", "description": "Yksi lusikka useaan mittaan"}
+        {
+          "name": "Amerikkalainen",
+          "description": "Cups ja tablespoons"
+        },
+        {
+          "name": "Metrinen",
+          "description": "ml ja dl pohjaiset"
+        },
+        {
+          "name": "Säädettävät",
+          "description": "Yksi lusikka useaan mittaan"
+        }
       ],
       "tips": [
         "Tasoita kuivat ainekset veitsellä",
         "Mittaa nesteet silmien tasolla",
         "Erottele kuivien ja märkien ainesten mittarit"
       ],
-      "techniques": ["Nopeat mitat", "Amerikkalainen reseptit"],
-      "care": "Pese huolellisesti, kuivaa hyvin",
-      "tags": ["mittaus", "tilavuus", "perinteinen"]
+      "techniques": [
+        "Nopeat mitat",
+        "Amerikkalainen reseptit"
+      ],
+      "tags": [
+        "mittaus",
+        "tilavuus",
+        "perinteinen"
+      ]
     },
     "leivinpaperi": {
       "id": "leivinpaperi",
@@ -329,19 +565,36 @@
         "käyttötarkoitus": "Leipominen, paistaminen",
         "lämmönkesto": "220-250°C"
       },
+      "käyttö": "Leikkaa oikean kokoiseksi vuokaan, voit käyttää molempia puolia, älä päästä kosketuksiin lämmitysvastuksien kanssa, aseta tasaisesti vuoan pohjalle.",
       "variants": [
-        {"name": "Tavallinen", "description": "Kertakäyttöinen, halpa"},
-        {"name": "Silikonimatto", "description": "Uudelleenkäytettävä, ympäristöystävällinen"},
-        {"name": "Perforoitu", "description": "Reikä ilmankiertoa varten"}
+        {
+          "name": "Tavallinen",
+          "description": "Kertakäyttöinen, halpa"
+        },
+        {
+          "name": "Silikonimatto",
+          "description": "Uudelleenkäytettävä, ympäristöystävällinen"
+        },
+        {
+          "name": "Perforoitu",
+          "description": "Reikä ilmankiertoa varten"
+        }
       ],
       "tips": [
         "Leikkaa oikean kokoiseksi",
         "Voit käyttää molempia puolia",
         "Älä päästä kosketuksiin lämmitysvastuksien kanssa"
       ],
-      "techniques": ["Leipominen", "Ruskistaminen", "Kuivaaminen"],
-      "care": "Kertakäyttöinen, kierrätä kompostiin",
-      "tags": ["leipominen", "tarttumaton", "kertakäyttö"]
+      "techniques": [
+        "Leipominen",
+        "Ruskistaminen",
+        "Kuivaaminen"
+      ],
+      "tags": [
+        "leipominen",
+        "tarttumaton",
+        "kertakäyttö"
+      ]
     },
     "ritilä": {
       "id": "ritilä",
@@ -354,19 +607,36 @@
         "käyttötarkoitus": "Jäähdytys, kuivaus, paistaminen",
         "hoito": "Tiskikonepesu OK"
       },
+      "käyttö": "Sijoita korkealle ilmankiertoa varten, käytä paistamisessa rasvan valumiseen, jäähdytä keksit ja kakut aina ritilällä, varmista tasainen sijoitus.",
       "variants": [
-        {"name": "Jäähdytysritilä", "description": "Matala, leivonnaisille"},
-        {"name": "Uuniritilä", "description": "Kestää uunilämpötilat"},
-        {"name": "Tiivis ritilä", "description": "Pieni silmäkoko"}
+        {
+          "name": "Jäähdytysritilä",
+          "description": "Matala, leivonnaisille"
+        },
+        {
+          "name": "Uuniritilä",
+          "description": "Kestää uunilämpötilat"
+        },
+        {
+          "name": "Tiivis ritilä",
+          "description": "Pieni silmäkoko"
+        }
       ],
       "tips": [
         "Sijoita korkealle ilmankiertoa varten",
         "Käytä paistamisessa rasvan valumiseen",
         "Jäähdytä keksit ja kakut aina ritilällä"
       ],
-      "techniques": ["Jäähdytys", "Kuivaaminen", "Paistaminen"],
-      "care": "Pese huolellisesti, kuivaa ruosteen välttämiseksi",
-      "tags": ["jäähdytys", "ilmankierto", "versatile"]
+      "techniques": [
+        "Jäähdytys",
+        "Kuivaaminen",
+        "Paistaminen"
+      ],
+      "tags": [
+        "jäähdytys",
+        "ilmankierto",
+        "versatile"
+      ]
     },
     "kattila": {
       "id": "kattila",
@@ -379,11 +649,24 @@
         "lämmönkesto": "Kaikki lämpötilat",
         "pinnoite": "Luonnollinen tai emalikuorrutus"
       },
+      "käyttö": "Valitse koko ruokamäärän mukaan, kuumenna ennen öljyn lisäämistä, käytä matalaa lämpöä hauduttamisessa, älä täytä yli 2/3 kiehuvia nesteitä varten.",
       "variants": [
-        {"name": "Ruostumaton teräs", "description": "Kestävä, ei reagoi happojen kanssa"},
-        {"name": "Emaloitu valurauta", "description": "Säilyttää lämmön erinomaisesti"},
-        {"name": "Alumiini", "description": "Kevyt, nopea lämpeneminen"},
-        {"name": "Painekatila", "description": "Nopeuttaa kypsennystä"}
+        {
+          "name": "Ruostumaton teräs",
+          "description": "Kestävä, ei reagoi happojen kanssa"
+        },
+        {
+          "name": "Emaloitu valurauta",
+          "description": "Säilyttää lämmön erinomaisesti"
+        },
+        {
+          "name": "Alumiini",
+          "description": "Kevyt, nopea lämpeneminen"
+        },
+        {
+          "name": "Painekatila",
+          "description": "Nopeuttaa kypsennystä"
+        }
       ],
       "tips": [
         "Valitse koko ruokamäärän mukaan",
@@ -391,9 +674,16 @@
         "Käytä matalaa lämpöä hauduttamisessa",
         "Älä täytä yli 2/3 kiehuvia nesteitä varten"
       ],
-      "techniques": ["Keittäminen", "Hauduttaminen", "Ruskistaminen"],
-      "care": "Ruostumaton: käytä soodaa tahrojen poistoon",
-      "tags": ["keittäminen", "hauduttaminen", "monipuolinen"]
+      "techniques": [
+        "Keittäminen",
+        "Hauduttaminen",
+        "Ruskistaminen"
+      ],
+      "tags": [
+        "keittäminen",
+        "hauduttaminen",
+        "monipuolinen"
+      ]
     },
     "veitsi": {
       "id": "veitsi",
@@ -406,11 +696,24 @@
         "käyttötarkoitus": "Pilkkominen, viipalointi, hienontaminen",
         "hoito": "Käsinpesu, säännöllinen teroitus"
       },
+      "käyttö": "Pidä aina terävänä - tylsä veitsi vaarallisempi, käytä keinuttavaa liikettä, älä leikkaa kovilla pinnoilla, säilytä turvallisesti veitsitelineessä, käytä kynsiote sormien suojaamiseksi.",
       "variants": [
-        {"name": "Keittiöveitsi", "description": "Monipuolisin, 20-25 cm"},
-        {"name": "Kuorimaveitsi", "description": "Pieni 8-10 cm, hienompiin töihin"},
-        {"name": "Leipäveitsi", "description": "Sahalaitainen terä"},
-        {"name": "Santoku", "description": "Leveä terä, kasviksille ja kalalle"}
+        {
+          "name": "Keittiöveitsi",
+          "description": "Monipuolisin, 20-25 cm"
+        },
+        {
+          "name": "Kuorimaveitsi",
+          "description": "Pieni 8-10 cm, hienompiin töihin"
+        },
+        {
+          "name": "Leipäveitsi",
+          "description": "Sahalaitainen terä"
+        },
+        {
+          "name": "Santoku",
+          "description": "Leveä terä, kasviksille ja kalalle"
+        }
       ],
       "tips": [
         "Pidä aina terävänä - tylsä veitsi vaarallisempi",
@@ -418,9 +721,17 @@
         "Älä leikkaa kovilla pinnoilla",
         "Säilytä turvallisesti veitsitelineessä"
       ],
-      "techniques": ["Julienne", "Brunoise", "Chiffonade", "Rocking cut"],
-      "care": "Pese käsin heti käytön jälkeen, teroita säännöllisesti",
-      "tags": ["leikkaaminen", "perustyökalu", "välttämätön"]
+      "techniques": [
+        "Julienne",
+        "Brunoise",
+        "Chiffonade",
+        "Rocking cut"
+      ],
+      "tags": [
+        "leikkaaminen",
+        "perustyökalu",
+        "välttämätön"
+      ]
     },
     "leikkuulauta": {
       "id": "leikkuulauta",
@@ -433,11 +744,24 @@
         "käyttötarkoitus": "Leikkaaminen, pilkkominen, tarjoilu",
         "hoito": "Säännöllinen pesu ja desinfiointi"
       },
+      "käyttö": "Käytä eri lautoja raa'alle lihalle ja kasviksille, kostuta alapinta liukumisen estämiseksi, öljyä puulaudat säännöllisesti, valitse riittävän suuri, puhdista perusteellisesti käytön jälkeen.",
       "variants": [
-        {"name": "Puu", "description": "Antibakteerinen, veitsiystävällinen"},
-        {"name": "Muovi", "description": "Helppo puhdistaa, tiskikonepesu OK"},
-        {"name": "Bambu", "description": "Ekologinen, kova pinta"},
-        {"name": "Lasi", "description": "Hygieeninen, mutta tylsyttää veitsiä"}
+        {
+          "name": "Puu",
+          "description": "Antibakteerinen, veitsiystävällinen"
+        },
+        {
+          "name": "Muovi",
+          "description": "Helppo puhdistaa, tiskikonepesu OK"
+        },
+        {
+          "name": "Bambu",
+          "description": "Ekologinen, kova pinta"
+        },
+        {
+          "name": "Lasi",
+          "description": "Hygieeninen, mutta tylsyttää veitsiä"
+        }
       ],
       "tips": [
         "Käytä eri lautoja raa'alle lihalle ja kasviksille",
@@ -445,9 +769,15 @@
         "Öljyä puulaudat säännöllisesti",
         "Valitse riittävän suuri"
       ],
-      "techniques": ["Mise en place", "Turvallinen leikkaaminen"],
-      "care": "Puu: öljyä kuukausittain, älä jätä likoamaan",
-      "tags": ["leikkaaminen", "hygienia", "turvallisuus"]
+      "techniques": [
+        "Mise en place",
+        "Turvallinen leikkaaminen"
+      ],
+      "tags": [
+        "leikkaaminen",
+        "hygienia",
+        "turvallisuus"
+      ]
     },
     "sauvasekoitin": {
       "id": "sauvasekoitin",
@@ -460,20 +790,40 @@
         "lisävarusteet": "Vatkain, pilkkuri, mittakulho",
         "koko": "30-40 cm pituus"
       },
+      "käyttö": "Upota terä kokonaan ennen käynnistämistä, liikuta ylös-alas tasaisen sekoittumisen varmistamiseksi, käytä syvää astiaa roiskeiden minimoimiseksi, puhdista heti käytön jälkeen.",
       "variants": [
-        {"name": "Perus", "description": "Yksinkertainen, halpa"},
-        {"name": "Monitoimi", "description": "Lisävarusteet: vatkain, pilkkuri"},
-        {"name": "Ammattilainen", "description": "Tehokas, raskaaseen käyttöön"},
-        {"name": "Langaton", "description": "Akkukäyttöinen, kompakti"}
+        {
+          "name": "Perus",
+          "description": "Yksinkertainen, halpa"
+        },
+        {
+          "name": "Monitoimi",
+          "description": "Lisävarusteet: vatkain, pilkkuri"
+        },
+        {
+          "name": "Ammattilainen",
+          "description": "Tehokas, raskaaseen käyttöön"
+        },
+        {
+          "name": "Langaton",
+          "description": "Akkukäyttöinen, kompakti"
+        }
       ],
       "tips": [
         "Upota terä kokonaan ennen käynnistämistä",
         "Liikuta ylös-alas tasaisen sekoittumisen varmistamiseksi",
         "Käytä syvää astiaa roiskeiden minimoimiseksi"
       ],
-      "techniques": ["Soseiden valmistus", "Emulgointi", "Smoothiet"],
-      "care": "Älä upota moottoriosaa veteen",
-      "tags": ["sähkölaite", "soseet", "kastikkeet"]
+      "techniques": [
+        "Soseiden valmistus",
+        "Emulgointi",
+        "Smoothiet"
+      ],
+      "tags": [
+        "sähkölaite",
+        "soseet",
+        "kastikkeet"
+      ]
     },
     "haarukka": {
       "id": "haarukka",
@@ -486,20 +836,40 @@
         "käyttötarkoitus": "Syöminen, sekoittaminen, tarjoilu",
         "hoito": "Tiskikonepesu OK"
       },
+      "käyttö": "Käytä sopivaa kokoa tehtävään, testaa lihan kypsyysasteen, sekoita kastikkeita tasaisesti, tarjoile ruokaa siististi, puhdista perusteellisesti käytön jälkeen.",
       "variants": [
-        {"name": "Ruokailuhaarukka", "description": "Tavallinen syömiseen"},
-        {"name": "Tarjoiluhaarukka", "description": "Suurempi ruoan tarjoiluun"},
-        {"name": "Lihahamrukka", "description": "Vahvempi lihan käsittelyyn"},
-        {"name": "Salaattihaarukka", "description": "Salaattien sekoittamiseen"}
+        {
+          "name": "Ruokailuhaarukka",
+          "description": "Tavallinen syömiseen"
+        },
+        {
+          "name": "Tarjoiluhaarukka",
+          "description": "Suurempi ruoan tarjoiluun"
+        },
+        {
+          "name": "Lihahamrukka",
+          "description": "Vahvempi lihan käsittelyyn"
+        },
+        {
+          "name": "Salaattihaarukka",
+          "description": "Salaattien sekoittamiseen"
+        }
       ],
       "tips": [
         "Käytä lihahaarukkaa lihan kääntämiseen",
         "Testaa kypsyyttä - peruna valmis kun menee helposti läpi",
         "Sopii sose-ruokien tekemiseen"
       ],
-      "techniques": ["Sekoittaminen", "Pilkkominen", "Testaaminen"],
-      "care": "Pese heti käytön jälkeen",
-      "tags": ["perustyökalu", "ruokailu", "käsittely"]
+      "techniques": [
+        "Sekoittaminen",
+        "Pilkkominen",
+        "Testaaminen"
+      ],
+      "tags": [
+        "perustyökalu",
+        "ruokailu",
+        "käsittely"
+      ]
     },
     "lusikka": {
       "id": "lusikka",
@@ -512,20 +882,40 @@
         "käyttötarkoitus": "Sekoittaminen, mittaaminen, tarjoilu",
         "hoito": "Tiskikonepesu OK"
       },
+      "käyttö": "Käytä sopivaa lusikkaa mittaamiseen, sekoittamiseen ja tarjoiluun. Puulusikka ei naarmuta pinnoitetta. Mittaa nesteet ja kuivat aineet tarkasti.",
       "variants": [
-        {"name": "Ruokalusikka", "description": "Syömiseen ja sekoittamiseen"},
-        {"name": "Teelusikka", "description": "Pienempi, sopii mittaamiseen"},
-        {"name": "Puulusikka", "description": "Ei naarmuta pinnoitetta"},
-        {"name": "Reikälusikka", "description": "Nesteen valuttamiseen"}
+        {
+          "name": "Ruokalusikka",
+          "description": "Syömiseen ja sekoittamiseen"
+        },
+        {
+          "name": "Teelusikka",
+          "description": "Pienempi, sopii mittaamiseen"
+        },
+        {
+          "name": "Puulusikka",
+          "description": "Ei naarmuta pinnoitetta"
+        },
+        {
+          "name": "Reikälusikka",
+          "description": "Nesteen valuttamiseen"
+        }
       ],
       "tips": [
         "Käytä puulusiakkaa pinnoitetuissa pannuissa",
         "Sopii kastikkeiden sekoittamiseen",
         "1 rkl = 15 ml, 1 tl = 5 ml"
       ],
-      "techniques": ["Sekoittaminen", "Mittaaminen", "Maistaminen"],
-      "care": "Öljyä puulusikat säännöllisesti",
-      "tags": ["perustyökalu", "sekoittaminen", "mittaus"]
+      "techniques": [
+        "Sekoittaminen",
+        "Mittaaminen",
+        "Maistaminen"
+      ],
+      "tags": [
+        "perustyökalu",
+        "sekoittaminen",
+        "mittaus"
+      ]
     },
     "leipäveitsi": {
       "id": "leipäveitsi",
@@ -538,19 +928,35 @@
         "käyttötarkoitus": "Leipä, kakut, tomaatit, hedelmät",
         "hoito": "Käsinpesu, varovainen teroitus"
       },
+      "käyttö": "Käytä sahaavaa liikettä leivän ja kakkujen leikkaamiseen. Anna leivän jäähtyä ennen leikkaamista. Lämmitä veitsi kermakakkuihin.",
       "variants": [
-        {"name": "Klassinen", "description": "Pitkä terä, isomille leivoksille"},
-        {"name": "Kompakti", "description": "Lyhyempi, pienempiin keittiöihin"},
-        {"name": "Kakkuveitsi", "description": "Ohut terä, kermakakkuille"}
+        {
+          "name": "Klassinen",
+          "description": "Pitkä terä, isomille leivoksille"
+        },
+        {
+          "name": "Kompakti",
+          "description": "Lyhyempi, pienempiin keittiöihin"
+        },
+        {
+          "name": "Kakkuveitsi",
+          "description": "Ohut terä, kermakakkuille"
+        }
       ],
       "tips": [
         "Käytä sahaamista liikettä, älä puriata",
         "Anna leivän jäähtyä ennen leikkaamista",
         "Lämmin veitsi helpottaa kermakakkuja"
       ],
-      "techniques": ["Sahaaminen", "Tasainen viipalointi"],
-      "care": "Pese käsin heti käytön jälkeen",
-      "tags": ["leipä", "kakut", "sahalaitainen"]
+      "techniques": [
+        "Sahaaminen",
+        "Tasainen viipalointi"
+      ],
+      "tags": [
+        "leipä",
+        "kakut",
+        "sahalaitainen"
+      ]
     },
     "raastin": {
       "id": "raastin",
@@ -563,20 +969,39 @@
         "käyttötarkoitus": "Juusto, kasvikset, sitruunankuori",
         "hoito": "Käsinpesu, varovainen puhdistus"
       },
+      "käyttö": "Raasta ainekset poispäin itsestäsi. Käytä oikeaa reikäkokoa juustolle, kasviksille tai sitruunankuorelle. Puhdista heti käytön jälkeen.",
       "variants": [
-        {"name": "Nelikulmainen", "description": "Neljä eri karkeutta"},
-        {"name": "Mikroplane", "description": "Erittäin hieno, mausteille"},
-        {"name": "Pyörivä juustoraastin", "description": "Kovalle juustolle"},
-        {"name": "Sähköraastin", "description": "Nopea, suuremmille määrille"}
+        {
+          "name": "Nelikulmainen",
+          "description": "Neljä eri karkeutta"
+        },
+        {
+          "name": "Mikroplane",
+          "description": "Erittäin hieno, mausteille"
+        },
+        {
+          "name": "Pyörivä juustoraastin",
+          "description": "Kovalle juustolle"
+        },
+        {
+          "name": "Sähköraastin",
+          "description": "Nopea, suuremmille määrille"
+        }
       ],
       "tips": [
         "Raasta aina poispäin itsestäsi",
         "Käytä sitruunanpuolta kuoren saamiseksi",
         "Raasta juusto kylmää"
       ],
-      "techniques": ["Juuston raastaminen", "Kuoren riivitys"],
-      "care": "Puhdista harjalla, säilytä suojuksen kanssa",
-      "tags": ["raastaminen", "juusto", "sitruunankuori"]
+      "techniques": [
+        "Juuston raastaminen",
+        "Kuoren riivitys"
+      ],
+      "tags": [
+        "raastaminen",
+        "juusto",
+        "sitruunankuori"
+      ]
     },
     "leipävuoka": {
       "id": "leipävuoka",
@@ -589,20 +1014,39 @@
         "käyttötarkoitus": "Leipä, kakkupohjat, sokerikakut",
         "lämmönkesto": "180-220°C"
       },
+      "käyttö": "Voitele vuoka hyvin, täytä taikinalla 2/3 asti, paista reseptin mukaan, anna jäähtyä ennen irrottamista.",
       "variants": [
-        {"name": "Metalli", "description": "Johtaa lämpöä hyvin, ruskea kuori"},
-        {"name": "Silikoni", "description": "Ei tartu, helppo irrotus"},
-        {"name": "Lasi", "description": "Mahdollistaa seuraamisen"},
-        {"name": "Pullman", "description": "Kansi kanssa, neliömäinen leipä"}
+        {
+          "name": "Metalli",
+          "description": "Johtaa lämpöä hyvin, ruskea kuori"
+        },
+        {
+          "name": "Silikoni",
+          "description": "Ei tartu, helppo irrotus"
+        },
+        {
+          "name": "Lasi",
+          "description": "Mahdollistaa seuraamisen"
+        },
+        {
+          "name": "Pullman",
+          "description": "Kansi kanssa, neliömäinen leipä"
+        }
       ],
       "tips": [
         "Voitele hyvin tai käytä leivinpaperia",
         "Täytä 2/3 osaan kohoamisvaraa varten",
         "Anna jäähtyä 10 min ennen irrottamista"
       ],
-      "techniques": ["Leipäbaking", "Sokerikakkujen leivonta"],
-      "care": "Pese huolellisesti, kuivaa ruosteen välttämiseksi",
-      "tags": ["leipä", "leivonta", "suorakulmainen"]
+      "techniques": [
+        "Leipäbaking",
+        "Sokerikakkujen leivonta"
+      ],
+      "tags": [
+        "leipä",
+        "leivonta",
+        "suorakulmainen"
+      ]
     },
     "rengasvuoka": {
       "id": "rengasvuoka",
@@ -615,20 +1059,39 @@
         "käyttötarkoitus": "Kakut, vanukkaat, geleet",
         "lämmönkesto": "180-220°C"
       },
+      "käyttö": "Voitele ja jauhota vuoka, täytä taikinalla, paista ohjeen mukaan, anna jäähtyä ennen irrottamista.",
       "variants": [
-        {"name": "Metalli", "description": "Johtaa lämpöä hyvin"},
-        {"name": "Silikoni", "description": "Ei tartu, helppo irrotus"},
-        {"name": "Keraaminen", "description": "Kestää korkeita lämpötiloja"},
-        {"name": "Irrotettava", "description": "Sivut irtoavat"}
+        {
+          "name": "Metalli",
+          "description": "Johtaa lämpöä hyvin"
+        },
+        {
+          "name": "Silikoni",
+          "description": "Ei tartu, helppo irrotus"
+        },
+        {
+          "name": "Keraaminen",
+          "description": "Kestää korkeita lämpötiloja"
+        },
+        {
+          "name": "Irrotettava",
+          "description": "Sivut irtoavat"
+        }
       ],
       "tips": [
         "Voitele ja korppujauhota huolellisesti",
         "Täytä enintään 2/3 osaan",
         "Anna jäähtyä 10-15 min ennen kumoamista"
       ],
-      "techniques": ["Kakkujen leivonta", "Vanukkaiden valmistus"],
-      "care": "Pese varovasti, kuivaa huolellisesti",
-      "tags": ["kakku", "leivonta", "rengasmuotoinen"]
+      "techniques": [
+        "Kakkujen leivonta",
+        "Vanukkaiden valmistus"
+      ],
+      "tags": [
+        "kakku",
+        "leivonta",
+        "rengasmuotoinen"
+      ]
     },
     "kakkuvuoka": {
       "id": "kakkuvuoka",
@@ -642,19 +1105,38 @@
         "lämmönkesto": "180-220°C"
       },
       "variants": [
-        {"name": "Pyöreä", "description": "Klassinen, kerros- ja täytekakkuihin"},
-        {"name": "Suorakulmainen", "description": "Käytännöllinen, helppo tarjoilla"},
-        {"name": "Metalli", "description": "Johtaa lämpöä hyvin"},
-        {"name": "Silikoni", "description": "Ei tartu, helppo irrotus"}
+        {
+          "name": "Pyöreä",
+          "description": "Klassinen, kerros- ja täytekakkuihin"
+        },
+        {
+          "name": "Suorakulmainen",
+          "description": "Käytännöllinen, helppo tarjoilla"
+        },
+        {
+          "name": "Metalli",
+          "description": "Johtaa lämpöä hyvin"
+        },
+        {
+          "name": "Silikoni",
+          "description": "Ei tartu, helppo irrotus"
+        }
       ],
       "tips": [
         "Voitele ja korppujauhota huolellisesti",
         "Täytä enintään 2/3 osaan",
         "Tarkista kypsyys tikulla"
       ],
-      "techniques": ["Kakkujen leivonta", "Browniet", "Muffinit"],
-      "care": "Pese varovasti, kuivaa huolellisesti",
-      "tags": ["kakku", "leivonta", "yleiskäyttöinen"]
+      "techniques": [
+        "Kakkujen leivonta",
+        "Browniet",
+        "Muffinit"
+      ],
+      "tags": [
+        "kakku",
+        "leivonta",
+        "yleiskäyttöinen"
+      ]
     }
   }
 }

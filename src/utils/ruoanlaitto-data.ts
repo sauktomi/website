@@ -158,6 +158,14 @@ export interface EnhancedRecipeData {
     amount?: string;
     unit?: string;
     notes?: string;
+  } | {
+    section: string;
+    items: Array<{
+      name: string;
+      amount?: string;
+      unit?: string;
+      notes?: string;
+    }>;
   }>;
   image?: string;
   description?: string | string[];
@@ -402,6 +410,12 @@ export function generateNumberVariations(number: number): string[] {
 export async function enhanceRecipeData(entry: CollectionEntry<'Reseptit'>): Promise<EnhancedRecipeData> {
   const { Content, headings } = await entry.render();
   
+  // Import the merger utilities
+  const { enhanceRecipeEntry } = await import('./recipe-data-merger.js');
+  
+  // Get merged data from unified system
+  const mergedData = await enhanceRecipeEntry(entry);
+  
   // Extract headings data
   const extractedHeadings: ProcessedHeading[] = headings.map(heading => ({
     text: heading.text,
@@ -410,18 +424,19 @@ export async function enhanceRecipeData(entry: CollectionEntry<'Reseptit'>): Pro
   }));
   
   // Process all dynamic data
-  const processedTime = processTimeData(entry.data.time);
+  const processedTime = processTimeData(mergedData.time);
   const formattedTime = formatAllTimeData(processedTime);
-  const difficulty = getDifficultyDisplay(entry.data.vaikeustaso);
-  const author = processAuthorData(entry.data.lähde);
+  const difficulty = getDifficultyDisplay(mergedData.vaikeustaso);
+  const author = processAuthorData(mergedData.lähde);
   const groupedHeadings = organizeHeadings(extractedHeadings);
   const instructionSections = extractInstructionSections(extractedHeadings);
   const hasTocHeadings = groupedHeadings.length > 2;
   const tocId = generateTocId();
   
-  // Calculate recipe number from registry
-  const recipeNumber = getRecipeNumber(entry.slug) ?? undefined;
-  const formattedRecipeNumber = recipeNumber ? formatRecipeNumber(recipeNumber) : undefined;
+  // Use recipeId from frontmatter instead of registry
+  const recipeId = entry.data.recipeId;
+  const recipeNumber = recipeId ? parseInt(recipeId) : undefined;
+  const formattedRecipeNumber = recipeId || undefined;
   
   // Generate canonical URL without category - just use the base slug name
   const baseSlug = entry.slug.includes('/') ? entry.slug.split('/').pop() || entry.slug : entry.slug;
@@ -429,50 +444,50 @@ export async function enhanceRecipeData(entry: CollectionEntry<'Reseptit'>): Pro
   
   // Build metadata props
   const metadataProps = {
-    title: entry.data.title,
-    tags: entry.data.tags,
-    cuisine: entry.data.cuisine,
-    category: entry.data.category,
-    difficulty: entry.data.vaikeustaso,
+    title: mergedData.title,
+    tags: mergedData.tags,
+    cuisine: mergedData.cuisine,
+    category: mergedData.category,
+    difficulty: mergedData.vaikeustaso,
     time: processedTime,
-    servings: entry.data.annokset,
-    source: entry.data.lähde,
-    created: entry.data.luotu,
-    modified: entry.data.muokattu,
-    nutrientProfile: entry.data.nutrient_profile,
-    season: entry.data.season,
-    occasions: entry.data.occasion,
-    techniques: entry.data.techniques,
-    dietary: entry.data.dietary,
-    costLevel: entry.data.cost_level,
-    flavorProfile: entry.data.flavor_profile,
-    equipment: entry.data.equipment,
-    image: (entry.data as any).image,
+    servings: mergedData.annokset,
+    source: mergedData.lähde,
+    created: mergedData.luotu ? new Date(mergedData.luotu) : undefined,
+    modified: mergedData.muokattu ? new Date(mergedData.muokattu) : undefined,
+    nutrientProfile: mergedData.nutrient_profile,
+    season: mergedData.season,
+    occasions: mergedData.occasion,
+    techniques: mergedData.techniques,
+    dietary: mergedData.dietary,
+    costLevel: mergedData.cost_level,
+    flavorProfile: mergedData.flavor_profile,
+    equipment: mergedData.equipment,
+    image: mergedData.image,
     headings: extractedHeadings
   };
   
   return {
     // Basic data
-    title: entry.data.title,
-    tags: entry.data.tags,
-    cuisine: entry.data.cuisine,
-    category: entry.data.category,
-    annokset: entry.data.annokset,
-    säilyvyys: entry.data.säilyvyys,
-    luotu: entry.data.luotu,
-    muokattu: entry.data.muokattu,
-    nutrient_profile: entry.data.nutrient_profile,
-    season: entry.data.season,
-    occasion: entry.data.occasion,
-    techniques: entry.data.techniques,
-    dietary: entry.data.dietary,
-    cost_level: entry.data.cost_level,
-    flavor_profile: entry.data.flavor_profile,
-    equipment: entry.data.equipment,
-    mise_en_place: entry.data.mise_en_place,
-    ingredients: (entry.data as any).ingredients,
-    image: (entry.data as any).image,
-    description: entry.data.description,
+    title: mergedData.title,
+    tags: mergedData.tags,
+    cuisine: mergedData.cuisine,
+    category: mergedData.category,
+    annokset: mergedData.annokset,
+    säilyvyys: mergedData.säilyvyys,
+    luotu: mergedData.luotu ? new Date(mergedData.luotu) : undefined,
+    muokattu: mergedData.muokattu ? new Date(mergedData.muokattu) : undefined,
+    nutrient_profile: mergedData.nutrient_profile,
+    season: mergedData.season,
+    occasion: mergedData.occasion,
+    techniques: mergedData.techniques,
+    dietary: mergedData.dietary,
+    cost_level: mergedData.cost_level,
+    flavor_profile: mergedData.flavor_profile,
+    equipment: mergedData.equipment,
+    mise_en_place: mergedData.mise_en_place,
+    ingredients: mergedData.ingredients,
+    image: mergedData.image,
+    description: mergedData.description,
     
     // Recipe numbering
     recipeNumber,
@@ -604,10 +619,13 @@ export function calculateTopTags(items: Array<{ tags?: string[] }>, maxTags: num
     .map(([tag]) => tag);
 }
 
-export function processRecipeData(allRecipeEntries: CollectionEntry<'Reseptit'>[]) {
+export async function processRecipeData(allRecipeEntries: CollectionEntry<'Reseptit'>[]) {
   const recipesByCategory: Record<string, CollectionEntry<'Reseptit'>[]> = {};
   
-  const displayedRecipes = allRecipeEntries.map(entry => {
+  // Import the merger utilities
+  const { enhanceRecipeEntry } = await import('./recipe-data-merger.js');
+  
+  const displayedRecipes = await Promise.all(allRecipeEntries.map(async entry => {
     const pathParts = entry.id.split('/');
     const categoryName = pathParts.length > 1 
       ? pathParts[0].charAt(0).toUpperCase() + pathParts[0].slice(1)
@@ -618,6 +636,9 @@ export function processRecipeData(allRecipeEntries: CollectionEntry<'Reseptit'>[
     }
     recipesByCategory[categoryName].push(entry);
 
+    // Get merged data
+    const mergedData = await enhanceRecipeEntry(entry);
+
     const getExcerpt = (description: any) => {
       if (Array.isArray(description) && description.length > 0) return description[0];
       if (typeof description === 'string') return description;
@@ -625,33 +646,43 @@ export function processRecipeData(allRecipeEntries: CollectionEntry<'Reseptit'>[
     };
 
     return {
-      title: entry.data.title,
+      title: mergedData.title,
       slug: entry.slug,
-      excerpt: getExcerpt(entry.data.description),
-      image: (entry.data as any).image || '/placeholder-recipe.svg',
+      excerpt: getExcerpt(mergedData.description),
+      image: mergedData.image || '/placeholder-recipe.svg',
       category: categoryName,
       id: entry.id,
-      techniques: entry.data.techniques || [],
-      vaikeustaso: entry.data.vaikeustaso || null,
-      dietaryType: Array.isArray(entry.data.dietary) ? [] : (entry.data.dietary?.type || []),
-      costLevel: entry.data.cost_level || null,
-      tags: entry.data.tags || [],
-      kokonaisaika: entry.data.time?.kokonaisaika || null,
+      techniques: mergedData.techniques || [],
+      vaikeustaso: mergedData.vaikeustaso || null,
+      dietaryType: Array.isArray(mergedData.dietary) ? [] : (mergedData.dietary?.type || []),
+      costLevel: mergedData.cost_level || null,
+      tags: mergedData.tags || [],
+      kokonaisaika: mergedData.time?.kokonaisaika || null,
     };
-  }).sort((a, b) => b.id.localeCompare(a.id)); // Sort by newest first
+  }));
+
+  // Sort by newest first
+  displayedRecipes.sort((a, b) => b.id.localeCompare(a.id));
 
   return { displayedRecipes, recipesByCategory };
 }
 
-export function getUniqueFilterValues(allRecipeEntries: CollectionEntry<'Reseptit'>[], field: string): string[] {
-  return [...new Set(allRecipeEntries.flatMap(entry => {
-    if (field === 'techniques') return entry.data.techniques || [];
+export async function getUniqueFilterValues(allRecipeEntries: CollectionEntry<'Reseptit'>[], field: string): Promise<string[]> {
+  // Import the merger utilities
+  const { enhanceRecipeEntry } = await import('./recipe-data-merger.js');
+  
+  const allValues = await Promise.all(allRecipeEntries.map(async entry => {
+    const mergedData = await enhanceRecipeEntry(entry);
+    
+    if (field === 'techniques') return mergedData.techniques || [];
     if (field === 'dietaryTypes') {
-      const dietary = entry.data.dietary;
+      const dietary = mergedData.dietary;
       return Array.isArray(dietary) ? [] : dietary?.type || [];
     }
-    if (field === 'tags') return entry.data.tags || [];
-    const value = entry.data[field as keyof typeof entry.data];
+    if (field === 'tags') return mergedData.tags || [];
+    const value = mergedData[field as keyof typeof mergedData];
     return value && typeof value === 'string' ? [value] : [];
-  }).filter(Boolean))];
+  }));
+  
+  return [...new Set(allValues.flat().filter(Boolean))];
 }

@@ -1,0 +1,327 @@
+/**
+ * Popover Styles
+ * 
+ * This file contains CSS styles for popover components used across the website.
+ * It provides consistent styling for ingredient popovers and other modal-like
+ * overlay components using Tailwind utilities.
+ * 
+ * Key Features:
+ * - Responsive popover sizing and positioning
+ * - Backdrop styling and animations
+ * - Accessible focus management
+ * - Consistent header and content styling
+ * 
+ * Usage:
+ * - Applied to popover components throughout the site
+ * - Provides consistent popover presentation
+ * - Supports responsive layouts using Tailwind
+ * 
+ * Dependencies:
+ * - Tailwind CSS v4
+ * - Custom theme variables
+ * 
+ * @author Tomi
+ * @version 1.0.0
+ */
+
+/* =============================================================================
+   POPOVER STYLES - TAILWIND-BASED COMPONENTS
+   ============================================================================= */
+
+/* ===== POPOVER CONTAINER ===== */
+/* Popover container with responsive sizing */
+.ingredient-popover {
+  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[70svh] md:w-[70dvw] w-[95dvw] border border-secondary overflow-hidden;
+}
+
+/* Apply flex layout only when popover is open */
+.ingredient-popover:popover-open {
+  @apply duration-200;
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-popover::backdrop {
+  @apply bg-black/50;
+}
+
+.popover-content {
+  @apply overflow-y-auto;
+}
+
+.popover-text-content {
+  @apply space-y-6;
+}
+
+/* ===== POPOVER HEADER ===== */
+/* Popover header with responsive padding */
+.popover-header {
+  @apply flex items-center justify-between border-b border-secondary bg-secondary-light p-3 md:p-4 lg:p-6;
+}
+
+.popover-title {
+  @apply font-semibold text-primary-dark m-0 text-base md:text-lg lg:text-xl;
+}
+
+.popover-close-btn {
+  @apply rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 p-2 md:p-3;
+  outline-color: var(--color-primary-accent);
+}
+
+.popover-close-icon {
+  @apply text-secondary-accent w-4 h-4 md:w-5 md:h-5;
+}
+
+/* ===== POPOVER CONTENT ===== */
+/* Popover content with responsive spacing */
+.popover-content {
+  @apply p-3 md:p-4 lg:p-6 space-y-4 md:space-y-6;
+}
+
+/* ===== POPOVER DESCRIPTION ===== */
+/* Description styling with proper spacing and border */
+.popover-description {
+  @apply text-base text-primary-dark leading-relaxed;
+}
+
+/* ===== POPOVER SKELETON ENHANCEMENTS ===== */
+/* Popover image skeleton with proper sizing */
+.popover-image-skeleton {
+  @apply w-full h-full bg-secondary-light animate-pulse;
+}
+
+.skeleton-placeholder {
+  @apply w-full h-full bg-secondary-light;
+}
+
+/* Popover description skeleton with proper spacing */
+.popover-description-skeleton {
+  @apply space-y-2;
+}
+
+.skeleton-line {
+  @apply h-4 bg-secondary-light animate-pulse rounded;
+}
+
+.skeleton-line-short {
+  @apply w-3/4;
+}
+
+.skeleton-line-medium {
+  @apply w-1/2;
+} 
+
+/* ===== POPOVER CONTENT SECTIONS ===== */
+/* Popover section styling */
+
+.popover-section h4 {
+  @apply text-base font-semibold text-primary-dark mb-2 mt-0;
+}
+
+.popover-section p {
+  @apply m-0 text-primary-dark leading-relaxed;
+}
+
+.popover-section ul {
+  @apply list-inside;
+}
+
+/* ===== POPOVER SECTION DIVIDER ===== */
+/* Visual separator between main and additional sections */
+.popover-section-divider {
+  @apply border-t border-secondary my-6;
+  border-color: var(--color-secondary);
+}
+
+/* ===== FLAVOR PROFILE LIST ===== */
+/* Flavor profile with numbers only */
+.flavor-list {
+  @apply list-none m-0 p-0 w-fit space-y-1;
+}
+
+.flavor-item {
+  @apply flex justify-between gap-3 items-center text-sm;
+}
+
+.flavor-label {
+  @apply font-medium text-primary-dark;
+}
+
+.flavor-value {
+  @apply font-medium text-primary-dark;
+}
+
+/* ===== SIDE-BY-SIDE LAYOUTS ===== */
+/* Side-by-side sections with flexbox */
+.popover-section-side-by-side {
+  @apply flex flex-col md:flex-row gap-4 md:gap-6;
+}
+
+.popover-section-side-by-side > .popover-section {
+  @apply flex-1 min-w-0;
+}
+
+/* ===== ALTERNATIVES LIST ===== */
+/* Alternatives in list layout */
+.alternatives-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.alternative-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== VARIANTS LIST ===== */
+/* Variants in list layout */
+.variants-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.variant-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== DIETARY LIST ===== */
+/* Dietary information in list layout */
+.dietary-list {
+  @apply p-0 m-0 space-y-1;
+}
+
+.dietary-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== SEASON LIST ===== */
+/* Season information in list layout */
+.season-list {
+  @apply list-none p-0 m-0 space-y-2;
+}
+
+.season-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== TIPS LIST ===== */
+/* Tips in list layout */
+.tips-list {
+  @apply m-0 p-0 space-y-1;
+}
+
+.tip-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== TECHNIQUE & EQUIPMENT LISTS ===== */
+/* Techniques list */
+.techniques-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.technique-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Equipment list */
+.equipment-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.equipment-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Components list */
+.components-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.component-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Benefits list */
+.benefits-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.benefit-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Phases list */
+.phases-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.phase-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Fats list */
+.fats-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.fat-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Liquids list */
+.liquids-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.liquid-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* Properties list */
+.properties-list {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+.property-item {
+  @apply text-sm text-primary-dark;
+}
+
+/* ===== POPOVER CONTENT ENHANCEMENTS ===== */
+/* Popover content area - scrollable */
+.popover-content {
+  @apply flex-1 overflow-y-auto overflow-x-hidden;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 640px) {
+  .ingredient-popover {
+    max-width: calc(100vw - 2rem);
+    margin-left: 1rem;
+    margin-right: 1rem;
+    max-height: 90vh;
+  }
+}
+
+/* Accessibility and reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .ingredient-popover-trigger,
+  .popover-close-btn {
+    transition: none;
+  }
+}
+
+/* Custom scrollbar styling for popover content */
+.popover-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.popover-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.popover-content::-webkit-scrollbar-thumb {
+  background: var(--color-secondary-accent);
+  border-radius: 3px;
+}
+
+.popover-content::-webkit-scrollbar-thumb:hover {
+  background: var(--color-secondary);
+}

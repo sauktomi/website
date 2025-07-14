@@ -10,7 +10,6 @@
 
 // Simple initialization function
 export default function initBaseLayout() {
-  console.log('Base layout: Starting initialization...');
   
   const initModules = async () => {
     // Core modules - always load

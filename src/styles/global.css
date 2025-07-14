@@ -48,5 +48,6 @@
 @import './base/base-styles.css';
 @import './components.css';
 @import './utilities.css';
+@import './popover.css';
 
 @plugin "@tailwindcss/typography"; 

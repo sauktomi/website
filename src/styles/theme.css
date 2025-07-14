@@ -23,11 +23,11 @@
 
 @theme {
   /* ===== FONT FAMILIES ===== */
-  --font-sans: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-sans: "Inter Variable", "Inter", system-ui, sans, sans-serif;
   --font-serif: "Playfair Display Variable", "Playfair Display", Georgia, serif;
   --font-mono: ui-monospace, SFMono-Regular, Monaco, Consolas, monospace;
-  --font-display: "Inter Variable", "Inter", system-ui, sans-serif;
-  --font-body: "Inter Variable", "Inter", system-ui, sans-serif;
+  --font-display: "Inter Variable", "Inter", system-ui, sans, sans-serif;
+  --font-body: "Inter Variable", "Inter", system-ui, sans, sans-serif;
 
   /* ===== RESPONSIVE TYPOGRAPHY ===== */
   --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.8rem);

@@ -739,6 +739,67 @@ class RecipeInteractionManager {
     if (typeof window.RecipeSharing !== 'undefined') window.RecipeSharing?.init();
     if (typeof window.RecipeNavigation !== 'undefined') window.RecipeNavigation?.init();
     // Timer system is now auto-initialized, no need to call init
+    
+    // Initialize metadata toggle functionality
+    this.initializeMetadataToggle();
+    
+    // Initialize read more functionality
+    this.initializeReadMore();
+  }
+
+  private initializeMetadataToggle(): void {
+    // Find all toggle buttons
+    document.querySelectorAll('[data-section-id]').forEach(btn => {
+      if (btn.tagName !== 'BUTTON') return;
+      
+      const sectionId = btn.getAttribute('data-section-id');
+      const secondarySection = document.querySelector(`[id="secondary-metadata-${sectionId}"]`);
+      
+      if (!secondarySection) return;
+      
+      // Remove existing listeners to prevent duplicates
+      btn.removeEventListener('click', this.handleMetadataToggle);
+      
+      // Add click listener
+      btn.addEventListener('click', this.handleMetadataToggle);
+    });
+  }
+
+  private handleMetadataToggle = (event: Event): void => {
+    const btn = event.currentTarget as HTMLButtonElement;
+    const sectionId = btn.getAttribute('data-section-id');
+    const secondarySection = document.querySelector(`[id="secondary-metadata-${sectionId}"]`) as HTMLElement;
+    const buttonText = btn.querySelector('span') as HTMLElement;
+    
+    if (!secondarySection || !buttonText) return;
+    
+    const isHidden = secondarySection.classList.contains('hidden');
+    
+    if (isHidden) {
+      secondarySection.classList.remove('hidden');
+      secondarySection.classList.add('block');
+      buttonText.textContent = 'Piilota';
+      btn.setAttribute('aria-label', 'Piilota lisätiedot');
+    } else {
+      secondarySection.classList.add('hidden');
+      secondarySection.classList.remove('block');
+      buttonText.textContent = 'Lisätiedot';
+      btn.setAttribute('aria-label', 'Näytä lisätiedot');
+    }
+  };
+
+  private initializeReadMore(): void {
+    const readMoreBtn = document.querySelector('.read-more-btn') as HTMLButtonElement;
+    if (!readMoreBtn) return;
+    
+    const descriptionExtra = document.querySelector('.description-extra') as HTMLElement;
+    if (!descriptionExtra) return;
+    
+    readMoreBtn.addEventListener('click', () => {
+      descriptionExtra.classList.remove('hidden');
+      descriptionExtra.classList.add('block');
+      readMoreBtn.classList.add('hidden');
+    });
   }
 
   cleanup(): void {

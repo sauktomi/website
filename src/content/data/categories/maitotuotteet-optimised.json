@@ -1,0 +1,340 @@
+{
+  "category": {
+    "id": "maitotuotteet",
+    "name": "Maitotuotteet",
+    "subtitle": "Kattava opas maitotuotteista ja maitopohjaisista aineksista",
+    "description": "Maitotuotteet ovat monipuolinen ainesosaryhmä, joka tuo ruokiin ja leivonnaisiin makua, kosteutta ja rakennetta.",
+    "imageUrl": "/images/ingredients/maitotuotteet.jpg",
+    "tags": [
+      "proteiini",
+      "kalsium",
+      "kermainen"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "maito",
+      "name": "Maito",
+      "category": "maitotuotteet",
+      "description": "Perusmaitotuote lehmistä, joka tuo kosteutta ja proteiinia leivonnassa sekä kastikkeisiin. Saatavilla eri rasvapitoisuuksina. Rasvapitoisuus: rasvaton 0%, kevyt 1,5%, täys 3,5%. Käytetään juomana, leivonnassa, kastikkeissa ja keitoissa. Säilyy avattuna 3-5 pv jääkaapissa. Kestää keittämistä, mutta palaa helposti pohjaan.",
+      "production": "Tuotetaan lypsämällä lehmiä, pastöroidaan kuumentamalla taudinaiheuttajien tuhoamiseksi ja homogenoidaan tasaisen koostumuksen saavuttamiseksi. Suomalainen maito on korkeatasoista ja turvallista kylmäketjun ansiosta. Rasvapitoisuus säädetään sentrifugoimalla ja poistamalla rasvaa tarpeen mukaan. Luomumaito tuotetaan lehmistä, jotka saavat luonnonmukaista rehua ja niitä ei käsitellä antibiooteilla ennaltaehkäisevästi.",
+      "variants": [
+        {
+          "name": "Täysmaito",
+          "description": "Noin 3,5% rasvaa, täyteläisin maku"
+        },
+        {
+          "name": "Kevytmaito",
+          "description": "Noin 1,5% rasvaa, kevyempi vaihtoehto"
+        },
+        {
+          "name": "Rasvaton maito",
+          "description": "Alle 0,5% rasvaa, vähärasvaisin vaihtoehto"
+        }
+      ],
+      "tips": [
+        "Huoneenlämpöinen maito sekoittuu paremmin muihin aineisiin leivonnassa",
+        "Sekoita jatkuvasti kuumennettaessa pohjaanpalamisen estämiseksi",
+        "Lisää happamat ainekset hitaasti ja sekoita välttääksesi juoksettumisen"
+      ],
+      "sourcing": "Valitse luomumaito, jos mahdollista, sillä se sisältää vähemmän antibioottijäämiä ja muita kemikaaleja. Paikallisten pientuottajien pastöroimaton raakamaito (huom: vain keittämisen jälkeen) tarjoaa intensiivisimmän maun. Suosi kotimaista maitoa lyhyemmän kuljetusmatkan ja tuoreuden takia. Tarkista aina viimeinen käyttöpäivä ja varmista, että maito on säilytetty kylmäketjussa.",
+      "käyttö": "Leivonta: käytä huoneenlämpöisenä paremman sekoittumisen saavuttamiseksi. Kastike: sekoita jatkuvasti kuumennettaessa pohjaanpalamisen estämiseksi. Juoma: juo tuoreena tai lisää kahviin.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Kaurajuoma",
+          "id": "kaurajuoma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "laktoositon"
+          ],
+          "notes": "Neutraali maku, toimii hyvin leivonnassa"
+        },
+        {
+          "name": "Mantelijuoma",
+          "id": "mantelijuoma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "laktoositon",
+            "soijaton"
+          ],
+          "notes": "Hieman pähkinäinen maku, kevyt"
+        },
+        {
+          "name": "Kookosmaito",
+          "id": "kookosmaito",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Täyteläinen, tuo kookosmaisen maun"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää laktoosia",
+        "sisältää maitoa"
+      ],
+      "tags": [
+        "perusruoka-aine",
+        "proteiini",
+        "kalsium",
+        "luomu",
+        "leivonta"
+      ],
+      "flavorProfile": {
+        "sweetness": 4,
+        "saltiness": 1,
+        "sourness": 1,
+        "bitterness": 0,
+        "umami": 2
+      }
+    },
+    {
+      "id": "kerma",
+      "name": "Kerma",
+      "category": "maitotuotteet",
+      "description": "Maidon rasvainen osa, joka tuo täyteläisyyttä kastikkeisiin ja voidaan vaahdottaa jälkiruokiin. Eri lajikkeet eri käyttötarkoituksiin. Rasvapitoisuus: ruoka 15%, kuohu 35-38%, vispi 25-30%. Käytetään kastikkeissa, keitoissa, jälkiruoissa ja vaahdotuksessa. Säilyy avattuna 5-7 pv jääkaapissa. Kestää keittämistä, korkerasvaisin kestää parhaiten.",
+      "production": "Valmistetaan erottamalla maidon rasvaisin osa sentrifugoimalla tai antamalla rasvan nousta luonnollisesti pintaan. Moderni prosessi käyttää sentrifugikoneita, jotka pyörittävät maitoa suurella nopeudella ja erottavat rasvan tiheyden perusteella. Rasvapitoisuus säädetään lisäämällä takaisin haluttu määrä rasvatonta maitoa. Tuotantoprosessi säilyttää kerman luonnollisen rakenteen ja maun, mikä tekee siitä täydellisen ruoanlaittoon ja vaahdottamiseen.",
+      "variants": [
+        {
+          "name": "Kuohukerma",
+          "description": "35-38% rasvaa, voidaan vaahdottaa tukevaksi vaahdoksi"
+        },
+        {
+          "name": "Vispikerma",
+          "description": "25-30% rasvaa, voidaan vaahdottaa mutta kevyempi rakenne"
+        },
+        {
+          "name": "Ruokakerma",
+          "description": "10-15% rasvaa, ei vaahdota, tarkoitettu ruoanlaittoon"
+        }
+      ],
+      "tips": [
+        "Käytä jääkylmää kermaa ja jäähdytettyä kulhoa vaahdottamiseen",
+        "Aloita vaahdotus matalalla nopeudella ja lisää vauhtia vähitellen",
+        "Lisää sokeri vasta kun vaahto alkaa muodostua"
+      ],
+      "sourcing": "Valitse luomukermaa, jos mahdollista, minkä voi tunnistaa puhtaammasta mausta ja korkeammasta laadusta. Suosi kotimaista kermaa tuoreuden takaamiseksi. Pastöroidun kerman sijaan UHT-käsitelty kerma kestää pidempään, mutta maistuu hieman keitetyltä. Vaahdottamiseen valitse aina korkean rasvapitoisuuden (vähintään 35%) kerma. Tarkista aina päiväys ja että pakkaus on ehjä, eikä kerma ole hapantunut.",
+      "käyttö": "Vaahdotus: käytä jääkylmää kermaa ja jäähdytettyä kulhoa. Aloita matalalla nopeudella ja lisää vauhtia vähitellen. Kastike: lisää kuumennettaessa täyteläisyyttä. Jälkiruoat: vaahdota sokerin kanssa.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Kookoskerma",
+          "id": "kookoskerma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "laktoositon"
+          ],
+          "notes": "Voidaan vaahdottaa jääkaappikylmänä, tuo kookosmaisen maun"
+        },
+        {
+          "name": "Cashewkerma",
+          "id": "cashewkerma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "laktoositon"
+          ],
+          "notes": "Kotitekoinen, täyteläinen, neutraalimpi maku kuin kookoskerma"
+        },
+        {
+          "name": "Kaurakerma",
+          "id": "kaurakerma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "laktoositon",
+            "pähkinätön"
+          ],
+          "notes": "Ei vaahdota hyvin, mutta toimii ruoanlaitossa"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää laktoosia",
+        "sisältää maitoa"
+      ],
+      "tags": [
+        "jälkiruoat",
+        "kastikkeet",
+        "vaahdotus",
+        "täyteläisyys",
+        "leivonta"
+      ],
+      "flavorProfile": {
+        "sweetness": 5,
+        "saltiness": 1,
+        "sourness": 1,
+        "bitterness": 0,
+        "umami": 4
+      }
+    },
+    {
+      "id": "kaurajuoma",
+      "name": "Kaurajuoma",
+      "category": "maitotuotteet",
+      "description": "Kaurasta valmistettu maidon korvike, jolla on miellyttävä viljainen maku. Sopii vegaaneille ja maitoallergikoille. Rasvapitoisuus noin 2-3%, vaihtelee tuotteittain. Käytetään juomana, leivonnassa, kahvissa ja puuroissa. Säilyy avattuna 5-7 pv jääkaapissa. Kestää keittämistä, ei juoksetu happojen vaikutuksesta.",
+      "production": "Valmistetaan liottamalla, murskaamalla ja suodattamalla kauraa, jonka jälkeen juomaan voidaan lisätä öljyä (yleensä rypsi- tai auringonkukkaöljyä) rasvaisuuden lisäämiseksi, sekä stabilointiaineita, suolaa ja vitamiineja. Prosessi alkaa kauran käsittelyllä entsyymeillä, jotka muuttavat tärkkelyksen sokeriksi luonnollisen makeuden aikaansaamiseksi. Moderni tuotanto käyttää myös fermentaatiota parantamaan makua ja ravintosisältöä. Lopuksi juoma homogenoidaan tasaisen koostumuksen saavuttamiseksi.",
+      "variants": [
+        {
+          "name": "Maustamaton kaurajuoma",
+          "description": "Perusversio ilman lisättyjä makuja"
+        },
+        {
+          "name": "Barista-kaurajuoma",
+          "description": "Sisältää enemmän rasvaa, sopii erityisesti kahvijuomiin"
+        },
+        {
+          "name": "Luomu-kaurajuoma",
+          "description": "Valmistettu luomukaurasta, ei sisällä torjunta-ainejämiä"
+        }
+      ],
+      "tips": [
+        "Käytä barista-versiota kahvijuomiin, se vaahtoutuu paremmin ja ei erotu kuumassa kahvissa",
+        "Kaurajuoma toimii hyvin leivonnassa maidon korvaajana, mutta voi vaatia pientä sokerin lisäämistä",
+        "Kaurajuoma ei juoksetu happamien ainesten vaikutuksesta, mikä tekee siitä hyvän valinnan hapanmaitotuotteita korvaavissa resepteissä"
+      ],
+      "sourcing": "Valitse luomu-kaurajuoma, mikäli mahdollista. Tarkista ainesosaluettelo - laadukas kaurajuoma sisältää pääasiassa kauraa ja vettä, sekä mahdollisesti pienen määrän kalsiumia, vitamiineja ja stabilointiaineita. Vältä tuotteita, joissa on paljon lisättyä sokeria tai öljyjä. Barista-versiot soveltuvat parhaiten kahvijuomiin. Ravistettava hyvin ennen käyttöä parhaiden tulosten saavuttamiseksi.",
+      "käyttö": "Kahvi: käytä barista-versiota paremman vaahtoutumisen saavuttamiseksi. Leivonta: toimii hyvin maidon korvaajana, voi vaatia pientä sokerin lisäämistä. Juoma: ravista hyvin ennen käyttöä. Ei juoksetu happojen vaikutuksesta.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Mantelijuoma",
+          "id": "mantelijuoma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Kevyempi, hieman pähkinäinen maku"
+        },
+        {
+          "name": "Soijajuoma",
+          "id": "soijajuoma",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Korkeampi proteiinipitoisuus, sopii paremmin ruoanlaittoon"
+        },
+        {
+          "name": "Maito",
+          "id": "maito",
+          "forDiet": [
+            "tavallinen"
+          ],
+          "notes": "Alkuperäinen tuote, ei vegaaninen tai maidoton"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "maidoton",
+        "laktoositon"
+      ],
+      "tags": [
+        "kasvimaito",
+        "vegaaninen",
+        "kotimainen",
+        "ekologinen",
+        "pohjoismaat"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 1
+      }
+    },
+    {
+      "id": "kananmuna",
+      "name": "Kananmuna",
+      "category": "maitotuotteet",
+      "description": "Monikäyttöinen leivonnan perusraaka-aine, joka toimii sitojana, emulgaattorina ja kohottajana. Antaa makua ja tekstuuria. Proteiinipitoisuus 6-7g per muna, rasvapitoisuus 5-6g per muna. Käytetään leivonnassa, emulgoinnissa, sitomisessa, kohotuksessa ja kastikkeissa. Säilyy jääkaapissa 3-4 viikkoa.",
+      "production": "Kananmunat tuotetaan munivien kanojen munintana. Suomessa suurin osa munista tuotetaan häkkikanaloissa, virikehäkeissä, lattiakanaloissa tai luomutiloilla. Moderni kananmunien tuotanto perustuu tarkkaan ruokintaan, valaistuksen säätelyyn ja optimaalisiin olosuhteisiin, jotta kanat munivat säännöllisesti. Munat kerätään päivittäin, pestään, lajitellaan koon mukaan ja pakataan. Suomalaiset kananmunat ovat korkeatasoisia tiukkojen elintarviketurvallisuusstandardien ansiosta. Luomutuotannossa kanat pääsevät ulkoilemaan ja saavat luonnonmukaista rehua ilman antibiootteja tai keinotekoisia lisäaineita.",
+      "variants": [
+        {
+          "name": "Keltuainen",
+          "description": "Sisältää rasvaa, proteiinia ja vesiliukoisia vitamiineja (n. 30% munan painosta)"
+        },
+        {
+          "name": "Valkuainen",
+          "description": "Pääasiassa vettä ja proteiinia (n. 60% munan painosta), vaahdotettavissa"
+        },
+        {
+          "name": "Luomu-kananmuna",
+          "description": "Luonnonmukaisesti kasvatettujen kanojen munia"
+        }
+      ],
+      "tips": [
+        "Huoneenlämpöiset munat vaahtoutuvat paremmin kuin kylmät",
+        "Valkuaisvaahdon voi stabiloida lisäämällä ripauksen suolaa tai tilkan sitruunamehua",
+        "Mitä tuoreempi muna, sitä paremmin se pysyy koossa keitettäessä"
+      ],
+      "sourcing": "Valitse mahdollisimman tuoreita munia, joiden kuori on ehjä ja puhdas. Luomumunat ja vapaan kanan munat ovat eettisempiä vaihtoehtoja. Tarkista aina parasta ennen -päiväys ja alkuperämaa. Tuoreet munat eivät kelluta vesilasissa.",
+      "käyttö": "Leivonta: käytä huoneenlämpöisenä paremman vaahtoutumisen saavuttamiseksi. Vaahdotus: lisää ripaus suolaa tai tilkan sitruunamehua stabiloinnin. Keitto: tuoreet munat pysyvät paremmin koossa.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Chia-siemenet + vesi",
+          "id": "chia-siemenet",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "1 rkl jauhettuja siemeniä + 3 rkl vettä vastaa yhtä munaa sitomiseen"
+        },
+        {
+          "name": "Omenasose",
+          "id": "omenasose",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Noin 60g (1/4 kuppia) omenasosetta vastaa yhtä munaa kosteuden tuojana"
+        },
+        {
+          "name": "Aquafaba",
+          "id": "aquafaba",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "3 rkl kikherneiden keitinlientä vastaa yhtä munaa, erityisesti vaahdotuksessa"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää kananmunaa",
+        "proteiinipitoinen",
+        "luontainen B12-vitamiinin lähde"
+      ],
+      "tags": [
+        "proteiini",
+        "leivonta",
+        "aamiainen",
+        "emulgaattori",
+        "kohotusaine"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 1,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 4
+      }
+    }
+  ]
+} 

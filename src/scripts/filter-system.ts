@@ -24,18 +24,12 @@
  * @version 2.1.0
  */
 
-/**
- * @typedef FilterOption
- */
 export interface FilterOption {
     id: string;
     label: string;
     value: string;
   }
   
-  /**
-   * @typedef FilterSection
-   */
   export interface FilterSection {
     id: string;
     title: string;
@@ -44,18 +38,12 @@ export interface FilterOption {
     options: FilterOption[];
   }
   
-  /**
-   * @typedef FilterConfig
-   */
   export interface FilterConfig {
     itemSelector: string;
     sectionSelector: string;
     noResultsId: string;
   }
   
-  /**
-   * @typedef FilterSystemOptions
-   */
   export interface FilterSystemOptions {
     config: FilterConfig;
     searchPlaceholder?: string;

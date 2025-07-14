@@ -21,7 +21,6 @@
 import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 import { remarkWikiLinks } from './src/remark-wiki-link.mjs';
-import { remarkRecipeLinks } from './src/remark-recipe-links.mjs';
 import { remarkTimerLinks } from './src/remark-timer-links.mjs';
 import { remarkFigureCaption } from './src/scripts/remarkFigureCaption.mjs';
 
@@ -60,7 +59,6 @@ export default defineConfig({
         png: { compressionLevel: 6 }
       }
     },
-    domains: ["fonts.googleapis.com", "fonts.gstatic.com"],
     remotePatterns: []
   },
   vite: {
@@ -113,7 +111,7 @@ export default defineConfig({
     }
   },
   markdown: {
-    remarkPlugins: [remarkWikiLinks, remarkRecipeLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeSections],
+    remarkPlugins: [remarkWikiLinks, remarkTimerLinks, remarkFigureCaption, remarkGfm, remarkRecipeSections],
     rehypePlugins: [rehypeAutolinkHeadings],
     shikiConfig: {
       theme: 'github-light',
@@ -129,7 +127,13 @@ export default defineConfig({
 });
 
 function cssOptimizer() {
+  /**
+   * @param {string} distPath
+   */
   async function optimize(distPath) {
+    /**
+     * @param {string} folder
+     */
     async function walk(folder) {
       for (const name of readdirSync(folder)) {
         const p = join(folder, name);

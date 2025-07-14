@@ -83,99 +83,6 @@
   }
 }
 
-/* ===== POPOVER STYLES ===== */
-/* Popover container with responsive sizing */
-.ingredient-popover {
-  @apply bg-primary-light border border-secondary rounded-xl shadow-prominent max-h-[80vh] overflow-hidden backdrop-blur-sm;
-  max-height: 80dvh;
-  overflow: hidden;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  margin: 0;
-  
-  /* Base size for smallest screens */
-  width: calc(100vw - 2rem);
-  max-width: 20rem;
-}
-
-/* Apply flex layout only when popover is open */
-.ingredient-popover:popover-open {
-  @apply duration-200;
-  display: flex;
-  flex-direction: column;
-}
-
-.ingredient-popover::backdrop {
-  @apply bg-black/50;
-}
-
-/* Responsive popover sizing using Tailwind breakpoints */
-@media (min-width: 640px) {
-  .ingredient-popover {
-    width: 28rem;
-    max-width: 28rem;
-    max-height: 90dvh;
-  }
-}
-
-@media (min-width: 1024px) {
-  .ingredient-popover {
-    width: 32rem;
-    max-width: 32rem;
-    max-height: 75dvh;
-  }
-}
-
-@media (min-width: 1280px) {
-  .ingredient-popover {
-    width: 36rem;
-    max-width: 36rem;
-    max-height: 70dvh;
-  }
-}
-
-@media (min-width: 1536px) {
-  .ingredient-popover {
-    width: 42rem;
-    max-width: 42rem;
-    max-height: 65dvh;
-  }
-}
-
-/* Mobile responsive adjustments */
-@media (max-width: 640px) {
-  .ingredient-popover {
-    max-width: calc(100vw - 2rem);
-    width: calc(100vw - 2rem);
-    max-height: 90dvh;
-  }
-}
-
-/* Popover header with responsive padding */
-.popover-header {
-  @apply flex items-center justify-between border-b border-secondary bg-secondary-light p-3 md:p-4 lg:p-6;
-}
-
-.popover-title {
-  @apply font-semibold text-primary-dark m-0 text-base md:text-lg lg:text-xl;
-}
-
-.popover-close-btn {
-  @apply rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2 p-2 md:p-3;
-  outline-color: var(--color-primary-accent);
-}
-
-.popover-close-icon {
-  @apply text-secondary-accent w-4 h-4 md:w-5 md:h-5;
-}
-
-/* Popover content with responsive spacing */
-.popover-content {
-  @apply p-3 md:p-4 lg:p-6 space-y-4 md:space-y-6;
-}
-
 /* ===== NO RESULTS STATE ===== */
 .no-results {
   @apply hidden;
@@ -248,33 +155,6 @@
   @apply text-base md:text-lg;
 }
 
-/* ===== POPOVER SKELETON ENHANCEMENTS ===== */
-/* Popover image skeleton with proper sizing */
-.popover-image-skeleton {
-  @apply w-full h-full bg-secondary-light animate-pulse;
-}
-
-.skeleton-placeholder {
-  @apply w-full h-full bg-secondary-light;
-}
-
-/* Popover description skeleton with proper spacing */
-.popover-description-skeleton {
-  @apply space-y-2;
-}
-
-.skeleton-line {
-  @apply h-4 bg-secondary-light animate-pulse rounded;
-}
-
-.skeleton-line-short {
-  @apply w-3/4;
-}
-
-.skeleton-line-medium {
-  @apply w-1/2;
-}
-
 /* ===== RECIPE-SPECIFIC STYLING ===== */
 
 
@@ -305,12 +185,16 @@
   @apply mb-8 md:mb-10 lg:mb-12;
 }
 
+.recipe-header h1 {
+  @apply mb-4;
+}
+
 .header-container {
   @apply text-secondary-accent hover:text-primary-dark mb-6 md:mb-8;
 }
 
 .header-meta {
-  @apply flex items-center gap-4 md:gap-6 lg:gap-8;
+  @apply flex font-mono items-center gap-4 md:gap-6 lg:gap-8;
 }
 
 .item-number {
@@ -341,7 +225,7 @@
 }
 
 .meta-text {
-  @apply text-base md:text-lg lg:text-xl text-primary-dark;
+  @apply text-base md:text-lg lg:text-xl text-primary-accent;
 }
 
 /* Recipe description */
@@ -395,7 +279,7 @@
 
 /* Contact section */
 .contact-section {
-  @apply py-12 md:py-16 lg:py-20 text-center;
+  @apply xl:pb-48 pb-32 xl:pt-64 pt-32 text-center;
 }
 
 .contact-content {

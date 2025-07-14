@@ -34,6 +34,7 @@
 // src/pages/reseptit/[...slug].astro
 import { getCollection } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
+import RecipeMetadata from '../../components/RecipeMetadata.astro';
 import { enhanceRecipeData, createRecipeNumberRegistry, setRecipeNumberRegistry, type EnhancedRecipeData } from '../../utils/ruoanlaitto-data.ts';
 import { getItemTypeAndCategory } from '../../remark-recipe-links.mjs';
 
@@ -88,17 +89,30 @@ const {
   difficulty,
   groupedHeadings,
   instructionSections,
-  Content
+  Content,
+  // Additional metadata fields
+  cuisine,
+  category,
+  cost_level,
+  season,
+  occasion,
+  techniques,
+  equipment,
+  flavor_profile,
+  luotu,
+  muokattu,
+  metadataProps
 } = enhancedData;
 
+// Access additional fields through metadataProps
+const subtitle = metadataProps?.subtitle;
+const status = metadataProps?.status;
 
 
 ---
 
 <Layout 
-	title={title} 
-	tocHeadings={groupedHeadings} 
-	needsWikiLinks={true}
+	title={title}
 >
   <!-- Add canonical URL for SEO -->
   <link slot="head" rel="canonical" href={enhancedData.canonicalUrl} />
@@ -160,8 +174,10 @@ const {
                   : dietary.type?.length > 0
               ) && (
                 <div class="dietary-tags">
-                  {(Array.isArray(dietary) ? dietary : dietary.type || []).map((diet: string) => (
-                    <span class="dietary-tag comma-separated">{diet}</span>
+                  {(Array.isArray(dietary) ? dietary : dietary.type || []).map((diet: string, index: number, array: string[]) => (
+                    <>
+                      <a href={`/reseptit/?search=${encodeURIComponent(diet.toLowerCase())}`} class="dietary-tag">{diet}</a>{index < array.length - 1 && ','}
+                    </>
                   ))}
                 </div>
               )}
@@ -177,11 +193,32 @@ const {
           {title}
         </h1>
         
+        {/* Subtitle display */}
+        {subtitle && (
+          <p class="recipe-subtitle text-lg text-secondary-accent font-medium">
+            {subtitle}
+          </p>
+        )}
+        
+        {/* Status information for draft/development recipes */}
+        {status && status !== 'published' && (
+          <div class="recipe-status">
+            <span class="status-badge status-{status.toLowerCase()}">
+              {status === 'draft' && 'Luonnos'}
+              {status === 'template-update' && 'Päivitys'}
+              {status === 'final' && 'Lopullinen'}
+            </span>
+          </div>
+        )}
+        
         <!-- Essential info with better spacing -->
         <div class="recipe-essentials">
           <div class="recipe-meta-info">
             {processedTime && (
               <div class="recipe-meta-item">
+                <svg class="size-5 inline md:mx-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
                 <span class="meta-text">
                   {formattedTime?.totalTime}
                 </span>
@@ -203,17 +240,94 @@ const {
 
         <!-- Recipe description -->
         {description && (
-          <div class="recipe-description">
-            <p class="recipe-lead">
-              {Array.isArray(description) 
-              ? description[0] 
-              : description
-              }
-            </p>
+          <div class="recipe-description-container">
+            <div class="description-content">
+                            {Array.isArray(description) ? (
+                <>
+                  <p class="recipe-lead">
+                    {description[0]}
+                    {Array.isArray(description) && description.length > 1 && (
+                      <button 
+                        class="read-more-btn"
+                        aria-label="Näytä lisää kuvausta"
+                      >
+                        <span class="toggle-text">+</span>
+                      </button>
+                    )}
+                  </p>
+                  {description.length > 1 && (
+                    <div class="description-extra hidden">
+                      {description.slice(1).map((paragraph, index) => {
+                        const subheaders = ['Esenssi', 'Kokemus'];
+                        return (
+                          <div class="description-paragraph">
+                            <h4 class="description-subheader">{subheaders[index]}</h4>
+                            <p class="recipe-lead">{paragraph}</p>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  )}
+                </>
+              ) : (
+                <p class="recipe-lead">{description}</p>
+              )}
+            </div>
           </div>
         )}
 
-        <!-- Hero image with skeleton loading to prevent layout shift -->
+        <style>
+          .recipe-description-container {
+            max-width: 50rem;
+            position: relative;
+          }
+
+          .read-more-btn {
+            float: right;
+            width: 2.5rem;
+            height: 2.5rem;
+            font-size: 1.75rem;
+            color: var(--color-secondary-accent);
+            margin-left: 1rem;
+          }
+
+          .description-content {
+            max-height: 55svh;
+            overflow-y: auto;
+            padding-right: 1rem;
+            scrollbar-width: thin;
+            scrollbar-color: var(--color-secondary) transparent;
+          }
+
+          .description-content::-webkit-scrollbar {
+            width: 6px;
+          }
+
+          .description-content::-webkit-scrollbar-track {
+            background: transparent;
+          }
+
+          .description-content::-webkit-scrollbar-thumb {
+            background-color: var(--color-secondary-light);
+            border-radius: 3px;
+          }
+
+          .description-content::-webkit-scrollbar-thumb:hover {
+            background-color: var(--color-secondary);
+          }
+
+          .description-subheader {
+            font-size: 1.33rem;
+            font-weight: 600;
+            color: var(--color-secondary-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.5rem;
+            margin-top: 0;
+          }
+        </style>
+
+        <!-- Hero image with eager loading for better performance -->
         <figure class="recipe-hero-image">
           <div class="image-wrapper">
             <div class="image-skeleton"></div>
@@ -222,8 +336,9 @@ const {
                 src={image} 
                 alt={enhancedData.metadataProps?.imageAlt || enhancedData.metadataProps?.imageCaption || title} 
                 class="image-actual"
-                loading="lazy"
-                decoding="async"
+                loading="eager"
+                decoding="sync"
+                fetchpriority="high"
                 onload="this.parentNode.classList.add('loaded')"
                 onerror="this.parentNode.classList.add('loaded')"
               />
@@ -263,90 +378,200 @@ const {
             {ingredients && ingredients.length > 0 && (
               <div class="ingredients-section">
                 <h3 id="ainekset">Ainekset</h3>
-                <ul class="ingredients-list">
-                  {ingredients.map((ingredient) => {
-                    const { name, amount, unit, notes } = ingredient;
-                    const itemInfo = getItemTypeAndCategory(name);
-                    
-                    if (!itemInfo) {
-                      return (
-                        <li class="ingredient-item">
-                          <span class="ingredient-fallback">
-                            {amount && <span class="ingredient-amount">{amount}</span>}
-                            {unit && <span class="ingredient-unit"> {unit}</span>}
-                            <span class="ingredient-name"> {name}</span>
-                            {notes && <span class="ingredient-notes"> ({notes})</span>}
-                          </span>
-                        </li>
-                      );
-                    }
-                    
-                    const itemType = itemInfo.type;
-                    const itemCategory = itemInfo.category;
-                    const itemId = itemInfo.id;
-                    const popoverId = `popover-${itemId}-${itemType}`;
-                    const triggerId = `trigger-${itemId}-${itemType}`;
-                    
+                {(() => {
+                  // Check if we have sectioned ingredients or flat ingredients
+                  const hasSections = ingredients.some(ingredient => 'section' in ingredient && 'items' in ingredient);
+                  
+                  if (hasSections) {
+                    // New sectioned format
+                    return ingredients.map((ingredientGroup) => {
+                      if ('section' in ingredientGroup && 'items' in ingredientGroup) {
+                        return (
+                          <div class="ingredient-group">
+                            <h4 class="ingredient-section-title">{ingredientGroup.section}</h4>
+                            <ul class="ingredients-list">
+                              {ingredientGroup.items.map((ingredient) => {
+                                const { name, amount, unit, notes } = ingredient;
+                                const itemInfo = getItemTypeAndCategory(name);
+                                
+                                if (!itemInfo) {
+                                  return (
+                                    <li class="ingredient-item">
+                                      <span class="ingredient-fallback">
+                                        {amount && <span class="ingredient-amount">{amount}</span>}
+                                        {unit && <span class="ingredient-unit"> {unit}</span>}
+                                        <span class="ingredient-name wiki-link wiki-link--unavailable"> {name}</span>
+                                        {notes && <span class="ingredient-notes"> ({notes})</span>}
+                                      </span>
+                                    </li>
+                                  );
+                                }
+                                
+                                const itemType = itemInfo.type;
+                                const itemCategory = itemInfo.category;
+                                const itemId = itemInfo.id;
+                                const popoverId = `popover-${itemId}-${itemType}`;
+                                const triggerId = `trigger-${itemId}-${itemType}`;
+                                
+                                return (
+                                  <li class="ingredient-item">
+                                    {amount && <span class="ingredient-amount">{amount}</span>}
+                                    {unit && <span class="ingredient-unit">{unit}</span>}
+                                    <button 
+                                      id={triggerId}
+                                      popovertarget={popoverId}
+                                      class={`ingredient-popover-trigger wiki-link wiki-link--${itemInfo ? 'available' : 'unavailable'} wiki-link--${itemType}`}
+                                      data-item-id={itemId}
+                                      data-item-type={itemType}
+                                      data-category={itemCategory}
+                                      aria-label={`Näytä tiedot: ${name}`}
+                                    >
+                                      <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
+                                    </button>
+                                    {notes && <span class="ingredient-notes"> ({notes})</span>}
+                                    <div 
+                                      id={popoverId}
+                                      popover="auto"
+                                      class="ingredient-popover"
+                                      role="dialog"
+                                      aria-labelledby={`${popoverId}-title`}
+                                      data-item-id={itemId}
+                                      data-item-type={itemType}
+                                      data-category={itemCategory}
+                                    >
+                                      <div class="popover-header">
+                                        <h2 id={`${popoverId}-title`} class="popover-title">
+                                          <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
+                                        </h2>
+                                        <button 
+                                          class="popover-close-btn"
+                                          popovertarget={popoverId}
+                                          popovertargetaction="hide"
+                                          aria-label="Sulje"
+                                        >
+                                          <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                          </svg>
+                                        </button>
+                                      </div>
+                                      <div class="popover-content">
+                                        <div class="popover-image-container">
+                                          <div class="popover-image-skeleton">
+                                            <div class="skeleton-placeholder"></div>
+                                          </div>
+                                        </div>
+                                        <div class="popover-text-content">
+                                          <div class="popover-description-skeleton">
+                                            <div class="skeleton-line"></div>
+                                            <div class="skeleton-line skeleton-line-short"></div>
+                                            <div class="skeleton-line skeleton-line-medium"></div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </li>
+                                );
+                              })}
+                            </ul>
+                          </div>
+                        );
+                      }
+                      return null;
+                    });
+                  } else {
+                    // Legacy flat format (for backward compatibility) - create single list
                     return (
-                      <li class="ingredient-item">
-                        {amount && <span class="ingredient-amount">{amount}</span>}
-                        {unit && <span class="ingredient-unit">{unit}</span>}
-                        <button 
-                          id={triggerId}
-                          popovertarget={popoverId}
-                          class={`ingredient-popover-trigger wiki-link wiki-link--available wiki-link--${itemType}`}
-                          data-item-id={itemId}
-                          data-item-type={itemType}
-                          data-category={itemCategory}
-                          aria-label={`Näytä tiedot: ${name}`}
-                        >
-                          <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
-                        </button>
-                        {notes && <span class="ingredient-notes"> ({notes})</span>}
-                        <div 
-                          id={popoverId}
-                          popover="auto"
-                          class="ingredient-popover"
-                          role="dialog"
-                          aria-labelledby={`${popoverId}-title`}
-                          data-item-id={itemId}
-                          data-item-type={itemType}
-                          data-category={itemCategory}
-                        >
-                          <div class="popover-header">
-                            <h2 id={`${popoverId}-title`} class="popover-title">
-                              <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
-                            </h2>
-                            <button 
-                              class="popover-close-btn"
-                              popovertarget={popoverId}
-                              popovertargetaction="hide"
-                              aria-label="Sulje"
-                            >
-                              <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                              </svg>
-                            </button>
-                          </div>
-                          <div class="popover-content">
-                            <div class="popover-image-container">
-                              <div class="popover-image-skeleton">
-                                <div class="skeleton-placeholder"></div>
-                              </div>
-                            </div>
-                            <div class="popover-text-content">
-                              <div class="popover-description-skeleton">
-                                <div class="skeleton-line"></div>
-                                <div class="skeleton-line skeleton-line-short"></div>
-                                <div class="skeleton-line skeleton-line-medium"></div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </li>
+                      <ul class="ingredients-list">
+                        {ingredients.map((ingredientGroup) => {
+                          if ('name' in ingredientGroup) {
+                            const ingredient = ingredientGroup;
+                            const { name, amount, unit, notes } = ingredient;
+                            const itemInfo = getItemTypeAndCategory(name);
+                            
+                            if (!itemInfo) {
+                              return (
+                                <li class="ingredient-item">
+                                  <span class="ingredient-fallback">
+                                    {amount && <span class="ingredient-amount">{amount}</span>}
+                                    {unit && <span class="ingredient-unit"> {unit}</span>}
+                                    <span class="ingredient-name wiki-link wiki-link--unavailable"> {name}</span>
+                                    {notes && <span class="ingredient-notes"> ({notes})</span>}
+                                  </span>
+                                </li>
+                              );
+                            }
+                            
+                            const itemType = itemInfo.type;
+                            const itemCategory = itemInfo.category;
+                            const itemId = itemInfo.id;
+                            const popoverId = `popover-${itemId}-${itemType}`;
+                            const triggerId = `trigger-${itemId}-${itemType}`;
+                            
+                            return (
+                              <li class="ingredient-item">
+                                {amount && <span class="ingredient-amount">{amount}</span>}
+                                {unit && <span class="ingredient-unit">{unit}</span>}
+                                <button 
+                                  id={triggerId}
+                                  popovertarget={popoverId}
+                                  class={`ingredient-popover-trigger wiki-link wiki-link--${itemInfo ? 'available' : 'unavailable'} wiki-link--${itemType}`}
+                                  data-item-id={itemId}
+                                  data-item-type={itemType}
+                                  data-category={itemCategory}
+                                  aria-label={`Näytä tiedot: ${name}`}
+                                >
+                                  <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
+                                </button>
+                                {notes && <span class="ingredient-notes"> ({notes})</span>}
+                                <div 
+                                  id={popoverId}
+                                  popover="auto"
+                                  class="ingredient-popover"
+                                  role="dialog"
+                                  aria-labelledby={`${popoverId}-title`}
+                                  data-item-id={itemId}
+                                  data-item-type={itemType}
+                                  data-category={itemCategory}
+                                >
+                                  <div class="popover-header">
+                                    <h2 id={`${popoverId}-title`} class="popover-title">
+                                      <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
+                                    </h2>
+                                    <button 
+                                      class="popover-close-btn"
+                                      popovertarget={popoverId}
+                                      popovertargetaction="hide"
+                                      aria-label="Sulje"
+                                    >
+                                      <svg class="popover-close-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                                      </svg>
+                                    </button>
+                                  </div>
+                                  <div class="popover-content">
+                                    <div class="popover-image-container">
+                                      <div class="popover-image-skeleton">
+                                        <div class="skeleton-placeholder"></div>
+                                      </div>
+                                    </div>
+                                    <div class="popover-text-content">
+                                      <div class="popover-description-skeleton">
+                                        <div class="skeleton-line"></div>
+                                        <div class="skeleton-line skeleton-line-short"></div>
+                                        <div class="skeleton-line skeleton-line-medium"></div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </li>
+                            );
+                          }
+                          return null;
+                        })}
+                      </ul>
                     );
-                  })}
-                </ul>
+                  }
+                })()}
               </div>
             )}
           </section>
@@ -354,10 +579,25 @@ const {
         
         <Content />
       </div>
-      
+
+      <!-- Recipe metadata -->
+      <RecipeMetadata
+      title={title}
+      cuisine={cuisine}
+      category={category}
+      tags={enhancedData.tags}
+      season={season}
+      occasions={occasion}
+      techniques={techniques}
+      dietary={dietary}
+      costLevel={cost_level}
+      flavorProfile={flavor_profile}
+      equipment={equipment}
+      created={luotu?.toISOString()}
+      modified={muokattu?.toISOString()}
+    />
+
     </div>
-
-
      
    </div>
    
@@ -372,7 +612,7 @@ const {
          Ota yhteyttä
        </a>
        <p class="contact-description">
-         Kuvaile aiheesi selkeästi ja yksinkertaisesti, jotta varmasti saat vastauksen.
+         Kuvaile aiheesi selkeästi ja yksinkertaisesti, kiitos.
        </p>
      </div>
    </section>

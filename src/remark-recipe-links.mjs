@@ -48,7 +48,7 @@ try {
   
   for (const categoryName of categoryFiles) {
     try {
-      const categoryPath = path.resolve(`src/content/data/categories/${categoryName}.json`);
+      const categoryPath = path.resolve(`src/content/data/categories/${categoryName}-optimised.json`);
       const data = fs.readFileSync(categoryPath, 'utf8');
       const categoryData = JSON.parse(data);
       categories.push(categoryData.category);

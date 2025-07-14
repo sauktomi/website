@@ -17,9 +17,6 @@
  * Props:
  * - title: Page title
  * - metaDescription: SEO description (optional)
- * - tocHeadings: Table of contents data (optional)
- * - hasToc: Whether to show TOC (optional)
- * - needsWikiLinks: Whether page needs wiki link processing (optional)
  * 
  * @author Tomi
  * @version 1.0.0
@@ -32,12 +29,9 @@ import '../styles/global.css';
 export interface Props {
 	title: string;
 	metaDescription?: string;
-	tocHeadings?: any[];
-	hasToc?: boolean;
-	needsWikiLinks?: boolean;
 }
 
-const { title, metaDescription, tocHeadings, hasToc } = Astro.props;
+const { title, metaDescription = false } = Astro.props;
 
 // Default meta description
 const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisistä herkuista. Löydä reseptejä, jotka saavat veden kielelle ja vatsan kurnimaan.";
@@ -54,9 +48,6 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<!-- Meta tags -->
 		<meta name="description" content={metaDescription || defaultMetaDescription} />
 		<title>{title}</title>
-		
-		<!-- Local Inter font loading -->
-		<link rel="stylesheet" href="/fonts.css" />
 		
 		<!-- Enhanced meta tags -->
 		<meta property="og:title" content={title} />
@@ -79,7 +70,7 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 
 			/* Reserve scrollbar space up-front to prevent width jumps when content overflow triggers the scrollbar. */
 			html {
-				font-family: "Inter Variable", "Inter", system-ui, sans-serif;
+				font-family: "Inter Variable", "Inter", system-ui, sans, sans-serif;
 				scrollbar-gutter: stable;
 				font-feature-settings: "liga", "kern", "calt";
 				text-rendering: optimizeLegibility;
@@ -145,7 +136,7 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<a href="#main-content" class="skip-link">Hyppää pääsisältöön</a>
 		
 		<!-- PERSISTENT - Never re-initialized -->
-		<div id="persistent-wrapper" class="min-h-[10dvh]" transition:persist>
+		<div id="persistent-wrapper" class="min-h-[10dvh]">
 			<TopNavigation />
 		</div>
 			<!-- Content area -->

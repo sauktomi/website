@@ -1,0 +1,648 @@
+{
+  "category": {
+    "id": "sokeri",
+    "name": "Sokeri",
+    "subtitle": "Opas sokerityypeistä ja makeutusaineista leivonnassa ja ruoanlaitossa",
+    "description": "Erilaiset sokerit ja makeutusaineet tuovat makeuden lisäksi kosteutta, väriä ja tekstuuria ruokiin ja leivonnaisiin.",
+    "imageUrl": "/images/ingredients/sokeri.jpg",
+    "tags": [
+      "makeutusaine",
+      "säilöntä",
+      "leivonta"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "sokeri",
+      "name": "Sokeri",
+      "category": "sokeri",
+      "description": "Puhdistettu sakkaroosi, yleisin leivonta- ja ruoanlaittosokersi. Tuo makeutta ja kosteutta, toimii säilöntäaineena leivonnassa, jälkiruoissa ja juomissa.",
+      "production": "Valmistetaan uuttamalla ja puhdistamalla sokeriruo'osta tai -juurikkaasta, jonka jälkeen liuos kiteytetään ja kuivataan. Prosessi alkaa raaka-aineen pilkkomisella ja keittämisellä, jolloin sakkaroosi liukenee veteen. Liuos puhdistetaan kalkilla ja hiilidioksidilla epäpuhtauksien poistamiseksi, minkä jälkeen se suodatetaan ja väkevöidään haihduttamalla. Lopuksi sakkaroosi kiteyttää hallituissa olosuhteissa, ja kiteet kuivataan ja lajitellaan koon mukaan.",
+      "variants": [
+        {
+          "name": "Hienosokeri",
+          "description": "Hienojakoisempi versio, joka liukenee nopeammin"
+        },
+        {
+          "name": "Kidesokeri",
+          "description": "Yleisin sokeri, monikäyttöinen"
+        },
+        {
+          "name": "Raakasokeri",
+          "description": "Vähemmän prosessoitu, sisältää hieman melassia"
+        }
+      ],
+      "tips": [
+        "Vatkaa sokeri ja rasva hyvin yhteen kakkutaikinoissa kuohkeuden saavuttamiseksi",
+        "Liuota sokeri nesteeseen ennen lisäämistä muihin aineisiin tasaisen sekoittumisen varmistamiseksi",
+        "Käytä hienosokeria marenkien valmistukseen"
+      ],
+      "sourcing": "Valitse sokeria käyttötarkoituksen mukaan: hienosokeria marenkeihin ja koristekuorrutuksiin, kidesokeria peruskäyttöön ja raakasokeria karamellisointiin. Laadukas sokeri on kuivaa ja kokkareista vapaata. Sokeri ei vanhene, kunhan se säilytetään kuivassa.",
+      "käyttö": "Leivonta: vatkaa sokeri ja rasva hyvin yhteen kakkutaikinoissa kuohkeuden saavuttamiseksi. Liuota sokeri nesteeseen ennen lisäämistä muihin aineisiin. Marenki: käytä hienosokeria.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Hunaja",
+          "id": "hunaja",
+          "forDiet": [
+            "sokeriton"
+          ],
+          "notes": "Käytä 75% sokerin määrästä, vähennä nestettä"
+        },
+        {
+          "name": "Kookossokeri",
+          "id": "kookossokeri",
+          "forDiet": [
+            "vähähiilihydraattinen"
+          ],
+          "notes": "Korvaa 1:1, matalampi glykeeminen indeksi"
+        },
+        {
+          "name": "Erytritoli",
+          "id": "erytritoli",
+          "forDiet": [
+            "sokeriton",
+            "diabeetikko",
+            "keto"
+          ],
+          "notes": "Korvaa 1:1, ei kaloreita, ei vaikuttaa verensokeriin"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "maidoton"
+      ],
+      "tags": [
+        "makeutusaine",
+        "leivonta",
+        "säilöntä",
+        "hiilihydraatti",
+        "energia"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "hunaja",
+      "name": "Hunaja",
+      "category": "sokeri",
+      "description": "Mehiläisten valmistama luonnollinen makeutusaine, joka sisältää fruktoosia ja glukoosia. Ominainen aromi, terveysvaikutuksia ja antibakteerisia ominaisuuksia. Sopii leivontaan, juomiin, marinadeihin ja jälkiruokiin.",
+      "production": "Mehiläiset keräävät mettä kukista ja prosessoivat sitä entsyymeillä hunajastomakkeissaan. Hunaja kypsyy mehiläispesän kennoissa, joista mehiläishoitajat keräävät sen. Mehiläiset lisäävät meteen entsyymejä, jotka hajottavat monimutkaisia sokereita yksinkertaisemmiksi fruktoosiksija glukoosiksija. Samalla he vähentävät veden määrää alla 20%:iin, mikä estää mikrobitoimintaa ja tekee hunajasta luonnollisesti säilyvän.",
+      "variants": [
+        {
+          "name": "Juokseva hunaja",
+          "description": "Yleisin muoto, helppo annostella ja sekoittaa"
+        },
+        {
+          "name": "Kiteytynyt hunaja",
+          "description": "Luonnollisesti kiteytynyt, kiinteämpi koostumus"
+        },
+        {
+          "name": "Monikukkahunaja",
+          "description": "Valmistettu useista kukkalajeista, monipuolinen maku"
+        },
+        {
+          "name": "Yksikukkahunaja",
+          "description": "Valmistettu pääosin yhdestä kukkalajista, esim. akasia, lehmus, kanervahunaja"
+        }
+      ],
+      "tips": [
+        "Korvaa sokeri hunajalla käyttämällä 3/4 sokerin määrästä ja vähentämällä nestettä 1/4 kuppia per kuppi hunajaa",
+        "Lämmitä kiteytynyt hunaja vesihauteessa juoksevaksi, mutta vältä kuumentamista yli 40°C, jotta hyödylliset entsyymit säilyvät",
+        "Hunajan lievän happamuuden neutraloimiseksi lisää 1/4 teelusikallista soodaa per kuppi hunajaa leivonnassa"
+      ],
+      "sourcing": "Valitse laadukas, paikallinen raakahunaja, joka on mahdollisimman vähän käsiteltyä ja pastöroimatonta. Väri ja maku vaihtelevat hunajan alkuperän mukaan - vaaleampi hunaja on yleensä miedomman makuista, kun taas tummempi hunaja on voimakkaamman makuista. Tarkista aina alkuperämaa ja vältä ultrasuodatettuja hunajia.",
+      "käyttö": "Leivonta: korvaa sokeri käyttämällä 3/4 sokerin määrästä ja vähentämällä nestettä 1/4 kuppia per kuppi hunajaa. Lämmitä kiteytynyt hunaja vesihauteessa juoksevaksi. Lisää 1/4 tl soodaa per kuppi hunajaa neutraloimaan happamuutta.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Tuorein hunaja kesä-syksy satokauden jälkeen"
+      },
+      "alternatives": [
+        {
+          "name": "Vaahterasiirappi",
+          "id": "vaahterasiirappi",
+          "forDiet": [
+            "vegaaninen"
+          ],
+          "notes": "Korvaa 1:1, antaa erilaisen maun"
+        },
+        {
+          "name": "Agavenektari",
+          "id": "agavenektari",
+          "forDiet": [
+            "vegaaninen"
+          ],
+          "notes": "Käytä 3/4 hunajan määrästä, miedompi maku"
+        },
+        {
+          "name": "Sokeri",
+          "id": "sokeri",
+          "forDiet": [
+            "vegaaninen"
+          ],
+          "notes": "Käytä 4/3 hunajan määrästä, lisää nestettä"
+        }
+      ],
+      "dietaryInfo": [
+        "luonnollinen",
+        "ei vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "luonnollinen makeutusaine",
+        "terveysvaikutukset",
+        "antibakteerinen",
+        "kosteuttava",
+        "leivonta"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "tomusokeri",
+      "name": "Tomusokeri",
+      "category": "sokeri",
+      "description": "Erittäin hienoksi jauhettua sokeria, joka liukenee välittömästi. Täydellinen kuorrutuksiin ja koristeluun. Sisältää pienen määrän maissitärkkelystä estämään paakkuuntumista.",
+      "production": "Valmistetaan jauhamalla tavallista kidesokeria erittäin hienoksi jauheeksi ja lisäämällä pieni määrä (noin 3%) maissitärkkelystä estämään paakkuuntumista. Jauhaminen tapahtuu teollisuusmalleissa jauhinmalleissa, jotka murskavat sokerikiteet alle 100 mikrometrin kokoisiksi hiukkasiksi. Maissitärkkelys toimii kuivana aineena, joka imee kosteutta ja pitää jauheen vapaana virtaavana.",
+      "variants": [
+        {
+          "name": "Tavallinen tomusokeri",
+          "description": "Yleisimmin käytetty, sisältää vähän maissitärkkelystä"
+        },
+        {
+          "name": "Puhdas tomusokeri",
+          "description": "Ei tärkkelystä, paras kuorrutuksiin"
+        }
+      ],
+      "tips": [
+        "Siivilöi aina ennen käyttöä paakkujen poistamiseksi",
+        "Säilytä tiiviisti suljettuna",
+        "Ei sovellu lämpimään kypsennettäväksi",
+        "Lisää aina viimeisenä"
+      ],
+      "sourcing": "Valitse tuore pakkaus, joka ei ole paakkuuntunut. Tarkista, että sisältää minimaalisen määrän tärkkelystä. Säilytä kuivassa paikassa.",
+      "käyttö": "Kuorrutus: siivilöi aina ennen käyttöä paakkujen poistamiseksi. Ei sovellu lämpimään kypsennettäväksi. Lisää aina viimeisenä.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Itse jauhettu sokeri",
+          "id": "itse-jauhettu-sokeri",
+          "forDiet": [
+            "luomu"
+          ],
+          "notes": "Jauha hieno sokeri monitoimikoneessa, lisää vähän maissitärkkelystä"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen"
+      ],
+      "tags": [
+        "kuorruttaminen",
+        "koristeleminen",
+        "hienojakoinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "kookossokeri",
+      "name": "Kookossokeri",
+      "category": "sokeri",
+      "description": "Kookospalmun kukkien nedestä valmistettu luonnollinen sokeri. Karamellinen maku ja ruskea väri. Matala glykeeminen indeksi ja mineraalipitoinen. Sopii leivontaan, juomiin ja jälkiruokiin.",
+      "production": "Valmistetaan kookospalmun kukkien nedestä, joka kerätään, suodatetaan ja haihdutetaan sokeriksi. Kookospalmu viiltää kukkien varsia kahdesti päivässä, ja neste valuu bambupurkkeihin. Tuore neste on kirkasta ja hieman makeaa. Sitten sitä kuumennetaan miedossa lämmössä useita tunteja, kunnes vesi haihtuu ja jäljelle jää paksu, tummahko massa. Lopuksi massa kuivataan ja jauhetaan sokeriksi.",
+      "variants": [
+        {
+          "name": "Luomu kookossokeri",
+          "description": "Sertifioitu luomu, kestävä tuotanto"
+        },
+        {
+          "name": "Raakasuola kookossokeri",
+          "description": "Vähemmän prosessoitu, enemmän ravintoaineita"
+        }
+      ],
+      "tips": [
+        "Korvaa tavallisen sokerin 1:1 suhteessa useimmissa resepteissä",
+        "Antaa leivonnaisille karamellisen maun ja ruskean värin",
+        "Liukenee hitaammin kuin valkoinen sokeri",
+        "Säilytä ilmatiiviissä astiassa kosteudelta suojattuna"
+      ],
+      "sourcing": "Valitse luomu- ja Reilu kauppa -sertifioitu kookossokeri kestävän tuotannon tukemiseksi. Laadukas kookossokeri on tasaisen ruskeaa ja tuoksuu hieman karamellille. Vältä liian tummaa tai kokkareista sokeria.",
+      "käyttö": "Leivonta: korvaa tavallisen sokerin 1:1 suhteessa useimmissa resepteissä. Antaa karamellisen maun ja ruskean värin. Liukenee hitaammin kuin valkoinen sokeri.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Ruskea sokeri",
+          "id": "ruskea-sokeri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Korvaa 1:1, samankaltainen maku"
+        },
+        {
+          "name": "Vaahterasiirappi",
+          "id": "vaahterasiirappi",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Käytä 3/4 määrää, lisää nestettä"
+        },
+        {
+          "name": "Sokeri",
+          "id": "sokeri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Korvaa 1:1, mutta neutraalimpi maku"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "luonnollinen"
+      ],
+      "tags": [
+        "luonnollinen makeutusaine",
+        "matala glykeeminen indeksi",
+        "kestävä",
+        "karamellinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 9,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 1
+      }
+    },
+    {
+      "id": "erytritoli",
+      "name": "Erytritoli",
+      "category": "sokeri",
+      "description": "Luonnollinen sokerispirtti, joka on lähes kaloriton ja ei vaikuta verensokeriin. Sopii diabeetikoille ja keto-ruokavalioon. Makeusaste 70% sokerin makeudesta.",
+      "production": "Valmistetaan fermentoimalla glukoosia hiivalla. Luonnossa esiintyy hedelmissä ja sienissä pieninä määrinä. Teollisessa tuotannossa glukoosiiirappi fermentoidaan erityisillä hiivakannassa kontrolloidussa ympäristössä. Fermentaatioprosessin aikana hiivat muuttavat glukoosin erytritolixiksi. Tämän jälkeen liuos puhdistetaan, kiteytetään ja kuivataan.",
+      "variants": [
+        {
+          "name": "Kiteinen erytritoli",
+          "description": "Tavallinen muoto, sopii useimpiin käyttötarkoituksiin"
+        },
+        {
+          "name": "Jauhettu erytritoli",
+          "description": "Hienojakoinen, sopii kuorrutuksiin ja marenkeihin"
+        }
+      ],
+      "tips": [
+        "Käytä 1,3× määrää korvaamaan sokerin makeutta",
+        "Voi aiheuttaa viileää tunnetta suussa suurina määrinä",
+        "Ei karamellisoi kuten tavallinen sokeri",
+        "Yhdistä muiden makeutusaineiden kanssa paremman maun saamiseksi"
+      ],
+      "sourcing": "Valitse laadukas, puhdas erytritoli ilman lisäaineita. Tarkista, että tuote on merkitty elintarvikekäyttöön sopivaksi. Jauhettu versio on kätevä kuorrutuksiin.",
+      "käyttö": "Leivonta: käytä 1,3× määrää korvaamaan sokerin makeutta. Voi aiheuttaa viileää tunnetta suussa suurina määrinä. Ei karamellisoi kuten tavallinen sokeri. Yhdistä muiden makeutusaineiden kanssa paremman maun saamiseksi.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Ksylitoli",
+          "id": "xylitoli",
+          "forDiet": [
+            "diabeetikko",
+            "keto"
+          ],
+          "notes": "Samankaltainen makeusaste, mutta kaloreita enemmän"
+        },
+        {
+          "name": "Stevia",
+          "id": "stevia",
+          "forDiet": [
+            "diabeetikko",
+            "keto"
+          ],
+          "notes": "Paljon makeampi, käytä vähemmän"
+        },
+        {
+          "name": "Sokeri",
+          "id": "sokeri",
+          "forDiet": [
+            "tavallinen"
+          ],
+          "notes": "Alkuperäinen tuote, sisältää kaloreita"
+        }
+      ],
+      "dietaryInfo": [
+        "diabeetikkoystävällinen",
+        "keto",
+        "vegaaninen",
+        "gluteeniton"
+      ],
+      "tags": [
+        "sokeriton",
+        "kaloriton",
+        "diabeetikko",
+        "keto",
+        "sokerispirtti"
+      ],
+      "flavorProfile": {
+        "sweetness": 7,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "ruskea-sokeri",
+      "name": "Ruskea sokeri",
+      "category": "sokeri",
+      "description": "Osittain jalostettu raakasokeri tai valkoinen sokeri melassilla. Antaa syvemmän maun ja kosteutta leivonnaisiin. Sopii leivontaan, kekseihin, kakkuihin ja karamellisointiin.",
+      "production": "Valmistetaan joko puhdistamattomasta raakasokerin tai lisäämällä melassia valkoisan sokeriin. Aitoja ruskeaa sokeria tuotetaan keskeytenemällä sokerin puhdistusprosessi ennen viimeistä vaihetta, jolloin osa luonnollisesta melassista jää sokeriin. Kaupallisessa tuotannossa yleisempi tapa on lisätä kontrolloitu määrä melassia valmiiseen valkoiseen sokeriin halutun värin ja maun saavuttamiseksi.",
+      "variants": [
+        {
+          "name": "Vaalea ruskea sokeri",
+          "description": "Miedompi melassin maku, sopii useimpiin leivontakohteisiin"
+        },
+        {
+          "name": "Tumma ruskea sokeri",
+          "description": "Voimakkaampi melassin maku, sopii piparkakkuihin ja raskaampiin kakkuihin"
+        },
+        {
+          "name": "Demerara sokeri",
+          "description": "Karkearakeinen raakasuolan, kultainen väri"
+        }
+      ],
+      "tips": [
+        "Korvaa valkoisen sokerin 1:1, mutta lisää hieman kosteutta",
+        "Pakkaa tiiviisti mittakuppiin tarkempaa mittausta varten",
+        "Säilytä ilmatiiviissä astiassa estämään kovettumista",
+        "Jos kovettuu, lisää kostea leipäpala muutamaksi tunniksi"
+      ],
+      "sourcing": "Valitse luomu ruskea sokeri paremman maun ja eettisemmän tuotannon takia. Tarkista koostumus - laadukas ruskea sokeri sisältää luonnollista melassia.",
+      "käyttö": "Leivonta: korvaa valkoisen sokerin 1:1, mutta lisää hieman kosteutta. Pakkaa tiiviisti mittakuppiin tarkempaa mittausta varten.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Valkoinen sokeri + melassi",
+          "id": "sokeri-melassi",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "1 kuppi valkoista sokeria + 1 rkl melassia"
+        },
+        {
+          "name": "Kookossokeri",
+          "id": "kookossokeri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Korvaa 1:1, hieman erilainen maku"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen"
+      ],
+      "tags": [
+        "kosteus",
+        "karamellinen",
+        "melassi",
+        "klassinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 1
+      }
+    },
+    {
+      "id": "fariinisokeri",
+      "name": "Fariinisokeri",
+      "category": "sokeri",
+      "description": "Hienoksi jauhettu valkoinen sokeri, joka liukenee nopeammin ja antaa tasaisemman tekstuurin leivonnaisille. Sopii marenkeihin, kekseihin, kuorrutuksiin ja cocktaileihin.",
+      "production": "Valmistetaan jauhamalla tavallista sokeria hienommaksi. Prosessi käyttää erityisiä jauhinlaitteita, jotka rikkovat sokerikiteet tasaisesti pienemmiksi hiukkasiksi. Fariinisokerin hiukkaskoko on suurempi kuin tomusokerissa mutta pienempi kuin tavallisessa kidesokerissa. Tämä tekee siitä ihanteellisen marenkeihin ja vaahtoon vatkettuna.",
+      "variants": [
+        {
+          "name": "Superfine sugar",
+          "description": "Erittäin hieno fariinisokeri, marenkeihin"
+        },
+        {
+          "name": "Tavallinen fariinisokeri",
+          "description": "Yleiskäyttöön sopiva hieno sokeri"
+        }
+      ],
+      "tips": [
+        "Korvaa tavallisen sokerin 1:1 suhteessa",
+        "Erityisen hyvä marenkeihin ja vaahtoon vatkauksen",
+        "Liukenee nopeasti kylmiin juomiin",
+        "Voi valmistaa kotona jauhamalla sokeria monitoimikoneessa"
+      ],
+      "sourcing": "Löytyy useimmista ruokakaupoista leivontatuotteiden hyllystä. Voi valmistaa kotona jauhamalla tavallista sokeria.",
+      "käyttö": "Leivonta: korvaa tavallisen sokerin 1:1 suhteessa. Erityisen hyvä marenkeihin ja vaahtoon vatkauksen. Liukenee nopeasti kylmiin juomiin. Voi valmistaa kotona jauhamalla sokeria monitoimikoneessa.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Tavallinen sokeri (jauhettu)",
+          "id": "sokeri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Jauha monitoimikoneessa hienoksi"
+        },
+        {
+          "name": "Tomusokeri",
+          "id": "tomusokeri",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Hienompi, mutta sisältää tärkkelystä"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen"
+      ],
+      "tags": [
+        "hieno",
+        "liukenee nopeasti",
+        "marenki",
+        "cocktail"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 0
+      }
+    },
+    {
+      "id": "vaahterasiirappi",
+      "name": "Vaahterasiirappi",
+      "category": "sokeri",
+      "description": "Vaahteran mahlan keitetty muoto, jolla on ainutlaatuinen karamellinen maku. Pohjois-Amerikan perinteinen makeutusaine. Sopii pannukakkuihin, leivontaan, kastikkeisiin ja jälkiruokiin.",
+      "production": "Valmistetaan keittämällä vaahteran mahlaa, kunnes se tiivistyy siirappista. Vaatii noin 40 litraa mahlaa yhtä litraa siirappina varten. Prosessi alkaa kevään alussa, kun päivät ovat lämpimät ja yöt pakkasella - tämä lämpötilavaihtelujen aiheuttama paine saa mahlan virtaamaan puussa. Mahla kerätään naamioiden kautta ämpäreihin tai putkistojen avulla käsittelylaitokseen. Sitten mahlaa kuumennetaan kontrolloidusti ja vesi haihdutetaan, kunnes sokeripitoisuus nousee 66%:iin.",
+      "variants": [
+        {
+          "name": "Grade A Light",
+          "description": "Vaalea, mieto maku, sopii pannukakkuihin"
+        },
+        {
+          "name": "Grade A Medium",
+          "description": "Keskivoimakas maku, monipuolisin"
+        },
+        {
+          "name": "Grade A Dark",
+          "description": "Voimakas maku, sopii leivontaan"
+        }
+      ],
+      "tips": [
+        "Korvaa sokerin suhteessa 3/4 kuppia siirappiin = 1 kuppi sokeria",
+        "Vähennä muita nesteitä reseptissä hieman",
+        "Säilytä jääkaapissa avaamisen jälkeen",
+        "Lämmitä hieman ennen käyttöä helpompaa kaatamista varten"
+      ],
+      "sourcing": "Valitse 100% puhdas vaahterasiirappi välttäen keinotekoisia siirappisia. Tarkista alkuperä - paras tulee Kanadasta tai Yhdysvaltojen koillisosiosta.",
+      "käyttö": "Leivonta: korvaa sokerin suhteessa 3/4 kuppia siirappiin = 1 kuppi sokeria. Vähennä muita nesteitä reseptissä hieman. Pannukakut: käytä Grade A Light -laatua.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Kevät (tuore sato)"
+      },
+      "alternatives": [
+        {
+          "name": "Hunaja",
+          "id": "hunaja",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Korvaa 1:1, mutta erilainen maku"
+        },
+        {
+          "name": "Agavenektari",
+          "id": "agavenektari",
+          "forDiet": [
+            "vegaaninen"
+          ],
+          "notes": "Neutraalimpi maku, vegaaninen"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen"
+      ],
+      "tags": [
+        "luonnollinen",
+        "kanadan",
+        "pannukakut",
+        "karamellinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 8,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 2
+      }
+    },
+    {
+      "id": "stevia",
+      "name": "Stevia",
+      "category": "sokeri",
+      "description": "Steviakasvin lehdistä valmistettu luonnollinen makeutusaine, joka on huomattavasti makeampi kuin sokeri mutta kaloriton. Sopii diabeetikkoruokiin, juomiin ja kevyeen leivontaan.",
+      "production": "Valmistetaan steviakasvin lehdistä uuttamalla makeat yhdisteet, pääasiassa steviosideja. Prosessi alkaa stevialehtien kuivaamisella ja jauhanisella hienoksi jauheeksi. Sitten jauhe liuotetaan veteen ja käsitellään entsyymeillä, jotka vapauttavat makeat glykosidit. Liuos puhdistetaan suodattamalla, ja makeat yhdisteet erotetaan kromatografisesti muista kasviyhdisteistä.",
+      "variants": [
+        {
+          "name": "Steviajauhe",
+          "description": "Puhdas steviaxtrakti, erittäin voimakas"
+        },
+        {
+          "name": "Steviaseos",
+          "description": "Sekoitettu muiden aineiden kanssa, helpompi mittata"
+        },
+        {
+          "name": "Nestemäinen stevia",
+          "description": "Helppokäyttöinen juomiin, tippamuoto"
+        }
+      ],
+      "tips": [
+        "Käytä vain vähän - 1/4 tl korvaa 1 kupin sokerin",
+        "Voi olla hieman katkeraa liikaa käytettynä",
+        "Yhdistä muiden makeutusaineiden kanssa paremman maun saamiseksi",
+        "Ei toimi hiivaleivonnassa koska hiiva tarvitsee sokeria"
+      ],
+      "sourcing": "Valitse puhdas stevia ilman lisäaineita tai keinotekoisia makuja. Tarkista alkuperä ja välttömyysdata. Orgaaninen stevia on usein laadukkaampaa.",
+      "käyttö": "Leivonta: käytä vain vähän - 1/4 tl korvaa 1 kupin sokerin. Voi olla hieman katkeraa liikaa käytettynä. Juomat: käytä nestemäistä steviaa. Ei toimi hiivaleivonnassa koska hiiva tarvitsee sokeria.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Erytritoli",
+          "id": "erytritoli",
+          "forDiet": [
+            "diabeetikko",
+            "keto"
+          ],
+          "notes": "Toimii paremmin leivonnassa, ei yhtä makea"
+        },
+        {
+          "name": "Xylitoli",
+          "id": "xylitoli",
+          "forDiet": [
+            "diabeetikko"
+          ],
+          "notes": "Samankaltaine makeusaste kuin sokeri"
+        }
+      ],
+      "dietaryInfo": [
+        "diabeetikkoystävällinen",
+        "keto",
+        "vegaaninen",
+        "kaloriton"
+      ],
+      "tags": [
+        "luonnollinen",
+        "kaloriton",
+        "diabeetikko",
+        "makeutusaine"
+      ],
+      "flavorProfile": {
+        "sweetness": 10,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 3,
+        "umami": 0
+      }
+    }
+  ]
+} 

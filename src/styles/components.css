@@ -135,29 +135,8 @@ button {
 .reference-item:hover .reference-item-description { @apply text-secondary-accent; }
 
 .dietary-tag {
-  @apply text-base font-mono h-full text-secondary-accent hover:text-primary-dark opacity-80; 
+  @apply font-mono no-underline text-secondary-accent hover:text-primary-dark hover:underline; 
 }
-
-/* Comma separation for dietary tags */
-.dietary-tags .comma-separated:not(:last-child)::after {
-  content: ",";
-  margin-right: 0.5rem;
-}
-
-/* ===== VARIANT STYLING ===== */
-.variant-list { @apply mt-2 ml-4 space-y-1 border-l-2 border-secondary-light pl-4; }
-.variant-item { @apply block border border-transparent rounded-lg py-2 px-3; }
-
-.variant-item:hover { @apply border-secondary bg-secondary-light; }
-.variant-content { @apply flex items-center justify-between gap-3; }
-.variant-text { @apply flex-1 min-w-0; }
-.variant-title { @apply text-primary-dark font-medium text-base block truncate; }
-.variant-item:hover .variant-title { @apply text-secondary-accent; }
-.variant-description { @apply text-sm mb-0 text-secondary-accent mt-1 line-clamp-1; }
-.variant-item:hover .variant-description { @apply text-secondary-accent; }
-.variant-use { @apply text-xs mb-0 text-secondary-accent mt-1 italic; }
-.variant-arrow { @apply size-4 text-secondary-accent flex-shrink-0; }
-.variant-item:hover .variant-arrow { @apply text-secondary-accent; transform: translateX(0.125rem) translateZ(0); }
 
 /* ===== BADGE SYSTEM ===== */
 .badge-base { @apply inline-flex items-center text-xs font-normal rounded ml-1.5 opacity-80 px-2 py-0.5; }
@@ -304,7 +283,7 @@ button.wiki-link--available {
 
 .wiki-link--unavailable,
 .wiki-link--unavailable:hover {
-  @apply text-secondary-accent cursor-default no-underline;
+  @apply text-secondary-accent cursor-default;
 }
 
 .wiki-link--unavailable::after,
@@ -350,8 +329,6 @@ button.wiki-link--available {
 .ingredient-link[data-exists="false"] {
   @apply text-secondary-accent cursor-default no-underline;
 }
-
-.ingredient-name { @apply flex-grow; }
 
 /* ===== RECIPE SIDEBAR SYSTEM ===== */
 .recipe-sidebar {
@@ -469,47 +446,25 @@ button.wiki-link--available {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
   @apply text-primary-dark;
 }
-.popover-close-btn {
-  @apply rounded-lg hover:bg-white/20 transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2;
-  padding: clamp(0.5rem, 1.5vw, 0.75rem);
-  outline-color: var(--color-primary-accent);
-}
-.popover-close-icon {
-  @apply text-secondary-accent;
-  width: clamp(1rem, 2.5vw, 1.25rem);
-  height: clamp(1rem, 2.5vw, 1.25rem);
-}
-
-.popover-content {
-  @apply place-items-center overflow-y-auto overflow-x-hidden;
-  padding: clamp(0.75rem, 2vw, 1.5rem);
-  @apply text-primary-dark;
-}
 
 /* Sidebar navigation in popover with container-responsive spacing */
 .sidebar-card-content {
-  @apply text-primary-dark;
+  @apply text-primary-dark justify-self-center;
   font-size: clamp(0.875rem, 1.8vw, 1rem);
 }
 
 .sidebar-card-content a {
-  @apply text-primary-dark no-underline;
-  padding: clamp(0.25rem, 1vw, 0.5rem) clamp(0.5rem, 1.5vw, 0.75rem);
+  @apply text-primary-dark;
+  padding: clamp(0.475rem, 1.5vw, 0.75rem) clamp(0.475rem, 1.5vw, 0.75rem);
   display: block;
-  border-radius: 0.375rem;
-  transition: all 0.2s ease-in-out;
 }
 
 .sidebar-card-content a:hover {
-  @apply text-secondary-accent underline bg-white/10;
+  @apply underline;
 }
 
 .sidebar-card-content ul {
   @apply list-none;
-  /* Container-responsive spacing */
-  gap: clamp(0.25rem, 0.8vw, 0.5rem);
-  display: flex;
-  flex-direction: column;
 }
 
 .sidebar-card-content ul li ul {
@@ -552,8 +507,7 @@ button.wiki-link--available {
 }
 
 .timer-slider-container {
-  width: clamp(16rem, 60vw, 24rem);
-  max-width: 90%;
+  @apply mx-auto w-[80%];
 }
 
 .timer-slider-label {

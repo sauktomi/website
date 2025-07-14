@@ -1,0 +1,240 @@
+{
+  "category": {
+    "id": "mausteet",
+    "name": "Mausteet",
+    "subtitle": "Kattava opas mausteista, yrteistä ja maustesekoituksista",
+    "description": "Mausteet ja yrtit tuovat ruokiin syvyyttä, aromia ja persoonallisuutta. Oikeiden mausteiden tunteminen on avain onnistuneeseen maustamiseen.",
+    "imageUrl": "/images/ingredients/mausteet.jpg",
+    "tags": [
+      "maustaminen",
+      "aromit",
+      "yrtit"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "basilika",
+      "name": "Basilika",
+      "category": "mausteet",
+      "description": "Aromaattinen yrtti, joka tuo makean, anismaisen maun italialaisiin ja aasialaisiin ruokiin. Sopii erityisesti tomaattien, pastan ja peston kanssa.",
+      "production": "Basilika kukoistaa lämpimässä, aurinkoisessa ympäristössä ja on erittäin herkkä kylmyydelle. Kaupallisessa viljelyssä sitä kasvatetaan kasvihuoneissa ympäri vuoden, mutta parhaimmillaan se on kesäisin ulkona kasvatettuna. Lehdet tulisi poimia säännöllisesti ennen kukinnan alkua, jotta kasvi tuottaa jatkuvasti uusia, aromikkaita lehtiä. Basilikan eteeriset öljyt ovat voimakkaimmillaan aamupäivällä, minkä vuoksi ammattiviljelijät keräävät sadon usein aikaisin.",
+      "variants": [
+        {
+          "name": "Genovalainen basilika",
+          "description": "Klassinen, makea italialainen basilika (pesto, tomaattiruoat)"
+        },
+        {
+          "name": "Thai-basilika",
+          "description": "Anismainen, sitruunainen (thairuoat, curryt)"
+        },
+        {
+          "name": "Sitruunabasilika",
+          "description": "Voimakas sitruunan aromi (kalaruoat, salaatit)"
+        }
+      ],
+      "tips": [
+        "Lisää basilika ruokaan vasta juuri ennen tarjoilua parhaan aromin säilyttämiseksi",
+        "Revi lehdet käsin veitsellä leikkaamisen sijaan",
+        "Tuore basilika sopii paremmin kylmiin ruokiin, kuivattu kypsennettyihin"
+      ],
+      "sourcing": "Valitse mieluiten tuore basilika, jossa lehdet ovat kirkkaan vihreät, ehjät ja nuutumattomat. Hyvälaatuinen basilika tuoksuu voimakkaalle ja raikkaalle myös kosketettaessa. Voit kasvattaa basilikaa itse ikkunalaudalla ympäri vuoden. Kuivatun basilikan laatu heikkenee ajan myötä, joten valitse tuorein mahdollinen ja säilytä ilmatiiviissä astiassa valolta suojattuna.",
+      "käyttö": "Lisää vasta juuri ennen tarjoilua parhaan aromin säilyttämiseksi. Revi lehdet käsin veitsellä leikkaamisen sijaan. Tuore basilika sopii paremmin kylmiin ruokiin, kuivattu kypsennettyihin. Pesto: sekoita pinjansiemeniin, valkosipuliin ja oliiviöljyyn.",
+      "season": {
+        "availability": "Tuoreena kesä-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Heinä-elokuu (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Oregano",
+          "id": "oregano",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi maku, kestää paremmin kuumennusta"
+        },
+        {
+          "name": "Minttu",
+          "id": "minttu",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Raikkaampi, sopii erityisesti itämaisiin ruokiin"
+        },
+        {
+          "name": "Persilja",
+          "id": "persilja",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Neutraalimpi, kestävämpi, monikäyttöisempi"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "yrtti",
+        "välimeren keittiö",
+        "italia",
+        "thaikeittiö",
+        "pesto",
+        "tomaattiruoat"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 3
+      }
+    },
+    {
+      "id": "oregano",
+      "name": "Oregano",
+      "category": "mausteet",
+      "description": "Voimakas välimerenyrtti, joka määrittelee pizzojen ja tomaattikastikkeiden maun. Kestää hyvin kuumennusta ja sopii erityisesti liharuokiin.",
+      "production": "Oreganoa kasvatetaan pääasiassa Välimeren alueella, missä kuiva ja aurinkoinen ilmasto tuottaa vahvimmat aromit. Kasvi kuuluu minttukasvien heimoon ja sen lehdet kerätään juuri ennen kukinnan alkua, kun eteeristen öljyjen pitoisuus on korkeimmillaan. Kreikkalaista oreganoa pidetään maailman parhaana laatuna sen intensiivisen maun vuoksi. Kuivaus tapahtuu perinteisesti varjossa ilmavassa paikassa, mikä säilyttää värin ja aromin paremmin kuin koneellinen kuivaus.",
+      "variants": [
+        {
+          "name": "Kreikkalainen oregano",
+          "description": "Voimakkain maku, pidetään usein parhaana laatuna"
+        },
+        {
+          "name": "Italialainen oregano",
+          "description": "Hieman miedompi ja makeampi kuin kreikkalainen"
+        },
+        {
+          "name": "Meksikolainen oregano",
+          "description": "Sitrusmaisempi, kuuluu eri kasviperheeseen"
+        }
+      ],
+      "tips": [
+        "Kuivattu oregano on usein voimakkaampi kuin tuore, käytä sitä vähemmän",
+        "Lisää oregano aikaisessa vaiheessa ruoanlaittoa, jotta aromi ehtii kehittyä",
+        "Murskaa kuivatut oreganon lehdet sormien välissä juuri ennen käyttöä aromin vapauttamiseksi"
+      ],
+      "sourcing": "Valitse mieluiten kokonaisia kuivattuja lehtiä jauheen sijaan, sillä niissä säilyy enemmän aromia. Tuore oregano on parhaimmillaan juuri poimittuna. Kreikkalainen oregano (Origanum vulgare hirtum) on yleensä voimakkaimman makuinen. Laadukas kuivattu oregano on vihreää, ei ruskeaa, ja sen tulisi tuoksua voimakkaasti hierottaessa.",
+      "käyttö": "Kuivattu oregano on usein voimakkaampi kuin tuore, käytä sitä vähemmän. Lisää aikaisessa vaiheessa ruoanlaittoa, jotta aromi ehtii kehittyä. Murskaa kuivatut lehdet sormien välissä juuri ennen käyttöä. Sopii erityisesti pizzoihin ja tomaattikastikkeisiin.",
+      "season": {
+        "availability": "Tuoreena kesä-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Heinä-elokuu (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Basilika",
+          "id": "basilika",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Pehmeämpi maku, sopii erityisesti tuoreena käytettäväksi"
+        },
+        {
+          "name": "Meirami",
+          "id": "meirami",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Miedompi, makeampi maku, oreganon sukulainen"
+        },
+        {
+          "name": "Timjami",
+          "id": "timjami",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Voimakkaampi, sopii erityisesti liharuokiin"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "välimeren keittiö",
+        "pizza",
+        "tomaattiruoat",
+        "yrtti",
+        "liharuoat"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 3,
+        "umami": 5
+      }
+    },
+    {
+      "id": "minttu",
+      "name": "Minttu",
+      "category": "mausteet",
+      "description": "Raikas yrtti, joka tuo viileyttä ja raikkautta ruokiin. Sopii erityisesti jälkiruokiin, juomiin ja itämaisiin ruokiin.",
+      "production": "Minttu on yksi helpoimmista kasvattaa yrtteistä ja se leviää nopeasti juuriversoilla. Se kukoistaa kosteassa, varjoisassa paikassa ja tuottaa runsaasti lehtiä koko kasvukauden ajan. Mintun eteeriset öljyt ovat voimakkaimmillaan ennen kukintaa, joten lehdet kerätään säännöllisesti. Kaupallisessa viljelyssä minttua kasvatetaan sekä ulkona että kasvihuoneissa ympäri vuoden. Minttu on hyvin sopeutuvainen ja voi kasvaa lähes missä tahansa ilmastossa.",
+      "variants": [
+        {
+          "name": "Piparminttu",
+          "description": "Yleisin, voimakas mentoliaromi, sopii juomiin ja jälkiruokiin"
+        },
+        {
+          "name": "Vihreä minttu",
+          "description": "Miedompi maku, sopii salaateihin ja ruokiin"
+        },
+        {
+          "name": "Appelsiiniminttu",
+          "description": "Sitrusmainen maku, sopii juomiin ja jälkiruokiin"
+        }
+      ],
+      "tips": [
+        "Lisää minttu viimeisenä ruokaan aromin säilyttämiseksi",
+        "Revi lehdet käsin veitsellä leikkaamisen sijaan",
+        "Minttu sopii erinomaisesti makeisiin ja hapokkaisiin makujen kanssa"
+      ],
+      "sourcing": "Valitse tuore minttu, jossa lehdet ovat kirkkaan vihreät ja ehjät. Hyvälaatuinen minttu tuoksuu voimakkaalle ja raikkaalle. Voit kasvattaa minttua helposti itse ikkunalaudalla tai puutarhassa. Minttu leviää nopeasti, joten kannattaa kasvattaa sitä erillisessä astiassa.",
+      "käyttö": "Lisää viimeisenä ruokaan aromin säilyttämiseksi. Revi lehdet käsin veitsellä leikkaamisen sijaan. Sopii erinomaisesti makeisiin ja hapokkaisiin makujen kanssa. Jälkiruoat: lisää hienonnettuna tai lehdet koristeena. Juomat: lisää kokonaisia lehtiä tai hienonnettuna.",
+      "season": {
+        "availability": "Tuoreena kesä-syksy, kuivattuna ympäri vuoden",
+        "bestSeason": "Kesä-syksy (tuore)"
+      },
+      "alternatives": [
+        {
+          "name": "Basilika",
+          "id": "basilika",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Eri makuprofiili, sopii erityisesti italialaisiin ruokiin"
+        },
+        {
+          "name": "Korianteri",
+          "id": "korianderi",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Eri makuprofiili, sopii aasialaisiin ja meksikolaisiin ruokiin"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "allergeeniton"
+      ],
+      "tags": [
+        "yrtti",
+        "raikkaus",
+        "jälkiruoat",
+        "juomat",
+        "itämaiset ruoat"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 1,
+        "umami": 2
+      }
+    }
+  ]
+} 

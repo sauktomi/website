@@ -109,7 +109,7 @@ const typeOptions = [
 
 ---
 
-<Layout title="Hakemisto | Ruoanlaitto" needsWikiLinks={true}>
+<Layout title="Hakemisto | Ruoanlaitto">
   <div class="container-query">
     <!-- Skip to content -->
     <a href="#content-groups" class="skip-link">
@@ -128,11 +128,6 @@ const typeOptions = [
       <div class="main-content">
         <!-- Filter System -->
         <FilterSystem
-          config={{
-            itemSelector: '.list-item-wrapper',
-            sectionSelector: '.category-section',
-            noResultsId: 'no-results'
-          }}
           searchPlaceholder="Etsi hakemistosta..."
           filterSections={[
             {
@@ -169,7 +164,6 @@ const typeOptions = [
               }))
             }
           ]}
-          resultsCountText="kohdetta löytyi"
         />
 
         <!-- No Results -->

@@ -1,0 +1,291 @@
+{
+  "category": {
+    "id": "jauhot",
+    "name": "Jauhot",
+    "subtitle": "Kattava opas eri jauhoista, niiden ominaisuuksista ja käyttötarkoituksista",
+    "description": "Jauhot ovat leivonnan ja ruoanlaiton peruspilari. Eri jauhotyyppien ominaisuuksien tunteminen auttaa valitsemaan oikean jauhon kuhunkin käyttötarkoitukseen.",
+    "imageUrl": "/images/ingredients/jauhot.jpg",
+    "tags": [
+      "leivonta",
+      "perusraaka-aine",
+      "kuiva-aine"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "vehnajauho",
+      "name": "Vehnäjauho",
+      "category": "jauhot",
+      "description": "Yleisin jauhotyyppi, joka antaa leivonnaisille pehmeän rakenteen ja hyvän kohottumisen korkean gluteenipitoisuutensa ansiosta. Sopii useimpiin leivontakohteisiin. Proteiinipitoisuus 9-12%, korkea gluteeni, 70-75% hiilihydraatteja. Käytetään leivässä, kakuissa, pikkuleivissä ja pastatuotteissa. Säilyy kuivassa 6-8 kuukautta.",
+      "production": "Vehnäjauho valmistetaan monivaiheisessa prosessissa, jossa vehnänjyvät ensin puhdistetaan vieraista esineistä ja pestään. Tämän jälkeen jyvät jauhetaan jauhatuslaitteilla, jotka erottavat jyvän eri osat: kuoret (leseet), alkiot ja endospermin (ydinosan). Valkoinen vehnäjauho sisältää pääasiassa endospermiä, kun taas täysjyväjauhossa on mukana kaikki jyvän osat. Jauhamisen tarkkuus vaikuttaa gluteeniverkoston kehittymiseen - hienompi jauho tuottaa tasaisemman rakenteen. Korkealaatuinen vehnäjauho varastoidaan kontrolloiduissa olosuhteissa ja kypsytetään luonnollisesti useita viikkoja ennen myyntiä, mikä parantaa sen leivontaominaisuuksia. Suomalainen vehnäjauho valmistetaan pääosin kotimaisesta vehnästä, joka on sopeutunut pohjoisen ilmaston olosuhteisiin.",
+      "variants": [
+        {
+          "name": "Erikoisvehnäjauho",
+          "description": "Korkea proteiinipitoisuus (n. 12-14%), sopii erityisesti leipätaikinoihin"
+        },
+        {
+          "name": "Puolikarkea vehnäjauho",
+          "description": "Monikäyttöinen, soveltuu useimpiin leivontakohteisiin"
+        },
+        {
+          "name": "Kakkujauho",
+          "description": "Matala proteiinipitoisuus (n. 7-8%), soveltuu erityisesti kakkuihin ja muihin leivonnaisiin"
+        }
+      ],
+      "tips": [
+        "Säilytä jauhot kuivassa, viileässä paikassa ilmatiiviissä astiassa",
+        "Siivilöi jauhot ennen käyttöä tasaisemman sekoittumisen saavuttamiseksi",
+        "Mittaa jauhot tarkasti - liika jauho tekee leivonnaisista kuivia"
+      ],
+      "sourcing": "Valitse luomuvehnäjauho tai kotimaisesta jauhosta valmistettu vehnäjauho parhaan maun takaamiseksi. Tarkista valmistuspäivämäärä ja osta mahdollisimman tuoretta jauhoa. Jauhon tulisi olla kuivaa ja tuoksua raikkaalta.",
+      "käyttö": "Leivonta: käytä reseptin mukaan, siivilöi ennen käyttöä. Paksuuntaminen: sekoita kylmään nesteeseen ennen lisäämistä kuumaan. Taikina: lisää vähitellen nestettä oikean koostumuksen saavuttamiseksi.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Gluteeniton jauhoseos",
+          "id": "gluteeniton-jauhoseos",
+          "forDiet": [
+            "gluteeniton"
+          ],
+          "notes": "Korvaa 1:1, mutta vaatii usein sidosainetta kuten ksantaanikumia"
+        },
+        {
+          "name": "Mantelijauho",
+          "id": "mantelijauho",
+          "forDiet": [
+            "gluteeniton",
+            "vähähiilihydraattinen",
+            "keto"
+          ],
+          "notes": "Korvaa 1:3 (vähemmän mantelijauhoa), lisää kosteutta"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää gluteenia",
+        "vegaaninen"
+      ],
+      "tags": [
+        "leivonta",
+        "paksuuntumisaine",
+        "taikinarakenne",
+        "gluteenipitoinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 1
+      }
+    },
+    {
+      "id": "taysjyvavehnajauho",
+      "name": "Täysjyvävehnäjauho",
+      "category": "jauhot",
+      "description": "Ravinteikas jauho, joka sisältää koko vehnänjyvän leseineen ja alkioineen. Antaa leivonnaisille pähkinäisen maun ja runsaasti kuituja. Proteiinipitoisuus 13-14%, korkea gluteeni, 60-65% hiilihydraatteja. Käytetään ruisleivässä, näkkileivässä ja sämpylöissä. Säilyy kuivassa 1-3 kuukautta.",
+      "production": "Täysjyvävehnäjauho valmistetaan jauhamalla koko vehnänjyvä ilman minkään osan poistamista, säilyttäen samalla leseet, alkiot ja endospermin. Tämä tekee siitä merkittävästi ravintorikkaampaa kuin valkoisesta vehnäjauhosta, mutta myös herkemmän pilaantumiselle jyvän alkion sisältämien rasvojen vuoksi. Jauhatusmenetelmä vaikuttaa lopputuloksen laatuun - kivijauhaus tuottaa usein paremman makuisen jauhon kuin teollinen jauhaus, koska se ei kuumenna jauhoa yhtä paljon prosessin aikana. Täysjyvävehnäjauho sisältää luonnostaan entsyymejä, jotka voivat jatkaa toimintaansa varastoinnin aikana, joten tuoreus on erityisen tärkeää. Parhaiten säilyy viileässä tai pakastettuna suurempia määriä ostettaessa.",
+      "variants": [
+        {
+          "name": "Karkea täysjyvävehnäjauho",
+          "description": "Sisältää suurempia lesepaloja, antaa rustiikkisen rakenteen"
+        },
+        {
+          "name": "Hieno täysjyvävehnäjauho",
+          "description": "Hienompi tekstuuri, kevyempi lopputulos"
+        }
+      ],
+      "tips": [
+        "Yhdistä usein tavallisen vehnäjauhon kanssa kevyemmän rakenteen saavuttamiseksi",
+        "Lisää hieman enemmän nestettä täysjyväjauhoja käytettäessä",
+        "Pidempi taikinannousuaika tuottaa paremman maun"
+      ],
+      "sourcing": "Suosi luomulaatuisia täysjyvävehnäjauhoja niiden puhtaamman viljelytavan vuoksi. Täysjyväjauhot pilaantuvat tavallista vehnäjauhoa nopeammin rasvaisen alkion takia, joten tarkista aina pakkauspäivämäärä ja suosi pieniä pakkauskokoja. Tuore täysjyväjauho tuoksuu miellyttävän pähkinäiseltä.",
+      "käyttö": "Leivonta: yhdistä usein tavallisen vehnäjauhon kanssa. Lisää hieman enemmän nestettä kuin tavallisella jauholla. Pidempi taikinannousuaika tuottaa paremman maun.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Täysjyväspelttijauhot",
+          "id": "taysjyvaspelttijauhot",
+          "forDiet": [
+            "vähägluteeninen"
+          ],
+          "notes": "Korvaa 1:1, mutta vaatii vähemmän nestettä"
+        },
+        {
+          "name": "Täysjyväriisjauho ja tattarijauho seos",
+          "id": "taysjyvariisjauho-tattarijauho-seos",
+          "forDiet": [
+            "gluteeniton"
+          ],
+          "notes": "Korvaa 50/50 suhteessa, lisää sidosainetta"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää gluteenia",
+        "vegaaninen",
+        "korkea kuitupitoisuus"
+      ],
+      "tags": [
+        "täysjyvä",
+        "kuitupitoinen",
+        "ravinteikas",
+        "leivonta",
+        "rustiikkinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 0,
+        "sourness": 1,
+        "bitterness": 2,
+        "umami": 2
+      }
+    },
+    {
+      "id": "gluteeniton-jauhoseos",
+      "name": "Gluteeniton jauhoseos",
+      "category": "jauhot",
+      "description": "Huolellisesti tasapainotettu seos eri gluteenittomista jauhoista, joka on suunniteltu korvaamaan vehnäjauho keliaakikoille ja gluteeniherkille. Proteiinipitoisuus vaihtelee (tyypillisesti 7-9%), ei sisällä gluteenia, 70-80% hiilihydraatteja. Käytetään leivonnassa, pastatuotteissa ja kastikkeissa. Säilyy kuivassa 6-8 kuukautta.",
+      "production": "Gluteenittomat jauhoseokset valmistetaan yhdistämällä useita eri jauhotyyppejä ja tärkkelyksiä optimaalisen rakenteen ja maun saavuttamiseksi. Tyypillinen seos sisältää riisijauhoa (neutraali maku, hyvä perusrakenne), perunajauhoa (kosteus ja sitkeys), maissitärkkelystä (rakenne ja sitkeys) sekä usein tapiokajauhoa (joustavuus) tai sorghumjauhoa (proteiini). Liukasvoidun mukaan seokseen lisätään stabiloivia aineita kuten ksantaanikumia, joka korvaa gluteenin sidosominaisuuksia. Laadukkaat kaupalliset seokset on kehitetty ja testattu pitkään vastaamaan mahdollisimman tarkasti vehnäjauhon ominaisuuksia eri leivontakohteissa. Ristiinsaastumisen välttämiseksi gluteenittomat jauhot valmistetaan erillisessä tuotantolaitoksessa tai tiukassa puhdistusprotokollassa gluteenia sisältävien tuotteiden jälkeen.",
+      "variants": [
+        {
+          "name": "Leipäjauhoseos",
+          "description": "Sisältää yleensä hiivaa tai muita kohotusaineita, tarkoitettu erityisesti leiväntekoon"
+        },
+        {
+          "name": "Yleiskäyttöinen jauhoseos",
+          "description": "Monikäyttöinen, sopii useimpiin leivontakohteisiin"
+        },
+        {
+          "name": "Kakkujauhoseos",
+          "description": "Hienojakoisempi, kevyempi rakenne, sopii erityisesti kakkuihin ja leivonnaisiin"
+        }
+      ],
+      "tips": [
+        "Lisää ksantaanikumia tai psylliumia taikinan sitkoisuuden parantamiseksi",
+        "Taikinat vaativat usein enemmän nestettä kuin tavallisella jauholla tehdyt",
+        "Parempi lopputulos saadaan usein yhdistämällä erilaisia gluteenittomia jauhoja"
+      ],
+      "sourcing": "Valitse gluteeniton jauhoseos, joka on sertifioitu gluteenittomaksi (gluteenia alle 20 ppm). Parhaat seokset sisältävät useita eri jauhotyyppejä (riisiä, tapiokajauhoa, maissitärkkelystä, perunajauhoa) tasapainoisen rakenteen saavuttamiseksi. Tarkista, sisältääkö seos jo sidosaineita kuten ksantaanikumia. Erikoistuneet gluteenittomat merkit tuottavat usein laadukkaimpia seoksia.",
+      "käyttö": "Leivonta: lisää ksantaanikumia tai psylliumia taikinan sitkoisuuden parantamiseksi. Taikinat vaativat usein enemmän nestettä. Parempi lopputulos saadaan yhdistämällä erilaisia gluteenittomia jauhoja.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Tee oma seos",
+          "forDiet": [
+            "gluteeniton"
+          ],
+          "notes": "50% riisijauhoa, 25% perunajauhoa, 25% maissitärkkelystä + sidosaine"
+        },
+        {
+          "name": "Mantelijauho",
+          "id": "mantelijauho",
+          "forDiet": [
+            "gluteeniton",
+            "keto",
+            "vähähiilihydraattinen"
+          ],
+          "notes": "Sopii makeisiin leivonnaisiin, mutta antaa erilaisen rakenteen"
+        }
+      ],
+      "dietaryInfo": [
+        "gluteeniton",
+        "vegaaninen"
+      ],
+      "tags": [
+        "erikoisruokavalio",
+        "leivonta",
+        "keliaakikko",
+        "allergeenivapaa"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 1
+      }
+    },
+    {
+      "id": "mantelijauho",
+      "name": "Mantelijauho",
+      "category": "jauhot",
+      "description": "Proteiinirikasta, vähähiilihydraattista jauhoa manteleista. Tuo leivonnaisiin pähkinäistä makua ja kosteutta - suosittu keto- ja paleo-ruokavalioissa. Proteiinipitoisuus 21-25%, ei sisällä gluteenia, 10-15% hiilihydraatteja. Käytetään makeissa leivonnaisissa, macaroneissa ja korvikejauhona. Säilyy jääkaapissa 3-6 kk, pakastimessa 9-12 kk.",
+      "production": "Mantelijauho valmistetaan jauhamalla manteleita hienoksi jauheeksi. Prosessi alkaa manteleiden kuorinnasta kuumaan veteen upottamalla, jonka jälkeen kuoret irrotetaan helposti käsin. Kuoritut mantelit kuivataan matalassa lämpötilassa (alle 70°C) raaka-arvojen säilyttämiseksi, ja tämän jälkeen ne jauhetaan monitoimikoneessa tai ammattimaisissa jauhatuslaitteissa. Jauhatus täytyy tehdä lyhyissä jaksoissa ylikuumenemisen välttämiseksi, joka voisi vapauttaa liiaksi öljyjä ja muuttaa jauhon rasvaiseksi. Korkealaatuinen mantelijauho on kuivaa, hienojakoista ja kiitävää, kun taas huonolaatuinen voi olla öljyistä tai epätasaista. Valkoinen mantelijauho (kuoritut mantelit) on miedomman makuista ja vaaleampaa kuin luonnollinen mantelijauho (kuorineen).",
+      "variants": [
+        {
+          "name": "Valkoinen mantelijauho",
+          "description": "Valmistettu kuorituista manteleista, vaaleampi väri ja miedompi maku"
+        },
+        {
+          "name": "Luonnollinen mantelijauho",
+          "description": "Valmistettu kokonaisista manteleista kuorineen, tummempi väri ja voimakkaampi maku"
+        },
+        {
+          "name": "Karkea mantelirouhe",
+          "description": "Karkeampi jauhatusaste, antaa leivonnaisiin rouhean rakenteen"
+        }
+      ],
+      "tips": [
+        "Korvaa korkeintaan 25-30% vehnäjauhosta mantelijauholla tavallisissa resepteissä",
+        "Mantelijauho imee vähemmän nestettä, joten vähennä nesteen määrää tai lisää jauhon määrää",
+        "Säilytä jääkaapissa tai pakastimessa pilaantumisen estämiseksi"
+      ],
+      "sourcing": "Valitse luomu-mantelijauho, jos mahdollista, koska tavanomaisesti kasvatetut mantelit saattavat sisältää torjunta-ainejäämiä. Tuoreuden takaamiseksi osta mieluiten pienemmissä erissä ja kiinnitä huomiota valmistus- tai parasta ennen -päiväykseen. Tuoreen mantelijauhon tulisi tuoksua miellyttävän pähkinäiseltä ilman härskiintynyttä hajua. Voit myös valmistaa mantelijauhon itse tehokkaassa monitoimikoneessa, mikä takaa tuoreuden.",
+      "käyttö": "Leivonta: korvaa korkeintaan 25-30% vehnäjauhosta. Mantelijauho imee vähemmän nestettä, joten vähennä nesteen määrää.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Kookosjauhot",
+          "id": "kookosjauhot",
+          "forDiet": [
+            "gluteeniton",
+            "keto",
+            "vähähiilihydraattinen"
+          ],
+          "notes": "Korvaa 1:1, mutta imee enemmän nestettä"
+        },
+        {
+          "name": "Auringonkukansiemenjauhot",
+          "id": "auringonkukansiemenjauhot",
+          "forDiet": [
+            "gluteeniton",
+            "pähkinätön"
+          ],
+          "notes": "Halvempi vaihtoehto, mutta voimakkaampi maku"
+        }
+      ],
+      "dietaryInfo": [
+        "gluteeniton",
+        "vegaaninen",
+        "raakaravinto",
+        "sisältää pähkinää"
+      ],
+      "tags": [
+        "pähkinäjauho",
+        "keto",
+        "vähähiilihydraattinen",
+        "leivonta",
+        "proteiinipitoinen"
+      ],
+      "flavorProfile": {
+        "sweetness": 3,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 1,
+        "umami": 4
+      }
+    }
+  ]
+} 

@@ -6,22 +6,16 @@
  * to provide filtering functionality for recipe and directory pages.
  */
 
- import type { FilterSection, FilterConfig } from '../scripts/filter-system.ts';
+ import type { FilterSection } from '../scripts/filter-system.ts';
 
 interface Props {
-  config: FilterConfig;
   searchPlaceholder?: string;
   filterSections?: FilterSection[];
-  resultsCountText?: string;
-  updateUrl?: boolean;
 }
 
 const {
-  config,
   searchPlaceholder = "Etsi...",
-  filterSections = [],
-  resultsCountText = "tulosta löytyi",
-  updateUrl = true
+  filterSections = []
 } = Astro.props;
 ---
 

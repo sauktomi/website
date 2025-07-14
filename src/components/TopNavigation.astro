@@ -260,8 +260,6 @@ const showSidebar = currentPath !== '/';
 			const currentPath = decodeURIComponent(window.location.pathname);
 			const urlParams = new URLSearchParams(window.location.search);
 			
-			console.log('TopNav: Updating navigation state', { currentPath, search: window.location.search });
-			
 			// Calculate back path
 			let backPath = '/';
 			if (currentPath.startsWith('/reseptit/') && currentPath !== '/reseptit/' && currentPath !== '/reseptit') {
@@ -277,8 +275,6 @@ const showSidebar = currentPath !== '/';
 				backPath = '/';
 			}
 
-			console.log('TopNav: Calculated back path', { backPath });
-
 			// Update back button container and button
 			const backButtonContainer = document.querySelector('.top-nav-left') as HTMLElement;
 			const backButton = document.querySelector('.top-nav-btn.back-btn') as HTMLAnchorElement;
@@ -292,7 +288,6 @@ const showSidebar = currentPath !== '/';
 				backButton.href = backPath;
 				backButton.setAttribute('aria-label', this.getBackLabel(currentPath));
 				backButton.setAttribute('title', this.getBackLabel(currentPath));
-				console.log('TopNav: Updated back button', { href: backButton.href, showSidebar });
 			}
 		}
 

@@ -1,0 +1,245 @@
+{
+  "category": {
+    "id": "rasva",
+    "name": "Rasva",
+    "subtitle": "Opas erilaisista rasvoista ja öljyistä ruoanlaitossa ja leivonnassa",
+    "description": "Rasvat ovat välttämättömiä ainesosia, jotka antavat makua, tekstuuria ja toimivat lämmönsiirtäjinä kypsennettäessä.",
+    "imageUrl": "/images/ingredients/rasva.jpg",
+    "tags": [
+      "paistaminen",
+      "makutekijä",
+      "leivonta"
+    ]
+  },
+  "ingredients": [
+    {
+      "id": "voi",
+      "name": "Voi",
+      "category": "rasva",
+      "description": "Lehmänmaidosta valmistettu maitotuote, joka tuo täyteläistä makua ja tekstuuria. Paistamiseen, leivontaan ja kastikkeisiin. Eläinrasva, korkea tyydyttyneiden rasvojen määrä. Savupiste 150°C (kirkastettu voi 250°C). Täyteläinen, maitoinen, kermainen maku. Säilyy jääkaapissa 1-3 kuukautta.",
+      "production": "Valmistetaan kirnuamalla kermaa, kunnes rasva erottuu piimästä. Rasva pestään, suolataan haluttaessa, ja muotoillaan. Perinteisessä kirnuamisessa kermaa vatkataan kunnes maitorasva muodostaa kokkareita ja erottuu nesteytyneestä piimästä. Moderni tuotanto käyttää mekaanisia kirnukoneita, jotka tekevät prosessista tasaisempaa ja tehokkaampaa. Kirkastettu voi (ghee) valmistetaan kuumentamalla voita miedossa lämmössä, kunnes vesi haihtuu ja maitoproteiinit erottuvat, jättäen jäljelle puhdasta maitorasvaa korkeammalla savupisteellä.",
+      "variants": [
+        {
+          "name": "Suolaamaton voi",
+          "description": "Puhdas voikirnuamisen tulos ilman lisättyjä ainesosia"
+        },
+        {
+          "name": "Suolattu voi",
+          "description": "Sisältää 1-2% suolaa, säilyy paremmin"
+        },
+        {
+          "name": "Kirkastettu voi (ghee)",
+          "description": "Voi, josta on poistettu vesi ja maitoproteiinit, korkeampi savupiste"
+        }
+      ],
+      "tips": [
+        "Kirkastettu voi soveltuu paremmin korkeassa lämpötilassa paistamiseen",
+        "Käytä huoneenlämpöistä voita leivonnassa parhaan tuloksen saamiseksi",
+        "Voin ruskistaminen (beurre noisette) syventää makua erityisesti jälkiruokiin"
+      ],
+      "sourcing": "Valitse laadukas, mieluiten luomuvoi parhaan maun ja puhtauden takaamiseksi. Suomalaiset meijerivoit ovat korkeatasoisia. Artesaanivoi voi tarjota intensiivisemmän maun. Tarkista aina tuoreus päiväyksen perusteella. Laadukas voi on värinältään tasaisen keltaista tai vaaleankeltaista riippuen lehmien ruokavaliosta.",
+      "käyttö": "Leivonta: käytä huoneenlämpöistä voita parhaan tuloksen saamiseksi. Paistaminen: käytä kirkastettua voita korkeassa lämpötilassa. Ruskistaminen: kuumenna ruskeaksi syvemmän maun saavuttamiseksi.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Margariini",
+          "id": "margariini",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Korvaa 1:1, antaa täyteläisemmän maun"
+        },
+        {
+          "name": "Kookosöljy",
+          "id": "kookosoljy",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton",
+            "paleo"
+          ],
+          "notes": "Korvaa 1:1 kiinteänä, mutta tuo kookosmaisen maun"
+        },
+        {
+          "name": "Avokadoöljy",
+          "id": "avokadooljy",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Sopii paistamiseen korkean savupisteen takia"
+        }
+      ],
+      "dietaryInfo": [
+        "sisältää maitoa",
+        "laktoosi (vähäinen)"
+      ],
+      "tags": [
+        "maitotuote",
+        "eläinperäinen",
+        "kermaisuus",
+        "leivonta",
+        "paistaminen"
+      ],
+      "flavorProfile": {
+        "sweetness": 2,
+        "saltiness": 1,
+        "sourness": 1,
+        "bitterness": 0,
+        "umami": 8
+      }
+    },
+    {
+      "id": "oliivioljy",
+      "name": "Oliiviöljy",
+      "category": "rasva",
+      "description": "Oliiveista puristettu öljy, joka on Välimeren keittiön perusta. Hedelmäinen maku ja terveysominaisuudet. Kasviöljy, pääosin kertatyydyttymättömiä rasvoja. Savupiste: Extra virgin 160-190°C, puhdistettu 240°C. Hedelmäinen, pähkinäinen, hieman pippurinen maku. Käytetään salaateissa, paistamisessa ja marinointiin. Säilyy pimeässä 1-2 vuotta.",
+      "production": "Valmistetaan murskaamalla oliiveja ja erottamalla öljy hedelmälihasta ja vedestä puristamalla tai sentrifugoimalla. Extra virgin -öljy saadaan ensimmäisestä kylmäpuristuksesta ilman kemikaaleja tai lämpöä, säilyttäen maksimaalisen maun ja ravintoaineet. Oliivit kerätään käsin tai koneellisesti optimaalisen kypsyysasteen aikana, tavallisesti syys-joulukuussa. Parhaat öljyt valmistetaan muutamassa tunnissa korjuusta estämään hapettumista. Puhdistettu oliiviöljy käy läpi lisäkäsittelyn, joka neutraloi makua mutta nostaa savupistettä.",
+      "variants": [
+        {
+          "name": "Extra Virgin (EVOO)",
+          "description": "Korkein laatu, kylmäpuristettu, alle 0,8% vapaita rasvahappoja"
+        },
+        {
+          "name": "Virgin",
+          "description": "Hyvälaatuinen, alle 2% vapaita rasvahappoja"
+        },
+        {
+          "name": "Puhdistettu/Kevyt",
+          "description": "Neutraalimpi maku, korkeampi savupiste, sopii paistamiseen"
+        }
+      ],
+      "tips": [
+        "Käytä parasta extra virgin -laatua raakana",
+        "Valitse puhdistettu oliiviöljy korkeassa lämpötilassa paistamiseen",
+        "Säilytä viileässä, pimeässä paikassa, ei suorassa auringonvalossa"
+      ],
+      "sourcing": "Valitse laadukasta extra virgin -oliiviöljyä, joka on pakattu tummaan lasipulloon valon aiheuttaman hapettumisen estämiseksi. Tarkista pullosta sadonkorjuupäivämäärä tuoreuden varmistamiseksi - uudempi on aina parempi. Yksittäisestä maasta ja lajikkeesta valmistetut öljyt ovat usein laadukkaampia. Kiinnitä huomiota sertifikaatteihin (DOP, PDO, IGP) aitouden takaamiseksi.",
+      "käyttö": "Salaatit: käytä parasta extra virgin -laatua raakana. Paistaminen: valitse puhdistettu oliiviöljy korkeassa lämpötilassa. Marinadi: lisää hienonnettuun valkosipuliin ja yrteihin.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Tuore oliiviöljy satokauden (syys-joulukuu) jälkeen"
+      },
+      "alternatives": [
+        {
+          "name": "Avokadoöljy",
+          "id": "avokadooljy",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Mieto maku, korkea savupiste, monikäyttöinen"
+        },
+        {
+          "name": "Rypsiöljy",
+          "id": "rypsioljy",
+          "forDiet": [
+            "kaikki"
+          ],
+          "notes": "Neutraali maku, sopii paistamiseen ja marinointiin"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "gluteeniton",
+        "maidoton",
+        "pähkinätön"
+      ],
+      "tags": [
+        "välimeren keittiö",
+        "super ruoka",
+        "antioksidantit",
+        "monityydyttymättömät rasvat",
+        "kylmäpuristettu"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 0,
+        "sourness": 0,
+        "bitterness": 4,
+        "umami": 3
+      }
+    },
+    {
+      "id": "margariini",
+      "name": "Margariini",
+      "category": "rasva",
+      "description": "Kasvirasvoista valmistettu voin korvike, joka on suunniteltu vastaamaan voin ominaisuuksia. Kasvirasva, vaihteleva määrä tyydyttyneitä ja tyydyttymättömiä rasvoja. Savupiste 150-180°C. Mieto, voin kaltainen maku. Käytetään leivonnassa, paistamisessa ja voileivissä. Säilyy jääkaapissa 1-2 kuukautta.",
+      "production": "Valmistetaan emulgoimalla kasvirasvoja veden kanssa, lisäämällä emulgointiaineita ja muiden ainesosien kanssa. Moderni margariinivalmistus käyttää useita eri kasvirasvoja optimaalisen rakenteen ja maun saavuttamiseksi. Prosessi alkaa rasvojen puhdistuksesta ja käsittelystä, jonka jälkeen ne emulgoidaan veden kanssa. Lisätään suolaa, vitamiineja ja muita ainesosia. Lopuksi margariini jäähdytetään ja muotoillaan. Laadukas margariini sisältää vähemmän tyydyttyneitä rasvoja kuin voi ja ei sisällä transrasvoja.",
+      "variants": [
+        {
+          "name": "Kovamargariini",
+          "description": "Sopii leivontaan, kova huoneenlämmössä"
+        },
+        {
+          "name": "Pehmeä margariini",
+          "description": "Sopii voileiviin ja kastikkeisiin"
+        },
+        {
+          "name": "Luomumargariini",
+          "description": "Valmistettu luomukasvirasvoista"
+        }
+      ],
+      "tips": [
+        "Käytä kovaa margariinia leivonnassa, pehmeää voileiviin",
+        "Margariini voi olla parempi valinta kuin voi tietyissä leivontaresepteissä",
+        "Tarkista ainesosaluettelo välttääksesi transrasvoja"
+      ],
+      "sourcing": "Valitse margariini, joka ei sisällä transrasvoja ja jossa on vähän tyydyttyneitä rasvoja. Luomumargariini on yleensä parempi valinta. Tarkista ainesosaluettelo - hyvä margariini sisältää pääasiassa kasvirasvoja, vettä, suolaa ja vitamiineja. Vältä tuotteita, joissa on paljon lisäaineita tai kemikaaleja.",
+      "käyttö": "Leivonta: käytä kovaa margariinia, pehmeää voileiviin. Margariini voi olla parempi valinta kuin voi tietyissä leivontaresepteissä. Tarkista ainesosaluettelo välttääksesi transrasvoja.",
+      "season": {
+        "availability": "Ympäri vuoden",
+        "bestSeason": "Ympäri vuoden"
+      },
+      "alternatives": [
+        {
+          "name": "Voi",
+          "id": "voi",
+          "forDiet": [
+            "tavallinen"
+          ],
+          "notes": "Alkuperäinen tuote, ei vegaaninen"
+        },
+        {
+          "name": "Kookosöljy",
+          "id": "kookosoljy",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Kiinteä huoneenlämmössä, kookosmainen maku"
+        },
+        {
+          "name": "Avokadoöljy",
+          "id": "avokadooljy",
+          "forDiet": [
+            "vegaaninen",
+            "maidoton"
+          ],
+          "notes": "Nestemäinen, neutraali maku"
+        }
+      ],
+      "dietaryInfo": [
+        "vegaaninen",
+        "maidoton",
+        "laktoositon"
+      ],
+      "tags": [
+        "kasvirasva",
+        "vegaaninen",
+        "leivonta",
+        "voin korvike",
+        "emulgaattori"
+      ],
+      "flavorProfile": {
+        "sweetness": 1,
+        "saltiness": 1,
+        "sourness": 0,
+        "bitterness": 0,
+        "umami": 3
+      }
+    }
+  ]
+} 

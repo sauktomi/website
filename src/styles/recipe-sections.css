@@ -44,7 +44,7 @@
 
 /* Modern instruction steps container */
 .recipe-body .recipe-instruction-steps {
-  @apply space-y-8 pl-16;
+  @apply space-y-4 pl-16;
   counter-reset: instruction-counter;
 }
 
@@ -105,7 +105,7 @@
 }
 
 .task-list-item {
-  @apply flex gap-6 mb-5 cursor-pointer;
+  @apply flex gap-6 md:mb-5 mb-4 cursor-pointer;
 }
 
 .task-checkbox {
