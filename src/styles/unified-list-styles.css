@@ -108,12 +108,12 @@
 /* ===== PAGE LAYOUT COMPONENTS ===== */
 /* Main page container with responsive spacing */
 .page-container {
-  @apply min-h-screen space-y-8 md:space-y-10 lg:space-y-12;
+  @apply min-h-screen py-8 space-y-8 md:space-y-10 lg:space-y-12;
 }
 
 /* Page header with responsive typography */
 .page-header {
-  @apply text-center mb-6;
+  @apply flex flex-col text-center mb-6;
 }
 
 
@@ -297,7 +297,7 @@
 /* ===== HOME PAGE STYLES ===== */
 /* Hero section */
 .hero-section {
-  @apply space-y-4 flex flex-col items-center justify-center min-h-[90dvh];
+  @apply space-y-4 flex flex-col items-center justify-center min-h-[80dvh];
 }
 
 .hero-title {
@@ -305,7 +305,7 @@
 }
 
 .hero-subtitle {
-  @apply mb-8 text-xl md:text-2xl lg:text-3xl text-secondary-accent leading-relaxed text-center max-w-2xl;
+  @apply mb-8 mx-auto text-center text-xl md:text-2xl lg:text-3xl text-secondary-accent leading-relaxed max-w-2xl;
 }
 
 .hero-navigation {

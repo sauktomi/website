@@ -182,7 +182,7 @@ const showSidebar = currentPath !== '/';
 <!-- Top Navigation Bar -->
 <div id="top-navigation" class="top-navigation">
 	<!-- Left side: Back button -->
-	<div class="top-nav-left" data-show-back={showSidebar}>
+	<div class="top-nav-left"  transition:animate="none" data-show-back={showSidebar}>
 		<!-- Back Button (always present, visibility controlled by CSS) -->
 		<a 
 			href={backPath}
@@ -197,7 +197,7 @@ const showSidebar = currentPath !== '/';
 	</div>
 
 	<!-- Center: Title -->
-	<div class="top-nav-center">
+	<div class="top-nav-center" transition:animate="none">
 		<a href="/" class="flex items-center hover:opacity-80 transition-opacity focus-enhanced border-0" aria-label="Etusivu">
 			<span class="text-xl lg:text-2xl font-serif font-bold">T</span>
 			<span class="text-base lg:text-lg font-medium">omin</span>
@@ -207,7 +207,7 @@ const showSidebar = currentPath !== '/';
 	</div>
 
 	<!-- Right side: Menu button -->
-	<div class="top-nav-right">
+	<div class="top-nav-right" transition:animate="none">
 		<button 
 			id="navbar-toggle"
 			popovertarget="navbar-dialog" 

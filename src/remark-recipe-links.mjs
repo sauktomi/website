@@ -420,7 +420,7 @@ export function remarkRecipeLinks() {
                   aria-label="Näytä tiedot: ${displayText}"
                   style="outline-color: var(--color-primary-accent);"
                 >
-                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                  <span>${displayText}</span>
                 </button>
                 <div 
                   id="${popoverId}"
@@ -434,7 +434,7 @@ export function remarkRecipeLinks() {
                 >
                   <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
                     <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
-                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                      <span class="popover-title-text">Ladataan...</span>
                     </h2>
                     <button 
                       class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -483,7 +483,7 @@ export function remarkRecipeLinks() {
                   aria-label="Näytä tiedot: ${displayText}"
                   style="outline-color: var(--color-primary-accent);"
                 >
-                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                  <span>${displayText}</span>
                 </button>
                 <div 
                   id="${popoverId}"
@@ -497,7 +497,7 @@ export function remarkRecipeLinks() {
                 >
                   <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
                     <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
-                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                      <span class="popover-title-text">Ladataan...</span>
                     </h2>
                     <button 
                       class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"
@@ -546,7 +546,7 @@ export function remarkRecipeLinks() {
                   aria-label="Näytä tiedot: ${displayText}"
                   style="outline-color: var(--color-primary-accent);"
                 >
-                  <span view-transition-name="popover-title-${specialMatch.id}">${displayText}</span>
+                  <span>${displayText}</span>
                 </button>
                 <div 
                   id="${popoverId}"
@@ -560,7 +560,7 @@ export function remarkRecipeLinks() {
                 >
                   <div class="popover-header flex items-center justify-between p-4 border-b border-secondary bg-secondary-light">
                     <h2 id="${popoverId}-title" class="popover-title text-lg font-semibold text-primary-dark m-0">
-                      <span class="popover-title-text" view-transition-name="popover-title-${specialMatch.id}">Ladataan...</span>
+                      <span class="popover-title-text">Ladataan...</span>
                     </h2>
                     <button 
                       class="popover-close-btn p-2 rounded-lg hover:bg-secondary transition-colors duration-200 focus-visible:outline-2 focus-visible:outline-offset-2"

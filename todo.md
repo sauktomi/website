@@ -1,2 +1,3 @@
 - Add a dropbox to toggle themes so that theme system can be toggled to.
 - Make the alternative links work in recipe slug pages. They need to be dynamically created on demand to reduce initial html load.
+- Have the number badge in active filters be anchored to the filter icon rather than the whole button.

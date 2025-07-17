@@ -28,33 +28,25 @@
    POPOVER STYLES - TAILWIND-BASED COMPONENTS
    ============================================================================= */
 
-/* ===== POPOVER CONTAINER ===== */
-/* Popover container with responsive sizing */
+/* ===== CORE POPOVER STRUCTURE ===== */
+
+/* Main popover container */
 .ingredient-popover {
-  @apply fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 max-h-[70svh] md:w-[70dvw] w-[95dvw] border border-secondary overflow-hidden;
+  @apply place-self-center max-h-[70svh] md:w-[70dvw] w-[95dvw];
 }
 
-/* Apply flex layout only when popover is open */
+/* Flex layout when popover is open */
 .ingredient-popover:popover-open {
-  @apply duration-200;
-  display: flex;
-  flex-direction: column;
+  @apply duration-200 flex flex-col;
 }
 
+/* Backdrop styling */
 .ingredient-popover::backdrop {
   @apply bg-black/50;
 }
 
-.popover-content {
-  @apply overflow-y-auto;
-}
-
-.popover-text-content {
-  @apply space-y-6;
-}
-
 /* ===== POPOVER HEADER ===== */
-/* Popover header with responsive padding */
+
 .popover-header {
   @apply flex items-center justify-between border-b border-secondary bg-secondary-light p-3 md:p-4 lg:p-6;
 }
@@ -72,47 +64,22 @@
   @apply text-secondary-accent w-4 h-4 md:w-5 md:h-5;
 }
 
-/* ===== POPOVER CONTENT ===== */
-/* Popover content with responsive spacing */
+/* ===== POPOVER CONTENT AREA ===== */
+
+/* Main content container */
 .popover-content {
-  @apply p-3 md:p-4 lg:p-6 space-y-4 md:space-y-6;
+  @apply bg-secondary-light p-3 md:p-4 lg:p-6 space-y-4 md:space-y-6 flex-1 overflow-y-auto overflow-x-hidden;
 }
 
-/* ===== POPOVER DESCRIPTION ===== */
-/* Description styling with proper spacing and border */
+.popover-text-content {
+  @apply space-y-6;
+}
+
 .popover-description {
   @apply text-base text-primary-dark leading-relaxed;
 }
 
-/* ===== POPOVER SKELETON ENHANCEMENTS ===== */
-/* Popover image skeleton with proper sizing */
-.popover-image-skeleton {
-  @apply w-full h-full bg-secondary-light animate-pulse;
-}
-
-.skeleton-placeholder {
-  @apply w-full h-full bg-secondary-light;
-}
-
-/* Popover description skeleton with proper spacing */
-.popover-description-skeleton {
-  @apply space-y-2;
-}
-
-.skeleton-line {
-  @apply h-4 bg-secondary-light animate-pulse rounded;
-}
-
-.skeleton-line-short {
-  @apply w-3/4;
-}
-
-.skeleton-line-medium {
-  @apply w-1/2;
-} 
-
-/* ===== POPOVER CONTENT SECTIONS ===== */
-/* Popover section styling */
+/* ===== POPOVER SECTIONS ===== */
 
 .popover-section h4 {
   @apply text-base font-semibold text-primary-dark mb-2 mt-0;
@@ -126,15 +93,29 @@
   @apply list-inside;
 }
 
-/* ===== POPOVER SECTION DIVIDER ===== */
-/* Visual separator between main and additional sections */
+/* Section divider */
 .popover-section-divider {
   @apply border-t border-secondary my-6;
   border-color: var(--color-secondary);
 }
 
-/* ===== FLAVOR PROFILE LIST ===== */
-/* Flavor profile with numbers only */
+/* Side-by-side layout */
+.popover-section-side-by-side {
+  @apply flex flex-wrap gap-4 md:gap-6;
+}
+
+.popover-section-side-by-side > .popover-section {
+  @apply flex-1 min-w-[calc(50%-1rem)] md:min-w-[calc(33.33%-1rem)];
+}
+
+/* ===== LIST COMPONENTS ===== */
+
+/* Base list styles */
+.list-base {
+  @apply list-none m-0 p-0 space-y-1;
+}
+
+/* Flavor profile list */
 .flavor-list {
   @apply list-none m-0 p-0 w-fit space-y-1;
 }
@@ -151,18 +132,7 @@
   @apply font-medium text-primary-dark;
 }
 
-/* ===== SIDE-BY-SIDE LAYOUTS ===== */
-/* Side-by-side sections with flexbox */
-.popover-section-side-by-side {
-  @apply flex flex-col md:flex-row gap-4 md:gap-6;
-}
-
-.popover-section-side-by-side > .popover-section {
-  @apply flex-1 min-w-0;
-}
-
-/* ===== ALTERNATIVES LIST ===== */
-/* Alternatives in list layout */
+/* Alternatives list */
 .alternatives-list {
   @apply list-none m-0 p-0 space-y-1;
 }
@@ -171,8 +141,7 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== VARIANTS LIST ===== */
-/* Variants in list layout */
+/* Variants list */
 .variants-list {
   @apply list-none m-0 p-0 space-y-1;
 }
@@ -181,8 +150,7 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== DIETARY LIST ===== */
-/* Dietary information in list layout */
+/* Dietary list */
 .dietary-list {
   @apply p-0 m-0 space-y-1;
 }
@@ -191,8 +159,7 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== SEASON LIST ===== */
-/* Season information in list layout */
+/* Season list */
 .season-list {
   @apply list-none p-0 m-0 space-y-2;
 }
@@ -201,8 +168,7 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== TIPS LIST ===== */
-/* Tips in list layout */
+/* Tips list */
 .tips-list {
   @apply m-0 p-0 space-y-1;
 }
@@ -211,7 +177,6 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== TECHNIQUE & EQUIPMENT LISTS ===== */
 /* Techniques list */
 .techniques-list {
   @apply list-none m-0 p-0 space-y-1;
@@ -284,23 +249,35 @@
   @apply text-sm text-primary-dark;
 }
 
-/* ===== POPOVER CONTENT ENHANCEMENTS ===== */
-/* Popover content area - scrollable */
-.popover-content {
-  @apply flex-1 overflow-y-auto overflow-x-hidden;
+/* ===== SKELETON LOADING STATES ===== */
+
+.popover-image-skeleton {
+  @apply w-full h-full bg-secondary-light animate-pulse;
 }
 
-/* Mobile responsive adjustments */
-@media (max-width: 640px) {
-  .ingredient-popover {
-    max-width: calc(100vw - 2rem);
-    margin-left: 1rem;
-    margin-right: 1rem;
-    max-height: 90vh;
-  }
+.skeleton-placeholder {
+  @apply w-full h-full bg-secondary-light;
 }
 
-/* Accessibility and reduced motion */
+.popover-description-skeleton {
+  @apply space-y-2;
+}
+
+.skeleton-line {
+  @apply h-4 bg-secondary-light animate-pulse rounded;
+}
+
+.skeleton-line-short {
+  @apply w-3/4;
+}
+
+.skeleton-line-medium {
+  @apply w-1/2;
+}
+
+/* ===== ACCESSIBILITY & ENHANCEMENTS ===== */
+
+/* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
   .ingredient-popover-trigger,
   .popover-close-btn {
@@ -308,7 +285,7 @@
   }
 }
 
-/* Custom scrollbar styling for popover content */
+/* Custom scrollbar styling */
 .popover-content::-webkit-scrollbar {
   width: 6px;
 }

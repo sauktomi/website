@@ -255,23 +255,6 @@ img {
 }
 
 /* ===== VIEW TRANSITIONS ===== */
-::view-transition-old(popover-title-*),
-::view-transition-new(popover-title-*) {
-  @apply h-auto;
-  height: auto;
-}
-
-::view-transition-old(popover-image-*),
-::view-transition-new(popover-image-*) {
-  @apply h-auto;
-  height: auto;
-}
-
-::view-transition-old(popover-description-*),
-::view-transition-new(popover-description-*) {
-  @apply h-auto;
-  height: auto;
-}
 
 /* ===== PRINT STYLES ===== */
 @media print {

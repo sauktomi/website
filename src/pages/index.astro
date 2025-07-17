@@ -42,7 +42,7 @@ import Layout from '../layouts/Layout.astro';
 			aria-label="Selaa reseptejä"
 			data-astro-prefetch="viewport"
 		>
-			Selaa reseptejä
+			<span transition:name="page-title-reseptit">Selaa reseptejä</span>
 		</a>
 		<a 
 			href="/hakemisto/" 
@@ -50,7 +50,7 @@ import Layout from '../layouts/Layout.astro';
 			aria-label="Ruoanlaiton hakemisto"
 			data-astro-prefetch="viewport"
 		>
-			Hakemisto
+			<span transition:name="page-title-hakemisto">Hakemisto</span>
 		</a>
 	</nav>
 </section>

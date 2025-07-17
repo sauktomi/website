@@ -127,7 +127,7 @@ const filterOptions = {
     <!-- Header -->
     <header class="page-header">
       <h1 class="hero-title">
-        Reseptit
+        <span transition:name="page-title-reseptit">Reseptit</span>
       </h1>
     </header>
 
@@ -244,7 +244,7 @@ const filterOptions = {
                       class="group list-item"
                       data-recipe-category={recipe.category}
                     >
-                      <span class="recipe-title">
+                      <span class="recipe-title" transition:name={`recipe-title-${recipe.slug}`}>
                         {recipe.title}
                       </span>
                     </a>

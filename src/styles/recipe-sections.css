@@ -164,7 +164,7 @@
 .recipe-body h2.section-completed.section-collapsed.section-background-applied,
 .recipe-body h3.section-completed.section-collapsed.section-background-applied,
 .recipe-body h4.section-completed.section-collapsed.section-background-applied {
-  @apply bg-green-100 p-8 mb-0 mt-0;
+  @apply bg-green-200 text-black px-8 py-7 mb-0 mt-0;
 }
 
 /* ===== SETTINGS BUTTON ===== */
