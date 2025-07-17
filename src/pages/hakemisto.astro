@@ -120,7 +120,7 @@ const typeOptions = [
       <!-- Header -->
       <header class="page-header">
         <h1 class="hero-title">
-          Hakemisto
+          <span transition:name="page-title">Hakemisto</span>
         </h1>
       </header>
 
@@ -210,7 +210,7 @@ const typeOptions = [
                         aria-label={`Näytä tiedot: ${hakemistoItem.name}`}
                       >
                         <h3 class="item-title">
-                          <span view-transition-name={`popover-title-${hakemistoItem.id}`}>
+                          <span>
                             {hakemistoItem.name}
                           </span>
                         </h3>
@@ -245,7 +245,7 @@ const typeOptions = [
         >
           <div class="popover-header">
             <h2 id={`popover-${hakemistoItem.id}-${hakemistoItem.dataItemType}-title`} class="popover-title">
-              <span class="popover-title-text" view-transition-name={`popover-title-${hakemistoItem.id}`}>Ladataan...</span>
+              <span class="popover-title-text">Ladataan...</span>
             </h2>
             <button 
               class="popover-close-btn"

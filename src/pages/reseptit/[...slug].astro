@@ -75,6 +75,9 @@ export async function getStaticPaths() {
 
 const { enhancedData }: { enhancedData: EnhancedRecipeData } = Astro.props;
 
+// Get the current slug from params
+const { slug } = Astro.params;
+
 // All data is now pre-processed and ready to use
 const {
   title,
@@ -189,7 +192,7 @@ const status = metadataProps?.status;
               </svg>
             </button>
           </div>
-        <h1>
+        <h1 transition:name="page-title">
           {title}
         </h1>
         
@@ -426,7 +429,7 @@ const status = metadataProps?.status;
                                       data-category={itemCategory}
                                       aria-label={`Näytä tiedot: ${name}`}
                                     >
-                                      <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
+                                      <span class="ingredient-name">{name}</span>
                                     </button>
                                     {notes && <span class="ingredient-notes"> ({notes})</span>}
                                     <div 
@@ -441,7 +444,7 @@ const status = metadataProps?.status;
                                     >
                                       <div class="popover-header">
                                         <h2 id={`${popoverId}-title`} class="popover-title">
-                                          <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
+                                          <span class="popover-title-text">Ladataan...</span>
                                         </h2>
                                         <button 
                                           class="popover-close-btn"
@@ -520,7 +523,7 @@ const status = metadataProps?.status;
                                   data-category={itemCategory}
                                   aria-label={`Näytä tiedot: ${name}`}
                                 >
-                                  <span class="ingredient-name" view-transition-name={`popover-title-${itemId}`}>{name}</span>
+                                  <span class="ingredient-name">{name}</span>
                                 </button>
                                 {notes && <span class="ingredient-notes"> ({notes})</span>}
                                 <div 
@@ -535,7 +538,7 @@ const status = metadataProps?.status;
                                 >
                                   <div class="popover-header">
                                     <h2 id={`${popoverId}-title`} class="popover-title">
-                                      <span class="popover-title-text" view-transition-name={`popover-title-${itemId}`}>Ladataan...</span>
+                                      <span class="popover-title-text">Ladataan...</span>
                                     </h2>
                                     <button 
                                       class="popover-close-btn"
