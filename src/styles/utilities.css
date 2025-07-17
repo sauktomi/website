@@ -72,7 +72,19 @@
   @apply bg-secondary; 
 }
 
-/* ===== TOGGLE SWITCH ===== */
+/* ===== THEME DROPDOWN ===== */
+.theme-dropdown {
+  @apply bg-primary-light text-primary-dark border border-secondary rounded-lg px-3 py-2 text-sm transition-colors duration-200;
+}
+
+.theme-dropdown:hover {
+  @apply border-primary-accent;
+}
+.theme-dropdown option {
+  @apply bg-primary-light text-primary-dark;
+}
+
+/* ===== TOGGLE SWITCH (for other settings) ===== */
 .info-toggle-switch {
   @apply relative inline-flex h-6 w-11 cursor-pointer items-center rounded-full focus:outline-none;
 }

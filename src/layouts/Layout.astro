@@ -60,14 +60,6 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		
 		<!-- Critical CSS - Inlined for immediate application -->
 		<style is:inline>
-			/* Critical CSS - Essential for preventing FOUC and layout shifts */
-			:root {
-				--sidebar-width: 4rem;
-				--sidebar-width-desktop: 33.6%;
-				--transition-timing: cubic-bezier(0.16, 1, 0.3, 1);
-				--transition-duration: 200ms;
-			}
-
 			/* Reserve scrollbar space up-front to prevent width jumps when content overflow triggers the scrollbar. */
 			html {
 				font-family: "Inter Variable", "Inter", system-ui, sans, sans-serif;
@@ -119,8 +111,18 @@ const defaultMetaDescription = "Sukella uusiin makuihin ja nauti täyteläisist�
 		<!-- Inline script to prevent theme flash -->
 		<script is:inline>
 			// On page load, check localStorage first, then system preference
-			const isDark = localStorage.theme === "dark" || 
-				(!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches);
+			const storedTheme = localStorage.theme;
+			let isDark = false;
+			
+			if (storedTheme === "dark") {
+				isDark = true;
+			} else if (storedTheme === "light") {
+				isDark = false;
+			} else {
+				// Default to system preference
+				isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+			}
+			
 			document.documentElement.classList.toggle("dark", isDark);
 		</script>
 		

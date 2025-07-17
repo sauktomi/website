@@ -21,15 +21,15 @@ class SettingsManager {
   }
 
   loadSettings() {
-    // Load dark mode setting
-    const darkModeToggle = document.getElementById('dark-mode-toggle') as HTMLInputElement;
-    if (darkModeToggle) {
+    // Load theme setting
+    const themeDropdown = document.getElementById('theme-dropdown') as HTMLSelectElement;
+    if (themeDropdown) {
       const stored = localStorage.theme;
-      if (stored === 'dark' || stored === 'light') {
-        darkModeToggle.checked = stored === 'dark';
+      if (stored === 'dark' || stored === 'light' || stored === 'system') {
+        themeDropdown.value = stored;
       } else {
-        // Use system preference if no stored choice
-        darkModeToggle.checked = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        // Default to system if no stored choice
+        themeDropdown.value = 'system';
       }
     }
 
@@ -60,18 +60,16 @@ class SettingsManager {
       }
     });
 
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById('dark-mode-toggle') as HTMLInputElement;
-    if (darkModeToggle) {
-      darkModeToggle.addEventListener('change', () => {
-        const isDark = darkModeToggle.checked;
+    // Theme dropdown
+    const themeDropdown = document.getElementById('theme-dropdown') as HTMLSelectElement;
+    if (themeDropdown) {
+      themeDropdown.addEventListener('change', () => {
+        const selectedTheme = themeDropdown.value as 'light' | 'dark' | 'system';
         
         // Apply theme using ThemeManager
         const windowWithTheme = window as CustomWindow;
         if (windowWithTheme.ThemeManager) {
-          windowWithTheme.ThemeManager._persist(isDark ? 'dark' : 'light');
-          windowWithTheme.ThemeManager.apply(isDark);
-          windowWithTheme.ThemeManager.setupState(isDark);
+          windowWithTheme.ThemeManager.setTheme(selectedTheme);
         }
       });
     }

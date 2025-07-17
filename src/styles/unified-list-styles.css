@@ -119,8 +119,8 @@
 
 
 /* Main content area with responsive spacing */
-.main-content {
-  @apply space-y-8 md:space-y-10 lg:space-y-12;
+#main-content {
+  @apply flex flex-col;
 }
 
 /* ===== ITEM CONTENT ===== */
@@ -297,7 +297,7 @@
 /* ===== HOME PAGE STYLES ===== */
 /* Hero section */
 .hero-section {
-  @apply space-y-4 absolute top-0 bottom-[10dvh] place-self-center justify-items-center;
+  @apply space-y-4 flex flex-col items-center justify-center min-h-[90dvh];
 }
 
 .hero-title {
@@ -317,9 +317,9 @@
 }
 
 .hero-button-primary {
-  @apply bg-primary-dark text-primary-light rounded-t-xl transition-transform scale-105 focus-visible:outline-2 focus-visible:outline-primary-light;
+  @apply bg-black text-white rounded-t-xl transition-transform scale-105 focus-visible:outline-2 focus-visible:outline-primary-light;
 }
 
 .hero-button-secondary {
-  @apply bg-primary-light text-primary-dark shadow-md rounded-b-xl transition-shadow hover:shadow-lg focus-visible:shadow-lg focus-visible:outline-2 focus-visible:outline-primary-dark;
+  @apply bg-primary-light text-secondary-accent shadow-md rounded-b-xl transition-shadow hover:shadow-lg focus-visible:shadow-lg focus-visible:outline-2 focus-visible:outline-primary-dark;
 }
