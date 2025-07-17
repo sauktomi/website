@@ -1,7 +1,7 @@
 ---
 description: Ensure development branch workflow
 globs:
-alwaysApply: false
+alwaysApply: true
 ---
 
 **Branch Management Rule:**
