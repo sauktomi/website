@@ -43,10 +43,11 @@ export interface IngredientData {
 
 export interface ThemeState {
   current?: string;
+  effective?: string;
   isDark?: boolean;
-  apply?: () => void;
-  toggle?: () => boolean;
-  setSystemPreference?: () => void;
+  setTheme?: (theme: string) => string;
+  getCurrentTheme?: () => string;
+  getEffectiveTheme?: () => string;
 }
 
 export interface IngredientDataLoader {
